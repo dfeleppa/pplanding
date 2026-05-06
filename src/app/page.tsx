@@ -30,33 +30,33 @@ const bodySans = Manrope({
 const heroHighlights = [
   {
     title: "Mobile Grooming",
-    href: "/mobile-grooming",
+    href: "/mobile-grooming/",
     icon: Scissors,
     copy: "Luxury one-on-one grooming brought to your driveway across Long Island and the Hamptons.",
   },
   {
     title: "Daycare",
-    href: "/dog-daycare",
+    href: "/dog-daycare/",
     icon: PawPrint,
     copy: "Supervised group play and enrichment in a safe, nurturing space built for happy, social dogs.",
   },
   {
     title: "Boarding",
-    href: "/dog-boarding",
+    href: "/dog-boarding/",
     icon: Home,
     copy: "Cozy overnight care, refined routines, and attentive supervision while you're away.",
   },
   {
     title: "Training",
-    href: "/dog-training",
+    href: "/dog-training/",
     icon: GraduationCap,
     copy: "Compassionate, results-driven training led by our AKC Evaluator Trainer.",
   },
   {
-    title: "Enrichment",
-    href: "/enrichment",
+    title: "Enrichment & Events",
+    href: "/enrichment/",
     icon: Sparkles,
-    copy: "One-on-one activities and sensory play for dogs who shine away from the pack.",
+    copy: "One-on-one enrichment activities, plus birthday parties, field trips, and signature events.",
   },
 ] as const;
 
@@ -89,44 +89,27 @@ const experiencePoints = [
 ] as const;
 
 const footerLinks = {
-  grooming: [
-    { label: "Mobile Grooming", href: "/mobile-grooming" },
-    { label: "Grooming Pricing", href: "/grooming-pricing" },
-    { label: "Mobile Grooming Packages", href: "/mobile-grooming-packages" },
-    { label: "Pet Grooming Hamptons", href: "/pet-grooming-hamptons" },
-    { label: "Cat Experience", href: "/cat-experience" },
-    { label: "Our Vans", href: "/our-vans" },
-    { label: "In-House Grooming", href: "/in-house-grooming" },
-  ],
-  daycareBoarding: [
-    { label: "Dog Daycare", href: "/dog-daycare" },
-    { label: "Group Play", href: "/group-play" },
-    { label: "Daycare Pricing", href: "/daycare-pricing" },
-    { label: "Puppy Socialization", href: "/puppy-socialization-program" },
-    { label: "Dog Boarding", href: "/dog-boarding" },
-    { label: "Boarding Pricing", href: "/boarding-pricing" },
-    { label: "Boarding Add-Ons", href: "/boarding-add-ons" },
-  ],
-  more: [
-    { label: "Dog Training", href: "/dog-training" },
-    { label: "Enrichment", href: "/enrichment" },
-    { label: "Enrichment Activities", href: "/enrichment-activities" },
-    { label: "What is Enrichment?", href: "/what-is-enrichment" },
-    { label: "Our Events", href: "/our-events" },
-    { label: "Birthday Party", href: "/birthday-party" },
-    { label: "Field Trip", href: "/field-trip" },
+  services: [
+    { label: "Mobile Grooming", href: "/mobile-grooming/" },
+    { label: "Pet Grooming Hamptons", href: "/pet-grooming-hamptons/" },
+    { label: "Daycare", href: "/dog-daycare/" },
+    { label: "Boarding", href: "/dog-boarding/" },
+    { label: "Training", href: "/dog-training/" },
+    { label: "Enrichment & Events", href: "/enrichment/" },
   ],
   about: [
-    { label: "About Us", href: "/about-us" },
-    { label: "Our Team", href: "/our-team" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "Requirements", href: "/requirements" },
-    { label: "We're Hiring", href: "/were-hiring" },
-    { label: "Partners", href: "/partners" },
-    { label: "Blog", href: "/blog" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms", href: "/terms" },
-    { label: "Pet Services Agreement", href: "/agreement" },
+    { label: "About Us", href: "/about-us/" },
+    { label: "Our Team", href: "/our-team/" },
+    { label: "FAQs", href: "/faqs/" },
+    { label: "We're Hiring", href: "/were-hiring/" },
+    { label: "Partners", href: "/partners/" },
+    { label: "Blog", href: "/blog/" },
+  ],
+  legal: [
+    { label: "Pet Services Agreement", href: "/agreement/" },
+    { label: "Requirements", href: "/requirements/" },
+    { label: "Privacy Policy", href: "/privacy-policy/" },
+    { label: "Terms", href: "/terms/" },
   ],
 } as const;
 
@@ -378,7 +361,7 @@ export default function HomePage() {
       </section>
 
       <footer id="contact" className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_repeat(4,0.85fr)]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_repeat(3,0.9fr)]">
           <div>
             <Image
               src="/planet-pooch-logo.png"
@@ -391,44 +374,10 @@ export default function HomePage() {
 
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
-              Mobile Grooming
+              Services
             </p>
             <div className="mt-4 space-y-3 text-sm text-white/82">
-              {footerLinks.grooming.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block transition hover:text-white"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
-              Daycare & Boarding
-            </p>
-            <div className="mt-4 space-y-3 text-sm text-white/82">
-              {footerLinks.daycareBoarding.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block transition hover:text-white"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
-              Training, Enrichment & Events
-            </p>
-            <div className="mt-4 space-y-3 text-sm text-white/82">
-              {footerLinks.more.map((item) => (
+              {footerLinks.services.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -446,6 +395,23 @@ export default function HomePage() {
             </p>
             <div className="mt-4 space-y-3 text-sm text-white/82">
               {footerLinks.about.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block transition hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
+              Policies
+            </p>
+            <div className="mt-4 space-y-3 text-sm text-white/82">
+              {footerLinks.legal.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

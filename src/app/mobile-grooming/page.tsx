@@ -1,21 +1,9 @@
-import type { Metadata } from "next";
-import { servicePages } from "../service-page-data";
-import { ServicePageTemplate } from "../service-page-template";
+import { mainServicePages } from "../../lib/content/main-services";
+import { makeContentMetadata } from "../../lib/content/metadata";
+import { ContentPageTemplate } from "../content-page-template";
 
-const service = servicePages["mobile-grooming"];
-
-export const metadata: Metadata = {
-  title: { absolute: service.metaTitle },
-  description: service.metaDescription,
-  alternates: { canonical: `/${service.slug}/` },
-  openGraph: {
-    title: service.metaTitle,
-    description: service.metaDescription,
-    url: `/${service.slug}/`,
-    type: "website",
-  },
-};
-
+const page = mainServicePages["mobile-grooming"];
+export const metadata = makeContentMetadata(page);
 export default function MobileGroomingPage() {
-  return <ServicePageTemplate service={service} />;
+  return <ContentPageTemplate page={page} />;
 }
