@@ -5,6 +5,12 @@ import { ArrowRight, Check, Home, Mail, MapPin, Phone } from "lucide-react";
 import type { ServicePage } from "./service-page-data";
 import { serviceNavItems } from "./service-page-data";
 import { ADDRESS_LINES, SITE } from "../lib/site";
+import {
+  breadcrumbSchema,
+  homeBreadcrumbs,
+  jsonLdAttrs,
+  serviceSchema,
+} from "../lib/schema";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,6 +28,12 @@ type ServicePageTemplateProps = {
 };
 
 export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
+  const service_schema = serviceSchema({
+    name: service.title,
+    description: service.metaDescription,
+    slug: service.slug,
+  });
+  const crumbs = breadcrumbSchema(homeBreadcrumbs(service.title, service.slug));
   return (
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
@@ -223,6 +235,9 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
           </Link>
         </div>
       </section>
+
+      <script {...jsonLdAttrs(service_schema)} />
+      <script {...jsonLdAttrs(crumbs)} />
     </main>
   );
 }
