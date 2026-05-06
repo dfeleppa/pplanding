@@ -61,10 +61,17 @@ a {
   transform-origin: left;
 }
 
-main > section:first-child h1 {
+/* All headings use the display serif (Cormorant Garamond) so section
+   headers throughout the site match the hero H1 treatment. */
+h1,
+h2,
+h3 {
   font-family: var(--font-display), serif;
-  font-size: 3rem;
   font-weight: 500;
+}
+
+main > section:first-child h1 {
+  font-size: 3rem;
   line-height: 0.96;
 }
 
