@@ -17,12 +17,17 @@ const ARCHIVE_PRIORITY = 0.4;
 
 const today = new Date();
 
-const make = (path: string, priority: number, changeFrequency: SitemapEntry["changeFrequency"]): SitemapEntry => ({
-  url: `${SITE.url}${path}`,
-  lastModified: today,
-  changeFrequency,
-  priority,
-});
+// Always emit URLs with a trailing slash to match WordPress / Yoast canonicals.
+// Root path stays as `/`; everything else gets `/.../`.
+const make = (path: string, priority: number, changeFrequency: SitemapEntry["changeFrequency"]): SitemapEntry => {
+  const normalized = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
+  return {
+    url: `${SITE.url}${normalized}`,
+    lastModified: today,
+    changeFrequency,
+    priority,
+  };
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: SitemapEntry[] = [];

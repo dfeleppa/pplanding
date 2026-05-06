@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: data.metaTitle },
     description: data.metaDescription,
-    alternates: { canonical: `/${slug}` },
+    alternates: { canonical: `/${slug}/` },
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,
-      url: `/${slug}`,
+      url: `/${slug}/`,
       type: entry.type === "blog" ? "article" : "website",
     },
   };

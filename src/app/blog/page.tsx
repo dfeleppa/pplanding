@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: { absolute: "Planet Pooch Blog | Mobile Grooming, Daycare, Training" },
   description:
     "Stories and how-tos from the Planet Pooch team — grooming tips, daycare advice, seasonal pet care, and behind-the-scenes from our Franklin Square resort.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog/" },
 };
 
 export default function BlogIndexPage() {
