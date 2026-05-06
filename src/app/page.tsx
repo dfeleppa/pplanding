@@ -128,36 +128,60 @@ export default function HomePage() {
           style={{ objectPosition: "62% center" }}
           priority
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.72)_34%,rgba(38,50,56,0.2)_68%,rgba(38,50,56,0.08)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(25,32,36,0.46)_0%,rgba(25,32,36,0.1)_42%,rgba(25,32,36,0.34)_100%)]" />
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-5 pb-24 pt-5 sm:px-8 lg:px-10">
+        {/* Subtle even darkening so the image still reads while text remains legible on either side. */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 
           <div
             id="top"
-            className="flex flex-1 items-center pt-16"
+            className="flex flex-1 items-center py-16 lg:py-20"
           >
-            <div className="max-w-2xl">
-              <h1 className="max-w-xl text-white">
-                Enriching the <span className="text-[var(--pp-mint)]">lives</span> of pets.
-              </h1>
-              <p className="mt-6 max-w-md text-base leading-8 text-white/82 sm:text-lg">
-                From concierge mobile grooming to a luxury resort for daycare, boarding, and training, we serve dogs across Nassau, Suffolk, and the Hamptons.
-              </p>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-                >
-                  Book Now
-                </Link>
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center border border-white/54 bg-black/10 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:bg-white/8"
-                >
-                  Explore Services
-                </a>
+            <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--pp-mint)]/85">
+                  Planet Pooch · Est. 2014
+                </p>
+                <h1 className="mt-7 max-w-xl text-white">
+                  Enriching the{" "}
+                  <span className="italic text-[var(--pp-mint)]">Lives</span> of Pets.
+                </h1>
               </div>
+
+              <div className="lg:border-l lg:border-white/20 lg:pl-10">
+                <p
+                  className="max-w-md text-lg italic leading-relaxed text-white/90 sm:text-xl"
+                  style={{ fontFamily: "var(--font-display), serif" }}
+                >
+                  From concierge mobile grooming to a luxury resort for daycare, boarding, and
+                  training, we serve dogs across Nassau, Suffolk, and the Hamptons.
+                </p>
+                <div className="mt-9 flex flex-col gap-3 sm:max-w-xs">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-between gap-3 bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                  >
+                    Get Started
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <a
+                    href="#services"
+                    className="inline-flex items-center justify-center gap-3 border border-white/40 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-white/8"
+                  >
+                    Explore Services
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-auto border-t border-white/15 py-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
+              <span className="flex items-center gap-3">
+                <span aria-hidden className="h-px w-8 bg-white/40" />
+                Scroll to Explore
+              </span>
+              <span>Long Island, New York</span>
             </div>
           </div>
         </div>
