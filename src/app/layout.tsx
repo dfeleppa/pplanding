@@ -49,7 +49,6 @@ const localBusinessSchema = {
   sameAs: [
     SITE.social.instagram,
     SITE.social.facebook,
-    SITE.social.tiktok,
     SITE.social.youtube,
   ],
   aggregateRating: {

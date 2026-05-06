@@ -267,7 +267,7 @@ export const contentPages = {
         type: "callout",
         title: "Follow us first",
         body:
-          "See what a day with us looks like before you apply — Instagram, Facebook, TikTok, and YouTube under @planetpoochpetservices.",
+          "See what a day with us looks like before you apply — Instagram, Facebook, and YouTube under @planetpoochpetservices.",
         cta: { label: "Email us", href: "mailto:info@planet-pooch.com" },
       },
     ],
@@ -352,7 +352,7 @@ export const contentPages = {
         type: "callout",
         title: "Follow along while we rebuild the archive",
         body:
-          "Find us on Instagram, Facebook, TikTok, and YouTube as @planetpoochpetservices for daily updates from the resort and the road.",
+          "Find us on Instagram, Facebook, and YouTube as @planetpoochpetservices for daily updates from the resort and the road.",
       },
     ],
   },
