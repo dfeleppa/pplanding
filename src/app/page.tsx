@@ -139,10 +139,10 @@ export default function HomePage() {
           >
             <div className="max-w-2xl">
               <h1 className="max-w-xl text-white">
-                Mobile Pet Grooming on <span className="text-[var(--pp-mint)]">Long Island</span>.
+                Enriching the <span className="text-[var(--pp-mint)]">lives</span> of pets.
               </h1>
               <p className="mt-6 max-w-md text-base leading-8 text-white/82 sm:text-lg">
-                Luxury mobile grooming, daycare, boarding, training, and enrichment for dogs across Nassau, Suffolk, and the Hamptons.
+                From concierge mobile grooming to a luxury resort for daycare, boarding, and training, we serve dogs across Nassau, Suffolk, and the Hamptons.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
