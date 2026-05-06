@@ -5,6 +5,12 @@ import { ArrowRight, Check, Home, Mail, MapPin, Phone } from "lucide-react";
 import type { TownPage } from "../lib/content/towns";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 import { serviceNavItems } from "./service-page-data";
+import {
+  breadcrumbSchema,
+  jsonLdAttrs,
+  nestedBreadcrumbs,
+  serviceSchema,
+} from "../lib/schema";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -161,9 +167,26 @@ const HERO_IMAGE: Record<TownPage["service"], string> = {
   "daycare-boarding": "/hero-dog.jpg",
 };
 
+const PARENT_SERVICE: Record<TownPage["service"], { name: string; slug: string }> = {
+  "mobile-grooming": { name: "Mobile Grooming", slug: "mobile-grooming" },
+  "spa-services": { name: "Mobile Grooming", slug: "mobile-grooming" },
+  "in-house-grooming": { name: "In-House Grooming", slug: "in-house-grooming" },
+  "daycare-boarding": { name: "Daycare & Boarding", slug: "dog-daycare-boarding" },
+};
+
 export function TownPageTemplate({ page }: { page: TownPage }) {
   const copy = SERVICE_COPY[page.service];
   const image = HERO_IMAGE[page.service];
+  const parent = PARENT_SERVICE[page.service];
+  const crumbs = breadcrumbSchema(
+    nestedBreadcrumbs([parent], `${copy.primary} in ${page.town}`, page.slug)
+  );
+  const service = serviceSchema({
+    name: `${copy.primary} in ${page.town}`,
+    description: copy.hero(page.town),
+    slug: page.slug,
+    serviceType: copy.primary,
+  });
 
   return (
     <main
@@ -353,6 +376,9 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
           </div>
         </div>
       </section>
+
+      <script {...jsonLdAttrs(service)} />
+      <script {...jsonLdAttrs(crumbs)} />
     </main>
   );
 }

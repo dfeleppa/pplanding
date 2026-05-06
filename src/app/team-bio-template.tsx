@@ -5,6 +5,11 @@ import { ArrowRight, Home, Mail, MapPin, Phone } from "lucide-react";
 import type { TeamMember } from "../lib/content/team";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 import { serviceNavItems } from "./service-page-data";
+import {
+  breadcrumbSchema,
+  jsonLdAttrs,
+  nestedBreadcrumbs,
+} from "../lib/schema";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -19,6 +24,13 @@ const bodySans = Manrope({
 
 export function TeamBioTemplate({ member }: { member: TeamMember }) {
   const hasBio = member.paragraphs && member.paragraphs.length > 0;
+  const crumbs = breadcrumbSchema(
+    nestedBreadcrumbs(
+      [{ name: "Our Team", slug: "our-team" }],
+      member.name,
+      member.slug
+    )
+  );
 
   return (
     <main
@@ -145,6 +157,8 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
           </Link>
         </div>
       </section>
+
+      <script {...jsonLdAttrs(crumbs)} />
     </main>
   );
 }
