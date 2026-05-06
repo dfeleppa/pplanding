@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import { ADDRESS_LINES, SITE } from "../lib/site";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -26,45 +27,46 @@ const bodySans = Manrope({
 });
 
 const navigationItems = [
-  { label: "About", href: "#about" },
-  { label: "Daycare", href: "/daycare" },
-  { label: "Boarding", href: "/boarding" },
-  { label: "Training", href: "/training" },
-  { label: "Enrichment/Events", href: "/enrichment-events" },
-  { label: "Grooming", href: "/grooming" },
-  { label: "Book Now", href: "#contact" },
+  { label: "About", href: "/about-us" },
+  { label: "Mobile Grooming", href: "/mobile-grooming" },
+  { label: "Daycare", href: "/dog-daycare" },
+  { label: "Boarding", href: "/dog-boarding" },
+  { label: "Training", href: "/dog-training" },
+  { label: "Enrichment", href: "/enrichment" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Book Now", href: "/contact" },
 ] as const;
 
 const heroHighlights = [
   {
+    title: "Mobile Grooming",
+    href: "/mobile-grooming",
+    icon: Scissors,
+    copy: "Luxury one-on-one grooming brought to your driveway across Long Island and the Hamptons.",
+  },
+  {
     title: "Daycare",
-    href: "/daycare",
+    href: "/dog-daycare",
     icon: PawPrint,
-    copy: "Engaging play and enrichment in a safe, nurturing space built for happy, social dogs.",
+    copy: "Supervised group play and enrichment in a safe, nurturing space built for happy, social dogs.",
   },
   {
     title: "Boarding",
-    href: "/boarding",
+    href: "/dog-boarding",
     icon: Home,
-    copy: "Cozy suites, refined routines, and attentive overnight care while you are away.",
+    copy: "Cozy overnight care, refined routines, and attentive supervision while you're away.",
   },
   {
     title: "Training",
-    href: "/training",
+    href: "/dog-training",
     icon: GraduationCap,
-    copy: "Compassionate, results-driven training that supports confidence, manners, and calm.",
+    copy: "Compassionate, results-driven training led by our AKC Evaluator Trainer.",
   },
   {
-    title: "Enrichment/Events",
-    href: "/enrichment-events",
+    title: "Enrichment",
+    href: "/enrichment",
     icon: Sparkles,
-    copy: "Special activities, themed moments, and sensory play that bring more joy into the day.",
-  },
-  {
-    title: "Grooming",
-    href: "/grooming",
-    icon: Scissors,
-    copy: "Gentle grooming appointments tailored to your dog's coat, comfort, and care needs.",
+    copy: "One-on-one activities and sensory play for dogs who shine away from the pack.",
   },
 ] as const;
 
@@ -97,9 +99,45 @@ const experiencePoints = [
 ] as const;
 
 const footerLinks = {
-  services: ["Daycare", "Boarding", "Training", "Grooming"],
-  experience: ["Our Approach", "A Day at the Resort", "Photo Gallery"],
-  about: ["Our Story", "Our Team", "Careers"],
+  grooming: [
+    { label: "Mobile Grooming", href: "/mobile-grooming" },
+    { label: "Grooming Pricing", href: "/grooming-pricing" },
+    { label: "Mobile Grooming Packages", href: "/mobile-grooming-packages" },
+    { label: "Pet Grooming Hamptons", href: "/pet-grooming-hamptons" },
+    { label: "Cat Experience", href: "/cat-experience" },
+    { label: "Our Vans", href: "/our-vans" },
+    { label: "In-House Grooming", href: "/in-house-grooming" },
+  ],
+  daycareBoarding: [
+    { label: "Dog Daycare", href: "/dog-daycare" },
+    { label: "Group Play", href: "/group-play" },
+    { label: "Daycare Pricing", href: "/daycare-pricing" },
+    { label: "Puppy Socialization", href: "/puppy-socialization-program" },
+    { label: "Dog Boarding", href: "/dog-boarding" },
+    { label: "Boarding Pricing", href: "/boarding-pricing" },
+    { label: "Boarding Add-Ons", href: "/boarding-add-ons" },
+  ],
+  more: [
+    { label: "Dog Training", href: "/dog-training" },
+    { label: "Enrichment", href: "/enrichment" },
+    { label: "Enrichment Activities", href: "/enrichment-activities" },
+    { label: "What is Enrichment?", href: "/what-is-enrichment" },
+    { label: "Our Events", href: "/our-events" },
+    { label: "Birthday Party", href: "/birthday-party" },
+    { label: "Field Trip", href: "/field-trip" },
+  ],
+  about: [
+    { label: "About Us", href: "/about-us" },
+    { label: "Our Team", href: "/our-team" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Requirements", href: "/requirements" },
+    { label: "We're Hiring", href: "/were-hiring" },
+    { label: "Partners", href: "/partners" },
+    { label: "Blog", href: "/blog" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms", href: "/terms" },
+    { label: "Pet Services Agreement", href: "/agreement" },
+  ],
 } as const;
 
 export default function HomePage() {
@@ -141,12 +179,12 @@ export default function HomePage() {
                 </Link>
               ))}
             </nav>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center border border-[var(--pp-mint)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
             >
               Get Started
-            </a>
+            </Link>
           </header>
 
           <div
@@ -155,18 +193,18 @@ export default function HomePage() {
           >
             <div className="max-w-2xl">
               <h1 className="max-w-xl text-white">
-                Enriching the <span className="text-[var(--pp-mint)]">Lives</span> of Pets.
+                Mobile Pet Grooming on <span className="text-[var(--pp-mint)]">Long Island</span>.
               </h1>
               <p className="mt-6 max-w-md text-base leading-8 text-white/82 sm:text-lg">
-                Luxury daycare, boarding, and training for dogs who deserve more.
+                Luxury mobile grooming, daycare, boarding, training, and enrichment for dogs across Nassau, Suffolk, and the Hamptons.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
                 >
-                  Get Started
-                </a>
+                  Book Now
+                </Link>
                 <a
                   href="#services"
                   className="inline-flex items-center justify-center border border-white/54 bg-black/10 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:bg-white/8"
@@ -199,7 +237,6 @@ export default function HomePage() {
               return (
                 <Link
                   key={item.title}
-                  id={item.href.slice(1)}
                   href={item.href}
                   className="group mx-auto max-w-sm text-center"
                 >
@@ -312,10 +349,10 @@ export default function HomePage() {
               </h2>
               <p className="mt-6 text-base leading-8 text-[rgba(47,42,39,0.76)]">
                 The Planet Pooch team treats our dog like family. The updates, the photos, the
-                care, everything is top notch.
+                care &mdash; everything is top notch.
               </p>
               <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--pp-main)]/80">
-                Michael T., Frisco, TX
+                Rated {SITE.reviews.rating} stars by {SITE.reviews.count.toLocaleString()} families
               </p>
             </div>
           </div>
@@ -346,17 +383,17 @@ export default function HomePage() {
                 Learn about our calm spaces, polished care, and welcoming routines in person.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
                 >
-                  Get Started
-                </a>
+                  Book Now
+                </Link>
                 <a
-                  href="tel:2145550123"
+                  href={SITE.phone.href}
                   className="inline-flex items-center justify-center border border-[rgba(50,73,83,0.22)] bg-white/55 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/75"
                 >
-                  Call Us (214) 555-0123
+                  Call {SITE.phone.display}
                 </a>
               </div>
             </div>
@@ -378,7 +415,7 @@ export default function HomePage() {
       </section>
 
       <footer id="contact" className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_repeat(4,0.8fr)]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_repeat(4,0.85fr)]">
           <div>
             <Image
               src="/planet-pooch-logo.png"
@@ -391,16 +428,16 @@ export default function HomePage() {
 
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
-              Services
+              Mobile Grooming
             </p>
             <div className="mt-4 space-y-3 text-sm text-white/82">
-              {footerLinks.services.map((item) => (
+              {footerLinks.grooming.map((item) => (
                 <Link
-                  key={item}
-                  href={`/${item.toLowerCase()}`}
+                  key={item.href}
+                  href={item.href}
                   className="block transition hover:text-white"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -408,11 +445,34 @@ export default function HomePage() {
 
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
-              The Experience
+              Daycare & Boarding
             </p>
             <div className="mt-4 space-y-3 text-sm text-white/82">
-              {footerLinks.experience.map((item) => (
-                <p key={item}>{item}</p>
+              {footerLinks.daycareBoarding.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block transition hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
+              Training, Enrichment & Events
+            </p>
+            <div className="mt-4 space-y-3 text-sm text-white/82">
+              {footerLinks.more.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block transition hover:text-white"
+                >
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -423,42 +483,56 @@ export default function HomePage() {
             </p>
             <div className="mt-4 space-y-3 text-sm text-white/82">
               {footerLinks.about.map((item) => (
-                <p key={item}>{item}</p>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block transition hover:text-white"
+                >
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
+        </div>
 
+        <div className="mx-auto mt-12 grid max-w-7xl gap-6 border-t border-white/10 pt-8 lg:grid-cols-[1.5fr_1fr] lg:items-end">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
               Contact
             </p>
             <div className="mt-4 space-y-4 text-sm text-white/82">
-              <a href="tel:2145550123" className="flex items-start gap-3 transition hover:text-white">
+              <a href={SITE.phone.href} className="flex items-start gap-3 transition hover:text-white">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>(214) 555-0123</span>
+                <span>{SITE.phone.display}</span>
               </a>
               <a
-                href="mailto:info@planetpooch.com"
+                href={`mailto:${SITE.email}`}
                 className="flex items-start gap-3 transition hover:text-white"
               >
                 <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>info@planetpooch.com</span>
+                <span>{SITE.email}</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>
-                  123 Pooch Way
+                  {ADDRESS_LINES[0]}
                   <br />
-                  Dallas, TX 75001
+                  {ADDRESS_LINES[1]}
                 </span>
               </div>
             </div>
             <div className="mt-6 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.16em] text-white/78">
-              <a href="https://instagram.com" aria-label="Instagram" className="transition hover:text-white">
+              <a href={SITE.social.instagram} aria-label="Instagram" className="transition hover:text-white">
                 Instagram
               </a>
-              <a href="https://facebook.com" aria-label="Facebook" className="transition hover:text-white">
+              <a href={SITE.social.facebook} aria-label="Facebook" className="transition hover:text-white">
                 Facebook
+              </a>
+              <a href={SITE.social.tiktok} aria-label="TikTok" className="transition hover:text-white">
+                TikTok
+              </a>
+              <a href={SITE.social.youtube} aria-label="YouTube" className="transition hover:text-white">
+                YouTube
               </a>
             </div>
           </div>
