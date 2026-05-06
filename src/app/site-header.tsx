@@ -17,7 +17,7 @@ type SiteHeaderProps = {
  */
 export function SiteHeader({ ctaHref = "/contact/" }: SiteHeaderProps = {}) {
   return (
-    <header className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+    <header className="flex flex-col gap-5 border-b border-white/15 pb-5 lg:flex-row lg:items-center lg:justify-between lg:pb-6">
       <Link className="flex items-center" href="/" aria-label="Planet Pooch — Home">
         <Image
           src="/planet-pooch-logo.png"
