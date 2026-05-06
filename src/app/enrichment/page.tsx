@@ -7,11 +7,11 @@ const service = servicePages.enrichment;
 export const metadata: Metadata = {
   title: { absolute: service.metaTitle },
   description: service.metaDescription,
-  alternates: { canonical: `/${service.slug}` },
+  alternates: { canonical: `/${service.slug}/` },
   openGraph: {
     title: service.metaTitle,
     description: service.metaDescription,
-    url: `/${service.slug}`,
+    url: `/${service.slug}/`,
     type: "website",
   },
 };

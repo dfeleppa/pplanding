@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: { absolute: "Our Team | Planet Pooch Pet Resort" },
   description:
     "Meet the groomers, daycare specialists, and trainers behind Planet Pooch — the people who care for your dog every day in Franklin Square, NY.",
-  alternates: { canonical: "/our-team" },
+  alternates: { canonical: "/our-team/" },
 };
 
 export default function OurTeamPage() {

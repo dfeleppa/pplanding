@@ -37,7 +37,7 @@ export function serviceSchema({
       "@type": "AdministrativeArea",
       name: `${c}, NY`,
     })),
-    url: `${SITE.url}/${slug}`,
+    url: `${SITE.url}/${slug}/`,
   };
 }
 
@@ -57,7 +57,7 @@ export function articleSchema({
     "@type": "Article",
     headline,
     description,
-    url: `${SITE.url}/${slug}`,
+    url: `${SITE.url}/${slug}/`,
     publisher: { "@id": `${SITE.url}/#business` },
     ...(datePublished ? { datePublished } : {}),
   };
@@ -72,8 +72,8 @@ export function jsonLdAttrs<T>(schema: T) {
 
 export function homeBreadcrumbs(currentName: string, currentSlug: string): Crumb[] {
   return [
-    { name: "Home", item: SITE.url },
-    { name: currentName, item: `${SITE.url}/${currentSlug}` },
+    { name: "Home", item: `${SITE.url}/` },
+    { name: currentName, item: `${SITE.url}/${currentSlug}/` },
   ];
 }
 
@@ -83,8 +83,8 @@ export function nestedBreadcrumbs(
   currentSlug: string
 ): Crumb[] {
   return [
-    { name: "Home", item: SITE.url },
-    ...parents.map((p) => ({ name: p.name, item: `${SITE.url}/${p.slug}` })),
-    { name: currentName, item: `${SITE.url}/${currentSlug}` },
+    { name: "Home", item: `${SITE.url}/` },
+    ...parents.map((p) => ({ name: p.name, item: `${SITE.url}/${p.slug}/` })),
+    { name: currentName, item: `${SITE.url}/${currentSlug}/` },
   ];
 }
