@@ -233,55 +233,57 @@ export default function HomePage() {
       </section>
 
       <section id="resort" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
               Our Resort
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
               A welcoming place built for comfort, care, and confident drop-offs.
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[rgba(47,42,39,0.72)]">
+            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
               Step inside Planet Pooch and see the spaces where our team creates calm routines,
               safe play, and thoughtful care every day.
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
+          <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
             <Image
               src="/our-resort-exterior.jpeg"
               alt="Planet Pooch Pet Resort exterior with daycare and boarding entrances"
               width={1300}
               height={650}
-              sizes="(min-width: 1024px) 80rem, 100vw"
+              sizes="(min-width: 1024px) 56rem, 100vw"
               className="h-auto w-full object-cover"
             />
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
-                Facility Tour
-              </p>
-              <h3 className="mt-4 text-3xl leading-tight text-[var(--pp-ink)] sm:text-4xl">
-                Take a closer look before you visit.
-              </h3>
-              <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-                Watch the tour to get a feel for the resort layout, care spaces, and the environment
-                your dog will experience with us.
-              </p>
-            </div>
+      <section id="facility-tour" className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="overflow-hidden border border-white/15 bg-[var(--pp-night)] shadow-[0_24px_70px_rgba(20,30,36,0.32)] lg:order-1">
+            <iframe
+              className="aspect-video w-full"
+              src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
+              title="Planet Pooch Facility Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
 
-            <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] shadow-[0_24px_70px_rgba(50,73,83,0.12)]">
-              <iframe
-                className="aspect-video w-full"
-                src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
-                title="Planet Pooch Facility Tour"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+          <div className="lg:order-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">
+              Facility Tour
+            </p>
+            <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
+              Take a closer look before you visit.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/78">
+              Watch the tour to get a feel for the resort layout, care spaces, and the environment
+              your dog will experience with us.
+            </p>
           </div>
         </div>
       </section>
