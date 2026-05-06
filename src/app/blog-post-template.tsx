@@ -4,6 +4,12 @@ import Link from "next/link";
 import { ArrowRight, Home } from "lucide-react";
 import type { BlogPost } from "../lib/content/blog";
 import { serviceNavItems } from "./service-page-data";
+import {
+  articleSchema,
+  breadcrumbSchema,
+  jsonLdAttrs,
+  nestedBreadcrumbs,
+} from "../lib/schema";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -17,6 +23,15 @@ const bodySans = Manrope({
 });
 
 export function BlogPostTemplate({ post }: { post: BlogPost }) {
+  const crumbs = breadcrumbSchema(
+    nestedBreadcrumbs([{ name: "Blog", slug: "blog" }], post.title, post.slug)
+  );
+  const article = articleSchema({
+    headline: post.title,
+    description: post.metaDescription,
+    slug: post.slug,
+  });
+
   return (
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
@@ -150,6 +165,9 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
           </Link>
         </div>
       </section>
+
+      <script {...jsonLdAttrs(article)} />
+      <script {...jsonLdAttrs(crumbs)} />
     </main>
   );
 }

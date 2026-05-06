@@ -5,6 +5,7 @@ import { ArrowRight, Check, Home, Mail, MapPin, Phone, X } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 import { serviceNavItems } from "./service-page-data";
+import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -341,6 +342,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 }
 
 export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
+  const crumbs = breadcrumbSchema(
+    homeBreadcrumbs(page.title, page.canonicalSlug ?? page.slug)
+  );
   return (
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
@@ -451,6 +455,8 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
           </div>
         </div>
       </section>
+
+      <script {...jsonLdAttrs(crumbs)} />
     </main>
   );
 }

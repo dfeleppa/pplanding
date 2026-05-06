@@ -5,6 +5,7 @@ import { ArrowRight, Home, Mail, MapPin, Phone } from "lucide-react";
 import type { ProsePage } from "../lib/content/types";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 import { serviceNavItems } from "./service-page-data";
+import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ type ProsePageTemplateProps = {
 };
 
 export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
+  const crumbs = breadcrumbSchema(homeBreadcrumbs(page.title, page.slug));
   return (
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
@@ -142,6 +144,8 @@ export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
           </Link>
         </div>
       </section>
+
+      <script {...jsonLdAttrs(crumbs)} />
     </main>
   );
 }
