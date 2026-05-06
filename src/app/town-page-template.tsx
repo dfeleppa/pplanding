@@ -4,13 +4,13 @@ import Link from "next/link";
 import { ArrowRight, Check, Home, Mail, MapPin, Phone } from "lucide-react";
 import type { TownPage } from "../lib/content/towns";
 import { ADDRESS_LINES, SITE } from "../lib/site";
-import { serviceNavItems } from "./service-page-data";
 import {
   breadcrumbSchema,
   jsonLdAttrs,
   nestedBreadcrumbs,
   serviceSchema,
 } from "../lib/schema";
+import { SiteHeader } from "./site-header";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -204,38 +204,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]" />
         <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">
-          <header className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <Link className="flex items-center" href="/">
-              <Image
-                src="/planet-pooch-logo.png"
-                alt="Planet Pooch Pet Resort"
-                width={220}
-                height={74}
-                className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
-                priority
-              />
-            </Link>
-            <nav
-              aria-label="Service pages"
-              className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78"
-            >
-              {serviceNavItems.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/${item.slug}`}
-                  className="nav-link transition hover:text-white"
-                >
-                  {item.navLabel}
-                </Link>
-              ))}
-            </nav>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center border border-[var(--pp-mint)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-            >
-              Book Now
-            </Link>
-          </header>
+          <SiteHeader />
 
           <div className="flex flex-1 items-end pt-12">
             <div className="max-w-3xl">

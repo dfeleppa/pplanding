@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { ADDRESS_LINES, SITE } from "../lib/site";
+import { SiteHeader } from "./site-header";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -25,17 +26,6 @@ const bodySans = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
-
-const navigationItems = [
-  { label: "About", href: "/about-us" },
-  { label: "Mobile Grooming", href: "/mobile-grooming" },
-  { label: "Daycare", href: "/dog-daycare" },
-  { label: "Boarding", href: "/dog-boarding" },
-  { label: "Training", href: "/dog-training" },
-  { label: "Enrichment", href: "/enrichment" },
-  { label: "FAQs", href: "/faqs" },
-  { label: "Book Now", href: "/contact" },
-] as const;
 
 const heroHighlights = [
   {
@@ -158,34 +148,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.72)_34%,rgba(38,50,56,0.2)_68%,rgba(38,50,56,0.08)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(25,32,36,0.46)_0%,rgba(25,32,36,0.1)_42%,rgba(25,32,36,0.34)_100%)]" />
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-5 pb-24 pt-5 sm:px-8 lg:px-10">
-          <header className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <a className="flex items-center" href="#top">
-              <Image
-                src="/planet-pooch-logo.png"
-                alt="Planet Pooch Pet Resort"
-                width={220}
-                height={74}
-                className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
-                priority
-              />
-            </a>
-            <nav
-              aria-label="Primary"
-              className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78"
-            >
-              {navigationItems.map((item) => (
-                <Link key={item.label} href={item.href} className="nav-link transition hover:text-white">
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center border border-[var(--pp-mint)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-            >
-              Get Started
-            </Link>
-          </header>
+          <SiteHeader />
 
           <div
             id="top"

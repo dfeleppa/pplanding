@@ -4,12 +4,12 @@ import Link from "next/link";
 import { ArrowRight, Home, Mail, MapPin, Phone } from "lucide-react";
 import type { TeamMember } from "../lib/content/team";
 import { ADDRESS_LINES, SITE } from "../lib/site";
-import { serviceNavItems } from "./service-page-data";
 import {
   breadcrumbSchema,
   jsonLdAttrs,
   nestedBreadcrumbs,
 } from "../lib/schema";
+import { SiteHeader } from "./site-header";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -38,38 +38,7 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
     >
       <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <header className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <Link className="flex items-center" href="/">
-              <Image
-                src="/planet-pooch-logo.png"
-                alt="Planet Pooch Pet Resort"
-                width={220}
-                height={74}
-                className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
-                priority
-              />
-            </Link>
-            <nav
-              aria-label="Service pages"
-              className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78"
-            >
-              {serviceNavItems.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/${item.slug}`}
-                  className="nav-link transition hover:text-white"
-                >
-                  {item.navLabel}
-                </Link>
-              ))}
-            </nav>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center border border-[var(--pp-mint)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-            >
-              Book Now
-            </Link>
-          </header>
+          <SiteHeader />
         </div>
       </section>
 
