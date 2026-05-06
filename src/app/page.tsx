@@ -375,18 +375,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
-            <Image
-              src="/tour-space.jpg"
-              alt="A bright, refined pet resort reception area"
-              width={1300}
-              height={650}
-              sizes="(min-width: 1024px) 56rem, 100vw"
-              className="h-auto w-full object-cover"
+          <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
+            <iframe
+              className="aspect-video w-full"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(`${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`)}&output=embed`}
+              title={`${SITE.legalName} location on Google Maps`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
-            <div className="absolute right-5 top-5 rounded-full bg-[rgba(247,240,232,0.88)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main-deep)] shadow-[0_10px_30px_rgba(47,42,39,0.12)]">
-              Planet Pooch
-            </div>
           </div>
         </div>
       </section>
