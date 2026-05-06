@@ -1,0 +1,456 @@
+import { Cormorant_Garamond, Manrope } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check, Home, Mail, MapPin, Phone, X } from "lucide-react";
+import type { ContentPage, ContentSection } from "../lib/content/types";
+import { ADDRESS_LINES, SITE } from "../lib/site";
+import { serviceNavItems } from "./service-page-data";
+
+const displaySerif = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600"],
+});
+
+const bodySans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+type ContentPageTemplateProps = {
+  page: ContentPage;
+};
+
+const sectionPadding = "px-5 py-14 sm:px-8 lg:px-10 lg:py-20";
+
+function SectionEyebrow({ eyebrow, title, intro }: { eyebrow?: string; title?: string; intro?: string }) {
+  if (!eyebrow && !title && !intro) return null;
+  return (
+    <div className="mb-8 max-w-3xl">
+      {eyebrow ? (
+        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+          {eyebrow}
+        </p>
+      ) : null}
+      {title ? (
+        <h2 className="mt-3 text-3xl leading-tight text-[var(--pp-ink)] sm:text-4xl">{title}</h2>
+      ) : null}
+      {intro ? (
+        <p className="mt-4 text-base leading-8 text-[rgba(47,42,39,0.78)]">{intro}</p>
+      ) : null}
+    </div>
+  );
+}
+
+function SectionRenderer({ section, index }: { section: ContentSection; index: number }) {
+  const tone = index % 2 === 0 ? "bg-[var(--pp-cream)]" : "bg-white/55";
+
+  switch (section.type) {
+    case "prose":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
+            <div className="grid max-w-3xl gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]">
+              {section.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case "list":
+    case "checklist": {
+      const Bullet = section.type === "checklist" ? Check : null;
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <ul className="grid max-w-3xl gap-3">
+              {section.items.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
+                >
+                  {Bullet ? <Bullet className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" /> : null}
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      );
+    }
+
+    case "pricing":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
+                    {section.columns.map((col) => (
+                      <th key={col} className="px-5 py-3 text-left">
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.rows.map((row, i) => (
+                    <tr
+                      key={row.join("|")}
+                      className={`${i % 2 === 0 ? "bg-white/30" : "bg-[var(--pp-cream)]"} text-[rgba(47,42,39,0.82)]`}
+                    >
+                      {row.map((cell, j) => (
+                        <td key={j} className="px-5 py-4 leading-7">
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {section.note ? (
+              <p className="mt-4 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
+                {section.note}
+              </p>
+            ) : null}
+          </div>
+        </section>
+      );
+
+    case "tieredPricing":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {section.tiers.map((tier) => (
+                <article
+                  key={tier.name}
+                  className={`flex flex-col gap-4 border p-6 ${
+                    tier.featured
+                      ? "border-[var(--pp-mint-deep)] bg-[var(--pp-night)] text-white shadow-[0_24px_60px_rgba(50,73,83,0.18)]"
+                      : "border-[rgba(50,73,83,0.12)] bg-white/65 text-[var(--pp-ink)]"
+                  }`}
+                >
+                  <header>
+                    <p
+                      className={`text-[11px] font-bold uppercase tracking-[0.18em] ${
+                        tier.featured ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]/75"
+                      }`}
+                    >
+                      {tier.name}
+                    </p>
+                    <p className="mt-3 text-3xl font-semibold leading-tight">{tier.price}</p>
+                    {tier.cadence ? (
+                      <p className={`mt-1 text-xs ${tier.featured ? "text-white/70" : "text-[rgba(47,42,39,0.6)]"}`}>
+                        {tier.cadence}
+                      </p>
+                    ) : null}
+                    {tier.description ? (
+                      <p
+                        className={`mt-3 text-sm leading-6 ${
+                          tier.featured ? "text-white/80" : "text-[rgba(47,42,39,0.78)]"
+                        }`}
+                      >
+                        {tier.description}
+                      </p>
+                    ) : null}
+                  </header>
+                  <ul className="grid gap-2 text-sm leading-6">
+                    {tier.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2">
+                        <Check
+                          className={`mt-1 h-4 w-4 shrink-0 ${
+                            tier.featured ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]"
+                          }`}
+                        />
+                        <span className={tier.featured ? "text-white/85" : "text-[rgba(47,42,39,0.8)]"}>
+                          {f}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+            {section.note ? (
+              <p className="mt-6 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
+                {section.note}
+              </p>
+            ) : null}
+          </div>
+        </section>
+      );
+
+    case "comparison":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-white/65">
+              <table className="w-full min-w-[520px] text-sm">
+                <thead>
+                  <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
+                    {section.columns.map((col) => (
+                      <th key={col} className="px-5 py-3 text-left">
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.rows.map((row, i) => (
+                    <tr
+                      key={row.label}
+                      className={`${i % 2 === 0 ? "bg-white/30" : "bg-[var(--pp-cream)]"} text-[rgba(47,42,39,0.82)]`}
+                    >
+                      <td className="px-5 py-4 leading-7 font-medium text-[var(--pp-ink)]">
+                        {row.label}
+                      </td>
+                      {row.values.map((value, j) => (
+                        <td key={j} className="px-5 py-4 leading-7">
+                          {typeof value === "boolean" ? (
+                            value ? (
+                              <Check className="h-4 w-4 text-[var(--pp-main)]" />
+                            ) : (
+                              <X className="h-4 w-4 text-[rgba(47,42,39,0.3)]" aria-label="Not included" />
+                            )
+                          ) : (
+                            value
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {section.note ? (
+              <p className="mt-4 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
+                {section.note}
+              </p>
+            ) : null}
+          </div>
+        </section>
+      );
+
+    case "definitions":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <dl className="grid gap-5 md:grid-cols-2">
+              {section.items.map((item) => (
+                <div
+                  key={item.term}
+                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                >
+                  <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
+                    {item.term}
+                  </dt>
+                  <dd className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.82)]">
+                    {item.definition}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      );
+
+    case "timeline":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <ol className="grid gap-5 lg:grid-cols-2">
+              {section.items.map((item) => (
+                <li
+                  key={`${item.time}-${item.label}`}
+                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
+                      {item.time}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-xl font-semibold text-[var(--pp-ink)]">{item.label}</p>
+                  <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      );
+
+    case "faq":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="grid gap-4">
+              {section.items.map((item) => (
+                <article
+                  key={item.question}
+                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                >
+                  <h3 className="text-xl font-semibold text-[var(--pp-ink)]">{item.question}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case "callout":
+      return (
+        <section className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <article className="flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                {section.eyebrow ? (
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
+                    {section.eyebrow}
+                  </p>
+                ) : null}
+                <h2 className="mt-2 text-2xl leading-tight sm:text-3xl">{section.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-white/80">{section.body}</p>
+              </div>
+              {section.cta ? (
+                <Link
+                  href={section.cta.href}
+                  className="inline-flex shrink-0 items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                >
+                  {section.cta.label}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              ) : null}
+            </article>
+          </div>
+        </section>
+      );
+  }
+}
+
+export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
+  return (
+    <main
+      className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
+    >
+      <section className="relative min-h-[520px] overflow-hidden bg-[var(--pp-night)] text-white">
+        {page.image ? (
+          <Image
+            src={page.image}
+            alt={`${page.title} at Planet Pooch`}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: "62% center" }}
+            priority
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]" />
+        <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">
+          <header className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <Link className="flex items-center" href="/">
+              <Image
+                src="/planet-pooch-logo.png"
+                alt="Planet Pooch Pet Resort"
+                width={220}
+                height={74}
+                className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
+                priority
+              />
+            </Link>
+            <nav
+              aria-label="Service pages"
+              className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78"
+            >
+              {serviceNavItems.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/${item.slug}`}
+                  className="nav-link transition hover:text-white"
+                >
+                  {item.navLabel}
+                </Link>
+              ))}
+            </nav>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center border border-[var(--pp-mint)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+            >
+              Book Now
+            </Link>
+          </header>
+
+          <div className="flex flex-1 items-end pt-12">
+            <div className="max-w-3xl">
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
+                {page.eyebrow}
+              </p>
+              <h1 className="mt-5 max-w-3xl text-white">{page.title}</h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {page.sections.map((section, i) => (
+        <SectionRenderer key={`${section.type}-${i}`} section={section} index={i} />
+      ))}
+
+      <section className="bg-[var(--pp-night)] px-5 py-14 text-white sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
+              Ready when you are
+            </p>
+            <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">Let&apos;s plan the right care.</h2>
+            <div className="mt-6 grid gap-3 text-sm text-white/82 sm:grid-cols-3">
+              <a href={SITE.phone.href} className="flex items-start gap-3 transition hover:text-white">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>{SITE.phone.display}</span>
+              </a>
+              <a href={`mailto:${SITE.email}`} className="flex items-start gap-3 transition hover:text-white">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>{SITE.email}</span>
+              </a>
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  {ADDRESS_LINES[0]}
+                  <br />
+                  {ADDRESS_LINES[1]}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+            >
+              Book Now
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 border border-white/30 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-white/85 transition hover:bg-white/8"
+            >
+              <Home className="h-4 w-4" />
+              Back Home
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
