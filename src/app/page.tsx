@@ -312,30 +312,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="bg-[var(--pp-cream)] px-5 py-0 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl overflow-hidden border border-[rgba(50,73,83,0.08)] bg-white/40 lg:grid-cols-[0.92fr_1.08fr]">
-          <div className="flex items-center px-7 py-12 sm:px-10 lg:px-12">
-            <div className="max-w-md">
-              <h2 className="text-4xl leading-tight text-[var(--pp-ink)] sm:text-[3rem]">
-                Our clients say it best.
-              </h2>
-              <p className="mt-6 text-base leading-8 text-[rgba(47,42,39,0.76)]">
-                The Planet Pooch team treats our dog like family. The updates, the photos, the
-                care &mdash; everything is top notch.
-              </p>
-              <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--pp-main)]/80">
-                Rated {SITE.reviews.rating} stars by {SITE.reviews.count.toLocaleString()} families
-              </p>
-            </div>
+      <section id="about" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+              Testimonials
+            </p>
+            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+              Our clients say it best.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
+              The Planet Pooch team treats our dog like family. The updates, the photos, the
+              care &mdash; everything is top notch.
+            </p>
+            <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--pp-main)]/80">
+              Rated {SITE.reviews.rating} stars by {SITE.reviews.count.toLocaleString()} families
+            </p>
           </div>
 
-          <div className="relative min-h-[320px]">
+          <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
             <Image
               src="/testimonial-dog.jpg"
               alt="A dog resting comfortably on a soft bed"
-              fill
-              sizes="(min-width: 1024px) 54vw, 100vw"
-              className="object-cover object-center"
+              width={1300}
+              height={650}
+              sizes="(min-width: 1024px) 56rem, 100vw"
+              className="h-auto w-full object-cover"
             />
           </div>
         </div>
@@ -343,41 +345,43 @@ export default function HomePage() {
 
       <section
         id="gallery"
-        className="bg-[var(--pp-cream)] px-5 pb-18 pt-0 sm:px-8 lg:px-10 lg:pb-24"
+        className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24"
       >
-        <div className="mx-auto grid max-w-7xl overflow-hidden border border-[rgba(50,73,83,0.08)] bg-[linear-gradient(90deg,rgba(244,236,226,0.96),rgba(234,223,209,0.92))] lg:grid-cols-[0.92fr_1.08fr]">
-          <div className="flex items-center px-7 py-12 sm:px-10 lg:px-12">
-            <div className="max-w-lg">
-              <h2 className="text-4xl leading-tight text-[var(--pp-ink)] sm:text-[3rem]">
-                Come see the Planet Pooch difference.
-              </h2>
-              <p className="mt-4 text-base leading-8 text-[rgba(47,42,39,0.74)]">
-                Learn about our calm spaces, polished care, and welcoming routines in person.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-                >
-                  Book Now
-                </Link>
-                <a
-                  href={SITE.phone.href}
-                  className="inline-flex items-center justify-center border border-[rgba(50,73,83,0.22)] bg-white/55 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/75"
-                >
-                  Call {SITE.phone.display}
-                </a>
-              </div>
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+              Visit Us
+            </p>
+            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+              Come see the Planet Pooch difference.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
+              Learn about our calm spaces, polished care, and welcoming routines in person.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+              >
+                Book Now
+              </Link>
+              <a
+                href={SITE.phone.href}
+                className="inline-flex items-center justify-center border border-[rgba(50,73,83,0.22)] bg-white/55 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/75"
+              >
+                Call {SITE.phone.display}
+              </a>
             </div>
           </div>
 
-          <div className="relative min-h-[320px]">
+          <div className="relative overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
             <Image
               src="/tour-space.jpg"
               alt="A bright, refined pet resort reception area"
-              fill
-              sizes="(min-width: 1024px) 54vw, 100vw"
-              className="object-cover object-center"
+              width={1300}
+              height={650}
+              sizes="(min-width: 1024px) 56rem, 100vw"
+              className="h-auto w-full object-cover"
             />
             <div className="absolute right-5 top-5 rounded-full bg-[rgba(247,240,232,0.88)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main-deep)] shadow-[0_10px_30px_rgba(47,42,39,0.12)]">
               Planet Pooch
