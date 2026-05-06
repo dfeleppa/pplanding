@@ -62,10 +62,12 @@ else
 fi
 
 # ----- 3. noindex leak check -----
+# -L follows redirects so this works whether the build is in trailing-slash
+# mode (default for this project) or not.
 heading "noindex tag leaks"
 NOINDEX_PAGES=()
-for path in "/" "/mobile-grooming" "/dog-daycare" "/dog-boarding" "/dog-training" "/grooming-pricing" "/services-pricing" "/about-us" "/faqs"; do
-  body=$(curl -sS "$STAGING_URL$path")
+for path in "/" "/mobile-grooming/" "/dog-daycare/" "/dog-boarding/" "/dog-training/" "/grooming-pricing/" "/services-pricing/" "/about-us/" "/faqs/"; do
+  body=$(curl -sSL "$STAGING_URL$path")
   if echo "$body" | grep -qi 'name="robots"[^>]*content="[^"]*noindex'; then
     NOINDEX_PAGES+=("$path")
   fi
@@ -102,8 +104,8 @@ fi
 
 # ----- 5. Title tag presence on critical pages -----
 heading "Critical pages have <title>"
-for path in "/" "/mobile-grooming" "/dog-daycare" "/dog-boarding" "/dog-training" "/services-pricing" "/grooming-pricing" "/about-us"; do
-  title=$(curl -sS "$STAGING_URL$path" | grep -oE '<title>[^<]+</title>' | head -1)
+for path in "/" "/mobile-grooming/" "/dog-daycare/" "/dog-boarding/" "/dog-training/" "/services-pricing/" "/grooming-pricing/" "/about-us/"; do
+  title=$(curl -sSL "$STAGING_URL$path" | grep -oE '<title>[^<]+</title>' | head -1)
   if [ -z "$title" ]; then
     fail "$path has no <title> tag"
   else
@@ -113,7 +115,7 @@ done
 
 # ----- 6. Homepage title contains the primary keyword -----
 heading "Homepage primary keyword"
-HOME_TITLE=$(curl -sS "$STAGING_URL/" | grep -oE '<title>[^<]+</title>' | head -1)
+HOME_TITLE=$(curl -sSL "$STAGING_URL/" | grep -oE '<title>[^<]+</title>' | head -1)
 if echo "$HOME_TITLE" | grep -qi "Mobile Pet Grooming Long Island"; then
   pass "Homepage title contains 'Mobile Pet Grooming Long Island'"
 else
@@ -122,7 +124,7 @@ fi
 
 # ----- 7. LocalBusiness schema on homepage -----
 heading "LocalBusiness JSON-LD"
-HOME_BODY=$(curl -sS "$STAGING_URL/")
+HOME_BODY=$(curl -sSL "$STAGING_URL/")
 if echo "$HOME_BODY" | grep -q '"@type":"LocalBusiness"' || echo "$HOME_BODY" | grep -q '"@type": *"LocalBusiness"'; then
   pass "Homepage has LocalBusiness JSON-LD"
 else
@@ -136,8 +138,8 @@ fi
 
 # ----- 8. Canonical tag presence -----
 heading "Canonical tags"
-for path in "/" "/mobile-grooming" "/dog-daycare" "/services-pricing" "/grooming-packages"; do
-  canonical=$(curl -sS "$STAGING_URL$path" | grep -oE '<link rel="canonical" href="[^"]+"' | head -1)
+for path in "/" "/mobile-grooming/" "/dog-daycare/" "/services-pricing/" "/grooming-packages/"; do
+  canonical=$(curl -sSL "$STAGING_URL$path" | grep -oE '<link rel="canonical" href="[^"]+"' | head -1)
   if [ -z "$canonical" ]; then
     fail "$path has no canonical link"
   else
@@ -147,7 +149,7 @@ done
 
 # ----- 9. Image domain check (no broken WP wp-content URLs) -----
 heading "Old WP image URLs"
-WP_REFS=$(curl -sS "$STAGING_URL/" | grep -oE 'planet-pooch\.com/wp-content/[^"]+' | head -3)
+WP_REFS=$(curl -sSL "$STAGING_URL/" | grep -oE 'planet-pooch\.com/wp-content/[^"]+' | head -3)
 if [ -n "$WP_REFS" ]; then
   fail "Homepage still references WP wp-content URLs (verify image redirects):"
   echo "$WP_REFS" | tee -a "$LOG_FILE"

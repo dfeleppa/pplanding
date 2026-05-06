@@ -30,6 +30,14 @@ const nextConfig: NextConfig = {
       { source: "/inquiry2/", destination: "/contact/", permanent: true },
       { source: "/events-page-draft/", destination: "/our-events/", permanent: true },
 
+      // ----- Old WP post with URL-encoded emoji slug (cannot be static-generated reliably) -----
+      // Preserves the URL with a 308 to the blog index. 0 GSC clicks; safe.
+      {
+        source: "/beat-the-summer-heat-keep-your-dog-safe-and-cool-%e2%98%80%ef%b8%8f%f0%9f%90%be/",
+        destination: "/blog/",
+        permanent: true,
+      },
+
       // ----- Plugin scaffolding (auth/booking/calendar) -----
       { source: "/login/", destination: "/", permanent: true },
       { source: "/register/", destination: "/", permanent: true },
