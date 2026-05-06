@@ -1447,6 +1447,227 @@ export const contentPages = {
       },
     ],
   },
+  "services-pricing": {
+    slug: "services-pricing",
+    title: "Mobile Grooming Pricing",
+    eyebrow: "Mobile Grooming",
+    hero: "Transparent pricing for every breed, coat, and size — delivered to your driveway.",
+    metaTitle: "Mobile Dog Grooming Services & Pricing | Long Island | Planet Pooch",
+    metaDescription:
+      "Mobile dog grooming pricing across Long Island — basic full grooms, long-haired baths, short-haired baths, and Plus / Premium spa upgrades.",
+    image: "/tour-space.jpg",
+    sections: [
+      {
+        type: "pricing",
+        title: "Full Groom with Haircut",
+        intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 15 lbs", "$145–$160"],
+          ["16–25 lbs", "$160–$195"],
+          ["26–40 lbs", "$195–$230"],
+          ["41–60 lbs", "$230–$265"],
+          ["61–80 lbs", "$265–$300"],
+          ["81 lbs & up", "$300+"],
+        ],
+        note:
+          "Extra charges apply for matted or impacted coats, excessive grease or dirt, special handling, and aggressive behavior.",
+      },
+      {
+        type: "pricing",
+        title: "Long-Haired Baths",
+        intro: "Golden Retriever, Husky, German Shepherd, Pomsky, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 20 lbs", "$145–$160"],
+          ["21–40 lbs", "$160–$195"],
+          ["41–60 lbs", "$195–$230"],
+          ["61–80 lbs", "$230–$265"],
+          ["81 lbs & up", "$265+"],
+        ],
+      },
+      {
+        type: "pricing",
+        title: "Short-Haired Baths",
+        intro: "Pug, Beagle, Boxer, Labrador, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 25 lbs", "$105"],
+          ["26–45 lbs", "$105–$135"],
+          ["46–65 lbs", "$135–$165"],
+          ["66–85 lbs", "$165–$195"],
+          ["86 lbs & up", "$195+"],
+        ],
+      },
+      {
+        type: "tieredPricing",
+        title: "Plus & Premium Upgrades",
+        intro: "Add a Plus or Premium upgrade to any basic groom or bath above.",
+        tiers: [
+          {
+            name: "Plus",
+            price: "+$19",
+            description: "Basic service plus 3-Step Dental and Hydrating Butter Balm.",
+            features: ["3-Step Dental treatment", "Hydrating Butter Balm"],
+          },
+          {
+            name: "Premium",
+            price: "+$29",
+            description: "Plus Package plus Cucumber Melon Facial, Aloe Vera Paw Cleanser, Premium Shampoo, and Report Card with Photo.",
+            features: [
+              "Cucumber Melon Facial",
+              "Aloe Vera Paw Cleanser",
+              "Premium Shampoo",
+              "Report Card with Photo",
+              "Outfit change bandana",
+            ],
+            featured: true,
+          },
+        ],
+      },
+      {
+        type: "callout",
+        title: "Looking for the Hamptons?",
+        body:
+          "Our Hamptons mobile grooming pricing reflects the extended service area. See Hamptons-specific pricing below.",
+        cta: { label: "Hamptons Pricing", href: "/pet-grooming-hamptons" },
+      },
+    ],
+  },
+  "dog-daycare-boarding": {
+    slug: "dog-daycare-boarding",
+    title: "Dog Daycare & Boarding",
+    eyebrow: "Daycare & Boarding",
+    hero: "Group play, enrichment, and overnight care all under one Franklin Square roof.",
+    metaTitle: "Dog Daycare & Boarding Long Island | Planet Pooch",
+    metaDescription:
+      "Doggy daycare and overnight boarding at Planet Pooch in Franklin Square, NY — supervised group play, enrichment activities, and cozy boarding suites.",
+    image: "/hero-dog.jpg",
+    sections: [
+      {
+        type: "prose",
+        paragraphs: [
+          "Regularly attending an interactive doggy daycare can benefit your dog's health and wellbeing — better social skills, healthy weight, less separation anxiety, and a confidence boost, all just from playing with friends. We strive to make daycare more than a drop-off point: our goal is to create a space where your dog feels as relaxed and at home as they do with you.",
+        ],
+      },
+      {
+        type: "list",
+        title: "Service options",
+        items: [
+          "Group Play — supervised social play with size-and-temperament-matched groups",
+          "Enrichment — one-on-one activities for dogs who don't thrive in group settings",
+          "Overnight boarding — Express, Classic, XL, and Luxury suites",
+        ],
+      },
+      {
+        type: "list",
+        title: "Operating hours",
+        items: [
+          "Morning session: 7:30am–12:30pm",
+          "Full day session: 7:30am–6:30pm",
+          "Closed period for rest: 12:30pm–1:30pm",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "New client requirements",
+        items: [
+          "Complete the New Client Enrollment Packet",
+          "Free meet-and-greet evaluation (30 minutes to a full day)",
+          "Up-to-date Rabies, Distemper (DAPP/DHPP or DA2PP), and Bordetella vaccinations",
+          "7-day waiting period after vaccination before returning to daycare",
+          "Daily report cards available for boarding guests",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Build a complete care plan",
+        body:
+          "Combine daycare, boarding, in-house grooming, and enrichment activities into one trusted relationship.",
+        cta: { label: "See pricing", href: "/daycare-pricing" },
+      },
+    ],
+  },
+  "enrichment-pricing": {
+    slug: "enrichment-pricing",
+    title: "Enrichment Play Pricing",
+    eyebrow: "Enrichment",
+    hero: "$82 per day for one-on-one enrichment programming.",
+    metaTitle: "Dog Enrichment Pricing Long Island | Planet Pooch",
+    metaDescription:
+      "Enrichment Play at Planet Pooch is $82 per day — a personalized, one-on-one program with structured activities tailored to your dog.",
+    image: "/our-resort-exterior.jpeg",
+    sections: [
+      {
+        type: "callout",
+        title: "$82 per day",
+        body:
+          "Enrichment Play is a personalized one-on-one program where dogs engage in structured activities designed around their individual needs, personality, and comfort level.",
+      },
+      {
+        type: "definitions",
+        title: "Five enrichment areas",
+        items: [
+          {
+            term: "Social",
+            definition:
+              "One-on-one staff interaction building comfort and trust at your dog's pace.",
+          },
+          {
+            term: "Cognitive",
+            definition:
+              "Puzzle toys, problem-solving games, and basic training exercises.",
+          },
+          {
+            term: "Physical",
+            definition: "Guided movement and low-impact activity matched to your dog's energy.",
+          },
+          {
+            term: "Sensory",
+            definition:
+              "Scent work, new textures, and exposure to different sights and sounds.",
+          },
+          {
+            term: "Nutritional",
+            definition:
+              "Food-based enrichment like puzzles, lick mats, and treat activities.",
+          },
+        ],
+      },
+      {
+        type: "prose",
+        paragraphs: [
+          "Sessions are customized to each dog's responses, allowing staff to adjust pace and focus based on individual engagement and comfort levels.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Want short enrichment add-ons instead?",
+        body:
+          "Treadmill, agility, scent, nutrition, and Buddy Play are also available as 20-minute $25 add-ons to any daycare or boarding day.",
+        cta: { label: "Enrichment Activities", href: "/enrichment-activities" },
+      },
+    ],
+  },
+  contactus: {
+    slug: "contactus",
+    canonicalSlug: "contact",
+    title: "Contact Us",
+    eyebrow: "Contact",
+    hero: "Reach the Planet Pooch team by phone, email, or in person.",
+    metaTitle: "Contact Planet Pooch Pet Resort",
+    metaDescription:
+      "Contact Planet Pooch Pet Resort in Franklin Square, NY. Call (516) 993-3603 or email info@planet-pooch.com to set up your dog's first visit.",
+    sections: [
+      {
+        type: "callout",
+        title: "Reach us directly",
+        body:
+          "The fastest way to set something up is by phone. We're also happy to take questions by email or in person at our Franklin Square resort.",
+        cta: { label: "Open the booking page", href: "/contact" },
+      },
+    ],
+  },
 } satisfies Record<string, ContentPage>;
 
 export type ContentPageSlug = keyof typeof contentPages;
