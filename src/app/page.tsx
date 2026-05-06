@@ -498,9 +498,6 @@ export default function HomePage() {
               <a href={SITE.social.facebook} aria-label="Facebook" className="transition hover:text-white">
                 Facebook
               </a>
-              <a href={SITE.social.tiktok} aria-label="TikTok" className="transition hover:text-white">
-                TikTok
-              </a>
               <a href={SITE.social.youtube} aria-label="YouTube" className="transition hover:text-white">
                 YouTube
               </a>

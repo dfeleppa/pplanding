@@ -28,7 +28,6 @@ export const SITE = {
   social: {
     instagram: "https://www.instagram.com/planetpoochpetservices/",
     facebook: "https://www.facebook.com/PlanetPoochPetServices/",
-    tiktok: "https://www.tiktok.com/@planetpoochmobile",
     youtube: "https://www.youtube.com/@planetpoochpetservices",
   },
   reviews: {
