@@ -378,6 +378,7 @@ const fullPosts: Record<string, BlogPost> = {
 
 const stubSlugs: ReadonlyArray<string> = [
   "why-mobile-grooming-is-good-for-your-pet",
+  "why-dog-daycare-is-a-game-changer-for-pet-parents",
   "what-is-dog-daycare-a-complete-guide-for-pet-parents-2",
   "flea-and-tick-treatment-for-dogs-why-its-crucial-for-your-pups-health",
   "how-to-manage-your-pets-coat-during-the-shedding-season",
@@ -388,7 +389,10 @@ const stubSlugs: ReadonlyArray<string> = [
   "why-dog-boarding-is-a-lifesaver-for-your-holiday-getaways",
   "memorial-day-getaway-why-boarding-your-dog-at-planet-pooch-is-the-best-choice",
   "why-being-involved-matters-to-us",
-  "beat-the-summer-heat-keep-your-dog-safe-and-cool-%e2%98%80%ef%b8%8f%f0%9f%90%be",
+  // Original WP slug `beat-the-summer-heat-...-%e2%98%80%ef%b8%8f%f0%9f%90%be`
+  // had URL-encoded emojis (☀️🐾) and 0 GSC clicks. Next.js can't reliably
+  // static-generate a route from a literal with percent-encoded bytes; this
+  // intentionally 404s. See seo/MIGRATION-NOTES.md.
   "celebrate-a-stress-free-4th-of-july-with-planet-pooch",
   "beat-the-heat-pool-parties-for-dogs-at-daycare",
   "give-your-family-and-your-pup-a-break-this-summer",
