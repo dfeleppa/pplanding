@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "../lib/site";
-import { servicePages } from "./service-page-data";
+import { mainServicePages } from "../lib/content/main-services";
 import { contentPages } from "../lib/content/pages";
+import type { ContentPage } from "../lib/content/types";
 import { prosePages } from "../lib/content/prose";
 import { towns } from "../lib/content/towns";
 import { team } from "../lib/content/team";
@@ -35,28 +36,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage
   entries.push(make("/", ROOT_PRIORITY, "weekly"));
 
-  // Core pages
-  entries.push(
-    make("/contact", SERVICE_PRIORITY, "monthly"),
-    make("/contactus", SUPPORT_PRIORITY, "yearly"),
-    make("/about-us", SUBPAGE_PRIORITY, "monthly"),
-    make("/our-team", SUBPAGE_PRIORITY, "monthly"),
-    make("/faqs", SUBPAGE_PRIORITY, "monthly"),
-    make("/were-hiring", SUPPORT_PRIORITY, "monthly"),
-    make("/partners", SUPPORT_PRIORITY, "monthly"),
-    make("/blog", SUBPAGE_PRIORITY, "weekly"),
-    make("/thank-you", ARCHIVE_PRIORITY, "yearly"),
-  );
+  // Contact
+  entries.push(make("/contact", SERVICE_PRIORITY, "monthly"));
 
-  // Service pages (top priority — these are the SEO drivers)
-  for (const slug of Object.keys(servicePages)) {
+  // Main service pages — top SEO priority
+  for (const slug of Object.keys(mainServicePages)) {
     entries.push(make(`/${slug}`, SERVICE_PRIORITY, "weekly"));
   }
 
-  // Service sub-pages (pricing, packages, day-in-the-life, etc.)
-  for (const slug of Object.keys(contentPages)) {
-    // Skip ones already in core
-    if (["about-us", "our-team", "faqs", "were-hiring", "partners", "blog", "thank-you", "contactus"].includes(slug)) continue;
+  // Standalone content pages (about cluster, Hamptons geo, blog index, etc.)
+  // Skip duplicate-canonical pages (e.g. contactus → contact) so we don't
+  // emit two entries for the same content.
+  for (const [slug, page] of Object.entries(contentPages) as Array<[string, ContentPage]>) {
+    if (page.canonicalSlug && page.canonicalSlug !== slug) continue;
     entries.push(make(`/${slug}`, SUBPAGE_PRIORITY, "monthly"));
   }
 
@@ -75,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push(make(`/${slug}`, ARCHIVE_PRIORITY, "yearly"));
   }
 
-  // Blog posts — featured posts higher priority than archive
+  // Blog posts — featured posts higher priority than archive stubs
   for (const [slug, post] of Object.entries(blogPosts)) {
     entries.push(
       make(`/${slug}`, post.hasFullContent ? SUBPAGE_PRIORITY : ARCHIVE_PRIORITY, "monthly")
