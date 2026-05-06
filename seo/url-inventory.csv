@@ -1,0 +1,198 @@
+old_url,cluster,priority,disposition,notes
+/,homepage,critical,preserve-path,Primary ranking page for "Mobile Pet Grooming Long Island"
+/about-us/,about,high,preserve-path,
+/our-team/,about,high,preserve-path,Index page for 18 team bios
+/faqs/,about,high,preserve-path,
+/were-hiring/,about,medium,preserve-path,
+/blog/,blog,high,preserve-path,Blog index
+/contactus/,contact,high,preserve-path,Contact page (separate from /contact/)
+/contact/,contact,high,preserve-path,Book Now page
+/privacy-policy/,legal,low,preserve-path,
+/terms/,legal,low,preserve-path,
+/mobile-grooming/,grooming,critical,preserve-path,Highest SEO priority cluster
+/grooming-pricing/,grooming,critical,preserve-path,
+/mobile-grooming-packages/,grooming,critical,preserve-path,
+/grooming-packages/,grooming,high,preserve-path,Possibly duplicate of mobile-grooming-packages — verify
+/services-pricing/,grooming,medium,preserve-path,
+/pet-grooming-hamptons/,grooming-geo,critical,preserve-path,Geo-targeted Hamptons landing page
+/cat-experience/,grooming,high,preserve-path,
+/our-vans/,grooming,high,preserve-path,
+/in-house-grooming/,grooming,high,preserve-path,
+/spa-services/,grooming,medium,preserve-path,
+/mobile-pet-spa-services-nassau-county-ny/,grooming-geo,high,preserve-path,
+/mobile-pet-spa-services-suffolk-county/,grooming-geo,high,preserve-path,
+/mobile-pet-spa-services-franklin-square-ny/,grooming-geo,high,preserve-path,
+/mobile-grooming-suffolk-county/,grooming-geo,high,preserve-path,
+/grooming-suffolk-county/,grooming-geo,high,preserve-path,
+/grooming-franklin-square-ny/,grooming-geo,high,preserve-path,
+/mobile-dog-grooming-glen-cove-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-massapequa-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-jericho-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-syosset-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-westbury-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-roslyn-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-port-washington-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-new-hyde-park-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-manhasset-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-locust-valley-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-great-neck-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-glen-head-ny/,grooming-geo,high,preserve-path,Town landing page
+/mobile-dog-grooming-garden-city-ny/,grooming-geo,high,preserve-path,Town landing page
+/dog-grooming-manhasset-ny/,grooming-geo,high,preserve-path,Town landing page (in-house variant)
+/dog-grooming-brookville-ny/,grooming-geo,high,preserve-path,Town landing page (in-house variant)
+/dog-grooming-roslyn-ny/,grooming-geo,high,preserve-path,Town landing page (in-house variant)
+/dog-grooming-old-westbury-ny/,grooming-geo,high,preserve-path,Town landing page (in-house variant)
+/dog-grooming-north-shore/,grooming-geo,high,preserve-path,Region landing page
+/dog-daycare/,daycare,critical,preserve-path,
+/daycare-pricing/,daycare,critical,preserve-path,
+/group-play/,daycare,high,preserve-path,
+/group-play-pricing/,daycare,high,preserve-path,
+/puppy-socialization-program/,daycare,high,preserve-path,
+/daycare-a-day-in-the-life/,daycare,high,preserve-path,
+/dog-daycare-boarding/,daycare,medium,preserve-path,
+/daycare-boarding-valley-stream-ny/,daycare-geo,high,preserve-path,Town landing page
+/dog-daycare-boarding-franklin-square-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-elmont-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-floral-park-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-garden-city-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-lynbrook-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-malvern-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-mineola-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-new-hyde-park-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-stewart-manor-ny/,daycare-geo,high,preserve-path,Town landing page
+/daycare-boarding-west-hempstead-ny/,daycare-geo,high,preserve-path,Town landing page
+/dog-boarding/,boarding,critical,preserve-path,
+/boarding-pricing/,boarding,critical,preserve-path,
+/boarding-packages/,boarding,critical,preserve-path,
+/boarding-add-ons/,boarding,high,preserve-path,
+/boarding-a-day-in-the-life/,boarding,high,preserve-path,
+/dog-training/,training,critical,preserve-path,
+/enrichment/,enrichment,high,preserve-path,
+/enrichment-activities/,enrichment,high,preserve-path,
+/enrichment-a-day-in-the-life/,enrichment,high,preserve-path,
+/what-is-enrichment/,enrichment,high,preserve-path,
+/our-events/,events,high,preserve-path,
+/events/,events,high,preserve-path,Possibly duplicate of /our-events/ — verify
+/birthday-party/,events,high,preserve-path,
+/field-trip/,events,high,preserve-path,
+/photos-with-santa/,events,high,preserve-path,
+/event/puppy-pool-party/,events-detail,medium,preserve-path,
+/event/doodle-friday/,events-detail,medium,preserve-path,
+/event/weiner-wednesday/,events-detail,medium,preserve-path,
+/event/golden-retriever-tuesday/,events-detail,medium,preserve-path,
+/event/frenchie-friday/,events-detail,medium,preserve-path,
+/event/pupsicle-party/,events-detail,medium,preserve-path,
+/event/bobbing-for-apples/,events-detail,medium,preserve-path,
+/event/howloween-costume-party/,events-detail,medium,preserve-path,
+/event/gwyns-birthday-party/,events-detail,medium,preserve-path,
+/event/gwens-birthday-party/,events-detail,medium,preserve-path,
+/event/pet-parent-enrichment-experience/,events-detail,medium,preserve-path,
+/event/field-trip-adventure-bark-in-the-park/,events-detail,medium,preserve-path,
+/event/photos-with-santa/,events-detail,medium,preserve-path,
+/event/taco-tuesday/,events-detail,medium,preserve-path,
+/event/valentines-day/,events-detail,medium,preserve-path,
+/event/st-pawtricks-day/,events-detail,medium,preserve-path,
+/event/photos-with-the-easter-bunny/,events-detail,medium,preserve-path,
+/requirements/,policies,medium,preserve-path,
+/agreement/,policies,medium,preserve-path,
+/partners/,about,medium,preserve-path,
+/stacey/,team-bio,medium,preserve-path,Individual team bio
+/kathleen/,team-bio,medium,preserve-path,Individual team bio
+/kristina/,team-bio,medium,preserve-path,Individual team bio
+/andrea/,team-bio,medium,preserve-path,Individual team bio
+/dyana/,team-bio,medium,preserve-path,Individual team bio
+/meaghan/,team-bio,medium,preserve-path,Individual team bio
+/jenn/,team-bio,medium,preserve-path,Individual team bio
+/debbie/,team-bio,medium,preserve-path,Individual team bio
+/stephanie/,team-bio,medium,preserve-path,Individual team bio
+/derek/,team-bio,medium,preserve-path,Individual team bio
+/brianna/,team-bio,medium,preserve-path,Individual team bio
+/veronica/,team-bio,medium,preserve-path,Individual team bio
+/andy/,team-bio,medium,preserve-path,Individual team bio
+/kathy/,team-bio,medium,preserve-path,Individual team bio
+/ashley/,team-bio,medium,preserve-path,Individual team bio
+/gabi/,team-bio,medium,preserve-path,Individual team bio
+/rebecca/,team-bio,medium,preserve-path,Individual team bio
+/arielle-2/,team-bio,medium,preserve-path-or-canonical,"-2 suffix suggests duplicate; check for /arielle/"
+/blog/why-mobile-grooming-is-good-for-your-pet/,blog-post,medium,preserve-path,
+/blog/how-owning-a-pet-can-reduce-stress-the-healing-power-of-pets/,blog-post,medium,preserve-path,
+/blog/why-dog-daycare-is-a-game-changer-for-pet-parents/,blog-post,medium,preserve-path,
+/blog/why-you-should-have-your-dog-socialized-and-how-not-socializing-them-can-lead-to-separation-anxiety/,blog-post,medium,preserve-path,
+/blog/the-benefits-of-socializing-dogs-and-avoiding-loneliness-at-home/,blog-post,medium,preserve-path,
+/blog/what-is-dog-daycare-a-complete-guide-for-pet-parents/,blog-post,medium,preserve-path,
+/blog/why-dog-daycare-is-beneficial-for-your-pup-during-the-winter/,blog-post,medium,preserve-path,
+/blog/why-dog-daycare-is-great-for-both-small-and-large-breeds/,blog-post,medium,preserve-path,
+/blog/pedestrian-safety-and-walking-dogs-a-guide-to-staying-safe-on-the-streets/,blog-post,medium,preserve-path,
+/blog/flea-and-tick-treatment-for-dogs-why-its-crucial-for-your-pups-health/,blog-post,medium,preserve-path,
+/blog/how-to-manage-your-pets-coat-during-the-shedding-season/,blog-post,medium,preserve-path,
+/blog/is-dog-daycare-right-for-my-pet/,blog-post,medium,preserve-path,
+/blog/why-dog-boarding-is-a-great-choice-for-pet-owners-and-their-dogs/,blog-post,medium,preserve-path,
+/blog/suns-out-tongues-out-the-happiness-of-dogs-in-the-sun/,blog-post,medium,preserve-path,
+/blog/why-pet-boarding-is-essential-when-youre-away/,blog-post,medium,preserve-path,
+/blog/why-dog-boarding-is-a-lifesaver-for-your-holiday-getaways/,blog-post,medium,preserve-path,
+/blog/memorial-day-getaway-why-boarding-your-dog-at-planet-pooch-is-the-best-choice/,blog-post,medium,preserve-path,
+/blog/why-being-involved-matters-to-us/,blog-post,medium,preserve-path,
+/blog/celebrate-a-stress-free-4th-of-july-with-planet-pooch/,blog-post,medium,preserve-path,
+/blog/beat-the-heat-pool-parties-for-dogs-at-daycare/,blog-post,medium,preserve-path,
+/blog/give-your-family-and-your-pup-a-break-this-summer/,blog-post,medium,preserve-path,
+/blog/what-sets-us-apart-a-boarding-experience-like-no-other/,blog-post,medium,preserve-path,
+/blog/why-professional-care-at-our-pet-resort-brings-you-peace-of-mind/,blog-post,medium,preserve-path,
+/blog/does-your-dog-have-separation-anxiety-heres-how-mobile-grooming-can-help/,blog-post,medium,preserve-path,
+/blog/our-new-6-week-enrichment-program/,blog-post,medium,preserve-path,
+/blog/weve-partnered-with-three-dog-bakery-for-a-special-giveaway/,blog-post,medium,preserve-path,
+/blog/give-your-dog-a-vacation-too-this-labor-day-weekend-at-planet-pooch-pet-resort/,blog-post,medium,preserve-path,
+/blog/is-your-pup-bouncing-off-the-walls-while-youre-at-work/,blog-post,medium,preserve-path,
+/blog/its-bark-to-school-season-at-planet-pooch/,blog-post,medium,preserve-path,
+/blog/why-regular-grooming-is-more-than-just-keeping-your-pet-looking-their-best/,blog-post,medium,preserve-path,
+/blog/why-enrichment-activities-matter-for-your-dog/,blog-post,medium,preserve-path,
+/blog/a-longer-happier-life-for-your-dog-starts-here/,blog-post,medium,preserve-path,
+/blog/exciting-news-our-online-pet-profile-just-got-even-easier/,blog-post,medium,preserve-path,
+/blog/training-at-our-pet-resort-fun-learning-and-bonding-for-your-pup/,blog-post,medium,preserve-path,
+/blog/the-importance-of-regular-nail-trimming-for-your-dog/,blog-post,medium,preserve-path,
+/blog/the-holidays-are-almost-here-dont-forget-to-book-your-pets-stay/,blog-post,medium,preserve-path,
+/blog/holiday-peace-of-mind-dog-daycare-boarding-mobile-grooming-this-season/,blog-post,medium,preserve-path,
+/blog/training-puppies-and-adult-dogs-why-its-important-at-every-age/,blog-post,medium,preserve-path,
+/blog/dog-daycare-in-the-snow-why-winter-days-are-perfect-for-daycare/,blog-post,medium,preserve-path,
+/blog/how-often-should-you-get-your-dog-groomed/,blog-post,medium,preserve-path,
+/blog/is-it-bad-to-shave-my-goldendoodle-what-you-need-to-know/,blog-post,medium,preserve-path,
+/blog/why-dogs-shed-more-in-spring-and-what-you-can-do-about-it/,blog-post,medium,preserve-path,
+/blog/spring-grooming-for-dogs-why-it-matters-more-than-you-think/,blog-post,medium,preserve-path,
+/blog/spring-dog-boarding-give-your-pup-a-vacation-of-their-own/,blog-post,medium,preserve-path,
+/blog/why-group-dog-training-might-be-the-best-investment-you-make-for-your-dog/,blog-post,medium,preserve-path,
+/blog/why-booking-summer-boarding-early-matters/,blog-post,medium,preserve-path,
+/blog/one-on-one-boarding-at-planet-pooch/,blog-post,medium,preserve-path,
+/blog/memorial-day-weekend-boarding/,blog-post,medium,preserve-path,
+/blog/keep-your-dog-cool-clean-comfortable-this-summer-with-mobile-grooming/,blog-post,medium,preserve-path,
+/blog/beat-the-summer-heat-keep-your-dog-safe-and-cool-%e2%98%80%ef%b8%8f%f0%9f%90%be/,blog-post,low,redirect-or-rewrite,Slug contains URL-encoded emojis — likely 0 backlinks; consider clean canonical
+/blog/make-this-long-weekend-a-holiday-for-your-pup-too/,blog-post,medium,preserve-path,
+/blog/make-this-long-weekend-a-holiday-for-your-pup-too-2/,blog-post,low,redirect-to-canonical,Duplicate of -too/ — 301 to canonical
+/blog/what-is-dog-daycare-a-complete-guide-for-pet-parents-2/,blog-post,low,redirect-to-canonical,Duplicate of canonical — 301
+/category/uncategorized/,taxonomy,low,preserve-or-noindex,Default WP category
+/author/bc/,taxonomy,low,preserve-or-noindex,Default WP author archive
+/spa-services-2/,duplicate,low,redirect-to-canonical,301 to /spa-services/
+/boarding-pricing2/,duplicate,low,redirect-to-canonical,301 to /boarding-pricing/
+/mobile-grooming-pricing-new/,duplicate,low,redirect-to-canonical,301 to /grooming-pricing/ or /mobile-grooming-packages/
+/inquiry2/,junk,low,drop-or-410,Form scratchpad
+/test/,junk,low,drop-or-410,Test page
+/events-page-draft/,junk,low,drop-or-410,Draft never published
+/thank-you/,utility,low,preserve-path,Form thank-you page
+/performers/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/venues/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/booking/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/booking-details/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/event-types/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/event-organizers/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/event-directory/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/all-events/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/submit-event/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/ticket-receipt/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/ticket-details/,events-plugin,low,review,MetForm/event plugin scaffolding — likely unused
+/login/,plugin,low,review,WP/plugin login — likely not needed in static rebuild
+/register/,plugin,low,review,WP/plugin registration — likely not needed
+/user-profile/,plugin,low,review,WP/plugin profile — likely not needed
+/my-calendar/,plugin,low,review,Calendar plugin — likely not needed
+/event/,plugin,low,review,Events archive root
+/event/7135/,plugin,low,review,Numeric event ID — likely orphaned
+/metform-form/training-form/,plugin,low,drop-or-410,MetForm internal form route
+/metform-form/inquiry-form/,plugin,low,drop-or-410,MetForm internal form route
+/metform-form/job-application/,plugin,low,drop-or-410,MetForm internal form route
