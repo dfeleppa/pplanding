@@ -257,31 +257,33 @@ export default function HomePage() {
               className="h-auto w-full object-cover"
             />
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
-                Facility Tour
-              </p>
-              <h3 className="mt-4 text-3xl leading-tight text-[var(--pp-ink)] sm:text-4xl">
-                Take a closer look before you visit.
-              </h3>
-              <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-                Watch the tour to get a feel for the resort layout, care spaces, and the environment
-                your dog will experience with us.
-              </p>
-            </div>
+      <section id="facility-tour" className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-18">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">
+              Facility Tour
+            </p>
+            <h2 className="mt-4 text-4xl leading-tight sm:text-[3.4rem]">
+              Take a closer look before you visit.
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/78">
+              Watch the tour to get a feel for the resort layout, care spaces, and the environment
+              your dog will experience with us.
+            </p>
+          </div>
 
-            <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] shadow-[0_24px_70px_rgba(50,73,83,0.12)]">
-              <iframe
-                className="aspect-video w-full"
-                src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
-                title="Planet Pooch Facility Tour"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+          <div className="mx-auto mt-12 max-w-5xl overflow-hidden border border-white/15 bg-[var(--pp-night)] shadow-[0_24px_70px_rgba(20,30,36,0.32)]">
+            <iframe
+              className="aspect-video w-full"
+              src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
+              title="Planet Pooch Facility Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
