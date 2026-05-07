@@ -12,6 +12,7 @@ export type ContentSection =
     }
   | {
       type: "pricing";
+      id?: string;
       title?: string;
       eyebrow?: string;
       intro?: string;
@@ -66,10 +67,29 @@ export type ContentSection =
     }
   | {
       type: "callout";
+      id?: string;
       title: string;
       eyebrow?: string;
       body: string;
       cta?: { label: string; href: string };
+    }
+  | {
+      type: "iconBullets";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      icon: string;
+      items: string[];
+    }
+  | {
+      type: "featureGrid";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      items: Array<{ icon: string; title: string; description: string }>;
+      ctas?: Array<{ label: string; href: string }>;
     };
 
 export type ContentPage = {
