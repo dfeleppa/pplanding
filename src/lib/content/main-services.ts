@@ -175,16 +175,16 @@ export const mainServicePages = {
             time: "Step 1",
             label: "Free temperament evaluation",
             body:
-              "We start with a complimentary 1–2 hour evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
+              "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
           },
         ],
       },
       {
         type: "definitions",
         eyebrow: "Step 2 — Care begins",
-        title: "One path or the other — based on the evaluation",
+        title: "Group Play or Enrichment",
         intro:
-          "Your dog joins ONE of these styles, never both. We recommend the path that fits them best based on what we observed during the evaluation.",
+          "Based on our evaluation your dog will either be eligible to join Group Play or will have the option to do Enrichment Play.",
         items: [
           {
             term: "Group Play (if your dog thrives socially)",
