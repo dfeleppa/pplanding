@@ -111,29 +111,34 @@ export const contentPages = {
           "Prices are based on pets groomed on a regular basis. Extra charges may apply for matted or impacted coats, special handling, or aggressive behavior.",
       },
       {
-        type: "pricing",
-        title: "Long-Haired Baths",
-        intro: "Golden Retriever, Husky, German Shepherd, Pomsky, and similar breeds.",
-        columns: ["Weight", "Price"],
-        rows: [
-          ["Up to 20 lbs", "$150–$165"],
-          ["21–40 lbs", "$165–$200"],
-          ["41–60 lbs", "$200–$235"],
-          ["61–80 lbs", "$235–$270"],
-          ["81 lbs & up", "$270 & up"],
-        ],
-      },
-      {
-        type: "pricing",
-        title: "Short-Haired Baths",
-        intro: "Pug, Beagle, Boxer, Labrador, and similar breeds.",
-        columns: ["Weight", "Price"],
-        rows: [
-          ["Up to 25 lbs", "$110"],
-          ["26–45 lbs", "$110–$140"],
-          ["46–65 lbs", "$140–$170"],
-          ["66–85 lbs", "$170–$200"],
-          ["86 lbs & up", "$200 & up"],
+        type: "pricingPair",
+        eyebrow: "Bath pricing",
+        title: "Bath Services",
+        tables: [
+          {
+            title: "Long-Haired Baths",
+            intro: "Golden Retriever, Husky, German Shepherd, Pomsky, and similar breeds.",
+            columns: ["Weight", "Price"],
+            rows: [
+              ["Up to 20 lbs", "$150–$165"],
+              ["21–40 lbs", "$165–$200"],
+              ["41–60 lbs", "$200–$235"],
+              ["61–80 lbs", "$235–$270"],
+              ["81 lbs & up", "$270 & up"],
+            ],
+          },
+          {
+            title: "Short-Haired Baths",
+            intro: "Pug, Beagle, Boxer, Labrador, and similar breeds.",
+            columns: ["Weight", "Price"],
+            rows: [
+              ["Up to 25 lbs", "$110"],
+              ["26–45 lbs", "$110–$140"],
+              ["46–65 lbs", "$140–$170"],
+              ["66–85 lbs", "$170–$200"],
+              ["86 lbs & up", "$200 & up"],
+            ],
+          },
         ],
       },
       {

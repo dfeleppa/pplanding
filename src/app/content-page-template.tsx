@@ -132,6 +132,51 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         </section>
       );
 
+    case "pricingPair":
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="grid gap-8 lg:grid-cols-2">
+              {section.tables.map((table) => (
+                <div key={table.title}>
+                  <h3 className="mb-2 text-xl leading-tight text-[var(--pp-ink)]">{table.title}</h3>
+                  {table.intro ? (
+                    <p className="mb-4 text-sm text-[rgba(47,42,39,0.72)]">{table.intro}</p>
+                  ) : null}
+                  <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
+                          {table.columns.map((col) => (
+                            <th key={col} className="px-5 py-3 text-left">{col}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {table.rows.map((row, i) => (
+                          <tr
+                            key={row.join("|")}
+                            className={`${i % 2 === 0 ? "bg-white/30" : "bg-[var(--pp-cream)]"} text-[rgba(47,42,39,0.82)]`}
+                          >
+                            {row.map((cell, j) => (
+                              <td key={j} className="px-5 py-4 leading-7">{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  {table.note ? (
+                    <p className="mt-4 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">{table.note}</p>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
     case "tieredPricing":
       return (
         <section className={`${tone} ${sectionPadding}`}>

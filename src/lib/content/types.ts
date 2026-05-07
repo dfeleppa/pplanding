@@ -21,6 +21,20 @@ export type ContentSection =
       note?: string;
     }
   | {
+      type: "pricingPair";
+      id?: string;
+      eyebrow?: string;
+      title?: string;
+      intro?: string;
+      tables: Array<{
+        title: string;
+        intro?: string;
+        columns: string[];
+        rows: Array<string[]>;
+        note?: string;
+      }>;
+    }
+  | {
       type: "tieredPricing";
       title?: string;
       eyebrow?: string;
