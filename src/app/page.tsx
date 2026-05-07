@@ -131,12 +131,12 @@ export default function HomePage() {
         />
         {/* Subtle even darkening so the image still reads while text remains legible on either side. */}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 
           <div
             id="top"
-            className="flex flex-1 items-center py-16 lg:py-20"
+            className="py-12 lg:py-16"
           >
             <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
@@ -176,7 +176,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-auto border-t border-white/15 py-6">
+          <div className="mt-4 border-t border-white/15 pt-6 pb-20 lg:pb-24">
             <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
               <span className="flex items-center gap-3">
                 <span aria-hidden className="h-px w-8 bg-white/40" />
