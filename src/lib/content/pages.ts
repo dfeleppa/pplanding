@@ -96,7 +96,7 @@ export const contentPages = {
       {
         type: "pricing",
         eyebrow: "Pricing",
-        title: "Groom Pricing",
+        title: "Full Groom Pricing",
         intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
         columns: ["Weight", "Price"],
         rows: [
@@ -153,7 +153,7 @@ export const contentPages = {
         tiers: [
           {
             name: "Basic",
-            price: "Included",
+            price: "Full Groom",
             features: [
               "Nail cut and grind",
               "Ears cleaned (and plucked upon request)",
@@ -181,7 +181,7 @@ export const contentPages = {
           {
             name: "Plus",
             price: "+$19",
-            description: "Everything in our Basic Package, plus:",
+            description: "Everything included with our Full Groom, plus:",
             features: ["3-Step Dental treatment", "Hydrating Butter Balm"],
           },
         ],
