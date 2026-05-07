@@ -61,6 +61,78 @@ a {
   transform-origin: left;
 }
 
+.pp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--pp-mint);
+  color: var(--pp-night);
+  border: 1px solid var(--pp-mint);
+  transition: background 220ms ease, border-color 220ms ease;
+}
+.pp-cta:hover {
+  background: var(--pp-mint-deep);
+  border-color: var(--pp-mint-deep);
+}
+
+.pp-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 220ms ease, border-color 220ms ease;
+}
+.pp-cta-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.pp-cta-arrow {
+  position: relative;
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  transition: width 260ms ease;
+}
+.pp-cta-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+.pp-cta:hover .pp-cta-arrow {
+  width: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-cta,
+  .pp-cta-ghost,
+  .pp-cta-arrow {
+    transition: none;
+  }
+  .pp-cta:hover .pp-cta-arrow {
+    width: 14px;
+  }
+}
+
 /* All headings use the display serif (Cormorant Garamond) so section
    headers throughout the site match the hero H1 treatment. */
 h1,
