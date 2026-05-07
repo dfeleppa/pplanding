@@ -21,6 +21,10 @@ export const mainServicePages = {
     metaDescription:
       "Mobile dog and cat grooming across Long Island and the Hamptons — full grooms, baths, Plus and Premium spa upgrades, and in-house grooming for daycare and boarding clients.",
     image: "/hero-dog.jpg",
+    heroCtas: {
+      primary: { label: "Book Now", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
     sections: [
       {
         type: "prose",
@@ -245,6 +249,10 @@ export const mainServicePages = {
     metaDescription:
       "Interactive dog daycare in Franklin Square, NY. Group play, one-on-one enrichment, puppy socialization, and day-pack pricing for Long Island families.",
     image: "/hero-dog.jpg",
+    heroCtas: {
+      primary: { label: "Get Started", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
     sections: [
       {
         type: "prose",
@@ -430,6 +438,10 @@ export const mainServicePages = {
     metaDescription:
       "Overnight dog boarding at our Franklin Square pet resort. Express, Classic, XL, and Luxury suites with Group Play or 1-on-1 care, plus enrichment activities, snacks, and bedding add-ons.",
     image: "/testimonial-dog.jpg",
+    heroCtas: {
+      primary: { label: "Book Now", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
     sections: [
       {
         type: "prose",
@@ -583,6 +595,10 @@ export const mainServicePages = {
     metaDescription:
       "Compassionate, results-driven dog training with our AKC Evaluator Trainer. Private sessions, 6-week programs, and free consultations for dogs of every age.",
     image: "/tour-space.jpg",
+    heroCtas: {
+      primary: { label: "Book Consultation", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
     sections: [
       {
         type: "prose",
@@ -666,6 +682,10 @@ export const mainServicePages = {
     metaDescription:
       "One-on-one enrichment activities and signature events at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, birthday parties, field trips, and Photos with Santa.",
     image: "/our-resort-exterior.jpeg",
+    heroCtas: {
+      primary: { label: "Get Started", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
     sections: [
       {
         type: "prose",
