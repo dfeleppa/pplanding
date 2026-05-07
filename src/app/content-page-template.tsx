@@ -372,7 +372,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     <Tag
                       key={cta.href}
                       href={cta.href}
-                      className="inline-flex items-center gap-2 border border-[var(--pp-main)]/30 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main)] transition hover:bg-[var(--pp-main)]/8"
+                      className="inline-flex items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
                     >
                       {cta.label}
                       <ArrowRight className="h-4 w-4" />
