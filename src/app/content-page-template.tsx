@@ -392,7 +392,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               {section.items.map((item) => (
                 <div
                   key={item.term}
-                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                  className="flex flex-col border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
                 >
                   <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
                     {item.term}
@@ -400,6 +400,15 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   <dd className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.82)]">
                     {item.definition}
                   </dd>
+                  {item.cta ? (
+                    <Link
+                      href={item.cta.href}
+                      className="mt-5 inline-flex w-fit items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                    >
+                      {item.cta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ) : null}
                 </div>
               ))}
             </dl>
@@ -412,11 +421,11 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <ol className={`grid gap-5 ${section.items.length > 1 ? "lg:grid-cols-2" : "max-w-3xl"}`}>
+            <ol className={`grid gap-5 ${section.items.length > 1 ? "lg:grid-cols-2" : ""}`}>
               {section.items.map((item) => (
                 <li
                   key={`${item.time}-${item.label}`}
-                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                  className="flex flex-col border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
                 >
                   <div className="flex items-baseline gap-3">
                     <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
@@ -425,6 +434,15 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   </div>
                   <p className="mt-3 text-xl font-semibold text-[var(--pp-ink)]">{item.label}</p>
                   <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.body}</p>
+                  {item.cta ? (
+                    <Link
+                      href={item.cta.href}
+                      className="mt-5 inline-flex w-fit items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                    >
+                      {item.cta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ) : null}
                 </li>
               ))}
             </ol>
@@ -475,12 +493,21 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       );
     }
 
-    case "featureGrid":
+    case "featureGrid": {
+      const itemCount = section.items.length;
+      const featureCols =
+        itemCount >= 4
+          ? "sm:grid-cols-2 lg:grid-cols-4"
+          : itemCount === 3
+            ? "sm:grid-cols-2 lg:grid-cols-3"
+            : itemCount === 2
+              ? "sm:grid-cols-2"
+              : "";
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className={`grid gap-8 ${featureCols}`}>
               {section.items.map((item) => {
                 const Icon = iconMap[item.icon];
                 return (
@@ -494,6 +521,15 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     <p className="mx-auto mt-2 max-w-[14rem] text-sm leading-7 text-[rgba(47,42,39,0.78)]">
                       {item.description}
                     </p>
+                    {item.cta ? (
+                      <Link
+                        href={item.cta.href}
+                        className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/85 hover:text-[var(--pp-main)]"
+                      >
+                        {item.cta.label}
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    ) : null}
                   </article>
                 );
               })}
@@ -519,6 +555,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           </div>
         </section>
       );
+    }
 
     case "callout":
       return (

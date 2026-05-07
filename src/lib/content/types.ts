@@ -81,14 +81,23 @@ export type ContentSection =
       title?: string;
       eyebrow?: string;
       intro?: string;
-      items: Array<{ term: string; definition: string }>;
+      items: Array<{
+        term: string;
+        definition: string;
+        cta?: { label: string; href: string };
+      }>;
     }
   | {
       type: "timeline";
       title?: string;
       eyebrow?: string;
       intro?: string;
-      items: Array<{ time: string; label: string; body: string }>;
+      items: Array<{
+        time: string;
+        label: string;
+        body: string;
+        cta?: { label: string; href: string };
+      }>;
     }
   | {
       type: "faq";
@@ -120,7 +129,12 @@ export type ContentSection =
       title?: string;
       eyebrow?: string;
       intro?: string;
-      items: Array<{ icon: string; title: string; description: string }>;
+      items: Array<{
+        icon: string;
+        title: string;
+        description: string;
+        cta?: { label: string; href: string };
+      }>;
       ctas?: Array<{ label: string; href: string }>;
     };
 
