@@ -163,6 +163,7 @@ export const mainServicePages = {
             title: "Enrichment Services",
             description:
               "Treadmill, scent work, agility, and nutrition puzzles for dogs who thrive on one-on-one mental stimulation.",
+            cta: { label: "Learn more", href: "/enrichment/" },
           },
         ],
       },
@@ -176,6 +177,7 @@ export const mainServicePages = {
             label: "Free temperament evaluation",
             body:
               "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
+            cta: { label: "Book your free evaluation", href: "/contact/" },
           },
         ],
       },
@@ -195,6 +197,7 @@ export const mainServicePages = {
             term: "Enrichment Play (if your dog prefers quieter time)",
             definition:
               "One-on-one activities for dogs who don't thrive in group settings. Sensory play, gentle problem-solving, scent work, and treadmill or agility activities tailored to your dog.",
+            cta: { label: "Learn more about Enrichment", href: "/enrichment/" },
           },
         ],
       },
