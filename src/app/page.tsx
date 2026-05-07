@@ -348,42 +348,46 @@ export default function HomePage() {
         id="gallery"
         className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
-              Visit Us
-            </p>
-            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-              Come see the Planet Pooch difference.
-            </h2>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              Learn about our calm spaces, polished care, and welcoming routines in person.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-              >
-                Book Now
-              </Link>
-              <a
-                href={SITE.phone.href}
-                className="inline-flex items-center justify-center border border-[rgba(50,73,83,0.22)] bg-white/55 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/75"
-              >
-                Call {SITE.phone.display}
-              </a>
-            </div>
-          </div>
+        <div className="mx-auto max-w-7xl">
+          <div className="bg-[var(--pp-mint)] p-8 shadow-[0_24px_70px_rgba(50,73,83,0.1)] sm:p-10 lg:p-14">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]/85">
+                  Visit Us
+                </p>
+                <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+                  Come see the Planet Pooch difference.
+                </h2>
+                <p className="mt-5 text-base leading-8 text-[var(--pp-ink)]/82">
+                  Learn about our calm spaces, polished care, and welcoming routines in person.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center bg-[var(--pp-night)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[var(--pp-main-deep)]"
+                  >
+                    Book Now
+                  </Link>
+                  <a
+                    href={SITE.phone.href}
+                    className="inline-flex items-center justify-center border border-[var(--pp-night)]/25 bg-transparent px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-night)]/8"
+                  >
+                    Call {SITE.phone.display}
+                  </a>
+                </div>
+              </div>
 
-          <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
-            <iframe
-              className="aspect-video w-full"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(`${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`)}&output=embed`}
-              title={`${SITE.legalName} location on Google Maps`}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+              <div className="overflow-hidden border border-[var(--pp-night)]/15 bg-white/40">
+                <iframe
+                  className="aspect-video w-full"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`)}&output=embed`}
+                  title={`${SITE.legalName} location on Google Maps`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
