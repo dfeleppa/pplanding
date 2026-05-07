@@ -79,6 +79,103 @@ export const contentPages = {
     ],
   },
 
+  "cat-experience": {
+    slug: "cat-experience",
+    title: "The Planet Pooch Cat Experience",
+    eyebrow: "Cat Grooming",
+    hero: "Specialty 2-on-1 cat grooming brought to your door.",
+    metaTitle: "Cat Grooming Long Island | Planet Pooch",
+    metaDescription:
+      "Mobile cat grooming across Long Island — baths, full grooms, Furminator de-shed, dental care, and Soft Claws application. Two groomers work together for a calm, safe session.",
+    image: "/hero-dog.jpg",
+    heroCtas: {
+      primary: { label: "Book Now", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
+    sections: [
+      {
+        type: "prose",
+        eyebrow: "How it works",
+        title: "Two groomers. One calm session.",
+        paragraphs: [
+          "Cat grooming can be tricky — that's why Planet Pooch sends two cat grooming professionals to work 2-on-1 with your cat. Services are limited to 1–2 days a month, and our grooming unit is set up specifically for cat grooming that day.",
+          "Call today for more information and to make your appointment.",
+        ],
+      },
+      {
+        type: "pricingPair",
+        eyebrow: "Pricing",
+        title: "Bath Services",
+        tables: [
+          {
+            title: "Short-Haired Cat Bath",
+            intro: "Includes nails trimmed, ears cleaned, shampoo, fluff dry, and brushing.",
+            columns: ["Service", "Price"],
+            rows: [["Short-Haired Cat Bath", "$225"]],
+          },
+          {
+            title: "Long-Haired Cat Bath",
+            intro: "Includes nails trimmed, ears cleaned, shampoo, fluff dry, sanitary and pad trim, and brushing.",
+            columns: ["Service", "Price"],
+            rows: [["Long-Haired Cat Bath", "$250"]],
+          },
+        ],
+      },
+      {
+        type: "pricingPair",
+        title: "Full Groom with Haircut",
+        tables: [
+          {
+            title: "Short-Haired Cat Groom",
+            intro: "Includes complete bath service.",
+            columns: ["Service", "Price"],
+            rows: [["Short-Haired Cat Groom w/ Haircut", "$250"]],
+          },
+          {
+            title: "Long-Haired Cat Groom",
+            intro: "Includes complete bath service.",
+            columns: ["Service", "Price"],
+            rows: [["Long-Haired Cat Groom w/ Haircut", "$275"]],
+          },
+        ],
+      },
+      {
+        type: "pricing",
+        eyebrow: "Add-ons",
+        title: "Specialty Services",
+        columns: ["Service", "Price"],
+        rows: [
+          ["Furminator De-shed Treatment", "$50"],
+          ["Dental Care", "$50"],
+          ["Soft Claws Application", "$50"],
+        ],
+        note:
+          "Additional fees may apply for matted fur, aggressive cats, or fleas/ticks. Most of these fees can be prevented with a regular grooming schedule and flea/tick prevention.",
+      },
+      {
+        type: "iconBullets",
+        eyebrow: "Benefits",
+        title: "Why cat grooming?",
+        icon: "PawPrint",
+        items: [
+          "Reduces loose fur, decreasing hairballs",
+          "Helps prevent matting in long-haired breeds",
+          "Replenishes skin and coat",
+          "Nail trimming to avoid nails growing into pads",
+          "Clean ears to help avoid infections",
+          "Cats with medical issues may need grooming help",
+          "Our groomers have the skills to wash your cat safely",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Ready to book your cat's appointment?",
+        body: "Call us today to schedule your cat's grooming session. Services are limited to 1–2 days a month.",
+        cta: { label: "Book Now", href: "/contact" },
+      },
+    ],
+  },
+
   "nassau-pricing": {
     slug: "nassau-pricing",
     title: "Nassau County Grooming Pricing",
