@@ -437,7 +437,7 @@ export default function HomePage() {
                   </Link>
                   <a
                     href={SITE.phone.href}
-                    className="inline-flex items-center justify-center border border-[var(--pp-night)]/25 bg-transparent px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-night)]/8"
+                    className="inline-flex items-center justify-center bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/85"
                   >
                     Call {SITE.phone.display}
                   </a>
