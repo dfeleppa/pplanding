@@ -96,7 +96,7 @@ export const contentPages = {
       {
         type: "pricing",
         eyebrow: "Pricing",
-        title: "Full Groom with Haircut",
+        title: "Groom Pricing",
         intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
         columns: ["Weight", "Price"],
         rows: [
@@ -109,6 +109,7 @@ export const contentPages = {
         ],
         note:
           "Prices are based on pets groomed on a regular basis. Extra charges may apply for matted or impacted coats, special handling, or aggressive behavior.",
+        cta: { label: "Check Out Our Add-on Packages", href: "#spa-upgrades" },
       },
       {
         type: "pricingPair",
@@ -140,9 +141,11 @@ export const contentPages = {
             ],
           },
         ],
+        cta: { label: "Check Out Our Add-on Packages", href: "#spa-upgrades" },
       },
       {
         type: "tieredPricing",
+        id: "spa-upgrades",
         eyebrow: "Spa upgrades",
         title: "Plus & Premium Packages",
         intro:

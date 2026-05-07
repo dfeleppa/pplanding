@@ -2,7 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight, Bath, Brush, Check, Droplets, Ear, Footprints,
+  ArrowRight, Bath, Brush, Check, ChevronDown, Droplets, Ear, Footprints,
   Home, Mail, MapPin, PawPrint, Phone, Ribbon, Scissors, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
@@ -128,6 +128,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 {section.note}
               </p>
             ) : null}
+            {section.cta ? (
+              <div className="mt-8 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
           </div>
         </section>
       );
@@ -173,13 +184,24 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 </div>
               ))}
             </div>
+            {section.cta ? (
+              <div className="mt-8 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
           </div>
         </section>
       );
 
     case "tieredPricing":
       return (
-        <section className={`${tone} ${sectionPadding}`}>
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
