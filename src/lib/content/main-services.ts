@@ -64,14 +64,14 @@ export const mainServicePages = {
         eyebrow: "Our vans",
         title: "Built for hygiene, climate, and safety.",
         intro:
-          "We partner with Wag N Tails and Hanvey Engineering to outfit our grooming vehicles. Self-contained — no hookups required.",
+          "We partner with Wag N Tails and Hanvey Engineering to outfit our grooming vehicles.",
+        image: "/our-van.jpg",
+        imageAlt: "Planet Pooch mobile grooming van",
         items: [
           "Cleaned between every appointment",
-          "Built-in equipment — you don't need to provide anything",
+          "Built-in equipment, fresh water, and power — you don't need to provide anything.",
           "Built-in restraints and harnesses keep pets secure",
-          "20,000 BTU LP furnace with thermostat for winter",
-          "15,000 BTU low-profile roof-mounted air conditioner for summer",
-          "Fully equipped with fresh water and electricity",
+          "Climate Controlled so your pet is completely comfortable on summer and winter",
         ],
       },
       {
