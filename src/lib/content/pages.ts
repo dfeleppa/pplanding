@@ -103,48 +103,15 @@ export const contentPages = {
         ],
       },
       {
-        type: "pricingPair",
-        eyebrow: "Pricing",
-        title: "Bath Services",
-        tables: [
-          {
-            title: "Short-Haired Cat Bath",
-            intro: "Includes nails trimmed, ears cleaned, shampoo, fluff dry, and brushing.",
-            columns: ["Service", "Price"],
-            rows: [["Short-Haired Cat Bath", "$225"]],
-          },
-          {
-            title: "Long-Haired Cat Bath",
-            intro: "Includes nails trimmed, ears cleaned, shampoo, fluff dry, sanitary and pad trim, and brushing.",
-            columns: ["Service", "Price"],
-            rows: [["Long-Haired Cat Bath", "$250"]],
-          },
-        ],
-      },
-      {
-        type: "pricingPair",
-        title: "Full Groom with Haircut",
-        tables: [
-          {
-            title: "Short-Haired Cat Groom",
-            intro: "Includes complete bath service.",
-            columns: ["Service", "Price"],
-            rows: [["Short-Haired Cat Groom w/ Haircut", "$250"]],
-          },
-          {
-            title: "Long-Haired Cat Groom",
-            intro: "Includes complete bath service.",
-            columns: ["Service", "Price"],
-            rows: [["Long-Haired Cat Groom w/ Haircut", "$275"]],
-          },
-        ],
-      },
-      {
         type: "pricing",
-        eyebrow: "Add-ons",
-        title: "Specialty Services",
+        eyebrow: "Pricing",
+        title: "Cat Grooming Services",
         columns: ["Service", "Price"],
         rows: [
+          ["Short-Haired Cat Bath", "$225"],
+          ["Long-Haired Cat Bath", "$250"],
+          ["Short-Haired Cat Groom w/ Haircut", "$250"],
+          ["Long-Haired Cat Groom w/ Haircut", "$275"],
           ["Furminator De-shed Treatment", "$50"],
           ["Dental Care", "$50"],
           ["Soft Claws Application", "$50"],
