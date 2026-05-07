@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Home } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { team, type TeamMember } from "../../lib/content/team";
 import { SiteHeader } from "../site-header";
+import { SiteFooter } from "../site-footer";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -126,18 +126,7 @@ export default function OurTeamPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <p className="text-sm uppercase tracking-[0.16em] text-white/72">Planet Pooch Pet Resort</p>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 border border-white/30 bg-transparent px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white/85 transition hover:bg-white/8"
-          >
-            <Home className="h-4 w-4" />
-            Back Home
-          </Link>
-        </div>
-      </section>
+      <SiteFooter />
     </main>
   );
 }

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Home, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { ADDRESS_LINES, SITE } from "../../lib/site";
 import { SiteHeader } from "../site-header";
+import { SiteFooter } from "../site-footer";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -104,23 +104,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--pp-night)] px-5 py-14 text-white sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
-              Prefer to browse first?
-            </p>
-            <h2 className="mt-3 text-4xl leading-tight">Explore our services.</h2>
-          </div>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 border border-white/30 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/8"
-          >
-            <Home className="h-4 w-4" />
-            Back Home
-          </Link>
-        </div>
-      </section>
+      <SiteFooter />
     </main>
   );
 }

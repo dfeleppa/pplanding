@@ -1,9 +1,9 @@
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Home, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 import type { TownPage } from "../lib/content/towns";
-import { ADDRESS_LINES, SITE } from "../lib/site";
+import { SITE } from "../lib/site";
 import {
   breadcrumbSchema,
   jsonLdAttrs,
@@ -11,6 +11,7 @@ import {
   serviceSchema,
 } from "../lib/schema";
 import { SiteHeader } from "./site-header";
+import { SiteFooter } from "./site-footer";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -302,49 +303,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
         </div>
       </section>
 
-      <section className="bg-[var(--pp-night)] px-5 py-14 text-white sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
-              Ready when you are
-            </p>
-            <h2 className="mt-3 text-3xl leading-tight">Book {copy.primary.toLowerCase()} in {page.town}.</h2>
-            <div className="mt-6 grid gap-3 text-sm text-white/82 sm:grid-cols-3">
-              <a href={SITE.phone.href} className="flex items-start gap-3 transition hover:text-white">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>{SITE.phone.display}</span>
-              </a>
-              <a href={`mailto:${SITE.email}`} className="flex items-start gap-3 transition hover:text-white">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>{SITE.email}</span>
-              </a>
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>
-                  {ADDRESS_LINES[0]}
-                  <br />
-                  {ADDRESS_LINES[1]}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-            >
-              Book Now
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 border border-white/30 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-white/85 transition hover:bg-white/8"
-            >
-              <Home className="h-4 w-4" />
-              Back Home
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SiteFooter />
 
       <script {...jsonLdAttrs(service)} />
       <script {...jsonLdAttrs(crumbs)} />
