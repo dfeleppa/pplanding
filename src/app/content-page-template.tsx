@@ -687,7 +687,15 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
       </section>
 
       {page.sections.map((section, i) => (
-        <div key={`${section.type}-${i}`} {...(i === 0 ? { id: "overview" } : {})}>
+        <div
+          key={`${section.type}-${i}`}
+          className={
+            i === 0
+              ? "relative -mt-12 overflow-hidden rounded-t-[3rem] bg-[var(--pp-cream)] lg:-mt-14 lg:rounded-t-[4rem]"
+              : undefined
+          }
+          {...(i === 0 ? { id: "overview" } : {})}
+        >
           <SectionRenderer section={section} index={i} />
         </div>
       ))}
