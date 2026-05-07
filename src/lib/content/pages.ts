@@ -103,6 +103,21 @@ export const contentPages = {
         ],
       },
       {
+        type: "iconBullets",
+        eyebrow: "Benefits",
+        title: "Why cat grooming?",
+        icon: "PawPrint",
+        items: [
+          "Reduces loose fur, decreasing hairballs",
+          "Helps prevent matting in long-haired breeds",
+          "Replenishes skin and coat",
+          "Nail trimming to avoid nails growing into pads",
+          "Clean ears to help avoid infections",
+          "Cats with medical issues may need grooming help",
+          "Our groomers have the skills to wash your cat safely",
+        ],
+      },
+      {
         type: "pricing",
         eyebrow: "Pricing",
         title: "Cat Grooming Services",
@@ -118,21 +133,6 @@ export const contentPages = {
         ],
         note:
           "Additional fees may apply for matted fur, aggressive cats, or fleas/ticks. Most of these fees can be prevented with a regular grooming schedule and flea/tick prevention.",
-      },
-      {
-        type: "iconBullets",
-        eyebrow: "Benefits",
-        title: "Why cat grooming?",
-        icon: "PawPrint",
-        items: [
-          "Reduces loose fur, decreasing hairballs",
-          "Helps prevent matting in long-haired breeds",
-          "Replenishes skin and coat",
-          "Nail trimming to avoid nails growing into pads",
-          "Clean ears to help avoid infections",
-          "Cats with medical issues may need grooming help",
-          "Our groomers have the skills to wash your cat safely",
-        ],
       },
       {
         type: "callout",
