@@ -140,19 +140,11 @@ export const mainServicePages = {
     },
     sections: [
       {
-        type: "prose",
+        type: "featureGrid",
         eyebrow: "Why daycare?",
         title: "More than a drop-off point.",
-        width: "wide",
-        paragraphs: [
-          "Regularly attending an interactive doggy daycare can benefit your dog's health and wellbeing — better social skills, healthy weight, less separation anxiety, and a confidence boost, all just from playing with friends.",
-          "We strive to make daycare more than a drop-off point: our goal is to create a space where your dog feels as relaxed and at home as they do with you.",
-        ],
-      },
-      {
-        type: "featureGrid",
-        eyebrow: "What makes us different",
-        title: "Built around how your dog actually plays.",
+        intro:
+          "Regularly attending an interactive doggy daycare can benefit your dog's health and wellbeing — better social skills, healthy weight, less separation anxiety, and a confidence boost, all just from playing with friends. Our goal is to create a space where your dog feels as relaxed and at home as they do with you.",
         items: [
           {
             icon: "Trees",
@@ -175,22 +167,6 @@ export const mainServicePages = {
         ],
       },
       {
-        type: "definitions",
-        title: "Two daycare styles",
-        items: [
-          {
-            term: "Group Play",
-            definition:
-              "Supervised social play with size-and-temperament-matched groups. Separate play areas organized by dog size, with adjustments based on individual play style and energy level.",
-          },
-          {
-            term: "Enrichment Play",
-            definition:
-              "One-on-one activities for dogs who don't thrive in group settings. Sensory play, gentle problem-solving, scent work, and treadmill or agility activities tailored to your dog.",
-          },
-        ],
-      },
-      {
         type: "timeline",
         eyebrow: "How It Works",
         title: "From first visit to regular client",
@@ -199,19 +175,26 @@ export const mainServicePages = {
             time: "Step 1",
             label: "Free temperament evaluation",
             body:
-              "We start with a complimentary 1–2 hour evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space.",
+              "We start with a complimentary 1–2 hour evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
+          },
+        ],
+      },
+      {
+        type: "definitions",
+        eyebrow: "Step 2 — Care begins",
+        title: "One path or the other — based on the evaluation",
+        intro:
+          "Your dog joins ONE of these styles, never both. We recommend the path that fits them best based on what we observed during the evaluation.",
+        items: [
+          {
+            term: "Group Play (if your dog thrives socially)",
+            definition:
+              "Supervised social play with size-and-temperament-matched groups. Separate play areas organized by dog size, with adjustments based on individual play style and energy level.",
           },
           {
-            time: "Step 2",
-            label: "Gradual introductions",
-            body:
-              "We bring in another dog from a distance and progressively close the gap as comfort increases.",
-          },
-          {
-            time: "Step 3",
-            label: "Group Play or Enrichment Play",
-            body:
-              "Based on what we observe during the evaluation, we'll recommend the daycare style that fits your dog best — supervised group play with matched friends, or one-on-one enrichment activities.",
+            term: "Enrichment Play (if your dog prefers quieter time)",
+            definition:
+              "One-on-one activities for dogs who don't thrive in group settings. Sensory play, gentle problem-solving, scent work, and treadmill or agility activities tailored to your dog.",
           },
         ],
       },
