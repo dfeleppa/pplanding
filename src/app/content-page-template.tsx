@@ -71,21 +71,41 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
     case "list":
     case "checklist": {
       const Bullet = section.type === "checklist" ? Check : null;
+      const image = section.type === "checklist" ? section.image : undefined;
+      const imageAlt = section.type === "checklist" ? section.imageAlt : undefined;
+      const list = (
+        <ul className="grid gap-3">
+          {section.items.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
+            >
+              {Bullet ? <Bullet className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" /> : null}
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
       return (
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <ul className="grid max-w-3xl gap-3">
-              {section.items.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
-                >
-                  {Bullet ? <Bullet className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" /> : null}
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            {image ? (
+              <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                <div className="relative aspect-[4/3] overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
+                  <Image
+                    src={image}
+                    alt={imageAlt ?? section.title ?? "Planet Pooch"}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                {list}
+              </div>
+            ) : (
+              <div className="max-w-3xl">{list}</div>
+            )}
           </div>
         </section>
       );

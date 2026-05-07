@@ -9,6 +9,8 @@ export type ContentSection =
       eyebrow?: string;
       intro?: string;
       items: string[];
+      image?: string | StaticImageData;
+      imageAlt?: string;
     }
   | {
       type: "pricing";
