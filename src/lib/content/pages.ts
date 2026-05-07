@@ -146,21 +146,30 @@ export const contentPages = {
       {
         type: "tieredPricing",
         id: "spa-upgrades",
-        eyebrow: "Spa upgrades",
-        title: "Plus & Premium Packages",
+        eyebrow: "Packages",
+        title: "Our Packages",
         intro:
-          "Add a Plus or Premium upgrade to any basic groom or bath above. We use boutique, handcrafted products including Warren London and HydraGroom.",
+          "Every groom and bath includes the Basic package. Upgrade to Plus or Premium for an elevated, spa-day experience using boutique, handcrafted products including Warren London and HydraGroom.",
         tiers: [
           {
-            name: "Plus",
-            price: "+$19",
-            description: "An elevated finish on top of the basic service.",
-            features: ["3-Step Dental treatment", "Hydrating Butter Balm"],
+            name: "Basic",
+            price: "Included",
+            description: "The complete groom essentials, included with every service.",
+            features: [
+              "Nail cut and grind",
+              "Ears cleaned (and plucked upon request)",
+              "Bath, shampoo, and conditioner",
+              "Anal glands expressed upon request",
+              "Hand blow dry",
+              "Fluffing and brushing",
+              "Haircut",
+              "Signature bow and bandana",
+            ],
           },
           {
             name: "Premium",
             price: "+$29",
-            description: "A full spa-day experience for your pet.",
+            description: "Everything in Plus, plus a full spa-day experience for your pet.",
             features: [
               "Cucumber Melon Facial",
               "Aloe Vera Paw Cleanser",
@@ -168,6 +177,13 @@ export const contentPages = {
               "Report Card with Photo",
             ],
             featured: true,
+            badge: "Our most popular package",
+          },
+          {
+            name: "Plus",
+            price: "+$19",
+            description: "Elevated finishing touches.",
+            features: ["3-Step Dental treatment", "Hydrating Butter Balm"],
           },
         ],
       },
