@@ -2,7 +2,6 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
   GraduationCap,
   HeartHandshake,
   Home,
@@ -187,18 +186,12 @@ export default function HomePage() {
                   From concierge mobile grooming to a luxury resort for daycare, boarding, and
                   training, we serve dogs across Nassau, Suffolk, and the Hamptons.
                 </p>
-                <div className="mt-9 flex flex-col gap-3 sm:max-w-xs">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-between gap-3 bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-                  >
+                <div className="mt-9 flex flex-col items-start gap-3">
+                  <Link href="/contact" className="pp-cta">
                     Get Started
-                    <ArrowRight className="h-4 w-4" />
+                    <span className="pp-cta-arrow" aria-hidden />
                   </Link>
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center gap-3 border border-white/40 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-white/8"
-                  >
+                  <a href="#services" className="pp-cta-ghost">
                     Explore Services
                   </a>
                 </div>

@@ -42,11 +42,9 @@ export function SiteHeader({ ctaHref = "/contact/" }: SiteHeaderProps = {}) {
           </Link>
         ))}
       </nav>
-      <Link
-        href={ctaHref}
-        className="inline-flex items-center justify-center border border-[var(--pp-mint)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-      >
+      <Link href={ctaHref} className="pp-cta">
         Book Now
+        <span className="pp-cta-arrow" aria-hidden />
       </Link>
     </header>
   );
