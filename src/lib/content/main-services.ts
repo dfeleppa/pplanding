@@ -143,9 +143,35 @@ export const mainServicePages = {
         type: "prose",
         eyebrow: "Why daycare?",
         title: "More than a drop-off point.",
+        width: "wide",
         paragraphs: [
           "Regularly attending an interactive doggy daycare can benefit your dog's health and wellbeing — better social skills, healthy weight, less separation anxiety, and a confidence boost, all just from playing with friends.",
           "We strive to make daycare more than a drop-off point: our goal is to create a space where your dog feels as relaxed and at home as they do with you.",
+        ],
+      },
+      {
+        type: "featureGrid",
+        eyebrow: "What makes us different",
+        title: "Built around how your dog actually plays.",
+        items: [
+          {
+            icon: "Trees",
+            title: "Outdoor Play Yard",
+            description:
+              "Fresh air, sunshine, and room to run — our outdoor yard gives dogs the open space they crave between rest periods.",
+          },
+          {
+            icon: "Users",
+            title: "Small, Hand-Selected Groups",
+            description:
+              "We match dogs by size, temperament, and play style — never an unstructured free-for-all, so every dog feels safe and comfortable.",
+          },
+          {
+            icon: "Sparkles",
+            title: "Enrichment Services",
+            description:
+              "Treadmill, scent work, agility, and nutrition puzzles for dogs who thrive on one-on-one mental stimulation.",
+          },
         ],
       },
       {
@@ -166,7 +192,7 @@ export const mainServicePages = {
       },
       {
         type: "timeline",
-        eyebrow: "How we introduce a new dog",
+        eyebrow: "How It Works",
         title: "From first visit to regular client",
         items: [
           {
@@ -183,9 +209,9 @@ export const mainServicePages = {
           },
           {
             time: "Step 3",
-            label: "Welcome to the pack",
+            label: "Group Play or Enrichment Play",
             body:
-              "If the meet-and-greet goes well, your dog can stay the rest of the day for free and join future group play sessions.",
+              "Based on what we observe during the evaluation, we'll recommend the daycare style that fits your dog best — supervised group play with matched friends, or one-on-one enrichment activities.",
           },
         ],
       },
@@ -221,12 +247,12 @@ export const mainServicePages = {
             features: ["20 full days of daycare", "Expires 90 days after purchase"],
           },
         ],
-      },
-      {
-        type: "callout",
-        title: "Half-Day Daycare",
-        body:
-          "$41 per day. Morning session only (7am–12:30pm). If your pet is not picked up by 12:30pm, the full day rate applies.",
+        secondaryCard: {
+          eyebrow: "Half-Day Daycare",
+          title: "$41 per day — morning session",
+          body:
+            "Morning session only (7am–12:30pm). If your pet is not picked up by 12:30pm, the full day rate applies.",
+        },
       },
       {
         type: "callout",

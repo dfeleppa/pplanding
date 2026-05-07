@@ -1,7 +1,13 @@
 import type { StaticImageData } from "next/image";
 
 export type ContentSection =
-  | { type: "prose"; title?: string; eyebrow?: string; paragraphs: string[] }
+  | {
+      type: "prose";
+      title?: string;
+      eyebrow?: string;
+      paragraphs: string[];
+      width?: "default" | "wide";
+    }
   | { type: "list"; title?: string; eyebrow?: string; intro?: string; items: string[] }
   | {
       type: "checklist";
@@ -54,6 +60,12 @@ export type ContentSection =
         badge?: string;
       }>;
       note?: string;
+      secondaryCard?: {
+        eyebrow?: string;
+        title: string;
+        body: string;
+        cta?: { label: string; href: string };
+      };
     }
   | {
       type: "comparison";
