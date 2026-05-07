@@ -291,14 +291,21 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
-              Our Resort
+              About Us
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-              A welcoming place built for comfort, care, and confident drop-offs.
+              Planet Pooch was founded in 2014 by Andy Gonzaga
             </h2>
             <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              Step inside Planet Pooch and see the spaces where our team creates calm routines,
-              safe play, and thoughtful care every day.
+              At 17, Andy started working as a licensed professional groomer alongside his mother, Kathy. After graduating from the New York School of Dog Grooming in 2010, Andy built Planet Pooch from a single mobile grooming van into one of Nassau County&rsquo;s most trusted names in pet care.
+            </p>
+            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
+              What began as mobile dog grooming across Franklin Square, Garden City, Rockville Centre, and surrounding Nassau County neighborhoods has grown into a full-service pet resort &mdash; offering professional grooming, dog daycare, overnight boarding, and training. Every service is built on the same family values Andy learned from day one: treat every dog like your own.
+            </p>
+            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
+              📍 Serving Franklin Square and all of Nassau County
+              <br />
+              🐾 Mobile Grooming • Daycare • Boarding • Training
             </p>
           </div>
 
