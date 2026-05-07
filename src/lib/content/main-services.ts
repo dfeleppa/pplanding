@@ -20,7 +20,7 @@ export const mainServicePages = {
     metaTitle: "Mobile Pet Grooming Long Island | Mobile Dog Groomer",
     metaDescription:
       "Mobile dog and cat grooming across Long Island and the Hamptons — full grooms, baths, Plus and Premium spa upgrades, and in-house grooming for daycare and boarding clients.",
-    image: "/hero-dog.jpg",
+    image: "/grooming.png",
     heroCtas: {
       primary: { label: "Book Now", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
