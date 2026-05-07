@@ -79,42 +79,6 @@ export const contentPages = {
     ],
   },
 
-  "about-us": {
-    slug: "about-us",
-    title: "About Us",
-    eyebrow: "About",
-    hero: "Family-owned, Long Island grown, and built around great care.",
-    metaTitle: "About Planet Pooch | Long Island Pet Resort",
-    metaDescription:
-      "Planet Pooch was founded in 2014 by Andy Gonzaga as a mobile grooming business and grew into a full-service pet resort serving Long Island and the Hamptons.",
-    image: "/our-resort-exterior.jpeg",
-    sections: [
-      {
-        type: "prose",
-        title: "Our origin story",
-        paragraphs: [
-          "Planet Pooch was established in 2014 by its owner, Andy Gonzaga. Andy began his career at 17 working alongside his mother Kathy in the grooming industry. He graduated from the New York School of Dog Grooming in 2010 and earned his professional license.",
-          "What started as a single mobile grooming van quickly built a strong client base across Nassau County. From there, Planet Pooch grew into a full-service pet resort.",
-        ],
-      },
-      {
-        type: "prose",
-        title: "What we offer today",
-        paragraphs: [
-          "Today, Planet Pooch operates as a comprehensive pet care provider. We run mobile grooming vans across Long Island and the Hamptons and a dedicated resort facility in Franklin Square offering daycare, boarding, training, and enrichment.",
-          "The mission hasn't changed: every dog is treated like family — because for the people who love them, they are.",
-        ],
-      },
-      {
-        type: "callout",
-        title: "Meet the team behind the resort",
-        body:
-          "From groomers to daycare specialists to our AKC Evaluator Trainer, our team is what makes Planet Pooch feel like home.",
-        cta: { label: "Our Team", href: "/our-team/" },
-      },
-    ],
-  },
-
   "our-team": {
     slug: "our-team",
     title: "Our Team",
