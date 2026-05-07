@@ -128,7 +128,6 @@ const footerLinks = {
     { label: "Enrichment & Events", href: "/enrichment/" },
   ],
   about: [
-    { label: "About Us", href: "/about-us/" },
     { label: "Our Team", href: "/our-team/" },
     { label: "FAQs", href: "/faqs/" },
     { label: "We're Hiring", href: "/were-hiring/" },
@@ -280,37 +279,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="resort" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
-              About Us
-            </p>
-            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-              Planet Pooch was founded in 2014 by Andy Gonzaga
-            </h2>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              At 17, Andy started working as a licensed professional groomer alongside his mother, Kathy. After graduating from the New York School of Dog Grooming in 2010, Andy built Planet Pooch from a single mobile grooming van into one of Nassau County&rsquo;s most trusted names in pet care.
-            </p>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              What began as mobile dog grooming across Franklin Square, Garden City, Rockville Centre, and surrounding Nassau County neighborhoods has grown into a full-service pet resort &mdash; offering professional grooming, dog daycare, overnight boarding, and training. Every service is built on the same family values Andy learned from day one: treat every dog like your own.
-            </p>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              📍 Serving Franklin Square and all of Nassau County
-              <br />
-              🐾 Mobile Grooming • Daycare • Boarding • Training
-            </p>
+      <section id="about" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+                About Us
+              </p>
+              <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+                Planet Pooch was founded in 2014 by Andy Gonzaga
+              </h2>
+              <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
+                At 17, Andy started working as a licensed professional groomer alongside his mother, Kathy. After graduating from the New York School of Dog Grooming in 2010, Andy built Planet Pooch from a single mobile grooming van into one of Nassau County&rsquo;s most trusted names in pet care.
+              </p>
+              <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
+                What began as mobile dog grooming across Franklin Square, Garden City, Rockville Centre, and surrounding Nassau County neighborhoods has grown into a full-service pet resort &mdash; offering professional grooming, dog daycare, overnight boarding, and training. Every service is built on the same family values Andy learned from day one: treat every dog like your own.
+              </p>
+            </div>
+
+            <div>
+              <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
+                <Image
+                  src="/our-resort-exterior.jpeg"
+                  alt="Planet Pooch Pet Resort exterior with daycare and boarding entrances"
+                  width={1300}
+                  height={650}
+                  sizes="(min-width: 1024px) 56rem, 100vw"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <p className="mt-4 text-center text-sm leading-7 text-[rgba(47,42,39,0.78)]">
+                🐾 Serving Franklin Square and all of Nassau County 🐾 Mobile Grooming • Daycare • Boarding • Training
+              </p>
+            </div>
           </div>
 
-          <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
-            <Image
-              src="/our-resort-exterior.jpeg"
-              alt="Planet Pooch Pet Resort exterior with daycare and boarding entrances"
-              width={1300}
-              height={650}
-              sizes="(min-width: 1024px) 56rem, 100vw"
-              className="h-auto w-full object-cover"
-            />
+          <div className="mt-14 grid items-center gap-8 border-t border-[rgba(50,73,83,0.15)] pt-12 sm:grid-cols-[1fr_auto] lg:mt-16 lg:pt-14">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+                Our Team
+              </p>
+              <h3 className="mt-3 text-3xl leading-tight text-[var(--pp-ink)] sm:text-4xl">
+                Meet the team behind the resort.
+              </h3>
+              <p className="mt-4 max-w-xl text-base leading-8 text-[rgba(47,42,39,0.72)]">
+                From groomers to daycare specialists to our AKC Evaluator Trainer, our team is what makes Planet Pooch feel like home.
+              </p>
+            </div>
+            <Link href="/our-team/" className="pp-cta sm:justify-self-end">
+              Meet the Team
+              <span className="pp-cta-arrow" aria-hidden />
+            </Link>
           </div>
         </div>
       </section>
@@ -343,7 +362,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
+      <section id="testimonials" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">

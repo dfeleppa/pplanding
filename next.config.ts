@@ -61,6 +61,11 @@ const nextConfig: NextConfig = {
       { source: "/field-trip/", destination: "/enrichment/", permanent: true },
       { source: "/photos-with-santa/", destination: "/enrichment/", permanent: true },
 
+      // ===== About Us consolidated to home page =====
+      // The about content (origin story + team callout) now lives on the
+      // home page; the standalone /about-us/ page was removed.
+      { source: "/about-us/", destination: "/", permanent: true },
+
       // ===== Old blog post duplicates =====
       {
         source: "/what-is-dog-daycare-a-complete-guide-for-pet-parents-2/",
