@@ -246,55 +246,9 @@ export const mainServicePages = {
         cta: { label: "Book a consultation", href: "/contact/" },
       },
       {
-        type: "timeline",
-        eyebrow: "A day in the life",
-        title: "What a typical day looks like",
-        items: [
-          {
-            time: "7:00 AM",
-            label: "Drop-off opens",
-            body: "Check-in begins. Our team welcomes your dog and gets them settled into the morning playgroup.",
-          },
-          {
-            time: "7:00 AM – 12:30 PM",
-            label: "Morning group play",
-            body:
-              "Supervised play with size-and-temperament-matched groups, plus enrichment options for dogs who prefer something quieter.",
-          },
-          {
-            time: "12:30 PM – 1:30 PM",
-            label: "Rest period",
-            body:
-              "Every dog gets a quiet break. This rest window is closed to drop-offs and pickups.",
-          },
-          {
-            time: "1:30 PM – 7:00 PM",
-            label: "Afternoon group play",
-            body:
-              "Back to play and socialization, with optional enrichment activities for dogs who'd rather slow down.",
-          },
-          {
-            time: "By 7:00 PM",
-            label: "Pickup",
-            body: "Full-day pickups by 7pm. Morning-session dogs head home by 12:30pm.",
-          },
-        ],
-      },
-      {
-        type: "checklist",
-        eyebrow: "Requirements",
-        title: "Before your dog's first day",
-        items: [
-          "Complete the New Client Enrollment Packet",
-          "Schedule a free meet-and-greet evaluation (1–2 hours)",
-          "Up-to-date Rabies, Distemper (DAPP/DHPP or DA2PP), and Bordetella vaccinations",
-          "Influenza vaccination strongly recommended",
-          "7-day waiting period after Distemper or Bordetella vaccinations before returning",
-          "Dogs over 1 year old must be spayed or neutered (unless a vet advises otherwise)",
-        ],
-      },
-      {
         type: "faq",
+        eyebrow: "FAQ",
+        title: "Common questions",
         items: [
           {
             question: "Is daycare right for every dog?",
@@ -310,6 +264,11 @@ export const mainServicePages = {
             question: "Are there breaks during the day?",
             answer:
               "Yes — every dog gets a quiet rest period between 12:30pm and 1:30pm so they can recharge and avoid overstimulation.",
+          },
+          {
+            question: "Does my dog need to be spayed/neutered?",
+            answer:
+              "Dogs over 1 year old must be spayed or neutered (unless a vet advises otherwise).",
           },
         ],
       },
