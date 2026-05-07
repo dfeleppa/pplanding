@@ -81,6 +81,10 @@ export type ContentPage = {
   metaDescription: string;
   canonicalSlug?: string;
   image?: string | StaticImageData;
+  heroCtas?: {
+    primary: { label: string; href: string };
+    ghost: { label: string; href: string };
+  };
   sections: ContentSection[];
 };
 

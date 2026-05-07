@@ -349,7 +349,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
-      <section className="relative min-h-[520px] overflow-hidden bg-[var(--pp-night)] text-white">
+      <section className={`relative overflow-hidden bg-[var(--pp-night)] text-white${page.heroCtas ? "" : " min-h-[520px]"}`}>
         {page.image ? (
           <Image
             src={page.image}
@@ -361,24 +361,67 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
             priority
           />
         ) : null}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]" />
-        <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">
+        <div className={`absolute inset-0 ${page.heroCtas ? "bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" : "bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]"}`} />
+        <div className={`relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10${page.heroCtas ? "" : " min-h-[520px] pb-14"}`}>
           <SiteHeader />
 
-          <div className="flex flex-1 items-end pt-12">
-            <div className="max-w-3xl">
-              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
-                {page.eyebrow}
-              </p>
-              <h1 className="mt-5 max-w-3xl text-white">{page.title}</h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
+          {page.heroCtas ? (
+            <>
+              <div id="top" className="py-12 lg:py-16">
+                <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--pp-mint)]/85">
+                      {page.eyebrow}
+                    </p>
+                    <h1 className="mt-7 max-w-xl text-white">{page.title}</h1>
+                  </div>
+                  <div className="lg:border-l lg:border-white/20 lg:pl-10">
+                    <p
+                      className="max-w-md text-lg italic leading-relaxed text-white/90 sm:text-xl"
+                      style={{ fontFamily: "var(--font-display), serif" }}
+                    >
+                      {page.hero}
+                    </p>
+                    <div className="mt-9 flex flex-col items-start gap-3">
+                      <Link href={page.heroCtas.primary.href} className="pp-cta">
+                        {page.heroCtas.primary.label}
+                        <span className="pp-cta-arrow" aria-hidden />
+                      </Link>
+                      <a href={page.heroCtas.ghost.href} className="pp-cta-ghost">
+                        {page.heroCtas.ghost.label}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
+                <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
+                  <span className="flex items-center gap-3">
+                    <span aria-hidden className="h-px w-8 bg-white/40" />
+                    Scroll to Explore
+                  </span>
+                  <span>Long Island, New York</span>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="flex flex-1 items-end pt-12">
+              <div className="max-w-3xl">
+                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
+                  {page.eyebrow}
+                </p>
+                <h1 className="mt-5 max-w-3xl text-white">{page.title}</h1>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
       {page.sections.map((section, i) => (
-        <SectionRenderer key={`${section.type}-${i}`} section={section} index={i} />
+        <div key={`${section.type}-${i}`} {...(i === 0 ? { id: "overview" } : {})}>
+          <SectionRenderer section={section} index={i} />
+        </div>
       ))}
 
       <section className="bg-[var(--pp-night)] px-5 py-14 text-white sm:px-8 lg:px-10">
