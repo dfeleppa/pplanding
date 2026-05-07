@@ -119,7 +119,7 @@ export default function HomePage() {
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-night)] text-[var(--pp-ink)]`}
     >
-      <section className="relative min-h-screen overflow-hidden bg-[var(--pp-night)] text-white">
+      <section className="relative overflow-hidden bg-[var(--pp-night)] text-white">
         <Image
           src="/hero-dog.jpg"
           alt="A happy dog lounging in a polished resort setting"
@@ -176,7 +176,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-4 border-t border-white/15 pt-6 pb-20 lg:pb-24">
+          <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
             <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
               <span className="flex items-center gap-3">
                 <span aria-hidden className="h-px w-8 bg-white/40" />
