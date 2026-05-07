@@ -56,6 +56,7 @@ export const mainServicePages = {
         ctas: [
           { label: "Nassau Pricing", href: "/nassau-pricing" },
           { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
+          { label: "Cat Pricing", href: "/cat-experience/" },
         ],
       },
       {
