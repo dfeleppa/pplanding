@@ -19,6 +19,7 @@ export type ContentSection =
       columns: string[];
       rows: Array<string[]>;
       note?: string;
+      cta?: { label: string; href: string };
     }
   | {
       type: "pricingPair";
@@ -33,9 +34,11 @@ export type ContentSection =
         rows: Array<string[]>;
         note?: string;
       }>;
+      cta?: { label: string; href: string };
     }
   | {
       type: "tieredPricing";
+      id?: string;
       title?: string;
       eyebrow?: string;
       intro?: string;
