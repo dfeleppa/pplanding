@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight, Bath, Brush, Check, ChevronDown, Droplets, Ear, Footprints,
-  PawPrint, Ribbon, Scissors, Wind, X,
+  PawPrint, Ribbon, Scissors, Sparkles, Trees, Users, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
 import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
@@ -23,6 +23,7 @@ const bodySans = Manrope({
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   PawPrint, Footprints, Ear, Bath, Droplets, Wind, Brush, Scissors, Ribbon,
+  Trees, Users, Sparkles,
 };
 
 type ContentPageTemplateProps = {
@@ -54,12 +55,13 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
   const tone = index % 2 === 0 ? "bg-[var(--pp-cream)]" : "bg-white/55";
 
   switch (section.type) {
-    case "prose":
+    case "prose": {
+      const proseWidth = section.width === "wide" ? "max-w-5xl" : "max-w-3xl";
       return (
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
-            <div className="grid max-w-3xl gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]">
+            <div className={`grid ${proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
               {section.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -67,6 +69,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           </div>
         </section>
       );
+    }
 
     case "list":
     case "checklist": {
@@ -296,6 +299,32 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               <p className="mt-6 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
                 {section.note}
               </p>
+            ) : null}
+            {section.secondaryCard ? (
+              <article className="mt-8 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-white p-7 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  {section.secondaryCard.eyebrow ? (
+                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                      {section.secondaryCard.eyebrow}
+                    </p>
+                  ) : null}
+                  <h3 className="mt-2 text-2xl leading-tight text-[var(--pp-ink)]">
+                    {section.secondaryCard.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">
+                    {section.secondaryCard.body}
+                  </p>
+                </div>
+                {section.secondaryCard.cta ? (
+                  <Link
+                    href={section.secondaryCard.cta.href}
+                    className="inline-flex shrink-0 items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                  >
+                    {section.secondaryCard.cta.label}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ) : null}
+              </article>
             ) : null}
           </div>
         </section>
