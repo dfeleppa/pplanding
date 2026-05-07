@@ -242,7 +242,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     ) : null}
                     {tier.description ? (
                       <p
-                        className={`mt-3 text-sm leading-6 ${
+                        className={`mt-3 text-sm font-bold leading-6 ${
                           tier.featured ? "text-white/80" : "text-[rgba(47,42,39,0.78)]"
                         }`}
                       >
