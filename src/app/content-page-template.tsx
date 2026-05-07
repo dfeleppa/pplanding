@@ -89,9 +89,12 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       return (
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
-            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             {image ? (
-              <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+                <div>
+                  <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+                  {list}
+                </div>
                 <div className="relative aspect-[4/3] overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
                   <Image
                     src={image}
@@ -101,10 +104,12 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     className="object-cover"
                   />
                 </div>
-                {list}
               </div>
             ) : (
-              <div className="max-w-3xl">{list}</div>
+              <>
+                <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+                <div className="max-w-3xl">{list}</div>
+              </>
             )}
           </div>
         </section>
