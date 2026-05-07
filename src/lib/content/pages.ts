@@ -79,6 +79,135 @@ export const contentPages = {
     ],
   },
 
+  "nassau-pricing": {
+    slug: "nassau-pricing",
+    title: "Nassau County Grooming Pricing",
+    eyebrow: "Mobile Grooming",
+    hero: "Full pricing for mobile grooming across Nassau County.",
+    metaTitle: "Mobile Grooming Pricing Nassau County | Planet Pooch",
+    metaDescription:
+      "Mobile dog and cat grooming pricing for Nassau County — full grooms, baths, Plus and Premium spa upgrades, and à la carte add-ons.",
+    image: "/hero-dog.jpg",
+    heroCtas: {
+      primary: { label: "Book Now", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
+    sections: [
+      {
+        type: "pricing",
+        eyebrow: "Pricing",
+        title: "Full Groom with Haircut",
+        intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 15 lbs", "$150–$165"],
+          ["16–25 lbs", "$165–$200"],
+          ["26–40 lbs", "$200–$235"],
+          ["41–60 lbs", "$235–$270"],
+          ["61–80 lbs", "$270–$305"],
+          ["81 lbs & up", "$305 & up"],
+        ],
+        note:
+          "Prices are based on pets groomed on a regular basis. Extra charges may apply for matted or impacted coats, special handling, or aggressive behavior.",
+      },
+      {
+        type: "pricing",
+        title: "Long-Haired Baths",
+        intro: "Golden Retriever, Husky, German Shepherd, Pomsky, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 20 lbs", "$150–$165"],
+          ["21–40 lbs", "$165–$200"],
+          ["41–60 lbs", "$200–$235"],
+          ["61–80 lbs", "$235–$270"],
+          ["81 lbs & up", "$270 & up"],
+        ],
+      },
+      {
+        type: "pricing",
+        title: "Short-Haired Baths",
+        intro: "Pug, Beagle, Boxer, Labrador, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 25 lbs", "$110"],
+          ["26–45 lbs", "$110–$140"],
+          ["46–65 lbs", "$140–$170"],
+          ["66–85 lbs", "$170–$200"],
+          ["86 lbs & up", "$200 & up"],
+        ],
+      },
+      {
+        type: "tieredPricing",
+        eyebrow: "Spa upgrades",
+        title: "Plus & Premium Packages",
+        intro:
+          "Add a Plus or Premium upgrade to any basic groom or bath above. We use boutique, handcrafted products including Warren London and HydraGroom.",
+        tiers: [
+          {
+            name: "Plus",
+            price: "+$19",
+            description: "An elevated finish on top of the basic service.",
+            features: ["3-Step Dental treatment", "Hydrating Butter Balm"],
+          },
+          {
+            name: "Premium",
+            price: "+$29",
+            description: "A full spa-day experience for your pet.",
+            features: [
+              "Cucumber Melon Facial",
+              "Aloe Vera Paw Cleanser",
+              "Premium Shampoo",
+              "Report Card with Photo",
+            ],
+            featured: true,
+          },
+        ],
+      },
+      {
+        type: "comparison",
+        title: "Package Comparison",
+        columns: ["Service", "Basic", "Plus (+$19)", "Premium (+$29)"],
+        rows: [
+          { label: "Nail cut and grind", values: [true, true, true] },
+          { label: "Ears cleaned (and plucked upon request)", values: [true, true, true] },
+          { label: "Bath, shampoo, and conditioner", values: [true, true, true] },
+          { label: "Anal glands expressed upon request", values: [true, true, true] },
+          { label: "Hand blow dry", values: [true, true, true] },
+          { label: "Fluffing and brushing", values: [true, true, true] },
+          { label: "Haircut", values: [true, true, true] },
+          { label: "Signature bow and bandana", values: [true, true, true] },
+          { label: "3-Step Dental", values: [false, true, true] },
+          { label: "Hydrating Butter Balm", values: [false, true, true] },
+          { label: "Cucumber Melon Facial", values: [false, false, true] },
+          { label: "Aloe Vera Paw Cleanser", values: [false, false, true] },
+          { label: "Premium Shampoo", values: [false, false, true] },
+          { label: "Report Card with Photo", values: [false, false, true] },
+        ],
+      },
+      {
+        type: "list",
+        title: "À la carte add-ons",
+        intro: "Customize any basic groom with individual upgrades.",
+        items: [
+          "3-Step Dental — $16",
+          "Hydrating Butter Balm — $6",
+          "Cucumber Melon Facial — $6",
+          "Aloe Vera Paw Cleanser — $6",
+          "Premium Shampoo — $10",
+          "Report Card with Photo — $5",
+        ],
+      },
+      {
+        type: "callout",
+        id: "cat-pricing",
+        eyebrow: "For cats",
+        title: "The Planet Pooch Cat Experience",
+        body:
+          "Specialty 2-on-1 cat grooming, 1–2 days a month with a setup designed specifically for cats. Short-haired bath ($225), long-haired bath ($250), full grooms with haircut ($250–$275), Furminator de-shed ($50), dental care ($50), and Soft Claws application ($50).",
+      },
+    ],
+  },
+
   "our-team": {
     slug: "our-team",
     title: "Our Team",
