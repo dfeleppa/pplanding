@@ -197,14 +197,6 @@ export const contentPages = {
           "Report Card with Photo — $5",
         ],
       },
-      {
-        type: "callout",
-        id: "cat-pricing",
-        eyebrow: "For cats",
-        title: "The Planet Pooch Cat Experience",
-        body:
-          "Specialty 2-on-1 cat grooming, 1–2 days a month with a setup designed specifically for cats. Short-haired bath ($225), long-haired bath ($250), full grooms with haircut ($250–$275), Furminator de-shed ($50), dental care ($50), and Soft Claws application ($50).",
-      },
     ],
   },
 
