@@ -20,7 +20,7 @@ export const mainServicePages = {
     metaTitle: "Mobile Pet Grooming Long Island | Mobile Dog Groomer",
     metaDescription:
       "Mobile dog and cat grooming across Long Island and the Hamptons — full grooms, baths, Plus and Premium spa upgrades, and in-house grooming for daycare and boarding clients.",
-    image: "/hero-dog.jpg",
+    image: "/grooming.png",
     heroCtas: {
       primary: { label: "Book Now", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
@@ -65,7 +65,7 @@ export const mainServicePages = {
         title: "Built for hygiene, climate, and safety.",
         intro:
           "We partner with Wag N Tails and Hanvey Engineering to outfit our grooming vehicles.",
-        image: "/van1.jpeg",
+        image: "/van1.jpg",
         imageAlt: "Planet Pooch mobile grooming van",
         items: [
           "Cleaned between every appointment",
