@@ -154,7 +154,6 @@ export const contentPages = {
           {
             name: "Basic",
             price: "Included",
-            description: "The complete groom essentials, included with every service.",
             features: [
               "Nail cut and grind",
               "Ears cleaned (and plucked upon request)",
@@ -169,7 +168,7 @@ export const contentPages = {
           {
             name: "Premium",
             price: "+$29",
-            description: "Everything in Plus, plus a full spa-day experience for your pet.",
+            description: "Everything in Plus, plus:",
             features: [
               "Cucumber Melon Facial",
               "Aloe Vera Paw Cleanser",
@@ -182,7 +181,7 @@ export const contentPages = {
           {
             name: "Plus",
             price: "+$19",
-            description: "Elevated finishing touches.",
+            description: "Everything in our Basic Package, plus:",
             features: ["3-Step Dental treatment", "Hydrating Butter Balm"],
           },
         ],
