@@ -113,6 +113,7 @@ export type ContentSection =
       eyebrow?: string;
       body: string;
       cta?: { label: string; href: string };
+      ctas?: Array<{ label: string; href: string }>;
     }
   | {
       type: "iconBullets";
@@ -150,6 +151,7 @@ export type ContentPage = {
   heroCtas?: {
     primary: { label: string; href: string };
     ghost: { label: string; href: string };
+    tertiary?: { label: string; href: string };
   };
   sections: ContentSection[];
 };

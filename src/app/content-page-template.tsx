@@ -571,7 +571,20 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 <h2 className="mt-2 text-2xl leading-tight sm:text-3xl">{section.title}</h2>
                 <p className="mt-3 text-sm leading-7 text-white/80">{section.body}</p>
               </div>
-              {section.cta ? (
+              {section.ctas?.length ? (
+                <div className="flex flex-wrap gap-3 lg:shrink-0 lg:justify-end">
+                  {section.ctas.map((cta) => (
+                    <Link
+                      key={cta.href}
+                      href={cta.href}
+                      className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                    >
+                      {cta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ))}
+                </div>
+              ) : section.cta ? (
                 <Link
                   href={section.cta.href}
                   className="inline-flex shrink-0 items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
@@ -636,6 +649,15 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                       <a href={page.heroCtas.ghost.href} className="pp-cta-ghost">
                         {page.heroCtas.ghost.label}
                       </a>
+                      {page.heroCtas.tertiary ? (
+                        <a
+                          href={page.heroCtas.tertiary.href}
+                          className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-mint)] hover:text-white"
+                        >
+                          {page.heroCtas.tertiary.label}
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 </div>
