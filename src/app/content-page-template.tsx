@@ -412,7 +412,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <ol className="grid gap-5 lg:grid-cols-2">
+            <ol className={`grid gap-5 ${section.items.length > 1 ? "lg:grid-cols-2" : "max-w-3xl"}`}>
               {section.items.map((item) => (
                 <li
                   key={`${item.time}-${item.label}`}
