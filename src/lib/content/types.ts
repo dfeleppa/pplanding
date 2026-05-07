@@ -49,6 +49,7 @@ export type ContentSection =
         description?: string;
         features: string[];
         featured?: boolean;
+        badge?: string;
       }>;
       note?: string;
     }

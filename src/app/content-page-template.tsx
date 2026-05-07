@@ -199,21 +199,33 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         </section>
       );
 
-    case "tieredPricing":
+    case "tieredPricing": {
+      const tierCount = section.tiers.length;
+      const gridCols =
+        tierCount === 3
+          ? "md:grid-cols-3"
+          : tierCount >= 4
+            ? "md:grid-cols-2 lg:grid-cols-4"
+            : "md:grid-cols-2";
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className={`grid gap-5 ${gridCols} lg:items-stretch`}>
               {section.tiers.map((tier) => (
                 <article
                   key={tier.name}
-                  className={`flex flex-col gap-4 border p-6 ${
+                  className={`relative flex flex-col gap-4 border p-6 ${
                     tier.featured
-                      ? "border-[var(--pp-mint-deep)] bg-[var(--pp-night)] text-white shadow-[0_24px_60px_rgba(50,73,83,0.18)]"
+                      ? "z-10 border-[var(--pp-mint)] bg-[var(--pp-night)] text-white shadow-[0_30px_80px_rgba(50,73,83,0.32)] ring-2 ring-[var(--pp-mint)]/50 lg:scale-[1.04]"
                       : "border-[rgba(50,73,83,0.12)] bg-white/65 text-[var(--pp-ink)]"
                   }`}
                 >
+                  {tier.badge ? (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[var(--pp-mint)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--pp-night)] shadow-[0_6px_20px_rgba(50,73,83,0.25)]">
+                      {tier.badge}
+                    </span>
+                  ) : null}
                   <header>
                     <p
                       className={`text-[11px] font-bold uppercase tracking-[0.18em] ${
@@ -263,6 +275,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           </div>
         </section>
       );
+    }
 
     case "comparison":
       return (
