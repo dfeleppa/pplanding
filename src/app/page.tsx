@@ -13,6 +13,7 @@ import {
   Scissors,
   ShieldCheck,
   Sparkles,
+  Star,
 } from "lucide-react";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 import { SiteHeader } from "./site-header";
@@ -86,6 +87,35 @@ const experiencePoints = [
     title: "Happy Dogs",
     icon: PawPrint,
     copy: "Joyful experiences and wag-worthy results that owners can feel good about.",
+  },
+] as const;
+
+// Mock Google reviews — replace with real reviews pulled from the
+// Google Business Profile when ready.
+const googleReviews = [
+  {
+    name: "Sarah M.",
+    initials: "S",
+    avatarBg: "bg-[var(--pp-main)]",
+    date: "2 weeks ago",
+    body:
+      "Bear has never looked better and he was completely calm — no more stressful trips to a salon. Dyana came right to our driveway in Garden City. Worth every penny.",
+  },
+  {
+    name: "Michael T.",
+    initials: "M",
+    avatarBg: "bg-[var(--pp-gold-deep)]",
+    date: "1 month ago",
+    body:
+      "We've been bringing our shepherd to daycare for almost a year. The staff knows him by name, the meet-and-greet was thorough, and he comes home tired in the best way.",
+  },
+  {
+    name: "Jennifer L.",
+    initials: "J",
+    avatarBg: "bg-[var(--pp-night)]",
+    date: "3 weeks ago",
+    body:
+      "Boarded our two huskies for a long weekend. Got daily updates and pictures, they came home happy and healthy. So glad we found Planet Pooch — we trust them completely.",
   },
 ] as const;
 
@@ -314,32 +344,69 @@ export default function HomePage() {
       </section>
 
       <section id="about" className="bg-[var(--pp-cream)] px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
               Testimonials
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
               Our clients say it best.
             </h2>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              The Planet Pooch team treats our dog like family. The updates, the photos, the
-              care &mdash; everything is top notch.
-            </p>
-            <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--pp-main)]/80">
-              Rated {SITE.reviews.rating} stars by {SITE.reviews.count.toLocaleString()} families
-            </p>
+            <div className="mt-5 flex items-center justify-center gap-2 text-sm text-[rgba(47,42,39,0.72)]">
+              <span className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" />
+                ))}
+              </span>
+              <span>
+                <strong className="font-semibold text-[var(--pp-ink)]">{SITE.reviews.rating}</strong>
+                {" "}from {SITE.reviews.count.toLocaleString()} reviews on Google
+              </span>
+            </div>
           </div>
 
-          <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)]">
-            <Image
-              src="/testimonial-dog.jpg"
-              alt="A dog resting comfortably on a soft bed"
-              width={1300}
-              height={650}
-              sizes="(min-width: 1024px) 56rem, 100vw"
-              className="h-auto w-full object-cover"
-            />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {googleReviews.map((review) => (
+              <article
+                key={review.name}
+                className="flex flex-col gap-4 bg-white p-6 shadow-[0_8px_24px_rgba(50,73,83,0.06)] sm:p-7"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <span
+                      aria-hidden
+                      className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-white ${review.avatarBg}`}
+                    >
+                      {review.initials}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-[var(--pp-ink)]">{review.name}</p>
+                      <p className="text-xs text-[rgba(47,42,39,0.55)]">{review.date}</p>
+                    </div>
+                  </div>
+                  <span
+                    aria-label="Posted on Google"
+                    title="Posted on Google"
+                    className="flex shrink-0 items-center gap-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[rgba(47,42,39,0.45)]"
+                  >
+                    <span className="text-[#4285F4]">G</span>
+                    <span className="text-[#EA4335]">o</span>
+                    <span className="text-[#FBBC05]">o</span>
+                    <span className="text-[#4285F4]">g</span>
+                    <span className="text-[#34A853]">l</span>
+                    <span className="text-[#EA4335]">e</span>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" />
+                  ))}
+                </div>
+
+                <p className="text-sm leading-7 text-[rgba(47,42,39,0.78)]">{review.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
