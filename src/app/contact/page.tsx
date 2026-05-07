@@ -56,7 +56,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+      <section className="relative -mt-12 rounded-t-[3rem] bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:-mt-14 lg:rounded-t-[4rem] lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-3">
           <article className="border border-[rgba(50,73,83,0.12)] bg-white/55 p-7 shadow-[0_14px_40px_rgba(50,73,83,0.08)]">
             <Phone className="h-5 w-5 text-[var(--pp-main)]" />

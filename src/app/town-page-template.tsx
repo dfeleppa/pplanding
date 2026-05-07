@@ -235,7 +235,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+      <section className="relative -mt-12 rounded-t-[3rem] bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:-mt-14 lg:rounded-t-[4rem] lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
