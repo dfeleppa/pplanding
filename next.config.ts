@@ -29,7 +29,6 @@ const nextConfig: NextConfig = {
       { source: "/grooming-packages/", destination: "/mobile-grooming/", permanent: true },
       { source: "/spa-services/", destination: "/mobile-grooming/", permanent: true },
       { source: "/spa-services-2/", destination: "/mobile-grooming/", permanent: true },
-      { source: "/cat-experience/", destination: "/mobile-grooming/", permanent: true },
       { source: "/our-vans/", destination: "/mobile-grooming/", permanent: true },
       { source: "/in-house-grooming/", destination: "/mobile-grooming/", permanent: true },
       { source: "/mobile-grooming-pricing-new/", destination: "/mobile-grooming/", permanent: true },
