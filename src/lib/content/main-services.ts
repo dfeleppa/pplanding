@@ -24,6 +24,7 @@ export const mainServicePages = {
     heroCtas: {
       primary: { label: "Book Now", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
+      tertiary: { label: "View Pricing", href: "#pricing" },
     },
     sections: [
       {
@@ -53,6 +54,13 @@ export const mainServicePages = {
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
           { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before heading home." },
         ],
+      },
+      {
+        type: "callout",
+        id: "pricing",
+        eyebrow: "Pricing",
+        title: "See pricing for your area.",
+        body: "Pricing varies by region and pet. Choose the option that matches your location or pet type.",
         ctas: [
           { label: "Nassau Pricing", href: "/nassau-pricing" },
           { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
