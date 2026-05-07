@@ -1,7 +1,10 @@
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Home, Mail, MapPin, Phone, X } from "lucide-react";
+import {
+  ArrowRight, Bath, Brush, Check, Droplets, Ear, Footprints,
+  Home, Mail, MapPin, PawPrint, Phone, Ribbon, Scissors, Wind, X,
+} from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
@@ -17,6 +20,10 @@ const bodySans = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  PawPrint, Footprints, Ear, Bath, Droplets, Wind, Brush, Scissors, Ribbon,
+};
 
 type ContentPageTemplateProps = {
   page: ContentPage;
@@ -86,7 +93,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
     case "pricing":
       return (
-        <section className={`${tone} ${sectionPadding}`}>
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
@@ -311,9 +318,76 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         </section>
       );
 
+    case "iconBullets": {
+      const BulletIcon = iconMap[section.icon];
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <ul className="grid max-w-3xl gap-4">
+              {section.items.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-base leading-8 text-[rgba(47,42,39,0.82)]"
+                >
+                  {BulletIcon ? <BulletIcon className="mt-1.5 h-5 w-5 shrink-0 text-[var(--pp-main)]" /> : null}
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      );
+    }
+
+    case "featureGrid":
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {section.items.map((item) => {
+                const Icon = iconMap[item.icon];
+                return (
+                  <article key={item.title} className="text-center">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--pp-mint)]/20">
+                      {Icon ? <Icon className="h-7 w-7 stroke-[1.5] text-[var(--pp-main)]" /> : null}
+                    </div>
+                    <h3 className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-[var(--pp-ink)]">
+                      {item.title}
+                    </h3>
+                    <p className="mx-auto mt-2 max-w-[14rem] text-sm leading-7 text-[rgba(47,42,39,0.78)]">
+                      {item.description}
+                    </p>
+                  </article>
+                );
+              })}
+            </div>
+            {section.ctas?.length ? (
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                {section.ctas.map((cta) => {
+                  const isHash = cta.href.startsWith("#");
+                  const Tag = isHash ? "a" : Link;
+                  return (
+                    <Tag
+                      key={cta.href}
+                      href={cta.href}
+                      className="inline-flex items-center gap-2 border border-[var(--pp-main)]/30 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main)] transition hover:bg-[var(--pp-main)]/8"
+                    >
+                      {cta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Tag>
+                  );
+                })}
+              </div>
+            ) : null}
+          </div>
+        </section>
+      );
+
     case "callout":
       return (
-        <section className={`${tone} ${sectionPadding}`}>
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <article className="flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">

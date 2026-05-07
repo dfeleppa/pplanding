@@ -27,29 +27,41 @@ export const mainServicePages = {
     },
     sections: [
       {
-        type: "prose",
+        type: "iconBullets",
         eyebrow: "Why mobile?",
         title: "The luxury grooming experience, brought to you.",
-        paragraphs: [
-          "Mobile grooming is the perfect solution for pets who get anxious around other dogs or for owners who'd rather skip the trip. One of our professional groomers comes to you in our fully equipped van for a calm, one-on-one session.",
-          "Your pet is always hand-dried, never left in a cage. Most appointments are finished in under 90 minutes — your pet gets back to their family quickly without sitting between steps.",
+        icon: "PawPrint",
+        items: [
+          "One-on-one session in your driveway — no salon stress",
+          "Perfect for anxious pets or busy owners",
+          "Your pet is always hand-dried, never left in a cage",
+          "Most appointments finished in under 90 minutes",
+          "Fully equipped van — no hookups required",
         ],
       },
       {
-        type: "checklist",
-        title: "Full grooming includes",
+        type: "featureGrid",
+        eyebrow: "Services",
+        title: "What every groom includes.",
         items: [
-          "Pedicure — nail cut and grind",
-          "Ears cleaned and plucked upon request",
-          "Two-shampoo bath plus conditioner",
-          "Anal glands expressed upon request",
-          "Hand blow dry, fluffing, and brushing",
-          "Wide range of haircut options",
-          "Signature bow and bandana finish",
+          { icon: "Footprints", title: "Pedicure", description: "Nail cut and grind for a comfortable, healthy length." },
+          { icon: "Ear", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },
+          { icon: "Bath", title: "Bath", description: "Two shampoos and a conditioner for a deep clean." },
+          { icon: "Droplets", title: "Anal Glands", description: "Expressed upon request for your pet's comfort." },
+          { icon: "Wind", title: "Dry", description: "Hand blow dry — never cage-dried." },
+          { icon: "Brush", title: "Brushing", description: "Thorough fluffing and brushing for a polished coat." },
+          { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
+          { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before heading home." },
+        ],
+        ctas: [
+          { label: "Nassau Pricing", href: "#nassau-pricing" },
+          { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
+          { label: "Cat Pricing", href: "#cat-pricing" },
         ],
       },
       {
         type: "pricing",
+        id: "nassau-pricing",
         eyebrow: "Pricing",
         title: "Full Groom with Haircut",
         intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
@@ -154,6 +166,7 @@ export const mainServicePages = {
       },
       {
         type: "callout",
+        id: "cat-pricing",
         eyebrow: "For cats",
         title: "The Planet Pooch Cat Experience",
         body:
@@ -173,21 +186,6 @@ export const mainServicePages = {
           "15,000 BTU low-profile roof-mounted air conditioner for summer",
           "Fully equipped with fresh water and electricity",
         ],
-      },
-      {
-        type: "callout",
-        eyebrow: "Hamptons",
-        title: "We service the Hamptons too.",
-        body:
-          "Hamptons mobile grooming reflects the extended service area with a separate pricing tier. Same luxury, same boutique products, delivered to your Hamptons home.",
-        cta: { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
-      },
-      {
-        type: "callout",
-        eyebrow: "For resort clients",
-        title: "Already coming to the resort? Bundle in-house grooming.",
-        body:
-          "Our in-house grooming is exclusively for dogs enrolled in daycare or boarding at our Franklin Square location. Boarding guests staying 2 or more nights receive 20% off in-house grooming.",
       },
       {
         type: "faq",
