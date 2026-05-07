@@ -404,17 +404,18 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <ul className="grid max-w-3xl gap-4">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
               {section.items.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-base leading-8 text-[rgba(47,42,39,0.82)]"
-                >
-                  {BulletIcon ? <BulletIcon className="mt-1.5 h-5 w-5 shrink-0 text-[var(--pp-main)]" /> : null}
-                  <span>{item}</span>
-                </li>
+                <article key={item} className="text-center">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--pp-mint)]/20">
+                    {BulletIcon ? <BulletIcon className="h-6 w-6 stroke-[1.5] text-[var(--pp-main)]" /> : null}
+                  </div>
+                  <p className="mx-auto mt-3 max-w-[12rem] text-sm leading-6 text-[rgba(47,42,39,0.78)]">
+                    {item}
+                  </p>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
       );
