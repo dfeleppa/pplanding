@@ -472,11 +472,20 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
     case "iconBullets": {
       const BulletIcon = iconMap[section.icon];
+      const itemCount = section.items.length;
+      const bulletCols =
+        itemCount >= 5
+          ? "sm:grid-cols-2 lg:grid-cols-5"
+          : itemCount === 4
+            ? "sm:grid-cols-2 lg:grid-cols-4"
+            : itemCount === 3
+              ? "sm:grid-cols-3"
+              : "sm:grid-cols-2";
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            <div className={`grid gap-5 ${bulletCols}`}>
               {section.items.map((item) => (
                 <article key={item} className="text-center">
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--pp-mint)]/20">
