@@ -52,10 +52,10 @@ const heroHighlights = [
     copy: "Compassionate, results-driven training led by our AKC Evaluator Trainer.",
   },
   {
-    title: "Enrichment & Events",
+    title: "Enrichment",
     href: "/enrichment/",
     icon: Sparkles,
-    copy: "One-on-one enrichment activities, plus birthday parties, field trips, and signature events.",
+    copy: "One-on-one enrichment activities — sensory play, scent work, agility, and gentle challenges for dogs who shine away from the pack.",
   },
 ] as const;
 

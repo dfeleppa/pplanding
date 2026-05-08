@@ -15,5 +15,6 @@ export const headerNavItems: ReadonlyArray<NavItem> = [
   { label: "Daycare", href: "/dog-daycare/" },
   { label: "Boarding", href: "/dog-boarding/" },
   { label: "Training", href: "/dog-training/" },
-  { label: "Enrichment & Events", href: "/enrichment/" },
+  { label: "Enrichment", href: "/enrichment/" },
+  { label: "Events", href: "/events/" },
 ];
