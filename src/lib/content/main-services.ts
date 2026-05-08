@@ -680,7 +680,6 @@ export const mainServicePages = {
           "Sensory — scent work, textures, and new stimuli",
           "Nutritional — food puzzles and lick mats that slow eating",
         ],
-        width: "wide",
         wide: true,
       },
       {
