@@ -59,6 +59,7 @@ export type ContentSection =
         featured?: boolean;
         badge?: string;
       }>;
+      uniformStyle?: "dark";
       note?: string;
       secondaryCard?: {
         eyebrow?: string;
@@ -123,6 +124,7 @@ export type ContentSection =
       intro?: string;
       icon: string;
       items: string[];
+      cta?: { label: string; href: string };
     }
   | {
       type: "featureGrid";

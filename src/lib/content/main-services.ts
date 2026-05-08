@@ -530,13 +530,38 @@ export const mainServicePages = {
           "Coaching for owners on reinforcing skills at home",
           "Positive, relationship-minded handling",
         ],
+        cta: { label: "Pricing", href: "#group-training" },
+      },
+      {
+        type: "faq",
+        eyebrow: "FAQ",
+        title: "Common training questions",
+        items: [
+          {
+            question: "What kinds of goals can we work on?",
+            answer:
+              "Common goals include puppy foundations, basic obedience, leash manners, focus, confidence-building, and addressing behaviors like jumping, barking, or pulling.",
+          },
+          {
+            question: "Is private training better than a group class?",
+            answer:
+              "Private sessions are especially valuable for dogs who feel overwhelmed, distracted, or anxious around other dogs. They learn in a calm, focused environment where they can succeed.",
+          },
+          {
+            question: "Will I get coaching too?",
+            answer:
+              "Yes — training works best when owners understand how to reinforce the skills outside the resort. We make sure you leave each session knowing what to practice.",
+          },
+        ],
       },
       {
         type: "tieredPricing",
+        id: "group-training",
         eyebrow: "Group Training",
         title: "Real-world skills, in a small group.",
         intro:
           "Group training helps dogs and puppies learn essential skills while practicing them around real-world distractions — building focus, impulse control, and confidence around other dogs and people. For puppies, it supports healthy socialization during critical learning stages. You'll also learn how to communicate clearly and consistently, resulting in better manners and a well-rounded, confident dog.",
+        uniformStyle: "dark",
         tiers: [
           {
             name: "Beginner",
@@ -557,7 +582,6 @@ export const mainServicePages = {
               "Builds focus and reliability with distractions",
               "Up to 8 dogs per class",
             ],
-            featured: true,
           },
           {
             name: "Advanced",
@@ -579,10 +603,12 @@ export const mainServicePages = {
       },
       {
         type: "tieredPricing",
+        id: "private-sessions",
         eyebrow: "Private Sessions",
         title: "One-on-one training tailored to your dog.",
         intro:
           "Personalized guidance shaped around your dog's age, temperament, and learning style — especially valuable for dogs who feel overwhelmed, distracted, or anxious in group settings. Each program runs six 45-minute sessions.",
+        uniformStyle: "dark",
         tiers: [
           {
             name: "Level 1",
@@ -605,7 +631,6 @@ export const mainServicePages = {
               "Reliability with distractions",
               "Confidence in busier environments",
             ],
-            featured: true,
           },
           {
             name: "Level 3",
@@ -626,26 +651,6 @@ export const mainServicePages = {
         body:
           "Every dog starts with a free 20-minute consultation so we can understand their age, temperament, and your goals before training begins.",
         cta: { label: "Book a consultation", href: "/contact/" },
-      },
-      {
-        type: "faq",
-        items: [
-          {
-            question: "What kinds of goals can we work on?",
-            answer:
-              "Common goals include puppy foundations, basic obedience, leash manners, focus, confidence-building, and addressing behaviors like jumping, barking, or pulling.",
-          },
-          {
-            question: "Is private training better than a group class?",
-            answer:
-              "Private sessions are especially valuable for dogs who feel overwhelmed, distracted, or anxious around other dogs. They learn in a calm, focused environment where they can succeed.",
-          },
-          {
-            question: "Will I get coaching too?",
-            answer:
-              "Yes — training works best when owners understand how to reinforce the skills outside the resort. We make sure you leave each session knowing what to practice.",
-          },
-        ],
       },
     ],
   },
