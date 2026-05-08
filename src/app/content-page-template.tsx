@@ -473,6 +473,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 </article>
               ))}
             </div>
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
           </div>
         </section>
       );
@@ -561,6 +572,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 );
               })}
             </div>
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
             {section.ctas?.length ? (
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 {section.ctas.map((cta) => {

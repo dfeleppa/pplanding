@@ -106,6 +106,7 @@ export type ContentSection =
       eyebrow?: string;
       intro?: string;
       items: Array<{ question: string; answer: string }>;
+      cta?: { label: string; href: string };
     }
   | {
       type: "callout";
@@ -138,6 +139,7 @@ export type ContentSection =
         description: string;
         cta?: { label: string; href: string };
       }>;
+      cta?: { label: string; href: string };
       ctas?: Array<{ label: string; href: string }>;
     };
 

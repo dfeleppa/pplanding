@@ -39,6 +39,7 @@ export const mainServicePages = {
           "Most appointments finished in under 90 minutes",
           "Fully equipped van — no hookups required",
         ],
+        cta: { label: "Pricing", href: "#pricing" },
       },
       {
         type: "featureGrid",
@@ -54,6 +55,7 @@ export const mainServicePages = {
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
           { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before heading home." },
         ],
+        cta: { label: "Pricing", href: "#pricing" },
       },
       {
         type: "callout",
@@ -553,6 +555,7 @@ export const mainServicePages = {
               "Yes — training works best when owners understand how to reinforce the skills outside the resort. We make sure you leave each session knowing what to practice.",
           },
         ],
+        cta: { label: "Pricing", href: "#group-training" },
       },
       {
         type: "tieredPricing",
