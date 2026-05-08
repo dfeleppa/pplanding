@@ -652,13 +652,13 @@ export const mainServicePages = {
 
   enrichment: {
     slug: "enrichment",
-    title: "Enrichment & Events",
-    eyebrow: "Enrichment & Events",
+    title: "Enrichment",
+    eyebrow: "Enrichment",
     hero:
-      "One-on-one enrichment days for dogs who shine away from the pack — plus birthday parties, field trips, and signature events for the whole pack.",
-    metaTitle: "Dog Enrichment & Events Long Island | Planet Pooch",
+      "One-on-one enrichment days for dogs who shine away from the pack — sensory play, scent work, agility, and gentle challenges tailored to each dog.",
+    metaTitle: "Dog Enrichment Long Island | One-on-One Activities | Planet Pooch",
     metaDescription:
-      "One-on-one enrichment activities and signature events at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, birthday parties, field trips, and Photos with Santa.",
+      "One-on-one enrichment activities at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, and nutrition puzzles for dogs who thrive away from the pack.",
     image: "/our-resort-exterior.jpeg",
     heroCtas: {
       primary: { label: "Get Started", href: "/contact" },
@@ -781,14 +781,38 @@ export const mainServicePages = {
           },
         ],
       },
+      {
+        type: "callout",
+        title: "Book a one-on-one enrichment day",
+        body:
+          "Tell us about your dog's energy level, sensitivities, and what kinds of activities engage them best.",
+        cta: { label: "Book Now", href: "/contact/" },
+      },
+    ],
+  },
 
-      // ===== EVENTS section =====
+  events: {
+    slug: "events",
+    title: "Events",
+    eyebrow: "Events",
+    hero:
+      "Birthday parties, field trips, themed daycare days, and signature seasonal events — celebrating the whole pack year-round.",
+    metaTitle: "Dog Events Long Island | Birthday Parties & Themed Days | Planet Pooch",
+    metaDescription:
+      "Signature events at Planet Pooch in Franklin Square — birthday parties, Bark in the Park field trips, Photos with Santa, and themed daycare days throughout the year.",
+    image: "/our-resort-exterior.jpeg",
+    heroCtas: {
+      primary: { label: "Book an Event", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
+    sections: [
       {
         type: "prose",
         eyebrow: "Events",
         title: "Signature events year-round.",
         paragraphs: [
-          "We host events year-round so your dog gets more than a great daycare day. Pick a category below or call us about availability.",
+          "We host events year-round so your dog gets more than a great daycare day — birthday parties at the resort, guided field trips, festive holiday photoshoots, and themed daycare days at no extra charge.",
+          "Pick a category below or call us about availability.",
         ],
       },
       {

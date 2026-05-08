@@ -48,16 +48,17 @@ const nextConfig: NextConfig = {
       { source: "/boarding-add-ons/", destination: "/dog-boarding/", permanent: true },
       { source: "/boarding-a-day-in-the-life/", destination: "/dog-boarding/", permanent: true },
 
-      // ----- Enrichment + Events consolidations -----
+      // ----- Enrichment consolidations -----
       { source: "/what-is-enrichment/", destination: "/enrichment/", permanent: true },
       { source: "/enrichment-activities/", destination: "/enrichment/", permanent: true },
       { source: "/enrichment-a-day-in-the-life/", destination: "/enrichment/", permanent: true },
       { source: "/enrichment-pricing/", destination: "/enrichment/", permanent: true },
-      { source: "/our-events/", destination: "/enrichment/", permanent: true },
-      { source: "/events/", destination: "/enrichment/", permanent: true },
-      { source: "/birthday-party/", destination: "/enrichment/", permanent: true },
-      { source: "/field-trip/", destination: "/enrichment/", permanent: true },
-      { source: "/photos-with-santa/", destination: "/enrichment/", permanent: true },
+
+      // ----- Events consolidations -----
+      { source: "/our-events/", destination: "/events/", permanent: true },
+      { source: "/birthday-party/", destination: "/events/", permanent: true },
+      { source: "/field-trip/", destination: "/events/", permanent: true },
+      { source: "/photos-with-santa/", destination: "/events/", permanent: true },
 
       // ===== About Us consolidated to home page =====
       // The about content (origin story + team callout) now lives on the
@@ -82,7 +83,7 @@ const nextConfig: NextConfig = {
       // ===== Junk / draft / test pages → closest meaningful page =====
       { source: "/test/", destination: "/", permanent: true },
       { source: "/inquiry2/", destination: "/contact/", permanent: true },
-      { source: "/events-page-draft/", destination: "/enrichment/", permanent: true },
+      { source: "/events-page-draft/", destination: "/events/", permanent: true },
 
       // ===== Old WP blog post with URL-encoded emoji slug =====
       // 0 GSC clicks; cannot reliably static-generate.
@@ -99,19 +100,19 @@ const nextConfig: NextConfig = {
       { source: "/booking/", destination: "/contact/", permanent: true },
       { source: "/booking-details/", destination: "/contact/", permanent: true },
       { source: "/submit-event/", destination: "/contact/", permanent: true },
-      { source: "/event-types/", destination: "/enrichment/", permanent: true },
-      { source: "/event-organizers/", destination: "/enrichment/", permanent: true },
-      { source: "/event-directory/", destination: "/enrichment/", permanent: true },
-      { source: "/all-events/", destination: "/enrichment/", permanent: true },
-      { source: "/performers/", destination: "/enrichment/", permanent: true },
-      { source: "/venues/", destination: "/enrichment/", permanent: true },
-      { source: "/ticket-receipt/", destination: "/enrichment/", permanent: true },
-      { source: "/ticket-details/", destination: "/enrichment/", permanent: true },
-      { source: "/my-calendar/", destination: "/enrichment/", permanent: true },
+      { source: "/event-types/", destination: "/events/", permanent: true },
+      { source: "/event-organizers/", destination: "/events/", permanent: true },
+      { source: "/event-directory/", destination: "/events/", permanent: true },
+      { source: "/all-events/", destination: "/events/", permanent: true },
+      { source: "/performers/", destination: "/events/", permanent: true },
+      { source: "/venues/", destination: "/events/", permanent: true },
+      { source: "/ticket-receipt/", destination: "/events/", permanent: true },
+      { source: "/ticket-details/", destination: "/events/", permanent: true },
+      { source: "/my-calendar/", destination: "/events/", permanent: true },
 
-      // ===== WP /event/{slug}/ children → all to /enrichment/ =====
-      { source: "/event/", destination: "/enrichment/", permanent: true },
-      { source: "/event/:slug*/", destination: "/enrichment/", permanent: true },
+      // ===== WP /event/{slug}/ children → all to /events/ =====
+      { source: "/event/", destination: "/events/", permanent: true },
+      { source: "/event/:slug*/", destination: "/events/", permanent: true },
 
       // ===== WP MetForm internal routes =====
       { source: "/metform-form/training-form/", destination: "/dog-training/", permanent: true },
