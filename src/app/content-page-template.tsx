@@ -500,9 +500,10 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             : itemCount === 3
               ? "sm:grid-cols-3"
               : "sm:grid-cols-2";
+      const iconBulletsOuterWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
-          <div className="mx-auto max-w-7xl">
+          <div className={`mx-auto ${iconBulletsOuterWidth}`}>
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className={`grid gap-5 ${bulletCols}`}>
               {section.items.map((item) => (

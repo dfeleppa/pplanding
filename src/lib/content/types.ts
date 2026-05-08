@@ -128,6 +128,7 @@ export type ContentSection =
       icon: string;
       items: string[];
       cta?: { label: string; href: string };
+      wide?: boolean;
     }
   | {
       type: "featureGrid";
