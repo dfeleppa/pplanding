@@ -35,7 +35,7 @@ const sectionPadding = "px-5 py-14 sm:px-8 lg:px-10 lg:py-20";
 function SectionEyebrow({ eyebrow, title, intro }: { eyebrow?: string; title?: string; intro?: string }) {
   if (!eyebrow && !title && !intro) return null;
   return (
-    <div className="mb-8 max-w-3xl">
+    <div className="mb-8 max-w-5xl">
       {eyebrow ? (
         <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
           {eyebrow}
