@@ -678,6 +678,8 @@ export const mainServicePages = {
           "Some dogs do best individually. Our enrichment program offers thoughtful, supervised activities — sensory play, gentle challenges, themed moments — that keep your dog engaged, curious, and happily stimulated without the energy of a group setting.",
           "Canine enrichment addresses behavioral issues including destruction, barking, escaping, anxiety, hyperactivity, obsessive or compulsive behaviors, and depression.",
         ],
+        width: "wide",
+        wide: true,
       },
       {
         type: "callout",
@@ -685,6 +687,7 @@ export const mainServicePages = {
         title: "$82 per day for one-on-one Enrichment Play",
         body:
           "A personalized program where your dog engages in structured activities designed around their individual needs, personality, and comfort level. Sessions are customized to each dog's responses, allowing staff to adjust pace and focus based on engagement.",
+        wide: true,
       },
       {
         type: "definitions",
