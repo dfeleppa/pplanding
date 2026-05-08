@@ -149,10 +149,10 @@ export const mainServicePages = {
     sections: [
       {
         type: "callout",
-        eyebrow: "Important",
-        title: "Reserved for daycare and boarding guests",
+        title: "Already booked daycare or boarding?",
         body:
-          "Our in-house grooming is not open to the public. We provide in-house grooming exclusively for dogs already enrolled in our daycare or boarding programs — so we can give your dog focused attention without disrupting their day at the resort.",
+          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
+        cta: { label: "Contact us", href: "/contact/" },
       },
       {
         type: "featureGrid",
@@ -176,13 +176,6 @@ export const mainServicePages = {
         body:
           "Add a fresh-from-the-bath finish to any boarding stay of 2+ nights and save 20% off the standard groom price. Just mention grooming when you book.",
         cta: { label: "View boarding", href: "/dog-boarding/" },
-      },
-      {
-        type: "callout",
-        title: "Already booked daycare or boarding?",
-        body:
-          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-        cta: { label: "Contact us", href: "/contact/" },
       },
     ],
   },
