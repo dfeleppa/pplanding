@@ -132,6 +132,61 @@ export const mainServicePages = {
     ],
   },
 
+  "in-house-grooming": {
+    slug: "in-house-grooming",
+    title: "In-House Grooming",
+    eyebrow: "Grooming",
+    hero:
+      "Spa-quality grooming for our daycare and boarding guests — never open to the public.",
+    metaTitle: "In-House Dog Grooming | Daycare & Boarding | Planet Pooch",
+    metaDescription:
+      "Professional in-house grooming at our Franklin Square resort, available exclusively to dogs enrolled in daycare or boarding. 20% off when added to a 2+ night stay.",
+    image: "/Grooming.png",
+    heroCtas: {
+      primary: { label: "Book Now", href: "/contact" },
+      ghost: { label: "Learn More", href: "#overview" },
+    },
+    sections: [
+      {
+        type: "callout",
+        eyebrow: "Important",
+        title: "Reserved for daycare and boarding guests",
+        body:
+          "Our in-house grooming is not open to the public. We provide in-house grooming exclusively for dogs already enrolled in our daycare or boarding programs — so we can give your dog focused attention without disrupting their day at the resort.",
+      },
+      {
+        type: "featureGrid",
+        eyebrow: "Services",
+        title: "What every groom includes.",
+        items: [
+          { icon: "Footprints", title: "Pedicure", description: "Nail cut and grind for a comfortable, healthy length." },
+          { icon: "Ear", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },
+          { icon: "Bath", title: "Bath", description: "Two shampoos and a conditioner for a deep clean." },
+          { icon: "Droplets", title: "Anal Glands", description: "Expressed upon request for your pet's comfort." },
+          { icon: "Wind", title: "Dry", description: "Hand blow dry — never cage-dried." },
+          { icon: "Brush", title: "Brushing", description: "Thorough fluffing and brushing for a polished coat." },
+          { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
+          { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before pickup." },
+        ],
+      },
+      {
+        type: "callout",
+        eyebrow: "Stay & save",
+        title: "20% off in-house grooming on stays of 2 or more nights",
+        body:
+          "Add a fresh-from-the-bath finish to any boarding stay of 2+ nights and save 20% off the standard groom price. Just mention grooming when you book.",
+        cta: { label: "View boarding", href: "/dog-boarding/" },
+      },
+      {
+        type: "callout",
+        title: "Already booked daycare or boarding?",
+        body:
+          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
+        cta: { label: "Contact us", href: "/contact/" },
+      },
+    ],
+  },
+
   "dog-daycare": {
     slug: "dog-daycare",
     title: "Dog Daycare",

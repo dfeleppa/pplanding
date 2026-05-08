@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { headerNavItems } from "../lib/nav";
+import { NavDropdown } from "./nav-dropdown";
 
 type SiteHeaderProps = {
   /** Where the Book Now CTA links to. Defaults to /contact/. */
@@ -32,15 +33,19 @@ export function SiteHeader({ ctaHref = "/contact/" }: SiteHeaderProps = {}) {
         aria-label="Primary"
         className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78"
       >
-        {headerNavItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="nav-link transition hover:text-white"
-          >
-            {item.label}
-          </Link>
-        ))}
+        {headerNavItems.map((item) =>
+          "items" in item ? (
+            <NavDropdown key={item.label} label={item.label} items={item.items} />
+          ) : (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="nav-link transition hover:text-white"
+            >
+              {item.label}
+            </Link>
+          )
+        )}
       </nav>
       <div className="flex shrink-0 items-center gap-2 whitespace-nowrap">
         <Link href="/contact/" className="pp-cta-ghost pp-cta-sm">
