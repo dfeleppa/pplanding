@@ -671,12 +671,18 @@ export const mainServicePages = {
     },
     sections: [
       {
-        type: "prose",
+        type: "iconBullets",
         eyebrow: "Enrichment",
-        title: "For dogs who shine away from the pack.",
-        paragraphs: [
-          "Some dogs do best individually. Our enrichment program offers thoughtful, supervised activities — sensory play, gentle challenges, themed moments — that keep your dog engaged, curious, and happily stimulated without the energy of a group setting.",
-          "Canine enrichment addresses behavioral issues including destruction, barking, escaping, anxiety, hyperactivity, obsessive or compulsive behaviors, and depression.",
+        title: "The five pillars of enrichment.",
+        intro:
+          "Some dogs do best individually. Our enrichment program offers thoughtful, supervised activities that keep your dog engaged, curious, and happily stimulated without the energy of a group setting — addressing behavioral issues including destruction, barking, escaping, anxiety, hyperactivity, and depression.",
+        icon: "PawPrint",
+        items: [
+          "Social — one-on-one trust-building at your dog's pace",
+          "Cognitive — puzzles and games that combat boredom",
+          "Physical — low-impact movement matched to energy",
+          "Sensory — scent work, textures, and new stimuli",
+          "Nutritional — food puzzles and lick mats that slow eating",
         ],
       },
       {
@@ -685,37 +691,6 @@ export const mainServicePages = {
         title: "$82 per day for one-on-one Enrichment Play",
         body:
           "A personalized program where your dog engages in structured activities designed around their individual needs, personality, and comfort level. Sessions are customized to each dog's responses, allowing staff to adjust pace and focus based on engagement.",
-      },
-      {
-        type: "definitions",
-        title: "Five pillars of enrichment",
-        items: [
-          {
-            term: "Social",
-            definition:
-              "One-on-one staff interaction building comfort and trust at your dog's pace. Exposure to varied people, dogs, and situations reduces fearfulness.",
-          },
-          {
-            term: "Cognitive",
-            definition:
-              "Puzzle toys, problem-solving games, and basic training exercises that decrease boredom-related behavioral problems.",
-          },
-          {
-            term: "Physical",
-            definition:
-              "Guided movement and low-impact activity matched to your dog's energy. Maintains healthy weight, builds muscle, and improves cardiovascular fitness.",
-          },
-          {
-            term: "Sensory",
-            definition:
-              "Scent work, new textures, and exposure to different sights and sounds. Particularly beneficial for anxious or stressed dogs.",
-          },
-          {
-            term: "Nutritional",
-            definition:
-              "Food-based enrichment like puzzles, lick mats, and treat activities. Slows eating pace and enhances digestion.",
-          },
-        ],
       },
       {
         type: "definitions",
