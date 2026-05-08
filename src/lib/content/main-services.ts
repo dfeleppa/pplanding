@@ -465,44 +465,103 @@ export const mainServicePages = {
     },
     sections: [
       {
-        type: "prose",
+        type: "iconBullets",
         eyebrow: "Why train?",
         title: "A bridge between dogs and humans.",
-        paragraphs: [
-          "Training is one of the best ways to strengthen the bond between you and your dog. Since dogs and humans communicate differently, training helps bridge that gap and create a mutual understanding built on trust and respect.",
-          "With guidance from our AKC Evaluator Trainer, your dog learns through consistent, positive methods what's expected — and gains the confidence to navigate the world calmly and happily.",
-        ],
-      },
-      {
-        type: "checklist",
-        title: "What training accomplishes",
+        icon: "PawPrint",
         items: [
           "AKC Evaluator Trainer leading every program",
-          "Free 20-minute consultation before any training begins",
-          "Private and small-group formats for every age and skill level",
+          "FREE Consultation prior to training",
           "Coaching for owners on reinforcing skills at home",
           "Positive, relationship-minded handling",
         ],
       },
       {
-        type: "definitions",
-        eyebrow: "Programs",
-        title: "Training session formats",
-        items: [
+        type: "tieredPricing",
+        eyebrow: "Group Training",
+        title: "Real-world skills, in a small group.",
+        intro:
+          "Group training helps dogs and puppies learn essential skills while practicing them around real-world distractions — building focus, impulse control, and confidence around other dogs and people. For puppies, it supports healthy socialization during critical learning stages. You'll also learn how to communicate clearly and consistently, resulting in better manners and a well-rounded, confident dog.",
+        tiers: [
           {
-            term: "Private Sessions",
-            definition:
-              "Personalized, one-on-one guidance tailored to your dog or puppy's age, temperament, and learning style. Especially valuable for dogs who feel overwhelmed, distracted, or anxious around other dogs.",
+            name: "Beginner",
+            price: "$179.99",
+            cadence: "6-week program · 45-min classes",
+            features: [
+              "8 weeks – 6 months old",
+              "Foundational manners and socialization",
+              "Up to 8 dogs per class",
+            ],
           },
           {
-            term: "6 Week Sessions",
-            definition:
-              "Structured progress-focused programs with weekly milestones — puppy foundations, basic obedience, leash manners, focus, and confidence building.",
+            name: "Intermediate",
+            price: "$209.99",
+            cadence: "6-week program · 45-min classes",
+            features: [
+              "Any age (prerequisite required)",
+              "Builds focus and reliability with distractions",
+              "Up to 8 dogs per class",
+            ],
+            featured: true,
           },
           {
-            term: "45 Minute Sessions",
-            definition:
-              "Focused individual sessions designed around the behaviors that matter most to you.",
+            name: "Advanced",
+            price: "$239.99",
+            cadence: "6-week program · 45-min classes",
+            features: [
+              "1 year and older",
+              "Polished obedience and real-world reliability",
+              "Up to 8 dogs per class",
+            ],
+          },
+        ],
+        secondaryCard: {
+          eyebrow: "Advanced certification",
+          title: "AKC's Canine Good Citizen Program — $239.99",
+          body:
+            "*Need to have completed either Intermediate or Advanced classes. The Canine Good Citizen (CGC) is an award your dog can earn by demonstrating good manners at home and in the community — recognizing the training and effort you've put into working with your dog.",
+        },
+      },
+      {
+        type: "tieredPricing",
+        eyebrow: "Private Sessions",
+        title: "One-on-one training tailored to your dog.",
+        intro:
+          "Personalized guidance shaped around your dog's age, temperament, and learning style — especially valuable for dogs who feel overwhelmed, distracted, or anxious in group settings. Each program runs six 45-minute sessions.",
+        tiers: [
+          {
+            name: "Level 1",
+            price: "$449.99",
+            cadence: "6 sessions · 45 min each",
+            description: "Foundational skills",
+            features: [
+              "Sit, stay, and come",
+              "Loose leash walking",
+              "Potty training",
+            ],
+          },
+          {
+            name: "Level 2",
+            price: "$449.99",
+            cadence: "6 sessions · 45 min each",
+            description: "Advanced techniques",
+            features: [
+              "Builds on Level 1 skills",
+              "Reliability with distractions",
+              "Confidence in busier environments",
+            ],
+            featured: true,
+          },
+          {
+            name: "Level 3",
+            price: "$449.99",
+            cadence: "6 sessions · 45 min each",
+            description: "Customizable curriculum",
+            features: [
+              "Curriculum tailored to your goals",
+              "Behaviors specific to your dog",
+              "Owner coaching to maintain results",
+            ],
           },
         ],
       },
