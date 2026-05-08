@@ -240,60 +240,67 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className={`grid gap-5 ${gridCols} lg:items-stretch`}>
-              {section.tiers.map((tier) => (
-                <article
-                  key={tier.name}
-                  className={`relative flex flex-col gap-4 border p-6 ${
-                    tier.featured
-                      ? "z-10 border-[var(--pp-mint)] bg-[var(--pp-night)] text-white shadow-[0_30px_80px_rgba(50,73,83,0.32)] ring-2 ring-[var(--pp-mint)]/50 lg:scale-[1.04]"
-                      : "border-[rgba(50,73,83,0.12)] bg-white/65 text-[var(--pp-ink)]"
-                  }`}
-                >
-                  {tier.badge ? (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[var(--pp-mint)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--pp-night)] shadow-[0_6px_20px_rgba(50,73,83,0.25)]">
-                      {tier.badge}
-                    </span>
-                  ) : null}
-                  <header>
-                    <p
-                      className={`text-[11px] font-bold uppercase tracking-[0.18em] ${
-                        tier.featured ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]/75"
-                      }`}
-                    >
-                      {tier.name}
-                    </p>
-                    <p className="mt-3 text-3xl font-semibold leading-tight">{tier.price}</p>
-                    {tier.cadence ? (
-                      <p className={`mt-1 text-xs ${tier.featured ? "text-white/70" : "text-[rgba(47,42,39,0.6)]"}`}>
-                        {tier.cadence}
-                      </p>
+              {section.tiers.map((tier) => {
+                const uniformDark = section.uniformStyle === "dark";
+                const dark = uniformDark || tier.featured;
+                const elevated = tier.featured && !uniformDark;
+                return (
+                  <article
+                    key={tier.name}
+                    className={`relative flex flex-col gap-4 border p-6 ${
+                      elevated
+                        ? "z-10 border-[var(--pp-mint)] bg-[var(--pp-night)] text-white shadow-[0_30px_80px_rgba(50,73,83,0.32)] ring-2 ring-[var(--pp-mint)]/50 lg:scale-[1.04]"
+                        : dark
+                          ? "border-[var(--pp-mint)]/40 bg-[var(--pp-night)] text-white"
+                          : "border-[rgba(50,73,83,0.12)] bg-white/65 text-[var(--pp-ink)]"
+                    }`}
+                  >
+                    {tier.badge ? (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[var(--pp-mint)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--pp-night)] shadow-[0_6px_20px_rgba(50,73,83,0.25)]">
+                        {tier.badge}
+                      </span>
                     ) : null}
-                    {tier.description ? (
+                    <header>
                       <p
-                        className={`mt-3 text-sm font-bold leading-6 ${
-                          tier.featured ? "text-white/80" : "text-[rgba(47,42,39,0.78)]"
+                        className={`text-[11px] font-bold uppercase tracking-[0.18em] ${
+                          dark ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]/75"
                         }`}
                       >
-                        {tier.description}
+                        {tier.name}
                       </p>
-                    ) : null}
-                  </header>
-                  <ul className="grid gap-2 text-sm leading-6">
-                    {tier.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2">
-                        <Check
-                          className={`mt-1 h-4 w-4 shrink-0 ${
-                            tier.featured ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]"
+                      <p className="mt-3 text-3xl font-semibold leading-tight">{tier.price}</p>
+                      {tier.cadence ? (
+                        <p className={`mt-1 text-xs ${dark ? "text-white/70" : "text-[rgba(47,42,39,0.6)]"}`}>
+                          {tier.cadence}
+                        </p>
+                      ) : null}
+                      {tier.description ? (
+                        <p
+                          className={`mt-3 text-sm font-bold leading-6 ${
+                            dark ? "text-white/80" : "text-[rgba(47,42,39,0.78)]"
                           }`}
-                        />
-                        <span className={tier.featured ? "text-white/85" : "text-[rgba(47,42,39,0.8)]"}>
-                          {f}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
+                        >
+                          {tier.description}
+                        </p>
+                      ) : null}
+                    </header>
+                    <ul className="grid gap-2 text-sm leading-6">
+                      {tier.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2">
+                          <Check
+                            className={`mt-1 h-4 w-4 shrink-0 ${
+                              dark ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]"
+                            }`}
+                          />
+                          <span className={dark ? "text-white/85" : "text-[rgba(47,42,39,0.8)]"}>
+                            {f}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                );
+              })}
             </div>
             {section.note ? (
               <p className="mt-6 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
@@ -497,6 +504,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 </article>
               ))}
             </div>
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
           </div>
         </section>
       );
