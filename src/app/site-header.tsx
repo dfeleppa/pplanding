@@ -42,10 +42,15 @@ export function SiteHeader({ ctaHref = "/contact/" }: SiteHeaderProps = {}) {
           </Link>
         ))}
       </nav>
-      <Link href={ctaHref} className="pp-cta">
-        Book Now
-        <span className="pp-cta-arrow" aria-hidden />
-      </Link>
+      <div className="flex items-center gap-4">
+        <Link href="/contact/" className="pp-cta-ghost">
+          Contact Us
+        </Link>
+        <Link href={ctaHref} className="pp-cta">
+          Book Now
+          <span className="pp-cta-arrow" aria-hidden />
+        </Link>
+      </div>
     </header>
   );
 }
