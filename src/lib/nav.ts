@@ -6,5 +6,4 @@ export const headerNavItems = [
   { label: "Boarding", href: "/dog-boarding/" },
   { label: "Training", href: "/dog-training/" },
   { label: "Enrichment & Events", href: "/enrichment/" },
-  { label: "FAQs", href: "/faqs/" },
 ] as const;

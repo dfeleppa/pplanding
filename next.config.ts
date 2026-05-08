@@ -65,6 +65,9 @@ const nextConfig: NextConfig = {
       // home page; the standalone /about-us/ page was removed.
       { source: "/about-us/", destination: "/", permanent: true },
 
+      // ===== FAQs page removed =====
+      { source: "/faqs/", destination: "/", permanent: true },
+
       // ===== Old blog post duplicates =====
       {
         source: "/what-is-dog-daycare-a-complete-guide-for-pet-parents-2/",
