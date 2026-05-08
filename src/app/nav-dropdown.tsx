@@ -30,18 +30,13 @@ export function NavDropdown({ label, items }: NavDropdownProps) {
   }, [open]);
 
   return (
-    <div
-      ref={ref}
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div ref={ref} className="relative">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="nav-link inline-flex items-center gap-1 transition hover:text-white"
+        className="nav-link inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78 transition hover:text-white"
       >
         {label}
         <ChevronDown
