@@ -7,6 +7,7 @@ export type ContentSection =
       eyebrow?: string;
       paragraphs: string[];
       width?: "default" | "wide";
+      wide?: boolean;
     }
   | { type: "list"; title?: string; eyebrow?: string; intro?: string; items: string[] }
   | {
@@ -116,6 +117,7 @@ export type ContentSection =
       body: string;
       cta?: { label: string; href: string };
       ctas?: Array<{ label: string; href: string }>;
+      wide?: boolean;
     }
   | {
       type: "iconBullets";

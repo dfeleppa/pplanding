@@ -57,9 +57,10 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
   switch (section.type) {
     case "prose": {
       const proseWidth = section.width === "wide" ? "max-w-5xl" : "max-w-3xl";
+      const outerWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
       return (
         <section className={`${tone} ${sectionPadding}`}>
-          <div className="mx-auto max-w-7xl">
+          <div className={`mx-auto ${outerWidth}`}>
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
             <div className={`grid ${proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
               {section.paragraphs.map((p) => (
@@ -606,10 +607,11 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       );
     }
 
-    case "callout":
+    case "callout": {
+      const calloutOuterWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
-          <div className="mx-auto max-w-7xl">
+          <div className={`mx-auto ${calloutOuterWidth}`}>
             <article className="flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 {section.eyebrow ? (
@@ -646,6 +648,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           </div>
         </section>
       );
+    }
   }
 }
 
