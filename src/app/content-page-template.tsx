@@ -304,9 +304,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               })}
             </div>
             {section.note ? (
-              <p className="mt-6 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
+              <div className="mt-8 rounded-2xl bg-lime-100 px-6 py-5 text-sm font-bold text-lime-900">
                 {section.note}
-              </p>
+              </div>
             ) : null}
             {section.secondaryCard ? (
               <article className="mt-8 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-white p-7 lg:flex-row lg:items-center lg:justify-between">
