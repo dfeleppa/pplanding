@@ -9,6 +9,7 @@ import type { ContentPage, ContentSection } from "../lib/content/types";
 import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
+import { Slideshow } from "./slideshow";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -602,6 +603,19 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   );
                 })}
               </div>
+            ) : null}
+          </div>
+        </section>
+      );
+    }
+
+    case "slideshow": {
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            {section.images.length > 0 ? (
+              <Slideshow images={section.images} />
             ) : null}
           </div>
         </section>

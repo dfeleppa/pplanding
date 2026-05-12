@@ -827,6 +827,11 @@ export const mainServicePages = {
         ],
         note:
           "Add-ons available — goodie bags, dog-friendly birthday cake, specialty treats, and more.",
+        secondaryCard: {
+          title: "Ready to celebrate?",
+          body: "Call us to book your dog's birthday party.",
+          cta: { label: "Call to Book", href: "tel:+15169933603" },
+        },
       },
       {
         type: "callout",
@@ -837,31 +842,12 @@ export const mainServicePages = {
         cta: { label: "Call (516) 993-3603", href: "tel:+15169933603" },
       },
       {
-        type: "callout",
-        eyebrow: "Holiday",
-        title: "Photos with Santa",
-        body:
-          "An annual December event at our Franklin Square facility for festive holiday photos with your dog. Call to reserve your spot.",
-      },
-      {
-        type: "list",
+        type: "slideshow",
         eyebrow: "Throughout the year",
         title: "Themed daycare days",
         intro:
-          "Recurring themed days when your dog is already at daycare — at no extra charge:",
-        items: [
-          "Doodle Friday",
-          "Frenchie Friday",
-          "Golden Retriever Tuesday",
-          "Wiener Wednesday",
-          "Howloween Costume Party",
-          "Pupsicle Party",
-          "Bobbing for Apples",
-          "Taco Tuesday",
-          "Valentine's Day",
-          "St. Pawtrick's Day",
-          "Photos with the Easter Bunny",
-        ],
+          "Check out our fun packed events throughout the year including Howloween Costume Party, Taco Tuesday, Valentine's Day, and Photos with Santa!",
+        images: [],
       },
       {
         type: "callout",

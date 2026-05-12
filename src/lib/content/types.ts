@@ -144,6 +144,14 @@ export type ContentSection =
       }>;
       cta?: { label: string; href: string };
       ctas?: Array<{ label: string; href: string }>;
+    }
+  | {
+      type: "slideshow";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      images: Array<{ src: string | StaticImageData; alt: string }>;
     };
 
 export type ContentPage = {
