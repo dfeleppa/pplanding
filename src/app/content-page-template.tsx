@@ -59,14 +59,30 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
     case "prose": {
       const proseWidth = section.width === "wide" ? "max-w-5xl" : "max-w-3xl";
       const outerWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
+      const hasChecklist = section.checklist?.length;
       return (
         <section className={`${tone} ${sectionPadding}`}>
           <div className={`mx-auto ${outerWidth}`}>
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
-            <div className={`grid ${proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
-              {section.paragraphs.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
+            <div className={hasChecklist ? "grid gap-10 lg:grid-cols-2 lg:gap-16" : ""}>
+              <div className={`grid ${hasChecklist ? "" : proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
+                {section.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              {hasChecklist ? (
+                <ul className="grid content-start gap-3">
+                  {section.checklist!.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
+                    >
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </section>

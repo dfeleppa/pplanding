@@ -8,6 +8,7 @@ export type ContentSection =
       paragraphs: string[];
       width?: "default" | "wide";
       wide?: boolean;
+      checklist?: string[];
     }
   | { type: "list"; title?: string; eyebrow?: string; intro?: string; items: string[] }
   | {
