@@ -9,6 +9,7 @@ export type ContentSection =
       width?: "default" | "wide";
       wide?: boolean;
       highlights?: Array<{ icon: string; label: string }>;
+      calloutCard?: { title: string; body: string };
     }
   | { type: "list"; title?: string; eyebrow?: string; intro?: string; items: string[] }
   | {

@@ -374,6 +374,10 @@ export const mainServicePages = {
           { icon: "Heart", label: "Bring their favorite toy" },
           { icon: "Camera", label: "Daily photo updates" },
         ],
+        calloutCard: {
+          title: "How Early Should I Book?",
+          body: "Holiday weekends and summer fill up fast. Booking early — especially for Memorial Day, July 4th, Labor Day, and the December holidays — is the surest way to lock in your spot.",
+        },
       },
       {
         type: "splitCards",
@@ -491,26 +495,6 @@ export const mainServicePages = {
             label: "Last call",
             body:
               "Final potty break and bedtime preparation for a comfortable night's rest.",
-          },
-        ],
-      },
-      {
-        type: "faq",
-        items: [
-          {
-            question: "Can boarding include daycare?",
-            answer:
-              "Yes — many boarding stays include daytime play with the daycare pack. We'll match the activity level to what fits your dog best.",
-          },
-          {
-            question: "What should I bring?",
-            answer:
-              "Bring your dog's food and any important care or medication instructions. We'll guide you on what else is helpful before the stay.",
-          },
-          {
-            question: "How early should I book?",
-            answer:
-              "Holiday weekends and summer fill up fast. Booking early — especially for Memorial Day, July 4th, Labor Day, and the December holidays — is the surest way to lock in your spot.",
           },
         ],
       },

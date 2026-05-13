@@ -86,6 +86,12 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 })}
               </div>
             ) : null}
+            {section.calloutCard ? (
+              <div className="mt-10 rounded-xl bg-slate-800 p-7 text-white">
+                <h3 className="text-lg font-bold">{section.calloutCard.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+              </div>
+            ) : null}
           </div>
         </section>
       );
