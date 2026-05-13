@@ -2,8 +2,9 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight, Bath, Brush, Check, ChevronDown, Droplets, Ear, Footprints,
-  PawPrint, Ribbon, Scissors, Sparkles, Trees, Users, Wind, X,
+  ArrowRight, Bath, Brush, Camera, Check, ChevronDown, Droplets, Ear, Eye,
+  Footprints, Heart, PawPrint, Ribbon, Scissors, Sparkles, Trees, Users,
+  Utensils, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
 import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
@@ -24,7 +25,7 @@ const bodySans = Manrope({
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   PawPrint, Footprints, Ear, Bath, Droplets, Wind, Brush, Scissors, Ribbon,
-  Trees, Users, Sparkles,
+  Trees, Users, Sparkles, Eye, Heart, Camera, Utensils,
 };
 
 type ContentPageTemplateProps = {
@@ -59,31 +60,32 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
     case "prose": {
       const proseWidth = section.width === "wide" ? "max-w-5xl" : "max-w-3xl";
       const outerWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
-      const hasChecklist = section.checklist?.length;
       return (
         <section className={`${tone} ${sectionPadding}`}>
           <div className={`mx-auto ${outerWidth}`}>
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
-            <div className={hasChecklist ? "grid gap-10 lg:grid-cols-2 lg:gap-16" : ""}>
-              <div className={`grid ${hasChecklist ? "" : proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
-                {section.paragraphs.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-              {hasChecklist ? (
-                <ul className="grid content-start gap-3">
-                  {section.checklist!.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
-                    >
-                      <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+            <div className={`grid ${proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
+              {section.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
             </div>
+            {section.highlights?.length ? (
+              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                {section.highlights.map((item) => {
+                  const Icon = iconMap[item.icon];
+                  return (
+                    <div key={item.label} className="flex items-center gap-3 rounded-xl bg-white/65 px-4 py-3">
+                      {Icon ? (
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)]/20">
+                          <Icon className="h-4.5 w-4.5 stroke-[1.5] text-[var(--pp-main)]" />
+                        </div>
+                      ) : null}
+                      <span className="text-sm font-medium text-[var(--pp-ink)]">{item.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : null}
           </div>
         </section>
       );
