@@ -64,7 +64,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section className={`${tone} ${sectionPadding}`}>
           <div className={`mx-auto ${outerWidth}`}>
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
-            <div className={`grid ${proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
+            <div className={`grid ${section.highlights?.length ? "" : proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
               {section.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
