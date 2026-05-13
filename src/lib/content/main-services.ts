@@ -402,6 +402,33 @@ export const mainServicePages = {
             ],
           },
         ],
+        footerCards: [
+          {
+            title: "Enrichment Add-ons",
+            subtitle: "20 minutes per session — $25 each.",
+            theme: "dark",
+            items: [
+              "Treadmill Enrichment",
+              "Agility Enrichment",
+              "Nutrition Enrichment",
+              "Scent Enrichment",
+              "Buddy Play",
+            ],
+          },
+          {
+            title: "Snacks & Treats",
+            subtitle: "Treat your furry friend with a little something extra (starting at only $6).",
+            theme: "mint",
+            items: [
+              "Pup Cup — $6",
+              "Pup-kin Spiced Latte (seasonal) — $10",
+              "Nutritional Enrichment Puzzle — $13",
+              "Frozen Kong — $8",
+              "Lick Mat — $8",
+              "Holiday Meals — pricing TBD",
+            ],
+          },
+        ],
       },
       {
         type: "comparison",
@@ -417,31 +444,6 @@ export const mainServicePages = {
           { label: "Luxury (6×6)", values: ["$155", "$180"] },
         ],
         note: "Holiday pricing — An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
-      },
-      {
-        type: "list",
-        eyebrow: "Add-ons",
-        title: "Enrichment Activities",
-        intro: "20 minutes per session — $25 each.",
-        items: [
-          "Treadmill Enrichment",
-          "Agility Enrichment",
-          "Nutrition Enrichment",
-          "Scent Enrichment",
-          "Buddy Play",
-        ],
-      },
-      {
-        type: "list",
-        title: "Snacks & treats",
-        items: [
-          "Pup Cup — $6",
-          "Pup-kin Spiced Latte (seasonal) — $10",
-          "Nutritional Enrichment Puzzle — $13",
-          "Frozen Kong — $8",
-          "Lick Mat — $8",
-          "Holiday Meals — pricing TBD",
-        ],
       },
       {
         type: "list",

@@ -651,7 +651,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   key={card.title}
                   className="flex flex-col gap-4 border border-[rgba(50,73,83,0.12)] bg-white/65 p-7"
                 >
-                  <h3 className="text-lg font-bold text-[var(--pp-ink)]">{card.title}</h3>
+                  <h3 className="text-2xl font-bold text-[var(--pp-ink)]">{card.title}</h3>
                   <p className="text-sm leading-7 text-[rgba(47,42,39,0.78)]">{card.body}</p>
                   {card.items?.length ? (
                     <ul className="mt-auto grid gap-2">
@@ -666,6 +666,32 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 </article>
               ))}
             </div>
+            {section.footerCards?.map((card) => {
+              const isDark = card.theme === "dark";
+              return (
+                <div
+                  key={card.title}
+                  className={`mt-6 rounded-xl p-7 ${isDark ? "bg-slate-800 text-white" : "bg-[var(--pp-mint)] text-[var(--pp-ink)]"}`}
+                >
+                  <h3 className="text-lg font-bold">{card.title}</h3>
+                  {card.subtitle ? (
+                    <p className={`mt-1 text-sm ${isDark ? "text-white/70" : "text-[var(--pp-ink)]/70"}`}>{card.subtitle}</p>
+                  ) : null}
+                  {card.items?.length ? (
+                    <ul className="mt-4 flex flex-wrap gap-3">
+                      {card.items.map((item) => (
+                        <li
+                          key={item}
+                          className={`rounded-full px-4 py-2 text-sm font-medium ${isDark ? "bg-white/10 text-white/90" : "bg-white/60 text-[var(--pp-ink)]"}`}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
         </section>
       );
