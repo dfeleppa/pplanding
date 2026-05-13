@@ -61,7 +61,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       const proseWidth = section.width === "wide" ? "max-w-5xl" : "max-w-3xl";
       const outerWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
       return (
-        <section className={`${tone} ${sectionPadding}`}>
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className={`mx-auto ${outerWidth}`}>
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
             <div className={`grid ${section.highlights?.length ? "" : proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
@@ -90,6 +90,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               <div className="mt-10 rounded-xl bg-slate-800 p-7 text-white">
                 <h3 className="text-lg font-bold">{section.calloutCard.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+              </div>
+            ) : null}
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
               </div>
             ) : null}
           </div>
@@ -408,8 +419,19 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               </table>
             </div>
             {section.note ? (
-              <div className="mt-6 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] px-6 py-5 text-sm leading-7 text-white/80">
+              <p className="mt-4 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
                 {section.note}
+              </p>
+            ) : null}
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
               </div>
             ) : null}
           </div>
@@ -698,6 +720,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 </div>
               );
             })}
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                >
+                  {section.cta.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
           </div>
         </section>
       );

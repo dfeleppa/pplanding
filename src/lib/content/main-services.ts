@@ -361,6 +361,7 @@ export const mainServicePages = {
         type: "prose",
         eyebrow: "Why board with us?",
         title: "Overnight care that feels like home.",
+        cta: { label: "Pricing", href: "#pricing" },
         paragraphs: [
           "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy, supervised night of rest.",
           "With trained staff on-site and personalized care, your dog is never just another guest — they're part of the Planet Pooch family.",
@@ -383,6 +384,7 @@ export const mainServicePages = {
         type: "splitCards",
         eyebrow: "Choose your style",
         title: "Group Play or 1-on-1 care",
+        cta: { label: "Pricing", href: "#pricing" },
         intro:
           "Every boarding stay includes one of two care styles. Pick the one that fits your dog's personality — social butterfly or solo explorer.",
         cards: [
@@ -434,6 +436,7 @@ export const mainServicePages = {
       },
       {
         type: "comparison",
+        id: "pricing",
         eyebrow: "Pricing",
         title: "Boarding Suite Pricing",
         intro: "Suite type and care style determine the nightly rate.",
@@ -445,10 +448,12 @@ export const mainServicePages = {
           { label: "XL (4.5×8)", values: ["$120", "$145"] },
           { label: "Luxury (6×6)", values: ["$155", "$180"] },
         ],
-        note: "Holiday pricing — An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
+        note: "* An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
+        cta: { label: "Upgrade Options", href: "#upgrades" },
       },
       {
         type: "tieredPricing",
+        id: "upgrades",
         eyebrow: "Upgrades",
         title: "Boarding Upgrade Options",
         intro:

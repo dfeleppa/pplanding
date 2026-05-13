@@ -3,6 +3,7 @@ import type { StaticImageData } from "next/image";
 export type ContentSection =
   | {
       type: "prose";
+      id?: string;
       title?: string;
       eyebrow?: string;
       paragraphs: string[];
@@ -10,6 +11,7 @@ export type ContentSection =
       wide?: boolean;
       highlights?: Array<{ icon: string; label: string }>;
       calloutCard?: { title: string; body: string };
+      cta?: { label: string; href: string };
     }
   | { type: "list"; title?: string; eyebrow?: string; intro?: string; items: string[] }
   | {
@@ -166,6 +168,7 @@ export type ContentSection =
         { title: string; body: string; items?: string[] },
       ];
       footerCards?: Array<{ title: string; subtitle?: string; subtitleBold?: boolean; items?: string[]; theme?: "dark" | "mint" }>;
+      cta?: { label: string; href: string };
     };
 
 export type ContentPage = {
