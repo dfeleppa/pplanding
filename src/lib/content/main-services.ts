@@ -395,8 +395,9 @@ export const mainServicePages = {
             title: "1-on-1",
             body: "Dedicated one-on-one time with staff for dogs who prefer a quieter pace or need individualized attention throughout their stay.",
             items: [
-              "Personal enrichment activities",
-              "Six private outdoor relief periods",
+              "Six private outdoor relief periods with staff",
+              "One enrichment activity per day",
+              "Nighttime snack included",
               "Ideal for shy, anxious, or senior dogs",
             ],
           },
@@ -416,16 +417,6 @@ export const mainServicePages = {
           { label: "Luxury (6×6)", values: ["$155", "$180"] },
         ],
         note: "Holiday pricing — An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
-      },
-      {
-        type: "checklist",
-        title: "1-on-1 package includes",
-        items: [
-          "Full day daycare during their stay",
-          "Nighttime snack",
-          "Six 1-on-1 outdoor relief periods with staff",
-          "One enrichment activity per day",
-        ],
       },
       {
         type: "list",
