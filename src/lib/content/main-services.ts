@@ -457,7 +457,7 @@ export const mainServicePages = {
           {
             name: "Comfort Care",
             price: "+$18",
-            cadence: "day",
+            cadence: "/day",
             description:
               "A cozy, enriched stay with added comfort and mental stimulation.",
             features: [
@@ -469,7 +469,7 @@ export const mainServicePages = {
           {
             name: "Comfort Plus Care",
             price: "+$29",
-            cadence: "day",
+            cadence: "/day",
             description:
               "An enhanced stay with added enrichment, one-on-one attention, and extra daily engagement.",
             features: [
@@ -482,10 +482,10 @@ export const mainServicePages = {
           {
             name: "Premium Care",
             price: "+$39",
-            cadence: "day",
-            badge: "Most Popular",
+            cadence: "/day",
+            badge: "High Demand",
             description:
-              "(Limited to 5 dogs only) Our most popular option! Perfect for extra attention and peace of mind while you're away.",
+              "Limited to 5 Dogs. Perfect for extra attention and peace of mind while you're away.",
             featured: true,
             features: [
               "Orthopedic bed topper, comfort floor mat, and cozy blanket for ultimate relaxation",
