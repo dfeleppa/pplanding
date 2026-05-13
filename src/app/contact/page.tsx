@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact/" },
 };
 
-const regionOrder = ["near-resort", "central-nassau", "north-shore", "south-shore"] as const;
+const regionOrder = ["central-nassau", "north-shore", "south-shore"] as const;
 
 function AreasWeServe() {
   const townsByRegion = getTownsByRegion();
@@ -44,7 +44,7 @@ function AreasWeServe() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {regionOrder.map((region) => (
             <div key={region}>
               <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]">

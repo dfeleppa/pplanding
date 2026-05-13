@@ -1,4 +1,4 @@
-export type NassauSubRegion = "north-shore" | "central-nassau" | "south-shore" | "near-resort";
+export type NassauSubRegion = "north-shore" | "central-nassau" | "south-shore";
 
 export type NassauTownPage = {
   slug: string;
@@ -15,7 +15,6 @@ export const REGION_LABELS: Record<NassauSubRegion, string> = {
   "north-shore": "North Shore",
   "central-nassau": "Central Nassau",
   "south-shore": "South Shore",
-  "near-resort": "Near Our Resort",
 };
 
 // ── Meta description templates (rotated via introVariant) ──────────
@@ -67,10 +66,10 @@ function metaTitle(town: string): string {
 type TownDef = [string, NassauSubRegion, number, string | undefined, string[]];
 
 const townDefs: TownDef[] = [
-  // ─ Near Resort ─
-  ["Franklin Square", "near-resort", 0, "1 minute", ["North Valley Stream", "South Hempstead", "Hempstead", "Garden City"]],
-  ["North Valley Stream", "near-resort", 1, "5 minutes", ["Franklin Square", "South Hempstead", "Elmont", "Valley Stream"]],
-  ["South Hempstead", "near-resort", 2, "4 minutes", ["Franklin Square", "North Valley Stream", "Hempstead", "West Hempstead"]],
+  // ─ Near Resort (sorted into their geographic regions) ─
+  ["Franklin Square", "central-nassau", 0, "1 minute", ["North Valley Stream", "South Hempstead", "Hempstead", "Garden City"]],
+  ["North Valley Stream", "south-shore", 1, "5 minutes", ["Franklin Square", "South Hempstead", "Elmont", "Valley Stream"]],
+  ["South Hempstead", "central-nassau", 2, "4 minutes", ["Franklin Square", "North Valley Stream", "Hempstead", "West Hempstead"]],
 
   // ─ Central Nassau ─
   ["Albertson", "central-nassau", 3, "12 minutes", ["Mineola", "East Williston", "Roslyn Heights", "Herricks"]],
@@ -178,7 +177,6 @@ export function getTownsByRegion(): Record<NassauSubRegion, NassauTownPage[]> {
     "north-shore": [],
     "central-nassau": [],
     "south-shore": [],
-    "near-resort": [],
   };
   for (const page of Object.values(nassauTowns)) {
     groups[page.subRegion].push(page);
