@@ -640,6 +640,37 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       );
     }
 
+    case "splitCards": {
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <div className="grid gap-6 lg:grid-cols-2">
+              {section.cards.map((card) => (
+                <article
+                  key={card.title}
+                  className="flex flex-col gap-4 border border-[rgba(50,73,83,0.12)] bg-white/65 p-7"
+                >
+                  <h3 className="text-lg font-bold text-[var(--pp-ink)]">{card.title}</h3>
+                  <p className="text-sm leading-7 text-[rgba(47,42,39,0.78)]">{card.body}</p>
+                  {card.items?.length ? (
+                    <ul className="mt-auto grid gap-2">
+                      {card.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-[rgba(47,42,39,0.82)]">
+                          <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
     case "callout": {
       const calloutOuterWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
       return (

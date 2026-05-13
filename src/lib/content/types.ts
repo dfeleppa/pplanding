@@ -153,6 +153,17 @@ export type ContentSection =
       eyebrow?: string;
       intro?: string;
       images: Array<{ src: string | StaticImageData; alt: string }>;
+    }
+  | {
+      type: "splitCards";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      cards: [
+        { title: string; body: string; items?: string[] },
+        { title: string; body: string; items?: string[] },
+      ];
     };
 
 export type ContentPage = {

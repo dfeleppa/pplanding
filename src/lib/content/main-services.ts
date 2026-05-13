@@ -376,6 +376,33 @@ export const mainServicePages = {
         ],
       },
       {
+        type: "splitCards",
+        eyebrow: "Choose your style",
+        title: "Group Play or 1-on-1 care",
+        intro:
+          "Every boarding stay includes one of two care styles. Pick the one that fits your dog's personality — social butterfly or solo explorer.",
+        cards: [
+          {
+            title: "Group Play",
+            body: "Your dog joins our supervised daycare pack during the day — ideal for social dogs who love meeting new friends and staying active.",
+            items: [
+              "Full-day group socialization",
+              "Structured play with matched groups",
+              "Great for outgoing, high-energy dogs",
+            ],
+          },
+          {
+            title: "1-on-1",
+            body: "Dedicated one-on-one time with staff for dogs who prefer a quieter pace or need individualized attention throughout their stay.",
+            items: [
+              "Personal enrichment activities",
+              "Six private outdoor relief periods",
+              "Ideal for shy, anxious, or senior dogs",
+            ],
+          },
+        ],
+      },
+      {
         type: "comparison",
         eyebrow: "Pricing",
         title: "Boarding Suite Packages",
