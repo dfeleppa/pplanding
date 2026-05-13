@@ -12,7 +12,6 @@ import {
   Star,
 } from "lucide-react";
 import { SITE } from "../lib/site";
-import { getTownsByRegion, REGION_LABELS } from "../lib/content/nassau-towns";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 
@@ -116,51 +115,6 @@ const googleReviews = [
       "Boarded our two huskies for a long weekend. Got daily updates and pictures, they came home happy and healthy. So glad we found Planet Pooch — we trust them completely.",
   },
 ] as const;
-
-const regionOrder = ["near-resort", "central-nassau", "north-shore", "south-shore"] as const;
-
-function AreasWeServe() {
-  const townsByRegion = getTownsByRegion();
-  return (
-    <section id="areas" className="bg-white px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
-            Areas We Serve
-          </p>
-          <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-            Serving every corner of Nassau County
-          </h2>
-          <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-            From mobile grooming at your door to daycare, boarding, and training at our Franklin Square resort — we proudly serve dogs across Nassau County.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {regionOrder.map((region) => (
-            <div key={region}>
-              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]">
-                {REGION_LABELS[region]}
-              </h3>
-              <ul className="mt-4 space-y-2">
-                {townsByRegion[region].map((town) => (
-                  <li key={town.slug}>
-                    <Link
-                      href={`/${town.slug}/`}
-                      className="text-sm text-[rgba(47,42,39,0.72)] transition hover:text-[var(--pp-main)]"
-                    >
-                      {town.town}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -449,8 +403,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <AreasWeServe />
 
       <section
         id="gallery"
