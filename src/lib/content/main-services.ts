@@ -359,11 +359,23 @@ export const mainServicePages = {
     sections: [
       {
         type: "prose",
-        eyebrow: "Why boarding here?",
+        eyebrow: "Why board with us?",
         title: "Overnight care that feels like home.",
         paragraphs: [
           "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy, supervised night of rest.",
           "With trained staff on-site and personalized care, your dog is never just another guest — they're part of the Planet Pooch family.",
+        ],
+      },
+      {
+        type: "checklist",
+        items: [
+          "Clean, comfortable suites",
+          "Experienced staff on-site day and night",
+          "Overnight camera monitoring",
+          "Daycare included for play and enrichment",
+          "Custom feeding and medication schedules",
+          "Bring their bed, blanket, or favorite toy",
+          "Daily photo updates for peace of mind",
         ],
       },
       {
