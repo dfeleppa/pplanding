@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllDispatchSlugs, getDispatchEntry } from "../../lib/content/registry";
+import { NassauTownPageTemplate } from "../nassau-town-page-template";
 import { TownPageTemplate } from "../town-page-template";
 import { TeamBioTemplate } from "../team-bio-template";
 import { BlogPostTemplate } from "../blog-post-template";
@@ -40,6 +41,8 @@ export default async function CatchAllPage({ params }: Props) {
   switch (entry.type) {
     case "town":
       return <TownPageTemplate page={entry.data} />;
+    case "nassau-town":
+      return <NassauTownPageTemplate page={entry.data} />;
     case "team":
       return <TeamBioTemplate member={entry.data} />;
     case "blog":

@@ -4,6 +4,7 @@ import { mainServicePages } from "../lib/content/main-services";
 import { contentPages } from "../lib/content/pages";
 import type { ContentPage } from "../lib/content/types";
 import { prosePages } from "../lib/content/prose";
+import { nassauTowns } from "../lib/content/nassau-towns";
 import { towns } from "../lib/content/towns";
 import { team } from "../lib/content/team";
 import { blogPosts } from "../lib/content/blog";
@@ -59,6 +60,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Town landing pages (drive local SEO)
   for (const slug of Object.keys(towns)) {
+    entries.push(make(`/${slug}`, SUBPAGE_PRIORITY, "monthly"));
+  }
+
+  // Nassau County all-services town pages
+  for (const slug of Object.keys(nassauTowns)) {
     entries.push(make(`/${slug}`, SUBPAGE_PRIORITY, "monthly"));
   }
 
