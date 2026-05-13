@@ -408,22 +408,20 @@ export const mainServicePages = {
         ],
         footerCards: [
           {
-            title: "Enrichment Add-ons",
-            subtitle: "20 minutes per session — $25 each.",
-            theme: "dark",
-            items: [
-              "Treadmill Enrichment",
-              "Agility Enrichment",
-              "Nutrition Enrichment",
-              "Scent Enrichment",
-              "Buddy Play",
-            ],
+            title: "In-house Grooming",
+            subtitle: "Receive 20% off in-house grooming on stays of 2 or more nights!",
+            subtitleBold: true,
+            theme: "mint",
           },
           {
-            title: "Snacks & Treats",
-            subtitle: "Treat your furry friend with a little something extra (starting at only $6).",
-            theme: "mint",
+            title: "Add-ons & Treats",
+            theme: "dark",
             items: [
+              "Treadmill Enrichment — $25",
+              "Agility Enrichment — $25",
+              "Nutrition Enrichment — $25",
+              "Scent Enrichment — $25",
+              "Buddy Play — $25",
               "Pup Cup — $6",
               "Pup-kin Spiced Latte (seasonal) — $10",
               "Nutritional Enrichment Puzzle — $13",
@@ -448,14 +446,6 @@ export const mainServicePages = {
           { label: "Luxury (6×6)", values: ["$155", "$180"] },
         ],
         note: "Holiday pricing — An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
-      },
-      {
-        type: "list",
-        title: "Bedding & spa",
-        items: [
-          "Bedding — $8 per day",
-          "20% off in-house grooming on stays of 2 or more nights",
-        ],
       },
       {
         type: "timeline",

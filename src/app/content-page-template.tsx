@@ -681,7 +681,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 >
                   <h3 className="text-lg font-bold">{card.title}</h3>
                   {card.subtitle ? (
-                    <p className={`mt-1 text-sm ${isDark ? "text-white/70" : "text-[var(--pp-ink)]/70"}`}>{card.subtitle}</p>
+                    <p className={`mt-1 text-sm ${card.subtitleBold ? "font-bold" : ""} ${isDark ? "text-white/70" : "text-[var(--pp-ink)]/70"}`}>{card.subtitle}</p>
                   ) : null}
                   {card.items?.length ? (
                     <ul className="mt-4 flex flex-wrap gap-3">

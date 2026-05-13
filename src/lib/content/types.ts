@@ -165,7 +165,7 @@ export type ContentSection =
         { title: string; body: string; items?: string[] },
         { title: string; body: string; items?: string[] },
       ];
-      footerCards?: Array<{ title: string; subtitle?: string; items?: string[]; theme?: "dark" | "mint" }>;
+      footerCards?: Array<{ title: string; subtitle?: string; subtitleBold?: boolean; items?: string[]; theme?: "dark" | "mint" }>;
     };
 
 export type ContentPage = {
