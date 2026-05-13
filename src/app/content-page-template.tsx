@@ -699,7 +699,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               return (
                 <div
                   key={card.title}
-                  className={`mt-6 rounded-xl p-7 ${isDark ? "bg-slate-800 text-white" : "bg-[var(--pp-mint)] text-[var(--pp-ink)]"}`}
+                  className={`mx-auto mt-6 max-w-2xl rounded-xl p-7 text-center ${isDark ? "bg-slate-800 text-white" : "bg-[var(--pp-mint)] text-[var(--pp-ink)]"}`}
                 >
                   <h3 className="text-lg font-bold">{card.title}</h3>
                   {card.subtitle ? (
