@@ -75,12 +75,14 @@ export type ContentSection =
     }
   | {
       type: "comparison";
+      id?: string;
       title?: string;
       eyebrow?: string;
       intro?: string;
       columns: string[];
       rows: Array<{ label: string; values: Array<boolean | string> }>;
       note?: string;
+      cta?: { label: string; href: string };
     }
   | {
       type: "definitions";
