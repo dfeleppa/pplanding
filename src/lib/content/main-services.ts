@@ -847,7 +847,9 @@ export const mainServicePages = {
         title: "Themed daycare days",
         intro:
           "Check out our fun packed events throughout the year including Howloween Costume Party, Taco Tuesday, Valentine's Day, and Photos with Santa!",
-        images: [],
+        images: [
+          { src: "/kissing-booth.png", alt: "Valentine's Day kissing booth event at Planet Pooch" },
+        ],
       },
       {
         type: "callout",
