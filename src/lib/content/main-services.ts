@@ -834,14 +834,6 @@ export const mainServicePages = {
         },
       },
       {
-        type: "callout",
-        eyebrow: "Field Trip",
-        title: "Bark in the Park: a tail of adventure",
-        body:
-          "$69 add-on to daycare. A 2-mile guided loop at Hempstead Lake Park with refreshments and pup cups. Departs Planet Pooch at 10:00 AM, returns by noon. Advance booking required — limited availability. All participating dogs must maintain current flea and tick treatments.",
-        cta: { label: "Call (516) 993-3603", href: "tel:+15169933603" },
-      },
-      {
         type: "slideshow",
         eyebrow: "Throughout the year",
         title: "Themed daycare days",
