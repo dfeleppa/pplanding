@@ -435,7 +435,7 @@ export const mainServicePages = {
       {
         type: "comparison",
         eyebrow: "Pricing",
-        title: "Boarding Suite Packages",
+        title: "Boarding Suite Pricing",
         intro: "Suite type and care style determine the nightly rate.",
         columns: ["Suite Type", "Group Play", "1-on-1"],
         rows: [
