@@ -448,6 +448,56 @@ export const mainServicePages = {
         note: "Holiday pricing — An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
       },
       {
+        type: "tieredPricing",
+        eyebrow: "Upgrades",
+        title: "Boarding Upgrade Options",
+        intro:
+          "Give your dog an even more comfortable, enriching, and personalized stay with one of our enhanced care packages.",
+        tiers: [
+          {
+            name: "Comfort Care",
+            price: "+$18",
+            cadence: "day",
+            description:
+              "A cozy, enriched stay with added comfort and mental stimulation.",
+            features: [
+              "Orthopedic bed topper, comfort floor mat, and cozy blanket for ultimate relaxation",
+              "Daily nutritional enrichment puzzle to keep minds engaged and stimulated",
+              "Evening tuck-in time with a special treat and one-on-one wind-down time with our staff",
+            ],
+          },
+          {
+            name: "Comfort Plus Care",
+            price: "+$29",
+            cadence: "day",
+            description:
+              "An enhanced stay with added enrichment, one-on-one attention, and extra daily engagement.",
+            features: [
+              "Orthopedic bed topper, comfort floor mat, and cozy blanket for ultimate relaxation",
+              "Daily nutritional enrichment puzzle to keep minds engaged and stimulated",
+              "Evening tuck-in time with a special treat and one-on-one wind-down time with our staff",
+              "Daily enrichment activity",
+            ],
+          },
+          {
+            name: "Premium Care",
+            price: "+$39",
+            cadence: "day",
+            badge: "Most Popular",
+            description:
+              "(Limited to 5 dogs only) Our most popular option! Perfect for extra attention and peace of mind while you're away.",
+            featured: true,
+            features: [
+              "Orthopedic bed topper, comfort floor mat, and cozy blanket for ultimate relaxation",
+              "Daily nutritional enrichment puzzle to keep minds engaged and stimulated",
+              "Evening tuck-in time with a special treat and one-on-one wind-down time with our staff",
+              "Daily enrichment activity",
+              "First walk in the morning & last walk at night to minimize the time between the nighttime walk and the morning walk",
+            ],
+          },
+        ],
+      },
+      {
         type: "timeline",
         eyebrow: "A day in the life",
         title: "A tail-wagging day at Planet Pooch",
