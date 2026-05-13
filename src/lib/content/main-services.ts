@@ -376,12 +376,6 @@ export const mainServicePages = {
         ],
       },
       {
-        type: "callout",
-        title: "Holiday pricing",
-        body:
-          "An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
-      },
-      {
         type: "comparison",
         eyebrow: "Pricing",
         title: "Boarding Suite Packages",
@@ -394,6 +388,7 @@ export const mainServicePages = {
           { label: "XL (4.5×8)", values: ["$120", "$145"] },
           { label: "Luxury (6×6)", values: ["$155", "$180"] },
         ],
+        note: "Holiday pricing — An additional $5 per night will be applied during holiday periods. Holiday periods include 7 days before and after each major holiday.",
       },
       {
         type: "checklist",

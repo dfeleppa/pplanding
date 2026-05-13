@@ -402,9 +402,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               </table>
             </div>
             {section.note ? (
-              <p className="mt-4 max-w-3xl text-xs italic leading-6 text-[rgba(47,42,39,0.62)]">
+              <div className="mt-6 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] px-6 py-5 text-sm leading-7 text-white/80">
                 {section.note}
-              </p>
+              </div>
             ) : null}
           </div>
         </section>
