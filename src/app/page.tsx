@@ -3,11 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   GraduationCap,
-  HeartHandshake,
   Home,
   PawPrint,
   Scissors,
-  ShieldCheck,
   Sparkles,
   Star,
 } from "lucide-react";
@@ -31,61 +29,39 @@ const heroHighlights = [
     title: "Mobile Grooming",
     href: "/mobile-grooming/",
     icon: Scissors,
+    image: "/mobile_home.jpg",
     copy: "Luxury one-on-one grooming brought to your driveway across Long Island and the Hamptons.",
   },
   {
     title: "Daycare",
     href: "/dog-daycare/",
     icon: PawPrint,
+    image: "/daycare_home.png",
     copy: "Supervised group play and enrichment in a safe, nurturing space built for happy, social dogs.",
   },
   {
     title: "Boarding",
     href: "/dog-boarding/",
     icon: Home,
+    image: "/boarding_home.jpeg",
     copy: "Cozy overnight care, refined routines, and attentive supervision while you're away.",
   },
   {
     title: "Training",
     href: "/dog-training/",
     icon: GraduationCap,
+    image: "/training_home.jpeg",
     copy: "Compassionate, results-driven training led by our AKC Evaluator Trainer.",
   },
   {
     title: "Enrichment",
     href: "/enrichment/",
     icon: Sparkles,
+    image: "/enrichment_home.jpg",
     copy: "One-on-one enrichment activities — sensory play, scent work, agility, and gentle challenges for dogs who shine away from the pack.",
   },
 ] as const;
 
-const experiencePoints = [
-  {
-    title: "Loving Staff",
-    icon: HeartHandshake,
-    copy: "Genuine people who know your dog and understand their rhythm.",
-  },
-  {
-    title: "Daily Enrichment",
-    icon: Sparkles,
-    copy: "Mindful play, movement, and activities tailored to each guest.",
-  },
-  {
-    title: "Resort Comforts",
-    icon: Home,
-    copy: "Boutique suites and calming details that make rest feel restorative.",
-  },
-  {
-    title: "Safe & Secure",
-    icon: ShieldCheck,
-    copy: "Supervised playgroups, careful matching, and dependable facility care.",
-  },
-  {
-    title: "Happy Dogs",
-    icon: PawPrint,
-    copy: "Joyful experiences and wag-worthy results that owners can feel good about.",
-  },
-] as const;
 
 // Mock Google reviews — replace with real reviews pulled from the
 // Google Business Profile when ready.
@@ -198,55 +174,33 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-5">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {heroHighlights.map((item) => {
               const Icon = item.icon;
               return (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group mx-auto max-w-sm text-center"
+                  className="group mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
                 >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center text-[var(--pp-gold-deep)]">
-                    <Icon className="h-8 w-8 stroke-[1.5] transition group-hover:text-[var(--pp-main)]" />
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="mt-6 text-sm font-bold uppercase tracking-[0.28em] text-[var(--pp-night)] transition group-hover:text-[var(--pp-main)]">
-                    {item.title}
-                  </h3>
-                  <p className="mx-auto mt-4 max-w-[16rem] text-sm leading-7 text-[rgba(47,42,39,0.78)]">
-                    {item.copy}
-                  </p>
+                  <div className="px-4 py-5 text-center">
+                    <h3 className="text-sm font-bold uppercase tracking-[0.28em] text-[var(--pp-night)] transition group-hover:text-[var(--pp-main)]">
+                      {item.title}
+                    </h3>
+                    <p className="mx-auto mt-3 max-w-[16rem] text-sm leading-7 text-[rgba(47,42,39,0.78)]">
+                      {item.copy}
+                    </p>
+                  </div>
                 </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-18">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">
-              Why families choose Planet Pooch
-            </p>
-            <h2 className="mt-4 text-4xl leading-tight sm:text-[3.4rem]">
-              Thoughtful care. Unwavering standards.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-5">
-            {experiencePoints.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article key={item.title} className="text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center text-[#f0d8b1]">
-                    <Icon className="h-7 w-7 stroke-[1.6]" />
-                  </div>
-                  <h3 className="mt-4 text-base">{item.title}</h3>
-                  <p className="mx-auto mt-3 max-w-[13rem] text-sm leading-6 text-white/78">
-                    {item.copy}
-                  </p>
-                </article>
               );
             })}
           </div>
