@@ -139,7 +139,7 @@ export const mainServicePages = {
     title: "In-House Grooming",
     eyebrow: "Grooming",
     hero:
-      "Spa-quality grooming for our daycare and boarding guests — never open to the public.",
+      "Spa-quality grooming for our daycare and boarding guests.",
     metaTitle: "In-House Dog Grooming | Daycare & Boarding | Planet Pooch",
     metaDescription:
       "Professional in-house grooming at our Franklin Square resort, available exclusively to dogs enrolled in daycare or boarding. 20% off when added to a 2+ night stay.",
@@ -150,16 +150,13 @@ export const mainServicePages = {
     },
     sections: [
       {
-        type: "callout",
-        title: "Already booked daycare or boarding?",
-        body:
-          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-        cta: { label: "Contact us", href: "/contact/" },
-      },
-      {
         type: "featureGrid",
         eyebrow: "Services",
         title: "What every groom includes.",
+        highlight: {
+          title: "Already booked daycare or boarding?",
+          body: "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
+        },
         items: [
           { icon: "Footprints", title: "Pedicure", description: "Nail cut and grind for a comfortable, healthy length." },
           { icon: "Ear", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },

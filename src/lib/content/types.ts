@@ -142,6 +142,7 @@ export type ContentSection =
       title?: string;
       eyebrow?: string;
       intro?: string;
+      highlight?: { title: string; body: string };
       items: Array<{
         icon: string;
         title: string;

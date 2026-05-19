@@ -594,6 +594,12 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            {section.highlight ? (
+              <div className="mb-10 rounded-2xl border border-[var(--pp-main)]/15 bg-[var(--pp-mint)]/15 px-6 py-5 max-w-2xl">
+                <p className="text-lg font-semibold text-[var(--pp-ink)]">{section.highlight.title}</p>
+                <p className="mt-1 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{section.highlight.body}</p>
+              </div>
+            ) : null}
             <div className={`grid gap-8 ${featureCols}`}>
               {section.items.map((item) => {
                 const Icon = iconMap[item.icon];
