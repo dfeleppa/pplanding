@@ -183,7 +183,7 @@ export default function HomePage() {
                   href={item.href}
                   className="group mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
                 >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
