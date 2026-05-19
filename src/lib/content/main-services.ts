@@ -172,6 +172,40 @@ export const mainServicePages = {
         ],
       },
       {
+        type: "pricing",
+        eyebrow: "Pricing",
+        title: "Full Groom with Haircut",
+        intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 15 lbs", "$95–$115"],
+          ["16–25 lbs", "$115–$135"],
+          ["26–40 lbs", "$135–$155"],
+          ["41–60 lbs", "$155–$175"],
+          ["61–80 lbs", "$175–$195"],
+          ["81 lbs & up", "$195 & up"],
+        ],
+        note:
+          "Prices are based on pets groomed on a regular basis. Extra charges may apply for matted or impacted coats, special handling, or aggressive behavior.",
+      },
+      {
+        type: "pricing",
+        eyebrow: "Pricing",
+        title: "In-Between Clean",
+        intro: "Dogs must be on a regular 4–6 week grooming schedule to qualify for this service.",
+        columns: ["Weight", "Price"],
+        rows: [
+          ["Up to 15 lbs", "$75"],
+          ["16–25 lbs", "$75–$95"],
+          ["26–45 lbs", "$95–$115"],
+          ["46–65 lbs", "$115–$135"],
+          ["66–85 lbs", "$135–$155"],
+          ["86 lbs & up", "$155 & up"],
+        ],
+        note:
+          "Includes nail cut and grind, ears cleaned, bath, shampoo and conditioner, anal glands expressed upon request, blow dry, brushing, signature bow and bandana, eye trim, paw trim, and sanitary trim.",
+      },
+      {
         type: "callout",
         eyebrow: "Stay & save",
         title: "20% off in-house grooming on stays of 2 or more nights",
