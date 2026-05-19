@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
-export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; className?: string }) {
+export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now" }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; cla
   return (
     <>
       <button type="button" onClick={() => setOpen(true)} className={className}>
-        Book Now
+        {label}
         <span className="pp-cta-arrow" aria-hidden />
       </button>
 
@@ -47,15 +47,42 @@ export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; cla
               Book Now
             </h2>
 
-            <div className="grid grid-cols-2 gap-6">
-              {/* Mobile Grooming column */}
+            {variant === "full" ? (
+              <div className="grid grid-cols-2 gap-6">
+                {/* Mobile Grooming column */}
+                <div className="flex flex-col items-center gap-3">
+                  <h3
+                    className="text-lg text-[var(--pp-main-deep)]"
+                    style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
+                  >
+                    Mobile Grooming
+                  </h3>
+                  <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                    New Client
+                  </a>
+                  <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
+                    Call/Text (202) 318-6526
+                  </a>
+                </div>
+
+                {/* Pet Resort column */}
+                <div className="flex flex-col items-center gap-3">
+                  <h3
+                    className="text-lg text-[var(--pp-main-deep)]"
+                    style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
+                  >
+                    Pet Resort
+                  </h3>
+                  <a href="https://form.moego.pet/go/form?formId=4f15e60b84ff49019c22b876ae2c555b" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                    New Client
+                  </a>
+                  <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
+                    Existing Client
+                  </a>
+                </div>
+              </div>
+            ) : (
               <div className="flex flex-col items-center gap-3">
-                <h3
-                  className="text-lg text-[var(--pp-main-deep)]"
-                  style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
-                >
-                  Mobile Grooming
-                </h3>
                 <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
                 </a>
@@ -63,23 +90,7 @@ export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; cla
                   Call/Text (202) 318-6526
                 </a>
               </div>
-
-              {/* Pet Resort column */}
-              <div className="flex flex-col items-center gap-3">
-                <h3
-                  className="text-lg text-[var(--pp-main-deep)]"
-                  style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
-                >
-                  Pet Resort
-                </h3>
-                <a href="https://form.moego.pet/go/form?formId=4f15e60b84ff49019c22b876ae2c555b" className="pp-cta pp-cta-sm w-full justify-center text-center">
-                  New Client
-                </a>
-                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
-                  Existing Client
-                </a>
-              </div>
-            </div>
+            )}
 
             <div className="mt-8 border-t border-[var(--pp-sand)] pt-6 text-center">
               <p className="mb-4 text-sm text-[var(--pp-ink)]/70">

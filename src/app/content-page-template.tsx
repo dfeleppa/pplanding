@@ -11,6 +11,7 @@ import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
+import { BookNowModal } from "./book-now-modal";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -871,16 +872,20 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                       {page.hero}
                     </p>
                     <div className="mt-9 flex flex-col items-start gap-3">
-                      <Link href={page.heroCtas.primary.href} className="pp-cta">
-                        {page.heroCtas.primary.label}
-                        <span className="pp-cta-arrow" aria-hidden />
-                      </Link>
+                      {page.slug === "mobile-grooming" ? (
+                        <BookNowModal ctaHref={page.heroCtas.primary.href} className="pp-cta" variant="grooming" label={page.heroCtas.primary.label} />
+                      ) : (
+                        <Link href={page.heroCtas.primary.href} className="pp-cta">
+                          {page.heroCtas.primary.label}
+                          <span className="pp-cta-arrow" aria-hidden />
+                        </Link>
+                      )}
                       <a href={page.heroCtas.ghost.href} className="pp-cta-ghost">
                         {page.heroCtas.ghost.label}
                       </a>
                     </div>
                     {page.heroCtas.tertiary ? (
-                      <div className="mt-8 hidden lg:flex lg:justify-start">
+                      <div className="mt-8 flex justify-start">
                         <a
                           href={page.heroCtas.tertiary.href}
                           className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
@@ -899,15 +904,6 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     <span aria-hidden className="h-px w-8 bg-white/40" />
                     Scroll to Explore
                   </span>
-                  {page.heroCtas.tertiary ? (
-                    <a
-                      href={page.heroCtas.tertiary.href}
-                      className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)] lg:hidden"
-                    >
-                      {page.heroCtas.tertiary.label}
-                      <ChevronDown className="h-3.5 w-3.5" />
-                    </a>
-                  ) : null}
                   <span>Long Island, New York</span>
                 </div>
               </div>
