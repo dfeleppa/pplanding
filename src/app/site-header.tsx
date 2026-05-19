@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { headerNavItems } from "../lib/nav";
 import { NavDropdown } from "./nav-dropdown";
+import { MobileMenu } from "./mobile-menu";
 
 type SiteHeaderProps = {
   /** Where the Book Now CTA links to. Defaults to /contact/. */
@@ -18,7 +19,7 @@ type SiteHeaderProps = {
  */
 export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" }: SiteHeaderProps = {}) {
   return (
-    <header className="flex flex-col gap-5 border-b border-white/15 pb-5 lg:flex-row lg:items-center lg:justify-between lg:pb-6">
+    <header className="flex items-center justify-between border-b border-white/15 pb-5 lg:pb-6">
       <Link className="flex items-center" href="/" aria-label="Planet Pooch — Home">
         <Image
           src="/planet-pooch-logo.png"
@@ -31,7 +32,7 @@ export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/f
       </Link>
       <nav
         aria-label="Primary"
-        className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78"
+        className="hidden flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78 lg:flex"
       >
         {headerNavItems.map((item) =>
           "items" in item ? (
@@ -47,7 +48,7 @@ export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/f
           )
         )}
       </nav>
-      <div className="flex shrink-0 items-center gap-2 whitespace-nowrap">
+      <div className="hidden shrink-0 items-center gap-2 whitespace-nowrap lg:flex">
         <Link href="/contact/" className="pp-cta-ghost pp-cta-sm">
           Contact
         </Link>
@@ -56,6 +57,7 @@ export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/f
           <span className="pp-cta-arrow" aria-hidden />
         </Link>
       </div>
+      <MobileMenu ctaHref={ctaHref} />
     </header>
   );
 }
