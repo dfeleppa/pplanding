@@ -46,14 +46,14 @@ const heroHighlights = [
     title: "Daycare",
     href: "/dog-daycare/",
     icon: PawPrint,
-    image: "/daycare_home.png",
+    image: "/boarding_home.jpeg",
     copy: "Supervised play and enrichment in a safe, nurturing space.",
   },
   {
     title: "Boarding",
     href: "/dog-boarding/",
     icon: Home,
-    image: "/boarding_home.jpeg",
+    image: "/daycare_home.png",
     copy: "Cozy overnight stays with attentive, personalized care.",
   },
   {
