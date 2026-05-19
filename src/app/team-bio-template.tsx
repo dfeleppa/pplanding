@@ -80,7 +80,7 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact"
+              href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
               className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
             >
               Book Now

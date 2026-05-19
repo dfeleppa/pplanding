@@ -216,7 +216,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{copy.hero(page.town)}</p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
                   className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
                 >
                   Book Now

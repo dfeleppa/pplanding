@@ -16,7 +16,7 @@ type SiteHeaderProps = {
  *
  * Use this in every page so the navigation is identical across the site.
  */
-export function SiteHeader({ ctaHref = "/contact/" }: SiteHeaderProps = {}) {
+export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" }: SiteHeaderProps = {}) {
   return (
     <header className="flex flex-col gap-5 border-b border-white/15 pb-5 lg:flex-row lg:items-center lg:justify-between lg:pb-6">
       <Link className="flex items-center" href="/" aria-label="Planet Pooch — Home">
@@ -48,7 +48,7 @@ export function SiteHeader({ ctaHref = "/contact/" }: SiteHeaderProps = {}) {
         )}
       </nav>
       <div className="flex shrink-0 items-center gap-2 whitespace-nowrap">
-        <Link href="/contact/" className="pp-cta-ghost pp-cta-sm">
+        <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta-ghost pp-cta-sm">
           Contact
         </Link>
         <Link href={ctaHref} className="pp-cta pp-cta-sm">

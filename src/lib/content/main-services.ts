@@ -22,7 +22,7 @@ export const mainServicePages = {
       "Mobile dog and cat grooming across Long Island and the Hamptons — full grooms, baths, Plus and Premium spa upgrades, and in-house grooming for daycare and boarding clients.",
     image: "/Grooming.png",
     heroCtas: {
-      primary: { label: "Book Now", href: "/contact" },
+      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
       tertiary: { label: "View Pricing", href: "#pricing" },
     },
@@ -129,7 +129,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Ready to book?",
         body: "Tell us your pet's coat, sensitivities, and preferred haircut style.",
-        cta: { label: "Book Now", href: "/contact/" },
+        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
     ],
   },
@@ -145,7 +145,7 @@ export const mainServicePages = {
       "Professional in-house grooming at our Franklin Square resort, available exclusively to dogs enrolled in daycare or boarding. 20% off when added to a 2+ night stay.",
     image: "/Grooming.png",
     heroCtas: {
-      primary: { label: "Book Now", href: "/contact" },
+      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -171,7 +171,7 @@ export const mainServicePages = {
         title: "Already booked daycare or boarding?",
         body:
           "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-        cta: { label: "Contact us", href: "/contact/" },
+        cta: { label: "Contact us", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
       {
         type: "pricing",
@@ -262,7 +262,7 @@ export const mainServicePages = {
       "Interactive dog daycare in Franklin Square, NY. Group play, one-on-one enrichment, puppy socialization, and day-pack pricing for Long Island families.",
     image: "/daycare.png",
     heroCtas: {
-      primary: { label: "Book your Free 1st Day!", href: "/contact" },
+      primary: { label: "Book your Free 1st Day!", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -304,7 +304,7 @@ export const mainServicePages = {
             label: "Free temperament evaluation",
             body:
               "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
-            cta: { label: "Book your free evaluation", href: "/contact/" },
+            cta: { label: "Book your free evaluation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
           },
         ],
       },
@@ -373,7 +373,7 @@ export const mainServicePages = {
         title: "Puppy Socialization Program",
         body:
           "$79 per session, three one-hour sessions. Supervised play with dogs of various sizes, enrichment activities (snuffle mats, frozen Kongs, treat hide-and-seek), outdoor potty breaks, and resource-guarding guidance. Requires Rabies vaccine plus current vaccination paperwork. Graduates receive a Certificate of Completion and become eligible for Group Play daycare.",
-        cta: { label: "Book a consultation", href: "/contact/" },
+        cta: { label: "Book a consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
       {
         type: "faq",
@@ -406,7 +406,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Book your dog's first visit",
         body: "Reach us by phone or email to schedule your free meet-and-greet.",
-        cta: { label: "Book Now", href: "/contact/" },
+        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
     ],
   },
@@ -422,7 +422,7 @@ export const mainServicePages = {
       "Overnight dog boarding at our Franklin Square pet resort. Express, Classic, XL, and Luxury suites with Group Play or 1-on-1 care, plus enrichment activities, snacks, and bedding add-ons.",
     image: "/boarding/boarding_hero.jpg",
     heroCtas: {
-      primary: { label: "Book Now", href: "/contact" },
+      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -602,7 +602,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Reserve your dog's stay",
         body: "Tell us about their routine, comfort needs, and feeding schedule.",
-        cta: { label: "Book Now", href: "/contact/" },
+        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
     ],
   },
@@ -618,7 +618,7 @@ export const mainServicePages = {
       "Compassionate, results-driven dog training with our AKC Evaluator Trainer. Private sessions, 6-week programs, and free consultations for dogs of every age.",
     image: "/tour-space.jpg",
     heroCtas: {
-      primary: { label: "Book FREE Consultation", href: "/contact" },
+      primary: { label: "Book FREE Consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -754,7 +754,7 @@ export const mainServicePages = {
         title: "Free 20-minute consultation",
         body:
           "Every dog starts with a free 20-minute consultation so we can understand their age, temperament, and your goals before training begins.",
-        cta: { label: "Book a consultation", href: "/contact/" },
+        cta: { label: "Book a consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
     ],
   },
@@ -770,7 +770,7 @@ export const mainServicePages = {
       "One-on-one enrichment activities at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, and nutrition puzzles for dogs who thrive away from the pack.",
     image: "/enrichment_hero.jpg",
     heroCtas: {
-      primary: { label: "Get Started", href: "/contact" },
+      primary: { label: "Get Started", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -872,7 +872,7 @@ export const mainServicePages = {
         title: "Book a one-on-one enrichment day",
         body:
           "Tell us about your dog's energy level, sensitivities, and what kinds of activities engage them best.",
-        cta: { label: "Book Now", href: "/contact/" },
+        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
     ],
   },
@@ -888,7 +888,7 @@ export const mainServicePages = {
       "Signature events at Planet Pooch in Franklin Square — birthday parties, Bark in the Park field trips, Photos with Santa, and themed daycare days throughout the year.",
     image: "/event_hero.jpg",
     heroCtas: {
-      primary: { label: "Book an Event", href: "/contact" },
+      primary: { label: "Book an Event", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -955,7 +955,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Want to host or join an event?",
         body: "Call us about availability, dates, and how to book your dog into a themed day or party.",
-        cta: { label: "Book Now", href: "/contact/" },
+        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
     ],
   },

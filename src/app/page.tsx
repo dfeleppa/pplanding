@@ -146,7 +146,7 @@ export default function HomePage() {
                   training, we serve dogs across Nassau, Suffolk, and the Hamptons.
                 </p>
                 <div className="mt-9 flex flex-col items-start gap-3">
-                  <Link href="/contact" className="pp-cta">
+                  <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta">
                     Get Started
                     <span className="pp-cta-arrow" aria-hidden />
                   </Link>
@@ -432,7 +432,7 @@ export default function HomePage() {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="/contact"
+                    href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
                     className="inline-flex items-center justify-center bg-[var(--pp-night)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[var(--pp-main-deep)]"
                   >
                     Book Now
