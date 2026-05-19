@@ -60,49 +60,69 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
     case "prose": {
       const proseWidth = section.width === "wide" ? "max-w-5xl" : "max-w-3xl";
       const outerWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
+      const proseContent = (
+        <>
+          <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
+          <div className={`grid ${section.highlights?.length || section.image ? "" : proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
+            {section.paragraphs.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+          {section.highlights?.length ? (
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {section.highlights.map((item) => {
+                const Icon = iconMap[item.icon];
+                return (
+                  <div key={item.label} className="flex items-center gap-3 rounded-xl bg-white/65 px-4 py-3">
+                    {Icon ? (
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)]/20">
+                        <Icon className="h-4.5 w-4.5 stroke-[1.5] text-[var(--pp-main)]" />
+                      </div>
+                    ) : null}
+                    <span className="text-sm font-medium text-[var(--pp-ink)]">{item.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
+          {section.calloutCard ? (
+            <div className="mt-10 rounded-xl bg-slate-800 p-7 text-white">
+              <h3 className="text-lg font-bold">{section.calloutCard.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+            </div>
+          ) : null}
+          {section.cta ? (
+            <div className="mt-10 flex justify-center">
+              <a
+                href={section.cta.href}
+                className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+              >
+                {section.cta.label}
+                <ChevronDown className="h-4 w-4" />
+              </a>
+            </div>
+          ) : null}
+        </>
+      );
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className={`mx-auto ${outerWidth}`}>
-            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} />
-            <div className={`grid ${section.highlights?.length ? "" : proseWidth} gap-5 text-base leading-8 text-[rgba(47,42,39,0.82)]`}>
-              {section.paragraphs.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-            {section.highlights?.length ? (
-              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-                {section.highlights.map((item) => {
-                  const Icon = iconMap[item.icon];
-                  return (
-                    <div key={item.label} className="flex items-center gap-3 rounded-xl bg-white/65 px-4 py-3">
-                      {Icon ? (
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)]/20">
-                          <Icon className="h-4.5 w-4.5 stroke-[1.5] text-[var(--pp-main)]" />
-                        </div>
-                      ) : null}
-                      <span className="text-sm font-medium text-[var(--pp-ink)]">{item.label}</span>
-                    </div>
-                  );
-                })}
+            {section.image ? (
+              <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+                <div>{proseContent}</div>
+                <div className="relative aspect-[4/5] overflow-hidden border border-[rgba(50,73,83,0.12)]">
+                  <Image
+                    src={section.image}
+                    alt={section.imageAlt ?? section.title ?? "Planet Pooch"}
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
-            ) : null}
-            {section.calloutCard ? (
-              <div className="mt-10 rounded-xl bg-slate-800 p-7 text-white">
-                <h3 className="text-lg font-bold">{section.calloutCard.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
-              </div>
-            ) : null}
-            {section.cta ? (
-              <div className="mt-10 flex justify-center">
-                <a
-                  href={section.cta.href}
-                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
-                >
-                  {section.cta.label}
-                  <ChevronDown className="h-4 w-4" />
-                </a>
-              </div>
-            ) : null}
+            ) : (
+              proseContent
+            )}
           </div>
         </section>
       );
@@ -476,6 +496,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            {section.image ? (
+              <div className="relative mb-8 aspect-[21/9] overflow-hidden border border-[rgba(50,73,83,0.12)]">
+                <Image
+                  src={section.image}
+                  alt={section.imageAlt ?? section.title ?? "Planet Pooch"}
+                  fill
+                  sizes="(min-width: 1280px) 1280px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
             <ol className={`grid gap-5 ${section.items.length > 1 ? "lg:grid-cols-2" : ""}`}>
               {section.items.map((item) => (
                 <li
@@ -679,6 +710,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            {section.image ? (
+              <div className="relative mb-8 aspect-[21/9] overflow-hidden border border-[rgba(50,73,83,0.12)]">
+                <Image
+                  src={section.image}
+                  alt={section.imageAlt ?? section.title ?? "Planet Pooch"}
+                  fill
+                  sizes="(min-width: 1280px) 1280px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
             <div className="grid gap-6 lg:grid-cols-2">
               {section.cards.map((card) => (
                 <article

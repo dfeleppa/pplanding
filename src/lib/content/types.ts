@@ -12,6 +12,8 @@ export type ContentSection =
       highlights?: Array<{ icon: string; label: string }>;
       calloutCard?: { title: string; body: string };
       cta?: { label: string; href: string };
+      image?: string | StaticImageData;
+      imageAlt?: string;
     }
   | { type: "list"; title?: string; eyebrow?: string; intro?: string; items: string[] }
   | {
@@ -100,6 +102,8 @@ export type ContentSection =
       title?: string;
       eyebrow?: string;
       intro?: string;
+      image?: string | StaticImageData;
+      imageAlt?: string;
       items: Array<{
         time: string;
         label: string;
@@ -172,6 +176,8 @@ export type ContentSection =
       ];
       footerCards?: Array<{ title: string; subtitle?: string; subtitleBold?: boolean; items?: string[]; theme?: "dark" | "mint" }>;
       cta?: { label: string; href: string };
+      image?: string | StaticImageData;
+      imageAlt?: string;
     };
 
 export type ContentPage = {

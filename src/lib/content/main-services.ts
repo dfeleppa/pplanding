@@ -420,7 +420,7 @@ export const mainServicePages = {
     metaTitle: "Dog Boarding Long Island | Suite Pricing | Planet Pooch",
     metaDescription:
       "Overnight dog boarding at our Franklin Square pet resort. Express, Classic, XL, and Luxury suites with Group Play or 1-on-1 care, plus enrichment activities, snacks, and bedding add-ons.",
-    image: "/testimonial-dog.jpg",
+    image: "/boarding/IMG_0687.jpg",
     heroCtas: {
       primary: { label: "Book Now", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
@@ -431,6 +431,8 @@ export const mainServicePages = {
         eyebrow: "Why board with us?",
         title: "Overnight care that feels like home.",
         cta: { label: "Pricing", href: "#pricing" },
+        image: "/boarding/img_6687.jpg",
+        imageAlt: "Dogs enjoying their boarding stay at Planet Pooch",
         paragraphs: [
           "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy, supervised night of rest.",
           "With trained staff on-site and personalized care, your dog is never just another guest — they're part of the Planet Pooch family.",
@@ -450,20 +452,11 @@ export const mainServicePages = {
         },
       },
       {
-        type: "slideshow",
-        eyebrow: "Our facility",
-        title: "Where your dog will stay",
-        images: [
-          { src: "/boarding/IMG_0687.jpg", alt: "Dog boarding suite at Planet Pooch" },
-          { src: "/boarding/img_6687.jpg", alt: "Dogs enjoying their boarding stay at Planet Pooch" },
-          { src: "/boarding/A99B8768-1ADA-4A82-B432-DF62714F2B4D.JPG", alt: "Boarding area at Planet Pooch resort" },
-          { src: "/boarding/Screenshot 2025-05-30 at 3.15.52 PM (1).png", alt: "Planet Pooch boarding accommodations" },
-        ],
-      },
-      {
         type: "splitCards",
         eyebrow: "Choose your style",
         title: "Group Play or 1-on-1 care",
+        image: "/boarding/A99B8768-1ADA-4A82-B432-DF62714F2B4D.JPG",
+        imageAlt: "Boarding area at Planet Pooch resort",
         cta: { label: "Pricing", href: "#pricing" },
         intro:
           "Every boarding stay includes one of two care styles. Pick the one that fits your dog's personality — social butterfly or solo explorer.",
@@ -568,6 +561,8 @@ export const mainServicePages = {
         type: "timeline",
         eyebrow: "A day in the life",
         title: "A tail-wagging day at Planet Pooch",
+        image: "/boarding/Screenshot 2025-05-30 at 3.15.52 PM (1).png",
+        imageAlt: "Planet Pooch boarding accommodations",
         items: [
           {
             time: "6:00 AM",
