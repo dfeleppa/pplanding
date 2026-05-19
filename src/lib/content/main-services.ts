@@ -206,6 +206,39 @@ export const mainServicePages = {
           "Includes nail cut and grind, ears cleaned, bath, shampoo and conditioner, anal glands expressed upon request, blow dry, brushing, signature bow and bandana, eye trim, paw trim, and sanitary trim.",
       },
       {
+        type: "pricingPair",
+        eyebrow: "Bath pricing",
+        title: "Bath Services",
+        tables: [
+          {
+            title: "Long-Haired Baths",
+            intro: "Golden Retriever, Husky, German Shepherd, Pomsky, and similar breeds.",
+            columns: ["Weight", "Price"],
+            rows: [
+              ["Up to 20 lbs", "$95–$115"],
+              ["21–40 lbs", "$115–$135"],
+              ["41–60 lbs", "$135–$155"],
+              ["61–80 lbs", "$155–$175"],
+              ["81 lbs & up", "$175 & up"],
+            ],
+          },
+          {
+            title: "Short-Haired Baths",
+            intro: "Pug, Beagle, Boxer, Labrador, and similar breeds.",
+            columns: ["Weight", "Price"],
+            rows: [
+              ["Up to 15 lbs", "$55"],
+              ["16–25 lbs", "$55–$75"],
+              ["26–45 lbs", "$75–$95"],
+              ["46–65 lbs", "$95–$115"],
+              ["66–85 lbs", "$115–$135"],
+              ["86–105 lbs", "$135–$155"],
+              ["106 lbs & up", "$155 & up"],
+            ],
+          },
+        ],
+      },
+      {
         type: "callout",
         eyebrow: "Stay & save",
         title: "20% off in-house grooming on stays of 2 or more nights",
