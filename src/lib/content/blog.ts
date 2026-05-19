@@ -374,16 +374,438 @@ const fullPosts: Record<string, BlogPost> = {
       },
     ],
   },
+
+  "how-often-should-you-get-your-dog-groomed": {
+    slug: "how-often-should-you-get-your-dog-groomed",
+    title: "How Often Should You Get Your Dog Groomed?",
+    metaTitle: "How Often Should You Get Your Dog Groomed? | Planet Pooch Blog",
+    metaDescription:
+      "Dog grooming frequency depends on breed and coat type. Most dogs benefit from professional grooming every 4–6 weeks to maintain health and comfort.",
+    hasFullContent: true,
+    intro:
+      "One of the most common questions we hear from pet parents is how often their dog actually needs to be groomed. The answer depends on your dog's breed, coat type, lifestyle, and skin sensitivity — but a good baseline is every 4–6 weeks for most dogs.",
+    sections: [
+      {
+        heading: "General grooming guidelines by coat type",
+        paragraphs: [
+          "Short-coated dogs like Labs, Beagles, and Frenchies can typically go 6–8 weeks between grooming sessions. They don't need frequent haircuts, but they still benefit from baths, deshedding, nail trims, and ear cleaning.",
+          "Medium to long-coated breeds like Golden Retrievers and Aussies should be groomed every 4–6 weeks. Regular brushing and professional grooming prevent matting and keep the coat manageable.",
+          "Curly or doodle-type coats — Poodles, Goldendoodles, Labradoodles — need grooming every 3–5 weeks. These coats mat quickly and require consistent grooming to stay comfortable and healthy.",
+          "Double-coated breeds like Huskies and German Shepherds do well on a 4–8 week schedule depending on shedding season, with deshedding treatments to manage undercoat blowouts.",
+        ],
+      },
+      {
+        heading: "Why routine grooming matters",
+        paragraphs: [
+          "Grooming isn't just about appearance — it's a health practice. Skipping regular grooming can lead to discomfort, skin irritation, and even behavioral changes due to pain.",
+        ],
+        bullets: [
+          "Prevents painful matting that pulls on the skin",
+          "Maintains skin health and catches issues early",
+          "Reduces shedding and allergens in your home",
+          "Enables early detection of lumps, bumps, or skin conditions",
+          "Keeps nails at a healthy length for proper joint alignment",
+          "Prevents ear infections through regular cleaning",
+        ],
+      },
+      {
+        heading: "Lifestyle considerations",
+        paragraphs: [
+          "Some dogs need more frequent grooming based on how they spend their time. Dogs that swim often, play outside daily, attend daycare, or have allergies or sensitive skin will benefit from a shorter grooming cycle.",
+        ],
+      },
+      {
+        heading: "When should puppies start?",
+        paragraphs: [
+          "Puppies should begin professional grooming around 12–16 weeks old, after their initial vaccinations. Starting early builds positive associations with grooming and makes future sessions much easier.",
+        ],
+      },
+      {
+        heading: "The sweet spot",
+        paragraphs: [
+          "For most dogs, every 4–6 weeks is the ideal routine. Staying consistent keeps your dog comfortable, healthy, and looking their best — and helps avoid the need for drastic interventions like shaving out severe mats.",
+        ],
+      },
+    ],
+  },
+
+  "is-it-bad-to-shave-my-goldendoodle-what-you-need-to-know": {
+    slug: "is-it-bad-to-shave-my-goldendoodle-what-you-need-to-know",
+    title: "Is It Bad to Shave My Goldendoodle? What You Need to Know",
+    metaTitle: "Is It Bad to Shave My Goldendoodle? | Planet Pooch Blog",
+    metaDescription:
+      "Shaving a Goldendoodle is sometimes necessary for health and comfort, but regular professional grooming is the best way to prevent matting and skin issues.",
+    hasFullContent: true,
+    intro:
+      "Goldendoodles have beautiful, thick coats — but they can also be high-maintenance. If your doodle's coat has gotten out of hand, you might be wondering whether shaving is the right call. Here's what you need to know.",
+    sections: [
+      {
+        heading: "Why Goldendoodles might need a shave",
+        paragraphs: [
+          "Severe matting is the most common reason. Goldendoodle coats tangle easily, and when mats get tight, they pull on the skin and cause pain. In these cases, shaving is often the most humane option.",
+          "Hot weather and skin issues can also make a shorter coat the better choice. A dense coat traps heat, and shaving improves airflow. If your dog has a skin condition, a shorter coat makes treatment easier and more effective.",
+          "Some owners also find that a shaved coat simplifies day-to-day maintenance, especially for dogs that resist frequent brushing.",
+        ],
+      },
+      {
+        heading: "The importance of regular grooming",
+        paragraphs: [
+          "The best way to avoid an unnecessary shave is regular professional grooming. Consistent brushing, trims, and baths prevent the mats and tangles that lead to a full shave in the first place.",
+          "Our groomers evaluate each dog's coat and recommend the right approach — whether that's a full shave, a trim, or a detangling treatment. Regular visits every 3–5 weeks keep Goldendoodle coats healthy, comfortable, and mat-free.",
+        ],
+      },
+    ],
+  },
+
+  "flea-and-tick-treatment-for-dogs-why-its-crucial-for-your-pups-health": {
+    slug: "flea-and-tick-treatment-for-dogs-why-its-crucial-for-your-pups-health",
+    title: "Flea and Tick Treatment for Dogs: Why It's Crucial for Your Pup's Health",
+    metaTitle: "Flea & Tick Treatment for Dogs | Planet Pooch Blog",
+    metaDescription:
+      "Regular flea and tick treatments protect your dog from parasites, disease, and discomfort — and safeguard your home and family too.",
+    hasFullContent: true,
+    intro:
+      "Fleas and ticks are more than a nuisance — they're a genuine health risk for your dog and your household. Regular prevention is one of the most important things you can do as a pet parent, especially on Long Island where tick-borne diseases are common.",
+    sections: [
+      {
+        heading: "Why flea and tick treatment is essential",
+        paragraphs: [
+          "Fleas feed on your dog's blood, causing intense itching, skin irritation, and inflammation. Left untreated, infestations lead to secondary infections, hair loss, and allergic reactions — and they spread quickly throughout your home.",
+          "Ticks carry serious diseases including Lyme disease, Rocky Mountain spotted fever, and ehrlichiosis. These illnesses can cause joint pain, organ failure, and in severe cases can be fatal. Even a single tick bite poses a disease risk.",
+          "Treating your dog also protects your home and family. Fleas spread rapidly indoors, and ticks occasionally attach to humans. Consistent prevention keeps your entire household safe.",
+        ],
+      },
+      {
+        heading: "Treatment options",
+        paragraphs: [
+          "There are several effective approaches, and your vet can help you choose the right one for your dog's age, breed, and health history.",
+        ],
+        bullets: [
+          "Topical treatments — applied to the skin, effective for a month or longer",
+          "Oral medications — pills that eliminate fleas and ticks within hours, lasting up to a month",
+          "Flea and tick collars — worn continuously, releasing repellent chemicals for several months",
+          "Medicated shampoos and sprays — best for treating active infestations, though they require more frequent use",
+        ],
+      },
+      {
+        heading: "When to start treatment",
+        paragraphs: [
+          "Begin treatments before warm weather arrives — spring and summer are peak season for fleas and ticks. On Long Island, many vets recommend year-round protection since mild winters can keep parasites active longer than expected.",
+        ],
+      },
+    ],
+  },
+
+  "why-regular-grooming-is-more-than-just-keeping-your-pet-looking-their-best": {
+    slug: "why-regular-grooming-is-more-than-just-keeping-your-pet-looking-their-best",
+    title: "Why Regular Grooming Is More Than Just Keeping Your Pet Looking Their Best",
+    metaTitle: "Why Regular Grooming Matters for Health | Planet Pooch Blog",
+    metaDescription:
+      "Regular grooming isn't just cosmetic — it promotes healthy skin, prevents health issues, and keeps your pet comfortable. Here's why it matters.",
+    hasFullContent: true,
+    intro:
+      "A lot of pet parents think of grooming as a way to keep their dog looking good — and it does — but the health benefits are just as important. Regular grooming is one of the simplest ways to keep your pet comfortable and catch problems early.",
+    sections: [
+      {
+        heading: "Promotes healthy skin and coat",
+        paragraphs: [
+          "Brushing removes dirt, reduces shedding, and stimulates the natural oils that keep your dog's coat shiny and their skin healthy. Without regular brushing, those oils build up unevenly, leading to dry patches or greasy spots.",
+        ],
+      },
+      {
+        heading: "Helps prevent health issues",
+        paragraphs: [
+          "Routine grooming gives us a chance to check for things you might not notice at home — skin conditions, lumps, ticks, ear infections, or dental issues. Catching these early means simpler, less expensive treatment and less discomfort for your dog.",
+        ],
+      },
+      {
+        heading: "Improves comfort",
+        paragraphs: [
+          "Overgrown nails, matted fur, and dirty ears aren't just unsightly — they're painful. Long nails alter your dog's gait and stress their joints. Mats pull on the skin. Regular grooming keeps your dog physically comfortable and happier day to day.",
+        ],
+      },
+      {
+        heading: "Controls odor and cleanliness",
+        paragraphs: [
+          "Regular baths and coat maintenance reduce odor and keep your home fresher too. If you've noticed your dog smelling more than usual, it's often a sign they're overdue for a grooming session.",
+        ],
+      },
+    ],
+  },
+
+  "the-importance-of-regular-nail-trimming-for-your-dog": {
+    slug: "the-importance-of-regular-nail-trimming-for-your-dog",
+    title: "The Importance of Regular Nail Trimming for Your Dog",
+    metaTitle: "Why Regular Dog Nail Trimming Matters | Planet Pooch Blog",
+    metaDescription:
+      "Regular nail trimming prevents pain, injury, and mobility issues in dogs. Learn why it matters and tips for keeping nails at a healthy length.",
+    hasFullContent: true,
+    intro:
+      "Nail trimming is one of those grooming tasks that's easy to put off — but overgrown nails can cause real problems for your dog. Here's why staying on top of it matters more than you might think.",
+    sections: [
+      {
+        heading: "Prevents pain and discomfort",
+        paragraphs: [
+          "When nails get too long, they press into the paw pad with every step. This changes your dog's gait and puts strain on their joints, which can contribute to arthritis and other musculoskeletal problems over time.",
+        ],
+      },
+      {
+        heading: "Reduces the risk of injury",
+        paragraphs: [
+          "Long nails can snag on carpet, furniture, or outdoor surfaces, causing painful breaks or splits that sometimes require veterinary attention. Keeping nails trimmed reduces this risk significantly.",
+        ],
+      },
+      {
+        heading: "Protects your home",
+        paragraphs: [
+          "Long nails scratch hardwood floors, furniture, and skin during play. Regular trims protect both your dog and your belongings.",
+        ],
+      },
+      {
+        heading: "Promotes better paw health and mobility",
+        paragraphs: [
+          "Overgrown nails cause toes to splay unnaturally, putting pressure on ligaments and joints. This can lead to paw deformities and infections. Dogs also rely on their nails for traction — nails that are too long actually reduce grip and confidence, especially on slippery surfaces.",
+        ],
+      },
+      {
+        heading: "Tips for safe nail trimming",
+        bullets: [
+          "Use sharp, high-quality dog nail clippers or a grinding tool",
+          "Trim gradually when nails are dark and the quick isn't visible",
+          "Reward your dog with praise or treats to build positive associations",
+          "If you're unsure, let a professional groomer or vet handle it",
+        ],
+      },
+    ],
+  },
+
+  "why-mobile-grooming-is-good-for-your-pet": {
+    slug: "why-mobile-grooming-is-good-for-your-pet",
+    title: "Why Mobile Grooming Is Good for Your Pet",
+    metaTitle: "Why Mobile Grooming Is Good for Your Pet | Planet Pooch Blog",
+    metaDescription:
+      "Mobile grooming brings professional care to your door — less stress for your pet, more convenience for you, and one-on-one attention every session.",
+    hasFullContent: true,
+    intro:
+      "Mobile grooming has become a go-to for pet parents who want a calmer, more personalized grooming experience for their dog. Instead of a busy salon, the groomer comes to you — and the difference in your pet's comfort is noticeable.",
+    sections: [
+      {
+        heading: "Less stress for your pet",
+        paragraphs: [
+          "Traditional grooming salons can overwhelm dogs — the sounds of other pets, unfamiliar smells, and the bustle of a busy shop. Mobile grooming removes all of that. Your dog is groomed in a quiet, controlled environment with no other animals around, which makes a huge difference for anxious or reactive dogs.",
+        ],
+      },
+      {
+        heading: "Convenience for you",
+        paragraphs: [
+          "No driving, no drop-off, no waiting room. The groomer arrives at your home on a schedule that works for you. This is especially helpful for owners with busy schedules, elderly individuals, or anyone with mobility challenges.",
+        ],
+      },
+      {
+        heading: "One-on-one attention",
+        paragraphs: [
+          "Mobile groomers work with one pet at a time, providing undivided focus. Services can be customized to your dog's specific needs and preferences without the distractions of a busy salon.",
+        ],
+      },
+      {
+        heading: "Ideal for senior or special needs pets",
+        paragraphs: [
+          "Older dogs and those with health issues benefit from the calm, quiet environment of a mobile van. There's less physical strain, and experienced mobile groomers take the extra time these pets need.",
+        ],
+      },
+      {
+        heading: "Safer and more hygienic",
+        paragraphs: [
+          "Mobile vans are sanitized between every appointment, reducing cross-contamination risks. Your pet isn't exposed to the germs or parasites that can circulate in crowded facilities.",
+        ],
+      },
+      {
+        heading: "No long waits",
+        paragraphs: [
+          "Unlike salons that may keep your dog for hours, mobile grooming operates by appointment. Your dog isn't sitting in a crate waiting — the session starts when the groomer arrives and your dog is back inside shortly after.",
+        ],
+      },
+      {
+        heading: "Great for dogs with grooming anxiety",
+        paragraphs: [
+          "For dogs who've had negative grooming experiences, a quiet and familiar setting makes all the difference. One-on-one interaction helps dogs build trust with their groomer, making each session easier than the last.",
+        ],
+      },
+    ],
+  },
+
+  "how-to-manage-your-pets-coat-during-the-shedding-season": {
+    slug: "how-to-manage-your-pets-coat-during-the-shedding-season",
+    title: "How to Manage Your Pet's Coat During the Shedding Season",
+    metaTitle: "Managing Your Dog's Coat During Shedding Season | Planet Pooch Blog",
+    metaDescription:
+      "Spring shedding is natural — here's how to manage it with the right tools, brushing routine, and professional deshedding treatments.",
+    hasFullContent: true,
+    intro:
+      "Every spring, pet parents notice the same thing: fur everywhere. Shedding is a natural process driven by changes in daylight and temperature, and it's your dog's way of swapping their thick winter coat for something lighter. Here's how to stay on top of it.",
+    sections: [
+      {
+        heading: "Why shedding increases in spring",
+        paragraphs: [
+          "As the weather warms, dogs shed their dense undercoat to prepare for summer. Double-coated breeds like Huskies, German Shepherds, and Golden Retrievers experience the most noticeable shedding, sometimes called a coat blowout. Even shorter-coated breeds shed more during this transition.",
+        ],
+      },
+      {
+        heading: "How to manage spring shedding",
+        paragraphs: [
+          "Increase your brushing routine during peak shedding. Short-haired dogs should be brushed at least once a week; long-haired and double-coated breeds benefit from brushing 2–3 times a week. Regular brushing removes loose hair before it ends up on your furniture.",
+        ],
+      },
+      {
+        heading: "Use the right tools",
+        bullets: [
+          "Deshedding tools like FURminators reach deep into double coats to remove loose undercoat",
+          "Slicker brushes untangle mats and remove loose hair from long-haired breeds",
+          "Deshedding gloves are a gentle option for sensitive dogs who don't love brushing",
+        ],
+      },
+      {
+        heading: "Bathing and diet",
+        paragraphs: [
+          "A spring bath with a deshedding shampoo loosens dead hair and preps the coat for brushing. Follow up with a thorough brush-out to catch everything the bath loosened.",
+          "Proper nutrition also plays a role — foods rich in omega fatty acids support coat health and can reduce excessive shedding. Ask your vet about supplements if shedding seems unusually heavy.",
+        ],
+      },
+      {
+        heading: "When to call a professional",
+        paragraphs: [
+          "If your dog's shedding is overwhelming or their coat has developed mats, a professional deshedding treatment can make a huge difference. Our groomers use specialized tools and techniques to remove loose undercoat safely and thoroughly — leaving your dog more comfortable and your home much cleaner.",
+        ],
+      },
+    ],
+  },
+
+  "why-dog-boarding-is-a-great-choice-for-pet-owners-and-their-dogs": {
+    slug: "why-dog-boarding-is-a-great-choice-for-pet-owners-and-their-dogs",
+    title: "Why Dog Boarding Is a Great Choice for Pet Owners and Their Dogs",
+    metaTitle: "Why Dog Boarding Is a Great Choice | Planet Pooch Blog",
+    metaDescription:
+      "Dog boarding provides peace of mind, professional care, socialization, and structured routines — a better option than leaving your dog at home alone.",
+    hasFullContent: true,
+    intro:
+      "When you need to travel or be away for an extended period, boarding your dog at a professional facility gives both of you a better experience. Here's why it works.",
+    sections: [
+      {
+        heading: "Peace of mind",
+        paragraphs: [
+          "Professional staff, established routines, and round-the-clock supervision mean your dog receives consistent care — meals, walks, attention, and monitoring — without relying on a friend or neighbor who may not know your dog's needs.",
+        ],
+      },
+      {
+        heading: "A safe, secure environment",
+        paragraphs: [
+          "Boarding facilities are designed for dogs. Secure play areas, proper fencing, climate control, and staff trained in canine behavior mean your dog is in a space built specifically for their safety and comfort.",
+        ],
+      },
+      {
+        heading: "Socialization and stimulation",
+        paragraphs: [
+          "Dogs at boarding facilities interact with other dogs, enjoy structured playtime, and get mental stimulation throughout the day. Instead of sitting at home alone, your dog gets a mini vacation of their own.",
+        ],
+      },
+      {
+        heading: "Routine and structure",
+        paragraphs: [
+          "Dogs thrive on consistency. Boarding provides a reliable daily schedule — meals, bathroom breaks, exercise, and rest — that keeps your dog calm and comfortable even when you're not around.",
+        ],
+      },
+      {
+        heading: "Specialized care when needed",
+        paragraphs: [
+          "Good boarding facilities accommodate individual needs. Whether your dog has a specific diet, takes medication, or needs extra attention, trained staff handle these details so nothing gets missed.",
+        ],
+      },
+    ],
+  },
+
+  "why-enrichment-activities-matter-for-your-dog": {
+    slug: "why-enrichment-activities-matter-for-your-dog",
+    title: "Why Enrichment Activities Matter for Your Dog",
+    metaTitle: "Why Enrichment Activities Matter for Dogs | Planet Pooch Blog",
+    metaDescription:
+      "Enrichment activities provide mental and physical stimulation that reduce anxiety, build confidence, and strengthen the bond between you and your dog.",
+    hasFullContent: true,
+    intro:
+      "Most dogs get plenty of physical exercise, but mental stimulation is just as important. Enrichment activities are structured games and exercises designed to keep your dog's mind sharp and their body active — and the benefits go well beyond keeping them busy.",
+    sections: [
+      {
+        heading: "What enrichment looks like",
+        paragraphs: [
+          "Enrichment comes in many forms, and the best programs combine several types to keep dogs engaged.",
+        ],
+        bullets: [
+          "Puzzle feeders and snuffle mats — dogs use their nose to hunt for treats, engaging natural foraging instincts",
+          "Agility challenges — small jumps, tunnels, and balance work that build coordination and confidence",
+          "Scent games — dogs learn to follow their nose and find hidden objects, tapping into their strongest sense",
+        ],
+      },
+      {
+        heading: "Why it matters",
+        paragraphs: [
+          "Enrichment reduces boredom and anxiety. A mentally stimulated dog is less likely to develop destructive habits at home — chewing, barking, digging — because their need for engagement is already met.",
+          "It builds confidence, especially in shy or nervous dogs. Successfully completing a new challenge gives dogs a sense of accomplishment that carries over into other situations.",
+          "Group enrichment supports social skills too. Dogs learn to work around other dogs, share space, and engage in polite play.",
+        ],
+      },
+      {
+        heading: "The bond benefit",
+        paragraphs: [
+          "Many enrichment activities can be continued at home, giving you and your dog a new way to connect. It's not just about keeping them busy — it's about strengthening the relationship through shared experiences and problem-solving.",
+        ],
+      },
+    ],
+  },
+
+  "training-puppies-and-adult-dogs-why-its-important-at-every-age": {
+    slug: "training-puppies-and-adult-dogs-why-its-important-at-every-age",
+    title: "Training Puppies and Adult Dogs: Why It's Important at Every Age",
+    metaTitle: "Dog Training at Every Age — Puppies & Adults | Planet Pooch Blog",
+    metaDescription:
+      "Dog training isn't just for puppies. Whether you're building a foundation or correcting old habits, training improves communication and quality of life at any age.",
+    hasFullContent: true,
+    intro:
+      "There's a common misconception that training is only for puppies — but dogs benefit from structured training at every stage of life. Whether you're starting with a brand-new puppy or working with an adult dog, training builds communication, trust, and a better relationship.",
+    sections: [
+      {
+        heading: "Training a puppy: building the foundation",
+        paragraphs: [
+          "Puppies are constantly learning, which makes early training especially impactful. Teaching basic commands like sit, stay, and come establishes good habits and prevents problem behaviors before they start.",
+          "Early training also includes socialization — introducing puppies to new people, places, and sounds so they grow into confident adult dogs. Commands like 'come' and 'leave it' aren't just about obedience; they're safety tools.",
+          "Short, positive sessions work best for puppies. Keep it fun, use plenty of rewards, and keep sessions brief enough that your puppy stays engaged rather than frustrated.",
+        ],
+      },
+      {
+        heading: "Training an adult dog: it's never too late",
+        paragraphs: [
+          "Adult dogs are fully capable of learning new behaviors and improving existing ones. In fact, they often have longer attention spans than puppies, which can make certain types of training easier.",
+        ],
+        bullets: [
+          "Correct unwanted behaviors like jumping, pulling on leash, or excessive barking",
+          "Provide mental stimulation that prevents boredom and destructive habits",
+          "Improve communication so your dog understands what you expect",
+          "Build confidence in shy or anxious dogs through structured, positive experiences",
+        ],
+      },
+      {
+        heading: "Why training matters at any age",
+        paragraphs: [
+          "Training is about more than obedience — it improves quality of life for both you and your dog. A trained dog is safer in public, calmer at home, and better equipped to handle new situations. And the process of working together strengthens the bond between you.",
+          "With patience, consistency, and positive reinforcement, every dog can become a more confident, well-mannered companion.",
+        ],
+      },
+    ],
+  },
 };
 
 const stubSlugs: ReadonlyArray<string> = [
-  "why-mobile-grooming-is-good-for-your-pet",
   "why-dog-daycare-is-a-game-changer-for-pet-parents",
   "what-is-dog-daycare-a-complete-guide-for-pet-parents-2",
-  "flea-and-tick-treatment-for-dogs-why-its-crucial-for-your-pups-health",
-  "how-to-manage-your-pets-coat-during-the-shedding-season",
   "is-dog-daycare-right-for-my-pet",
-  "why-dog-boarding-is-a-great-choice-for-pet-owners-and-their-dogs",
   "suns-out-tongues-out-the-happiness-of-dogs-in-the-sun",
   "why-pet-boarding-is-essential-when-youre-away",
   "why-dog-boarding-is-a-lifesaver-for-your-holiday-getaways",
@@ -404,18 +826,12 @@ const stubSlugs: ReadonlyArray<string> = [
   "give-your-dog-a-vacation-too-this-labor-day-weekend-at-planet-pooch-pet-resort",
   "is-your-pup-bouncing-off-the-walls-while-youre-at-work",
   "its-bark-to-school-season-at-planet-pooch",
-  "why-regular-grooming-is-more-than-just-keeping-your-pet-looking-their-best",
-  "why-enrichment-activities-matter-for-your-dog",
   "a-longer-happier-life-for-your-dog-starts-here",
   "exciting-news-our-online-pet-profile-just-got-even-easier",
   "training-at-our-pet-resort-fun-learning-and-bonding-for-your-pup",
-  "the-importance-of-regular-nail-trimming-for-your-dog",
   "the-holidays-are-almost-here-dont-forget-to-book-your-pets-stay",
   "holiday-peace-of-mind-dog-daycare-boarding-mobile-grooming-this-season",
-  "training-puppies-and-adult-dogs-why-its-important-at-every-age",
   "dog-daycare-in-the-snow-why-winter-days-are-perfect-for-daycare",
-  "how-often-should-you-get-your-dog-groomed",
-  "is-it-bad-to-shave-my-goldendoodle-what-you-need-to-know",
   "why-dogs-shed-more-in-spring-and-what-you-can-do-about-it",
   "spring-grooming-for-dogs-why-it-matters-more-than-you-think",
   "spring-dog-boarding-give-your-pup-a-vacation-of-their-own",

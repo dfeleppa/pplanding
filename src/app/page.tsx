@@ -2,6 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowRight,
   GraduationCap,
   Home,
   PawPrint,
@@ -10,8 +11,17 @@ import {
   Star,
 } from "lucide-react";
 import { SITE } from "../lib/site";
+import { blogPosts } from "../lib/content/blog";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
+
+const featuredBlogSlugs = [
+  "how-often-should-you-get-your-dog-groomed",
+  "is-it-bad-to-shave-my-goldendoodle-what-you-need-to-know",
+  "why-mobile-grooming-is-good-for-your-pet",
+] as const;
+
+const featuredBlogPosts = featuredBlogSlugs.map((slug) => blogPosts[slug]);
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -358,6 +368,47 @@ export default function HomePage() {
                 <p className="text-sm leading-7 text-[rgba(47,42,39,0.78)]">{review.body}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" className="bg-white/55 px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+              From the Blog
+            </p>
+            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+              Tips, guides, and stories for pet parents.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {featuredBlogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/${post.slug}/`}
+                className="group flex h-full flex-col justify-between border border-[rgba(50,73,83,0.12)] bg-[var(--pp-cream)] p-6 transition hover:bg-white/85"
+              >
+                <h3 className="text-xl font-semibold leading-snug text-[var(--pp-ink)]">
+                  {post.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.68)]">
+                  {post.metaDescription}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)] transition group-hover:translate-x-1">
+                  Read article
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link href="/blog/" className="pp-cta">
+              View All Articles
+              <span className="pp-cta-arrow" aria-hidden />
+            </Link>
           </div>
         </div>
       </section>
