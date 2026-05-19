@@ -260,9 +260,9 @@ export const mainServicePages = {
     metaTitle: "Dog Daycare Long Island | Group Play & Enrichment | Planet Pooch",
     metaDescription:
       "Interactive dog daycare in Franklin Square, NY. Group play, one-on-one enrichment, puppy socialization, and day-pack pricing for Long Island families.",
-    image: "/hero-dog.jpg",
+    image: "/daycare.png",
     heroCtas: {
-      primary: { label: "Get Started", href: "/contact" },
+      primary: { label: "Book your Free 1st Day!", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -420,7 +420,7 @@ export const mainServicePages = {
     metaTitle: "Dog Boarding Long Island | Suite Pricing | Planet Pooch",
     metaDescription:
       "Overnight dog boarding at our Franklin Square pet resort. Express, Classic, XL, and Luxury suites with Group Play or 1-on-1 care, plus enrichment activities, snacks, and bedding add-ons.",
-    image: "/boarding/IMG_0687.jpg",
+    image: "/boarding/boarding_hero.jpg",
     heroCtas: {
       primary: { label: "Book Now", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
@@ -431,7 +431,7 @@ export const mainServicePages = {
         eyebrow: "Why board with us?",
         title: "Overnight care that feels like home.",
         cta: { label: "Pricing", href: "#pricing" },
-        image: "/boarding/img_6687.jpg",
+        image: "/boarding/moon.JPG",
         imageAlt: "Dogs enjoying their boarding stay at Planet Pooch",
         paragraphs: [
           "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy, supervised night of rest.",
@@ -455,8 +455,6 @@ export const mainServicePages = {
         type: "splitCards",
         eyebrow: "Choose your style",
         title: "Group Play or 1-on-1 care",
-        image: "/boarding/A99B8768-1ADA-4A82-B432-DF62714F2B4D.JPG",
-        imageAlt: "Boarding area at Planet Pooch resort",
         cta: { label: "Pricing", href: "#pricing" },
         intro:
           "Every boarding stay includes one of two care styles. Pick the one that fits your dog's personality — social butterfly or solo explorer.",
@@ -620,7 +618,7 @@ export const mainServicePages = {
       "Compassionate, results-driven dog training with our AKC Evaluator Trainer. Private sessions, 6-week programs, and free consultations for dogs of every age.",
     image: "/tour-space.jpg",
     heroCtas: {
-      primary: { label: "Book Consultation", href: "/contact" },
+      primary: { label: "Book FREE Consultation", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -770,7 +768,7 @@ export const mainServicePages = {
     metaTitle: "Dog Enrichment Long Island | One-on-One Activities | Planet Pooch",
     metaDescription:
       "One-on-one enrichment activities at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, and nutrition puzzles for dogs who thrive away from the pack.",
-    image: "/our-resort-exterior.jpeg",
+    image: "/enrichment_hero.jpg",
     heroCtas: {
       primary: { label: "Get Started", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
@@ -888,7 +886,7 @@ export const mainServicePages = {
     metaTitle: "Dog Events Long Island | Birthday Parties & Themed Days | Planet Pooch",
     metaDescription:
       "Signature events at Planet Pooch in Franklin Square — birthday parties, Bark in the Park field trips, Photos with Santa, and themed daycare days throughout the year.",
-    image: "/our-resort-exterior.jpeg",
+    image: "/event_hero.jpg",
     heroCtas: {
       primary: { label: "Book an Event", href: "/contact" },
       ghost: { label: "Learn More", href: "#overview" },
