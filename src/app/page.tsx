@@ -183,7 +183,7 @@ export default function HomePage() {
                   href={item.href}
                   className="group mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
                 >
-                  <div className="relative aspect-[3/4] w-full overflow-hidden">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -192,10 +192,14 @@ export default function HomePage() {
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="px-4 py-5 text-center">
-                    <h3 className="text-sm font-bold uppercase tracking-[0.28em] text-[var(--pp-night)] transition group-hover:text-[var(--pp-main)]">
+                  <div className="relative px-4 pb-6 pt-8 text-center">
+                    <div className="absolute -top-6 left-1/2 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-2 border-white bg-[var(--pp-cream)] shadow-sm">
+                      <Icon className="h-5 w-5 stroke-[1.5] text-[var(--pp-gold-deep)]" />
+                    </div>
+                    <h3 className="mt-2 font-display text-lg italic text-[var(--pp-night)] transition group-hover:text-[var(--pp-main)]" style={{ fontFamily: "var(--font-display), serif" }}>
                       {item.title}
                     </h3>
+                    <span className="mx-auto mt-3 block h-px w-10 bg-[var(--pp-gold-deep)]/40" aria-hidden />
                     <p className="mx-auto mt-3 max-w-[16rem] text-sm leading-7 text-[rgba(47,42,39,0.78)]">
                       {item.copy}
                     </p>
