@@ -30,35 +30,35 @@ const heroHighlights = [
     href: "/mobile-grooming/",
     icon: Scissors,
     image: "/mobile_home.jpg",
-    copy: "Luxury one-on-one grooming brought to your driveway across Long Island and the Hamptons.",
+    copy: "Luxury grooming at your door across Long Island and the Hamptons.",
   },
   {
     title: "Daycare",
     href: "/dog-daycare/",
     icon: PawPrint,
     image: "/daycare_home.png",
-    copy: "Supervised group play and enrichment in a safe, nurturing space built for happy, social dogs.",
+    copy: "Supervised play and enrichment in a safe, nurturing space.",
   },
   {
     title: "Boarding",
     href: "/dog-boarding/",
     icon: Home,
     image: "/boarding_home.jpeg",
-    copy: "Cozy overnight care, refined routines, and attentive supervision while you're away.",
+    copy: "Cozy overnight stays with attentive, personalized care.",
   },
   {
     title: "Training",
     href: "/dog-training/",
     icon: GraduationCap,
     image: "/training_home.jpeg",
-    copy: "Compassionate, results-driven training led by our AKC Evaluator Trainer.",
+    copy: "Results-driven training led by our AKC Evaluator Trainer.",
   },
   {
     title: "Enrichment",
     href: "/enrichment/",
     icon: Sparkles,
     image: "/enrichment_home.jpg",
-    copy: "One-on-one enrichment activities — sensory play, scent work, agility, and gentle challenges for dogs who shine away from the pack.",
+    copy: "Sensory play, scent work, agility, and gentle one-on-one challenges.",
   },
 ] as const;
 
@@ -183,7 +183,7 @@ export default function HomePage() {
                   href={item.href}
                   className="group mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
                 >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <div className="relative aspect-square w-full overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -192,7 +192,7 @@ export default function HomePage() {
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="relative px-4 pb-6 pt-8 text-center">
+                  <div className="relative px-3 pb-4 pt-7 text-center">
                     <div className="absolute -top-6 left-1/2 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-2 border-white bg-[var(--pp-cream)] shadow-sm">
                       <Icon className="h-5 w-5 stroke-[1.5] text-[var(--pp-gold-deep)]" />
                     </div>
