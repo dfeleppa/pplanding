@@ -56,11 +56,11 @@ export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; cla
                 >
                   Mobile Grooming
                 </h3>
-                <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" className="pp-cta pp-cta-sm w-full text-center">
+                <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
                 </a>
-                <a href="tel:+12023186526" className="pp-cta-ghost-dark pp-cta-sm w-full text-center">
-                  Existing Client
+                <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
+                  Call/Text (202) 318-6526
                 </a>
               </div>
 
@@ -72,10 +72,10 @@ export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; cla
                 >
                   Pet Resort
                 </h3>
-                <a href="https://form.moego.pet/go/form?formId=4f15e60b84ff49019c22b876ae2c555b" className="pp-cta pp-cta-sm w-full text-center">
+                <a href="https://form.moego.pet/go/form?formId=4f15e60b84ff49019c22b876ae2c555b" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
                 </a>
-                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta-ghost-dark pp-cta-sm w-full text-center">
+                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
                   Existing Client
                 </a>
               </div>
