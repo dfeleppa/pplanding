@@ -836,16 +836,18 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                       <a href={page.heroCtas.ghost.href} className="pp-cta-ghost">
                         {page.heroCtas.ghost.label}
                       </a>
-                      {page.heroCtas.tertiary ? (
+                    </div>
+                    {page.heroCtas.tertiary ? (
+                      <div className="mt-8 flex justify-center lg:justify-start">
                         <a
                           href={page.heroCtas.tertiary.href}
-                          className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-mint)] hover:text-white"
+                          className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
                         >
                           {page.heroCtas.tertiary.label}
-                          <ArrowRight className="h-3.5 w-3.5" />
+                          <ArrowRight className="h-4 w-4" />
                         </a>
-                      ) : null}
-                    </div>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>

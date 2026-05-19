@@ -450,6 +450,17 @@ export const mainServicePages = {
         },
       },
       {
+        type: "slideshow",
+        eyebrow: "Our facility",
+        title: "Where your dog will stay",
+        images: [
+          { src: "/boarding/IMG_0687.jpg", alt: "Dog boarding suite at Planet Pooch" },
+          { src: "/boarding/img_6687.jpg", alt: "Dogs enjoying their boarding stay at Planet Pooch" },
+          { src: "/boarding/A99B8768-1ADA-4A82-B432-DF62714F2B4D.JPG", alt: "Boarding area at Planet Pooch resort" },
+          { src: "/boarding/Screenshot 2025-05-30 at 3.15.52 PM (1).png", alt: "Planet Pooch boarding accommodations" },
+        ],
+      },
+      {
         type: "splitCards",
         eyebrow: "Choose your style",
         title: "Group Play or 1-on-1 care",
