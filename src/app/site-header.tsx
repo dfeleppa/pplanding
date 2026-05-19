@@ -48,7 +48,7 @@ export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/f
         )}
       </nav>
       <div className="flex shrink-0 items-center gap-2 whitespace-nowrap">
-        <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta-ghost pp-cta-sm">
+        <Link href="/contact/" className="pp-cta-ghost pp-cta-sm">
           Contact
         </Link>
         <Link href={ctaHref} className="pp-cta pp-cta-sm">
