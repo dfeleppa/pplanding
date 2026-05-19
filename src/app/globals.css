@@ -100,6 +100,26 @@ a {
   border-color: rgba(255, 255, 255, 0.65);
 }
 
+.pp-cta-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--pp-night);
+  border: 1px solid var(--pp-night, rgba(0, 0, 0, 0.35));
+  transition: background 220ms ease, border-color 220ms ease;
+}
+.pp-cta-ghost-dark:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: var(--pp-ink);
+}
+
 .pp-cta-sm {
   padding: 0.55rem 1rem;
   font-size: 10px;

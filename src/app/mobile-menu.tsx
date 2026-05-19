@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { headerNavItems } from "../lib/nav";
+import { BookNowModal } from "./book-now-modal";
 
 type MobileMenuProps = {
   ctaHref: string;
@@ -100,14 +101,7 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
               >
                 Contact
               </Link>
-              <Link
-                href={ctaHref}
-                onClick={() => setOpen(false)}
-                className="pp-cta pp-cta-sm text-center"
-              >
-                Book Now
-                <span className="pp-cta-arrow" aria-hidden />
-              </Link>
+              <BookNowModal ctaHref={ctaHref} className="pp-cta pp-cta-sm text-center" />
             </div>
           </div>
         </div>

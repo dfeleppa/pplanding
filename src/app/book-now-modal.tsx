@@ -1,0 +1,98 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
+
+export function BookNowModal({ ctaHref, className = "" }: { ctaHref: string; className?: string }) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  return (
+    <>
+      <button type="button" onClick={() => setOpen(true)} className={className}>
+        Book Now
+        <span className="pp-cta-arrow" aria-hidden />
+      </button>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4"
+          onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Book Now"
+        >
+          <div className="relative w-full max-w-lg rounded-lg bg-[var(--pp-cream)] p-8 shadow-2xl sm:p-10">
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+              className="absolute top-4 right-4 text-[var(--pp-ink)]/60 transition hover:text-[var(--pp-ink)]"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <h2
+              className="mb-8 text-center text-3xl text-[var(--pp-ink)]"
+              style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
+            >
+              Book Now
+            </h2>
+
+            <div className="grid grid-cols-2 gap-6">
+              {/* Mobile Grooming column */}
+              <div className="flex flex-col items-center gap-3">
+                <h3
+                  className="text-lg text-[var(--pp-main-deep)]"
+                  style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
+                >
+                  Mobile Grooming
+                </h3>
+                <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" className="pp-cta pp-cta-sm w-full text-center">
+                  New Client
+                </a>
+                <a href="tel:+12023186526" className="pp-cta-ghost-dark pp-cta-sm w-full text-center">
+                  Existing Client
+                </a>
+              </div>
+
+              {/* Pet Resort column */}
+              <div className="flex flex-col items-center gap-3">
+                <h3
+                  className="text-lg text-[var(--pp-main-deep)]"
+                  style={{ fontFamily: "var(--font-display), serif", fontWeight: 500 }}
+                >
+                  Pet Resort
+                </h3>
+                <a href="https://form.moego.pet/go/form?formId=4f15e60b84ff49019c22b876ae2c555b" className="pp-cta pp-cta-sm w-full text-center">
+                  New Client
+                </a>
+                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta-ghost-dark pp-cta-sm w-full text-center">
+                  Existing Client
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-[var(--pp-sand)] pt-6 text-center">
+              <p className="mb-4 text-sm text-[var(--pp-ink)]/70">
+                Not ready to book, but want to learn more? Click the link below.
+              </p>
+              <a href={ctaHref} className="pp-cta pp-cta-sm inline-flex">
+                Get Started
+                <span className="pp-cta-arrow" aria-hidden />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

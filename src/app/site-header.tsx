@@ -3,6 +3,7 @@ import Link from "next/link";
 import { headerNavItems } from "../lib/nav";
 import { NavDropdown } from "./nav-dropdown";
 import { MobileMenu } from "./mobile-menu";
+import { BookNowModal } from "./book-now-modal";
 
 type SiteHeaderProps = {
   /** Where the Book Now CTA links to. Defaults to /contact/. */
@@ -52,10 +53,7 @@ export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/f
         <Link href="/contact/" className="pp-cta-ghost pp-cta-sm">
           Contact
         </Link>
-        <Link href={ctaHref} className="pp-cta pp-cta-sm">
-          Book Now
-          <span className="pp-cta-arrow" aria-hidden />
-        </Link>
+        <BookNowModal ctaHref={ctaHref} className="pp-cta pp-cta-sm" />
       </div>
       <MobileMenu ctaHref={ctaHref} />
     </header>
