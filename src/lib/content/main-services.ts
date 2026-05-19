@@ -153,10 +153,8 @@ export const mainServicePages = {
         type: "featureGrid",
         eyebrow: "Services",
         title: "What every groom includes.",
-        highlight: {
-          title: "Already booked daycare or boarding?",
-          body: "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-        },
+        intro:
+          "Please note: Our in-house grooming is not open to the public. We only provide in-house grooming for our daycare and boarding dogs.",
         items: [
           { icon: "Footprints", title: "Pedicure", description: "Nail cut and grind for a comfortable, healthy length." },
           { icon: "Ear", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },
@@ -167,6 +165,13 @@ export const mainServicePages = {
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
           { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before pickup." },
         ],
+      },
+      {
+        type: "callout",
+        title: "Already booked daycare or boarding?",
+        body:
+          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
+        cta: { label: "Contact us", href: "/contact/" },
       },
       {
         type: "pricing",
