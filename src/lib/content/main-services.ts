@@ -23,7 +23,7 @@ export const mainServicePages = {
     image: "/Grooming.png",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       tertiary: { label: "View Pricing", href: "#pricing" },
     },
     sections: [
@@ -146,7 +146,7 @@ export const mainServicePages = {
     image: "/Grooming.png",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
@@ -263,7 +263,7 @@ export const mainServicePages = {
     image: "/daycare.png",
     heroCtas: {
       primary: { label: "Book your Free 1st Day!", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
@@ -423,7 +423,7 @@ export const mainServicePages = {
     image: "/boarding/boarding_hero.jpg",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
@@ -619,7 +619,7 @@ export const mainServicePages = {
     image: "/tour-space.jpg",
     heroCtas: {
       primary: { label: "Book FREE Consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
@@ -771,7 +771,7 @@ export const mainServicePages = {
     image: "/enrichment_hero.jpg",
     heroCtas: {
       primary: { label: "Get Started", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
@@ -889,7 +889,7 @@ export const mainServicePages = {
     image: "/event_hero.jpg",
     heroCtas: {
       primary: { label: "Book an Event", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {

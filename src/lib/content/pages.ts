@@ -90,7 +90,7 @@ export const contentPages = {
     image: "/hero-dog.jpg",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
@@ -154,7 +154,7 @@ export const contentPages = {
     image: "/hero-dog.jpg",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "#overview" },
+      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
     },
     sections: [
       {
