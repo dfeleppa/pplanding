@@ -884,19 +884,19 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                         {page.heroCtas.ghost.label}
                       </a>
                     </div>
-                    {page.heroCtas.tertiary ? (
-                      <div className="mt-8 flex justify-start">
-                        <a
-                          href={page.heroCtas.tertiary.href}
-                          className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
-                        >
-                          {page.heroCtas.tertiary.label}
-                          <ArrowRight className="h-4 w-4" />
-                        </a>
-                      </div>
-                    ) : null}
                   </div>
                 </div>
+                {page.heroCtas.tertiary ? (
+                  <div className="mt-10 flex justify-center">
+                    <a
+                      href={page.heroCtas.tertiary.href}
+                      className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
+                    >
+                      {page.heroCtas.tertiary.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                ) : null}
               </div>
               <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
                 <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
