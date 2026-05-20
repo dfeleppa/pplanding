@@ -33,6 +33,51 @@ const stub = (slug: string, title?: string): BlogPost => {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "treat-your-dog-to-a-summer-staycation-at-planet-pooch-pet-resort": {
+    slug: "treat-your-dog-to-a-summer-staycation-at-planet-pooch-pet-resort",
+    title: "Treat Your Dog to a Summer Staycation at Planet Pooch Pet Resort",
+    metaTitle: "Summer Staycation for Your Dog | Planet Pooch Blog",
+    metaDescription:
+      "Planning summer travel? Give your pup a vacation of their own with spacious suites, supervised backyard play, climate-controlled indoor spaces, and daily report cards.",
+    hasFullContent: true,
+    intro:
+      "Planning a summer vacation? Your dog deserves a vacation too. At Planet Pooch Pet Resort, our boarding experience is designed to keep dogs comfortable, active, and cared for while you're away.",
+    sections: [
+      {
+        heading: "Spacious suites for a comfortable stay",
+        paragraphs: [
+          "We know every dog is different, which is why we offer comfortable boarding suites designed to help your pup feel relaxed during their stay. Whether they're staying for a weekend getaway or a longer summer vacation, our goal is to create a safe and welcoming environment that feels like a second home.",
+        ],
+      },
+      {
+        heading: "Backyard play area for safe outdoor fun",
+        paragraphs: [
+          "Summer means more playtime. Dogs staying with us get to enjoy our spacious backyard play area where they can run, explore, and socialize under staff supervision. Outdoor time gives pups the chance to burn energy, enjoy fresh air, and have fun with their furry friends.",
+        ],
+      },
+      {
+        heading: "Indoor temperature-controlled comfort",
+        paragraphs: [
+          "Hot summer days are no problem at Planet Pooch Pet Resort. Our indoor spaces are temperature controlled to help keep dogs comfortable no matter how warm it gets outside. After outdoor play sessions, pups can relax and cool off indoors in a safe, clean environment.",
+        ],
+      },
+      {
+        heading: "Daily report cards with photos",
+        paragraphs: [
+          "We know being away from your dog can be tough — that's why we keep pet parents updated with daily report cards and photos during their stay. You'll get to see what your pup has been up to and how much fun they're having while you're away.",
+          "From playtime snapshots to updates from our staff, we love helping owners stay connected to their dogs throughout their visit.",
+        ],
+      },
+      {
+        heading: "A summer vacation your dog will love",
+        paragraphs: [
+          "At Planet Pooch Pet Resort, boarding is more than just a place to stay — it's a place to play, relax, and be cared for by a team that truly loves dogs.",
+          "If you're planning summer travel, now's the perfect time to reserve your pup's stay with us.",
+        ],
+      },
+    ],
+  },
+
   "why-you-should-have-your-dog-socialized-and-how-not-socializing-them-can-lead-to-separation-anxiety": {
     slug: "why-you-should-have-your-dog-socialized-and-how-not-socializing-them-can-lead-to-separation-anxiety",
     title: "Why You Should Have Your Dog Socialized — And How Not Socializing Them Can Lead to Separation Anxiety",
