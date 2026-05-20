@@ -904,24 +904,27 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                   </div>
                 </div>
               </div>
-              <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
+              <div className="mt-12 border-t border-white/15 pt-6 lg:mt-14">
                 <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
                   <span className="flex items-center gap-3">
                     <span aria-hidden className="h-px w-8 bg-white/40" />
                     Scroll to Explore
                   </span>
-                  {page.heroCtas.tertiary ? (
+                  <span>Long Island, New York</span>
+                </div>
+                {page.heroCtas.tertiary ? (
+                  <div className="flex justify-center pt-8 pb-10 lg:pb-14">
                     <a
                       href={page.heroCtas.tertiary.href}
-                      className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
+                      className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
                     >
                       {page.heroCtas.tertiary.label}
-                      <ArrowRight className="h-3.5 w-3.5" />
+                      <ArrowRight className="h-4 w-4" />
                     </a>
-                  ) : (
-                    <span>Long Island, New York</span>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <div className="pb-16 lg:pb-20" />
+                )}
               </div>
             </>
           ) : (
