@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { SITE } from "../lib/site";
 import { SiteHeader } from "./site-header";
-import { BookNowModal } from "./book-now-modal";
 import { SiteFooter } from "./site-footer";
 
 const displaySerif = Cormorant_Garamond({
@@ -24,6 +23,13 @@ const bodySans = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
+
+const heroQuickServices = [
+  { title: "Mobile Grooming", href: "/mobile-grooming/", icon: Scissors },
+  { title: "Daycare", href: "/dog-daycare/", icon: PawPrint },
+  { title: "Boarding", href: "/dog-boarding/", icon: Home },
+  { title: "Training", href: "/dog-training/", icon: GraduationCap },
+] as const;
 
 const heroHighlights = [
   {
@@ -115,17 +121,20 @@ export default function HomePage() {
 
           <div
             id="top"
-            className="py-12 lg:py-16"
+            className="pt-12 pb-24 lg:pt-16 lg:pb-32"
           >
             <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--pp-mint)]/85">
-                  Planet Pooch · Est. 2014
-                </p>
-                <h1 className="mt-7 max-w-xl text-white">
-                  Enriching the{" "}
-                  <span className="italic text-[var(--pp-mint)]">Lives</span> of Pets.
+                <h1 className="max-w-xl text-white">
+                  Mobile grooming, daycare, boarding &amp; training across{" "}
+                  <span className="italic text-[var(--pp-mint)]">Long Island</span>.
                 </h1>
+                <p
+                  className="mt-5 max-w-md text-lg italic leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
+                  style={{ fontFamily: "var(--font-display), serif" }}
+                >
+                  Enriching the lives of pets since 2014.
+                </p>
               </div>
 
               <div className="lg:border-l lg:border-white/20 lg:pl-10">
@@ -136,24 +145,35 @@ export default function HomePage() {
                   From concierge mobile grooming to a luxury resort for daycare, boarding, and
                   training, we serve dogs across Nassau, Suffolk, and the Hamptons.
                 </p>
-                <div className="mt-9 flex flex-col items-start gap-3">
+                <div className="mt-9 flex flex-col items-start gap-4">
                   <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta">
                     Get Started
                     <span className="pp-cta-arrow" aria-hidden />
                   </Link>
-                  <BookNowModal ctaHref="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta-ghost" label="Book Now" />
+                  <div className="flex items-center gap-2 text-sm text-white/85">
+                    <Star className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" aria-hidden />
+                    <span>
+                      <strong className="font-semibold text-white">4.9</strong> · 700+ reviews
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid grid-cols-2 gap-2 sm:gap-3">
+                  {heroQuickServices.map(({ title, href, icon: Icon }) => (
+                    <Link
+                      key={title}
+                      href={href}
+                      className="group flex items-center gap-3 border border-white/15 bg-white/5 px-4 py-3 backdrop-blur-sm transition hover:border-[var(--pp-mint)]/60 hover:bg-white/10"
+                    >
+                      <Icon className="h-4 w-4 shrink-0 text-[var(--pp-mint)]" aria-hidden />
+                      <span className="text-sm font-semibold text-white">{title}</span>
+                      <span aria-hidden className="ml-auto text-white/40 transition group-hover:translate-x-0.5 group-hover:text-[var(--pp-mint)]">
+                        →
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
-            <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
-              <span className="flex items-center gap-3">
-                <span aria-hidden className="h-px w-8 bg-white/40" />
-                Scroll to Explore
-              </span>
-              <span>Long Island, New York</span>
             </div>
           </div>
         </div>
