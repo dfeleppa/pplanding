@@ -155,6 +155,7 @@ export type ContentSection =
       }>;
       cta?: { label: string; href: string };
       ctas?: Array<{ label: string; href: string }>;
+      calloutCard?: { title: string; body: string; cta?: { label: string; href: string } };
     }
   | {
       type: "slideshow";

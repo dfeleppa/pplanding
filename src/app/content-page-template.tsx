@@ -688,6 +688,23 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 })}
               </div>
             ) : null}
+            {section.calloutCard ? (
+              <article className="mt-10 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  <h3 className="text-2xl leading-tight">{section.calloutCard.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+                </div>
+                {section.calloutCard.cta ? (
+                  <Link
+                    href={section.calloutCard.cta.href}
+                    className="inline-flex shrink-0 items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                  >
+                    {section.calloutCard.cta.label}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ) : null}
+              </article>
+            ) : null}
           </div>
         </section>
       );

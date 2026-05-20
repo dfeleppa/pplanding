@@ -147,6 +147,7 @@ export const mainServicePages = {
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      tertiary: { label: "View Pricing", href: "#pricing" },
     },
     sections: [
       {
@@ -165,16 +166,15 @@ export const mainServicePages = {
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
           { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before pickup." },
         ],
-      },
-      {
-        type: "callout",
-        title: "Already booked daycare or boarding?",
-        body:
-          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-        cta: { label: "Contact us", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        calloutCard: {
+          title: "Already booked daycare or boarding?",
+          body: "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
+          cta: { label: "Contact us", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        },
       },
       {
         type: "pricing",
+        id: "pricing",
         eyebrow: "Pricing",
         title: "Full Groom with Haircut",
         intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",

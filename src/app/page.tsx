@@ -245,22 +245,24 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-14 grid items-center gap-8 border-t border-white/15 pt-12 sm:grid-cols-[1fr_auto] lg:mt-16 lg:pt-14">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">
-                Our Team
-              </p>
-              <h3 className="mt-3 text-3xl leading-tight sm:text-4xl">
-                Meet the team behind the resort.
-              </h3>
-              <p className="mt-4 max-w-xl text-base leading-8 text-white/78">
-                From groomers to daycare specialists to our AKC Evaluator Trainer, our team is what makes Planet Pooch feel like home.
-              </p>
+          <div className="mt-14 rounded-2xl bg-[color-mix(in_oklab,var(--color-white)_10%,transparent)] p-8 lg:mt-16 lg:p-10">
+            <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">
+                  Our Team
+                </p>
+                <h3 className="mt-3 text-3xl leading-tight sm:text-4xl">
+                  Meet the team behind the resort.
+                </h3>
+                <p className="mt-4 max-w-xl text-base leading-8 text-white/78">
+                  From groomers to daycare specialists to our AKC Evaluator Trainer, our team is what makes Planet Pooch feel like home.
+                </p>
+              </div>
+              <Link href="/our-team/" className="pp-cta-ghost sm:justify-self-end">
+                Meet the Team
+                <span className="pp-cta-arrow" aria-hidden />
+              </Link>
             </div>
-            <Link href="/our-team/" className="pp-cta-ghost sm:justify-self-end">
-              Meet the Team
-              <span className="pp-cta-arrow" aria-hidden />
-            </Link>
           </div>
         </div>
       </section>
