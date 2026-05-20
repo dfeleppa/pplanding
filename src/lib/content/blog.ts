@@ -33,6 +33,55 @@ const stub = (slug: string, title?: string): BlogPost => {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "memorial-day-weekend-dog-boarding-what-pet-parents-should-know-before-traveling": {
+    slug: "memorial-day-weekend-dog-boarding-what-pet-parents-should-know-before-traveling",
+    title: "Memorial Day Weekend Dog Boarding: What Pet Parents Should Know Before Traveling",
+    metaTitle: "Memorial Day Weekend Dog Boarding | Planet Pooch Blog",
+    metaDescription:
+      "Memorial Day Weekend boarding books up fast. Here's what to pack, how to prepare your dog, and why reserving early matters for a stress-free holiday.",
+    hasFullContent: true,
+    intro:
+      "Memorial Day Weekend is one of the busiest travel weekends of the year — and that means dog boarding reservations fill up fast. If you're planning a getaway, now is the perfect time to make sure your pup has a safe, comfortable place to stay while you're away.",
+    sections: [
+      {
+        heading: "Why holiday boarding books early",
+        paragraphs: [
+          "Holiday weekends are high-demand times for our pet resort. Many families travel at the same time, which means limited availability for overnight stays. Booking early helps ensure your dog gets a spot and gives you time to prepare everything they'll need for a smooth stay.",
+        ],
+      },
+      {
+        heading: "What to bring for your dog's boarding stay",
+        paragraphs: [
+          "To help your dog feel comfortable during Memorial Day Weekend boarding, be sure to pack:",
+        ],
+        bullets: [
+          "Enough food for their entire stay",
+          "Any medications with clear instructions",
+          "Emergency contact information",
+          "Comfort items like a blanket or favorite toy",
+        ],
+      },
+      {
+        heading: "Tips to prepare your dog for boarding",
+        paragraphs: [
+          "If your dog is new to boarding, consider scheduling a daycare visit beforehand. This gives them a chance to get familiar with the environment, staff, and daily routine before an overnight stay.",
+          "Other helpful tips:",
+        ],
+        bullets: [
+          "Keep drop-offs calm and positive",
+          "Maintain your dog's feeding schedule before arrival",
+          "Update any care instructions with staff ahead of time",
+        ],
+      },
+      {
+        heading: "Reserve your spot early",
+        paragraphs: [
+          "Booking ahead helps ensure your pup has a fun, safe place to stay while you enjoy your holiday plans. Whether your dog loves group play, extra cuddles, or relaxing in a cozy suite, planning early makes all the difference for a stress-free holiday weekend.",
+        ],
+      },
+    ],
+  },
+
   "why-you-should-have-your-dog-socialized-and-how-not-socializing-them-can-lead-to-separation-anxiety": {
     slug: "why-you-should-have-your-dog-socialized-and-how-not-socializing-them-can-lead-to-separation-anxiety",
     title: "Why You Should Have Your Dog Socialized — And How Not Socializing Them Can Lead to Separation Anxiety",
