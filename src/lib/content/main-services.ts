@@ -260,7 +260,7 @@ export const mainServicePages = {
     metaTitle: "Dog Daycare Long Island | Group Play & Enrichment | Planet Pooch",
     metaDescription:
       "Interactive dog daycare in Franklin Square, NY. Group play, one-on-one enrichment, puppy socialization, and day-pack pricing for Long Island families.",
-    image: "/daycare.png",
+    image: "/Daycare.png",
     heroCtas: {
       primary: { label: "Book your Free 1st Day!", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
