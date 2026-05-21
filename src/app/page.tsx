@@ -138,14 +138,7 @@ export default function HomePage() {
               </div>
 
               <div className="lg:border-l lg:border-white/20 lg:pl-10">
-                <p
-                  className="max-w-md text-lg italic leading-relaxed text-white/90 sm:text-xl"
-                  style={{ fontFamily: "var(--font-display), serif" }}
-                >
-                  From concierge mobile grooming to a luxury resort for daycare, boarding, and
-                  training, we serve dogs across Nassau, Suffolk, and the Hamptons.
-                </p>
-                <div className="mt-9 flex flex-col items-start gap-4">
+                <div className="flex flex-col items-start gap-4">
                   <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta">
                     Get Started
                     <span className="pp-cta-arrow" aria-hidden />
