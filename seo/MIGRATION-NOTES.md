@@ -16,19 +16,25 @@ non-obvious things that won't be visible from the code alone.
   - `/spa-services/` → canonical `/grooming-pricing/`
   - `/contactus/` → canonical `/contact/`
 
-## Pricing has two sources of truth on the live WP site
+## Pricing canonical — resolved
 
-This was a surprise. **Two URLs exist with two different prices**:
+The WP site had two pricing URLs with conflicting numbers
+(`/services-pricing/` $145–$300 and `/grooming-pricing/` $150–$305). Both
+now 301 to `/mobile-grooming/` (see `next.config.ts`), which does not
+itself host pricing — it links to area-specific pricing pages.
 
-- `/services-pricing/` — older, lower prices ($145–$300 for full grooms).
-  This is the **#2 ranked page on the entire site** (425 clicks/year).
-- `/grooming-pricing/` — newer, higher prices ($150–$305 for full grooms).
-  Plus / Premium upgrades use these tiers.
+The authoritative pricing pages are:
 
-We preserved both URLs with their respective prices. **The user should
-decide whether to align them** post-launch and 301 the older one to the
-newer canonical (or vice versa). Files:
-- `src/lib/content/pages.ts` → entries `services-pricing` and `grooming-pricing`
+- `/nassau-pricing/` — **Nassau & Suffolk** (one rate card, $150–$305 for
+  full grooms). Title and copy explicitly call out the shared coverage.
+- `/pet-grooming-hamptons/` — **Hamptons only** ($275–$525), separate
+  rate card reflecting extended travel.
+- `/in-house-grooming/` — **in-house at the resort** ($95–$195), bundled
+  with daycare or boarding.
+
+Mobile grooming is offered only in Nassau, Suffolk, and the Hamptons —
+**no other counties**. The "See pricing for your area" callout on
+`/mobile-grooming/` routes visitors to the right page.
 
 ## Geo town pages on WP were templated, not unique
 
@@ -110,9 +116,6 @@ In priority order:
 
 ## What's NOT done
 
-- **Pricing canonical** — still pending. Two URLs (`/services-pricing/` and
-  `/grooming-pricing/`) carry different prices. User to pick one canonical
-  and 301 the other; see "Pricing has two sources of truth" above.
 - No A/B testing infrastructure. Could be added if conversion
   experimentation matters later.
 - The remaining team headshots in `/public/team/` (filenames `<slug>.jpg`)

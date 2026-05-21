@@ -63,9 +63,9 @@ export const mainServicePages = {
         id: "pricing",
         eyebrow: "Pricing",
         title: "See pricing for your area.",
-        body: "Pricing varies by region and pet. Choose the option that matches your location or pet type.",
+        body: "Mobile grooming uses one rate card for Nassau and Suffolk counties, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
         ctas: [
-          { label: "Nassau Pricing", href: "/nassau-pricing" },
+          { label: "Nassau & Suffolk Pricing", href: "/nassau-pricing" },
           { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
           { label: "Cat Pricing", href: "/cat-experience/" },
         ],
