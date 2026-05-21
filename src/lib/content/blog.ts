@@ -1,3 +1,5 @@
+import { restoredPosts } from "./blog-restored";
+
 export type BlogSection = {
   heading?: string;
   paragraphs?: string[];
@@ -20,24 +22,6 @@ export type BlogPost = {
   author?: string;
   /** Optional hero image path used by Article schema. */
   image?: string;
-};
-
-const titleFromSlug = (slug: string): string =>
-  decodeURIComponent(slug)
-    .replace(/[^a-z0-9-]/gi, "")
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
-const stub = (slug: string, title?: string): BlogPost => {
-  const t = title ?? titleFromSlug(slug);
-  return {
-    slug,
-    title: t,
-    metaTitle: `${t} | Planet Pooch Blog`,
-    metaDescription: `${t} — from the Planet Pooch blog. Long Island's luxury mobile grooming, daycare, boarding, training, and enrichment pet resort.`,
-    hasFullContent: false,
-  };
 };
 
 const fullPosts: Record<string, BlogPost> = {
@@ -859,51 +843,15 @@ const fullPosts: Record<string, BlogPost> = {
   },
 };
 
-const stubSlugs: ReadonlyArray<string> = [
-  "why-dog-daycare-is-a-game-changer-for-pet-parents",
-  "what-is-dog-daycare-a-complete-guide-for-pet-parents-2",
-  "is-dog-daycare-right-for-my-pet",
-  "suns-out-tongues-out-the-happiness-of-dogs-in-the-sun",
-  "why-pet-boarding-is-essential-when-youre-away",
-  "why-dog-boarding-is-a-lifesaver-for-your-holiday-getaways",
-  "memorial-day-getaway-why-boarding-your-dog-at-planet-pooch-is-the-best-choice",
-  "why-being-involved-matters-to-us",
-  // Original WP slug `beat-the-summer-heat-...-%e2%98%80%ef%b8%8f%f0%9f%90%be`
-  // had URL-encoded emojis (☀️🐾) and 0 GSC clicks. Next.js can't reliably
-  // static-generate a route from a literal with percent-encoded bytes; this
-  // intentionally 404s. See seo/MIGRATION-NOTES.md.
-  "celebrate-a-stress-free-4th-of-july-with-planet-pooch",
-  "beat-the-heat-pool-parties-for-dogs-at-daycare",
-  "give-your-family-and-your-pup-a-break-this-summer",
-  "what-sets-us-apart-a-boarding-experience-like-no-other",
-  "why-professional-care-at-our-pet-resort-brings-you-peace-of-mind",
-  "does-your-dog-have-separation-anxiety-heres-how-mobile-grooming-can-help",
-  "our-new-6-week-enrichment-program",
-  "weve-partnered-with-three-dog-bakery-for-a-special-giveaway",
-  "give-your-dog-a-vacation-too-this-labor-day-weekend-at-planet-pooch-pet-resort",
-  "is-your-pup-bouncing-off-the-walls-while-youre-at-work",
-  "its-bark-to-school-season-at-planet-pooch",
-  "a-longer-happier-life-for-your-dog-starts-here",
-  "exciting-news-our-online-pet-profile-just-got-even-easier",
-  "training-at-our-pet-resort-fun-learning-and-bonding-for-your-pup",
-  "the-holidays-are-almost-here-dont-forget-to-book-your-pets-stay",
-  "holiday-peace-of-mind-dog-daycare-boarding-mobile-grooming-this-season",
-  "dog-daycare-in-the-snow-why-winter-days-are-perfect-for-daycare",
-  "why-dogs-shed-more-in-spring-and-what-you-can-do-about-it",
-  "spring-grooming-for-dogs-why-it-matters-more-than-you-think",
-  "spring-dog-boarding-give-your-pup-a-vacation-of-their-own",
-  "why-group-dog-training-might-be-the-best-investment-you-make-for-your-dog",
-  "why-booking-summer-boarding-early-matters",
-  "one-on-one-boarding-at-planet-pooch",
-  "memorial-day-weekend-boarding",
-  "keep-your-dog-cool-clean-comfortable-this-summer-with-mobile-grooming",
-  "make-this-long-weekend-a-holiday-for-your-pup-too",
-  "make-this-long-weekend-a-holiday-for-your-pup-too-2",
-];
+// Note on previously-stubbed slugs: the original WP slug
+// `beat-the-summer-heat-...-%e2%98%80%ef%b8%8f%f0%9f%90%be` had URL-encoded
+// emojis (☀️🐾) and 0 GSC clicks. Next.js can't reliably static-generate a
+// route from a literal with percent-encoded bytes; this intentionally 404s.
+// See seo/MIGRATION-NOTES.md.
 
 export const blogPosts: Record<string, BlogPost> = {
   ...fullPosts,
-  ...Object.fromEntries(stubSlugs.map((slug) => [slug, stub(slug)])),
+  ...restoredPosts,
 };
 
 export type BlogSlug = string;
