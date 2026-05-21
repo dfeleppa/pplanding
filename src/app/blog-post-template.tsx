@@ -2,6 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { BlogPost } from "../lib/content/blog";
+import { blogPosts } from "../lib/content/blog";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -23,6 +24,63 @@ const bodySans = Manrope({
   variable: "--font-body",
 });
 
+const SERVICE_KEYWORDS: Array<{
+  match: RegExp;
+  label: string;
+  href: string;
+  description: string;
+}> = [
+  {
+    match: /\b(daycare|group play|socializ|play group)\b/i,
+    label: "Dog Daycare",
+    href: "/dog-daycare/",
+    description: "Supervised group play and enrichment at our Franklin Square resort.",
+  },
+  {
+    match: /\b(board|stay|overnight|suite|hotel)\b/i,
+    label: "Dog Boarding",
+    href: "/dog-boarding/",
+    description: "Cozy overnight suites with hand-on care — Express through Luxury.",
+  },
+  {
+    match: /\b(train|obedience|puppy class|leash|recall)\b/i,
+    label: "Dog Training",
+    href: "/dog-training/",
+    description: "AKC Evaluator-led 6-week programs for every stage.",
+  },
+  {
+    match: /\b(enrich|sensory|scent|snuffle|kong)\b/i,
+    label: "Enrichment",
+    href: "/enrichment/",
+    description: "One-on-one enrichment sessions for dogs who prefer individual time.",
+  },
+  {
+    match: /\b(groom|bath|mat|coat|nail|spa|shed)\b/i,
+    label: "Mobile Grooming",
+    href: "/mobile-grooming/",
+    description: "Luxury mobile grooming brought to your driveway across Nassau and Suffolk.",
+  },
+];
+
+function pickRelatedService(post: BlogPost) {
+  const haystack = `${post.title} ${post.slug}`;
+  for (const entry of SERVICE_KEYWORDS) {
+    if (entry.match.test(haystack)) return entry;
+  }
+  return SERVICE_KEYWORDS[SERVICE_KEYWORDS.length - 1];
+}
+
+function pickRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
+  return Object.values(blogPosts)
+    .filter((p) => p.slug !== currentSlug && p.hasFullContent)
+    .sort((a, b) => {
+      const ad = a.datePublished ?? "";
+      const bd = b.datePublished ?? "";
+      return bd.localeCompare(ad);
+    })
+    .slice(0, limit);
+}
+
 export function BlogPostTemplate({ post }: { post: BlogPost }) {
   const crumbs = breadcrumbSchema(
     nestedBreadcrumbs([{ name: "Blog", slug: "blog" }], post.title, post.slug)
@@ -36,6 +94,8 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
     authorName: post.author,
     image: post.image,
   });
+  const relatedService = pickRelatedService(post);
+  const relatedPosts = pickRelatedPosts(post.slug);
 
   return (
     <main
@@ -113,6 +173,57 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
               </p>
             </div>
           )}
+
+          <section className="mt-14 border border-[rgba(50,73,83,0.18)] bg-white/60 p-6 sm:p-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+              Curious about a service?
+            </p>
+            <h2 className="mt-2 text-2xl text-[var(--pp-ink)] sm:text-3xl">
+              {relatedService.label}
+            </h2>
+            <p className="mt-3 text-base leading-7 text-[rgba(47,42,39,0.78)]">
+              {relatedService.description}
+            </p>
+            <Link
+              href={relatedService.href}
+              className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--pp-night)] transition hover:text-[var(--pp-main)]"
+            >
+              Explore {relatedService.label}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </section>
+
+          {relatedPosts.length > 0 ? (
+            <section className="mt-12">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                Related reads
+              </p>
+              <h2 className="mt-2 text-2xl text-[var(--pp-ink)] sm:text-3xl">More from the blog</h2>
+              <ul className="mt-6 grid gap-4 sm:grid-cols-3">
+                {relatedPosts.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/${p.slug}/`}
+                      className="block h-full border border-[rgba(50,73,83,0.18)] bg-white/60 p-5 transition hover:border-[var(--pp-main)] hover:bg-white/85"
+                    >
+                      <h3 className="text-base leading-snug text-[var(--pp-ink)] sm:text-lg">
+                        {p.title}
+                      </h3>
+                      {p.metaDescription ? (
+                        <p className="mt-2 text-sm leading-6 text-[rgba(47,42,39,0.72)] line-clamp-3">
+                          {p.metaDescription}
+                        </p>
+                      ) : null}
+                      <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]">
+                        Read
+                        <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
           <div className="mt-12 flex flex-wrap gap-3">
             <Link
