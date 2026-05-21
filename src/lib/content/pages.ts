@@ -145,12 +145,12 @@ export const contentPages = {
 
   "nassau-pricing": {
     slug: "nassau-pricing",
-    title: "Nassau County Grooming Pricing",
+    title: "Nassau & Suffolk Grooming Pricing",
     eyebrow: "Mobile Grooming",
-    hero: "Full pricing for mobile grooming across Nassau County.",
-    metaTitle: "Mobile Grooming Pricing Nassau County | Planet Pooch",
+    hero: "Full pricing for mobile grooming across Nassau and Suffolk counties.",
+    metaTitle: "Mobile Grooming Pricing — Nassau & Suffolk County | Planet Pooch",
     metaDescription:
-      "Mobile dog and cat grooming pricing for Nassau County — full grooms, baths, Plus and Premium spa upgrades, and à la carte add-ons.",
+      "Mobile dog and cat grooming pricing for Nassau and Suffolk County — full grooms, baths, Plus and Premium spa upgrades, and à la carte add-ons. One rate card covers both counties.",
     image: "/hero-dog.jpg",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -161,7 +161,7 @@ export const contentPages = {
         type: "pricing",
         eyebrow: "Pricing",
         title: "Full Groom Pricing",
-        intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
+        intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds. The same rates apply across Nassau and Suffolk counties — only the Hamptons uses a separate rate card.",
         columns: ["Weight", "Price"],
         rows: [
           ["Up to 15 lbs", "$150–$165"],
