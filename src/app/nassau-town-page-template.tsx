@@ -16,6 +16,7 @@ import type { NassauTownPage } from "../lib/content/nassau-towns";
 import { nassauTowns, introTemplates, REGION_LABELS } from "../lib/content/nassau-towns";
 import { SITE } from "../lib/site";
 import { breadcrumbSchema, jsonLdAttrs, serviceSchema } from "../lib/schema";
+import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 
@@ -133,6 +134,15 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
 
       {/* ── Intro ─────────────────────────────────── */}
       <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
+        <div className="mx-auto max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: `Dog Services in ${page.town}, NY` },
+            ]}
+            className="mb-8 justify-center sm:justify-start"
+          />
+        </div>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl leading-tight sm:text-4xl">
             Why {page.town} Dog Owners Choose Planet Pooch

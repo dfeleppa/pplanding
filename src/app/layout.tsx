@@ -1,6 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE } from "../lib/site";
+import { Analytics } from "./analytics";
 import "./globals.css";
+
+const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -18,7 +23,24 @@ export const metadata: Metadata = {
     title: SITE.defaults.homeTitle,
     description: SITE.defaults.homeDescription,
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.defaults.homeTitle,
+    description: SITE.defaults.homeDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  formatDetection: { email: false, telephone: false, address: false },
+  ...(GSC_VERIFICATION ? { verification: { google: GSC_VERIFICATION } } : {}),
+};
+
+export const viewport: Viewport = {
+  themeColor: "#324953",
+  width: "device-width",
+  initialScale: 1,
 };
 
 const localBusinessSchema = {
@@ -29,6 +51,9 @@ const localBusinessSchema = {
   url: SITE.url,
   telephone: SITE.phone.e164,
   email: SITE.email,
+  image: `${SITE.url}/opengraph-image.png`,
+  logo: `${SITE.url}/planet-pooch-logo.png`,
+  priceRange: "$$",
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -71,6 +96,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <Analytics />
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );

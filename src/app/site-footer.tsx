@@ -24,6 +24,7 @@ const footerLinks = {
     { label: "Requirements", href: "/requirements/" },
     { label: "Privacy Policy", href: "/privacy-policy/" },
     { label: "Terms", href: "/terms/" },
+    { label: "Site Map", href: "/sitemap-index/" },
   ],
 } as const;
 

@@ -21,13 +21,19 @@ const today = new Date();
 
 // Always emit URLs with a trailing slash to match WordPress / Yoast canonicals.
 // Root path stays as `/`; everything else gets `/.../`.
-const make = (path: string, priority: number, changeFrequency: SitemapEntry["changeFrequency"]): SitemapEntry => {
+const make = (
+  path: string,
+  priority: number,
+  changeFrequency: SitemapEntry["changeFrequency"],
+  images?: string[],
+): SitemapEntry => {
   const normalized = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
   return {
     url: `${SITE.url}${normalized}`,
     lastModified: today,
     changeFrequency,
     priority,
+    ...(images?.length ? { images: images.map((src) => `${SITE.url}${src}`) } : {}),
   };
 };
 
@@ -35,14 +41,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: SitemapEntry[] = [];
 
   // Homepage
-  entries.push(make("/", ROOT_PRIORITY, "weekly"));
+  entries.push(make("/", ROOT_PRIORITY, "weekly", ["/hero-dog.jpg", "/our-resort-exterior.jpeg"]));
 
   // Contact
   entries.push(make("/contact", SERVICE_PRIORITY, "monthly"));
 
+  // HTML site index (helps crawlers discover the long-tail town pages)
+  entries.push(make("/sitemap-index", SUPPORT_PRIORITY, "monthly"));
+
   // Main service pages — top SEO priority
-  for (const slug of Object.keys(mainServicePages)) {
-    entries.push(make(`/${slug}`, SERVICE_PRIORITY, "weekly"));
+  for (const [slug, page] of Object.entries(mainServicePages)) {
+    const heroImage = typeof page.image === "string" ? [page.image] : undefined;
+    entries.push(make(`/${slug}`, SERVICE_PRIORITY, "weekly", heroImage));
   }
 
   // Standalone content pages (about cluster, Hamptons geo, blog index, etc.)
