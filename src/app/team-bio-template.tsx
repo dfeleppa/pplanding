@@ -6,7 +6,9 @@ import {
   breadcrumbSchema,
   jsonLdAttrs,
   nestedBreadcrumbs,
+  personSchema,
 } from "../lib/schema";
+import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 
@@ -30,6 +32,13 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
       member.slug
     )
   );
+  const person = personSchema({
+    name: member.name,
+    role: member.role,
+    slug: member.slug,
+    description: hasBio ? member.paragraphs![0] : undefined,
+    yearStarted: member.yearStarted,
+  });
 
   return (
     <main
@@ -43,6 +52,14 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
 
       <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Our Team", href: "/our-team/" },
+              { name: member.name },
+            ]}
+            className="mb-6"
+          />
           <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-main)]/75">
             Our Team
           </p>
@@ -93,6 +110,7 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
       <SiteFooter />
 
       <script {...jsonLdAttrs(crumbs)} />
+      <script {...jsonLdAttrs(person)} />
     </main>
   );
 }

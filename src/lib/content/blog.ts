@@ -12,6 +12,14 @@ export type BlogPost = {
   hasFullContent: boolean;
   intro?: string;
   sections?: BlogSection[];
+  /** ISO-8601 publish date (YYYY-MM-DD). Used in Article JSON-LD. */
+  datePublished?: string;
+  /** ISO-8601 last-modified date (YYYY-MM-DD). Defaults to datePublished. */
+  dateModified?: string;
+  /** Display name of the author. Defaults to the brand. */
+  author?: string;
+  /** Optional hero image path used by Article schema. */
+  image?: string;
 };
 
 const titleFromSlug = (slug: string): string =>

@@ -196,6 +196,8 @@ export type ContentPage = {
     tertiary?: { label: string; href: string };
   };
   sections: ContentSection[];
+  /** When set, emits Service JSON-LD on the page. Used for the main service offerings. */
+  serviceType?: string;
 };
 
 export type ProsePage = {

@@ -31,6 +31,7 @@ export const prosePages = {
         heading: "3. Cookies and Tracking Technologies",
         paragraphs: [
           "We use cookies and similar technologies to personalize your experience and understand how our website is used. You can control cookies through your browser settings, though some features may not function properly if cookies are disabled.",
+          "We use Google Analytics 4 with IP anonymization to measure aggregate website usage (pages visited, referral sources, device type), and Vercel Analytics and Vercel Speed Insights to monitor site performance and Core Web Vitals. These tools do not identify individual visitors, and we do not combine analytics data with personal information you submit through our forms.",
         ],
       },
       {

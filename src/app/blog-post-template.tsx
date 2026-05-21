@@ -8,6 +8,7 @@ import {
   jsonLdAttrs,
   nestedBreadcrumbs,
 } from "../lib/schema";
+import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 
@@ -30,6 +31,10 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
     headline: post.title,
     description: post.metaDescription,
     slug: post.slug,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified,
+    authorName: post.author,
+    image: post.image,
   });
 
   return (
@@ -44,6 +49,14 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
 
       <article className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog/" },
+              { name: post.title },
+            ]}
+            className="mb-6"
+          />
           <Link
             href="/blog"
             className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75 transition hover:text-[var(--pp-night)]"

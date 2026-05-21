@@ -21,6 +21,7 @@ export const mainServicePages = {
     metaDescription:
       "Mobile dog and cat grooming across Long Island and the Hamptons — full grooms, baths, Plus and Premium spa upgrades, and in-house grooming for daycare and boarding clients.",
     image: "/Grooming.png",
+    serviceType: "Mobile Pet Grooming",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -144,6 +145,7 @@ export const mainServicePages = {
     metaDescription:
       "Professional in-house grooming at our Franklin Square resort, available exclusively to dogs enrolled in daycare or boarding. 20% off when added to a 2+ night stay.",
     image: "/Grooming.png",
+    serviceType: "Dog Grooming",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -261,6 +263,7 @@ export const mainServicePages = {
     metaDescription:
       "Interactive dog daycare in Franklin Square, NY. Group play, one-on-one enrichment, puppy socialization, and day-pack pricing for Long Island families.",
     image: "/Daycare.png",
+    serviceType: "Dog Daycare",
     heroCtas: {
       primary: { label: "Book your Free 1st Day!", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -421,6 +424,7 @@ export const mainServicePages = {
     metaDescription:
       "Overnight dog boarding at our Franklin Square pet resort. Express, Classic, XL, and Luxury suites with Group Play or 1-on-1 care, plus enrichment activities, snacks, and bedding add-ons.",
     image: "/boarding/boarding_hero.jpg",
+    serviceType: "Dog Boarding",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -617,6 +621,7 @@ export const mainServicePages = {
     metaDescription:
       "Compassionate, results-driven dog training with our AKC Evaluator Trainer. Private sessions, 6-week programs, and free consultations for dogs of every age.",
     image: "/tour-space.jpg",
+    serviceType: "Dog Training",
     heroCtas: {
       primary: { label: "Book FREE Consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -769,6 +774,7 @@ export const mainServicePages = {
     metaDescription:
       "One-on-one enrichment activities at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, and nutrition puzzles for dogs who thrive away from the pack.",
     image: "/enrichment_hero.jpg",
+    serviceType: "Dog Enrichment Activities",
     heroCtas: {
       primary: { label: "Get Started", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },

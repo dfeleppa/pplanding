@@ -7,7 +7,13 @@ import {
   Utensils, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
-import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  homeBreadcrumbs,
+  jsonLdAttrs,
+  serviceSchema,
+} from "../lib/schema";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
@@ -851,6 +857,18 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
   const crumbs = breadcrumbSchema(
     homeBreadcrumbs(page.title, page.canonicalSlug ?? page.slug)
   );
+  const service = page.serviceType
+    ? serviceSchema({
+        name: page.metaTitle,
+        description: page.metaDescription,
+        slug: page.canonicalSlug ?? page.slug,
+        serviceType: page.serviceType,
+      })
+    : null;
+  const faqItems = page.sections.flatMap((s) =>
+    s.type === "faq" ? s.items : []
+  );
+  const faq = faqItems.length > 0 ? faqSchema(faqItems) : null;
   return (
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
@@ -954,6 +972,8 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
       <SiteFooter />
 
       <script {...jsonLdAttrs(crumbs)} />
+      {service ? <script {...jsonLdAttrs(service)} /> : null}
+      {faq ? <script {...jsonLdAttrs(faq)} /> : null}
     </main>
   );
 }
