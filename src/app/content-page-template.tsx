@@ -7,6 +7,7 @@ import {
   Utensils, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
+import { towns, type TownPage } from "../lib/content/towns";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -803,6 +804,53 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 </a>
               </div>
             ) : null}
+          </div>
+        </section>
+      );
+    }
+
+    case "townLinks": {
+      const serviceSet = new Set<string>(section.services);
+      const items: TownPage[] = (Object.values(towns) as TownPage[])
+        .filter((t) => serviceSet.has(t.service))
+        .slice(0, section.limit ?? 18);
+      if (items.length === 0) return null;
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            {section.eyebrow ? (
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                {section.eyebrow}
+              </p>
+            ) : null}
+            {section.title ? (
+              <h2 className="mt-3 text-3xl leading-tight text-[var(--pp-ink)]">{section.title}</h2>
+            ) : null}
+            {section.intro ? (
+              <p className="mt-3 max-w-3xl text-base leading-7 text-[rgba(47,42,39,0.78)]">
+                {section.intro}
+              </p>
+            ) : null}
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {items.map((t) => (
+                <li key={t.slug}>
+                  <Link
+                    href={`/${t.slug}/`}
+                    className="group flex items-center justify-between border border-[rgba(50,73,83,0.12)] bg-white/65 px-5 py-4 text-sm font-semibold text-[var(--pp-ink)] transition hover:bg-white/90"
+                  >
+                    <span>
+                      {t.town}
+                      {t.region && t.town !== t.region ? (
+                        <span className="block text-[11px] font-normal uppercase tracking-[0.14em] text-[var(--pp-main)]/65">
+                          {t.region}
+                        </span>
+                      ) : null}
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-[var(--pp-main)] transition group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       );
