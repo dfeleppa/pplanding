@@ -43,17 +43,29 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const businessDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": `${SITE.url}/#business`,
   name: SITE.legalName,
+  alternateName: SITE.name,
+  description: SITE.defaults.homeDescription,
   url: SITE.url,
   telephone: SITE.phone.e164,
   email: SITE.email,
   image: `${SITE.url}/opengraph-image.png`,
   logo: `${SITE.url}/planet-pooch-logo.png`,
   priceRange: "$$",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Cash, Credit Card",
+  foundingDate: "2014",
+  founder: {
+    "@type": "Person",
+    name: "Andy Gonzaga",
+    url: `${SITE.url}/andy/`,
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -67,10 +79,31 @@ const localBusinessSchema = {
     latitude: SITE.geo.latitude,
     longitude: SITE.geo.longitude,
   },
-  areaServed: SITE.serviceArea.counties.map((county) => ({
-    "@type": "AdministrativeArea",
-    name: `${county}, NY`,
-  })),
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`
+  )}`,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: businessDays,
+      opens: "07:30",
+      closes: "12:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: businessDays,
+      opens: "13:30",
+      closes: "19:00",
+    },
+  ],
+  areaServed: [
+    ...SITE.serviceArea.counties.map((county) => ({
+      "@type": "AdministrativeArea",
+      name: `${county}, NY`,
+    })),
+    { "@type": "Place", name: "The Hamptons" },
+    { "@type": "Place", name: "Long Island, NY" },
+  ],
   sameAs: [
     SITE.social.instagram,
     SITE.social.facebook,
