@@ -23,6 +23,22 @@ const bodySans = Manrope({
   variable: "--font-body",
 });
 
+const ROLE_LINKS: Array<{ test: RegExp; label: string; href: string }> = [
+  { test: /mobile groomer/i, label: "Mobile Grooming", href: "/mobile-grooming/" },
+  { test: /grooming|groomer/i, label: "In-House Grooming", href: "/in-house-grooming/" },
+  { test: /trainer/i, label: "Dog Training", href: "/dog-training/" },
+  { test: /enrichment/i, label: "Enrichment", href: "/enrichment/" },
+  { test: /owner|founder/i, label: "About Planet Pooch", href: "/" },
+  { test: /.*/, label: "Dog Daycare", href: "/dog-daycare/" },
+];
+
+function pickRoleLink(role: string) {
+  for (const entry of ROLE_LINKS) {
+    if (entry.test.test(role)) return entry;
+  }
+  return ROLE_LINKS[ROLE_LINKS.length - 1];
+}
+
 export function TeamBioTemplate({ member }: { member: TeamMember }) {
   const hasBio = member.paragraphs && member.paragraphs.length > 0;
   const crumbs = breadcrumbSchema(
@@ -39,6 +55,7 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
     description: hasBio ? member.paragraphs![0] : undefined,
     yearStarted: member.yearStarted,
   });
+  const roleLink = pickRoleLink(member.role);
 
   return (
     <main
@@ -87,6 +104,20 @@ export function TeamBioTemplate({ member }: { member: TeamMember }) {
                   </p>,
                 ]}
           </div>
+
+          <section className="mt-12 border border-[rgba(50,73,83,0.18)] bg-white/60 p-6 sm:p-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+              Work with {member.name.split(" ")[0]}
+            </p>
+            <h2 className="mt-2 text-2xl text-[var(--pp-ink)] sm:text-3xl">{roleLink.label}</h2>
+            <Link
+              href={roleLink.href}
+              className="mt-3 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--pp-night)] transition hover:text-[var(--pp-main)]"
+            >
+              Explore {roleLink.label}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </section>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Link

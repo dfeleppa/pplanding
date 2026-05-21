@@ -2,7 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
-import type { TownPage } from "../lib/content/towns";
+import { towns, type TownPage } from "../lib/content/towns";
 import { SITE } from "../lib/site";
 import {
   breadcrumbSchema,
@@ -176,6 +176,12 @@ const PARENT_SERVICE: Record<TownPage["service"], { name: string; slug: string }
   "daycare-boarding": { name: "Daycare & Boarding", slug: "dog-daycare-boarding" },
 };
 
+function pickNearbyTowns(page: TownPage, limit = 6): TownPage[] {
+  return Object.values(towns)
+    .filter((t) => t.service === page.service && t.slug !== page.slug)
+    .slice(0, limit);
+}
+
 export function TownPageTemplate({ page }: { page: TownPage }) {
   const copy = SERVICE_COPY[page.service];
   const image = HERO_IMAGE[page.service];
@@ -189,6 +195,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
     slug: page.slug,
     serviceType: copy.primary,
   });
+  const nearby = pickNearbyTowns(page);
 
   return (
     <main
@@ -348,6 +355,34 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
           </div>
         </div>
       </section>
+
+      {nearby.length > 0 ? (
+        <section className="px-5 pb-16 sm:px-8 lg:px-10 lg:pb-20">
+          <div className="mx-auto max-w-7xl border-t border-[rgba(50,73,83,0.16)] pt-14">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+              Nearby service areas
+            </p>
+            <h2 className="mt-3 text-3xl leading-tight">
+              We also serve {copy.primary.toLowerCase()} clients in:
+            </h2>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {nearby.map((n) => (
+                <li key={n.slug}>
+                  <Link
+                    href={`/${n.slug}/`}
+                    className="group flex items-center justify-between border border-[rgba(50,73,83,0.12)] bg-white/65 px-5 py-4 text-sm font-semibold text-[var(--pp-ink)] transition hover:bg-white/90"
+                  >
+                    <span>
+                      {copy.primary} in {n.town}
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-[var(--pp-main)] transition group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <SiteFooter />
 
