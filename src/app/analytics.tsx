@@ -18,7 +18,18 @@ gtag('config', '${GA_ID}', { anonymize_ip: true });`}
       </Script>
       <Script id="ga4-conversions" strategy="afterInteractive">
         {`document.addEventListener('click', function(e) {
-  var a = e.target.closest && e.target.closest('a');
+  var t = e.target;
+  var el = t && t.closest ? t.closest('[data-track], a') : null;
+  if (!el) return;
+  var trackKey = el.getAttribute && el.getAttribute('data-track');
+  if (trackKey) {
+    gtag('event', 'landing_cta_click', {
+      event_category: 'conversion',
+      track_key: trackKey,
+      page_path: location.pathname
+    });
+  }
+  var a = el.tagName === 'A' ? el : (el.closest ? el.closest('a') : null);
   if (!a || !a.href) return;
   var href = a.href;
   var text = (a.innerText || '').trim().slice(0, 80);
