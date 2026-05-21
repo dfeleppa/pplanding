@@ -179,6 +179,17 @@ export type ContentSection =
       cta?: { label: string; href: string };
       image?: string | StaticImageData;
       imageAlt?: string;
+    }
+  | {
+      type: "townLinks";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      /** Which town-page services to source from. */
+      services: Array<"mobile-grooming" | "spa-services" | "in-house-grooming" | "daycare-boarding">;
+      /** Optional cap on the number of links rendered. */
+      limit?: number;
     };
 
 export type ContentPage = {
