@@ -127,7 +127,7 @@ export default function HomePage() {
               <div>
                 <h1 className="max-w-xl text-white">
                   Mobile grooming, daycare, boarding &amp; training across{" "}
-                  <span className="italic text-[var(--pp-mint)]">Long Island</span>.
+                  <span className="text-[var(--pp-mint)]/75">Long Island</span>.
                 </h1>
                 <p
                   className="mt-5 max-w-md text-lg italic leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
@@ -146,7 +146,7 @@ export default function HomePage() {
                   <div className="flex items-center gap-2 text-sm text-white/85">
                     <Star className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" aria-hidden />
                     <span>
-                      <strong className="font-semibold text-white">4.9</strong> · 700+ reviews
+                      <strong className="font-semibold text-white">4.9</strong> from 700+ Long Island pet parents
                     </span>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export default function HomePage() {
               Tailored care. Heartfelt experience.
             </p>
             <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
-              Five ways we make every day extraordinary.
+              Five ways we care differently.
             </h2>
           </div>
 
