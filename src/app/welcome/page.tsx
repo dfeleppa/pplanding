@@ -207,7 +207,7 @@ export default function WelcomePage() {
           {[
             { value: "11+", label: "Years in Business" },
             { value: "4.9★", label: "Google Rating" },
-            { value: "700+", label: "Happy Clients" },
+            { value: "6,800+", label: "Happy Puppies" },
             { value: "5", label: "Services Offered" },
           ].map((stat) => (
             <div key={stat.label}>
