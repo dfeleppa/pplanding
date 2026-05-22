@@ -500,7 +500,7 @@ export default function WelcomePage() {
       <SiteFooter />
 
       {/* ── Sticky mobile CTA ── */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[rgba(50,73,83,0.18)] bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_24px_rgba(50,73,83,0.12)] backdrop-blur sm:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[rgba(50,73,83,0.18)] bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_24px_rgba(50,73,83,0.12)] backdrop-blur sm:hidden">
         <div className="flex gap-2">
           <a
             href="#request"
