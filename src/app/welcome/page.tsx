@@ -146,7 +146,7 @@ export default function WelcomePage() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.6)_0%,rgba(20,30,36,0.48)_45%,rgba(20,30,36,0.68)_100%)]" />
 
-        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
+        <div className="relative mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 
           {/* Hero content */}
