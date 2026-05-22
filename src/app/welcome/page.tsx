@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   GraduationCap,
   Home,
-  MapPin,
   PawPrint,
   Phone,
   Scissors,
@@ -13,6 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import { SITE } from "../../lib/site";
+import { SiteFooter } from "../site-footer";
 
 export const metadata: Metadata = {
   title: "Welcome to Planet Pooch | Long Island's Premier Pet Resort",
@@ -174,7 +174,7 @@ export default function WelcomePage() {
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link href={FORM_URL} className="pp-cta">
-                  Get Started
+                  Check Availability
                   <span className="pp-cta-arrow" aria-hidden />
                 </Link>
                 <a href={SITE.phone.href} className="pp-cta-ghost">
@@ -279,7 +279,7 @@ export default function WelcomePage() {
 
           <div className="mt-12 text-center">
             <Link href={FORM_URL} className="pp-cta">
-              Get Started Today
+              Check Availability
               <span className="pp-cta-arrow" aria-hidden />
             </Link>
           </div>
@@ -433,7 +433,7 @@ export default function WelcomePage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link href={FORM_URL} className="pp-cta">
-              Get Started
+              Check Availability
               <span className="pp-cta-arrow" aria-hidden />
             </Link>
             <a href={SITE.phone.href} className="pp-cta-ghost">
@@ -444,22 +444,7 @@ export default function WelcomePage() {
         </div>
       </section>
 
-      {/* ── Minimal footer ── */}
-      <footer className="bg-[var(--pp-ink)] px-5 py-8 text-white/50 sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 text-center text-xs sm:flex-row sm:justify-between sm:text-left">
-          <p>
-            &copy; {new Date().getFullYear()} {SITE.legalName}. All rights
-            reserved.
-          </p>
-          <div className="flex items-center gap-1.5">
-            <MapPin className="h-3.5 w-3.5" aria-hidden />
-            <span>
-              {SITE.address.street}, {SITE.address.locality},{" "}
-              {SITE.address.region} {SITE.address.postalCode}
-            </span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
