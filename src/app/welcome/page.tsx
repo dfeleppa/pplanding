@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowRight,
   GraduationCap,
   Home,
   PawPrint,
@@ -34,34 +35,44 @@ const bodySans = Manrope({
 
 const services = [
   {
+    key: "mobile-grooming",
     title: "Mobile Grooming",
+    headline: "Stress-free grooming at your door",
     icon: Scissors,
     image: "/mobile_home.jpg",
-    copy: "Luxury grooming at your door — we come to you across Long Island and the Hamptons.",
+    copy: "Perfect for busy owners, anxious dogs, senior dogs, and families who want convenience without sacrificing care.",
   },
   {
-    title: "Dog Daycare",
+    key: "daycare",
+    title: "Daycare",
+    headline: "A safer, structured day for your dog",
     icon: PawPrint,
     image: "/boarding_home.jpeg",
-    copy: "Supervised play and enrichment in a calm, nurturing space your dog will love.",
+    copy: "Play, supervision, enrichment, and social time in a clean, professionally managed facility.",
   },
   {
-    title: "Dog Boarding",
+    key: "boarding",
+    title: "Boarding",
+    headline: "Overnight care you can feel good about",
     icon: Home,
     image: "/daycare_home.png",
-    copy: "Cozy overnight stays with attentive, personalized care — not a kennel.",
+    copy: "Clean, comfortable, supervised boarding for pet parents who want peace of mind while they're away.",
   },
   {
-    title: "Dog Training",
+    key: "training",
+    title: "Training",
+    headline: "Real-life training for better behavior",
     icon: GraduationCap,
     image: "/training_home.jpeg",
-    copy: "Results-driven training led by our AKC Evaluator Trainer.",
+    copy: "Private and structured dog training options to help your dog listen, focus, and thrive.",
   },
   {
+    key: "enrichment",
     title: "Enrichment",
+    headline: "More than just playtime",
     icon: Sparkles,
     image: "/enrichment_home.jpg",
-    copy: "One-on-one sensory play, scent work, and agility tailored to each dog.",
+    copy: "Mental stimulation, movement, and structured activities designed to keep dogs happy and engaged.",
   },
 ] as const;
 
@@ -227,10 +238,10 @@ export default function WelcomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
-              Our Services
+              Choose your service
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-              Everything your pet needs, all in one place.
+              What does your dog need?
             </h2>
           </div>
 
@@ -238,9 +249,11 @@ export default function WelcomePage() {
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
-                <div
-                  key={svc.title}
-                  className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-sm"
+                <a
+                  key={svc.key}
+                  href={`${FORM_URL}?service=${svc.key}`}
+                  data-track={`service-${svc.key}`}
+                  className="group mx-auto flex w-full max-w-sm flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="relative aspect-square w-full overflow-hidden">
                     <Image
@@ -248,31 +261,31 @@ export default function WelcomePage() {
                       alt={svc.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                      className="object-cover"
+                      className="object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="relative px-3 pb-4 pt-7 text-center">
+                  <div className="relative flex flex-1 flex-col px-4 pb-5 pt-7 text-center">
                     <div className="absolute -top-6 left-1/2 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-2 border-white bg-[var(--pp-cream)] shadow-sm">
                       <Icon
                         className="h-5 w-5 stroke-[1.5] text-[var(--pp-gold-deep)]"
                         aria-hidden
                       />
                     </div>
-                    <h3
-                      className="mt-2 text-lg italic text-[var(--pp-night)]"
-                      style={{ fontFamily: "var(--font-display), serif" }}
-                    >
+                    <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
                       {svc.title}
+                    </p>
+                    <h3 className="mt-2 text-lg leading-snug text-[var(--pp-ink)] sm:text-xl">
+                      {svc.headline}
                     </h3>
-                    <span
-                      className="mx-auto mt-3 block h-px w-10 bg-[var(--pp-gold-deep)]/40"
-                      aria-hidden
-                    />
-                    <p className="mx-auto mt-3 max-w-[16rem] text-sm leading-7 text-[rgba(47,42,39,0.78)]">
+                    <p className="mx-auto mt-3 max-w-[18rem] flex-1 text-sm leading-6 text-[rgba(47,42,39,0.78)]">
                       {svc.copy}
                     </p>
+                    <span className="mt-5 inline-flex items-center justify-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)] transition group-hover:text-[var(--pp-night)]">
+                      Request availability
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                    </span>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>
