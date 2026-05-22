@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
   GraduationCap,
@@ -15,6 +14,7 @@ import {
 import { SITE } from "../../lib/site";
 import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
+import { LeadForm } from "./lead-form";
 
 export const metadata: Metadata = {
   title: "Welcome to Planet Pooch | Long Island's Premier Pet Resort",
@@ -128,9 +128,6 @@ const reviews = [
   },
 ] as const;
 
-const FORM_URL =
-  "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7";
-
 export default function WelcomePage() {
   return (
     <main
@@ -156,22 +153,28 @@ export default function WelcomePage() {
           <div className="pb-28 pt-14 lg:pb-36 lg:pt-20">
             <div className="max-w-2xl">
               <h1 className="text-white">
-                Your dog deserves{" "}
-                <span className="text-[var(--pp-mint)]/80">the best care</span>{" "}
-                on Long Island.
+                Long Island pet care you{" "}
+                <span className="text-[var(--pp-mint)]/80">can actually trust.</span>
               </h1>
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
-                Mobile grooming, daycare, boarding &amp; training — trusted by
-                700+ pet parents across Nassau County, Suffolk County &amp; the
-                Hamptons.
+                Mobile grooming, daycare, boarding, training &amp; enrichment from a
+                family-run team trusted by 6,800+ Long Island puppies.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link href={FORM_URL} className="pp-cta">
+                <a
+                  href="#request"
+                  data-track="hero-request-availability"
+                  className="pp-cta min-h-[52px] !px-7"
+                >
                   Check Availability
                   <span className="pp-cta-arrow" aria-hidden />
-                </Link>
-                <a href={SITE.phone.href} className="pp-cta-ghost">
+                </a>
+                <a
+                  href={SITE.phone.href}
+                  data-track="phone-click"
+                  className="pp-cta-ghost min-h-[52px] !px-7"
+                >
                   Call {SITE.phone.display}
                 </a>
               </div>
@@ -228,13 +231,13 @@ export default function WelcomePage() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-5">
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
                 <a
                   key={svc.key}
-                  href={`${FORM_URL}?service=${svc.key}`}
+                  href="#request"
                   data-track={`service-${svc.key}`}
                   className="group mx-auto flex w-full max-w-sm flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
@@ -274,10 +277,14 @@ export default function WelcomePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <Link href={FORM_URL} className="pp-cta">
+            <a
+              href="#request"
+              data-track="services-request-availability"
+              className="pp-cta min-h-[52px] !px-7"
+            >
               Check Availability
               <span className="pp-cta-arrow" aria-hidden />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -415,6 +422,48 @@ export default function WelcomePage() {
         </div>
       </section>
 
+      {/* ── Form ── */}
+      <section
+        id="request"
+        className="bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
+      >
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+              Request availability
+            </p>
+            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+              Request availability for your dog.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.75)]">
+              Tell us what you need and our team will reach out with the best
+              next step. Most requests get a response the same business day.
+            </p>
+
+            <div className="mt-7 rounded-xl border border-[rgba(50,73,83,0.12)] bg-white/65 p-5">
+              <p className="text-sm font-semibold text-[var(--pp-ink)]">
+                Prefer to talk to a person?
+              </p>
+              <a
+                href={SITE.phone.href}
+                data-track="phone-click"
+                className="mt-2 inline-flex items-center gap-2 text-base font-bold text-[var(--pp-night)] underline-offset-4 hover:underline"
+              >
+                <Phone className="h-4 w-4" aria-hidden />
+                Call {SITE.phone.display}
+              </a>
+              <p className="mt-2 text-xs text-[var(--pp-ink)]/55">
+                Mon–Sat, 7:30am–7pm (closed 12:30–1:30pm).
+              </p>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-[rgba(50,73,83,0.15)] bg-white shadow-[0_16px_40px_rgba(50,73,83,0.12)]">
+            <LeadForm />
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ── */}
       <section className="bg-[var(--pp-night)] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
@@ -428,11 +477,19 @@ export default function WelcomePage() {
             day of play, or overnight boarding — we&rsquo;re here for your pet.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href={FORM_URL} className="pp-cta">
+            <a
+              href="#request"
+              data-track="final-request-availability"
+              className="pp-cta min-h-[52px] !px-7"
+            >
               Check Availability
               <span className="pp-cta-arrow" aria-hidden />
-            </Link>
-            <a href={SITE.phone.href} className="pp-cta-ghost">
+            </a>
+            <a
+              href={SITE.phone.href}
+              data-track="phone-click"
+              className="pp-cta-ghost min-h-[52px] !px-7"
+            >
               <Phone className="h-4 w-4" aria-hidden />
               Call {SITE.phone.display}
             </a>
@@ -441,6 +498,28 @@ export default function WelcomePage() {
       </section>
 
       <SiteFooter />
+
+      {/* ── Sticky mobile CTA ── */}
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[rgba(50,73,83,0.18)] bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_24px_rgba(50,73,83,0.12)] backdrop-blur sm:hidden">
+        <div className="flex gap-2">
+          <a
+            href="#request"
+            data-track="sticky-request-availability"
+            className="inline-flex flex-1 items-center justify-center rounded-full bg-[var(--pp-mint)] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition active:bg-[var(--pp-mint-deep)]"
+          >
+            Check Availability
+          </a>
+          <a
+            href={SITE.phone.href}
+            data-track="phone-click"
+            aria-label={`Call ${SITE.phone.display}`}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-[rgba(50,73,83,0.25)] bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition active:bg-[var(--pp-cream)]"
+          >
+            <Phone className="h-4 w-4" aria-hidden />
+            Call
+          </a>
+        </div>
+      </div>
     </main>
   );
 }
