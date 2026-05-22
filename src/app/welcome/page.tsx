@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { SITE } from "../../lib/site";
 import { SiteFooter } from "../site-footer";
+import { SiteHeader } from "../site-header";
 
 export const metadata: Metadata = {
   title: "Welcome to Planet Pooch | Long Island's Premier Pet Resort",
@@ -148,26 +149,8 @@ export default function WelcomePage() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.6)_0%,rgba(20,30,36,0.48)_45%,rgba(20,30,36,0.68)_100%)]" />
 
-        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 sm:px-8 lg:px-10">
-          {/* Minimal header — logo + phone only */}
-          <div className="flex items-center justify-between py-5">
-            <Image
-              src="/planet-pooch-logo.png"
-              alt="Planet Pooch"
-              width={120}
-              height={40}
-              className="h-8 w-auto brightness-0 invert sm:h-9"
-              priority
-            />
-            <a
-              href={SITE.phone.href}
-              className="flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[var(--pp-mint)]"
-            >
-              <Phone className="h-4 w-4" aria-hidden />
-              <span className="hidden sm:inline">{SITE.phone.display}</span>
-              <span className="sm:hidden">Call Us</span>
-            </a>
-          </div>
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
+          <SiteHeader />
 
           {/* Hero content */}
           <div className="pb-28 pt-14 lg:pb-36 lg:pt-20">
