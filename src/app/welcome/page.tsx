@@ -67,22 +67,52 @@ const services = [
 
 const reviews = [
   {
-    name: "Sarah M.",
-    initials: "S",
+    name: "Kerryann R.",
+    initials: "K",
+    service: "Mobile Grooming",
     avatarBg: "bg-[var(--pp-main)]",
-    body: "Bear has never looked better and he was completely calm — no more stressful trips to a salon. Dyana came right to our driveway in Garden City. Worth every penny.",
+    body:
+      "Planet Pooch did an amazing job giving my mini golden doodle her first haircut! Their mobile grooming service was super convenient, and Jenn was absolutely fantastic. She was patient, professional, and made my pup look adorable. The entire experience was stress-free, and I really appreciate the care and attention to detail. I highly recommend Planet Pooch and Jenn for anyone looking for top-quality mobile grooming. Thank you for taking such great care of my pup!",
   },
   {
-    name: "Michael T.",
-    initials: "M",
+    name: "Gina M.",
+    initials: "G",
+    service: "Daycare",
     avatarBg: "bg-[var(--pp-gold-deep)]",
-    body: "We've been bringing our shepherd to daycare for almost a year. The staff knows him by name, the meet-and-greet was thorough, and he comes home tired in the best way.",
+    body:
+      "We've been bringing Gertie to Planet Pooch for about 4 months now and she absolutely LOVES it! The staff is wonderful and attentive, and we love that she has lots of time to play both indoors and outdoors. It is such a relief to have a place where we know our girl is loved and cared for. We can't recommend Planet Pooch enough!",
   },
   {
-    name: "Jennifer L.",
-    initials: "J",
+    name: "Michelle F.",
+    initials: "M",
+    service: "Boarding",
     avatarBg: "bg-[var(--pp-night)]",
-    body: "Boarded our two huskies for a long weekend. Got daily updates and pictures, they came home happy and healthy. So glad we found Planet Pooch — we trust them completely.",
+    body:
+      "My mini Goldendoodle was taken such great care of from start to finish. They were able to accommodate a last-minute stay for a full week… He received one-on-one playtime and they sent the best action shots of him playing ball and having an absolute blast. I loved receiving the daily boarding reports about how his day went… I drove over an hour from home to get here and it was 100 percent worth the drive.",
+  },
+  {
+    name: "Emily P.",
+    initials: "E",
+    service: "Daycare",
+    avatarBg: "bg-[var(--pp-main-deep)]",
+    body:
+      "Such an awesome place! Makes your dog feel right at home and is very communicative throughout the day and with report at pick up!! My girl, Violet works with Rebecca and ADORES her, although everyone at Planet Pooch is great. Vi is extremely shy and everyone is so patient and works at her pace. Her first day and she practically ran in the back room with Kim, goes to show the energy and love they have for our babies. Can't recommend Rebecca and this place enough but the picture goes to show how much she truly loves this place already!!! 10/10",
+  },
+  {
+    name: "Jessica C.",
+    initials: "J",
+    service: "Mobile Grooming",
+    avatarBg: "bg-[var(--pp-ink)]",
+    body:
+      "Madison needed a Good Groomer because I have had bad experiences with other places. The Doggie Daycare she was going too the owner recommended Planet Pooch Mobile. And we have been with them since. I give them a 10/10. Kris is her groomer and we Love her!! I have had others when Kris is away and they are great too. So if you need a groomer for your dog or cat look no further!!",
+  },
+  {
+    name: "Pat H.",
+    initials: "P",
+    service: "Daycare & Boarding",
+    avatarBg: "bg-[var(--pp-main)]",
+    body:
+      "I adopted a very shy, nervous dog & after a few days of daycare & several days of boarding my dog has shown a huge improvement… He runs & plays with the other dogs & has a lot more confidence now. He was also groomed there & I was extremely happy with the grooming, he looked terrific… All the staff there are amazing, kind, compassionate & very accommodating. At Planet Pooch it is truly all about the dogs!",
   },
 ] as const;
 
@@ -332,7 +362,7 @@ export default function WelcomePage() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map((review) => (
               <article
                 key={review.name}
@@ -341,25 +371,30 @@ export default function WelcomePage() {
                 <div className="flex items-center gap-3">
                   <span
                     aria-hidden
-                    className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-white ${review.avatarBg}`}
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white ${review.avatarBg}`}
                   >
                     {review.initials}
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm font-semibold text-[var(--pp-ink)]">
                       {review.name}
                     </p>
-                    <span
-                      aria-label="Posted on Google"
-                      className="flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-ink)]/35"
-                    >
-                      <span className="text-[#4285F4]">G</span>
-                      <span className="text-[#EA4335]">o</span>
-                      <span className="text-[#FBBC05]">o</span>
-                      <span className="text-[#4285F4]">g</span>
-                      <span className="text-[#34A853]">l</span>
-                      <span className="text-[#EA4335]">e</span>
-                    </span>
+                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/75">
+                        {review.service}
+                      </p>
+                      <span
+                        aria-label="Posted on Google"
+                        className="flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-ink)]/35"
+                      >
+                        <span className="text-[#4285F4]">G</span>
+                        <span className="text-[#EA4335]">o</span>
+                        <span className="text-[#FBBC05]">o</span>
+                        <span className="text-[#4285F4]">g</span>
+                        <span className="text-[#34A853]">l</span>
+                        <span className="text-[#EA4335]">e</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
 
