@@ -14,6 +14,7 @@ import {
 import { SITE } from "../../lib/site";
 import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
+import { StickyMobileCta } from "../sticky-mobile-cta";
 import { LeadForm } from "./lead-form";
 
 export const metadata: Metadata = {
@@ -499,27 +500,7 @@ export default function WelcomePage() {
 
       <SiteFooter />
 
-      {/* ── Sticky mobile CTA ── */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[rgba(50,73,83,0.18)] bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_24px_rgba(50,73,83,0.12)] backdrop-blur sm:hidden">
-        <div className="flex gap-2">
-          <a
-            href="#request"
-            data-track="sticky-request-availability"
-            className="inline-flex flex-1 items-center justify-center rounded-full bg-[var(--pp-mint)] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition active:bg-[var(--pp-mint-deep)]"
-          >
-            Check Availability
-          </a>
-          <a
-            href={SITE.phone.href}
-            data-track="phone-click"
-            aria-label={`Call ${SITE.phone.display}`}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[rgba(50,73,83,0.25)] bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition active:bg-[var(--pp-cream)]"
-          >
-            <Phone className="h-4 w-4" aria-hidden />
-            Call
-          </a>
-        </div>
-      </div>
+      <StickyMobileCta ctaHref="#request" />
     </main>
   );
 }
