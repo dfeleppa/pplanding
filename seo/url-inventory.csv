@@ -107,7 +107,7 @@ old_url,cluster,priority,disposition,notes
 /stephanie/,team-bio,medium,preserve-path,Individual team bio
 /derek/,team-bio,medium,preserve-path,Individual team bio
 /brianna/,team-bio,medium,preserve-path,Individual team bio
-/veronica/,team-bio,medium,preserve-path,Individual team bio
+/veronica/,team-bio,medium,drop-or-410,Removed — team member no longer with Planet Pooch
 /andy/,team-bio,medium,preserve-path,Individual team bio
 /kathy/,team-bio,medium,preserve-path,Individual team bio
 /ashley/,team-bio,medium,preserve-path,Individual team bio
