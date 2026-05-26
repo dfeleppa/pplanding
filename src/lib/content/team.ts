@@ -181,18 +181,6 @@ export const team = {
       "She takes the Planet Pooch values to heart — no crating after baths, plenty of hand-drying, and treating each pup like one of our own. That steady, family-first care is at the core of everything we do.",
     ],
   },
-  veronica: {
-    slug: "veronica",
-    name: "Veronica",
-    role: "Team Member",
-    metaTitle: "Meet Veronica | Planet Pooch Pet Resort Team",
-    metaDescription:
-      "Meet Veronica from the Planet Pooch team in Franklin Square, NY, supporting daycare, boarding, and the calm, attentive care our families count on.",
-    paragraphs: [
-      "Veronica is part of the team that helps Planet Pooch deliver the warm, family-style experience our clients have come to expect. She spends her days helping with daycare groups, supporting boarding handoffs, and being a familiar, friendly face for the dogs in our care.",
-      "She lives the Planet Pooch values — calm one-on-one attention, hand-drying instead of crating, and treating every dog like one of our own. It's the kind of thoughtful care that has built our reputation across Long Island.",
-    ],
-  },
   ashley: {
     slug: "ashley",
     name: "Ashley",
