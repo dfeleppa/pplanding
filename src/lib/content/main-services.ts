@@ -21,6 +21,7 @@ export const mainServicePages = {
     metaDescription:
       "Mobile dog and cat grooming across Long Island and the Hamptons — full grooms, baths, Plus and Premium spa upgrades, and in-house grooming for daycare and boarding clients.",
     image: "/Grooming.png",
+    serviceType: "Mobile Pet Grooming",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -62,9 +63,9 @@ export const mainServicePages = {
         id: "pricing",
         eyebrow: "Pricing",
         title: "See pricing for your area.",
-        body: "Pricing varies by region and pet. Choose the option that matches your location or pet type.",
+        body: "Mobile grooming uses one rate card for Nassau and Suffolk counties, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
         ctas: [
-          { label: "Nassau Pricing", href: "/nassau-pricing" },
+          { label: "Nassau & Suffolk Pricing", href: "/nassau-pricing" },
           { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
           { label: "Cat Pricing", href: "/cat-experience/" },
         ],
@@ -126,6 +127,13 @@ export const mainServicePages = {
         ],
       },
       {
+        type: "townLinks",
+        eyebrow: "Service area",
+        title: "Mobile grooming towns we cover",
+        intro: "Pick your town for local notes, parking specifics, and what our route looks like on the ground. Same Nassau & Suffolk pricing applies everywhere — the Hamptons uses a separate rate card.",
+        services: ["mobile-grooming", "spa-services"],
+      },
+      {
         type: "callout",
         title: "Ready to book?",
         body: "Tell us your pet's coat, sensitivities, and preferred haircut style.",
@@ -144,9 +152,11 @@ export const mainServicePages = {
     metaDescription:
       "Professional in-house grooming at our Franklin Square resort, available exclusively to dogs enrolled in daycare or boarding. 20% off when added to a 2+ night stay.",
     image: "/Grooming.png",
+    serviceType: "Dog Grooming",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      tertiary: { label: "View Pricing", href: "#pricing" },
     },
     sections: [
       {
@@ -165,16 +175,15 @@ export const mainServicePages = {
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
           { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before pickup." },
         ],
-      },
-      {
-        type: "callout",
-        title: "Already booked daycare or boarding?",
-        body:
-          "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-        cta: { label: "Contact us", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        calloutCard: {
+          title: "Already booked daycare or boarding?",
+          body: "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
+          cta: { label: "Contact us", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        },
       },
       {
         type: "pricing",
+        id: "pricing",
         eyebrow: "Pricing",
         title: "Full Groom with Haircut",
         intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds.",
@@ -248,6 +257,13 @@ export const mainServicePages = {
           "Add a fresh-from-the-bath finish to any boarding stay of 2+ nights and save 20% off the standard groom price. Just mention grooming when you book.",
         cta: { label: "View boarding", href: "/dog-boarding/" },
       },
+      {
+        type: "townLinks",
+        eyebrow: "Where in-house clients come from",
+        title: "In-house grooming for these areas",
+        intro: "Dogs from across Nassau visit our Franklin Square resort for in-house grooming bundled with daycare or boarding. A few of the towns we see most often:",
+        services: ["in-house-grooming"],
+      },
     ],
   },
 
@@ -260,7 +276,8 @@ export const mainServicePages = {
     metaTitle: "Dog Daycare Long Island | Group Play & Enrichment | Planet Pooch",
     metaDescription:
       "Interactive dog daycare in Franklin Square, NY. Group play, one-on-one enrichment, puppy socialization, and day-pack pricing for Long Island families.",
-    image: "/daycare.png",
+    image: "/Daycare.png",
+    serviceType: "Dog Daycare",
     heroCtas: {
       primary: { label: "Book your Free 1st Day!", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -408,6 +425,13 @@ export const mainServicePages = {
         body: "Reach us by phone or email to schedule your free meet-and-greet.",
         cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
+      {
+        type: "townLinks",
+        eyebrow: "Where our daycare dogs come from",
+        title: "Dog daycare for these areas",
+        intro: "Families across Nassau drop their dogs at our Franklin Square resort for group play, enrichment, and boarding. A few of the towns we see most often:",
+        services: ["daycare-boarding"],
+      },
     ],
   },
 
@@ -421,6 +445,7 @@ export const mainServicePages = {
     metaDescription:
       "Overnight dog boarding at our Franklin Square pet resort. Express, Classic, XL, and Luxury suites with Group Play or 1-on-1 care, plus enrichment activities, snacks, and bedding add-ons.",
     image: "/boarding/boarding_hero.jpg",
+    serviceType: "Dog Boarding",
     heroCtas: {
       primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -604,6 +629,13 @@ export const mainServicePages = {
         body: "Tell us about their routine, comfort needs, and feeding schedule.",
         cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       },
+      {
+        type: "townLinks",
+        eyebrow: "Where our boarders come from",
+        title: "Overnight boarding for these areas",
+        intro: "Same daycare clients often turn into boarding clients — they already know the team and the routine. A few of the towns we see most often:",
+        services: ["daycare-boarding"],
+      },
     ],
   },
 
@@ -617,6 +649,7 @@ export const mainServicePages = {
     metaDescription:
       "Compassionate, results-driven dog training with our AKC Evaluator Trainer. Private sessions, 6-week programs, and free consultations for dogs of every age.",
     image: "/tour-space.jpg",
+    serviceType: "Dog Training",
     heroCtas: {
       primary: { label: "Book FREE Consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
@@ -769,6 +802,7 @@ export const mainServicePages = {
     metaDescription:
       "One-on-one enrichment activities at Planet Pooch in Franklin Square — sensory play, agility, treadmill, scent work, and nutrition puzzles for dogs who thrive away from the pack.",
     image: "/enrichment_hero.jpg",
+    serviceType: "Dog Enrichment Activities",
     heroCtas: {
       primary: { label: "Get Started", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
       ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },

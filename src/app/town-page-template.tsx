@@ -2,7 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
-import type { TownPage } from "../lib/content/towns";
+import { towns, type TownPage } from "../lib/content/towns";
 import { SITE } from "../lib/site";
 import {
   breadcrumbSchema,
@@ -10,6 +10,7 @@ import {
   nestedBreadcrumbs,
   serviceSchema,
 } from "../lib/schema";
+import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 
@@ -175,6 +176,12 @@ const PARENT_SERVICE: Record<TownPage["service"], { name: string; slug: string }
   "daycare-boarding": { name: "Daycare & Boarding", slug: "dog-daycare-boarding" },
 };
 
+function pickNearbyTowns(page: TownPage, limit = 6): TownPage[] {
+  return Object.values(towns)
+    .filter((t) => t.service === page.service && t.slug !== page.slug)
+    .slice(0, limit);
+}
+
 export function TownPageTemplate({ page }: { page: TownPage }) {
   const copy = SERVICE_COPY[page.service];
   const image = HERO_IMAGE[page.service];
@@ -188,6 +195,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
     slug: page.slug,
     serviceType: copy.primary,
   });
+  const nearby = pickNearbyTowns(page);
 
   return (
     <main
@@ -214,6 +222,11 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
               </p>
               <h1 className="mt-5 max-w-3xl text-white">{`${copy.primary} in ${page.town}${page.town.endsWith("County") || page.town === "North Shore" ? "" : ", NY"}`}</h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{copy.hero(page.town)}</p>
+              {page.distanceFromResort ? (
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--pp-mint)]/90">
+                  {page.distanceFromResort}
+                </p>
+              ) : null}
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
                   href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
@@ -236,6 +249,28 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
       </section>
 
       <section className="relative -mt-12 rounded-t-[3rem] bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:-mt-14 lg:rounded-t-[4rem] lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl">
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: parent.name, href: `/${parent.slug}/` },
+              { name: `${copy.primary} in ${page.town}` },
+            ]}
+            className="mb-8"
+          />
+        </div>
+        {page.localIntro ? (
+          <div className="mx-auto mb-12 max-w-7xl">
+            <div className="max-w-3xl border-l-2 border-[var(--pp-main)]/30 pl-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                In your neighborhood
+              </p>
+              <p className="mt-3 text-lg leading-8 text-[rgba(47,42,39,0.86)]">
+                {page.localIntro}
+              </p>
+            </div>
+          </div>
+        ) : null}
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
@@ -247,6 +282,24 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
           </div>
 
           <div className="grid gap-3">
+            {page.localFeatures && page.localFeatures.length > 0 ? (
+              <div className="mb-2 border border-[var(--pp-main)]/25 bg-[var(--pp-mint)]/15 px-5 py-4">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/80">
+                  What {page.town} dog parents ask
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {page.localFeatures.map((lf) => (
+                    <li
+                      key={lf}
+                      className="flex items-start gap-3 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
+                    >
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" />
+                      <span>{lf}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
             {copy.features.map((f) => (
               <div
                 key={f}
@@ -302,6 +355,34 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
           </div>
         </div>
       </section>
+
+      {nearby.length > 0 ? (
+        <section className="px-5 pb-16 sm:px-8 lg:px-10 lg:pb-20">
+          <div className="mx-auto max-w-7xl border-t border-[rgba(50,73,83,0.16)] pt-14">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+              Nearby service areas
+            </p>
+            <h2 className="mt-3 text-3xl leading-tight">
+              We also serve {copy.primary.toLowerCase()} clients in:
+            </h2>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {nearby.map((n) => (
+                <li key={n.slug}>
+                  <Link
+                    href={`/${n.slug}/`}
+                    className="group flex items-center justify-between border border-[rgba(50,73,83,0.12)] bg-white/65 px-5 py-4 text-sm font-semibold text-[var(--pp-ink)] transition hover:bg-white/90"
+                  >
+                    <span>
+                      {copy.primary} in {n.town}
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-[var(--pp-main)] transition group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <SiteFooter />
 

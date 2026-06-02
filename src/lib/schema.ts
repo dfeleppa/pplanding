@@ -46,11 +46,17 @@ export function articleSchema({
   description,
   slug,
   datePublished,
+  dateModified,
+  authorName,
+  image,
 }: {
   headline: string;
   description: string;
   slug: string;
   datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -58,8 +64,63 @@ export function articleSchema({
     headline,
     description,
     url: `${SITE.url}/${slug}/`,
-    publisher: { "@id": `${SITE.url}/#business` },
+    mainEntityOfPage: `${SITE.url}/${slug}/`,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#business`,
+      name: SITE.legalName,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}/planet-pooch-logo.png`,
+      },
+    },
+    author: {
+      "@type": authorName ? "Person" : "Organization",
+      name: authorName ?? SITE.legalName,
+    },
+    ...(image ? { image: image.startsWith("http") ? image : `${SITE.url}${image}` } : {}),
     ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : datePublished ? { dateModified: datePublished } : {}),
+  };
+}
+
+export function faqSchema(items: Array<{ question: string; answer: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function personSchema({
+  name,
+  role,
+  slug,
+  description,
+  yearStarted,
+}: {
+  name: string;
+  role: string;
+  slug: string;
+  description?: string;
+  yearStarted?: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle: role,
+    url: `${SITE.url}/${slug}/`,
+    worksFor: { "@id": `${SITE.url}/#business` },
+    ...(description ? { description } : {}),
+    ...(yearStarted ? { hasOccupation: { "@type": "Occupation", name: role, startDate: String(yearStarted) } } : {}),
   };
 }
 

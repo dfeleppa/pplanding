@@ -1,6 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE } from "../lib/site";
+import { Analytics } from "./analytics";
 import "./globals.css";
+
+const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -18,17 +23,49 @@ export const metadata: Metadata = {
     title: SITE.defaults.homeTitle,
     description: SITE.defaults.homeDescription,
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.defaults.homeTitle,
+    description: SITE.defaults.homeDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  formatDetection: { email: false, telephone: false, address: false },
+  ...(GSC_VERIFICATION ? { verification: { google: GSC_VERIFICATION } } : {}),
 };
+
+export const viewport: Viewport = {
+  themeColor: "#324953",
+  width: "device-width",
+  initialScale: 1,
+};
+
+const businessDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": `${SITE.url}/#business`,
   name: SITE.legalName,
+  alternateName: SITE.name,
+  description: SITE.defaults.homeDescription,
   url: SITE.url,
   telephone: SITE.phone.e164,
   email: SITE.email,
+  image: `${SITE.url}/opengraph-image.png`,
+  logo: `${SITE.url}/planet-pooch-logo.png`,
+  priceRange: "$$",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Cash, Credit Card",
+  foundingDate: "2014",
+  founder: {
+    "@type": "Person",
+    name: "Andy Gonzaga",
+    url: `${SITE.url}/andy/`,
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -42,10 +79,31 @@ const localBusinessSchema = {
     latitude: SITE.geo.latitude,
     longitude: SITE.geo.longitude,
   },
-  areaServed: SITE.serviceArea.counties.map((county) => ({
-    "@type": "AdministrativeArea",
-    name: `${county}, NY`,
-  })),
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`
+  )}`,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: businessDays,
+      opens: "07:30",
+      closes: "12:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: businessDays,
+      opens: "13:30",
+      closes: "19:00",
+    },
+  ],
+  areaServed: [
+    ...SITE.serviceArea.counties.map((county) => ({
+      "@type": "AdministrativeArea",
+      name: `${county}, NY`,
+    })),
+    { "@type": "Place", name: "The Hamptons" },
+    { "@type": "Place", name: "Long Island, NY" },
+  ],
   sameAs: [
     SITE.social.instagram,
     SITE.social.facebook,
@@ -71,6 +129,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <Analytics />
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -2,6 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { ArrowRight } from "lucide-react";
 import type { ProsePage } from "../lib/content/types";
 import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
+import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 
@@ -34,6 +35,13 @@ export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
 
       <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: page.title },
+            ]}
+            className="mb-6"
+          />
           <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-main)]/75">
             {page.eyebrow}
           </p>

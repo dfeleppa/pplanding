@@ -7,7 +7,14 @@ import {
   Utensils, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
-import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../lib/schema";
+import { towns, type TownPage } from "../lib/content/towns";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  homeBreadcrumbs,
+  jsonLdAttrs,
+  serviceSchema,
+} from "../lib/schema";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
@@ -688,6 +695,23 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 })}
               </div>
             ) : null}
+            {section.calloutCard ? (
+              <article className="mt-10 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  <h3 className="text-2xl leading-tight">{section.calloutCard.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+                </div>
+                {section.calloutCard.cta ? (
+                  <Link
+                    href={section.calloutCard.cta.href}
+                    className="inline-flex shrink-0 items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                  >
+                    {section.calloutCard.cta.label}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ) : null}
+              </article>
+            ) : null}
           </div>
         </section>
       );
@@ -785,6 +809,53 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       );
     }
 
+    case "townLinks": {
+      const serviceSet = new Set<string>(section.services);
+      const items: TownPage[] = (Object.values(towns) as TownPage[])
+        .filter((t) => serviceSet.has(t.service))
+        .slice(0, section.limit ?? 18);
+      if (items.length === 0) return null;
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            {section.eyebrow ? (
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                {section.eyebrow}
+              </p>
+            ) : null}
+            {section.title ? (
+              <h2 className="mt-3 text-3xl leading-tight text-[var(--pp-ink)]">{section.title}</h2>
+            ) : null}
+            {section.intro ? (
+              <p className="mt-3 max-w-3xl text-base leading-7 text-[rgba(47,42,39,0.78)]">
+                {section.intro}
+              </p>
+            ) : null}
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {items.map((t) => (
+                <li key={t.slug}>
+                  <Link
+                    href={`/${t.slug}/`}
+                    className="group flex items-center justify-between border border-[rgba(50,73,83,0.12)] bg-white/65 px-5 py-4 text-sm font-semibold text-[var(--pp-ink)] transition hover:bg-white/90"
+                  >
+                    <span>
+                      {t.town}
+                      {t.region && t.town !== t.region ? (
+                        <span className="block text-[11px] font-normal uppercase tracking-[0.14em] text-[var(--pp-main)]/65">
+                          {t.region}
+                        </span>
+                      ) : null}
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-[var(--pp-main)] transition group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      );
+    }
+
     case "callout": {
       const calloutOuterWidth = section.wide ? "max-w-[88rem]" : "max-w-7xl";
       return (
@@ -834,6 +905,18 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
   const crumbs = breadcrumbSchema(
     homeBreadcrumbs(page.title, page.canonicalSlug ?? page.slug)
   );
+  const service = page.serviceType
+    ? serviceSchema({
+        name: page.metaTitle,
+        description: page.metaDescription,
+        slug: page.canonicalSlug ?? page.slug,
+        serviceType: page.serviceType,
+      })
+    : null;
+  const faqItems = page.sections.flatMap((s) =>
+    s.type === "faq" ? s.items : []
+  );
+  const faq = faqItems.length > 0 ? faqSchema(faqItems) : null;
   return (
     <main
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
@@ -884,27 +967,25 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                         {page.heroCtas.ghost.label}
                       </a>
                     </div>
-                    {page.heroCtas.tertiary ? (
-                      <div className="mt-8 flex justify-start">
-                        <a
-                          href={page.heroCtas.tertiary.href}
-                          className="inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
-                        >
-                          {page.heroCtas.tertiary.label}
-                          <ArrowRight className="h-4 w-4" />
-                        </a>
-                      </div>
-                    ) : null}
                   </div>
                 </div>
               </div>
               <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
-                <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72">
+                <div className={`flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72 ${page.heroCtas.tertiary ? "grid grid-cols-3" : "flex-wrap justify-between"}`}>
                   <span className="flex items-center gap-3">
                     <span aria-hidden className="h-px w-8 bg-white/40" />
                     Scroll to Explore
                   </span>
-                  <span>Long Island, New York</span>
+                  {page.heroCtas.tertiary ? (
+                    <a
+                      href={page.heroCtas.tertiary.href}
+                      className="justify-self-center inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
+                    >
+                      {page.heroCtas.tertiary.label}
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  ) : null}
+                  <span className={page.heroCtas.tertiary ? "justify-self-end" : ""}>Long Island, New York</span>
                 </div>
               </div>
             </>
@@ -939,6 +1020,8 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
       <SiteFooter />
 
       <script {...jsonLdAttrs(crumbs)} />
+      {service ? <script {...jsonLdAttrs(service)} /> : null}
+      {faq ? <script {...jsonLdAttrs(faq)} /> : null}
     </main>
   );
 }

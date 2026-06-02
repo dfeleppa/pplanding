@@ -7,6 +7,7 @@ import { ADDRESS_LINES, SITE } from "../../lib/site";
 import { getTownsByRegion, REGION_LABELS } from "../../lib/content/nassau-towns";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
+import { StickyMobileCta } from "../sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -154,6 +155,8 @@ export default function ContactPage() {
       <AreasWeServe />
 
       <SiteFooter />
+
+      <StickyMobileCta />
     </main>
   );
 }

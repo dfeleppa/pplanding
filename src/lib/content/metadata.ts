@@ -13,6 +13,11 @@ export function makeContentMetadata(page: ContentPage): Metadata {
       url: canonical,
       type: "website",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: page.metaTitle,
+      description: page.metaDescription,
+    },
   };
 }
 
@@ -27,6 +32,11 @@ export function makeProseMetadata(page: ProsePage): Metadata {
       description: page.metaDescription,
       url: canonical,
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.metaTitle,
+      description: page.metaDescription,
     },
   };
 }

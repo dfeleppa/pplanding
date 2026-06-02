@@ -155,6 +155,7 @@ export type ContentSection =
       }>;
       cta?: { label: string; href: string };
       ctas?: Array<{ label: string; href: string }>;
+      calloutCard?: { title: string; body: string; cta?: { label: string; href: string } };
     }
   | {
       type: "slideshow";
@@ -178,6 +179,17 @@ export type ContentSection =
       cta?: { label: string; href: string };
       image?: string | StaticImageData;
       imageAlt?: string;
+    }
+  | {
+      type: "townLinks";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      /** Which town-page services to source from. */
+      services: Array<"mobile-grooming" | "spa-services" | "in-house-grooming" | "daycare-boarding">;
+      /** Optional cap on the number of links rendered. */
+      limit?: number;
     };
 
 export type ContentPage = {
@@ -195,6 +207,8 @@ export type ContentPage = {
     tertiary?: { label: string; href: string };
   };
   sections: ContentSection[];
+  /** When set, emits Service JSON-LD on the page. Used for the main service offerings. */
+  serviceType?: string;
 };
 
 export type ProsePage = {
