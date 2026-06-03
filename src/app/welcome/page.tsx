@@ -313,7 +313,7 @@ export default function WelcomePage() {
                   "Clean, climate-controlled facility in Franklin Square",
                   "Daily photo & video updates for boarding guests",
                   "AKC Evaluator on staff for training programs",
-                  "Serving all of Nassau & Suffolk County + the Hamptons",
+                  "Serving all of Nassau County + the Hamptons",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <PawPrint className="mt-0.5 h-4 w-4 shrink-0 text-[var(--pp-mint)]" aria-hidden />
