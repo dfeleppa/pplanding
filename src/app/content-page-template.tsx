@@ -2,8 +2,8 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight, Bath, Brush, Camera, Check, ChevronDown, Droplets, Ear, Eye,
-  Footprints, Heart, PawPrint, Ribbon, Scissors, Sparkles, Trees, Users,
+  ArrowRight, Bath, Brush, Camera, Check, ChevronDown, Clock, Droplets, Ear, Eye,
+  Footprints, Heart, PawPrint, Ribbon, Scissors, Sparkles, Trees, Truck, Users,
   Utensils, Wind, X,
 } from "lucide-react";
 import type { ContentPage, ContentSection } from "../lib/content/types";
@@ -33,7 +33,7 @@ const bodySans = Manrope({
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   PawPrint, Footprints, Ear, Bath, Droplets, Wind, Brush, Scissors, Ribbon,
-  Trees, Users, Sparkles, Eye, Heart, Camera, Utensils,
+  Trees, Users, Sparkles, Eye, Heart, Camera, Utensils, Clock, Truck,
 };
 
 type ContentPageTemplateProps = {
@@ -801,6 +801,130 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 >
                   {section.cta.label}
                   <ChevronDown className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      );
+    }
+
+    case "benefitSplit": {
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
+              {/* Left column: headline, copy, image, CTA */}
+              <div>
+                {section.eyebrow ? (
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                    {section.eyebrow}
+                  </p>
+                ) : null}
+                {section.title ? (
+                  <h2 className="mt-3 text-4xl leading-tight text-[var(--pp-ink)] sm:text-[2.75rem]">
+                    {section.title}
+                  </h2>
+                ) : null}
+                {section.body ? (
+                  <p className="mt-5 text-lg leading-8 text-[rgba(47,42,39,0.82)]">
+                    {section.body}
+                  </p>
+                ) : null}
+                {section.image ? (
+                  <div className="relative mt-8 aspect-[16/10] overflow-hidden border border-[rgba(50,73,83,0.12)]">
+                    <Image
+                      src={section.image}
+                      alt={section.imageAlt ?? "Planet Pooch mobile grooming"}
+                      fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : null}
+                {section.cta ? (
+                  <div className="mt-8">
+                    <a
+                      href={section.cta.href}
+                      className="inline-flex w-full items-center justify-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)] sm:w-auto"
+                    >
+                      {section.cta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                ) : null}
+              </div>
+
+              {/* Right column: benefit cards */}
+              <div className="grid gap-3">
+                {section.items.map((item) => {
+                  const Icon = iconMap[item.icon];
+                  return (
+                    <article
+                      key={item.title}
+                      className="flex items-start gap-4 border border-[rgba(50,73,83,0.10)] bg-white/70 p-5"
+                    >
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)]/25">
+                        {Icon ? <Icon className="h-5 w-5 stroke-[1.5] text-[var(--pp-main)]" /> : null}
+                      </div>
+                      <div>
+                        <h3 className="text-[15px] font-bold text-[var(--pp-ink)]">{item.title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-[rgba(47,42,39,0.75)]">{item.description}</p>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    case "groupedServices": {
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            {section.eyebrow ? (
+              <p className="text-center text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                {section.eyebrow}
+              </p>
+            ) : null}
+            {section.title ? (
+              <h2 className="mx-auto mt-3 max-w-2xl text-center text-3xl leading-tight text-[var(--pp-ink)] sm:text-4xl">
+                {section.title}
+              </h2>
+            ) : null}
+            {section.intro ? (
+              <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-8 text-[rgba(47,42,39,0.78)]">
+                {section.intro}
+              </p>
+            ) : null}
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {section.cards.map((card) => {
+                const Icon = iconMap[card.icon];
+                return (
+                  <article
+                    key={card.title}
+                    className="flex flex-col border border-[rgba(50,73,83,0.10)] bg-white/70 p-7"
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--pp-mint)]/25">
+                      {Icon ? <Icon className="h-7 w-7 stroke-[1.5] text-[var(--pp-main)]" /> : null}
+                    </div>
+                    <h3 className="mt-5 text-xl font-semibold text-[var(--pp-ink)]">{card.title}</h3>
+                    <p className="mt-3 text-[15px] leading-7 text-[rgba(47,42,39,0.78)]">{card.description}</p>
+                  </article>
+                );
+              })}
+            </div>
+            {section.cta ? (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={section.cta.href}
+                  className="inline-flex w-full items-center justify-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)] sm:w-auto"
+                >
+                  {section.cta.label}
+                  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             ) : null}
