@@ -581,7 +581,7 @@ export const mainServicePages = {
         type: "timeline",
         eyebrow: "A day in the life",
         title: "A tail-wagging day at Planet Pooch",
-        image: "/boarding/Screenshot 2025-05-30 at 3.15.52 PM (1).png",
+        image: "/boarding/day-in-the-life.png",
         imageAlt: "Planet Pooch boarding accommodations",
         items: [
           {
