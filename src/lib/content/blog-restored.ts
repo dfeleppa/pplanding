@@ -140,7 +140,7 @@ export const restoredPosts: Record<string, BlogPost> = {
     datePublished: "2024-06-05",
     author: "Planet Pooch",
     intro:
-      "There's nothing quite like watching a dog tip their head back into the sun. Warm weather brings out the best in our pups — more outside time, more sniffing, more play. It also calls for a little extra care, especially in Nassau and Suffolk where humidity sneaks up fast. Here's how we keep summer days joyful and safe.",
+      "There's nothing quite like watching a dog tip their head back into the sun. Warm weather brings out the best in our pups — more outside time, more sniffing, more play. It also calls for a little extra care, especially on Long Island where humidity sneaks up fast. Here's how we keep summer days joyful and safe.",
     sections: [
       {
         heading: "Why dogs love a sunny day",
@@ -268,7 +268,7 @@ export const restoredPosts: Record<string, BlogPost> = {
     datePublished: "2024-05-10",
     author: "Planet Pooch",
     intro:
-      "Memorial Day Weekend kicks off the season, and Long Island empties out for the Hamptons, the North Fork, and points beyond. If your dog isn't coming along, you want them somewhere they'll genuinely enjoy — not just somewhere they'll be kept. Here's why families across Nassau and Suffolk choose us for the long weekend.",
+      "Memorial Day Weekend kicks off the season, and Long Island empties out for the Hamptons, the North Fork, and points beyond. If your dog isn't coming along, you want them somewhere they'll genuinely enjoy — not just somewhere they'll be kept. Here's why families across Nassau County choose us for the long weekend.",
     sections: [
       {
         heading: "Suites for every dog",
@@ -336,7 +336,7 @@ export const restoredPosts: Record<string, BlogPost> = {
       {
         heading: "Long Island is our home",
         paragraphs: [
-          "We live here. We grew up here. Serving families across Nassau, Suffolk, and the Hamptons isn't a business plan — it's our neighborhood. We're going to keep showing up the way we always have, because that's the only way we know how to do this.",
+          "We live here. We grew up here. Serving families across Nassau County and the Hamptons isn't a business plan — it's our neighborhood. We're going to keep showing up the way we always have, because that's the only way we know how to do this.",
         ],
       },
     ],
@@ -457,7 +457,7 @@ export const restoredPosts: Record<string, BlogPost> = {
       {
         heading: "Mobile grooming that comes to you",
         paragraphs: [
-          "When the calendar's packed, the last thing you want is another errand. Our mobile grooming vans roll across Nassau, Suffolk, and the Hamptons fully equipped — your dog is groomed in your driveway, one-on-one, while you keep your day moving.",
+          "When the calendar's packed, the last thing you want is another errand. Our mobile grooming vans roll across Nassau County and the Hamptons fully equipped — your dog is groomed in your driveway, one-on-one, while you keep your day moving.",
         ],
       },
       {
@@ -590,7 +590,7 @@ export const restoredPosts: Record<string, BlogPost> = {
       {
         heading: "Serving Long Island and the Hamptons",
         paragraphs: [
-          "Our mobile grooming vans cover Nassau, Suffolk, and the Hamptons. If you've avoided grooming because your dog can't handle the salon, give mobile a try — it might be the answer you've been waiting for.",
+          "Our mobile grooming vans cover Nassau County and the Hamptons. If you've avoided grooming because your dog can't handle the salon, give mobile a try — it might be the answer you've been waiting for.",
         ],
       },
     ],
@@ -689,7 +689,7 @@ export const restoredPosts: Record<string, BlogPost> = {
     datePublished: "2024-08-19",
     author: "Planet Pooch",
     intro:
-      "Labor Day is the last big getaway of summer, and it brings a surge of boarding requests across Nassau and Suffolk. While you're closing out the season at the beach or upstate, your dog doesn't have to spend the weekend alone. A boarding stay at our Franklin Square resort gives them their own mini vacation — play, rest, and people who'll make a fuss over them.",
+      "Labor Day is the last big getaway of summer, and it brings a surge of boarding requests across Nassau County. While you're closing out the season at the beach or upstate, your dog doesn't have to spend the weekend alone. A boarding stay at our Franklin Square resort gives them their own mini vacation — play, rest, and people who'll make a fuss over them.",
     sections: [
       {
         heading: "What a holiday stay looks like",
@@ -1004,7 +1004,7 @@ export const restoredPosts: Record<string, BlogPost> = {
       {
         heading: "Mobile grooming at your door",
         paragraphs: [
-          "Holiday photos, family visits, festive sweaters — your dog deserves to look the part without you driving to a salon. Our mobile vans roll across Nassau, Suffolk, and the Hamptons fully equipped, so grooming happens in your driveway, one-on-one.",
+          "Holiday photos, family visits, festive sweaters — your dog deserves to look the part without you driving to a salon. Our mobile vans roll across Nassau County and the Hamptons fully equipped, so grooming happens in your driveway, one-on-one.",
         ],
       },
       {
@@ -1096,7 +1096,7 @@ export const restoredPosts: Record<string, BlogPost> = {
       {
         heading: "Mobile or in-house, your call",
         paragraphs: [
-          "Spring deshedding treatments are available at our Franklin Square resort and through our mobile grooming vans across Nassau, Suffolk, and the Hamptons. Book early — spring slots fill fast.",
+          "Spring deshedding treatments are available at our Franklin Square resort and through our mobile grooming vans across Nassau County and the Hamptons. Book early — spring slots fill fast.",
         ],
       },
     ],
@@ -1396,7 +1396,7 @@ export const restoredPosts: Record<string, BlogPost> = {
       {
         heading: "Serving Long Island and the Hamptons",
         paragraphs: [
-          "Our vans cover Nassau, Suffolk, and the Hamptons. Set up a recurring summer schedule and we'll handle the rest — your dog stays clean, cool, and comfortable all season.",
+          "Our vans cover Nassau County and the Hamptons. Set up a recurring summer schedule and we'll handle the rest — your dog stays clean, cool, and comfortable all season.",
         ],
       },
     ],

@@ -22,7 +22,7 @@ export const SITE = {
   },
   serviceArea: {
     primary: "Long Island, NY",
-    counties: ["Nassau County", "Suffolk County"],
+    counties: ["Nassau County"],
     notable: ["Franklin Square", "The Hamptons", "North Shore"],
   },
   social: {

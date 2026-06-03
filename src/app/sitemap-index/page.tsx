@@ -30,7 +30,7 @@ const bodySans = Manrope({
 export const metadata: Metadata = {
   title: { absolute: "Site Map | Planet Pooch Pet Resort" },
   description:
-    "Browse every page on Planet Pooch — services, town pages across Nassau & Suffolk, blog, team, and policies.",
+    "Browse every page on Planet Pooch — services, town pages across Nassau County, blog, team, and policies.",
   alternates: { canonical: "/sitemap-index/" },
 };
 
@@ -103,7 +103,7 @@ export default function SiteMapPage() {
           </p>
           <h1 className="mt-3 text-4xl leading-tight sm:text-5xl">Site Map</h1>
           <p className="mt-4 max-w-2xl text-base leading-7 text-[rgba(47,42,39,0.75)]">
-            Every page on planet-pooch.com — services, town pages across Nassau and Suffolk,
+            Every page on planet-pooch.com — services, town pages across Nassau County,
             the blog, our team, and policies.
           </p>
 

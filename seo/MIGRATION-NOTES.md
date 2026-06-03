@@ -25,14 +25,14 @@ itself host pricing — it links to area-specific pricing pages.
 
 The authoritative pricing pages are:
 
-- `/nassau-pricing/` — **Nassau & Suffolk** (one rate card, $150–$305 for
-  full grooms). Title and copy explicitly call out the shared coverage.
+- `/nassau-pricing/` — **Nassau County** (one rate card, $150–$305 for
+  full grooms).
 - `/pet-grooming-hamptons/` — **Hamptons only** ($275–$525), separate
   rate card reflecting extended travel.
 - `/in-house-grooming/` — **in-house at the resort** ($95–$195), bundled
   with daycare or boarding.
 
-Mobile grooming is offered only in Nassau, Suffolk, and the Hamptons —
+Mobile grooming is offered only in Nassau County and the Hamptons —
 **no other counties**. The "See pricing for your area" callout on
 `/mobile-grooming/` routes visitors to the right page.
 

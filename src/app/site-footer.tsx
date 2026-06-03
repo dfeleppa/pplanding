@@ -134,7 +134,7 @@ export function SiteFooter() {
 
       <div className="mx-auto mt-14 max-w-7xl border-t border-white/10 pt-6">
         <p className="text-center text-xs leading-6 text-white/55 sm:text-left">
-          Serving Franklin Square, Garden City, Rockville Centre, Nassau County, Suffolk County, and the Hamptons.
+          Serving Franklin Square, Garden City, Rockville Centre, Nassau County, and the Hamptons.
         </p>
       </div>
 

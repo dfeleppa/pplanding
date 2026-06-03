@@ -63,9 +63,9 @@ export const mainServicePages = {
         id: "pricing",
         eyebrow: "Pricing",
         title: "See pricing for your area.",
-        body: "Mobile grooming uses one rate card for Nassau and Suffolk counties, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
+        body: "Mobile grooming uses one rate card for Nassau County, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
         ctas: [
-          { label: "Nassau & Suffolk Pricing", href: "/nassau-pricing" },
+          { label: "Nassau Pricing", href: "/nassau-pricing" },
           { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
           { label: "Cat Pricing", href: "/cat-experience/" },
         ],
@@ -108,7 +108,7 @@ export const mainServicePages = {
           {
             question: "What is your service area?",
             answer:
-              "We service all of Nassau County, Suffolk County, and parts of the Hamptons.",
+              "We service all of Nassau County and the Hamptons.",
           },
           {
             question: "Is there a weight or size limit?",
@@ -130,7 +130,7 @@ export const mainServicePages = {
         type: "townLinks",
         eyebrow: "Service area",
         title: "Mobile grooming towns we cover",
-        intro: "Pick your town for local notes, parking specifics, and what our route looks like on the ground. Same Nassau & Suffolk pricing applies everywhere — the Hamptons uses a separate rate card.",
+        intro: "Pick your town for local notes, parking specifics, and what our route looks like on the ground. The Hamptons uses a separate rate card.",
         services: ["mobile-grooming", "spa-services"],
       },
       {

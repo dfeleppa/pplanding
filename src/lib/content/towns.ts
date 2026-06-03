@@ -253,22 +253,6 @@ export const towns = {
     ],
     distanceFromResort: "Routed daily from our Franklin Square resort",
   },
-  "mobile-pet-spa-services-suffolk-county": {
-    slug: "mobile-pet-spa-services-suffolk-county",
-    service: "spa-services",
-    town: "Suffolk County",
-    metaTitle: "Mobile Pet Spa Services Suffolk County NY | Planet Pooch",
-    metaDescription:
-      "Mobile pet spa services across Suffolk County, NY — from Western Suffolk townships to the Hamptons. Plus and Premium upgrades at your driveway.",
-    localIntro:
-      "Suffolk County is enormous — from Western Suffolk townships like Huntington and Smithtown out through Brookhaven and into the Hamptons. Our mobile spa vans run routes across the western and central portions of the county on a regular basis, with seasonal Hamptons coverage for clients who want consistency between Manhattan and the East End.",
-    localFeatures: [
-      "Routes serve Western and Central Suffolk year-round",
-      "Seasonal Hamptons service for East End summer households",
-      "Plus and Premium spa upgrades available on every appointment",
-    ],
-    distanceFromResort: "Routed from our Franklin Square resort across Long Island",
-  },
   "mobile-pet-spa-services-franklin-square-ny": {
     slug: "mobile-pet-spa-services-franklin-square-ny",
     service: "spa-services",
@@ -287,38 +271,6 @@ export const towns = {
   },
 
   // ---- Other grooming region/town variants ----
-  "grooming-suffolk-county": {
-    slug: "grooming-suffolk-county",
-    service: "mobile-grooming",
-    town: "Suffolk County",
-    metaTitle: "Dog Grooming Suffolk County | Mobile Service | Planet Pooch",
-    metaDescription:
-      "Mobile dog grooming across Suffolk County, NY — Western Suffolk to the Hamptons. Fully equipped vans, one-on-one sessions, hand-dried, never crated.",
-    localIntro:
-      "Suffolk County is the larger half of Long Island, and the geography matters: a salon trip from Hauppauge, Smithtown, or eastern Brookhaven is often a real commitment. Mobile grooming flips that — we bring the fully equipped van to your driveway, whether you're in a Western Suffolk subdivision or a quieter East End road.",
-    localFeatures: [
-      "Year-round Western and Central Suffolk coverage",
-      "Seasonal Hamptons service for summer East End households",
-      "Especially valued in towns far from a quality grooming salon",
-    ],
-    distanceFromResort: "Routed from our Franklin Square resort across the county",
-  },
-  "mobile-grooming-suffolk-county": {
-    slug: "mobile-grooming-suffolk-county",
-    service: "mobile-grooming",
-    town: "Suffolk County",
-    metaTitle: "Mobile Dog Grooming Suffolk County NY | Planet Pooch",
-    metaDescription:
-      "Mobile dog grooming throughout Suffolk County, NY — Huntington and Smithtown out to Brookhaven and the Hamptons. One-on-one in our fully equipped vans.",
-    localIntro:
-      "Suffolk County covers a huge stretch of Long Island, from the busy townships of Huntington and Smithtown out through Brookhaven and into the Hamptons. Our mobile grooming vans run regular routes through Western and Central Suffolk, with seasonal Hamptons service for summer households.",
-    localFeatures: [
-      "Routes cover Huntington, Smithtown, and Brookhaven year-round",
-      "Seasonal Hamptons coverage for East End summer clients",
-      "Mobile setup saves long round-trips to a fixed salon",
-    ],
-    distanceFromResort: "Routed from our Franklin Square resort",
-  },
   "grooming-franklin-square-ny": {
     slug: "grooming-franklin-square-ny",
     service: "mobile-grooming",

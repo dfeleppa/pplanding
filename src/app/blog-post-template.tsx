@@ -58,7 +58,7 @@ const SERVICE_KEYWORDS: Array<{
     match: /\b(groom|bath|mat|coat|nail|spa|shed)\b/i,
     label: "Mobile Grooming",
     href: "/mobile-grooming/",
-    description: "Luxury mobile grooming brought to your driveway across Nassau and Suffolk.",
+    description: "Luxury mobile grooming brought to your driveway across Nassau County and the Hamptons.",
   },
 ];
 
