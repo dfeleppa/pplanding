@@ -669,29 +669,6 @@ export const mainServicePages = {
         cta: { label: "Pricing", href: "#group-training" },
       },
       {
-        type: "faq",
-        eyebrow: "FAQ",
-        title: "Common training questions",
-        items: [
-          {
-            question: "What kinds of goals can we work on?",
-            answer:
-              "Common goals include puppy foundations, basic obedience, leash manners, focus, confidence-building, and addressing behaviors like jumping, barking, or pulling.",
-          },
-          {
-            question: "Is private training better than a group class?",
-            answer:
-              "Private sessions are especially valuable for dogs who feel overwhelmed, distracted, or anxious around other dogs. They learn in a calm, focused environment where they can succeed.",
-          },
-          {
-            question: "Will I get coaching too?",
-            answer:
-              "Yes — training works best when owners understand how to reinforce the skills outside the resort. We make sure you leave each session knowing what to practice.",
-          },
-        ],
-        cta: { label: "Pricing", href: "#group-training" },
-      },
-      {
         type: "tieredPricing",
         id: "group-training",
         eyebrow: "Group Training",
@@ -781,6 +758,29 @@ export const mainServicePages = {
             ],
           },
         ],
+      },
+      {
+        type: "faq",
+        eyebrow: "FAQ",
+        title: "Common training questions",
+        items: [
+          {
+            question: "What kinds of goals can we work on?",
+            answer:
+              "Common goals include puppy foundations, basic obedience, leash manners, focus, confidence-building, and addressing behaviors like jumping, barking, or pulling.",
+          },
+          {
+            question: "Is private training better than a group class?",
+            answer:
+              "Private sessions are especially valuable for dogs who feel overwhelmed, distracted, or anxious around other dogs. They learn in a calm, focused environment where they can succeed.",
+          },
+          {
+            question: "Will I get coaching too?",
+            answer:
+              "Yes — training works best when owners understand how to reinforce the skills outside the resort. We make sure you leave each session knowing what to practice.",
+          },
+        ],
+        cta: { label: "Pricing", href: "#group-training" },
       },
       {
         type: "callout",
