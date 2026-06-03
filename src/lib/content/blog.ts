@@ -25,6 +25,71 @@ export type BlogPost = {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "summer-boarding-at-planet-pooch-why-booking-early-matters-more-than-ever": {
+    slug: "summer-boarding-at-planet-pooch-why-booking-early-matters-more-than-ever",
+    title: "Summer Boarding at Planet Pooch Pet Resort: Why Booking Early Matters More Than Ever",
+    metaTitle: "Summer Dog Boarding: Why Booking Early Matters | Planet Pooch Blog",
+    metaDescription:
+      "Summer boarding spots fill up fast. Here's why reserving your dog's stay early means less stress, more flexibility, and a smoother experience for everyone.",
+    hasFullContent: true,
+    datePublished: "2026-06-03",
+    intro:
+      "Summer is one of the busiest seasons of the year for pet boarding, and spots at Planet Pooch Pet Resort fill up faster than most pet parents expect. Between vacations, weekend getaways, weddings, and last-minute travel plans, availability can shrink weeks — or even months — in advance. If you're planning any time away this summer, the biggest mistake you can make is waiting too long to book your dog's stay.",
+    sections: [
+      {
+        heading: "Why summer boarding books up so quickly",
+        paragraphs: [
+          "Summer isn't just “busy” — it's peak demand. Most boarding facilities operate near or at capacity during:",
+        ],
+        bullets: [
+          "Memorial Day to Labor Day weekends",
+          "School vacation periods",
+          "Extended family trips and holidays",
+          "Last-minute travel deals people jump on quickly",
+        ],
+      },
+      {
+        heading: "The risk of waiting too long",
+        paragraphs: [
+          "At Planet Pooch Pet Resort, we consistently see prime dates — especially weekends and holiday weeks — reserved far in advance. Once those spots are gone, they're gone.",
+          "Delaying your reservation doesn't just limit options — it can completely change your dog's experience. Waiting often means:",
+        ],
+        bullets: [
+          "Limited or no availability for your preferred dates",
+          "Splitting stays across multiple facilities or caretakers",
+          "Less flexibility in room type or playgroup scheduling",
+          "Added stress trying to “figure it out last minute”",
+        ],
+      },
+      {
+        heading: "Why early booking is better for your dog",
+        paragraphs: [
+          "And for dogs who thrive on routine, rushed decisions can make the experience harder on everyone. Booking early at Planet Pooch Pet Resort ensures your dog gets:",
+        ],
+        bullets: [
+          "A reserved spot in a structured, supervised environment",
+          "Time to acclimate before their stay if needed",
+          "Proper scheduling for playgroups and enrichment",
+          "A smoother, lower-stress drop-off experience",
+        ],
+      },
+      {
+        heading: "Summer should be stress-free — for you and your dog",
+        paragraphs: [
+          "Early reservations also give our team time to prepare for your dog's individual needs, whether that includes feeding instructions, medications, or personality-based group placement.",
+          "Vacations are supposed to be relaxing. The last thing you want is scrambling at the last minute trying to find availability or settling for a less-than-ideal boarding option. Planning ahead means you can travel confidently, knowing your dog is safe, comfortable, and cared for.",
+        ],
+      },
+      {
+        heading: "Final reminder: don't wait",
+        paragraphs: [
+          "If you already know you'll be traveling this summer, now is the time to book. Even “just checking dates” early can make the difference between getting your ideal stay and missing out entirely. At Planet Pooch Pet Resort, summer spots are limited and consistently fill fast.",
+          "Secure your reservation early — your future self (and your dog) will thank you.",
+        ],
+      },
+    ],
+  },
+
   "treat-your-dog-to-a-summer-staycation-at-planet-pooch-pet-resort": {
     slug: "treat-your-dog-to-a-summer-staycation-at-planet-pooch-pet-resort",
     title: "Treat Your Dog to a Summer Staycation at Planet Pooch Pet Resort",
