@@ -186,7 +186,6 @@ export type ContentSection =
       eyebrow?: string;
       title?: string;
       body?: string;
-      cta?: { label: string; href: string };
       image?: string | StaticImageData;
       imageAlt?: string;
       items: Array<{
@@ -194,6 +193,13 @@ export type ContentSection =
         title: string;
         description: string;
       }>;
+      calloutCard?: {
+        id?: string;
+        eyebrow?: string;
+        title: string;
+        body: string;
+        ctas?: Array<{ label: string; href: string }>;
+      };
     }
   | {
       type: "groupedServices";

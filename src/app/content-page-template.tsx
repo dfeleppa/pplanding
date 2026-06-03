@@ -813,9 +813,8 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
-              {/* Left column: headline, copy, image, CTA */}
-              <div>
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-end lg:gap-14">
+              <div className="flex flex-col">
                 {section.eyebrow ? (
                   <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
                     {section.eyebrow}
@@ -832,7 +831,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   </p>
                 ) : null}
                 {section.image ? (
-                  <div className="relative mt-8 aspect-[16/10] overflow-hidden border border-[rgba(50,73,83,0.12)]">
+                  <div className="relative mt-8 aspect-[4/5] overflow-hidden border border-[rgba(50,73,83,0.12)]">
                     <Image
                       src={section.image}
                       alt={section.imageAlt ?? "Planet Pooch mobile grooming"}
@@ -842,21 +841,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     />
                   </div>
                 ) : null}
-                {section.cta ? (
-                  <div className="mt-8">
-                    <a
-                      href={section.cta.href}
-                      className="inline-flex w-full items-center justify-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)] sm:w-auto"
-                    >
-                      {section.cta.label}
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
-                  </div>
-                ) : null}
               </div>
 
-              {/* Right column: benefit cards */}
-              <div className="grid gap-3">
+              <div className="grid gap-3 lg:content-end">
                 {section.items.map((item) => {
                   const Icon = iconMap[item.icon];
                   return (
@@ -876,6 +863,38 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 })}
               </div>
             </div>
+
+            {section.calloutCard ? (
+              <article id={section.calloutCard.id} className="mt-10 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  {section.calloutCard.eyebrow ? (
+                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
+                      {section.calloutCard.eyebrow}
+                    </p>
+                  ) : null}
+                  <h3 className="mt-2 text-2xl leading-tight sm:text-3xl">{section.calloutCard.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+                </div>
+                {section.calloutCard.ctas?.length ? (
+                  <div className="flex flex-wrap gap-3 lg:shrink-0 lg:justify-end">
+                    {section.calloutCard.ctas.map((cta) => {
+                      const isExternal = cta.href.startsWith("http");
+                      const Tag = isExternal ? "a" : Link;
+                      return (
+                        <Tag
+                          key={cta.href}
+                          href={cta.href}
+                          className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                        >
+                          {cta.label}
+                          <ArrowRight className="h-4 w-4" />
+                        </Tag>
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </article>
+            ) : null}
           </div>
         </section>
       );

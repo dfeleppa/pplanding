@@ -33,9 +33,8 @@ export const mainServicePages = {
         eyebrow: "Why mobile?",
         title: "Luxury grooming without leaving home.",
         body: "No car rides. No cages. No stressful salon drop-offs. Just calm, one-on-one care in your driveway.",
-        cta: { label: "See Pricing & Book Mobile Grooming", href: "#pricing" },
-        image: "/van1.jpg",
-        imageAlt: "Planet Pooch mobile grooming van parked in a driveway",
+        image: "/grooming-fresh.jpg",
+        imageAlt: "Freshly groomed Yorkie with a bow tie at Planet Pooch",
         items: [
           { icon: "Heart", title: "No salon stress", description: "One-on-one grooming right outside your home." },
           { icon: "PawPrint", title: "Great for anxious dogs", description: "A calmer experience for pets who hate the groomer." },
@@ -43,6 +42,17 @@ export const mainServicePages = {
           { icon: "Clock", title: "Done in about 90 minutes", description: "Most appointments are quick and simple." },
           { icon: "Truck", title: "Fully equipped van", description: "No hookups needed." },
         ],
+        calloutCard: {
+          id: "pricing",
+          eyebrow: "Pricing",
+          title: "See pricing for your area.",
+          body: "Mobile grooming uses one rate card for Nassau County, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
+          ctas: [
+            { label: "Nassau Pricing", href: "/nassau-pricing" },
+            { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
+            { label: "Cat Pricing", href: "/cat-experience/" },
+          ],
+        },
       },
       {
         type: "groupedServices",
@@ -54,18 +64,6 @@ export const mainServicePages = {
           { icon: "Sparkles", title: "Finishing Touches", description: "Nail trim and grind, bow or bandana, and a polished send-home look." },
         ],
         cta: { label: "Book Mobile Grooming", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      },
-      {
-        type: "callout",
-        id: "pricing",
-        eyebrow: "Pricing",
-        title: "See pricing for your area.",
-        body: "Mobile grooming uses one rate card for Nassau County, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
-        ctas: [
-          { label: "Nassau Pricing", href: "/nassau-pricing" },
-          { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
-          { label: "Cat Pricing", href: "/cat-experience/" },
-        ],
       },
       {
         type: "checklist",
