@@ -181,6 +181,34 @@ export type ContentSection =
       imageAlt?: string;
     }
   | {
+      type: "benefitSplit";
+      id?: string;
+      eyebrow?: string;
+      title?: string;
+      body?: string;
+      cta?: { label: string; href: string };
+      image?: string | StaticImageData;
+      imageAlt?: string;
+      items: Array<{
+        icon: string;
+        title: string;
+        description: string;
+      }>;
+    }
+  | {
+      type: "groupedServices";
+      id?: string;
+      eyebrow?: string;
+      title?: string;
+      intro?: string;
+      cards: Array<{
+        icon: string;
+        title: string;
+        description: string;
+      }>;
+      cta?: { label: string; href: string };
+    }
+  | {
       type: "townLinks";
       id?: string;
       title?: string;
