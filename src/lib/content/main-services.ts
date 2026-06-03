@@ -32,7 +32,6 @@ export const mainServicePages = {
         type: "benefitSplit",
         eyebrow: "Why mobile?",
         title: "Luxury grooming without leaving home.",
-        body: "No car rides. No cages. No stressful salon drop-offs. Just calm, one-on-one care in your driveway.",
         image: "/grooming-fresh.jpg",
         imageAlt: "Freshly groomed Yorkie with a bow tie at Planet Pooch",
         items: [
