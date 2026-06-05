@@ -813,50 +813,53 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-end lg:gap-14">
-              <div className="flex flex-col">
-                {section.eyebrow ? (
-                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
-                    {section.eyebrow}
-                  </p>
-                ) : null}
-                {section.title ? (
-                  <h2 className="mt-3 text-4xl leading-tight text-[var(--pp-ink)] sm:text-[2.75rem]">
-                    {section.title}
-                  </h2>
-                ) : null}
-                {section.body ? (
-                  <p className="mt-5 text-lg leading-8 text-[rgba(47,42,39,0.82)]">
-                    {section.body}
-                  </p>
-                ) : null}
+            <div className="mx-auto max-w-3xl text-center">
+              {section.eyebrow ? (
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                  {section.eyebrow}
+                </p>
+              ) : null}
+              {section.title ? (
+                <h2 className="mt-3 text-4xl leading-tight text-[var(--pp-ink)] sm:text-[2.75rem]">
+                  {section.title}
+                </h2>
+              ) : null}
+              {section.body ? (
+                <p className="mt-5 text-lg leading-8 text-[rgba(47,42,39,0.82)]">
+                  {section.body}
+                </p>
+              ) : null}
+            </div>
+
+            <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
+              <div>
                 {section.image ? (
-                  <div className="relative mt-8 aspect-[4/5] overflow-hidden border border-[rgba(50,73,83,0.12)]">
+                  <div className="relative h-[320px] overflow-hidden rounded-[18px] border border-[rgba(50,73,83,0.12)] shadow-[0_18px_50px_rgba(50,73,83,0.10)] sm:h-[380px] lg:h-[400px] lg:max-h-[420px]">
                     <Image
                       src={section.image}
                       alt={section.imageAlt ?? "Planet Pooch mobile grooming"}
                       fill
-                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      sizes="(min-width: 1024px) 38vw, 100vw"
                       className="object-cover"
                     />
                   </div>
                 ) : null}
               </div>
 
-              <div className="grid gap-3 lg:content-end">
+              <div className="grid gap-4">
                 {section.items.map((item) => {
                   const Icon = iconMap[item.icon];
                   return (
                     <article
                       key={item.title}
-                      className="flex items-start gap-4 border border-[rgba(50,73,83,0.10)] bg-white/70 p-5"
+                      className="flex items-start gap-4 rounded-[14px] border border-[rgba(50,73,83,0.10)] bg-[#fffdf8] p-6 shadow-[0_12px_30px_rgba(50,73,83,0.05)]"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)]/25">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)]/30">
                         {Icon ? <Icon className="h-5 w-5 stroke-[1.5] text-[var(--pp-main)]" /> : null}
                       </div>
                       <div>
-                        <h3 className="text-[15px] font-bold text-[var(--pp-ink)]">{item.title}</h3>
-                        <p className="mt-1 text-sm leading-6 text-[rgba(47,42,39,0.75)]">{item.description}</p>
+                        <h3 className="text-base font-semibold text-[var(--pp-ink)]">{item.title}</h3>
+                        <p className="mt-1.5 text-sm leading-6 text-[rgba(47,42,39,0.72)]">{item.description}</p>
                       </div>
                     </article>
                   );
@@ -865,14 +868,14 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             </div>
 
             {section.calloutCard ? (
-              <article id={section.calloutCard.id} className="mt-10 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
+              <article id={section.calloutCard.id} className="mx-auto mt-14 flex max-w-6xl flex-col gap-5 rounded-[18px] border border-white/10 bg-[var(--pp-night)] p-6 text-white shadow-[0_18px_50px_rgba(31,39,43,0.16)] sm:p-7 lg:mt-16 lg:flex-row lg:items-center lg:justify-between">
                 <div className="max-w-2xl">
                   {section.calloutCard.eyebrow ? (
                     <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
                       {section.calloutCard.eyebrow}
                     </p>
                   ) : null}
-                  <h3 className="mt-2 text-2xl leading-tight sm:text-3xl">{section.calloutCard.title}</h3>
+                  <h3 className="mt-2 text-2xl leading-tight sm:text-[1.7rem]">{section.calloutCard.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
                 </div>
                 {section.calloutCard.ctas?.length ? (
@@ -884,7 +887,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                         <Tag
                           key={cta.href}
                           href={cta.href}
-                          className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                          className="inline-flex min-h-12 min-w-[178px] items-center justify-center gap-2 rounded-full bg-[var(--pp-mint)] px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
                         >
                           {cta.label}
                           <ArrowRight className="h-4 w-4" />
