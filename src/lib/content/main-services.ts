@@ -44,8 +44,8 @@ export const mainServicePages = {
         calloutCard: {
           id: "pricing",
           eyebrow: "Pricing",
-          title: "See pricing for your area.",
-          body: "Mobile grooming uses one rate card for Nassau County, and a separate rate card for the Hamptons. Choose the option that matches your location or pet type.",
+          title: "See Pricing For Your Area.",
+          body: "",
           ctas: [
             { label: "Nassau Pricing", href: "/nassau-pricing" },
             { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },

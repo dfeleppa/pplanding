@@ -813,6 +813,48 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
+            {section.calloutCard ? (
+              <article id={section.calloutCard.id} className="relative mx-auto mb-12 flex max-w-6xl flex-col items-center gap-8 overflow-hidden rounded-[22px] border border-[rgba(191,232,201,0.38)] bg-[var(--pp-night)] p-7 text-center text-white shadow-[0_28px_80px_rgba(31,39,43,0.28)] ring-1 ring-white/10 before:absolute before:inset-x-7 before:top-0 before:h-1 before:rounded-b-full before:bg-[var(--pp-mint)] before:content-[''] sm:p-9 lg:mb-16">
+                <div className="relative z-10 w-full">
+                  {section.calloutCard.eyebrow ? (
+                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
+                      {section.calloutCard.eyebrow}
+                    </p>
+                  ) : null}
+                  <h3 className="mt-3 text-[2.25rem] leading-[0.98] sm:text-[2.85rem] lg:text-[3.25rem]">
+                    {section.calloutCard.title === "See Pricing For Your Area." ? (
+                      <>
+                        See <span className="text-[var(--pp-mint)]">Pricing</span> For Your Area.
+                      </>
+                    ) : (
+                      section.calloutCard.title
+                    )}
+                  </h3>
+                  {section.calloutCard.body ? (
+                    <p className="mt-4 text-[15px] leading-7 text-white/[0.82]">{section.calloutCard.body}</p>
+                  ) : null}
+                </div>
+                {section.calloutCard.ctas?.length ? (
+                  <div className="relative z-10 flex w-full flex-wrap justify-center gap-3">
+                    {section.calloutCard.ctas.map((cta) => {
+                      const isExternal = cta.href.startsWith("http");
+                      const Tag = isExternal ? "a" : Link;
+                      return (
+                        <Tag
+                          key={cta.href}
+                          href={cta.href}
+                          className="inline-flex min-h-12 min-w-[178px] items-center justify-center gap-2 rounded-full border border-white/20 bg-[var(--pp-mint)] px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] shadow-[0_10px_24px_rgba(159,217,173,0.2)] transition hover:bg-[var(--pp-mint-deep)] hover:shadow-[0_12px_28px_rgba(159,217,173,0.28)]"
+                        >
+                          {cta.label}
+                          <ArrowRight className="h-4 w-4" />
+                        </Tag>
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </article>
+            ) : null}
+
             <div className="mx-auto max-w-3xl text-center">
               {section.eyebrow ? (
                 <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
@@ -867,37 +909,6 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               </div>
             </div>
 
-            {section.calloutCard ? (
-              <article id={section.calloutCard.id} className="mx-auto mt-14 flex max-w-6xl flex-col gap-5 rounded-[18px] border border-white/10 bg-[var(--pp-night)] p-6 text-white shadow-[0_18px_50px_rgba(31,39,43,0.16)] sm:p-7 lg:mt-16 lg:flex-row lg:items-center lg:justify-between">
-                <div className="max-w-2xl">
-                  {section.calloutCard.eyebrow ? (
-                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
-                      {section.calloutCard.eyebrow}
-                    </p>
-                  ) : null}
-                  <h3 className="mt-2 text-2xl leading-tight sm:text-[1.7rem]">{section.calloutCard.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
-                </div>
-                {section.calloutCard.ctas?.length ? (
-                  <div className="flex flex-wrap gap-3 lg:shrink-0 lg:justify-end">
-                    {section.calloutCard.ctas.map((cta) => {
-                      const isExternal = cta.href.startsWith("http");
-                      const Tag = isExternal ? "a" : Link;
-                      return (
-                        <Tag
-                          key={cta.href}
-                          href={cta.href}
-                          className="inline-flex min-h-12 min-w-[178px] items-center justify-center gap-2 rounded-full bg-[var(--pp-mint)] px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-                        >
-                          {cta.label}
-                          <ArrowRight className="h-4 w-4" />
-                        </Tag>
-                      );
-                    })}
-                  </div>
-                ) : null}
-              </article>
-            ) : null}
           </div>
         </section>
       );
