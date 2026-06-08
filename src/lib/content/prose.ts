@@ -76,7 +76,7 @@ export const prosePages = {
           "Planet Pooch Pet Resort Inc.",
           "Address: 1114 Hempstead Turnpike, Franklin Square, NY 11010",
           "Phone: (516) 993-3603",
-          "Email: info@planet-pooch.com",
+          "Email: planetpoochpetservices@gmail.com",
         ],
       },
     ],
@@ -120,7 +120,7 @@ export const prosePages = {
       {
         heading: "5. Help and Support",
         paragraphs: [
-          "If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or contact info@planet-pooch.com or (516) 263-3077.",
+          "If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or contact planetpoochpetservices@gmail.com or (516) 263-3077.",
         ],
       },
       {
@@ -154,7 +154,7 @@ export const prosePages = {
           "Planet Pooch Pet Resort Inc.",
           "Address: 1114 Hempstead Turnpike, Franklin Square, NY 11010",
           "Phone: (516) 993-3603",
-          "Email: info@planet-pooch.com",
+          "Email: planetpoochpetservices@gmail.com",
         ],
       },
     ],
@@ -318,7 +318,7 @@ export const prosePages = {
           "Planet Pooch Pet Resort Inc.",
           "Address: 1114 Hempstead Turnpike, Franklin Square, NY 11010",
           "Phone: (516) 993-3603",
-          "Email: info@planet-pooch.com",
+          "Email: planetpoochpetservices@gmail.com",
         ],
       },
     ],
