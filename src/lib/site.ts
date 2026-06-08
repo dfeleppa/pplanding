@@ -3,7 +3,7 @@ export const SITE = {
   legalName: "Planet Pooch Pet Resort",
   domain: "planet-pooch.com",
   url: "https://planet-pooch.com",
-  email: "info@planet-pooch.com",
+  email: "planetpoochpetservices@gmail.com",
   phone: {
     display: "(516) 993-3603",
     e164: "+15169933603",

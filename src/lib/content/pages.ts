@@ -321,7 +321,7 @@ export const contentPages = {
         type: "list",
         title: "How to apply",
         items: [
-          "Email info@planet-pooch.com with your resume and the role you're interested in",
+          "Email planetpoochpetservices@gmail.com with your resume and the role you're interested in",
           "Or call (516) 993-3603 — ask for the manager on duty",
           "Or stop by 1114 Hempstead Turnpike, Franklin Square, NY 11010",
         ],
@@ -331,7 +331,7 @@ export const contentPages = {
         title: "Follow us first",
         body:
           "See what a day with us looks like before you apply — Instagram, Facebook, and YouTube under @planetpoochpetservices.",
-        cta: { label: "Email us", href: "mailto:info@planet-pooch.com" },
+        cta: { label: "Email us", href: "mailto:planetpoochpetservices@gmail.com" },
       },
     ],
   },
@@ -364,7 +364,7 @@ export const contentPages = {
         title: "Run a pet business and want to partner?",
         body:
           "Veterinary offices, pet stores, rescues, and pet service providers — reach out about being featured on our resource page.",
-        cta: { label: "Email us", href: "mailto:info@planet-pooch.com" },
+        cta: { label: "Email us", href: "mailto:planetpoochpetservices@gmail.com" },
       },
     ],
   },
@@ -388,7 +388,7 @@ export const contentPages = {
       {
         type: "callout",
         title: "Need us sooner?",
-        body: "Call us directly at (516) 993-3603 or email info@planet-pooch.com.",
+        body: "Call us directly at (516) 993-3603 or email planetpoochpetservices@gmail.com.",
         cta: { label: "Back to home", href: "/" },
       },
     ],
@@ -428,7 +428,7 @@ export const contentPages = {
     hero: "Reach the Planet Pooch team by phone, email, or in person.",
     metaTitle: "Contact Planet Pooch Pet Resort",
     metaDescription:
-      "Contact Planet Pooch Pet Resort in Franklin Square, NY. Call (516) 993-3603 or email info@planet-pooch.com to set up your dog's first visit.",
+      "Contact Planet Pooch Pet Resort in Franklin Square, NY. Call (516) 993-3603 or email planetpoochpetservices@gmail.com to set up your dog's first visit.",
     sections: [
       {
         type: "callout",
