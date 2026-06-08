@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import {
-  ArrowRight,
   CalendarDays,
   Camera,
   Heart,
@@ -19,7 +18,7 @@ import { SITE } from "../../lib/site";
 import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
 import { StickyMobileCta } from "../sticky-mobile-cta";
-import { LeadForm } from "../welcome/lead-form";
+import { BoardingForm } from "./boarding-form";
 
 export const metadata: Metadata = {
   title:
@@ -517,7 +516,7 @@ export default function SummerBoardingPage() {
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-[rgba(50,73,83,0.15)] bg-white shadow-[0_16px_40px_rgba(50,73,83,0.12)]">
-            <LeadForm />
+            <BoardingForm />
           </div>
         </div>
       </section>
