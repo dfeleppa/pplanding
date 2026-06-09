@@ -16,12 +16,12 @@ export function BoardingForm() {
         data-activation-type="alwaysActivated"
         data-deactivation-type="neverDeactivate"
         data-form-name="Boarding"
-        data-height="1656"
+        data-height="1261"
         data-layout-iframe-id={`inline-${FORM_ID}`}
         data-form-id={FORM_ID}
         style={{
           width: "100%",
-          height: "1656px",
+          height: "1261px",
           border: "none",
           display: "block",
           background: "white",
