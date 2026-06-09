@@ -15,7 +15,7 @@ import { SITE } from "../../lib/site";
 import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
 import { StickyMobileCta } from "../sticky-mobile-cta";
-import { BoardingFormPopup } from "./boarding-form";
+import { BoardingFormModal } from "./boarding-form";
 
 export const metadata: Metadata = {
   title: "Summer Dog Boarding Long Island | Planet Pooch Pet Resort",
@@ -145,14 +145,7 @@ export default function SummerBoardingPage() {
 
               <div className="lg:border-l lg:border-white/20 lg:pl-10">
                 <div className="flex flex-col items-start gap-4">
-                  <a
-                    href="https://api.leadconnectorhq.com/widget/form/EOJK996mQLMFoTTvYhRS"
-                    data-track="hero-reserve-spot"
-                    className="pp-cta min-h-[52px] !px-7"
-                  >
-                    Reserve Your Spot
-                    <span className="pp-cta-arrow" aria-hidden />
-                  </a>
+                  <BoardingFormModal className="pp-cta min-h-[52px] !px-7" />
                   <a
                     href={SITE.phone.href}
                     data-track="phone-click"
@@ -228,6 +221,17 @@ export default function SummerBoardingPage() {
                 </div>
               );
             })}
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="/dog-boarding/"
+                  data-track="pricing-more-info"
+                  className="pp-cta-ghost-dark min-h-[48px] !px-6"
+                >
+                  Pricing & More Info
+                  <span className="pp-cta-arrow" aria-hidden />
+                </a>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl">
@@ -341,14 +345,7 @@ export default function SummerBoardingPage() {
             much fun at Planet Pooch. Reserve summer boarding today.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="https://api.leadconnectorhq.com/widget/form/EOJK996mQLMFoTTvYhRS"
-              data-track="final-reserve-spot"
-              className="pp-cta min-h-[52px] !px-7"
-            >
-              Reserve Your Spot
-              <span className="pp-cta-arrow" aria-hidden />
-            </a>
+            <BoardingFormModal className="pp-cta min-h-[52px] !px-7" />
             <a
               href={SITE.phone.href}
               data-track="phone-click"
@@ -363,9 +360,7 @@ export default function SummerBoardingPage() {
 
       <SiteFooter />
 
-      <StickyMobileCta ctaHref="https://api.leadconnectorhq.com/widget/form/EOJK996mQLMFoTTvYhRS" ctaLabel="Reserve Your Spot" />
-
-      <BoardingFormPopup />
+      <StickyMobileCta ctaHref="/dog-boarding/" ctaLabel="Check Availability" />
     </main>
   );
 }
