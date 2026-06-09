@@ -111,52 +111,52 @@ export default function SummerBoardingPage() {
           <SiteHeader />
 
           <div className="pb-16 pt-10 lg:pb-20 lg:pt-16">
-            {/* Headline + trust signals */}
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-mint)]/90">
-                Summer 2026 — Spots Are Limited
-              </p>
-              <h1 className="mt-4 text-white">
-                Summer boarding your dog will{" "}
-                <span className="text-[var(--pp-mint)]/80">
-                  actually enjoy.
-                </span>
-              </h1>
-              <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
-                Climate-controlled suites, daily enrichment, and 24/7
-                supervision at our Franklin Square resort.
-              </p>
+            <div className="grid gap-10 lg:grid-cols-[0.7fr_1fr] lg:items-start lg:gap-10">
+              {/* Left — copy (narrower) */}
+              <div className="lg:pt-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-mint)]/90">
+                  Summer 2026 — Spots Are Limited
+                </p>
+                <h1 className="mt-4 text-white">
+                  Summer boarding your dog will{" "}
+                  <span className="text-[var(--pp-mint)]/80">
+                    actually enjoy.
+                  </span>
+                </h1>
+                <p className="mt-5 text-lg leading-relaxed text-white/80 sm:text-xl">
+                  Climate-controlled suites, daily enrichment, and 24/7
+                  supervision at our Franklin Square resort.
+                </p>
 
-              <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/80">
-                <span className="flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]"
-                    />
-                  ))}
-                </span>
-                <span>
-                  <strong className="font-semibold text-white">4.9</strong> from
-                  700+ reviews on Google
-                </span>
+                <div className="mt-6 flex items-center gap-2 text-sm text-white/80">
+                  <span className="flex items-center gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]"
+                      />
+                    ))}
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-white">4.9</strong> from
+                    700+ reviews on Google
+                  </span>
+                </div>
+
+                <a
+                  href={SITE.phone.href}
+                  data-track="phone-click"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+                >
+                  <Phone className="h-4 w-4" aria-hidden />
+                  Or call {SITE.phone.display}
+                </a>
               </div>
-            </div>
 
-            {/* Form — full width, capped at a comfortable max */}
-            <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl border border-white/15 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.3)]">
-              <BoardingForm />
-            </div>
-
-            <div className="mt-6 text-center">
-              <a
-                href={SITE.phone.href}
-                data-track="phone-click"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
-              >
-                <Phone className="h-4 w-4" aria-hidden />
-                Or call {SITE.phone.display}
-              </a>
+              {/* Right — form (wider) */}
+              <div className="overflow-hidden rounded-2xl border border-white/15 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.3)]">
+                <BoardingForm />
+              </div>
             </div>
           </div>
         </div>
