@@ -227,7 +227,7 @@ export default function SummerBoardingPage() {
                 <a
                   href="/dog-boarding/"
                   data-track="pricing-more-info"
-                  className="pp-cta-ghost-dark min-h-[48px] !px-6"
+                  className="pp-cta min-h-[48px] !px-6"
                 >
                   Pricing & More Info
                   <span className="pp-cta-arrow" aria-hidden />
