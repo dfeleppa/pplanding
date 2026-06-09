@@ -190,16 +190,26 @@ export default function SummerBoardingPage() {
       {/* ── Section 1: Why Planet Pooch ── */}
       <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
-              Why Planet Pooch
-            </p>
-            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-              Not all boarding is created equal.
-            </h2>
-          </div>
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div className="overflow-hidden rounded-2xl">
+              <Image
+                src="/boarding/moon.JPG"
+                alt="Dogs enjoying their boarding stay at Planet Pooch"
+                width={800}
+                height={600}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+                Why Planet Pooch
+              </p>
+              <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
+                Not all boarding is created equal.
+              </h2>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {whyPlanetPooch.map((item) => {
               const Icon = item.icon;
               return (
@@ -224,6 +234,8 @@ export default function SummerBoardingPage() {
                 </div>
               );
             })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
