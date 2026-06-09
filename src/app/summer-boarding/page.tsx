@@ -44,7 +44,7 @@ const whyPlanetPooch = [
   {
     icon: Users,
     title: "24/7 On-Site Supervision",
-    copy: "Your dog is never left alone overnight.",
+    copy: "Your dog is never left alone overnight. 24/7 camera access so you can check in anytime.",
   },
   {
     icon: Sun,
