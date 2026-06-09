@@ -111,52 +111,56 @@ export default function SummerBoardingPage() {
           <SiteHeader />
 
           <div className="pb-28 pt-14 lg:pb-36 lg:pt-20">
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-mint)]/90">
-                Summer 2026 — Spots Are Limited
-              </p>
-              <h1 className="mt-4 text-white">
-                Summer boarding your dog will{" "}
-                <span className="text-[var(--pp-mint)]/80">
-                  actually enjoy.
-                </span>
-              </h1>
-              <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
-                Climate-controlled suites, daily enrichment, and 24/7
-                supervision at our Franklin Square resort.
-              </p>
+            <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-mint)]/90">
+                  Summer 2026 — Spots Are Limited
+                </p>
+                <h1 className="mt-4 text-white">
+                  Summer boarding your dog will{" "}
+                  <span className="text-[var(--pp-mint)]/80">
+                    actually enjoy.
+                  </span>
+                </h1>
+                <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
+                  Climate-controlled suites, daily enrichment, and 24/7
+                  supervision at our Franklin Square resort.
+                </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href="https://api.leadconnectorhq.com/widget/form/EOJK996mQLMFoTTvYhRS"
-                  data-track="hero-reserve-spot"
-                  className="pp-cta min-h-[52px] !px-7"
-                >
-                  Reserve Your Spot
-                  <span className="pp-cta-arrow" aria-hidden />
-                </a>
-                <a
-                  href={SITE.phone.href}
-                  data-track="phone-click"
-                  className="pp-cta-ghost min-h-[52px] !px-7"
-                >
-                  Call {SITE.phone.display}
-                </a>
+                <div className="mt-6 flex items-center gap-2 text-sm text-white/80">
+                  <span className="flex items-center gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]"
+                      />
+                    ))}
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-white">4.9</strong> from
+                    700+ reviews on Google
+                  </span>
+                </div>
               </div>
 
-              <div className="mt-6 flex items-center gap-2 text-sm text-white/80">
-                <span className="flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]"
-                    />
-                  ))}
-                </span>
-                <span>
-                  <strong className="font-semibold text-white">4.9</strong> from
-                  700+ reviews on Google
-                </span>
+              <div className="lg:border-l lg:border-white/20 lg:pl-10">
+                <div className="flex flex-col items-start gap-4">
+                  <a
+                    href="https://api.leadconnectorhq.com/widget/form/EOJK996mQLMFoTTvYhRS"
+                    data-track="hero-reserve-spot"
+                    className="pp-cta min-h-[52px] !px-7"
+                  >
+                    Reserve Your Spot
+                    <span className="pp-cta-arrow" aria-hidden />
+                  </a>
+                  <a
+                    href={SITE.phone.href}
+                    data-track="phone-click"
+                    className="pp-cta-ghost min-h-[52px] !px-7"
+                  >
+                    Call {SITE.phone.display}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -191,16 +195,6 @@ export default function SummerBoardingPage() {
       <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div className="overflow-hidden rounded-2xl">
-              <Image
-                src="/boarding/moon.JPG"
-                alt="Dogs enjoying their boarding stay at Planet Pooch"
-                width={800}
-                height={600}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="h-auto w-full object-cover"
-              />
-            </div>
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
                 Why Planet Pooch
@@ -235,6 +229,16 @@ export default function SummerBoardingPage() {
               );
             })}
               </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl">
+              <Image
+                src="/boarding/moon.JPG"
+                alt="Dogs enjoying their boarding stay at Planet Pooch"
+                width={800}
+                height={600}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-auto w-full object-cover"
+              />
             </div>
           </div>
         </div>
