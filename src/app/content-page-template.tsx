@@ -405,7 +405,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
     case "comparison":
       return (
-        <section className={`${tone} ${sectionPadding}`}>
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className="overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-white/65">
