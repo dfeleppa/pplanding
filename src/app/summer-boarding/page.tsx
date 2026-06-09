@@ -232,7 +232,7 @@ export default function SummerBoardingPage() {
             </div>
             <div className="overflow-hidden rounded-2xl">
               <Image
-                src="/boarding/moon.JPG"
+                src="/boarding/moon_sq.JPG"
                 alt="Dogs enjoying their boarding stay at Planet Pooch"
                 width={800}
                 height={600}
