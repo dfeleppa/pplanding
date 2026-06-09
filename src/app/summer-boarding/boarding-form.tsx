@@ -16,10 +16,10 @@ export function BoardingFormPopup() {
         data-activation-type="alwaysActivated"
         data-deactivation-type="neverDeactivate"
         data-form-name="Boarding"
-        data-height="1169"
+        data-height="1261"
         data-layout-iframe-id={`popup-${FORM_ID}`}
         data-form-id={FORM_ID}
-        data-modal-height="500"
+        data-modal-height="1261"
         style={{
           display: "none",
           width: "100%",
