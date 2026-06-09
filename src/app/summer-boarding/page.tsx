@@ -43,8 +43,8 @@ const whyPlanetPooch = [
   },
   {
     icon: Users,
-    title: "24/7 On-Site Supervision",
-    copy: "Your dog is never left alone overnight. 24/7 camera access so you can check in anytime.",
+    title: "1:1 Boarding Available",
+    copy: "Dedicated one-on-one time with staff for dogs who prefer a quieter pace or need individualized attention throughout their stay.",
   },
   {
     icon: Sun,
