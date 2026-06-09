@@ -580,6 +580,7 @@ export const mainServicePages = {
         title: "A tail-wagging day at Planet Pooch",
         image: "/boarding/day-in-the-life.png",
         imageAlt: "Planet Pooch boarding accommodations",
+        imagePosition: "left",
         items: [
           {
             time: "6:00 AM",

@@ -104,6 +104,7 @@ export type ContentSection =
       intro?: string;
       image?: string | StaticImageData;
       imageAlt?: string;
+      imagePosition?: "top" | "left";
       items: Array<{
         time: string;
         label: string;

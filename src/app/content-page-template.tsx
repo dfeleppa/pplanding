@@ -499,15 +499,45 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         </section>
       );
 
-    case "timeline":
+    case "timeline": {
+      const sideImage = section.imagePosition === "left" && section.image;
+      const topImage = section.image && !sideImage;
+      const timelineList = (
+        <ol className={`grid gap-5 ${section.items.length > 1 && !sideImage ? "lg:grid-cols-2" : ""}`}>
+          {section.items.map((item) => (
+            <li
+              key={`${item.time}-${item.label}`}
+              className="flex flex-col border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+            >
+              <div className="flex items-baseline gap-3">
+                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
+                  {item.time}
+                </span>
+              </div>
+              <p className="mt-3 text-xl font-semibold text-[var(--pp-ink)]">{item.label}</p>
+              <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.body}</p>
+              {item.cta ? (
+                <Link
+                  href={item.cta.href}
+                  className="mt-5 inline-flex w-fit items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                >
+                  {item.cta.label}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              ) : null}
+            </li>
+          ))}
+        </ol>
+      );
+
       return (
         <section className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            {section.image ? (
+            {topImage ? (
               <div className="relative mb-8 aspect-[21/9] overflow-hidden border border-[rgba(50,73,83,0.12)]">
                 <Image
-                  src={section.image}
+                  src={section.image!}
                   alt={section.imageAlt ?? section.title ?? "Planet Pooch"}
                   fill
                   sizes="(min-width: 1280px) 1280px, 100vw"
@@ -515,34 +545,26 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 />
               </div>
             ) : null}
-            <ol className={`grid gap-5 ${section.items.length > 1 ? "lg:grid-cols-2" : ""}`}>
-              {section.items.map((item) => (
-                <li
-                  key={`${item.time}-${item.label}`}
-                  className="flex flex-col border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
-                >
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
-                      {item.time}
-                    </span>
-                  </div>
-                  <p className="mt-3 text-xl font-semibold text-[var(--pp-ink)]">{item.label}</p>
-                  <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.body}</p>
-                  {item.cta ? (
-                    <Link
-                      href={item.cta.href}
-                      className="mt-5 inline-flex w-fit items-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-                    >
-                      {item.cta.label}
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  ) : null}
-                </li>
-              ))}
-            </ol>
+            {sideImage ? (
+              <div className="grid gap-8 lg:grid-cols-2">
+                <div className="relative min-h-[400px] overflow-hidden border border-[rgba(50,73,83,0.12)] lg:sticky lg:top-8 lg:self-start">
+                  <Image
+                    src={section.image!}
+                    alt={section.imageAlt ?? section.title ?? "Planet Pooch"}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                {timelineList}
+              </div>
+            ) : (
+              timelineList
+            )}
           </div>
         </section>
       );
+    }
 
     case "faq":
       return (
