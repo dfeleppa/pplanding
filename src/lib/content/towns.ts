@@ -476,6 +476,125 @@ export const towns = {
     ],
     distanceFromResort: "About 6 minutes from our Franklin Square resort",
   },
+  "daycare-boarding-great-neck-ny": {
+    slug: "daycare-boarding-great-neck-ny",
+    service: "daycare-boarding",
+    town: "Great Neck",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Great Neck NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Great Neck, NY families — a short drive from the peninsula villages to our Franklin Square resort.",
+    localIntro:
+      "Great Neck is a peninsula of villages — Great Neck Estates, Great Neck Plaza, Russell Gardens, and Lake Success — stretching into Manhasset Bay. The LIRR express to Penn makes it a commuter hub, and daycare fits that rhythm perfectly: drop off on the way to the station, pick up on the way home.",
+    localFeatures: [
+      "Convenient for LIRR commuters heading to and from Manhattan",
+      "Coverage across all the Great Neck peninsula villages",
+      "Many Great Neck families combine regular daycare with holiday boarding",
+    ],
+    distanceFromResort: "About 20 minutes from our Franklin Square resort",
+  },
+  "daycare-boarding-kings-point-ny": {
+    slug: "daycare-boarding-kings-point-ny",
+    service: "daycare-boarding",
+    town: "Kings Point",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Kings Point NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Kings Point, NY families — from the Gold Coast waterfront to our Franklin Square resort.",
+    localIntro:
+      "Kings Point sits at the northern tip of the Great Neck peninsula, a Gold Coast village of waterfront estates, the US Merchant Marine Academy, and quiet, winding roads. Dogs here often have large yards but fewer neighborhood playmates — daycare gives them the socialization their secluded lots can't.",
+    localFeatures: [
+      "Daycare fills the socialization gap for estate-lot dogs",
+      "Boarding works well for travel-heavy Kings Point households",
+      "Easy drive south through Great Neck to our resort",
+    ],
+    distanceFromResort: "About 25 minutes from our Franklin Square resort",
+  },
+  "daycare-boarding-port-washington-ny": {
+    slug: "daycare-boarding-port-washington-ny",
+    service: "daycare-boarding",
+    town: "Port Washington",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Port Washington NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Port Washington, NY families — from the Manhasset Bay peninsula to our Franklin Square resort.",
+    localIntro:
+      "Port Washington occupies its own peninsula on Manhasset Bay, with a walkable village near the LIRR station and residential neighborhoods stretching out toward Sands Point and Baxter Estates. Many Port Washington dogs are active bay-walkers who benefit from the structured play and socialization daycare provides.",
+    localFeatures: [
+      "Fits the LIRR commuter schedule — drop off, train, pick up",
+      "Active bay-walking dogs get structured play and rest periods",
+      "Boarding provides peace of mind for weekend sailing and travel",
+    ],
+    distanceFromResort: "About 25 minutes from our Franklin Square resort",
+  },
+  "daycare-boarding-manhasset-ny": {
+    slug: "daycare-boarding-manhasset-ny",
+    service: "daycare-boarding",
+    town: "Manhasset",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Manhasset NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Manhasset, NY families — from the Gold Coast North Shore to our Franklin Square resort.",
+    localIntro:
+      "Manhasset is a Gold Coast North Shore community covering Plandome, Strathmore, Munsey Park, and the Miracle Mile corridor along Northern Boulevard. Busy professional households here value the predictable daycare rhythm — drop off on the way to work, pick up on the way home — and boarding when travel takes them away for a few days.",
+    localFeatures: [
+      "Predictable schedule for Miracle Mile and Northern Boulevard commuters",
+      "Plandome and Strathmore families use daycare and boarding regularly",
+      "Common breeds we host: doodles, retrievers, and cavaliers",
+    ],
+    distanceFromResort: "About 22 minutes from our Franklin Square resort",
+  },
+  "daycare-boarding-roslyn-ny": {
+    slug: "daycare-boarding-roslyn-ny",
+    service: "daycare-boarding",
+    town: "Roslyn",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Roslyn NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Roslyn, NY families — from the historic North Shore village to our Franklin Square resort.",
+    localIntro:
+      "Roslyn is a historic North Shore village wrapped around Roslyn Harbor and the duck pond, with residential neighborhoods extending into Roslyn Heights and Roslyn Estates. Many Roslyn families use daycare as a weekly routine and boarding for holiday weekends — their dogs already know the staff and the space.",
+    localFeatures: [
+      "Covers Roslyn village, Roslyn Heights, and Roslyn Estates",
+      "Daycare-to-boarding transition is seamless — dogs know the routine",
+      "Easy drive south to our Franklin Square resort",
+    ],
+    distanceFromResort: "About 20 minutes from our Franklin Square resort",
+  },
+  "daycare-boarding-sands-point-ny": {
+    slug: "daycare-boarding-sands-point-ny",
+    service: "daycare-boarding",
+    town: "Sands Point",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Sands Point NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Sands Point, NY families — from the Gold Coast waterfront to our Franklin Square resort.",
+    localIntro:
+      "Sands Point is a secluded Gold Coast village at the tip of the Port Washington peninsula, with large waterfront estates, the Sands Point Preserve, and very few commercial services nearby. For Sands Point dogs, daycare provides the socialization and stimulation that their quiet, spacious properties don't — and boarding means trusted overnight care when families travel.",
+    localFeatures: [
+      "Socialization for dogs on large, secluded waterfront estates",
+      "Boarding trusted by families who travel frequently",
+      "Drive through Port Washington to reach our resort",
+    ],
+    distanceFromResort: "About 30 minutes from our Franklin Square resort",
+  },
+  "daycare-boarding-brookville-ny": {
+    slug: "daycare-boarding-brookville-ny",
+    service: "daycare-boarding",
+    town: "Brookville",
+    region: "Nassau County",
+    metaTitle: "Dog Daycare & Boarding Brookville NY | Planet Pooch",
+    metaDescription:
+      "Dog daycare and overnight boarding for Brookville, NY families — from the Gold Coast estate country to our Franklin Square resort.",
+    localIntro:
+      "Brookville is classic Gold Coast estate country — large wooded lots, long private drives, and the kind of quiet, rural feel that's rare this close to the city. Dogs here have room to roam but often lack regular playmates, so daycare gives them the social time and structured activity their properties can't replicate.",
+    localFeatures: [
+      "Daycare provides socialization for estate-lot dogs",
+      "Especially practical for multi-dog households",
+      "Boarding pairs well with in-house grooming for a fresh pickup",
+    ],
+    distanceFromResort: "About 25 minutes from our Franklin Square resort",
+  },
 
   // ---- In-house grooming — town pages ----
   "dog-grooming-manhasset-ny": {
