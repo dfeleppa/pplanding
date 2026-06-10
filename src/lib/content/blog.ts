@@ -25,6 +25,77 @@ export type BlogPost = {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "planning-summer-travel-how-to-give-your-dog-a-getaway-too": {
+    slug: "planning-summer-travel-how-to-give-your-dog-a-getaway-too",
+    title: "Planning Summer Travel? Here's How to Give Your Dog a Getaway Too",
+    metaTitle: "Planning Summer Travel? Give Your Dog a Getaway Too | Planet Pooch Blog",
+    metaDescription:
+      "Summer boarding spots fill up fast on Long Island. Here's how to choose the right place, plan vaccinations ahead, and make drop-off easy at Planet Pooch.",
+    hasFullContent: true,
+    datePublished: "2026-06-10",
+    intro:
+      "Summer on Long Island has a rhythm to it. Beach weekends, family trips upstate, a wedding in another state, that long-awaited week away. The calendar fills up fast — and if you're a dog owner, every one of those plans comes with the same quiet question in the back of your mind: what about the dog?",
+    sections: [
+      {
+        paragraphs: [
+          "It's a bigger question than people give it credit for. Leaving your dog somewhere isn't a logistics problem to solve at the last minute. It's a decision about who you trust with a member of your family. And the truth most boarding ads won't tell you is this: not all boarding is equal. It's the reason we built Planet Pooch Pet Resort in Franklin Square the way we did — as a place we'd actually feel good leaving our own dogs.",
+        ],
+      },
+      {
+        heading: "Summer Spots Fill Up Faster Than People Expect",
+        paragraphs: [
+          "Here's the part that catches a lot of owners off guard. The weeks around the 4th of July, the back half of August, and Labor Day are the busiest stretch of the entire year for boarding. Everyone is traveling at the same time, which means the best facilities book up first — sometimes weeks in advance.",
+          "If you already know you're traveling this summer, the single best thing you can do for your dog is reserve early. Waiting until the week before often means scrambling, settling for whoever has an opening, or stitching together a patchwork of neighbors and pet sitters who may or may not show up. Booking ahead means your dog has a confirmed suite at a place you actually chose — not a fallback. At Planet Pooch, our summer suites move quickly, so the earlier you're on our calendar, the better.",
+        ],
+      },
+      {
+        heading: "What “Good” Boarding Actually Looks Like",
+        paragraphs: [
+          "When people picture boarding, they sometimes imagine a row of kennels and a dog waiting out the week alone. That image is exactly why so many owners feel guilty leaving — and it's exactly what good boarding isn't. Here's how we think about it at Planet Pooch:",
+        ],
+        bullets: [
+          "Real engagement, not just containment. A dog who spends the day playing, getting enrichment, and interacting with people and other dogs comes home happy and tired — not stressed and pent up. Our boarding guests aren't sitting out the week; their days are built around supervised play, enrichment sessions, and real human attention. Ask any facility what a typical day actually looks like, hour by hour. The answer tells you everything.",
+          "Clean, controlled environments. Cleanliness isn't a detail; it's the whole foundation. We use pet-safe disinfectants and follow strict cleaning protocols between every use, because the dogs are in those spaces all day. If a place is vague about how they handle sanitation, that's a signal.",
+          "Health requirements that protect every dog. A facility that requires up-to-date vaccinations is protecting your dog, not creating busywork. It means the dogs your pup will be around are held to the same standard — which is exactly why we require them too.",
+          "People who treat it like more than a job. You can feel the difference between a team that's counting down to close and a team that genuinely lights up around dogs. The second kind is what we hire for, and it's what you want.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Because Planet Pooch is a full-service resort — boarding, daycare, grooming, and training all under one roof — your dog can come home not just happy, but freshly bathed and ready to go. A lot of our boarding families add a groom to the end of a stay so their pup walks back through the door looking and smelling their best.",
+        ],
+      },
+      {
+        heading: "A Quick Word on Vaccinations — Plan Ahead Here",
+        paragraphs: [
+          "This is the one piece of summer prep that trips owners up most, so it's worth saying plainly: like most quality facilities, we require a Bordetella (kennel cough) vaccine, and it needs to be administered at least 14 days before your dog's stay.",
+          "That two-week window matters. If your trip is three weeks out and your dog isn't current, you still have time — but if you wait until a few days before, you'll be stuck. Check your dog's records now, and if anything's expired or coming due, get it handled early. Your vet's summer schedule fills up too.",
+        ],
+      },
+      {
+        heading: "A Little Prep Makes Drop-Off Easy",
+        paragraphs: [
+          "To make the whole thing smooth when the day comes:",
+        ],
+        bullets: [
+          "Book early — especially for holiday weekends.",
+          "Confirm vaccinations are current, with Bordetella at least 14 days ahead.",
+          "Pack their food if your dog has a sensitive stomach or a specific diet; consistency keeps tummies happy.",
+          "Bring a familiar comfort item — a blanket or toy that smells like home can ease the transition.",
+          "Share the details that matter — medications, quirks, fears, favorite games. The more our team knows, the better we can care for your dog.",
+        ],
+      },
+      {
+        heading: "Travel With Peace of Mind This Summer",
+        paragraphs: [
+          "You've earned your time off. Your dog shouldn't be the reason you spend the whole trip worrying. The right boarding choice turns “I hope they're okay” into “I know they're having a blast” — and that's the difference between a vacation you half-enjoy and one you actually relax into.",
+          "At Planet Pooch Pet Resort, located at 1114 Hempstead Turnpike in Franklin Square, we treat summer boarding the way we'd want our own dogs treated: active days, clean spaces, attentive people, and a whole lot of genuine love for the dogs in our care. We serve families across Nassau County and Long Island — and summer suites go quickly.",
+          "Planning travel this summer? Reserve your dog's stay at Planet Pooch early — book online or give us a call, and let's get them on the calendar before the spots are gone.",
+        ],
+      },
+    ],
+  },
+
   "summer-boarding-at-planet-pooch-why-booking-early-matters-more-than-ever": {
     slug: "summer-boarding-at-planet-pooch-why-booking-early-matters-more-than-ever",
     title: "Summer Boarding at Planet Pooch Pet Resort: Why Booking Early Matters More Than Ever",
