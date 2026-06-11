@@ -74,6 +74,7 @@ function AreasWeServe() {
 export default function ContactPage() {
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="relative min-h-[420px] overflow-hidden bg-[var(--pp-night)] text-white">

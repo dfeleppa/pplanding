@@ -23,8 +23,8 @@ export const mainServicePages = {
     image: "/Grooming.png",
     serviceType: "Mobile Pet Grooming",
     heroCtas: {
-      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book Now", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
       tertiary: { label: "View Pricing", href: "#pricing" },
     },
     sections: [
@@ -62,7 +62,7 @@ export const mainServicePages = {
           { icon: "Scissors", title: "Coat & Cut", description: "Breed-appropriate haircut, brushing, fluffing, and hand blow dry." },
           { icon: "Sparkles", title: "Finishing Touches", description: "Nail trim and grind, bow or bandana, and a polished send-home look." },
         ],
-        cta: { label: "Book Mobile Grooming", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Mobile Grooming", href: "/book/" },
       },
       {
         type: "checklist",
@@ -131,7 +131,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Ready to book?",
         body: "Tell us your pet's coat, sensitivities, and preferred haircut style.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
     ],
   },
@@ -148,8 +148,8 @@ export const mainServicePages = {
     image: "/Grooming.png",
     serviceType: "Dog Grooming",
     heroCtas: {
-      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book Now", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
       tertiary: { label: "View Pricing", href: "#pricing" },
     },
     sections: [
@@ -172,7 +172,7 @@ export const mainServicePages = {
         calloutCard: {
           title: "Already booked daycare or boarding?",
           body: "Call us anytime to add a groom to an upcoming stay — we'll schedule the appointment around their daycare or boarding day.",
-          cta: { label: "Contact us", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+          cta: { label: "Contact us", href: "/book/" },
         },
       },
       {
@@ -273,8 +273,8 @@ export const mainServicePages = {
     image: "/Daycare.png",
     serviceType: "Dog Daycare",
     heroCtas: {
-      primary: { label: "Book your Free 1st Day!", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book your Free 1st Day!", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -315,7 +315,7 @@ export const mainServicePages = {
             label: "Free temperament evaluation",
             body:
               "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
-            cta: { label: "Book your free evaluation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+            cta: { label: "Book your free evaluation", href: "/book/" },
           },
         ],
       },
@@ -384,7 +384,7 @@ export const mainServicePages = {
         title: "Puppy Socialization Program",
         body:
           "$79 per session, three one-hour sessions. Supervised play with dogs of various sizes, enrichment activities (snuffle mats, frozen Kongs, treat hide-and-seek), outdoor potty breaks, and resource-guarding guidance. Requires Rabies vaccine plus current vaccination paperwork. Graduates receive a Certificate of Completion and become eligible for Group Play daycare.",
-        cta: { label: "Book a consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book a consultation", href: "/book/" },
       },
       {
         type: "faq",
@@ -417,7 +417,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Book your dog's first visit",
         body: "Reach us by phone or email to schedule your free meet-and-greet.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
       {
         type: "townLinks",
@@ -441,8 +441,8 @@ export const mainServicePages = {
     image: "/boarding/boarding_hero.jpg",
     serviceType: "Dog Boarding",
     heroCtas: {
-      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book Now", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -622,7 +622,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Reserve your dog's stay",
         body: "Tell us about their routine, comfort needs, and feeding schedule.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
       {
         type: "townLinks",
@@ -646,8 +646,8 @@ export const mainServicePages = {
     image: "/tour-space.jpg",
     serviceType: "Dog Training",
     heroCtas: {
-      primary: { label: "Book FREE Consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book FREE Consultation", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -782,7 +782,7 @@ export const mainServicePages = {
         title: "Free 20-minute consultation",
         body:
           "Every dog starts with a free 20-minute consultation so we can understand their age, temperament, and your goals before training begins.",
-        cta: { label: "Book a consultation", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book a consultation", href: "/book/" },
       },
     ],
   },
@@ -799,8 +799,8 @@ export const mainServicePages = {
     image: "/enrichment_hero.jpg",
     serviceType: "Dog Enrichment Activities",
     heroCtas: {
-      primary: { label: "Get Started", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Get Started", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -901,7 +901,7 @@ export const mainServicePages = {
         title: "Book a one-on-one enrichment day",
         body:
           "Tell us about your dog's energy level, sensitivities, and what kinds of activities engage them best.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
     ],
   },
@@ -917,8 +917,8 @@ export const mainServicePages = {
       "Signature events at Planet Pooch in Franklin Square — birthday parties, Bark in the Park field trips, Photos with Santa, and themed daycare days throughout the year.",
     image: "/event_hero.jpg",
     heroCtas: {
-      primary: { label: "Book an Event", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book an Event", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -984,7 +984,7 @@ export const mainServicePages = {
         type: "callout",
         title: "Want to host or join an event?",
         body: "Call us about availability, dates, and how to book your dog into a themed day or party.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
     ],
   },

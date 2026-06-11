@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { headerNavItems } from "../lib/nav";
+import { SITE } from "../lib/site";
 import { BookNowModal } from "./book-now-modal";
 
 type MobileMenuProps = {
@@ -94,6 +95,14 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
             </nav>
 
             <div className="mt-auto flex flex-col gap-3 pt-8">
+              <a
+                href={SITE.phone.href}
+                data-track="phone-click"
+                className="inline-flex items-center justify-center gap-2 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/85 transition hover:text-white"
+              >
+                <Phone className="h-4 w-4" aria-hidden />
+                Call {SITE.phone.display}
+              </a>
               <Link
                 href="/contact/"
                 onClick={() => setOpen(false)}

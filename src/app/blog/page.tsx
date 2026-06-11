@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { blogPosts } from "../../lib/content/blog";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
+import { StickyMobileCta } from "../sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -24,6 +25,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog/" },
 };
 
+const formatDate = (iso: string) =>
+  new Date(`${iso}T12:00:00`).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
 export default function BlogIndexPage() {
   const posts = Object.values(blogPosts);
   const featured = posts.filter((p) => p.hasFullContent);
@@ -31,6 +39,7 @@ export default function BlogIndexPage() {
 
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
@@ -69,9 +78,16 @@ export default function BlogIndexPage() {
                 href={`/${p.slug}`}
                 className="group flex h-full flex-col justify-between border border-[rgba(50,73,83,0.12)] bg-[var(--pp-cream)] p-6 transition hover:bg-white/85"
               >
-                <h3 className="text-xl font-semibold leading-snug text-[var(--pp-ink)]">
-                  {p.title}
-                </h3>
+                <div>
+                  {p.datePublished ? (
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--pp-main)]/65">
+                      {formatDate(p.datePublished)}
+                    </p>
+                  ) : null}
+                  <h3 className="mt-2 text-xl font-semibold leading-snug text-[var(--pp-ink)]">
+                    {p.title}
+                  </h3>
+                </div>
                 <span className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)] transition group-hover:translate-x-1">
                   Read article
                   <ArrowRight className="h-4 w-4" />
@@ -110,6 +126,8 @@ export default function BlogIndexPage() {
       </section>
 
       <SiteFooter />
+
+      <StickyMobileCta />
     </main>
   );
 }

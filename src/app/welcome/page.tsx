@@ -15,12 +15,12 @@ import { SITE } from "../../lib/site";
 import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
 import { StickyMobileCta } from "../sticky-mobile-cta";
-import { LeadForm } from "./lead-form";
+import { LeadForm } from "../lead-form";
 
 export const metadata: Metadata = {
   title: "Welcome to Planet Pooch | Long Island's Premier Pet Resort",
   description:
-    "Mobile grooming, daycare, boarding & training across Long Island. Rated 4.9 stars by 700+ pet parents. Get started today.",
+    "Mobile grooming, daycare, boarding & training across Long Island. Rated 4.9 stars by 720+ pet parents. Get started today.",
   robots: { index: false, follow: false },
 };
 
@@ -132,6 +132,7 @@ const reviews = [
 export default function WelcomePage() {
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-night)] text-[var(--pp-ink)]`}
     >
       {/* ── Hero ── */}
@@ -190,8 +191,8 @@ export default function WelcomePage() {
                   ))}
                 </span>
                 <span>
-                  <strong className="font-semibold text-white">4.9</strong> from
-                  700+ reviews on Google
+                  <strong className="font-semibold text-white">{SITE.reviews.rating}</strong> from{" "}
+                  {SITE.reviews.countDisplay} reviews on Google
                 </span>
               </div>
             </div>
@@ -361,7 +362,7 @@ export default function WelcomePage() {
                 <strong className="font-semibold text-[var(--pp-ink)]">
                   {SITE.reviews.rating}
                 </strong>{" "}
-                from {SITE.reviews.count.toLocaleString()} reviews on Google
+                from {SITE.reviews.countDisplay} reviews on Google
               </span>
             </div>
           </div>

@@ -25,6 +25,7 @@ export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
   const crumbs = breadcrumbSchema(homeBreadcrumbs(page.title, page.slug));
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">

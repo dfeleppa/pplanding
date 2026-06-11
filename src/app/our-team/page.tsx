@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { team, type TeamMember } from "../../lib/content/team";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
+import { StickyMobileCta } from "../sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function OurTeamPage() {
 
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
@@ -127,6 +129,8 @@ export default function OurTeamPage() {
       </section>
 
       <SiteFooter />
+
+      <StickyMobileCta />
     </main>
   );
 }

@@ -89,8 +89,8 @@ export const contentPages = {
       "Mobile cat grooming across Long Island — baths, full grooms, Furminator de-shed, dental care, and Soft Claws application. Two groomers work together for a calm, safe session.",
     image: "/hero-dog.jpg",
     heroCtas: {
-      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book Now", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -138,7 +138,7 @@ export const contentPages = {
         type: "callout",
         title: "Ready to book your cat's appointment?",
         body: "Call us today to schedule your cat's grooming session. Services are limited to 1–2 days a month.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
     ],
   },
@@ -153,8 +153,8 @@ export const contentPages = {
       "Mobile dog and cat grooming pricing for Nassau County — full grooms, baths, Plus and Premium spa upgrades, and à la carte add-ons.",
     image: "/hero-dog.jpg",
     heroCtas: {
-      primary: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      ghost: { label: "Learn More", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+      primary: { label: "Book Now", href: "/book/" },
+      ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
       {
@@ -296,7 +296,7 @@ export const contentPages = {
         title: "Come visit",
         body:
           "Stop in at 1114 Hempstead Turnpike, Franklin Square, or give us a call to book a meet-and-greet.",
-        cta: { label: "Book Now", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
+        cta: { label: "Book Now", href: "/book/" },
       },
     ],
   },
@@ -420,25 +420,6 @@ export const contentPages = {
     ],
   },
 
-  contactus: {
-    slug: "contactus",
-    canonicalSlug: "contact",
-    title: "Contact Us",
-    eyebrow: "Contact",
-    hero: "Reach the Planet Pooch team by phone, email, or in person.",
-    metaTitle: "Contact Planet Pooch Pet Resort",
-    metaDescription:
-      "Contact Planet Pooch Pet Resort in Franklin Square, NY. Call (516) 993-3603 or email planetpoochpetservices@gmail.com to set up your dog's first visit.",
-    sections: [
-      {
-        type: "callout",
-        title: "Reach us directly",
-        body:
-          "The fastest way to set something up is by phone. We're also happy to take questions by email or in person at our Franklin Square resort.",
-        cta: { label: "Open the booking page", href: "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" },
-      },
-    ],
-  },
 } satisfies Record<string, ContentPage>;
 
 export type ContentPageSlug = keyof typeof contentPages;

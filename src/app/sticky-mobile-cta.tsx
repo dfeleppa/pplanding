@@ -2,7 +2,7 @@ import { Phone } from "lucide-react";
 import { SITE } from "../lib/site";
 
 type StickyMobileCtaProps = {
-  /** Where the primary CTA links. Defaults to the LeadConnector booking form. */
+  /** Where the primary CTA links. Defaults to the on-site booking page. */
   ctaHref?: string;
   /** Primary CTA label. */
   ctaLabel?: string;
@@ -10,8 +10,7 @@ type StickyMobileCtaProps = {
   ctaTrack?: string;
 };
 
-const DEFAULT_HREF =
-  "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7";
+const DEFAULT_HREF = "/book/";
 
 /**
  * Mobile-only sticky bottom bar with a primary CTA + click-to-call.
@@ -21,7 +20,7 @@ const DEFAULT_HREF =
  * when open.
  *
  * The primary CTA can either anchor to an on-page form (e.g. `#request`
- * on `/welcome/`) or link out to the LeadConnector widget (the default).
+ * on `/welcome/`) or link to the booking page (the default).
  */
 export function StickyMobileCta({
   ctaHref = DEFAULT_HREF,

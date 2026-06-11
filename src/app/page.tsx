@@ -4,14 +4,16 @@ import Link from "next/link";
 import {
   GraduationCap,
   Home,
+  MapPin,
   PawPrint,
   Scissors,
   Sparkles,
   Star,
 } from "lucide-react";
-import { SITE } from "../lib/site";
+import { ADDRESS_LINES, SITE } from "../lib/site";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
+import { StickyMobileCta } from "./sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -102,6 +104,7 @@ const googleReviews = [
 export default function HomePage() {
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-night)] text-[var(--pp-ink)]`}
     >
       <section className="relative overflow-hidden bg-[var(--pp-night)] text-white">
@@ -139,14 +142,14 @@ export default function HomePage() {
 
               <div className="lg:border-l lg:border-white/20 lg:pl-10">
                 <div className="flex flex-col items-start gap-4">
-                  <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta">
+                  <Link href="/book/" className="pp-cta">
                     Get Started
                     <span className="pp-cta-arrow" aria-hidden />
                   </Link>
                   <div className="flex items-center gap-2 text-sm text-white/85">
                     <Star className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" aria-hidden />
                     <span>
-                      <strong className="font-semibold text-white">4.9</strong> from 700+ Long Island pet parents
+                      <strong className="font-semibold text-white">{SITE.reviews.rating}</strong> from {SITE.reviews.countDisplay} Long Island pet parents
                     </span>
                   </div>
                 </div>
@@ -325,7 +328,7 @@ export default function HomePage() {
               </span>
               <span>
                 <strong className="font-semibold text-white">{SITE.reviews.rating}</strong>
-                {" "}from {SITE.reviews.count.toLocaleString()} reviews on Google
+                {" "}from {SITE.reviews.countDisplay} reviews on Google
               </span>
             </div>
           </div>
@@ -395,7 +398,7 @@ export default function HomePage() {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
+                    href="/book/"
                     className="inline-flex items-center justify-center bg-[var(--pp-night)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[var(--pp-main-deep)]"
                   >
                     Book Now
@@ -409,9 +412,19 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="overflow-hidden border border-[var(--pp-night)]/15 bg-white/40">
+              <div className="relative overflow-hidden border border-[var(--pp-night)]/15 bg-white/40">
+                {/* Shows through the transparent iframe until the map paints. */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-[var(--pp-night)]/65"
+                >
+                  <MapPin className="h-6 w-6" />
+                  <p className="px-6 text-center text-sm font-semibold">
+                    {ADDRESS_LINES[0]}, {ADDRESS_LINES[1]}
+                  </p>
+                </div>
                 <iframe
-                  className="aspect-video w-full"
+                  className="relative aspect-video w-full"
                   src={`https://www.google.com/maps?q=${encodeURIComponent(`${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`)}&output=embed`}
                   title={`${SITE.legalName} location on Google Maps`}
                   loading="lazy"
@@ -425,6 +438,8 @@ export default function HomePage() {
       </section>
 
       <SiteFooter />
+
+      <StickyMobileCta />
     </main>
   );
 }

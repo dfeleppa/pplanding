@@ -1,25 +1,27 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const FORM_ID = "BuIn8g5wkvpXVAcvbRO7";
 const FORM_URL = `https://api.leadconnectorhq.com/widget/form/${FORM_ID}`;
 
 export function LeadForm() {
-  const [src, setSrc] = useState(FORM_URL);
+  const frameRef = useRef<HTMLIFrameElement>(null);
 
+  // Forward any UTM/query params to the form without re-rendering the iframe.
   useEffect(() => {
     const params = window.location.search;
-    if (params && params.length > 1) {
-      setSrc(`${FORM_URL}${params}`);
+    if (params && params.length > 1 && frameRef.current) {
+      frameRef.current.src = `${FORM_URL}${params}`;
     }
   }, []);
 
   return (
     <>
       <iframe
-        src={src}
+        ref={frameRef}
+        src={FORM_URL}
         id={`inline-${FORM_ID}`}
         title="Request availability — Planet Pooch"
         data-track="form-iframe"

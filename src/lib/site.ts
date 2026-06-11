@@ -32,7 +32,9 @@ export const SITE = {
   },
   reviews: {
     rating: 4.9,
-    count: 654,
+    count: 720,
+    /** Marketing display form — keep every on-site mention in sync with this. */
+    countDisplay: "720+",
   },
   defaults: {
     homeTitle: "Mobile Pet Grooming Long Island | Mobile Dog Groomer",

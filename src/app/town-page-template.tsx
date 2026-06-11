@@ -13,6 +13,7 @@ import {
 import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
+import { StickyMobileCta } from "./sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -199,6 +200,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
 
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="relative min-h-[520px] overflow-hidden bg-[var(--pp-night)] text-white">
@@ -229,7 +231,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
               ) : null}
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
-                  href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
+                  href="/book/"
                   className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
                 >
                   Book Now
@@ -385,6 +387,8 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
       ) : null}
 
       <SiteFooter />
+
+      <StickyMobileCta />
 
       <script {...jsonLdAttrs(service)} />
       <script {...jsonLdAttrs(crumbs)} />

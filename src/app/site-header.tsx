@@ -6,7 +6,7 @@ import { MobileMenu } from "./mobile-menu";
 import { BookNowModal } from "./book-now-modal";
 
 type SiteHeaderProps = {
-  /** Where the Book Now CTA links to. Defaults to /contact/. */
+  /** Where the Book Now modal's "Get Started" link points. Defaults to /book/. */
   ctaHref?: string;
 };
 
@@ -18,7 +18,7 @@ type SiteHeaderProps = {
  *
  * Use this in every page so the navigation is identical across the site.
  */
-export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" }: SiteHeaderProps = {}) {
+export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
   return (
     <header className="flex items-center justify-between border-b border-white/15 pb-5 lg:pb-6">
       <Link className="flex items-center" href="/" aria-label="Planet Pooch — Home">
@@ -28,6 +28,7 @@ export function SiteHeader({ ctaHref = "https://api.leadconnectorhq.com/widget/f
           width={220}
           height={74}
           className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
+          style={{ height: "auto" }}
           priority
         />
       </Link>

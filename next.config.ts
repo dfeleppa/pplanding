@@ -80,6 +80,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ===== Duplicate contact page =====
+      { source: "/contactus/", destination: "/contact/", permanent: true },
+
       // ===== Junk / draft / test pages → closest meaningful page =====
       { source: "/test/", destination: "/", permanent: true },
       { source: "/inquiry2/", destination: "/contact/", permanent: true },

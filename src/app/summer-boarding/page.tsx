@@ -20,7 +20,7 @@ import { BoardingFormModal } from "./boarding-form";
 export const metadata: Metadata = {
   title: "Summer Dog Boarding Long Island | Planet Pooch Pet Resort",
   description:
-    "Book summer dog boarding at Planet Pooch in Franklin Square, NY. Climate-controlled suites, daily enrichment, photo updates & 24/7 supervision. Reserve your spot today.",
+    "Book summer dog boarding at Planet Pooch in Franklin Square, NY. Climate-controlled suites, daily enrichment, photo updates & 1:1 care available. Reserve your spot today.",
   robots: { index: false, follow: false },
 };
 
@@ -92,6 +92,7 @@ const boardingReviews = [
 export default function SummerBoardingPage() {
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-night)] text-[var(--pp-ink)]`}
     >
       {/* ── Hero ── */}
@@ -123,8 +124,8 @@ export default function SummerBoardingPage() {
                   </span>
                 </h1>
                 <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
-                  Climate-controlled suites, daily enrichment, and 24/7
-                  supervision at our Franklin Square resort.
+                  Climate-controlled suites, daily enrichment, and 1:1 care
+                  available at our Franklin Square resort.
                 </p>
 
                 <div className="mt-6 flex items-center gap-2 text-sm text-white/80">
@@ -137,8 +138,8 @@ export default function SummerBoardingPage() {
                     ))}
                   </span>
                   <span>
-                    <strong className="font-semibold text-white">4.9</strong> from
-                    700+ reviews on Google
+                    <strong className="font-semibold text-white">{SITE.reviews.rating}</strong> from{" "}
+                    {SITE.reviews.countDisplay} reviews on Google
                   </span>
                 </div>
               </div>
@@ -167,7 +168,7 @@ export default function SummerBoardingPage() {
             { value: "11+", label: "Years in Business" },
             { value: "4.9★", label: "Google Rating" },
             { value: "6,800+", label: "Happy Puppies" },
-            { value: "24/7", label: "Supervision" },
+            { value: "1:1", label: "Boarding Available" },
           ].map((stat) => (
             <div key={stat.label}>
               <p
@@ -271,7 +272,7 @@ export default function SummerBoardingPage() {
                 <strong className="font-semibold text-white">
                   {SITE.reviews.rating}
                 </strong>{" "}
-                from {SITE.reviews.count.toLocaleString()} reviews on Google
+                from {SITE.reviews.countDisplay} reviews on Google
               </span>
             </div>
           </div>

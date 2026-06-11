@@ -19,6 +19,7 @@ import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
 import { BookNowModal } from "./book-now-modal";
+import { StickyMobileCta } from "./sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -408,7 +409,38 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
-            <div className="overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-white/65">
+            {/* Mobile: stacked cards so every price column is visible without side-scrolling. */}
+            <div className="grid gap-4 sm:hidden">
+              {section.rows.map((row) => (
+                <article
+                  key={row.label}
+                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-5"
+                >
+                  <h3 className="text-base font-semibold text-[var(--pp-ink)]">{row.label}</h3>
+                  <dl className="mt-3 grid grid-cols-2 gap-3">
+                    {row.values.map((value, j) => (
+                      <div key={j}>
+                        <dt className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--pp-main)]/75">
+                          {section.columns[j + 1]}
+                        </dt>
+                        <dd className="mt-1 text-sm text-[rgba(47,42,39,0.82)]">
+                          {typeof value === "boolean" ? (
+                            value ? (
+                              <Check className="h-4 w-4 text-[var(--pp-main)]" />
+                            ) : (
+                              <X className="h-4 w-4 text-[rgba(47,42,39,0.3)]" aria-label="Not included" />
+                            )
+                          ) : (
+                            value
+                          )}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </article>
+              ))}
+            </div>
+            <div className="hidden overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-white/65 sm:block">
               <table className="w-full min-w-[520px] text-sm">
                 <thead>
                   <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
@@ -572,14 +604,21 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className="grid gap-4">
-              {section.items.map((item) => (
-                <article
+              {section.items.map((item, itemIndex) => (
+                <details
                   key={item.question}
-                  className="border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                  open={itemIndex === 0}
+                  className="group border border-[rgba(50,73,83,0.12)] bg-white/65"
                 >
-                  <h3 className="text-xl font-semibold text-[var(--pp-ink)]">{item.question}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.answer}</p>
-                </article>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-xl font-semibold text-[var(--pp-ink)]">{item.question}</h3>
+                    <ChevronDown
+                      className="h-5 w-5 shrink-0 text-[var(--pp-main)] transition-transform group-open:rotate-180"
+                      aria-hidden
+                    />
+                  </summary>
+                  <p className="px-6 pb-6 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.answer}</p>
+                </details>
               ))}
             </div>
             {section.cta ? (
@@ -990,8 +1029,16 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
     case "townLinks": {
       const serviceSet = new Set<string>(section.services);
+      // Several services have their own page for the same town (e.g. two
+      // Franklin Square variants) — show each town once.
+      const seenTowns = new Set<string>();
       const items: TownPage[] = (Object.values(towns) as TownPage[])
         .filter((t) => serviceSet.has(t.service))
+        .filter((t) => {
+          if (seenTowns.has(t.town)) return false;
+          seenTowns.add(t.town);
+          return true;
+        })
         .slice(0, section.limit ?? 18);
       if (items.length === 0) return null;
       return (
@@ -1098,6 +1145,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
   const faq = faqItems.length > 0 ? faqSchema(faqItems) : null;
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className={`relative overflow-hidden bg-[var(--pp-night)] text-white${page.heroCtas ? "" : " min-h-[520px]"}`}>
@@ -1197,6 +1245,8 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
       ))}
 
       <SiteFooter />
+
+      <StickyMobileCta />
 
       <script {...jsonLdAttrs(crumbs)} />
       {service ? <script {...jsonLdAttrs(service)} /> : null}

@@ -43,6 +43,7 @@ export function SiteFooter() {
             width={220}
             height={74}
             className="h-auto w-[190px] brightness-0 invert"
+            style={{ height: "auto" }}
           />
           <p
             className="mt-6 max-w-xs text-sm italic leading-relaxed text-white/72"
@@ -144,13 +145,13 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} {SITE.legalName}
           </p>
           <div className="flex items-center gap-6">
-            <a href={SITE.social.instagram} aria-label="Instagram" className="transition hover:text-white">
+            <a href={SITE.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="transition hover:text-white">
               Instagram
             </a>
-            <a href={SITE.social.facebook} aria-label="Facebook" className="transition hover:text-white">
+            <a href={SITE.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="transition hover:text-white">
               Facebook
             </a>
-            <a href={SITE.social.youtube} aria-label="YouTube" className="transition hover:text-white">
+            <a href={SITE.social.youtube} target="_blank" rel="noopener" aria-label="YouTube" className="transition hover:text-white">
               YouTube
             </a>
           </div>

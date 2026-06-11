@@ -19,6 +19,7 @@ import { breadcrumbSchema, jsonLdAttrs, serviceSchema } from "../lib/schema";
 import { Breadcrumbs } from "./breadcrumbs";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
+import { StickyMobileCta } from "./sticky-mobile-cta";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -95,6 +96,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
 
   return (
     <main
+      id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       {/* JSON-LD */}
@@ -119,7 +121,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
               Mobile grooming, daycare, boarding &amp; training — serving {page.town} and surrounding Nassau County communities.
             </p>
             <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row">
-              <Link href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7" className="pp-cta">
+              <Link href="/book/" className="pp-cta">
                 Book Now
                 <span className="pp-cta-arrow" aria-hidden />
               </Link>
@@ -281,7 +283,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="https://api.leadconnectorhq.com/widget/form/BuIn8g5wkvpXVAcvbRO7"
+              href="/book/"
               className="inline-flex items-center justify-center bg-[var(--pp-night)] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[var(--pp-main-deep)]"
             >
               Book Now
@@ -298,6 +300,8 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
       </section>
 
       <SiteFooter />
+
+      <StickyMobileCta />
     </main>
   );
 }

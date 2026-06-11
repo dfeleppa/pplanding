@@ -43,8 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage
   entries.push(make("/", ROOT_PRIORITY, "weekly", ["/hero-dog.jpg", "/our-resort-exterior.jpeg"]));
 
-  // Contact
+  // Contact + booking
   entries.push(make("/contact", SERVICE_PRIORITY, "monthly"));
+  entries.push(make("/book", SERVICE_PRIORITY, "monthly"));
 
   // HTML site index (helps crawlers discover the long-tail town pages)
   entries.push(make("/sitemap-index", SUPPORT_PRIORITY, "monthly"));
@@ -56,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Standalone content pages (about cluster, Hamptons geo, blog index, etc.)
-  // Skip duplicate-canonical pages (e.g. contactus → contact) so we don't
+  // Skip duplicate-canonical pages (canonicalSlug pointing elsewhere) so we don't
   // emit two entries for the same content.
   for (const [slug, page] of Object.entries(contentPages) as Array<[string, ContentPage]>) {
     if (page.canonicalSlug && page.canonicalSlug !== slug) continue;
