@@ -7,11 +7,14 @@ const eslintConfig = defineConfig([
   ...nextTs,
   // Override default ignores of eslint-config-next.
   globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
+    // Default ignores of eslint-config-next, made recursive so generated
+    // output inside nested checkouts (e.g. .claude/worktrees/*) is ignored too:
+    "**/.next/**",
+    "**/out/**",
+    "**/build/**",
     "next-env.d.ts",
+    // Claude Code session data and orphaned worktrees — not project source.
+    ".claude/**",
   ]),
 ]);
 

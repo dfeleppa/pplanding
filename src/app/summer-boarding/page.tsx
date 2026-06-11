@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Camera,
   PawPrint,
@@ -225,14 +226,14 @@ export default function SummerBoardingPage() {
               </div>
 
               <div className="mt-8">
-                <a
+                <Link
                   href="/dog-boarding/"
                   data-track="pricing-more-info"
                   className="pp-cta min-h-[48px] !px-6"
                 >
-                  Pricing & More Info
+                  Pricing &amp; More Info
                   <span className="pp-cta-arrow" aria-hidden />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl">
