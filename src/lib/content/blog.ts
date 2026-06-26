@@ -25,6 +25,55 @@ export type BlogPost = {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "planning-a-summer-getaway-book-your-dogs-stay-before-the-dates-are-gone": {
+    slug: "planning-a-summer-getaway-book-your-dogs-stay-before-the-dates-are-gone",
+    title: "Planning a Summer Getaway? Book Your Dog's Stay Before the Dates Are Gone",
+    metaTitle: "Book Summer Dog Boarding Before Dates Fill Up | Planet Pooch Blog",
+    metaDescription:
+      "Summer boarding dates at Planet Pooch fill up fast. Here's why to book early, how the Bordetella 14-day rule works, and how to lock in your dog's stay.",
+    hasFullContent: true,
+    datePublished: "2026-06-17",
+    intro:
+      "Summer is here, and if you've got a trip on the calendar, here's the honest truth from our front desk: we're already turning people away.",
+    sections: [
+      {
+        paragraphs: [
+          "Not because we want to. It's because the most popular summer dates — long holiday weekends, the back half of August, the start and end of every school break — fill up faster than people expect. Someone calls a few days before they leave, asks for boarding, and we have to tell them we're full for exactly the nights they need. It's one of the hardest parts of the job, because by then there's nothing we can do.",
+          "So consider this your friendly heads-up: if you're going away this summer, book now. Don't wait until the last minute.",
+        ],
+      },
+      {
+        heading: "Why summer fills up so fast",
+        paragraphs: [
+          "Franklin Square and the surrounding Nassau County towns clear out in the summer. Families head to the beach, the mountains, weddings out of state, a week on the Cape. Everyone's traveling in the same windows — and everyone needs somewhere safe and loving for their dog at the same time.",
+          "We keep our capacity intentionally comfortable rather than packing dogs in, which is great for your pup and great for the quality of their stay, but it also means spots are genuinely limited. When a popular weekend books out, it's out. Calling early isn't about being overly cautious — it's the difference between your dog having a confirmed spot and you scrambling the night before your flight.",
+        ],
+      },
+      {
+        heading: "Your dog isn't just “parked” here — they're thriving",
+        paragraphs: [
+          "A boarding stay at Planet Pooch isn't a kennel where dogs wait out the week. Between supervised daycare play, enrichment sessions, comfortable suites, and a team that actually knows your dog by name, most of our long-stay guests settle in and have a genuinely great time. Two weeks away? They'll be busy, social, and tired in the best way by the time you're back.",
+          "That's exactly why we'd hate for you to miss the dates — your dog deserves the good version of being away from home, not whatever's left over at the last minute somewhere else.",
+        ],
+      },
+      {
+        heading: "A couple of things to handle now, not later",
+        paragraphs: [
+          "Two quick items that catch people off guard when they wait:",
+          "Vaccines, especially Bordetella. We require the Bordetella (kennel cough) vaccine to be administered at least 14 days before arrival. Because it's a live vaccine, dogs can shed it for a short window afterward, so the 14-day buffer protects every dog in the building. If your pup is due, get to the vet now — a last-minute shot won't meet the requirement, and that alone can cost you the reservation.",
+          "Locking in the dates. A reservation is held with a $25 non-refundable booking deposit, with 50% of the stay due one week before arrival. Booking early means you secure your exact dates and get the vaccine timing sorted with room to spare — no stress, no surprises.",
+        ],
+      },
+      {
+        heading: "How to book",
+        paragraphs: [
+          "Reserving a spot takes just a few minutes. Call us, stop by the resort at 1114 Hempstead Turnpike, or book through your client portal — and if you're not sure your dog's vaccines are current, ask us when you reach out and we'll help you check.",
+          "Summer dates are already going. If you know you're traveling, the best time to book was last week — the second-best time is right now.",
+        ],
+      },
+    ],
+  },
+
   "planning-summer-travel-how-to-give-your-dog-a-getaway-too": {
     slug: "planning-summer-travel-how-to-give-your-dog-a-getaway-too",
     title: "Planning Summer Travel? Here's How to Give Your Dog a Getaway Too",
