@@ -121,6 +121,27 @@ export type ContentSection =
       cta?: { label: string; href: string };
     }
   | {
+      type: "eventCalendar";
+      id?: string;
+      title?: string;
+      eyebrow?: string;
+      intro?: string;
+      cta?: { label: string; href: string };
+      events: Array<{
+        title: string;
+        dateLabel: string;
+        description: string;
+        location?: string;
+        badge?: string;
+        note?: string;
+        date?: string;
+        startDate?: string;
+        endDate?: string;
+        weekdays?: number[];
+        floating?: boolean;
+      }>;
+    }
+  | {
       type: "callout";
       id?: string;
       title: string;

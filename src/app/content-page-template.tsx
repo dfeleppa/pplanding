@@ -20,6 +20,7 @@ import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
 import { BookNowModal } from "./book-now-modal";
 import { StickyMobileCta } from "./sticky-mobile-cta";
+import { EventCalendarView } from "./event-calendar-view";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -635,6 +636,17 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           </div>
         </section>
       );
+
+    case "eventCalendar": {
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            <EventCalendarView section={section} />
+          </div>
+        </section>
+      );
+    }
 
     case "iconBullets": {
       const BulletIcon = iconMap[section.icon];

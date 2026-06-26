@@ -914,7 +914,7 @@ export const mainServicePages = {
       "Birthday parties, field trips, themed daycare days, and signature seasonal events — celebrating the whole pack year-round.",
     metaTitle: "Dog Events Long Island | Birthday Parties & Themed Days | Planet Pooch",
     metaDescription:
-      "Signature events at Planet Pooch in Franklin Square — birthday parties, Bark in the Park field trips, Photos with Santa, and themed daycare days throughout the year.",
+      "Upcoming dog events at Planet Pooch in Franklin Square — Foam Party, Paws, Luau, Pupsicle Party, birthday parties, and themed daycare days.",
     image: "/event_hero.jpg",
     heroCtas: {
       primary: { label: "Book an Event", href: "/book/" },
@@ -922,12 +922,54 @@ export const mainServicePages = {
     },
     sections: [
       {
-        type: "prose",
-        eyebrow: "Events",
-        title: "Signature events year-round.",
-        paragraphs: [
-          "We host events year-round so your dog gets more than a great daycare day — birthday parties at the resort, guided field trips, festive holiday photoshoots, and themed daycare days at no extra charge.",
-          "Pick a category below or call us about availability.",
+        type: "eventCalendar",
+        id: "calendar",
+        eyebrow: "Calendar",
+        title: "Upcoming events",
+        intro:
+          "These are the only events currently planned. The four-week calendar shows the dates that fall inside the current window.",
+        cta: { label: "Call to Reserve", href: "tel:+15169933603" },
+        events: [
+          {
+            title: "Foam Party",
+            dateLabel: "Wednesday, July 15, 2026",
+            description:
+              "A bubbly summer daycare party with supervised foam play, playful enrichment, and photo moments.",
+            location: "Planet Pooch resort",
+            badge: "Party",
+            note: "Reserve",
+            date: "2026-07-15",
+          },
+          {
+            title: "Paws",
+            dateLabel: "Tuesday, July 28, 2026",
+            description:
+              "A Jaws-themed Shark Week daycare event with splashy enrichment and themed photo moments.",
+            location: "Planet Pooch resort",
+            badge: "Shark Week",
+            note: "Jaws theme",
+            date: "2026-07-28",
+          },
+          {
+            title: "Luau",
+            dateLabel: "Thursday, August 13, 2026",
+            description:
+              "A tropical daycare celebration with festive enrichment, photo moments, and summer party energy.",
+            location: "Planet Pooch resort",
+            badge: "Theme day",
+            note: "Luau",
+            date: "2026-08-13",
+          },
+          {
+            title: "Pupsicle Party",
+            dateLabel: "Wednesday, August 26, 2026",
+            description:
+              "A cool summer daycare party with pupsicle-style treats, supervised fun, and themed photos.",
+            location: "Planet Pooch resort",
+            badge: "Party",
+            note: "Summer treat",
+            date: "2026-08-26",
+          },
         ],
       },
       {
@@ -975,9 +1017,9 @@ export const mainServicePages = {
         eyebrow: "Throughout the year",
         title: "Themed daycare days",
         intro:
-          "Check out our fun packed events throughout the year including Howloween Costume Party, Taco Tuesday, Valentine's Day, and Photos with Santa!",
+          "Check out our planned themed daycare days, including Foam Party, Paws, Luau, and Pupsicle Party.",
         images: [
-          { src: "/kissing-booth.png", alt: "Valentine's Day kissing booth event at Planet Pooch" },
+          { src: "/kissing-booth.png", alt: "Themed daycare event setup at Planet Pooch" },
         ],
       },
       {
