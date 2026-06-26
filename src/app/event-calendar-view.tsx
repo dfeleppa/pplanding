@@ -149,8 +149,8 @@ export function EventCalendarView({ section }: { section: EventCalendarSection }
           return (
             <article
               key={dateKey(day)}
-              className={`min-h-[8.5rem] border border-[rgba(50,73,83,0.10)] bg-[#fffdf8] p-3 sm:min-h-40 sm:border-0 ${
-                isToday ? "ring-2 ring-[var(--pp-main)] ring-offset-2 ring-offset-white" : ""
+              className={`relative min-h-[8.5rem] border border-[rgba(50,73,83,0.10)] bg-[#fffdf8] p-3 sm:min-h-40 sm:border-0 ${
+                isToday ? "shadow-[inset_0_0_0_2px_var(--pp-main)]" : ""
               }`}
             >
               <div className="flex items-start justify-between gap-2">
@@ -171,20 +171,17 @@ export function EventCalendarView({ section }: { section: EventCalendarSection }
                 <div className="mt-3 grid gap-2">
                   {dayEvents.map((event) => (
                     <div key={`${dateKey(day)}-${event.title}`} className="bg-[var(--pp-mint)]/30 p-2">
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        {event.badge ? (
-                          <span className="bg-white/75 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--pp-night)]">
-                            {event.badge}
-                          </span>
-                        ) : null}
-                        {event.note ? (
-                          <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--pp-main)]">
-                            {event.note}
-                          </span>
-                        ) : null}
-                      </div>
-                      <p className="mt-1 text-xs font-bold leading-5 text-[var(--pp-ink)]">{event.title}</p>
+                      <p className="text-xs font-bold leading-5 text-[var(--pp-ink)]">{event.title}</p>
                       <p className="mt-1 text-[11px] leading-5 text-[rgba(47,42,39,0.70)]">{event.dateLabel}</p>
+                      {section.cta ? (
+                        <Link
+                          href={section.cta.href}
+                          className="mt-3 inline-flex min-h-8 w-full items-center justify-center gap-1 bg-[var(--pp-night)] px-1 py-2 text-center text-[10px] font-bold leading-none tracking-normal text-white transition hover:bg-[var(--pp-main)]"
+                        >
+                          {section.cta.label}
+                          <ArrowRight className="h-3 w-3 shrink-0" />
+                        </Link>
+                      ) : null}
                     </div>
                   ))}
                 </div>
