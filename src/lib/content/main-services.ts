@@ -1020,6 +1020,10 @@ export const mainServicePages = {
           "Check out our planned themed daycare days, including Foam Party, Paws, Luau, and Pupsicle Party.",
         images: [
           { src: "/kissing-booth.png", alt: "Themed daycare event setup at Planet Pooch" },
+          { src: "/events/IMG_3976.PNG", alt: "Dog wearing a party hat during a Planet Pooch event" },
+          { src: "/events/IMG_3981.jpg", alt: "Birthday party table and cake for a dog at Planet Pooch" },
+          { src: "/events/IMG_5076.jpg", alt: "Dogs playing in a splash pool during a Planet Pooch daycare event" },
+          { src: "/events/Untitled design-23.png", alt: "Dog cooling off in a pool during a Planet Pooch daycare event" },
         ],
       },
       {
