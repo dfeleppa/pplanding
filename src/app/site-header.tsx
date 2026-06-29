@@ -29,7 +29,6 @@ export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
           height={74}
           className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
           style={{ height: "auto" }}
-          priority
         />
       </Link>
       <nav

@@ -115,7 +115,7 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover"
           style={{ objectPosition: "62% center" }}
-          priority
+          preload
         />
         {/* Subtle even darkening so the image still reads while text remains legible on either side. */}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
@@ -203,7 +203,7 @@ export default function HomePage() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                      sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1024px) calc((100vw - 96px) / 2), 20vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
@@ -290,6 +290,7 @@ export default function HomePage() {
               className="aspect-video w-full"
               src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
               title="Planet Pooch Facility Tour"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
