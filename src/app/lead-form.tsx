@@ -1,43 +1,76 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FORM_ID = "BuIn8g5wkvpXVAcvbRO7";
 const FORM_URL = `https://api.leadconnectorhq.com/widget/form/${FORM_ID}`;
+const FORM_HEIGHT = 760;
 
 export function LeadForm() {
-  const frameRef = useRef<HTMLIFrameElement>(null);
+  const shellRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [formSrc, setFormSrc] = useState(FORM_URL);
 
-  // Forward any UTM/query params to the form without re-rendering the iframe.
   useEffect(() => {
-    const params = window.location.search;
-    if (params && params.length > 1 && frameRef.current) {
-      frameRef.current.src = `${FORM_URL}${params}`;
+    const loadForm = () => {
+      const params = window.location.search;
+      setFormSrc(params && params.length > 1 ? `${FORM_URL}${params}` : FORM_URL);
+      setShouldLoad(true);
+    };
+
+    const shell = shellRef.current;
+    if (!shell || !("IntersectionObserver" in window)) {
+      window.setTimeout(loadForm, 0);
+      return;
     }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          loadForm();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "240px 0px" },
+    );
+
+    observer.observe(shell);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <>
-      <iframe
-        ref={frameRef}
-        src={FORM_URL}
-        id={`inline-${FORM_ID}`}
-        title="Request availability — Planet Pooch"
-        data-track="form-iframe"
-        style={{
-          width: "100%",
-          height: "760px",
-          border: "none",
-          display: "block",
-          background: "white",
-        }}
-        scrolling="no"
-      />
-      <Script
-        src="https://link.msgsndr.com/js/form_embed.js"
-        strategy="afterInteractive"
-      />
-    </>
+    <div ref={shellRef} aria-busy={!shouldLoad}>
+      {shouldLoad ? (
+        <>
+          <iframe
+            src={formSrc}
+            id={`inline-${FORM_ID}`}
+            title="Request availability - Planet Pooch"
+            data-track="form-iframe"
+            style={{
+              width: "100%",
+              height: `${FORM_HEIGHT}px`,
+              border: "none",
+              display: "block",
+              background: "white",
+            }}
+            scrolling="no"
+            loading="lazy"
+          />
+          <Script
+            src="https://link.msgsndr.com/js/form_embed.js"
+            strategy="afterInteractive"
+          />
+        </>
+      ) : (
+        <div
+          className="flex items-center justify-center bg-white px-6 text-center text-sm font-semibold text-[var(--pp-ink)]/55"
+          style={{ minHeight: `${FORM_HEIGHT}px` }}
+        >
+          Loading availability form...
+        </div>
+      )}
+    </div>
   );
 }

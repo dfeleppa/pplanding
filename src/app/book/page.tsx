@@ -79,7 +79,7 @@ export default function BookPage() {
           fill
           sizes="100vw"
           className="object-cover"
-          priority
+          preload
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]" />
         <div className="relative z-10 mx-auto flex min-h-[420px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">

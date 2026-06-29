@@ -1169,7 +1169,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
             sizes="100vw"
             className="object-cover"
             style={{ objectPosition: "62% center" }}
-            priority
+            preload
           />
         ) : null}
         <div className={`absolute inset-0 ${page.heroCtas ? "bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" : "bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]"}`} />

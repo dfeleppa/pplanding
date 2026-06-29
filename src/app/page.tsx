@@ -14,6 +14,7 @@ import { ADDRESS_LINES, SITE } from "../lib/site";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { StickyMobileCta } from "./sticky-mobile-cta";
+import { LiteYouTubeEmbed } from "./lite-youtube-embed";
 
 const displaySerif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -286,14 +287,10 @@ export default function HomePage() {
       <section id="facility-tour" className="bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/50 shadow-[0_24px_70px_rgba(50,73,83,0.1)] lg:order-1">
-            <iframe
+            <LiteYouTubeEmbed
               className="aspect-video w-full"
-              src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
+              videoId="9vUKmx3k5AQ"
               title="Planet Pooch Facility Tour"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
             />
           </div>
 

@@ -16,6 +16,7 @@ import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
 import { StickyMobileCta } from "../sticky-mobile-cta";
 import { LeadForm } from "../lead-form";
+import { LiteYouTubeEmbed } from "../lite-youtube-embed";
 
 export const metadata: Metadata = {
   title: "Welcome to Planet Pooch | Long Island's Premier Pet Resort",
@@ -144,7 +145,7 @@ export default function WelcomePage() {
           sizes="100vw"
           className="object-cover"
           style={{ objectPosition: "62% center" }}
-          priority
+          preload
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.6)_0%,rgba(20,30,36,0.48)_45%,rgba(20,30,36,0.68)_100%)]" />
 
@@ -325,14 +326,10 @@ export default function WelcomePage() {
             </div>
 
             <div className="overflow-hidden border border-white/15 bg-[var(--pp-night)] shadow-[0_24px_70px_rgba(20,30,36,0.32)]">
-              <iframe
+              <LiteYouTubeEmbed
                 className="aspect-video w-full"
-                src="https://www.youtube.com/embed/9vUKmx3k5AQ?si=mvCHALROv_obKOo5"
+                videoId="9vUKmx3k5AQ"
                 title="Planet Pooch Facility Tour"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                loading="lazy"
-                allowFullScreen
               />
             </div>
           </div>

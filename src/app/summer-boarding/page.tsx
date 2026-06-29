@@ -105,7 +105,7 @@ export default function SummerBoardingPage() {
           sizes="100vw"
           className="object-cover"
           style={{ objectPosition: "center 35%" }}
-          priority
+          preload
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.6)_0%,rgba(20,30,36,0.45)_40%,rgba(20,30,36,0.72)_100%)]" />
 
