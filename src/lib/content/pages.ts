@@ -273,34 +273,6 @@ export const contentPages = {
       },
     ],
   },
-
-  "our-team": {
-    slug: "our-team",
-    title: "Our Team",
-    eyebrow: "About",
-    hero: "Genuine people who know your dog and understand their rhythm.",
-    metaTitle: "Our Team | Planet Pooch Pet Resort",
-    metaDescription:
-      "Meet the groomers, daycare specialists, and trainers behind Planet Pooch — the people who care for your dog every day in Franklin Square, NY.",
-    image: "/testimonial-dog.jpg",
-    sections: [
-      {
-        type: "prose",
-        paragraphs: [
-          "Our team is the reason families across Long Island trust Planet Pooch with their dogs. From mobile grooming pros to daycare specialists, boarding caretakers, and our AKC Evaluator Trainer — they're what make every day here feel personal.",
-          "Individual team bios are coming soon. In the meantime, the easiest way to meet us is to come by for a meet-and-greet.",
-        ],
-      },
-      {
-        type: "callout",
-        title: "Come visit",
-        body:
-          "Stop in at 1114 Hempstead Turnpike, Franklin Square, or give us a call to book a meet-and-greet.",
-        cta: { label: "Book Now", href: "/book/" },
-      },
-    ],
-  },
-
   "were-hiring": {
     slug: "were-hiring",
     title: "We're Hiring",

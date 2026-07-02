@@ -8,7 +8,6 @@ import { towns } from "../../lib/content/towns";
 import type { TownPage } from "../../lib/content/towns";
 import { nassauTowns, REGION_LABELS } from "../../lib/content/nassau-towns";
 import type { NassauSubRegion, NassauTownPage } from "../../lib/content/nassau-towns";
-import { team } from "../../lib/content/team";
 import { blogPosts } from "../../lib/content/blog";
 import type { ContentPage } from "../../lib/content/types";
 import { breadcrumbSchema, homeBreadcrumbs, jsonLdAttrs } from "../../lib/schema";
@@ -30,7 +29,7 @@ const bodySans = Manrope({
 export const metadata: Metadata = {
   title: { absolute: "Site Map | Planet Pooch Pet Resort" },
   description:
-    "Browse every page on Planet Pooch — services, town pages across Nassau County, blog, team, and policies.",
+    "Browse every page on Planet Pooch — services, town pages across Nassau County, blog, and policies.",
   alternates: { canonical: "/sitemap-index/" },
 };
 
@@ -105,7 +104,7 @@ export default function SiteMapPage() {
           <h1 className="mt-3 text-4xl leading-tight sm:text-5xl">Site Map</h1>
           <p className="mt-4 max-w-2xl text-base leading-7 text-[rgba(47,42,39,0.75)]">
             Every page on planet-pooch.com — services, town pages across Nassau County,
-            the blog, our team, and policies.
+            the blog, and policies.
           </p>
 
           <Section title="Main Services">
@@ -142,12 +141,6 @@ export default function SiteMapPage() {
               ))}
             </Section>
           ))}
-
-          <Section title="Our Team">
-            {Object.values(team).map((m) => (
-              <PageLink key={m.slug} href={`/${m.slug}/`} label={`Meet ${m.name}`} />
-            ))}
-          </Section>
 
           <Section title="Featured Articles">
             {featuredBlog.map((p) => (

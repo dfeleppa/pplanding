@@ -91,11 +91,9 @@ In priority order:
 2. **Add unique town-page content for top 5 towns by GSC clicks**:
    Garden City (150), Franklin Square (244), New Hyde Park (59),
    Roslyn (44), Lynbrook (45). Data file is `src/lib/content/towns.ts`.
-3. **Replace 16 placeholder team bios** with real bios. Data file is
-   `src/lib/content/team.ts`.
-4. **Decide pricing canonical** (see "Pricing has two sources of truth"
+3. **Decide pricing canonical** (see "Pricing has two sources of truth"
    above).
-5. **Host the enrollment-form PDF** somewhere — either preserve the
+4. **Host the enrollment-form PDF** somewhere — either preserve the
    `/wp-content/uploads/...` path via a host-level rewrite, or migrate
    the PDF and 301 the old URL.
 
@@ -111,16 +109,15 @@ In priority order:
   not inline objects. Templates compute and inject. Adding a new schema
   type means adding one builder, not editing every template.
 - **Sitemap is auto-generated** from the data files via
-  `src/app/sitemap.ts`. Adding a new town / team / blog entry
-  automatically includes it in the sitemap.
+  `src/app/sitemap.ts`. Adding a new town or blog entry automatically
+  includes it in the sitemap.
 
 ## What's NOT done
 
 - No A/B testing infrastructure. Could be added if conversion
   experimentation matters later.
-- The remaining team headshots in `/public/team/` (filenames `<slug>.jpg`)
-  are not yet present — `team-bio-template.tsx` doesn't reference them yet,
-  so this is a future enhancement when real photos are ready.
+- Team pages were removed after launch and are no longer part of the
+  public sitemap or generated route list.
 
 ## What's now done (was previously deferred)
 
@@ -128,7 +125,6 @@ In priority order:
   page via `src/app/breadcrumbs.tsx`.
 - `Service` JSON-LD on the 5 main service pages via the optional
   `serviceType` field on `ContentPage`.
-- `Person` JSON-LD on team-bio pages.
 - `FAQPage` JSON-LD auto-emitted by `content-page-template.tsx` when a
   page contains `faq` sections.
 - `Article` schema now includes publisher logo, author, and dateModified.
@@ -145,7 +141,6 @@ In priority order:
   linked from the footer.
 - Unique town content via `localIntro` / `localFeatures` / `distanceFromResort`
   on `TownPage` and rendered in `town-page-template.tsx`.
-- Full team bios for the 16 previously-placeholder members.
 - Full bodies for the 45 previously-stub blog posts.
 
 ## Quick reference: where things live
@@ -158,7 +153,6 @@ In priority order:
 | Legal / policy text | `src/lib/content/prose.ts` |
 | Town page metadata + local content | `src/lib/content/towns.ts` |
 | Nassau all-services towns | `src/lib/content/nassau-towns.ts` |
-| Team bios | `src/lib/content/team.ts` |
 | Blog post bodies | `src/lib/content/blog-restored.ts` (45 posts) + `src/lib/content/blog.ts` (7 originals) |
 | URL redirects | `next.config.ts` (`redirects()`) |
 | Sitemap entries | `src/app/sitemap.ts` (auto-derived) |
@@ -171,6 +165,5 @@ In priority order:
 | Legal layout | `src/app/prose-page-template.tsx` |
 | Town page layout | `src/app/town-page-template.tsx` |
 | Nassau town page layout | `src/app/nassau-town-page-template.tsx` |
-| Team bio layout | `src/app/team-bio-template.tsx` |
 | Blog post layout | `src/app/blog-post-template.tsx` |
 | Image optimization | `scripts/optimize-images.mjs` |

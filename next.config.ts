@@ -124,8 +124,6 @@ const nextConfig: NextConfig = {
       { source: "/metform-form/:path*/", destination: "/contact/", permanent: true },
 
       // ===== WP author archive / category fallbacks =====
-      { source: "/author/:author/", destination: "/our-team/", permanent: true },
-      { source: "/author/:author/page/:page/", destination: "/our-team/", permanent: true },
       { source: "/category/uncategorized/", destination: "/blog/", permanent: true },
       { source: "/category/:cat/", destination: "/blog/", permanent: true },
     ];

@@ -87,7 +87,6 @@ If any red flag triggers: **stop**, diagnose, don't ship more changes until rank
 
 These didn't ship in the initial launch but should be planned:
 
-- [ ] Replace the 16 placeholder team bios with real bios (data file: `src/lib/content/team.ts`)
 - [ ] Restore the 45 archived blog posts to full content (data file: `src/lib/content/blog.ts`)
 - [ ] Add genuinely unique town-specific content to the 35 town pages — current pages share a service-typed template (data file: `src/lib/content/towns.ts`)
 - [ ] Decide on canonical pricing source: `/grooming-pricing/` (current Plus/Premium-style) vs `/services-pricing/` (older lower pricing). They currently render different prices — see `seo/MIGRATION-NOTES.md` for details

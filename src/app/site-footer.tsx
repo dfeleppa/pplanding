@@ -14,7 +14,6 @@ const footerLinks = {
     { label: "Events", href: "/events/" },
   ],
   about: [
-    { label: "Our Team", href: "/our-team/" },
     { label: "We're Hiring", href: "/were-hiring/" },
     { label: "Partners", href: "/partners/" },
     { label: "Blog", href: "/blog/" },

@@ -6,7 +6,6 @@ import type { ContentPage } from "../lib/content/types";
 import { prosePages } from "../lib/content/prose";
 import { nassauTowns } from "../lib/content/nassau-towns";
 import { towns } from "../lib/content/towns";
-import { team } from "../lib/content/team";
 import { blogPosts } from "../lib/content/blog";
 
 type SitemapEntry = NonNullable<MetadataRoute.Sitemap>[number];
@@ -77,11 +76,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Nassau County all-services town pages
   for (const slug of Object.keys(nassauTowns)) {
     entries.push(make(`/${slug}`, SUBPAGE_PRIORITY, "monthly"));
-  }
-
-  // Team bios
-  for (const slug of Object.keys(team)) {
-    entries.push(make(`/${slug}`, ARCHIVE_PRIORITY, "yearly"));
   }
 
   // Blog posts — featured posts higher priority than archive stubs

@@ -1,7 +1,7 @@
 old_url,cluster,priority,disposition,notes
 /,homepage,critical,preserve-path,Primary ranking page for "Mobile Pet Grooming Long Island"
 /about-us/,about,high,preserve-path,
-/our-team/,about,high,preserve-path,Index page for 18 team bios
+/our-team/,about,high,remove,Team index and bio pages removed from the public site
 /faqs/,about,high,preserve-path,
 /were-hiring/,about,medium,preserve-path,
 /blog/,blog,high,preserve-path,Blog index

@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getAllDispatchSlugs, getDispatchEntry } from "../../lib/content/registry";
 import { NassauTownPageTemplate } from "../nassau-town-page-template";
 import { TownPageTemplate } from "../town-page-template";
-import { TeamBioTemplate } from "../team-bio-template";
 import { BlogPostTemplate } from "../blog-post-template";
 
 export const dynamicParams = false;
@@ -43,8 +42,6 @@ export default async function CatchAllPage({ params }: Props) {
       return <TownPageTemplate page={entry.data} />;
     case "nassau-town":
       return <NassauTownPageTemplate page={entry.data} />;
-    case "team":
-      return <TeamBioTemplate member={entry.data} />;
     case "blog":
       return <BlogPostTemplate post={entry.data} />;
   }
