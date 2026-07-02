@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import Script from "next/script";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -7,6 +8,19 @@ import { Analytics } from "./analytics";
 import "./globals.css";
 
 const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+
+const displaySerif = Libre_Baskerville({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: "variable",
+  style: ["normal", "italic"],
+});
+
+const bodySans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -124,7 +138,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full scroll-smooth antialiased">
-      <body className="min-h-full flex flex-col">
+      <body className={`${displaySerif.variable} ${bodySans.variable} min-h-full flex flex-col`}>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#324953] focus:shadow-lg"

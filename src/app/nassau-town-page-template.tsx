@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -21,10 +21,11 @@ import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { StickyMobileCta } from "./sticky-mobile-cta";
 
-const displaySerif = Cormorant_Garamond({
+const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600"],
+  weight: "variable",
+  style: ["normal", "italic"],
 });
 
 const bodySans = Manrope({

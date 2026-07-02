@@ -167,7 +167,7 @@ export const mainServicePages = {
           { icon: "Wind", title: "Dry", description: "Hand blow dry — never cage-dried." },
           { icon: "BrushCleaning", title: "Brushing", description: "Thorough fluffing and brushing for a polished coat." },
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
-          { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before pickup." },
+          { icon: "BowIcon", title: "Bow", description: "A signature finishing touch before pickup." },
         ],
         calloutCard: {
           title: "Already booked daycare or boarding?",

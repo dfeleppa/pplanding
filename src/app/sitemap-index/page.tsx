@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import { mainServicePages } from "../../lib/content/main-services";
 import { contentPages } from "../../lib/content/pages";
 import { prosePages } from "../../lib/content/prose";
@@ -15,10 +15,11 @@ import { Breadcrumbs } from "../breadcrumbs";
 import { SiteFooter } from "../site-footer";
 import { SiteHeader } from "../site-header";
 
-const displaySerif = Cormorant_Garamond({
+const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600"],
+  weight: "variable",
+  style: ["normal", "italic"],
 });
 
 const bodySans = Manrope({

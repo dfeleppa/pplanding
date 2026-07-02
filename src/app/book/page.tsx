@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
 import { Building2, Truck } from "lucide-react";
 import { SITE } from "../../lib/site";
@@ -8,10 +8,11 @@ import { SiteFooter } from "../site-footer";
 import { StickyMobileCta } from "../sticky-mobile-cta";
 import { LeadForm } from "../lead-form";
 
-const displaySerif = Cormorant_Garamond({
+const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600"],
+  weight: "variable",
+  style: ["normal", "italic"],
 });
 
 const bodySans = Manrope({

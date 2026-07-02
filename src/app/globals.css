@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f0e8;
+  --background: #fbfaf6;
   --foreground: #2f2a27;
   --pp-main: #4e6b75;
   --pp-main-deep: #324953;
   --pp-night: #2f3f47;
-  --pp-cream: #f7f0e8;
+  --pp-cream: #fbfaf6;
   --pp-off-white: #fbfaf6;
   --pp-sand: #e9dccd;
   --pp-clay: #d3bfac;
@@ -171,7 +171,7 @@ h3 {
 
 main > section:first-child h1 {
   font-size: 3rem;
-  line-height: 0.96;
+  line-height: 1.08;
 }
 
 @media (min-width: 640px) {
