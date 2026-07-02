@@ -7,6 +7,7 @@
   --pp-main-deep: #324953;
   --pp-night: #2f3f47;
   --pp-cream: #f7f0e8;
+  --pp-off-white: #fbfaf6;
   --pp-sand: #e9dccd;
   --pp-clay: #d3bfac;
   --pp-gold: #e5c089;
@@ -160,8 +161,7 @@ a {
   }
 }
 
-/* All headings use the display serif (Cormorant Garamond) so section
-   headers throughout the site match the hero H1 treatment. */
+/* All headings use the active display serif so section headers match the hero H1 treatment. */
 h1,
 h2,
 h3 {

@@ -2,7 +2,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight, Bath, Brush, Camera, Check, ChevronDown, Clock, Droplets, Ear, Eye,
+  ArrowRight, Bath, Brush, BrushCleaning, Camera, Check, ChevronDown, Clock, Dog, Droplets, Ear, Eye,
   Footprints, Heart, PawPrint, Ribbon, Scissors, Sparkles, Trees, Truck, Users,
   Utensils, Wind, X,
 } from "lucide-react";
@@ -34,7 +34,7 @@ const bodySans = Manrope({
 });
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  PawPrint, Footprints, Ear, Bath, Droplets, Wind, Brush, Scissors, Ribbon,
+  PawPrint, Footprints, Dog, Ear, Bath, Droplets, Wind, Brush, BrushCleaning, Scissors, Ribbon,
   Trees, Users, Sparkles, Eye, Heart, Camera, Utensils, Clock, Truck,
 };
 

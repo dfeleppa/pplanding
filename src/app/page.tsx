@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,10 +16,11 @@ import { SiteFooter } from "./site-footer";
 import { StickyMobileCta } from "./sticky-mobile-cta";
 import { LiteYouTubeEmbed } from "./lite-youtube-embed";
 
-const displaySerif = Cormorant_Garamond({
+const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600"],
+  weight: "variable",
+  style: ["normal", "italic"],
 });
 
 const bodySans = Manrope({
@@ -178,7 +179,7 @@ export default function HomePage() {
 
       <section
         id="services"
-        className="relative -mt-12 rounded-t-[3rem] bg-[var(--pp-cream)] px-5 pb-18 pt-14 text-[var(--pp-ink)] sm:px-8 lg:-mt-14 lg:rounded-t-[4rem] lg:px-10 lg:pt-16"
+        className="relative -mt-12 rounded-t-[3rem] bg-[var(--pp-off-white)] px-5 pb-18 pt-14 text-[var(--pp-ink)] sm:px-8 lg:-mt-14 lg:rounded-t-[4rem] lg:px-10 lg:pt-16"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">

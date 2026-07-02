@@ -160,12 +160,12 @@ export const mainServicePages = {
         intro:
           "Please note: Our in-house grooming is not open to the public. We only provide in-house grooming for our daycare and boarding dogs.",
         items: [
-          { icon: "Footprints", title: "Pedicure", description: "Nail cut and grind for a comfortable, healthy length." },
-          { icon: "Ear", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },
+          { icon: "PawPrint", title: "Nails", description: "Nail cut and grind for a comfortable, healthy length." },
+          { icon: "Dog", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },
           { icon: "Bath", title: "Bath", description: "Two shampoos and a conditioner for a deep clean." },
           { icon: "Droplets", title: "Anal Glands", description: "Expressed upon request for your pet's comfort." },
           { icon: "Wind", title: "Dry", description: "Hand blow dry — never cage-dried." },
-          { icon: "Brush", title: "Brushing", description: "Thorough fluffing and brushing for a polished coat." },
+          { icon: "BrushCleaning", title: "Brushing", description: "Thorough fluffing and brushing for a polished coat." },
           { icon: "Scissors", title: "Haircut", description: "Wide range of breed-appropriate haircut options." },
           { icon: "Ribbon", title: "Bow & Bandana", description: "A signature finishing touch before pickup." },
         ],
@@ -454,7 +454,6 @@ export const mainServicePages = {
         imageAlt: "Dogs enjoying their boarding stay at Planet Pooch",
         paragraphs: [
           "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy, supervised night of rest.",
-          "With trained staff on-site and personalized care, your dog is never just another guest — they're part of the Planet Pooch family.",
         ],
         highlights: [
           { icon: "Sparkles", label: "Clean, comfortable suites" },
