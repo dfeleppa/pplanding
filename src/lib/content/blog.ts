@@ -25,6 +25,77 @@ export type BlogPost = {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "boarding-upgrade-options-comfort-plus-premium-care": {
+    slug: "boarding-upgrade-options-comfort-plus-premium-care",
+    title: "Boarding Upgrade Options: A Little Extra Comfort for Your Dog's Stay",
+    metaTitle: "Dog Boarding Upgrade Options | Planet Pooch Blog",
+    metaDescription:
+      "Give your dog a cozier, more enriching boarding stay with Planet Pooch upgrade packages — Comfort Care, Comfort Plus Care, and our most popular Premium Care.",
+    hasFullContent: true,
+    datePublished: "2026-07-15",
+    intro:
+      "Every dog boards a little differently. Some settle right in and nap the afternoon away; others do their best when they've got extra enrichment, a softer place to sleep, and a bit more one-on-one time with our team. That's exactly why we offer boarding upgrade packages at Planet Pooch — simple add-ons that make your dog's stay more comfortable, more engaging, and more personalized. Here's a look at each one, so you can pick what fits your pup best.",
+    sections: [
+      {
+        heading: "Comfort Care (+$18/day)",
+        paragraphs: [
+          "A cozy, enriched stay with added comfort and mental stimulation. This is a great starting point for dogs who love a soft place to land and a little something to keep their minds busy.",
+        ],
+        bullets: [
+          "Orthopedic bed topper, comfort floor mat, and blanket",
+          "Daily nutritional enrichment puzzle",
+          "Tuck-in time with a treat — a calm wind-down with our staff before bed",
+        ],
+      },
+      {
+        heading: "Comfort Plus Care (+$29/day)",
+        paragraphs: [
+          "An enhanced stay with extra enrichment, one-on-one attention, and increased daily engagement. Comfort Plus includes everything in Comfort Care, plus more hands-on time throughout the day.",
+        ],
+        bullets: [
+          "Orthopedic bed topper, comfort floor mat, and blanket",
+          "Daily nutritional enrichment puzzle",
+          "Tuck-in time with a treat before bed",
+          "An additional daily enrichment activity",
+        ],
+      },
+      {
+        heading: "Premium Care (+$39/day) — our most popular option",
+        paragraphs: [
+          "Ideal for dogs who benefit from extra attention, structure, and outdoor time. Premium Care builds on everything in Comfort Plus and adds a little more of the routine active dogs thrive on.",
+        ],
+        bullets: [
+          "Orthopedic bed topper, comfort floor mat, and blanket",
+          "Daily nutritional enrichment puzzle",
+          "Tuck-in time with a treat before bed",
+          "An additional daily enrichment activity",
+          "First out in the morning and last in at night, for extra time outside the suite",
+        ],
+      },
+      {
+        heading: "Which upgrade is right for your dog?",
+        paragraphs: [
+          "There's no wrong choice — it comes down to your dog's personality and what makes them happiest. Comfort Care suits easygoing dogs who mostly want a cozier bed and a little mental stimulation. Comfort Plus is a great fit for social pups who love extra interaction and activity. And Premium Care is the pick for high-energy or routine-loving dogs who do best with more structure, engagement, and time outside the suite.",
+          "Not sure? Just ask us. We get to know every dog who stays with us, and we're always happy to recommend the package that fits your pup best.",
+        ],
+      },
+      {
+        heading: "Prefer to keep it simple?",
+        paragraphs: [
+          "You don't have to commit to a full daily package to spoil your dog. You can also choose a one-time treat or an extra special activity during their stay — a nice way to add a little something without an everyday upgrade.",
+        ],
+      },
+      {
+        heading: "Add an upgrade to your dog's next stay",
+        paragraphs: [
+          "Boarding upgrades are easy to add when you book, and they're a simple way to make your dog's time with us even more comfortable and fun.",
+          "Call us at 516-993-3603 or visit planet-pooch.com to reserve your dog's stay and choose the package that's right for them.",
+          "We're committed to making your dog's stay happy, healthy, and tail-waggingly fun.",
+        ],
+      },
+    ],
+  },
+
   "planning-a-summer-getaway-book-your-dogs-stay-before-the-dates-are-gone": {
     slug: "planning-a-summer-getaway-book-your-dogs-stay-before-the-dates-are-gone",
     title: "Planning a Summer Getaway? Book Your Dog's Stay Before the Dates Are Gone",
