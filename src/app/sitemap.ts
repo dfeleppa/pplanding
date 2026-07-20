@@ -16,7 +16,10 @@ const SUBPAGE_PRIORITY = 0.7;
 const SUPPORT_PRIORITY = 0.5;
 const ARCHIVE_PRIORITY = 0.4;
 
-const today = new Date();
+type SitemapOptions = {
+  images?: string[];
+  lastModified?: SitemapEntry["lastModified"];
+};
 
 // Always emit URLs with a trailing slash to match WordPress / Yoast canonicals.
 // Root path stays as `/`; everything else gets `/.../`.
@@ -24,12 +27,14 @@ const make = (
   path: string,
   priority: number,
   changeFrequency: SitemapEntry["changeFrequency"],
-  images?: string[],
+  options: SitemapOptions = {},
 ): SitemapEntry => {
   const normalized = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
+  const { images, lastModified } = options;
+
   return {
     url: `${SITE.url}${normalized}`,
-    lastModified: today,
+    ...(lastModified ? { lastModified } : {}),
     changeFrequency,
     priority,
     ...(images?.length ? { images: images.map((src) => `${SITE.url}${src}`) } : {}),
@@ -40,7 +45,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: SitemapEntry[] = [];
 
   // Homepage
-  entries.push(make("/", ROOT_PRIORITY, "weekly", ["/hero-dog.jpg", "/our-resort-exterior.jpeg"]));
+  entries.push(
+    make("/", ROOT_PRIORITY, "weekly", {
+      images: ["/hero-dog.jpg", "/our-resort-exterior.jpeg"],
+    }),
+  );
 
   // Contact + booking
   entries.push(make("/contact", SERVICE_PRIORITY, "monthly"));
@@ -52,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Main service pages — top SEO priority
   for (const [slug, page] of Object.entries(mainServicePages)) {
     const heroImage = typeof page.image === "string" ? [page.image] : undefined;
-    entries.push(make(`/${slug}`, SERVICE_PRIORITY, "weekly", heroImage));
+    entries.push(make(`/${slug}`, SERVICE_PRIORITY, "weekly", { images: heroImage }));
   }
 
   // Standalone content pages (about cluster, Hamptons geo, blog index, etc.)
@@ -81,7 +90,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog posts — featured posts higher priority than archive stubs
   for (const [slug, post] of Object.entries(blogPosts)) {
     entries.push(
-      make(`/${slug}`, post.hasFullContent ? SUBPAGE_PRIORITY : ARCHIVE_PRIORITY, "monthly")
+      make(`/${slug}`, post.hasFullContent ? SUBPAGE_PRIORITY : ARCHIVE_PRIORITY, "monthly", {
+        lastModified: post.dateModified ?? post.datePublished,
+      }),
     );
   }
 

@@ -96,6 +96,55 @@ const fullPosts: Record<string, BlogPost> = {
     ],
   },
 
+  "why-august-is-our-busiest-boarding-month": {
+    slug: "why-august-is-our-busiest-boarding-month",
+    title: "Why August Is Our Busiest Boarding Month — and Why You'll Want to Book Early",
+    metaTitle: "Why August Is Our Busiest Boarding Month | Planet Pooch Blog",
+    metaDescription:
+      "August is our busiest dog boarding month at Planet Pooch. Here's why demand spikes — and why booking early gets you the best suite for your dog's stay.",
+    hasFullContent: true,
+    datePublished: "2026-07-08",
+    intro:
+      "Every year it happens like clockwork. The calendar flips to August, and the phone at Planet Pooch starts ringing off the hook. Suites fill up, the daycare floor buzzes, and by mid-month we're often turning away last-minute requests we'd have loved to say yes to. If you're planning a trip before summer winds down, here's the honest truth: August is the busiest boarding month of the year for us, and the best suites go first.",
+    sections: [
+      {
+        heading: "What makes August so busy?",
+        paragraphs: ["A few things collide all at once:"],
+        bullets: [
+          "Last hurrah summer travel — families squeeze in one more beach week, road trip, or long weekend before the school-year routine takes over.",
+          "Back-to-school prep — parents heading out to get kids settled, from dorm move-ins and college drop-offs to quick getaways before the chaos starts.",
+          "Labor Day weekend — the unofficial end of summer is one of the single most-requested boarding stretches of the entire year.",
+        ],
+      },
+      {
+        heading: "Booking early isn't just about getting a spot",
+        paragraphs: ["Reserving ahead does more than guarantee availability. It also means:"],
+        bullets: [
+          "Your pick of suite — the layout and size that fits your dog best is far more likely to be open when you book early.",
+          "A calmer check-in — no last-minute paperwork rush, no scrambling to get records in order the day before you leave.",
+          "Peace of mind — you get to focus on your trip instead of wondering whether your dog has a place to stay.",
+        ],
+      },
+      {
+        heading: "A quick pre-trip checklist",
+        paragraphs: ["To make your August stay smooth, take care of these ahead of time:"],
+        bullets: [
+          "Confirm vaccinations are current — we require dogs to be up to date on their core vaccines, and some vaccines need to be given a set number of days before arrival, so don't leave it to the last minute. Check with us on timing if you're unsure.",
+          "Reserve your dates now — even if your plans aren't 100% locked, getting on the calendar early is far easier than finding an opening in a full week.",
+          "Ask about add-ons — boarding stays are a great time for an exit groom or a little extra enrichment, but those book up during busy stretches too.",
+        ],
+      },
+      {
+        heading: "Don't wait — reserve your dog's spot today",
+        paragraphs: [
+          "August is already moving fast. If you know you'll need boarding this month, the smartest thing you can do is get on the calendar now, while the suites you want are still open.",
+          "Call us at 516-993-3603 or visit planet-pooch.com to book your dog's August stay.",
+          "Your dog gets a comfortable, well-run home away from home. You get to travel knowing they're in good hands. Everybody wins — as long as you don't wait until the suites are gone.",
+        ],
+      },
+    ],
+  },
+
   "planning-a-summer-getaway-book-your-dogs-stay-before-the-dates-are-gone": {
     slug: "planning-a-summer-getaway-book-your-dogs-stay-before-the-dates-are-gone",
     title: "Planning a Summer Getaway? Book Your Dog's Stay Before the Dates Are Gone",
