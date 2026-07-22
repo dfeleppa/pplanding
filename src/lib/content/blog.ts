@@ -25,6 +25,36 @@ export type BlogPost = {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "summer-events-paws-shark-week-celebration": {
+    slug: "summer-events-paws-shark-week-celebration",
+    title: "Summer Events at Planet Pooch: PAWS Shark Week Celebration",
+    metaTitle: "PAWS Shark Week & Summer Events at Planet Pooch | Blog",
+    metaDescription:
+      "Summer is in full swing at Planet Pooch Pet Resort. Join us for PAWS Shark Week on Tuesday, July 28th — a shark-themed day of enrichment, treats, and tail wags.",
+    hasFullContent: true,
+    datePublished: "2026-07-22",
+    intro:
+      "Summer is in full swing at Planet Pooch Pet Resort, and we've been making it extra special for our furry guests! From fun activities to themed celebrations, our summer events are designed to keep dogs happy, engaged, and having the best time while they're with us.",
+    sections: [
+      {
+        heading: "Upcoming Event: PAWS Shark Week — Tuesday, July 28th",
+        paragraphs: [
+          "Get ready for a fin-tastic day at Planet Pooch! We're celebrating Shark Week with our very own PAWS Shark Week event on Tuesday, July 28th.",
+          "Our pups will enjoy a shark-themed experience filled with fun, enrichment, and plenty of tail wags. From creative activities to special treats, we're bringing the excitement of Shark Week to the resort — with a dog-friendly twist!",
+          "At Planet Pooch, we believe enrichment and play are an important part of every dog's stay. Our themed events give our guests opportunities to socialize, explore new experiences, and create fun memories while they're here.",
+        ],
+      },
+      {
+        heading: "More summer fun ahead",
+        paragraphs: [
+          "This is just one of the many ways we keep summer exciting at Planet Pooch Pet Resort. Throughout the season, our team plans special events, enrichment activities, and unique experiences that go beyond the ordinary.",
+          "Whether your dog is joining us for daycare, boarding, or a fun-filled resort experience, they'll always have something exciting to look forward to!",
+          "Stay tuned for more upcoming events, photos, and behind-the-scenes fun from Planet Pooch. We can't wait to celebrate summer with your pups!",
+        ],
+      },
+    ],
+  },
+
   "boarding-upgrade-options-comfort-plus-premium-care": {
     slug: "boarding-upgrade-options-comfort-plus-premium-care",
     title: "Boarding Upgrade Options: A Little Extra Comfort for Your Dog's Stay",
