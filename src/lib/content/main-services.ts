@@ -663,57 +663,91 @@ export const mainServicePages = {
         cta: { label: "Pricing", href: "#group-training" },
       },
       {
-        type: "tieredPricing",
+        type: "groupTraining",
         id: "group-training",
-        eyebrow: "Group Training",
-        title: "Real-world skills, in a small group.",
+        eyebrow: "Training Classes",
+        title: "Drop-In Group Dog Training",
         intro:
-          "Group training helps dogs and puppies learn essential skills while practicing them around real-world distractions — building focus, impulse control, and confidence around other dogs and people. For puppies, it supports healthy socialization during critical learning stages. You'll also learn how to communicate clearly and consistently, resulting in better manners and a well-rounded, confident dog.",
-        uniformStyle: "dark",
-        tiers: [
+          "Train on your schedule — no fixed six-week commitment. Just drop in when you're ready.",
+        pricing: [
           {
-            name: "Beginner",
-            price: "$179.99",
-            cadence: "6-week program · 45-min classes",
-            features: [
-              "8 weeks – 6 months old",
-              "Foundational manners and socialization",
-              "Up to 8 dogs per class",
+            name: "One-Day Drop-In",
+            price: "$43",
+            description: "Single session, pay as you go",
+          },
+          {
+            name: "4-Session Package",
+            price: "$174.99",
+            originalPrice: "$200",
+            note: "Limited-time offer",
+            description: "Use anytime within 2 months",
+          },
+        ],
+        benefits: [
+          "Flexible scheduling — attend anytime there's a class",
+          "Experienced professional trainer",
+          "Practice with real-world distractions",
+          "Build focus, obedience, and confidence",
+        ],
+        levels: [
+          { name: "Puppy Level 1", requirement: "Under 1 year of age" },
+          { name: "Puppy Level 2", requirement: "Under 1 year of age" },
+          { name: "Beginner" },
+          { name: "Intermediate", requirement: "Must pass the Beginner test" },
+          { name: "Advanced", requirement: "Must pass the Beginner and Intermediate tests" },
+        ],
+        bookingNote: "Classes must be booked at least 24 hours in advance.",
+        schedule: [
+          {
+            day: "Wednesday",
+            sessions: [
+              { time: "5:00 PM", className: "Adult" },
+              { time: "6:00 PM", className: "Puppy Level 1" },
             ],
           },
           {
-            name: "Intermediate",
-            price: "$209.99",
-            cadence: "6-week program · 45-min classes",
-            features: [
-              "Any age (prerequisite required)",
-              "Builds focus and reliability with distractions",
-              "Up to 8 dogs per class",
+            day: "Thursday",
+            sessions: [
+              { time: "6:00 PM", className: "Puppy Level 2" },
+              { time: "7:00 PM", className: "Intermediate" },
+              { time: "8:00 PM", className: "Advanced" },
             ],
           },
           {
-            name: "Advanced",
-            price: "$239.99",
-            cadence: "6-week program · 45-min classes",
-            features: [
-              "1 year and older",
-              "Polished obedience and real-world reliability",
-              "Up to 8 dogs per class",
+            day: "Saturday",
+            sessions: [
+              { time: "8:00 AM", className: "Adult" },
+              { time: "11:30 AM", className: "Puppy Level 1" },
+              { time: "12:30 PM", className: "Intermediate" },
+              { time: "1:30 PM", className: "Advanced" },
+              { time: "2:30 PM", className: "Puppy Level 2" },
+            ],
+          },
+          {
+            day: "Sunday",
+            sessions: [
+              { time: "10:00 AM", className: "Puppy Level 1" },
+              { time: "11:00 AM", className: "Beginner" },
+              { time: "12:00 PM", className: "Advanced" },
+              { time: "1:00 PM", className: "Puppy Level 2" },
+              { time: "2:00 PM", className: "Intermediate" },
             ],
           },
         ],
-        secondaryCard: {
-          eyebrow: "Advanced certification",
-          title: "AKC's Canine Good Citizen Program — $239.99",
-          body:
-            "*Need to have completed either Intermediate or Advanced classes. The Canine Good Citizen (CGC) is an award your dog can earn by demonstrating good manners at home and in the community — recognizing the training and effort you've put into working with your dog.",
+        callout: {
+          title: "Ready to Book?",
+          body: "Drop in for a single session or grab the 4-session package and save.",
+          ctas: [
+            { label: "Contact Us", href: "/contact/" },
+            { label: "Call 516-993-3603", href: "tel:+15169933603" },
+          ],
         },
       },
       {
         type: "tieredPricing",
         id: "private-sessions",
-        eyebrow: "Private Sessions",
-        title: "One-on-one training tailored to your dog.",
+        eyebrow: "1:1 Training Sessions",
+        title: "Private Training",
         intro:
           "Personalized guidance shaped around your dog's age, temperament, and learning style — especially valuable for dogs who feel overwhelmed, distracted, or anxious in group settings. Each program runs six 45-minute sessions.",
         uniformStyle: "dark",

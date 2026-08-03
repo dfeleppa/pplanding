@@ -76,6 +76,32 @@ export type ContentSection =
       };
     }
   | {
+      type: "groupTraining";
+      id?: string;
+      eyebrow?: string;
+      title: string;
+      intro: string;
+      pricing: Array<{
+        name: string;
+        price: string;
+        originalPrice?: string;
+        note?: string;
+        description: string;
+      }>;
+      benefits: string[];
+      levels: Array<{ name: string; requirement?: string }>;
+      bookingNote: string;
+      schedule: Array<{
+        day: string;
+        sessions: Array<{ time: string; className: string }>;
+      }>;
+      callout: {
+        title: string;
+        body: string;
+        ctas: Array<{ label: string; href: string }>;
+      };
+    }
+  | {
       type: "comparison";
       id?: string;
       title?: string;
