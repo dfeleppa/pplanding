@@ -716,7 +716,11 @@ export const mainServicePages = {
             ],
           },
         ],
-        bookingNote: "Classes must be booked at least 24 hours in advance.",
+        bookingNotes: [
+          "Classes must be booked at least 24 hours in advance.",
+          "Classes can be taken out of order.",
+          "4-session packages expire 60 days after purchase.",
+        ],
         schedule: [
           {
             day: "Wednesday",
@@ -751,6 +755,54 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced" },
               { time: "1:00 PM", className: "Puppy" },
               { time: "2:00 PM", className: "Adult" },
+            ],
+          },
+        ],
+        scheduleOverrides: [
+          { date: "2026-08-16", sessions: [] },
+          {
+            date: "2026-08-19",
+            sessions: [
+              { time: "5:00 PM", className: "Puppy 1" },
+              { time: "6:00 PM", className: "Adult Class 1" },
+            ],
+          },
+          { date: "2026-08-20", sessions: [] },
+          { date: "2026-08-22", sessions: [] },
+          { date: "2026-08-23", sessions: [] },
+          {
+            date: "2026-08-26",
+            sessions: [
+              { time: "5:00 PM", className: "Puppy 1" },
+              { time: "6:00 PM", className: "Adult Class 1" },
+            ],
+          },
+          { date: "2026-08-27", sessions: [] },
+          { date: "2026-08-29", sessions: [] },
+          { date: "2026-08-30", sessions: [] },
+          {
+            date: "2026-09-02",
+            sessions: [
+              { time: "5:00 PM", className: "Puppy Class 3" },
+              { time: "6:00 PM", className: "Adult Class 3" },
+            ],
+          },
+          {
+            date: "2026-09-03",
+            sessions: [
+              { time: "6:00 PM", className: "Puppy Class 2" },
+              { time: "7:00 PM", className: "Adult Class 2" },
+              { time: "8:00 PM", className: "Advanced Class 2" },
+            ],
+          },
+          {
+            date: "2026-09-05",
+            sessions: [
+              { time: "8:00 AM", className: "Adult Class 1" },
+              { time: "11:30 AM", className: "Puppy Class 1" },
+              { time: "12:30 PM", className: "Adult Class 1" },
+              { time: "1:30 PM", className: "Advanced Class 1" },
+              { time: "2:30 PM", className: "Puppy Class 1" },
             ],
           },
         ],

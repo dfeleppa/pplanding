@@ -491,14 +491,19 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   </article>
                 ))}
               </div>
-              <p className="mt-4 text-sm font-bold text-[var(--pp-ink)]">
-                *{section.bookingNote}
-              </p>
+              <ul className="mt-4 grid gap-1 text-sm font-bold text-[var(--pp-ink)]">
+                {section.bookingNotes.map((note) => (
+                  <li key={note}>*{note}</li>
+                ))}
+              </ul>
             </div>
 
             <div className="mt-14">
               <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Class Schedule</h3>
-              <GroupTrainingSchedule schedule={section.schedule} />
+              <GroupTrainingSchedule
+                schedule={section.schedule}
+                scheduleOverrides={section.scheduleOverrides}
+              />
             </div>
 
             <article className="mt-10 flex flex-col gap-6 bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">

@@ -93,9 +93,13 @@ export type ContentSection =
         requirement?: string;
         classTitles?: string[];
       }>;
-      bookingNote: string;
+      bookingNotes: string[];
       schedule: Array<{
         day: string;
+        sessions: Array<{ time: string; className: string }>;
+      }>;
+      scheduleOverrides?: Array<{
+        date: string;
         sessions: Array<{ time: string; className: string }>;
       }>;
       callout: {

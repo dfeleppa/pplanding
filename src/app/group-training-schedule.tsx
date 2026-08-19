@@ -82,10 +82,19 @@ function formatDate(date: Date) {
   }).format(date);
 }
 
+function formatDateKey(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 export function GroupTrainingSchedule({
   schedule,
+  scheduleOverrides = [],
 }: {
   schedule: GroupTrainingSection["schedule"];
+  scheduleOverrides?: GroupTrainingSection["scheduleOverrides"];
 }) {
   const [weekOffset, setWeekOffset] = useState(0);
   const isClient = useSyncExternalStore(subscribeToClient, () => true, () => false);
@@ -105,9 +114,10 @@ export function GroupTrainingSchedule({
   const visibleDays = Array.from({ length: visibleDayCount }, (_, index) => {
     const date = addDays(visibleStart, index);
     const dayName = weekdayNames[date.getDay()];
+    const override = scheduleOverrides.find((item) => item.date === formatDateKey(date));
     return {
       date,
-      sessions: schedule.find((day) => day.day === dayName)?.sessions ?? [],
+      sessions: override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [],
     };
   });
 
