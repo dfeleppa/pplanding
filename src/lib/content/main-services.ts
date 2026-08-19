@@ -672,7 +672,7 @@ export const mainServicePages = {
         pricing: [
           {
             name: "One-Day Drop-In",
-            price: "$43",
+            price: "$60",
             description: "Single session, pay as you go",
           },
           {
@@ -838,6 +838,111 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 2" },
               { time: "1:30 PM", className: "Advanced Class 2" },
               { time: "2:30 PM", className: "Puppy Class 2" },
+            ],
+          },
+          {
+            date: "2026-09-13",
+            sessions: [
+              { time: "10:00 AM", className: "Puppy Class 2" },
+              { time: "11:00 AM", className: "Adult Class 2" },
+              { time: "12:00 PM", className: "Advanced Class 2" },
+              { time: "1:00 PM", className: "Puppy Class 2" },
+              { time: "2:00 PM", className: "Adult Class 2" },
+            ],
+          },
+          {
+            date: "2026-09-16",
+            sessions: [
+              { time: "5:00 PM", className: "Adult Class 1" },
+              { time: "6:00 PM", className: "Puppy Class 1" },
+            ],
+          },
+          {
+            date: "2026-09-17",
+            sessions: [
+              { time: "6:00 PM", className: "Puppy Class 4" },
+              { time: "7:00 PM", className: "Adult Class 4" },
+              { time: "8:00 PM", className: "Advanced Class 4" },
+            ],
+          },
+          {
+            date: "2026-09-19",
+            sessions: [
+              { time: "8:00 AM", className: "Adult Class 3" },
+              { time: "11:30 AM", className: "Puppy Class 3" },
+              { time: "12:30 PM", className: "Adult Class 3" },
+              { time: "1:30 PM", className: "Advanced Class 3" },
+              { time: "2:30 PM", className: "Puppy Class 3" },
+            ],
+          },
+          {
+            date: "2026-09-20",
+            sessions: [
+              { time: "10:00 AM", className: "Puppy Class 3" },
+              { time: "11:00 AM", className: "Adult Class 3" },
+              { time: "12:00 PM", className: "Advanced Class 3" },
+              { time: "1:00 PM", className: "Puppy Class 3" },
+              { time: "2:00 PM", className: "Adult Class 3" },
+            ],
+          },
+          {
+            date: "2026-09-23",
+            sessions: [
+              { time: "5:00 PM", className: "Adult Class 2" },
+              { time: "6:00 PM", className: "Puppy Class 2" },
+            ],
+          },
+          {
+            date: "2026-09-24",
+            sessions: [
+              { time: "6:00 PM", className: "Puppy Class 1" },
+              { time: "7:00 PM", className: "Adult Class 1" },
+              { time: "8:00 PM", className: "Advanced Class 1" },
+            ],
+          },
+          {
+            date: "2026-09-26",
+            sessions: [
+              { time: "8:00 AM", className: "Adult Class 4" },
+              { time: "11:30 AM", className: "Puppy Class 4" },
+              { time: "12:30 PM", className: "Adult Class 4" },
+              { time: "1:30 PM", className: "Advanced Class 4" },
+              { time: "2:30 PM", className: "Puppy Class 4" },
+            ],
+          },
+          {
+            date: "2026-09-27",
+            sessions: [
+              { time: "10:00 AM", className: "Puppy Class 4" },
+              { time: "11:00 AM", className: "Adult Class 4" },
+              { time: "12:00 PM", className: "Advanced Class 4" },
+              { time: "1:00 PM", className: "Puppy Class 4" },
+              { time: "2:00 PM", className: "Adult Class 4" },
+            ],
+          },
+          {
+            date: "2026-09-30",
+            sessions: [
+              { time: "5:00 PM", className: "Adult Class 3" },
+              { time: "6:00 PM", className: "Puppy Class 3" },
+            ],
+          },
+          {
+            date: "2026-10-01",
+            sessions: [
+              { time: "6:00 PM", className: "Puppy Class 2" },
+              { time: "7:00 PM", className: "Adult Class 2" },
+              { time: "8:00 PM", className: "Advanced Class 2" },
+            ],
+          },
+          {
+            date: "2026-10-03",
+            sessions: [
+              { time: "8:00 AM", className: "Adult Class 1" },
+              { time: "11:30 AM", className: "Puppy Class 1" },
+              { time: "12:30 PM", className: "Adult Class 1" },
+              { time: "1:30 PM", className: "Advanced Class 1" },
+              { time: "2:30 PM", className: "Puppy Class 1" },
             ],
           },
           {
