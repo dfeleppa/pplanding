@@ -426,6 +426,154 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       );
     }
 
+    case "groupTraining":
+      return (
+        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+          <div className="mx-auto max-w-7xl">
+            <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {section.pricing.map((price) => (
+                <article
+                  key={price.name}
+                  className="border border-[var(--pp-mint)]/40 bg-[var(--pp-night)] p-6 text-white"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl leading-tight">{price.name}</h3>
+                      {price.note ? (
+                        <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[var(--pp-mint)]">
+                          {price.note}
+                        </p>
+                      ) : null}
+                    </div>
+                    <p className="text-3xl font-semibold leading-none">
+                      {price.price}
+                      {price.originalPrice ? (
+                        <span className="ml-2 text-base font-normal text-white/45 line-through">
+                          {price.originalPrice}
+                        </span>
+                      ) : null}
+                    </p>
+                  </div>
+                  <p className="mt-5 text-sm leading-7 text-white/75">{price.description}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-12 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+              <div>
+                <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Why this works</h3>
+                <ul className="mt-6 grid gap-3">
+                  {section.benefits.map((benefit) => (
+                    <li
+                      key={benefit}
+                      className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
+                    >
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Classes for every stage</h3>
+                <div className="mt-6 grid gap-px overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.12)] sm:grid-cols-2 xl:grid-cols-5">
+                  {section.levels.map((level) => (
+                    <article key={level.name} className="bg-white/90 p-5">
+                      <h4 className="text-sm font-bold text-[var(--pp-ink)]">{level.name}</h4>
+                      {level.requirement ? (
+                        <p className="mt-2 text-xs leading-5 text-[rgba(47,42,39,0.62)]">
+                          {level.requirement}
+                        </p>
+                      ) : null}
+                    </article>
+                  ))}
+                </div>
+                <p className="mt-4 text-sm font-bold text-[var(--pp-ink)]">
+                  *{section.bookingNote}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-14">
+              <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Weekly class schedule</h3>
+
+              <div className="mt-6 grid gap-4 md:hidden">
+                {section.schedule.map((day) => (
+                  <article
+                    key={day.day}
+                    className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/75"
+                  >
+                    <h4 className="bg-[var(--pp-night)] px-5 py-3 text-sm font-bold text-white">
+                      {day.day}
+                    </h4>
+                    <dl className="divide-y divide-[rgba(50,73,83,0.1)]">
+                      {day.sessions.map((session) => (
+                        <div key={`${session.time}-${session.className}`} className="flex items-baseline justify-between gap-4 px-5 py-3">
+                          <dt className="text-sm font-bold text-[var(--pp-ink)]">{session.time}</dt>
+                          <dd className="text-right text-sm text-[rgba(47,42,39,0.7)]">{session.className}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </article>
+                ))}
+              </div>
+
+              <div className="mt-6 hidden overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/75 md:block">
+                <table className="w-full table-fixed text-left">
+                  <thead className="bg-[var(--pp-night)] text-white">
+                    <tr>
+                      {section.schedule.map((day) => (
+                        <th key={day.day} scope="col" className="px-5 py-4 text-sm font-bold">
+                          {day.day}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="align-top">
+                      {section.schedule.map((day) => (
+                        <td key={day.day} className="border-r border-[rgba(50,73,83,0.1)] last:border-r-0">
+                          <dl className="divide-y divide-[rgba(50,73,83,0.1)]">
+                            {day.sessions.map((session) => (
+                              <div key={`${session.time}-${session.className}`} className="min-h-20 px-5 py-4">
+                                <dt className="text-sm font-bold text-[var(--pp-ink)]">{session.time}</dt>
+                                <dd className="mt-1 text-sm text-[rgba(47,42,39,0.64)]">{session.className}</dd>
+                              </div>
+                            ))}
+                          </dl>
+                        </td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <article className="mt-10 flex flex-col gap-6 bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <h3 className="text-2xl leading-tight">{section.callout.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-white/75">{section.callout.body}</p>
+              </div>
+              <div className="flex flex-wrap gap-3 lg:shrink-0 lg:justify-end">
+                {section.callout.ctas.map((cta) => (
+                  <a
+                    key={cta.href}
+                    href={cta.href}
+                    className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+                  >
+                    {cta.label}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </article>
+          </div>
+        </section>
+      );
+
     case "comparison":
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
