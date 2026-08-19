@@ -683,18 +683,69 @@ export const mainServicePages = {
             description: "Use anytime within 2 months",
           },
         ],
-        benefits: [
-          "Flexible scheduling — attend anytime there's a class",
-          "Experienced professional trainer",
-          "Practice with real-world distractions",
-          "Build focus, obedience, and confidence",
-        ],
         levels: [
-          { name: "Puppy Level 1", requirement: "Under 1 year of age" },
-          { name: "Puppy Level 2", requirement: "Under 1 year of age" },
-          { name: "Beginner" },
-          { name: "Intermediate", requirement: "Must pass the Beginner test" },
-          { name: "Advanced", requirement: "Must pass the Beginner and Intermediate tests" },
+          { name: "Puppy", requirement: "For puppies 8 weeks to 1 year old." },
+          { name: "Adult", requirement: "For dogs 1 year and older." },
+          {
+            name: "Advanced",
+            requirement:
+              "For dogs ready to build reliable obedience, focus, and confidence around real-world distractions.",
+          },
+        ],
+        curricula: [
+          {
+            level: "Puppy",
+            description:
+              "A four-class foundation for clear communication, basic manners, recall, impulse control, loose-leash walking, socialization, grooming comfort, and body-language awareness.",
+            classes: [
+              {
+                classNumber: 1,
+                title: "Communication Foundations",
+                topics: [
+                  "Marker word",
+                  "Name game",
+                  "Come",
+                  "Sit",
+                  "Talk about socialization",
+                  "Talk about how to be the most effective dog trainer for your dog",
+                ],
+              },
+              {
+                classNumber: 2,
+                title: "Focus, Stay & Grooming",
+                topics: [
+                  "Warm up: Come, name game, sit",
+                  "Leave it",
+                  "Stay",
+                  "Finish",
+                  "Talk about grooming",
+                ],
+              },
+              {
+                classNumber: 3,
+                title: "Leash Skills & Body Language",
+                topics: [
+                  "Warm up: Stay, sit, come",
+                  "Leave it 2",
+                  "Finish / Loose Leash Walking",
+                  "Come",
+                  "Stay–add distance",
+                  "Talk about body language",
+                ],
+              },
+              {
+                classNumber: 4,
+                title: "Down, Recall & Real-World Practice",
+                topics: [
+                  "Warm up: Stay, come, name game",
+                  "Down",
+                  "Loose leash walking",
+                  "Come",
+                  "Leave it",
+                ],
+              },
+            ],
+          },
         ],
         bookingNote: "Classes must be booked at least 24 hours in advance.",
         schedule: [
@@ -702,14 +753,14 @@ export const mainServicePages = {
             day: "Wednesday",
             sessions: [
               { time: "5:00 PM", className: "Adult" },
-              { time: "6:00 PM", className: "Puppy Level 1" },
+              { time: "6:00 PM", className: "Puppy" },
             ],
           },
           {
             day: "Thursday",
             sessions: [
-              { time: "6:00 PM", className: "Puppy Level 2" },
-              { time: "7:00 PM", className: "Intermediate" },
+              { time: "6:00 PM", className: "Puppy" },
+              { time: "7:00 PM", className: "Adult" },
               { time: "8:00 PM", className: "Advanced" },
             ],
           },
@@ -717,20 +768,20 @@ export const mainServicePages = {
             day: "Saturday",
             sessions: [
               { time: "8:00 AM", className: "Adult" },
-              { time: "11:30 AM", className: "Puppy Level 1" },
-              { time: "12:30 PM", className: "Intermediate" },
+              { time: "11:30 AM", className: "Puppy" },
+              { time: "12:30 PM", className: "Adult" },
               { time: "1:30 PM", className: "Advanced" },
-              { time: "2:30 PM", className: "Puppy Level 2" },
+              { time: "2:30 PM", className: "Puppy" },
             ],
           },
           {
             day: "Sunday",
             sessions: [
-              { time: "10:00 AM", className: "Puppy Level 1" },
-              { time: "11:00 AM", className: "Beginner" },
+              { time: "10:00 AM", className: "Puppy" },
+              { time: "11:00 AM", className: "Adult" },
               { time: "12:00 PM", className: "Advanced" },
-              { time: "1:00 PM", className: "Puppy Level 2" },
-              { time: "2:00 PM", className: "Intermediate" },
+              { time: "1:00 PM", className: "Puppy" },
+              { time: "2:00 PM", className: "Adult" },
             ],
           },
         ],

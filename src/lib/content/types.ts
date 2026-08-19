@@ -88,8 +88,16 @@ export type ContentSection =
         note?: string;
         description: string;
       }>;
-      benefits: string[];
       levels: Array<{ name: string; requirement?: string }>;
+      curricula?: Array<{
+        level: string;
+        description: string;
+        classes: Array<{
+          classNumber: number;
+          title: string;
+          topics: string[];
+        }>;
+      }>;
       bookingNote: string;
       schedule: Array<{
         day: string;

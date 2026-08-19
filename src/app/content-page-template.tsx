@@ -21,6 +21,7 @@ import { Slideshow } from "./slideshow";
 import { BookNowModal } from "./book-now-modal";
 import { StickyMobileCta } from "./sticky-mobile-cta";
 import { EventCalendarView } from "./event-calendar-view";
+import { GroupTrainingSchedule } from "./group-training-schedule";
 
 const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
@@ -428,7 +429,10 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
     case "groupTraining":
       return (
-        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+        <section
+          id={section.id}
+          className={`${tone} px-5 pb-14 pt-10 sm:px-8 lg:px-10 lg:pb-20 lg:pt-14`}
+        >
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
 
@@ -461,95 +465,74 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               ))}
             </div>
 
-            <div className="mt-12 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-              <div>
-                <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Why this works</h3>
-                <ul className="mt-6 grid gap-3">
-                  {section.benefits.map((benefit) => (
-                    <li
-                      key={benefit}
-                      className="flex items-start gap-3 border border-[rgba(50,73,83,0.1)] bg-white/65 px-5 py-4 text-sm leading-7 text-[rgba(47,42,39,0.82)]"
-                    >
-                      <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--pp-main)]" />
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Classes for every stage</h3>
-                <div className="mt-6 grid gap-px overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.12)] sm:grid-cols-2 xl:grid-cols-5">
-                  {section.levels.map((level) => (
-                    <article key={level.name} className="bg-white/90 p-5">
-                      <h4 className="text-sm font-bold text-[var(--pp-ink)]">{level.name}</h4>
-                      {level.requirement ? (
-                        <p className="mt-2 text-xs leading-5 text-[rgba(47,42,39,0.62)]">
-                          {level.requirement}
-                        </p>
-                      ) : null}
-                    </article>
-                  ))}
-                </div>
-                <p className="mt-4 text-sm font-bold text-[var(--pp-ink)]">
-                  *{section.bookingNote}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-14">
-              <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Weekly class schedule</h3>
-
-              <div className="mt-6 grid gap-4 md:hidden">
-                {section.schedule.map((day) => (
-                  <article
-                    key={day.day}
-                    className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/75"
-                  >
-                    <h4 className="bg-[var(--pp-night)] px-5 py-3 text-sm font-bold text-white">
-                      {day.day}
-                    </h4>
-                    <dl className="divide-y divide-[rgba(50,73,83,0.1)]">
-                      {day.sessions.map((session) => (
-                        <div key={`${session.time}-${session.className}`} className="flex items-baseline justify-between gap-4 px-5 py-3">
-                          <dt className="text-sm font-bold text-[var(--pp-ink)]">{session.time}</dt>
-                          <dd className="text-right text-sm text-[rgba(47,42,39,0.7)]">{session.className}</dd>
-                        </div>
-                      ))}
-                    </dl>
+            <div className="mt-12">
+              <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Classes for every stage</h3>
+              <div className="mt-6 grid gap-px overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.12)] sm:grid-cols-3">
+                {section.levels.map((level) => (
+                  <article key={level.name} className="bg-white/90 p-5">
+                    <h4 className="text-sm font-bold text-[var(--pp-ink)]">{level.name}</h4>
+                    {level.requirement ? (
+                      <p className="mt-2 text-xs leading-5 text-[rgba(47,42,39,0.62)]">
+                        {level.requirement}
+                      </p>
+                    ) : null}
                   </article>
                 ))}
               </div>
+              {section.curricula?.length ? (
+                <div className="mt-8 grid gap-6">
+                  {section.curricula.map((curriculum) => (
+                    <article
+                      key={curriculum.level}
+                      className="border border-[rgba(50,73,83,0.12)] bg-white/75 p-5 sm:p-6"
+                    >
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]">
+                        Current curriculum
+                      </p>
+                      <h4 className="mt-2 text-2xl leading-tight text-[var(--pp-ink)]">
+                        {curriculum.level} Classes
+                      </h4>
+                      <p className="mt-3 max-w-4xl text-sm leading-7 text-[rgba(47,42,39,0.72)]">
+                        {curriculum.description}
+                      </p>
 
-              <div className="mt-6 hidden overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/75 md:block">
-                <table className="w-full table-fixed text-left">
-                  <thead className="bg-[var(--pp-night)] text-white">
-                    <tr>
-                      {section.schedule.map((day) => (
-                        <th key={day.day} scope="col" className="px-5 py-4 text-sm font-bold">
-                          {day.day}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="align-top">
-                      {section.schedule.map((day) => (
-                        <td key={day.day} className="border-r border-[rgba(50,73,83,0.1)] last:border-r-0">
-                          <dl className="divide-y divide-[rgba(50,73,83,0.1)]">
-                            {day.sessions.map((session) => (
-                              <div key={`${session.time}-${session.className}`} className="min-h-20 px-5 py-4">
-                                <dt className="text-sm font-bold text-[var(--pp-ink)]">{session.time}</dt>
-                                <dd className="mt-1 text-sm text-[rgba(47,42,39,0.64)]">{session.className}</dd>
-                              </div>
-                            ))}
-                          </dl>
-                        </td>
-                      ))}
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                        {curriculum.classes.map((classItem) => (
+                          <section
+                            key={classItem.classNumber}
+                            className="border border-[rgba(50,73,83,0.1)] bg-[#fffdf8] p-4"
+                          >
+                            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main)]">
+                              Class {classItem.classNumber}
+                            </p>
+                            <h5 className="mt-2 text-lg leading-6 text-[var(--pp-ink)]">
+                              {classItem.title}
+                            </h5>
+                            <ul className="mt-4 grid gap-2 text-xs leading-5 text-[rgba(47,42,39,0.72)]">
+                              {classItem.topics.map((topic) => (
+                                <li key={topic} className="flex gap-2">
+                                  <span aria-hidden="true" className="text-[var(--pp-main)]">
+                                    •
+                                  </span>
+                                  <span>{topic}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </section>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : null}
+              <p className="mt-4 text-sm font-bold text-[var(--pp-ink)]">
+                *{section.bookingNote}
+              </p>
+            </div>
+
+            <div className="mt-14">
+              <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Class Schedule</h3>
+              <GroupTrainingSchedule schedule={section.schedule} />
             </div>
 
             <article className="mt-10 flex flex-col gap-6 bg-[var(--pp-night)] p-7 text-white lg:flex-row lg:items-center lg:justify-between">
