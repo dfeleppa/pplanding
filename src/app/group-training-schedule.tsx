@@ -92,9 +92,11 @@ function formatDateKey(date: Date) {
 export function GroupTrainingSchedule({
   schedule,
   scheduleOverrides = [],
+  noClassesOnOrAfter,
 }: {
   schedule: GroupTrainingSection["schedule"];
   scheduleOverrides?: GroupTrainingSection["scheduleOverrides"];
+  noClassesOnOrAfter?: GroupTrainingSection["noClassesOnOrAfter"];
 }) {
   const [weekOffset, setWeekOffset] = useState(0);
   const isClient = useSyncExternalStore(subscribeToClient, () => true, () => false);
@@ -114,10 +116,14 @@ export function GroupTrainingSchedule({
   const visibleDays = Array.from({ length: visibleDayCount }, (_, index) => {
     const date = addDays(visibleStart, index);
     const dayName = weekdayNames[date.getDay()];
-    const override = scheduleOverrides.find((item) => item.date === formatDateKey(date));
+    const dateKey = formatDateKey(date);
+    const override = scheduleOverrides.find((item) => item.date === dateKey);
+    const hasEnded = noClassesOnOrAfter ? dateKey >= noClassesOnOrAfter : false;
     return {
       date,
-      sessions: override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [],
+      sessions: hasEnded
+        ? []
+        : override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [],
     };
   });
 

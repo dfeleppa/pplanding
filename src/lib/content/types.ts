@@ -102,6 +102,7 @@ export type ContentSection =
         date: string;
         sessions: Array<{ time: string; className: string }>;
       }>;
+      noClassesOnOrAfter?: string;
       callout: {
         title: string;
         body: string;
