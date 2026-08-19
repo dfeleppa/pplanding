@@ -25,6 +25,55 @@ export type BlogPost = {
 };
 
 const fullPosts: Record<string, BlogPost> = {
+  "all-in-one-dog-care-daycare-boarding-training-grooming": {
+    slug: "all-in-one-dog-care-daycare-boarding-training-grooming",
+    title: "Looking for Trusted, All-in-One Care for Your Dog? Meet Planet Pooch Pet Resort",
+    metaTitle: "All-in-One Dog Care — Daycare, Boarding, Training & Grooming | Planet Pooch Blog",
+    metaDescription:
+      "Daycare, boarding, training, and professional grooming under one roof. See how Planet Pooch Pet Resort keeps your dog happy, safe, and thriving every step of the way.",
+    hasFullContent: true,
+    datePublished: "2026-07-29",
+    intro:
+      "Finding a place where your dog can feel safe, happy, and cared for is important. At Planet Pooch Pet Resort, we provide trusted, all-in-one pet care designed to keep your pup comfortable, engaged, and thriving. From fun-filled days of play to relaxing overnight stays, training sessions, and professional grooming, our experienced team is dedicated to providing exceptional care in a safe, fun, and enriching environment.",
+    sections: [
+      {
+        heading: "Dog Daycare: Play, Socialize & Have Fun",
+        paragraphs: [
+          "Our supervised dog daycare program gives your pup the opportunity to stay active, socialize, and enjoy their day with friends. Our team carefully monitors playgroups to ensure a safe and positive experience for every dog.",
+          "Every daycare visit includes daily updates so you can see how much fun your pup is having — including report cards with photos!",
+        ],
+      },
+      {
+        heading: "Dog Boarding: A Comfortable Stay Away From Home",
+        paragraphs: [
+          "When your dog stays with us, they're treated like family. Our spacious boarding suites provide a comfortable place to relax after a day of activities, while our team provides personalized attention throughout their stay.",
+          "For an even more special experience, our premium boarding upgrades offer additional enrichment, comfort, and one-on-one care to make your dog's vacation extra memorable.",
+        ],
+      },
+      {
+        heading: "Dog Training: Building Confidence & Good Manners",
+        paragraphs: [
+          "Whether you have a new puppy or want to improve your dog's obedience and behavior, our training programs are designed to help dogs learn important skills while building confidence.",
+          "From puppy basics to obedience and behavior training, our experienced trainers work with dogs of all ages and abilities to create a positive learning experience.",
+        ],
+      },
+      {
+        heading: "Professional Grooming: Look Good, Feel Good",
+        paragraphs: [
+          "Our professional grooming services help your dog look and feel their best. From routine maintenance to full grooming appointments, our team provides quality care with your dog's comfort as the top priority.",
+        ],
+      },
+      {
+        heading: "One Trusted Place for All Your Dog's Needs",
+        paragraphs: [
+          "Whether your dog is joining us for a day of play, enjoying a relaxing boarding stay, learning new skills, or getting pampered with a spa day, Planet Pooch Pet Resort is here to provide top-tier care every step of the way.",
+          "We're proud to offer a complete pet care experience where dogs can play, learn, relax, and feel right at home.",
+          "Ready to experience the Planet Pooch difference? Book your dog's next visit today!",
+        ],
+      },
+    ],
+  },
+
   "summer-events-paws-shark-week-celebration": {
     slug: "summer-events-paws-shark-week-celebration",
     title: "Summer Events at Planet Pooch: PAWS Shark Week Celebration",
