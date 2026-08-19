@@ -687,8 +687,6 @@ export const mainServicePages = {
           {
             name: "Puppy",
             requirement: "For puppies 8 weeks to 1 year old.",
-            curriculumDescription:
-              "A four-class foundation for clear communication, basic manners, recall, impulse control, loose-leash walking, socialization, grooming comfort, and body-language awareness.",
             classTitles: [
               "Communication Foundations",
               "Focus, Stay & Grooming",
@@ -699,8 +697,6 @@ export const mainServicePages = {
           {
             name: "Adult",
             requirement: "For dogs 1 year and older.",
-            curriculumDescription:
-              "A four-class program that reinforces clear communication and foundational manners while adding down, stay, impulse control, loose-leash walking, polite greetings, and body-language awareness.",
             classTitles: [
               "Communication Foundations",
               "Stay, Down & Grooming",
@@ -712,8 +708,6 @@ export const mainServicePages = {
             name: "Advanced",
             requirement:
               "For dogs ready to build reliable obedience, focus, and confidence around real-world distractions.",
-            curriculumDescription:
-              "A four-class progression that strengthens sustained focus, reliable responses around distractions, distance work, heel positioning, neutral dog passing, and polished greetings.",
             classTitles: [
               "Focus & Distraction Proofing",
               "Duration, Distance & Polite Greetings",

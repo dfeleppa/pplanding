@@ -476,23 +476,16 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                         {level.requirement}
                       </p>
                     ) : null}
-                    {level.curriculumDescription ? (
+                    {level.classTitles?.length ? (
                       <div className="mt-4 border-t border-[rgba(50,73,83,0.1)] pt-4">
-                        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main)]">
-                          Current curriculum
-                        </p>
-                        <p className="mt-2 text-xs leading-5 text-[rgba(47,42,39,0.62)]">
-                          {level.curriculumDescription}
-                        </p>
-                        {level.classTitles?.length ? (
-                          <ol className="mt-3 grid gap-1.5 text-xs font-semibold leading-5 text-[var(--pp-ink)]">
-                            {level.classTitles.map((title, classIndex) => (
-                              <li key={title}>
-                                Class {classIndex + 1}: {title}
-                              </li>
-                            ))}
-                          </ol>
-                        ) : null}
+                        <ol className="grid gap-1.5 text-xs leading-5 text-[var(--pp-ink)]">
+                          {level.classTitles.map((title, classIndex) => (
+                            <li key={title}>
+                              <span className="font-bold">Class {classIndex + 1}:</span>{" "}
+                              <span>{title}</span>
+                            </li>
+                          ))}
+                        </ol>
                       </div>
                     ) : null}
                   </article>

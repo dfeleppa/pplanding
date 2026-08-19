@@ -91,7 +91,6 @@ export type ContentSection =
       levels: Array<{
         name: string;
         requirement?: string;
-        curriculumDescription?: string;
         classTitles?: string[];
       }>;
       bookingNote: string;
