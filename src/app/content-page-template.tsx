@@ -476,55 +476,28 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                         {level.requirement}
                       </p>
                     ) : null}
+                    {level.curriculumDescription ? (
+                      <div className="mt-4 border-t border-[rgba(50,73,83,0.1)] pt-4">
+                        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main)]">
+                          Current curriculum
+                        </p>
+                        <p className="mt-2 text-xs leading-5 text-[rgba(47,42,39,0.62)]">
+                          {level.curriculumDescription}
+                        </p>
+                        {level.classTitles?.length ? (
+                          <ol className="mt-3 grid gap-1.5 text-xs font-semibold leading-5 text-[var(--pp-ink)]">
+                            {level.classTitles.map((title, classIndex) => (
+                              <li key={title}>
+                                Class {classIndex + 1}: {title}
+                              </li>
+                            ))}
+                          </ol>
+                        ) : null}
+                      </div>
+                    ) : null}
                   </article>
                 ))}
               </div>
-              {section.curricula?.length ? (
-                <div className="mt-8 grid gap-6">
-                  {section.curricula.map((curriculum) => (
-                    <article
-                      key={curriculum.level}
-                      className="border border-[rgba(50,73,83,0.12)] bg-white/75 p-5 sm:p-6"
-                    >
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]">
-                        Current curriculum
-                      </p>
-                      <h4 className="mt-2 text-2xl leading-tight text-[var(--pp-ink)]">
-                        {curriculum.level} Classes
-                      </h4>
-                      <p className="mt-3 max-w-4xl text-sm leading-7 text-[rgba(47,42,39,0.72)]">
-                        {curriculum.description}
-                      </p>
-
-                      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                        {curriculum.classes.map((classItem) => (
-                          <section
-                            key={classItem.classNumber}
-                            className="border border-[rgba(50,73,83,0.1)] bg-[#fffdf8] p-4"
-                          >
-                            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--pp-main)]">
-                              Class {classItem.classNumber}
-                            </p>
-                            <h5 className="mt-2 text-lg leading-6 text-[var(--pp-ink)]">
-                              {classItem.title}
-                            </h5>
-                            <ul className="mt-4 grid gap-2 text-xs leading-5 text-[rgba(47,42,39,0.72)]">
-                              {classItem.topics.map((topic) => (
-                                <li key={topic} className="flex gap-2">
-                                  <span aria-hidden="true" className="text-[var(--pp-main)]">
-                                    •
-                                  </span>
-                                  <span>{topic}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </section>
-                        ))}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              ) : null}
               <p className="mt-4 text-sm font-bold text-[var(--pp-ink)]">
                 *{section.bookingNote}
               </p>

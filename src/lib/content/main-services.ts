@@ -684,66 +684,41 @@ export const mainServicePages = {
           },
         ],
         levels: [
-          { name: "Puppy", requirement: "For puppies 8 weeks to 1 year old." },
-          { name: "Adult", requirement: "For dogs 1 year and older." },
+          {
+            name: "Puppy",
+            requirement: "For puppies 8 weeks to 1 year old.",
+            curriculumDescription:
+              "A four-class foundation for clear communication, basic manners, recall, impulse control, loose-leash walking, socialization, grooming comfort, and body-language awareness.",
+            classTitles: [
+              "Communication Foundations",
+              "Focus, Stay & Grooming",
+              "Leash Skills & Body Language",
+              "Down, Recall & Real-World Practice",
+            ],
+          },
+          {
+            name: "Adult",
+            requirement: "For dogs 1 year and older.",
+            curriculumDescription:
+              "A four-class program that reinforces clear communication and foundational manners while adding down, stay, impulse control, loose-leash walking, polite greetings, and body-language awareness.",
+            classTitles: [
+              "Communication Foundations",
+              "Stay, Down & Grooming",
+              "Leash Skills & Polite Greetings",
+              "Distance, Focus & Loose-Leash Practice",
+            ],
+          },
           {
             name: "Advanced",
             requirement:
               "For dogs ready to build reliable obedience, focus, and confidence around real-world distractions.",
-          },
-        ],
-        curricula: [
-          {
-            level: "Puppy",
-            description:
-              "A four-class foundation for clear communication, basic manners, recall, impulse control, loose-leash walking, socialization, grooming comfort, and body-language awareness.",
-            classes: [
-              {
-                classNumber: 1,
-                title: "Communication Foundations",
-                topics: [
-                  "Marker word",
-                  "Name game",
-                  "Come",
-                  "Sit",
-                  "Talk about socialization",
-                  "Talk about how to be the most effective dog trainer for your dog",
-                ],
-              },
-              {
-                classNumber: 2,
-                title: "Focus, Stay & Grooming",
-                topics: [
-                  "Warm up: Come, name game, sit",
-                  "Leave it",
-                  "Stay",
-                  "Finish",
-                  "Talk about grooming",
-                ],
-              },
-              {
-                classNumber: 3,
-                title: "Leash Skills & Body Language",
-                topics: [
-                  "Warm up: Stay, sit, come",
-                  "Leave it 2",
-                  "Finish / Loose Leash Walking",
-                  "Come",
-                  "Stay–add distance",
-                  "Talk about body language",
-                ],
-              },
-              {
-                classNumber: 4,
-                title: "Down, Recall & Real-World Practice",
-                topics: [
-                  "Warm up: Stay, come, name game",
-                  "Down",
-                  "Loose leash walking",
-                  "Come",
-                  "Leave it",
-                ],
-              },
+            curriculumDescription:
+              "A four-class progression that strengthens sustained focus, reliable responses around distractions, distance work, heel positioning, neutral dog passing, and polished greetings.",
+            classTitles: [
+              "Focus & Distraction Proofing",
+              "Duration, Distance & Polite Greetings",
+              "Heelwork & Neutral Dog Passing",
+              "Distance Commands & Real-World Control",
             ],
           },
         ],
