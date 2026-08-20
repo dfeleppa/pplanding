@@ -82,6 +82,14 @@ function formatDate(date: Date) {
   }).format(date);
 }
 
+function formatAgendaDate(date: Date) {
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+  }).format(date);
+}
+
 function formatDateKey(date: Date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -126,6 +134,7 @@ export function GroupTrainingSchedule({
         : override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [],
     };
   });
+  const mobileAgendaDays = visibleDays.filter((day) => day.sessions.length > 0);
 
   return (
     <div className="mt-6">
@@ -133,13 +142,13 @@ export function GroupTrainingSchedule({
         <p className="text-lg font-semibold text-[var(--pp-ink)]">
           {formatDateRange(visibleStart, visibleEnd)}
         </p>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:flex">
           <button
             type="button"
             aria-label="Move schedule back one week"
             disabled={weekOffset === 0}
             onClick={() => setWeekOffset((offset) => Math.max(0, offset - 1))}
-            className="inline-flex min-h-9 items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 disabled:cursor-not-allowed disabled:opacity-35"
+            className="inline-flex min-h-9 w-full items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 disabled:cursor-not-allowed disabled:opacity-35 sm:w-auto"
           >
             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
             Previous
@@ -148,7 +157,7 @@ export function GroupTrainingSchedule({
             type="button"
             aria-label="Move schedule forward one week"
             onClick={() => setWeekOffset((offset) => offset + 1)}
-            className="inline-flex min-h-9 items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25"
+            className="inline-flex min-h-9 w-full items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 sm:w-auto"
           >
             Next
             <ChevronRight className="h-4 w-4" aria-hidden="true" />
@@ -156,7 +165,51 @@ export function GroupTrainingSchedule({
         </div>
       </div>
 
-      <div className="mt-4 overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.1)]">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:hidden">
+        {mobileAgendaDays.length ? (
+          mobileAgendaDays.map((day) => {
+            const isToday = isSameDay(day.date, today);
+            return (
+              <article
+                key={day.date.toISOString()}
+                className={`border border-[rgba(50,73,83,0.12)] bg-[#fffdf8] p-4 ${
+                  isToday ? "shadow-[inset_0_0_0_2px_var(--pp-main)]" : ""
+                }`}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <h4 className="text-sm font-bold text-[var(--pp-ink)]">
+                    {formatAgendaDate(day.date)}
+                  </h4>
+                  {isToday ? (
+                    <span className="shrink-0 bg-[var(--pp-mint)] px-2 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--pp-night)]">
+                      Today
+                    </span>
+                  ) : null}
+                </div>
+                <div className="mt-3 grid gap-2">
+                  {day.sessions.map((session) => (
+                    <div
+                      key={`${session.time}-${session.className}`}
+                      className="flex items-center justify-between gap-3 bg-[var(--pp-mint)]/25 px-3 py-2"
+                    >
+                      <span className="text-xs font-bold text-[var(--pp-ink)]">{session.time}</span>
+                      <span className="text-right text-xs text-[rgba(47,42,39,0.68)]">
+                        {session.className}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            );
+          })
+        ) : (
+          <p className="border border-[rgba(50,73,83,0.12)] bg-white/75 px-4 py-6 text-sm text-[rgba(47,42,39,0.64)] sm:col-span-2">
+            No classes are scheduled during this period.
+          </p>
+        )}
+      </div>
+
+      <div className="mt-4 hidden overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.1)] lg:block">
         <div className="min-w-[56rem]">
           <div className="grid grid-cols-7 gap-px bg-[var(--pp-night)] text-white">
             {calendarWeekdays.map((day) => (
