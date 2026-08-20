@@ -35,7 +35,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 text-[var(--pp-ink)]/60 transition hover:text-[var(--pp-ink)]"
+              className="absolute top-2 right-2 flex h-11 w-11 items-center justify-center text-[var(--pp-ink)]/60 transition hover:text-[var(--pp-ink)] sm:top-3 sm:right-3"
             >
               <X className="h-5 w-5" />
             </button>

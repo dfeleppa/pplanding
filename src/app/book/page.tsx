@@ -122,7 +122,7 @@ export default function BookPage() {
                     className={
                       action.primary
                         ? "pp-cta pp-cta-sm justify-center text-center"
-                        : "inline-flex items-center justify-center border border-[var(--pp-night)]/25 bg-white px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-cream)]"
+                        : "inline-flex min-h-11 items-center justify-center border border-[var(--pp-night)]/25 bg-white px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-cream)]"
                     }
                   >
                     {action.label}
@@ -149,7 +149,7 @@ export default function BookPage() {
             </p>
             <a
               href={SITE.phone.href}
-              className="mt-6 inline-flex items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
             >
               Call {SITE.phone.display}
             </a>

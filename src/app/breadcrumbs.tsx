@@ -24,7 +24,7 @@ export function Breadcrumbs({
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="transition hover:text-[var(--pp-main)]"
+                  className="inline-flex min-h-11 items-center transition hover:text-[var(--pp-main)] sm:min-h-0"
                 >
                   {item.name}
                 </Link>

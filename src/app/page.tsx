@@ -126,16 +126,16 @@ export default function HomePage() {
 
           <div
             id="top"
-            className="pt-12 pb-24 lg:pt-16 lg:pb-32"
+            className="pp-home-hero-content pt-12 pb-24 lg:pt-16 lg:pb-32"
           >
             <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <h1 className="max-w-xl text-white">
+                <h1 className="pp-home-hero-title max-w-xl text-white">
                   Mobile grooming, daycare, boarding &amp; training across{" "}
                   <span className="text-[var(--pp-mint)]/75">Long Island</span>.
                 </h1>
                 <p
-                  className="mt-5 max-w-md text-lg italic leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
+                  className="pp-home-hero-tagline mt-5 max-w-md text-lg italic leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
                   style={{ fontFamily: "var(--font-display), serif" }}
                 >
                   Enriching the lives of pets since 2014.
@@ -378,13 +378,13 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
                     href="/book/"
-                    className="inline-flex items-center justify-center bg-[var(--pp-night)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[var(--pp-main-deep)]"
+                    className="inline-flex min-h-11 items-center justify-center bg-[var(--pp-night)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[var(--pp-main-deep)]"
                   >
                     Book Now
                   </Link>
                   <a
                     href={SITE.phone.href}
-                    className="inline-flex items-center justify-center bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/85"
+                    className="inline-flex min-h-11 items-center justify-center bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-white/85"
                   >
                     Call {SITE.phone.display}
                   </a>

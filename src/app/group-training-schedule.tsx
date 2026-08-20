@@ -148,7 +148,7 @@ export function GroupTrainingSchedule({
             aria-label="Move schedule back one week"
             disabled={weekOffset === 0}
             onClick={() => setWeekOffset((offset) => Math.max(0, offset - 1))}
-            className="inline-flex min-h-9 w-full items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 disabled:cursor-not-allowed disabled:opacity-35 sm:w-auto"
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 disabled:cursor-not-allowed disabled:opacity-35 sm:w-auto"
           >
             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
             Previous
@@ -157,7 +157,7 @@ export function GroupTrainingSchedule({
             type="button"
             aria-label="Move schedule forward one week"
             onClick={() => setWeekOffset((offset) => offset + 1)}
-            className="inline-flex min-h-9 w-full items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 sm:w-auto"
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 border border-[rgba(50,73,83,0.18)] px-3 text-xs font-bold text-[var(--pp-ink)] transition hover:bg-[var(--pp-mint)]/25 sm:w-auto"
           >
             Next
             <ChevronRight className="h-4 w-4" aria-hidden="true" />

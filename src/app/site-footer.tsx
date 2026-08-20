@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import planetPoochLogo from "../../public/planet-pooch-logo.png";
 import { ADDRESS_LINES, SITE } from "../lib/site";
 
 const footerLinks = {
@@ -37,12 +38,10 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.1fr]">
         <div>
           <Image
-            src="/planet-pooch-logo.png"
+            src={planetPoochLogo}
             alt="Planet Pooch Pet Resort"
-            width={220}
-            height={74}
+            sizes="190px"
             className="h-auto w-[190px] brightness-0 invert"
-            style={{ height: "auto" }}
           />
           <p
             className="mt-6 max-w-xs text-sm italic leading-relaxed text-white/72"
@@ -62,7 +61,7 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block transition hover:text-white"
+                className="flex min-h-11 items-center transition hover:text-white lg:min-h-0"
               >
                 {item.label}
               </Link>
@@ -79,7 +78,7 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block transition hover:text-white"
+                className="flex min-h-11 items-center transition hover:text-white lg:min-h-0"
               >
                 {item.label}
               </Link>
@@ -96,7 +95,7 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block transition hover:text-white"
+                className="flex min-h-11 items-center transition hover:text-white lg:min-h-0"
               >
                 {item.label}
               </Link>
@@ -109,13 +108,13 @@ export function SiteFooter() {
             Contact
           </p>
           <div className="mt-5 space-y-4 text-sm text-white/85">
-            <a href={SITE.phone.href} className="flex items-start gap-3 transition hover:text-white">
+            <a href={SITE.phone.href} className="flex min-h-11 items-center gap-3 transition hover:text-white lg:min-h-0 lg:items-start">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-white/55" />
               <span>{SITE.phone.display}</span>
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="flex items-start gap-3 transition hover:text-white"
+              className="flex min-h-11 items-center gap-3 transition hover:text-white lg:min-h-0 lg:items-start"
             >
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white/55" />
               <span>{SITE.email}</span>
@@ -143,14 +142,14 @@ export function SiteFooter() {
           <p>
             &copy; {new Date().getFullYear()} {SITE.legalName}
           </p>
-          <div className="flex items-center gap-6">
-            <a href={SITE.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="transition hover:text-white">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-6">
+            <a href={SITE.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="inline-flex min-h-11 items-center transition hover:text-white lg:min-h-0">
               Instagram
             </a>
-            <a href={SITE.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="transition hover:text-white">
+            <a href={SITE.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="inline-flex min-h-11 items-center transition hover:text-white lg:min-h-0">
               Facebook
             </a>
-            <a href={SITE.social.youtube} target="_blank" rel="noopener" aria-label="YouTube" className="transition hover:text-white">
+            <a href={SITE.social.youtube} target="_blank" rel="noopener" aria-label="YouTube" className="inline-flex min-h-11 items-center transition hover:text-white lg:min-h-0">
               YouTube
             </a>
           </div>

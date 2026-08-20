@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import planetPoochLogo from "../../public/planet-pooch-logo.png";
 import { headerNavItems } from "../lib/nav";
 import { NavDropdown } from "./nav-dropdown";
 import { MobileMenu } from "./mobile-menu";
@@ -23,12 +24,10 @@ export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
     <header className="flex items-center justify-between border-b border-white/15 pb-5 lg:pb-6">
       <Link className="flex items-center" href="/" aria-label="Planet Pooch — Home">
         <Image
-          src="/planet-pooch-logo.png"
+          src={planetPoochLogo}
           alt="Planet Pooch Pet Resort"
-          width={220}
-          height={74}
+          sizes="(min-width: 640px) 220px, 180px"
           className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
-          style={{ height: "auto" }}
         />
       </Link>
       <nav

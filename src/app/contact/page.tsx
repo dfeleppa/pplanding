@@ -22,7 +22,7 @@ const bodySans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Book Now | Planet Pooch Pet Resort",
+  title: { absolute: "Book Now | Planet Pooch Pet Resort" },
   description: `Book mobile grooming, daycare, boarding, training, or enrichment with ${SITE.legalName} in ${SITE.address.locality}, ${SITE.address.region}. Call ${SITE.phone.display} or email ${SITE.email}.`,
   alternates: { canonical: "/contact/" },
 };
@@ -117,7 +117,7 @@ export default function ContactPage() {
             </p>
             <a
               href={SITE.phone.href}
-              className="mt-6 inline-flex items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
             >
               {SITE.phone.display}
               <ArrowRight className="h-4 w-4" />
@@ -132,7 +132,7 @@ export default function ContactPage() {
             </p>
             <a
               href={`mailto:${SITE.email}`}
-              className="mt-6 inline-flex items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
             >
               {SITE.email}
               <ArrowRight className="h-4 w-4" />

@@ -33,7 +33,7 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
-        className="relative z-50 flex items-center justify-center text-white lg:hidden"
+        className="relative z-50 -mr-2 flex h-11 w-11 items-center justify-center text-white lg:hidden"
       >
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
@@ -73,7 +73,7 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
                             key={sub.href}
                             href={sub.href}
                             onClick={() => setOpen(false)}
-                            className="py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/60 transition hover:text-white"
+                            className="flex min-h-11 items-center py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/60 transition hover:text-white"
                           >
                             {sub.label}
                           </Link>
@@ -98,7 +98,7 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
               <a
                 href={SITE.phone.href}
                 data-track="phone-click"
-                className="inline-flex items-center justify-center gap-2 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/85 transition hover:text-white"
+                className="inline-flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/85 transition hover:text-white"
               >
                 <Phone className="h-4 w-4" aria-hidden />
                 Call {SITE.phone.display}
@@ -106,11 +106,11 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
               <Link
                 href="/contact/"
                 onClick={() => setOpen(false)}
-                className="pp-cta-ghost pp-cta-sm text-center"
+                className="pp-cta-ghost pp-cta-sm min-h-11 text-center"
               >
                 Contact
               </Link>
-              <BookNowModal ctaHref={ctaHref} className="pp-cta pp-cta-sm text-center" />
+              <BookNowModal ctaHref={ctaHref} className="pp-cta pp-cta-sm min-h-11 text-center" />
             </div>
           </div>
         </div>

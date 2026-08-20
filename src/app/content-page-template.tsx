@@ -1308,7 +1308,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--pp-mint)]/85">
                       {page.eyebrow}
                     </p>
-                    <h1 className="mt-7 max-w-xl text-white">{page.title}</h1>
+                    <h1 className="pp-service-hero-title mt-7 max-w-xl text-white">{page.title}</h1>
                   </div>
                   <div className="lg:border-l lg:border-white/20 lg:pl-10">
                     <p
@@ -1358,7 +1358,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
                   {page.eyebrow}
                 </p>
-                <h1 className="mt-5 max-w-3xl text-white">{page.title}</h1>
+                <h1 className="pp-service-hero-title mt-5 max-w-3xl text-white">{page.title}</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
               </div>
             </div>
