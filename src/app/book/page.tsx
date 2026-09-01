@@ -3,7 +3,10 @@ import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
 import { Building2, Truck } from "lucide-react";
 import { SITE } from "../../lib/site";
-import { NEW_CLIENT_FORM_URL } from "../../lib/booking";
+import {
+  MOBILE_GROOMING_NEW_CLIENT_FORM_URL,
+  NEW_CLIENT_FORM_URL,
+} from "../../lib/booking";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
 import { StickyMobileCta } from "../sticky-mobile-cta";
@@ -35,7 +38,7 @@ const bookingPaths = [
     actions: [
       {
         label: "New Client",
-        href: NEW_CLIENT_FORM_URL,
+        href: MOBILE_GROOMING_NEW_CLIENT_FORM_URL,
         primary: true,
         external: true,
       },

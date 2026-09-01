@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
-import { NEW_CLIENT_FORM_URL } from "../lib/booking";
+import {
+  MOBILE_GROOMING_NEW_CLIENT_FORM_URL,
+  NEW_CLIENT_FORM_URL,
+} from "../lib/booking";
 
 export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now" }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string }) {
   const [open, setOpen] = useState(false);
@@ -58,7 +61,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                   >
                     Mobile Grooming
                   </h3>
-                  <a href={NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  <a href={MOBILE_GROOMING_NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                     New Client
                   </a>
                   <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
@@ -84,7 +87,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
               </div>
             ) : (
               <div className="flex flex-col items-center gap-3">
-                <a href={NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                <a href={MOBILE_GROOMING_NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
                 </a>
                 <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
