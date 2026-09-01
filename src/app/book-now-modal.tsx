@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { NEW_CLIENT_FORM_URL } from "../lib/booking";
 
 export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now" }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string }) {
   const [open, setOpen] = useState(false);
@@ -57,7 +58,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                   >
                     Mobile Grooming
                   </h3>
-                  <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  <a href={NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                     New Client
                   </a>
                   <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
@@ -73,7 +74,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                   >
                     Pet Resort
                   </h3>
-                  <a href="https://form.moego.pet/go/form?formId=4f15e60b84ff49019c22b876ae2c555b" target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  <a href={NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                     New Client
                   </a>
                   <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" target="_blank" rel="noopener" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
@@ -83,7 +84,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
               </div>
             ) : (
               <div className="flex flex-col items-center gap-3">
-                <a href="https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29" target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                <a href={NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
                 </a>
                 <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">

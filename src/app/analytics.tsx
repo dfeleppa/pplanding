@@ -31,7 +31,7 @@ gtag('config', '${GA_ID}', { anonymize_ip: true });`}
     });
     return;
   }
-  if (href.indexOf('leadconnectorhq.com') !== -1) {
+  if (href.indexOf('leadconnectorhq.com') !== -1 || href.indexOf('form.moego.pet') !== -1) {
     gtag('event', 'cta_click', {
       event_category: 'conversion',
       link_url: href,
