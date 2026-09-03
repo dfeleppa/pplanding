@@ -467,21 +467,21 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
             <div className="mt-12">
               <h3 className="text-2xl leading-tight text-[var(--pp-ink)]">Classes for every stage</h3>
-              <div className="mt-6 grid gap-px overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.12)] sm:grid-cols-3">
+              <div className="mt-6 grid gap-px overflow-hidden border border-[rgba(50,73,83,0.12)] bg-[rgba(50,73,83,0.12)] md:grid-cols-2">
                 {section.levels.map((level) => (
-                  <article key={level.name} className="bg-white/90 p-5">
-                    <h4 className="text-sm font-bold text-[var(--pp-ink)]">{level.name}</h4>
+                  <article key={level.name} className="bg-white/90 p-6 sm:p-7">
+                    <h4 className="text-lg font-bold text-[var(--pp-ink)]">{level.name}</h4>
                     {level.requirement ? (
-                      <p className="mt-2 text-xs leading-5 text-[rgba(47,42,39,0.62)]">
+                      <p className="mt-1.5 text-sm leading-6 text-[rgba(47,42,39,0.62)]">
                         {level.requirement}
                       </p>
                     ) : null}
                     {level.classTitles?.length ? (
-                      <div className="mt-4 border-t border-[rgba(50,73,83,0.1)] pt-4">
-                        <ol className="grid gap-1.5 text-xs leading-5 text-[var(--pp-ink)]">
+                      <div className="mt-5 border-t border-[rgba(50,73,83,0.1)] pt-5">
+                        <ol className="grid gap-2.5 text-sm leading-6 text-[var(--pp-ink)]">
                           {level.classTitles.map((title, classIndex) => (
-                            <li key={title}>
-                              <span className="font-bold">Class {classIndex + 1}:</span>{" "}
+                            <li key={title} className="flex gap-2">
+                              <span className="shrink-0 font-bold">Class {classIndex + 1}:</span>
                               <span>{title}</span>
                             </li>
                           ))}
