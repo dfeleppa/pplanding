@@ -100,10 +100,12 @@ function formatDateKey(date: Date) {
 export function GroupTrainingSchedule({
   schedule,
   scheduleOverrides = [],
+  recurringScheduleAdditions = [],
   noClassesOnOrAfter,
 }: {
   schedule: GroupTrainingSection["schedule"];
   scheduleOverrides?: GroupTrainingSection["scheduleOverrides"];
+  recurringScheduleAdditions?: GroupTrainingSection["recurringScheduleAdditions"];
   noClassesOnOrAfter?: GroupTrainingSection["noClassesOnOrAfter"];
 }) {
   const [weekOffset, setWeekOffset] = useState(0);
@@ -127,11 +129,25 @@ export function GroupTrainingSchedule({
     const dateKey = formatDateKey(date);
     const override = scheduleOverrides.find((item) => item.date === dateKey);
     const hasEnded = noClassesOnOrAfter ? dateKey >= noClassesOnOrAfter : false;
+    const baseSessions = hasEnded
+      ? []
+      : override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [];
+    const addedSessions = hasEnded
+      ? []
+      : recurringScheduleAdditions
+          .filter(
+            (addition) =>
+              addition.day === dayName &&
+              dateKey >= addition.startDate &&
+              dateKey <= addition.endDate,
+          )
+          .flatMap((addition) => addition.sessions);
     return {
       date,
-      sessions: hasEnded
-        ? []
-        : override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [],
+      sessions: [...baseSessions, ...addedSessions].map((session) => ({
+        ...session,
+        className: session.className.replace(/^Puppy(?! Level)(?=\s|$)/, "Puppy Level 1"),
+      })),
     };
   });
   const mobileAgendaDays = visibleDays.filter((day) => day.sessions.length > 0);

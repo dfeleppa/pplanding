@@ -685,13 +685,23 @@ export const mainServicePages = {
         ],
         levels: [
           {
-            name: "Puppy",
+            name: "Puppy Level 1",
             requirement: "For puppies 8 weeks to 1 year old.",
             classTitles: [
               "Communication Foundations",
               "Focus, Stay & Grooming",
               "Leash Skills & Body Language",
               "Down, Recall & Real-World Practice",
+            ],
+          },
+          {
+            name: "Puppy Level 2",
+            requirement: "For puppies 8 weeks to 1 year old.",
+            classTitles: [
+              "Name Game, Come with Distractions, Puppy Push-Ups & Grooming",
+              "Leave It, Stay with Distance, Come with Distance and Distraction & Body Language",
+              "Leave It and Loose-Leash Walking, Heel, Stay with Distance and Distraction & Polite Leash Greetings",
+              "Distance Down, Emergency Stop, Stand & Come",
             ],
           },
           {
@@ -1074,6 +1084,26 @@ export const mainServicePages = {
               { time: "7:00 PM", className: "Adult Class 2" },
               { time: "8:00 PM", className: "Advanced Class 2" },
             ],
+          },
+        ],
+        recurringScheduleAdditions: [
+          {
+            startDate: "2026-09-03",
+            endDate: "2026-10-22",
+            day: "Thursday",
+            sessions: [{ time: "5:00 PM", className: "Puppy Level 2" }],
+          },
+          {
+            startDate: "2026-09-05",
+            endDate: "2026-10-24",
+            day: "Saturday",
+            sessions: [{ time: "3:30 PM", className: "Puppy Level 2" }],
+          },
+          {
+            startDate: "2026-09-06",
+            endDate: "2026-10-25",
+            day: "Sunday",
+            sessions: [{ time: "3:00 PM", className: "Puppy Level 2" }],
           },
         ],
         noClassesOnOrAfter: "2026-10-31",

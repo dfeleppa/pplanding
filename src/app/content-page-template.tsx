@@ -503,6 +503,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               <GroupTrainingSchedule
                 schedule={section.schedule}
                 scheduleOverrides={section.scheduleOverrides}
+                recurringScheduleAdditions={section.recurringScheduleAdditions}
                 noClassesOnOrAfter={section.noClassesOnOrAfter}
               />
             </div>

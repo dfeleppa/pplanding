@@ -102,6 +102,12 @@ export type ContentSection =
         date: string;
         sessions: Array<{ time: string; className: string }>;
       }>;
+      recurringScheduleAdditions?: Array<{
+        startDate: string;
+        endDate: string;
+        day: string;
+        sessions: Array<{ time: string; className: string }>;
+      }>;
       noClassesOnOrAfter?: string;
       callout: {
         title: string;
