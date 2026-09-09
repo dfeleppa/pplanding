@@ -453,12 +453,10 @@ export const mainServicePages = {
         image: "/boarding/moon.JPG",
         imageAlt: "Dogs enjoying their boarding stay at Planet Pooch",
         paragraphs: [
-          "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy, supervised night of rest.",
+          "Leaving your dog overnight can be stressful — for both of you. At Planet Pooch, our boarding program is designed to feel like a natural extension of your dog's day. They'll enjoy playtime with our daycare pack and settle in for a cozy night of rest.",
         ],
         highlights: [
           { icon: "Sparkles", label: "Clean, comfortable suites" },
-          { icon: "Users", label: "Staff on-site day and night" },
-          { icon: "Eye", label: "Overnight camera monitoring" },
           { icon: "PawPrint", label: "Daycare included" },
           { icon: "Utensils", label: "Custom feeding and meds" },
           { icon: "Heart", label: "Bring their favorite toy" },

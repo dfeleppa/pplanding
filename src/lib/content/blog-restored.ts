@@ -183,12 +183,12 @@ export const restoredPosts: Record<string, BlogPost> = {
     datePublished: "2024-04-08",
     author: "Planet Pooch",
     intro:
-      "When travel plans come together, the question of what to do with the dog can quickly steal the fun out of packing. Asking a neighbor to swing by twice a day can feel like a solution, but it rarely is. Professional boarding gives your dog real supervision, real care, and a real routine — and that's what makes the trip work for both of you.",
+      "When travel plans come together, the question of what to do with the dog can quickly steal the fun out of packing. Asking a neighbor to swing by twice a day can feel like a solution, but it rarely is. Professional boarding gives your dog consistent care and a familiar routine — and that's what makes the trip work for both of you.",
     sections: [
       {
         heading: "What boarding actually provides",
         paragraphs: [
-          "It's not just a place to sleep. Boarding gives your dog consistent meals, scheduled potty breaks, supervised play, rest in a comfortable suite, and trained eyes on them around the clock. That structure is what keeps anxious dogs settled and active dogs satisfied.",
+          "It's not just a place to sleep. Boarding gives your dog consistent meals, scheduled potty breaks, supervised play, and rest in a comfortable suite. That structure is what keeps anxious dogs settled and active dogs satisfied.",
         ],
       },
       {

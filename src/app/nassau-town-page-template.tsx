@@ -53,7 +53,7 @@ const SERVICES = [
     icon: Home,
     href: "/dog-boarding/",
     description:
-      "Cozy overnight suites, attentive supervision, and daily enrichment. Comfort and care for your dog while you're away.",
+      "Cozy overnight suites, personalized care, and daily enrichment. Comfort and care for your dog while you're away.",
   },
   {
     title: "Training",
