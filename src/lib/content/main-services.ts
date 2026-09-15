@@ -273,7 +273,7 @@ export const mainServicePages = {
     image: "/Daycare.png",
     serviceType: "Dog Daycare",
     heroCtas: {
-      primary: { label: "Book your Free 1st Day!", href: "/book/" },
+      primary: { label: "Free Evaluation + 1st Day", href: "/book/" },
       ghost: { label: "Learn More", href: "#overview" },
     },
     sections: [
@@ -312,10 +312,10 @@ export const mainServicePages = {
         items: [
           {
             time: "Step 1",
-            label: "Free temperament evaluation",
+            label: "Free evaluation + first daycare day",
             body:
-              "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases.",
-            cta: { label: "Book your free evaluation", href: "/book/" },
+              "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases. Dogs who pass continue into their first day of daycare at no charge.",
+            cta: { label: "Book your free evaluation + first day", href: "/book/" },
           },
         ],
       },

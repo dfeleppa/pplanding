@@ -102,7 +102,7 @@ const localBusinessSchema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: businessDays,
-      opens: "07:30",
+      opens: "07:00",
       closes: "12:30",
     },
     {

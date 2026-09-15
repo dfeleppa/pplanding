@@ -453,7 +453,7 @@ export default function WelcomePage() {
                 Call {SITE.phone.display}
               </a>
               <p className="mt-2 text-xs text-[var(--pp-ink)]/55">
-                Mon–Sat, 7:30am–7pm (closed 12:30–1:30pm).
+                Mon–Sat, 7am–7pm (closed 12:30–1:30pm).
               </p>
             </div>
           </div>

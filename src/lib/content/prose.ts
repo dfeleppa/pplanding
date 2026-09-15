@@ -8,7 +8,7 @@ export const prosePages = {
     metaTitle: "Privacy Policy | Planet Pooch Pet Resort",
     metaDescription:
       "Planet Pooch Pet Resort's privacy policy explains how we collect, use, and protect your information when you use our website and services.",
-    lastUpdated: "February 10, 2026",
+    lastUpdated: "September 15, 2026",
     intro:
       "Planet Pooch Pet Resort Inc. (we, us, our) is committed to protecting your privacy. This policy explains how we collect, use, and protect information from website usage and services including SMS marketing, email communications, appointment reminders, and website tracking.",
     sections: [
@@ -31,7 +31,8 @@ export const prosePages = {
         heading: "3. Cookies and Tracking Technologies",
         paragraphs: [
           "We use cookies and similar technologies to personalize your experience and understand how our website is used. You can control cookies through your browser settings, though some features may not function properly if cookies are disabled.",
-          "We use Google Analytics 4 with IP anonymization to measure aggregate website usage (pages visited, referral sources, device type), and Vercel Analytics and Vercel Speed Insights to monitor site performance and Core Web Vitals. These tools do not identify individual visitors, and we do not combine analytics data with personal information you submit through our forms.",
+          "We use Google Analytics 4 with IP anonymization to measure aggregate website usage (pages visited, referral sources, device type), and Vercel Analytics and Vercel Speed Insights to monitor site performance and Core Web Vitals. We use these analytics reports in aggregate and do not combine them with personal information you submit through our forms.",
+          "We also use Google Ads conversion tracking and the Meta Pixel to measure advertising performance and understand visits resulting from ads. These technologies may use cookies or similar identifiers and may receive information such as IP address, device and browser information, pages viewed, and website interactions. Google and Meta process this information under their respective privacy policies.",
         ],
       },
       {
@@ -187,7 +188,7 @@ export const prosePages = {
         paragraphs: [
           "The Distemper-Parvo vaccine protects against multiple diseases. After the initial series, periodic boosters are needed as determined by a veterinarian. Ideally, boosters should be administered at least 2 weeks before boarding.",
           "Rabies vaccination is mandated by state law and required every 1 to 3 years.",
-          "Bordetella must be given at least 1 week before boarding and requires annual administration at minimum. A 7-day waiting period is enforced for recently vaccinated pets to allow maximum immunity development.",
+          "Bordetella must be given at least 14 days before boarding and requires annual administration at minimum. A 14-day waiting period is enforced for recently vaccinated pets to allow maximum immunity development.",
           "Veterinary Hospital: A & A Veterinary Hospital, 414 Franklin Ave, Franklin Square, NY 11010 — (516) 437-7222 — aandavets@gmail.com",
         ],
       },
@@ -201,7 +202,7 @@ export const prosePages = {
       {
         heading: "Vaccinations Required",
         paragraphs: [
-          "All dogs must be current on DAPP/DHPP (or DA2PP), Rabies, and yearly Bordetella. A 7-day waiting period applies for recently vaccinated pets.",
+          "All dogs must be current on DAPP/DHPP (or DA2PP), Rabies, and yearly Bordetella. A 14-day waiting period applies for recently vaccinated pets.",
           "We do not reimburse pet owners for any expenses related to canine cough or kennel cough, as the vaccine does not offer 100% protection.",
         ],
       },
@@ -247,7 +248,7 @@ export const prosePages = {
       {
         heading: "Staffing Hours",
         paragraphs: [
-          "Monday through Saturday, 7:30am to 7:00pm, with a closed period from 12:30pm to 1:30pm daily.",
+          "Monday through Saturday, 7:00am to 7:00pm, with a closed period from 12:30pm to 1:30pm daily.",
         ],
       },
       {
@@ -340,7 +341,7 @@ export const prosePages = {
       {
         heading: "Free Evaluation",
         paragraphs: [
-          "Every new dog completes a free temperament test before joining group play. This is a one-time meet-and-greet that can take 1 to 2 hours.",
+          "Every new dog completes a free temperament test before joining group play. This is a one-time meet-and-greet that can take 1 to 2 hours. Dogs who pass continue into their first day of daycare at no charge.",
         ],
       },
       {
