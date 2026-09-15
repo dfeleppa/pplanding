@@ -306,7 +306,7 @@ export default function WelcomePage() {
               </h2>
               <p className="mt-5 text-base leading-8 text-white/78">
                 Founded by Andy Gonzaga, Planet Pooch grew from a single mobile
-                grooming van into Nassau County&rsquo;s most trusted pet resort.
+                grooming van into a trusted pet resort serving Nassau County.
                 Every service is built on one principle: treat every dog like
                 your own.
               </p>
