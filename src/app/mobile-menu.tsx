@@ -16,13 +16,19 @@ export function MobileMenu({ ctaHref }: MobileMenuProps) {
   const [expandedDropdown, setExpandedDropdown] = useState<string | null>(null);
 
   useEffect(() => {
+    const root = document.documentElement;
+
     if (open) {
       document.body.style.overflow = "hidden";
+      root.dataset.mobileMenuOpen = "true";
     } else {
       document.body.style.overflow = "";
+      delete root.dataset.mobileMenuOpen;
     }
+
     return () => {
       document.body.style.overflow = "";
+      delete root.dataset.mobileMenuOpen;
     };
   }, [open]);
 

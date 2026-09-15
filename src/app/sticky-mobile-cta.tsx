@@ -34,7 +34,10 @@ export function StickyMobileCta({
         aria-hidden="true"
         className="h-[calc(3.75rem+max(env(safe-area-inset-bottom),0.5rem))] lg:hidden"
       />
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[rgba(50,73,83,0.18)] bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_24px_rgba(50,73,83,0.12)] backdrop-blur lg:hidden">
+      <div
+        data-sticky-mobile-cta
+        className="fixed inset-x-0 bottom-0 z-30 border-t border-[rgba(50,73,83,0.18)] bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_24px_rgba(50,73,83,0.12)] backdrop-blur lg:hidden"
+      >
         <div className="flex gap-2">
           <a
             href={ctaHref}

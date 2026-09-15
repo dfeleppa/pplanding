@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Planet Pooch",
   legalName: "Planet Pooch Pet Resort",
-  domain: "planet-pooch.com",
-  url: "https://planet-pooch.com",
+  domain: "www.planet-pooch.com",
+  url: "https://www.planet-pooch.com",
   email: "planetpoochpetservices@gmail.com",
   phone: {
     display: "(516) 993-3603",
