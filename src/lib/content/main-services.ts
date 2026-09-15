@@ -868,6 +868,7 @@ export const mainServicePages = {
           {
             date: "2026-09-17",
             sessions: [
+              { time: "5:00 PM", className: "Puppy Level 2 Class 1" },
               { time: "6:00 PM", className: "Puppy Class 4" },
               { time: "7:00 PM", className: "Adult Class 4" },
               { time: "8:00 PM", className: "Advanced Class 4" },
@@ -881,6 +882,7 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 3" },
               { time: "1:30 PM", className: "Advanced Class 3" },
               { time: "2:30 PM", className: "Puppy Class 3" },
+              { time: "3:30 PM", className: "Puppy Level 2 Class 2" },
             ],
           },
           {
@@ -891,6 +893,7 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced Class 3" },
               { time: "1:00 PM", className: "Puppy Class 3" },
               { time: "2:00 PM", className: "Adult Class 3" },
+              { time: "3:00 PM", className: "Puppy Level 2 Class 3" },
             ],
           },
           {
@@ -903,6 +906,7 @@ export const mainServicePages = {
           {
             date: "2026-09-24",
             sessions: [
+              { time: "5:00 PM", className: "Puppy Level 2 Class 4" },
               { time: "6:00 PM", className: "Puppy Class 1" },
               { time: "7:00 PM", className: "Adult Class 1" },
               { time: "8:00 PM", className: "Advanced Class 1" },
@@ -916,6 +920,7 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 4" },
               { time: "1:30 PM", className: "Advanced Class 4" },
               { time: "2:30 PM", className: "Puppy Class 4" },
+              { time: "3:30 PM", className: "Puppy Level 2 Class 1" },
             ],
           },
           {
@@ -926,6 +931,7 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced Class 4" },
               { time: "1:00 PM", className: "Puppy Class 4" },
               { time: "2:00 PM", className: "Adult Class 4" },
+              { time: "3:00 PM", className: "Puppy Level 2 Class 2" },
             ],
           },
           {
@@ -938,6 +944,7 @@ export const mainServicePages = {
           {
             date: "2026-10-01",
             sessions: [
+              { time: "5:00 PM", className: "Puppy Level 2 Class 3" },
               { time: "6:00 PM", className: "Puppy Class 2" },
               { time: "7:00 PM", className: "Adult Class 2" },
               { time: "8:00 PM", className: "Advanced Class 2" },
@@ -951,6 +958,7 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 1" },
               { time: "1:30 PM", className: "Advanced Class 1" },
               { time: "2:30 PM", className: "Puppy Class 1" },
+              { time: "3:30 PM", className: "Puppy Level 2 Class 4" },
             ],
           },
           {
@@ -961,6 +969,7 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced Class 1" },
               { time: "1:00 PM", className: "Puppy Class 1" },
               { time: "2:00 PM", className: "Adult Class 1" },
+              { time: "3:00 PM", className: "Puppy Level 2 Class 1" },
             ],
           },
           {
@@ -973,6 +982,7 @@ export const mainServicePages = {
           {
             date: "2026-10-08",
             sessions: [
+              { time: "5:00 PM", className: "Puppy Level 2 Class 2" },
               { time: "6:00 PM", className: "Puppy Class 2" },
               { time: "7:00 PM", className: "Adult Class 2" },
               { time: "8:00 PM", className: "Advanced Class 2" },
@@ -986,6 +996,7 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 1" },
               { time: "1:30 PM", className: "Advanced Class 1" },
               { time: "2:30 PM", className: "Puppy Class 1" },
+              { time: "3:30 PM", className: "Puppy Level 2 Class 3" },
             ],
           },
           {
@@ -996,6 +1007,7 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced Class 2" },
               { time: "1:00 PM", className: "Puppy Class 2" },
               { time: "2:00 PM", className: "Adult Class 2" },
+              { time: "3:00 PM", className: "Puppy Level 2 Class 4" },
             ],
           },
           {
@@ -1008,6 +1020,7 @@ export const mainServicePages = {
           {
             date: "2026-10-15",
             sessions: [
+              { time: "5:00 PM", className: "Puppy Level 2 Class 1" },
               { time: "6:00 PM", className: "Puppy Class 4" },
               { time: "7:00 PM", className: "Adult Class 4" },
               { time: "8:00 PM", className: "Advanced Class 4" },
@@ -1021,6 +1034,7 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 3" },
               { time: "1:30 PM", className: "Advanced Class 3" },
               { time: "2:30 PM", className: "Puppy Class 3" },
+              { time: "3:30 PM", className: "Puppy Level 2 Class 2" },
             ],
           },
           {
@@ -1031,6 +1045,7 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced Class 3" },
               { time: "1:00 PM", className: "Puppy Class 3" },
               { time: "2:00 PM", className: "Adult Class 3" },
+              { time: "3:00 PM", className: "Puppy Level 2 Class 3" },
             ],
           },
           {
@@ -1043,6 +1058,7 @@ export const mainServicePages = {
           {
             date: "2026-10-22",
             sessions: [
+              { time: "5:00 PM", className: "Puppy Level 2 Class 4" },
               { time: "6:00 PM", className: "Puppy Class 1" },
               { time: "7:00 PM", className: "Adult Class 1" },
               { time: "8:00 PM", className: "Advanced Class 1" },
@@ -1056,6 +1072,7 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Adult Class 4" },
               { time: "1:30 PM", className: "Advanced Class 4" },
               { time: "2:30 PM", className: "Puppy Class 4" },
+              { time: "3:30 PM", className: "Puppy Level 2 Class 1" },
             ],
           },
           {
@@ -1066,6 +1083,7 @@ export const mainServicePages = {
               { time: "12:00 PM", className: "Advanced Class 4" },
               { time: "1:00 PM", className: "Puppy Class 4" },
               { time: "2:00 PM", className: "Adult Class 4" },
+              { time: "3:00 PM", className: "Puppy Level 2 Class 2" },
             ],
           },
           {

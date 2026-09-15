@@ -20,11 +20,11 @@ const weekdayNames = [
 
 function formatClassName(className: string) {
   const puppyClassMatch = className.match(
-    /^Puppy(?: Level 1)?(?: Class)? ([1-4])$/,
+    /^Puppy(?: Level ([12]))?(?: Class)? ([1-4])$/,
   );
 
   if (puppyClassMatch) {
-    return `Puppy Lvl 1 (Class ${puppyClassMatch[1]})`;
+    return `Puppy Lvl ${puppyClassMatch[1] ?? "1"} (Class ${puppyClassMatch[2]})`;
   }
 
   const numberedClassMatch = className.match(/^(Adult|Advanced) Class ([1-4])$/);
@@ -167,7 +167,11 @@ export function GroupTrainingSchedule({
               dateKey >= addition.startDate &&
               dateKey <= addition.endDate,
           )
-          .flatMap((addition) => addition.sessions);
+          .flatMap((addition) => addition.sessions)
+          .filter(
+            (addedSession) =>
+              !baseSessions.some((baseSession) => baseSession.time === addedSession.time),
+          );
     return {
       date,
       sessions: [...baseSessions, ...addedSessions].map((session) => ({
