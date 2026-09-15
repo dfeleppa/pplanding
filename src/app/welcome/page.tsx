@@ -312,7 +312,7 @@ export default function WelcomePage() {
               </p>
               <ul className="mt-6 space-y-3 text-sm text-white/78">
                 {[
-                  "Licensed, insured & professionally trained staff",
+                  "Licensed and insured business with professionally trained staff",
                   "Clean, climate-controlled facility in Franklin Square",
                   "Daily photo & video updates for boarding guests",
                   "AKC Evaluator on staff for training programs",
