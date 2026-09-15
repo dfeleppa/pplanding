@@ -5,6 +5,7 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE } from "../lib/site";
 import { Analytics } from "./analytics";
+import { MetaPixel } from "./meta-pixel";
 import "./globals.css";
 
 const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
@@ -163,6 +164,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <Analytics />
+        <MetaPixel />
         <VercelAnalytics />
         <SpeedInsights />
       </body>
