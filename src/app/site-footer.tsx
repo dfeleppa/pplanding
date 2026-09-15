@@ -47,7 +47,7 @@ export function SiteFooter() {
             className="mt-6 max-w-xs text-sm italic leading-relaxed text-white/72"
             style={{ fontFamily: "var(--font-display), serif" }}
           >
-            Mobile grooming and a luxury resort for dogs across Long Island and the Hamptons —
+            Mobile grooming across Nassau County and a luxury dog resort serving Long Island —
             devoted to enriching the lives of pets since 2014.
           </p>
         </div>
@@ -133,7 +133,7 @@ export function SiteFooter() {
 
       <div className="mx-auto mt-14 max-w-7xl border-t border-white/10 pt-6">
         <p className="text-center text-xs leading-6 text-white/55 sm:text-left">
-          Serving Franklin Square, Garden City, Rockville Centre, Nassau County, and the Hamptons.
+          Mobile grooming across Nassau County • Resort services for dogs across Long Island
         </p>
       </div>
 

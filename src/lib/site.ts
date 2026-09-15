@@ -39,9 +39,9 @@ export const SITE = {
       "https://www.google.com/maps/search/?api=1&query=Planet%20Pooch%20Pet%20Resort%2C%201114%20Hempstead%20Turnpike%2C%20Franklin%20Square%2C%20NY%2011010",
   },
   defaults: {
-    homeTitle: "Mobile Pet Grooming Long Island | Mobile Dog Groomer",
+    homeTitle: "Mobile Pet Grooming Nassau County | Mobile Dog Groomer",
     homeDescription:
-      "Planet Pooch is your go-to for mobile pet grooming, daycare, and boarding across Long Island & the Hamptons. Professional, convenient, and pet-centric service.",
+      "Planet Pooch provides mobile pet grooming across Nassau County and daycare, boarding, training, and enrichment for dogs across Long Island.",
     titleTemplate: "%s | Planet Pooch Pet Resort",
   },
 } as const;

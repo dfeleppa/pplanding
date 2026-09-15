@@ -41,7 +41,7 @@ const heroHighlights = [
     href: "/mobile-grooming/",
     icon: Scissors,
     image: "/mobile_home.jpg",
-    copy: "Luxury grooming at your door across Long Island and the Hamptons.",
+    copy: "Luxury grooming at your door across Nassau County.",
   },
   {
     title: "Daycare",
@@ -132,7 +132,7 @@ export default function HomePage() {
             <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
                 <h1 className="pp-home-hero-title max-w-xl text-white">
-                  Mobile grooming, daycare, boarding &amp; training across{" "}
+                  Mobile grooming across Nassau County. Resort care for dogs across{" "}
                   <span className="text-[var(--pp-mint)]/75">Long Island</span>.
                 </h1>
                 <p
@@ -259,7 +259,7 @@ export default function HomePage() {
                 />
               </div>
               <p className="mt-4 text-center text-sm leading-7 text-white/78">
-                🐾 Serving Franklin Square and all of Nassau County 🐾 Mobile Grooming • Daycare • Boarding • Training
+                🐾 Mobile grooming across Nassau County 🐾 Resort care for dogs across Long Island
               </p>
             </div>
           </div>
