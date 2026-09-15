@@ -32,9 +32,11 @@ export const SITE = {
   },
   reviews: {
     rating: 4.9,
-    count: 720,
+    count: 768,
     /** Marketing display form — keep every on-site mention in sync with this. */
-    countDisplay: "720+",
+    countDisplay: "760+",
+    profileUrl:
+      "https://www.google.com/maps/search/?api=1&query=Planet%20Pooch%20Pet%20Resort%2C%201114%20Hempstead%20Turnpike%2C%20Franklin%20Square%2C%20NY%2011010",
   },
   defaults: {
     homeTitle: "Mobile Pet Grooming Long Island | Mobile Dog Groomer",

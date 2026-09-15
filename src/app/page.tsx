@@ -74,32 +74,33 @@ const heroHighlights = [
 ] as const;
 
 
-// Mock Google reviews — replace with real reviews pulled from the
-// Google Business Profile when ready.
+// Verbatim excerpts pulled from the Planet Pooch Google Business Profile.
+// Keep excerpts short and use service labels instead of relative dates so the
+// cards remain accurate between review-count refreshes.
 const googleReviews = [
   {
-    name: "Sarah M.",
-    initials: "S",
+    name: "Katie Kaplan",
+    initials: "KK",
     avatarBg: "bg-[var(--pp-main)]",
-    date: "2 weeks ago",
+    context: "Mobile grooming",
     body:
-      "Bear has never looked better and he was completely calm — no more stressful trips to a salon. Dyana came right to our driveway in Garden City. Worth every penny.",
+      "They are professional, gentle, and always right on time. My pet always finishes happy and looks amazing.",
   },
   {
-    name: "Michael T.",
-    initials: "M",
+    name: "Daniella Vlakancic",
+    initials: "DV",
     avatarBg: "bg-[var(--pp-gold-deep)]",
-    date: "1 month ago",
+    context: "Dog boarding",
     body:
-      "We've been bringing our shepherd to daycare for almost a year. The staff knows him by name, the meet-and-greet was thorough, and he comes home tired in the best way.",
+      "They provide a daily report with pictures and a quick blurb, which was the highlight of my days while I was away!",
   },
   {
-    name: "Jennifer L.",
-    initials: "J",
+    name: "Soraya Pharel",
+    initials: "SP",
     avatarBg: "bg-[var(--pp-night)]",
-    date: "3 weeks ago",
+    context: "Dog daycare",
     body:
-      "Boarded our two huskies for a long weekend. Got daily updates and pictures, they came home happy and healthy. So glad we found Planet Pooch — we trust them completely.",
+      "He felt completely safe and at ease. He had an incredible first day of daycare and came home happily exhausted.",
   },
 ] as const;
 
@@ -307,7 +308,15 @@ export default function HomePage() {
               </span>
               <span>
                 <strong className="font-semibold text-white">{SITE.reviews.rating}</strong>
-                {" "}from {SITE.reviews.countDisplay} reviews on Google
+                {" "}from {SITE.reviews.countDisplay} reviews on{" "}
+                <a
+                  href={SITE.reviews.profileUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                >
+                  Google
+                </a>
               </span>
             </div>
           </div>
@@ -328,7 +337,7 @@ export default function HomePage() {
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-white">{review.name}</p>
-                      <p className="text-xs text-white/55">{review.date}</p>
+                      <p className="text-xs text-white/70">{review.context}</p>
                     </div>
                   </div>
                   <span
