@@ -1163,7 +1163,7 @@ const fullPosts: Record<string, BlogPost> = {
       {
         heading: "Peace of mind",
         paragraphs: [
-          "Professional staff, established routines, and round-the-clock supervision mean your dog receives consistent care — meals, walks, attention, and monitoring — without relying on a friend or neighbor who may not know your dog's needs.",
+          "Professional staff and established routines give your dog consistent daily care — meals, outdoor breaks, attention, and activity — without relying on a friend or neighbor who may not know your dog's needs.",
         ],
       },
       {
