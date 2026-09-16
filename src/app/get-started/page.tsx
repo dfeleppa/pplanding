@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SITE } from "../../lib/site";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
+import { AttributionCapture } from "./attribution-capture";
 
 const FORM_URL =
   "https://form.moego.pet/go/form?formId=f13f0fe8abe34acf9af59dc81b13e70e";
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 export default function GetStartedPage() {
   return (
     <main id="main" className="min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]">
+      <AttributionCapture />
       <div className="bg-[var(--pp-night)] px-5 pt-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <SiteHeader ctaHref="#new-client-form" />
