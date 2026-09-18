@@ -38,7 +38,13 @@ export function parseIntake(value: unknown): Intake {
     services: [...new Set(input.services)], marketingConsent: input.marketingConsent, submissionId, attribution };
 }
 
-export function buildLeadRequest(data: Intake, companyId: string, businessId: string) {
+export function getLeadRouting(services: string[]) {
+  return services.length === 1 && services[0] === "Grooming"
+    ? { preferredBusinessId: "bizVdfk", allocateStaffId: "stfe3r9" } // Planet Pooch / Stacey Conti
+    : { preferredBusinessId: "biz3pcO", allocateStaffId: "stf9EkE" }; // Pet Resort / Derek Wolpert
+}
+
+export function buildLeadRequest(data: Intake, companyId: string) {
   // Pet notes are supported by the Lead API; do not invent custom-field codes.
   const note = ["Website new client inquiry", `Submission: ${data.submissionId}`,
     `Services: ${data.services.join(", ") || "Not selected"}`,
@@ -46,7 +52,7 @@ export function buildLeadRequest(data: Intake, companyId: string, businessId: st
     `Received: ${new Date().toISOString()}`, ...Object.entries(data.attribution).map(([k, v]) => `${k}: ${v}`),
     ...(data.marketingConsent ? [`Consent wording: ${CONSENT_TEXT}`] : [])].join("\n");
   return {
-    lead: { companyId, preferredBusinessId: businessId, firstName: data.firstName, lastName: data.lastName,
+    lead: { companyId, ...getLeadRouting(data.services), firstName: data.firstName, lastName: data.lastName,
       phone: data.phone, email: data.email, pets: data.pets.map(pet => ({ ...pet, gender: "UNKNOWN", notes: [{ content: note }] })) },
     complianceConfig: {
       marketingCampaignsChannels: { channels: data.marketingConsent ? ["COMPLIANCE_CHANNEL_SMS", "COMPLIANCE_CHANNEL_EMAIL"] : [] },

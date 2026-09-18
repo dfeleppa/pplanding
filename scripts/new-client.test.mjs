@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseIntake, buildLeadRequest } from '../src/lib/new-client.ts';
+import { parseIntake, buildLeadRequest, SERVICES } from '../src/lib/new-client.ts';
 import { readFileSync } from 'node:fs';
 import ts from 'typescript';
 
@@ -11,14 +11,14 @@ const valid = () => ({ firstName: 'Test', lastName: 'Inquiry', phone: '(516) 555
 test('normalizes contact information and accepts optional consent', () => {
   const data = parseIntake(valid());
   assert.equal(data.phone, '+15165550100'); assert.equal(data.email, 'test@example.com');
-  const request = buildLeadRequest(data, 'company', 'resort');
+  const request = buildLeadRequest(data, 'company');
   assert.deepEqual(request.complianceConfig.marketingCampaignsChannels.channels, []);
   assert.equal(request.complianceConfig.isConsented, false);
   assert.match(request.lead.pets[0].notes[0].content, /Services: Daycare/);
   assert.match(request.lead.pets[0].notes[0].content, /utm_source: facebook/);
 });
 test('requires explicit marketing consent and retains evidence', () => {
-  const request = buildLeadRequest(parseIntake({ ...valid(), marketingConsent: true }), 'company', 'resort');
+  const request = buildLeadRequest(parseIntake({ ...valid(), marketingConsent: true }), 'company');
   assert.equal(request.complianceConfig.marketingCampaignsChannels.channels.length, 2);
   assert.match(request.lead.pets[0].notes[0].content, /Consent wording:/);
   assert.throws(() => parseIntake({ ...valid(), marketingConsent: 'true' }));
@@ -64,7 +64,8 @@ test('submission route confirms saves, handles retries and fails closed', async 
     };
     const result = await POST(request());
     assert.equal(result.status, 200); assert.equal((await result.json()).eventId, valid().submissionId);
-    assert.equal(calls.length, 3); assert.equal(calls[1].body.lead.preferredBusinessId, 'test-resort');
+    assert.equal(calls.length, 3); assert.equal(calls[1].body.lead.preferredBusinessId, 'biz3pcO');
+    assert.equal(calls[1].body.lead.allocateStaffId, 'stf9EkE');
     assert.equal(calls[1].body.complianceConfig.isConsented, false);
     globalThis.fetch = async url => Response.json(url.endsWith('notes:list') ? { notes: [{ content: `Submission: ${valid().submissionId}` }] } : { leads: [{ phone: '+15165550100', pets: [{ id: 'test-pet', customerId: 'test-customer' }] }] });
     assert.equal((await POST(request())).status, 200);
@@ -73,4 +74,15 @@ test('submission route confirms saves, handles retries and fails closed', async 
     globalThis.fetch = async () => Response.json({ error: 'upstream denied' }, { status: 403 });
     assert.equal((await POST(request())).status, 502);
   } finally { globalThis.fetch = originalFetch; process.env = env; }
+});
+
+test('all 16 service combinations assign the correct business and agent', () => {
+  for (let mask = 0; mask < 16; mask++) {
+    const services = SERVICES.filter((_, index) => mask & (1 << index));
+    const data = parseIntake({ ...valid(), services, preferredBusinessId: 'attacker', allocateStaffId: 'attacker' });
+    const { lead } = buildLeadRequest(data, 'company');
+    const groomingOnly = services.length === 1 && services[0] === 'Grooming';
+    assert.equal(lead.preferredBusinessId, groomingOnly ? 'bizVdfk' : 'biz3pcO', JSON.stringify(services));
+    assert.equal(lead.allocateStaffId, groomingOnly ? 'stfe3r9' : 'stf9EkE', JSON.stringify(services));
+  }
 });

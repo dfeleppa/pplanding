@@ -11,3 +11,5 @@ The existing Meta Pixel fires Lead after a successful API response, with the sub
 Live checks confirmed lead creation, dog name/breed, consent, and the separate pet-notes endpoint. After deployment, verify a submission and its notes readback. Meta Ads Manager attribution remains subject to Meta matching and browser privacy settings.
 
 Validation: `node --experimental-strip-types --test scripts/new-client.test.mjs`, TypeScript, ESLint, production build. The route includes origin checking, validation, a honeypot and best-effort per-instance throttling; distributed abuse control is not provided by the in-memory limiter.
+
+Routing is enforced on the server: Grooming alone selects Planet Pooch (bizVdfk), assigned to Stacey Conti (stfe3r9). Every other service combination, including no selection, selects Planet Pooch Pet Resort (biz3pcO), assigned to Derek Wolpert (stf9EkE). Staff and business IDs were verified through MoeGo on 2026-09-18. MOEGO_BUSINESS_ID is no longer used by this route.

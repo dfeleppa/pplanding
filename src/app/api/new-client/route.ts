@@ -1,4 +1,4 @@
-import { buildLeadRequest, parseIntake } from "../../../lib/new-client";
+import { buildLeadRequest, getLeadRouting, parseIntake } from "../../../lib/new-client";
 
 export const runtime = "nodejs";
 const attempts = new Map<string, { count: number; until: number }>();
@@ -17,8 +17,8 @@ export async function POST(request: Request) {
   try { data = parseIntake(input); } catch (error) { return reply((error as Error).message, 400); }
   const apiKey = process.env.MOEGO_API_KEY?.trim();
   const companyId = process.env.MOEGO_COMPANY_ID?.trim();
-  const businessId = process.env.MOEGO_BUSINESS_ID?.trim();
-  if (!apiKey || !companyId || !businessId) return reply("Online inquiries are temporarily unavailable. Please call our team so we can help you get started.", 503);
+  const businessId = getLeadRouting(data.services).preferredBusinessId;
+  if (!apiKey || !companyId) return reply("Online inquiries are temporarily unavailable. Please call our team so we can help you get started.", 503);
   // Best-effort per-instance abuse protection; no personal data is logged.
   const now = Date.now();
   for (const [key, value] of attempts) if (value.until < now) attempts.delete(key);
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       // Public callers cannot overwrite an existing person's profile by knowing their phone.
       return reply("Please call our team to complete this inquiry so we can keep your information together.", 409);
     }
-    const payload = buildLeadRequest(data, companyId, businessId);
+    const payload = buildLeadRequest(data, companyId);
     const response = await fetch(`${API}/leads`, { method: "POST", headers, cache: "no-store",
       signal: AbortSignal.timeout(15000), body: JSON.stringify(payload) });
     if (!response.ok) throw new Error(`MoeGo create status ${response.status}`);
