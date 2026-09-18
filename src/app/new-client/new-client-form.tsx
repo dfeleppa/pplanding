@@ -81,7 +81,7 @@ export function NewClientForm() {
     <label className={styles.consent}><input type="checkbox" name="marketingConsent" disabled={busy} /><span>{CONSENT_TEXT} View <a href="https://moego.pet/Html5/privacyPolicy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://moego.pet/Html5/termsAndConditions.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>.</span></label>
     </fieldset>
     {error && <div className={styles.error} role="alert">{error} <a href={SITE.phone.href}>Call {SITE.phone.display}</a>.</div>}
-    <button type="submit" disabled={busy} className={styles.submit}>{busy ? "Submitting…" : "Submit"}<span aria-hidden="true">→</span></button>
+    <button type="submit" disabled={busy} className={"pp-cta " + styles.submit}>{busy ? "Submitting…" : "Submit"}<span className="pp-cta-arrow" aria-hidden="true" /></button>
     <p className={styles.help}>Prefer to talk? <a href={SITE.phone.href}>Call {SITE.phone.display}</a></p>
   </form>;
 }
