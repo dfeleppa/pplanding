@@ -51,12 +51,18 @@ test('submission route confirms saves, handles retries and fails closed', async 
     method: 'POST', headers: { origin, 'content-type': 'application/json', 'x-vercel-forwarded-for': `test-${ip++}` }, body: JSON.stringify(valid())
   });
   try {
+    Object.assign(process.env, { NEW_CLIENT_LEDGER_SECRET: 'ledger-test-secret', NEW_CLIENT_LEDGER_URL: 'https://ledger.test/submissions' });
+    globalThis.fetch = async url => {
+      if (String(url).startsWith('https://ledger.test/')) return Response.json({ saved: true }, { status: 201 });
+      throw new Error(`Unexpected request: ${url}`);
+    };
     delete process.env.MOEGO_API_KEY;
     assert.equal((await POST(request())).status, 503);
     assert.equal((await POST(request('https://unrelated.test'))).status, 403);
     Object.assign(process.env, { MOEGO_API_KEY: 'test-key', MOEGO_COMPANY_ID: 'test-company', MOEGO_BUSINESS_ID: 'test-resort' });
     const calls = [];
     globalThis.fetch = async (url, options) => {
+      if (String(url).startsWith('https://ledger.test/')) return Response.json({ saved: true }, { status: 201 });
       calls.push({ url, body: JSON.parse(options.body) });
       if (url.endsWith('leads:list')) return Response.json({ leads: [] });
       if (url.endsWith('/notes')) return Response.json({ notes: JSON.parse(options.body).notes });
@@ -67,11 +73,15 @@ test('submission route confirms saves, handles retries and fails closed', async 
     assert.equal(calls.length, 3); assert.equal(calls[1].body.lead.preferredBusinessId, 'biz3pcO');
     assert.equal(calls[1].body.lead.allocateStaffId, 'stf9EkE');
     assert.equal(calls[1].body.complianceConfig.isConsented, false);
-    globalThis.fetch = async url => Response.json(url.endsWith('notes:list') ? { notes: [{ content: `Submission: ${valid().submissionId}` }] } : { leads: [{ phone: '+15165550100', pets: [{ id: 'test-pet', customerId: 'test-customer' }] }] });
+    globalThis.fetch = async url => String(url).startsWith('https://ledger.test/')
+      ? Response.json({ saved: true }, { status: 201 })
+      : Response.json(url.endsWith('notes:list') ? { notes: [{ content: `Submission: ${valid().submissionId}` }] } : { leads: [{ id: 'existing-lead', phone: '+15165550100', pets: [{ id: 'test-pet', customerId: 'test-customer' }] }] });
     assert.equal((await POST(request())).status, 200);
-    globalThis.fetch = async () => Response.json({ leads: [{ phone: '+15165550100' }] });
+    globalThis.fetch = async url => String(url).startsWith('https://ledger.test/')
+      ? Response.json({ saved: true }, { status: 201 }) : Response.json({ leads: [{ phone: '+15165550100' }] });
     assert.equal((await POST(request())).status, 409);
-    globalThis.fetch = async () => Response.json({ error: 'upstream denied' }, { status: 403 });
+    globalThis.fetch = async url => String(url).startsWith('https://ledger.test/')
+      ? Response.json({ saved: true }, { status: 201 }) : Response.json({ error: 'upstream denied' }, { status: 403 });
     assert.equal((await POST(request())).status, 502);
   } finally { globalThis.fetch = originalFetch; process.env = env; }
 });
