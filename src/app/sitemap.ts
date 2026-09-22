@@ -54,6 +54,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Contact + booking
   entries.push(make("/contact", SERVICE_PRIORITY, "monthly"));
   entries.push(make("/book", SERVICE_PRIORITY, "monthly"));
+  entries.push(
+    make("/gallery", SUBPAGE_PRIORITY, "monthly", {
+      images: ["/daycare_home.png", "/Enrichment.png", "/events/IMG_3981.jpg"],
+    }),
+  );
 
   // HTML site index (helps crawlers discover the long-tail town pages)
   entries.push(make("/sitemap-index", SUPPORT_PRIORITY, "monthly"));
