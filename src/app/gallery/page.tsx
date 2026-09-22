@@ -78,12 +78,6 @@ const photos: readonly GalleryPhoto[] = [
     alt: "A dog posing at the Planet Pooch kissing booth",
     caption: "Lots of love",
   },
-  {
-    src: "/tour-space.jpg",
-    alt: "A clean indoor care space at Planet Pooch Pet Resort",
-    caption: "Spaces made for dogs",
-    className: "sm:col-span-2",
-  },
 ] as const;
 
 export default function GalleryPage() {
