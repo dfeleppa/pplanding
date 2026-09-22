@@ -26,6 +26,12 @@ const photos: readonly GalleryPhoto[] = [
     className: "sm:row-span-2",
   },
   {
+    src: "/gallery/daycare-playroom.webp",
+    alt: "Dogs enjoying supervised play in the spacious Planet Pooch daycare room",
+    caption: "Room to play",
+    className: "sm:row-span-2",
+  },
+  {
     src: "/Enrichment.png",
     alt: "A dog enjoying an enrichment activity at Planet Pooch",
     caption: "Enrichment time",
