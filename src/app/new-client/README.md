@@ -8,6 +8,8 @@ Submissions create MoeGo **Leads**, not Intake Form submissions. Service interes
 
 The existing Meta Pixel fires Lead after a successful API response, with the submission ID as eventID. No Lead event fires on a click, validation error, API error, or missing configuration. No Conversions API integration is included. Browser tracking may be blocked by privacy settings. Source parameters are captured from this page URL; carry UTMs through ad landing links to this route.
 
+The Google Ads `New Client Form Submitted` action fires only after the same successful API response. It uses the existing Google tag (`AW-608173544`), its event label, and the submission ID as `transaction_id` to deduplicate retries. A form view or Submit click alone does not count. Browser privacy settings can block the event; Google Ads may initially show the action as awaiting conversions.
+
 Live checks confirmed lead creation, dog name/breed, consent, and the separate pet-notes endpoint. After deployment, verify a submission and its notes readback. Meta Ads Manager attribution remains subject to Meta matching and browser privacy settings.
 
 Validation: `node --experimental-strip-types --test scripts/new-client.test.mjs`, TypeScript, ESLint, production build. The route includes origin checking, validation, a honeypot and best-effort per-instance throttling; distributed abuse control is not provided by the in-memory limiter.

@@ -38,6 +38,12 @@ export function NewClientForm() {
       setDone(true);
       // An analytics failure must never turn a saved inquiry into a form error.
       try { window.fbq?.("track", "Lead", { content_name: "New client form" }, { eventID: result.eventId }); } catch { /* non-blocking */ }
+      try {
+        window.gtag?.("event", "conversion", {
+          send_to: "AW-608173544/2p8eCKzY0IIdEOj7_6EC",
+          transaction_id: result.eventId,
+        });
+      } catch { /* non-blocking */ }
       requestAnimationFrame(() => { success.current?.focus(); success.current?.scrollIntoView({ behavior: "smooth", block: "center" }); });
     } catch (error) { setError(error instanceof Error ? error.message : "Please try again or call us."); }
     finally { submitting.current = false; setBusy(false); }
