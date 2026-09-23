@@ -705,7 +705,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             ) : null}
             {sideImage ? (
               <div className="grid gap-8 lg:grid-cols-2">
-                <div className="relative min-h-[400px] overflow-hidden border border-[rgba(50,73,83,0.12)] lg:sticky lg:top-8 lg:self-start">
+                <div className="relative aspect-[4/5] overflow-hidden border border-[rgba(50,73,83,0.12)] lg:sticky lg:top-8 lg:self-start">
                   <Image
                     src={section.image!}
                     alt={section.imageAlt ?? section.title ?? "Planet Pooch"}
