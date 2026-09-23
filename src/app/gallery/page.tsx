@@ -32,6 +32,18 @@ const photos: readonly GalleryPhoto[] = [
     className: "sm:row-span-2",
   },
   {
+    src: "/gallery/indoor-daycare-play.webp",
+    alt: "Dogs of different sizes enjoying supervised indoor daycare at Planet Pooch",
+    caption: "Daycare in full swing",
+    className: "sm:row-span-2",
+  },
+  {
+    src: "/gallery/outdoor-dog-play.webp",
+    alt: "Dogs running together in the fenced outdoor play yard at Planet Pooch",
+    caption: "Fresh-air playtime",
+    className: "sm:row-span-2",
+  },
+  {
     src: "/Enrichment.png",
     alt: "A dog enjoying an enrichment activity at Planet Pooch",
     caption: "Enrichment time",
@@ -83,6 +95,32 @@ const photos: readonly GalleryPhoto[] = [
     src: "/kissing-booth.png",
     alt: "A dog posing at the Planet Pooch kissing booth",
     caption: "Lots of love",
+  },
+  {
+    src: "/gallery/indoor-enrichment-room.webp",
+    alt: "A spacious indoor Planet Pooch enrichment room with play tunnels and equipment",
+    caption: "Space for enrichment",
+  },
+  {
+    src: "/gallery/indoor-play-space.webp",
+    alt: "A clean indoor Planet Pooch play space with tunnels, beds, and room to explore",
+    caption: "A bright, open playroom",
+  },
+  {
+    src: "/gallery/private-dog-suite.webp",
+    alt: "A private Planet Pooch dog suite with a raised bed, toys, and television",
+    caption: "Private spaces for rest",
+  },
+  {
+    src: "/gallery/sunlit-care-room.webp",
+    alt: "A clean, sunlit care room inside Planet Pooch Pet Resort",
+    caption: "Clean, comfortable care",
+  },
+  {
+    src: "/gallery/outdoor-play-yard.webp",
+    alt: "The fenced outdoor play yard at Planet Pooch Pet Resort",
+    caption: "Our outdoor play yard",
+    className: "sm:col-span-2",
   },
 ] as const;
 
