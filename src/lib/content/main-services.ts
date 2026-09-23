@@ -306,6 +306,27 @@ export const mainServicePages = {
         ],
       },
       {
+        type: "slideshow",
+        eyebrow: "Inside our daycare",
+        title: "Room to run, play, and make friends.",
+        intro:
+          "Our indoor playrooms and secure outdoor yard give every group space for supervised play, fresh air, and comfortable breaks throughout the day.",
+        images: [
+          {
+            src: "/gallery/daycare-playroom.webp",
+            alt: "Dogs enjoying supervised play in the spacious Planet Pooch daycare room",
+          },
+          {
+            src: "/gallery/outdoor-dog-play.webp",
+            alt: "Dogs running together in the fenced outdoor play yard at Planet Pooch",
+          },
+          {
+            src: "/gallery/indoor-daycare-play.webp",
+            alt: "Dogs of different sizes enjoying supervised indoor daycare at Planet Pooch",
+          },
+        ],
+      },
+      {
         type: "timeline",
         eyebrow: "How It Works",
         title: "From first visit to regular client",
