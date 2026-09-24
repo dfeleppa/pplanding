@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../lib/booking";
+import { SITE } from "../lib/site";
 
 export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now" }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string }) {
   const [open, setOpen] = useState(false);
@@ -93,10 +94,19 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
               </div>
             )}
 
-            <div className="mt-8 border-t border-[var(--pp-sand)] pt-6 text-center">
-              <p className="mb-4 text-sm text-[var(--pp-ink)]/70">
-                Not ready to book, but want to learn more? Click the link below.
-              </p>
+            <div className={`mt-8 border-t border-[var(--pp-sand)] pt-6 ${variant === "full" ? "flex flex-wrap items-center justify-center gap-3" : "text-center"}`}>
+              {variant === "full" ? (
+                <p className="text-sm text-[var(--pp-ink)]/70">
+                  <a href={SITE.phone.href} className="font-semibold underline underline-offset-2">
+                    Call {SITE.phone.display}
+                  </a>{" "}
+                  or
+                </p>
+              ) : (
+                <p className="mb-4 text-sm text-[var(--pp-ink)]/70">
+                  Not ready to book, but want to learn more? Click the link below.
+                </p>
+              )}
               <a href={ctaHref} className="pp-cta pp-cta-sm inline-flex">
                 Get Started
                 <span className="pp-cta-arrow" aria-hidden />
