@@ -2,10 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
-import {
-  MOBILE_GROOMING_NEW_CLIENT_FORM_URL,
-  NEW_CLIENT_FORM_URL,
-} from "../lib/booking";
+import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../lib/booking";
 
 export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now" }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string }) {
   const [open, setOpen] = useState(false);
@@ -77,7 +74,7 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                   >
                     Pet Resort
                   </h3>
-                  <a href={NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  <a href="/new-client/" className="pp-cta pp-cta-sm w-full justify-center text-center">
                     New Client
                   </a>
                   <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" target="_blank" rel="noopener" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
