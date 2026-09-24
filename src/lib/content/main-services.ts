@@ -157,8 +157,6 @@ export const mainServicePages = {
         type: "featureGrid",
         eyebrow: "Services",
         title: "What every groom includes.",
-        intro:
-          "Please note: Our in-house grooming is not open to the public. We only provide in-house grooming for our daycare and boarding dogs.",
         items: [
           { icon: "PawPrint", title: "Nails", description: "Nail cut and grind for a comfortable, healthy length." },
           { icon: "Dog", title: "Ears Cleaned", description: "Gentle cleaning and plucking upon request." },
