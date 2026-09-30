@@ -894,6 +894,85 @@ const fullPosts: Record<string, BlogPost> = {
       },
     ],
   },
+
+  "columbus-day-weekend-dog-boarding": {
+    slug: "columbus-day-weekend-dog-boarding",
+    title: "Columbus Day Weekend Dog Boarding in Franklin Square, Long Island",
+    metaTitle: "Columbus Day Weekend Dog Boarding | Planet Pooch Blog",
+    metaDescription:
+      "Boarding your dog Columbus Day weekend (Oct 10–12)? Private suites, daily play and free medication at Planet Pooch in Franklin Square, NY. Book early.",
+    hasFullContent: true,
+    intro:
+      "Columbus Day weekend runs Saturday, October 10 through Monday, October 12 this year, and for a lot of Long Island families it's the last real getaway before the holidays take over. Apple picking upstate, a foliage drive through Vermont, a wedding out of state, or just three quiet days to recharge.",
+    sections: [
+      {
+        paragraphs: [
+          "Whatever your plans, your dog deserves a long weekend too. At Planet Pooch Pet Resort in Franklin Square, your pup gets a fall getaway of their own: playtime with friends, a comfortable private suite, and a team that treats them like family while you're away.",
+        ],
+      },
+      {
+        heading: "Holiday weekends fill fast, so book now",
+        paragraphs: [
+          "Three-day weekends are some of our busiest stretches of the year, and Columbus Day is no exception. Suites go quickly once October starts, and families who wait until the week of often end up on a waitlist.",
+          "Mark Saturday, October 3 on your calendar. For a Saturday, October 10 check-in, it's the deadline for two things:",
+        ],
+        bullets: [
+          "Bordetella (kennel cough) vaccine: we require it at least 7 days before arrival. If your pup is due, call your vet this week.",
+          "Your 50% payment: it's due one week before arrival.",
+        ],
+      },
+      {
+        heading: "What your dog's long weekend looks like",
+        paragraphs: [
+          "Not all boarding is equal. A Planet Pooch stay is built to keep dogs active, social and relaxed, not just housed.",
+        ],
+        bullets: [
+          "A private suite to rest and sleep between activities, cleaned daily to our sanitation standards",
+          "Daytime play and enrichment with our trained attendants, so your dog comes home tired and happy instead of stir-crazy",
+          "Their own food and routine, prepared the way you do it at home",
+          "Medications at no extra charge, given on your schedule",
+          "Staff on site seven days a week, including Sunday, when the resort is dedicated to our boarding guests",
+        ],
+      },
+      {
+        heading: "Make it a real getaway: upgrades and savings",
+        paragraphs: [
+          "Want to spoil them a little? Our boarding upgrade packages, Comfort Care, Comfort Plus and Premium, add extra comfort and attention to any stay. Ask our front desk which one fits your dog best.",
+          "Two ways to save this weekend:",
+        ],
+        bullets: [
+          "Bringing two dogs? Get 20% off the second dog (Classic suite or higher).",
+          "Staying 2+ nights? Get 20% off an exit groom, so your pup comes home fresh, clean and ready for fall.",
+        ],
+      },
+      {
+        heading: "Your Columbus Day boarding checklist",
+        bullets: [
+          "Reserve your suite. A $25 non-refundable booking deposit holds your spot.",
+          "Update Bordetella by October 3, along with your dog's other required vaccines.",
+          "Pay 50% by October 3 (one week before arrival). This payment is also non-refundable.",
+          "Pack their food, portioned by meal if you can, plus any medications with clear instructions.",
+          "Bring a familiar item like a t-shirt or small blanket that smells like home.",
+        ],
+      },
+      {
+        heading: "Columbus Day boarding FAQ",
+        paragraphs: [
+          "Do you charge extra to give my dog medication? No. We give medications at no extra charge, on the schedule you provide.",
+          "Is the deposit refundable if my plans change? No. The $25 booking deposit and the 50% payment due one week before arrival are both non-refundable, so book once your dates are set.",
+          "Can I get a discount for boarding two dogs? Yes. The second dog gets 20% off when staying in a Classic suite or higher.",
+          "Is someone with the dogs on Sunday? Yes. Our team is on site seven days a week, and Sundays are dedicated entirely to our boarding guests.",
+        ],
+      },
+      {
+        heading: "Reserve your dog's Columbus Day getaway",
+        paragraphs: [
+          "You've got plans for the long weekend. Let us handle the rest. Call or book online today to lock in your suite before we fill up.",
+          "Planet Pooch Pet Resort, 1114 Hempstead Turnpike, Franklin Square, NY. Proudly serving Franklin Square, Garden City, Roslyn and families across Nassau County.",
+        ],
+      },
+    ],
+  },
 };
 
 const stubSlugs: ReadonlyArray<string> = [
