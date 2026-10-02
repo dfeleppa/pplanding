@@ -224,7 +224,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
                 {copy.eyebrow} • {page.town}{page.region ? `, ${page.region}` : ""}
               </p>
               <h1 className="mt-5 max-w-3xl text-white">{`${copy.primary} in ${page.town}${page.town.endsWith("County") || page.town === "North Shore" ? "" : ", NY"}`}</h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{copy.hero(page.town)}</p>
+              <p className="pp-hero-description mt-6 max-w-2xl text-lg leading-8 text-white/82">{copy.hero(page.town)}</p>
               {page.distanceFromResort ? (
                 <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--pp-mint)]/90">
                   {page.distanceFromResort}

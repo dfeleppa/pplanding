@@ -125,7 +125,7 @@ export default function SummerBoardingPage() {
                     actually enjoy.
                   </span>
                 </h1>
-                <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
+                <p className="pp-hero-description mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
                   Climate-controlled suites, daily enrichment, and 1:1 care
                   available at our Franklin Square resort.
                 </p>

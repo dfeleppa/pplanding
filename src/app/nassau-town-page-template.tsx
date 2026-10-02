@@ -118,7 +118,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
               Dog Services in{" "}
               <span className="italic text-[var(--pp-mint)]">{page.town}</span>, NY
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80">
+            <p className="pp-hero-description mt-5 max-w-xl text-lg leading-relaxed text-white/80">
               Mobile grooming, daycare, boarding &amp; training — serving {page.town} and surrounding Nassau County communities.
             </p>
             <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row">

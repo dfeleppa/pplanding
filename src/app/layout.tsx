@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Libre_Baskerville, Manrope } from "next/font/google";
+import { Libre_Baskerville, Lora, Manrope } from "next/font/google";
 import Script from "next/script";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -21,6 +21,13 @@ const bodySans = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
+});
+
+const heroSerif = Lora({
+  subsets: ["latin"],
+  style: "normal",
+  weight: "variable",
+  variable: "--font-hero-description",
 });
 
 export const metadata: Metadata = {
@@ -139,7 +146,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full scroll-smooth antialiased">
-      <body className={`${displaySerif.variable} ${bodySans.variable} min-h-full flex flex-col`}>
+      <body className={`${displaySerif.variable} ${bodySans.variable} ${heroSerif.variable} min-h-full flex flex-col`}>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#324953] focus:shadow-lg"

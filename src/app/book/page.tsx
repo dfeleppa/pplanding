@@ -93,7 +93,7 @@ export default function BookPage() {
                 Book Now
               </p>
               <h1 className="mt-5 text-white">Let&apos;s get your dog on the calendar.</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-white/82">
+              <p className="pp-hero-description mt-6 max-w-xl text-lg leading-8 text-white/82">
                 Pick the path that fits — booking takes a couple of minutes. Not sure what your dog
                 needs? Send us a note below and we&apos;ll plan it together.
               </p>

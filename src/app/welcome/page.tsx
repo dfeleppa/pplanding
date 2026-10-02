@@ -160,7 +160,7 @@ export default function WelcomePage() {
                 Long Island pet care you{" "}
                 <span className="text-[var(--pp-mint)]/80">can actually trust.</span>
               </h1>
-              <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
+              <p className="pp-hero-description mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
                 Mobile grooming, daycare, boarding, training &amp; enrichment from a
                 family-run team trusted by 6,800+ Long Island puppies.
               </p>

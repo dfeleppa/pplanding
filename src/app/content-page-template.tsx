@@ -1313,8 +1313,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                   </div>
                   <div className="lg:border-l lg:border-white/20 lg:pl-10">
                     <p
-                      className="max-w-md text-lg italic leading-relaxed text-white/90 sm:text-xl"
-                      style={{ fontFamily: "var(--font-display), serif" }}
+                      className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl"
                     >
                       {page.hero}
                     </p>
@@ -1360,7 +1359,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                   {page.eyebrow}
                 </p>
                 <h1 className="pp-service-hero-title mt-5 max-w-3xl text-white">{page.title}</h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
+                <p className="pp-hero-description mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
               </div>
             </div>
           )}

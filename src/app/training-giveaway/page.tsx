@@ -84,7 +84,7 @@ export default function TrainingGiveawayPage() {
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--pp-mint)]">Instagram Giveaway</p>
               <h1 className="mt-5 max-w-3xl text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">Win $800 in Dog Training</h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84 sm:text-xl">
+              <p className="pp-hero-description mt-6 max-w-2xl text-lg leading-8 text-white/84 sm:text-xl">
                 Enter for a chance to win a 4-class Planet Pooch dog training package.
               </p>
               <div className="mt-7 inline-flex items-center gap-3 border border-white/22 bg-black/15 px-5 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">

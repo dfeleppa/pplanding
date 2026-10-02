@@ -35,6 +35,11 @@ body {
   font-family: var(--font-body, Arial, Helvetica, sans-serif);
 }
 
+.pp-hero-description {
+  font-family: var(--font-hero-description), Georgia, serif;
+  font-style: normal;
+}
+
 html[data-mobile-menu-open="true"] [data-sticky-mobile-cta] {
   display: none;
 }

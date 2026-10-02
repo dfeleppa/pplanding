@@ -136,8 +136,7 @@ export default function HomePage() {
                   <span className="text-[var(--pp-mint)]/75">Long Island</span>.
                 </h1>
                 <p
-                  className="pp-home-hero-tagline mt-5 max-w-md text-lg italic leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
-                  style={{ fontFamily: "var(--font-display), serif" }}
+                  className="pp-home-hero-tagline pp-hero-description mt-5 max-w-md text-lg leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
                 >
                   Enriching the lives of pets since 2014.
                 </p>

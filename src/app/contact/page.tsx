@@ -97,7 +97,7 @@ export default function ContactPage() {
                 Book Now
               </p>
               <h1 className="mt-5 text-white">Let&apos;s plan the right care.</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-white/82">
+              <p className="pp-hero-description mt-6 max-w-xl text-lg leading-8 text-white/82">
                 Reach us by phone, email, or stop by the resort. We&apos;ll get back to you to set up your dog&apos;s
                 first visit.
               </p>
