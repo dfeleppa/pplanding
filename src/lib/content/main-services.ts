@@ -485,6 +485,7 @@ export const mainServicePages = {
         calloutCard: {
           title: "How Early Should I Book?",
           body: "Holiday weekends and summer fill up fast. Booking early — especially for Memorial Day, July 4th, Labor Day, and the December holidays — is the surest way to lock in your spot.",
+          theme: "mint",
         },
       },
       {
@@ -526,6 +527,7 @@ export const mainServicePages = {
       {
         type: "comparison",
         id: "pricing",
+        theme: "mint",
         eyebrow: "Pricing",
         title: "Boarding Suite Pricing",
         intro: "Suite type and care style determine the nightly rate.",
@@ -634,6 +636,11 @@ export const mainServicePages = {
               "Final potty break and bedtime preparation for a comfortable night's rest.",
           },
         ],
+      },
+      {
+        type: "callout",
+        title: "Preparing for your dog's stay",
+        body: "Please pre-package your dog's food and label each meal for morning or night. Include medication details, including the medication name, dosage, and when it should be given.",
       },
       {
         type: "callout",

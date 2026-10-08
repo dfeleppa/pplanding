@@ -10,7 +10,7 @@ export type ContentSection =
       width?: "default" | "wide";
       wide?: boolean;
       highlights?: Array<{ icon: string; label: string }>;
-      calloutCard?: { title: string; body: string };
+      calloutCard?: { title: string; body: string; theme?: "mint" };
       cta?: { label: string; href: string };
       image?: string | StaticImageData;
       imageAlt?: string;
@@ -118,6 +118,7 @@ export type ContentSection =
   | {
       type: "comparison";
       id?: string;
+      theme?: "mint";
       title?: string;
       eyebrow?: string;
       intro?: string;

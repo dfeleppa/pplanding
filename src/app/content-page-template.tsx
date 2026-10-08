@@ -150,9 +150,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               proseContent
             )}
             {section.calloutCard ? (
-              <div className="mt-10 rounded-xl bg-slate-800 p-7 text-white">
+              <div className={`mt-10 rounded-xl p-7 ${section.calloutCard.theme === "mint" ? "bg-[var(--pp-mint)] text-[var(--pp-ink)]" : "bg-slate-800 text-white"}`}>
                 <h3 className="text-lg font-bold">{section.calloutCard.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-white/80">{section.calloutCard.body}</p>
+                <p className={`mt-2 text-sm leading-7 ${section.calloutCard.theme === "mint" ? "text-[var(--pp-ink)]" : "text-white/80"}`}>{section.calloutCard.body}</p>
               </div>
             ) : null}
           </div>
@@ -532,7 +532,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
     case "comparison":
       return (
-        <section id={section.id} className={`${tone} ${sectionPadding}`}>
+        <section id={section.id} className={`${section.theme === "mint" ? "bg-[var(--pp-mint)]" : tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             {/* Mobile: stacked cards so every price column is visible without side-scrolling. */}
