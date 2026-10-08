@@ -70,7 +70,7 @@ export default function TrainingGiveawayPage() {
             className="-z-20 object-cover object-center"
             placeholder="blur"
           />
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
+          <div className="pp-hero-image-overlay absolute inset-0 -z-10" />
           <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/15 pb-5">
             <Link href="/" aria-label="Planet Pooch home">
               <Image src={planetPoochLogo} alt="Planet Pooch Pet Resort" sizes="(min-width: 640px) 220px, 180px" className="h-auto w-[180px] brightness-0 invert sm:w-[220px]" />

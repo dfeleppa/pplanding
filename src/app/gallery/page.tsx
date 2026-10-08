@@ -136,7 +136,7 @@ export default function GalleryPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.72)_0%,rgba(20,30,36,0.55)_45%,rgba(20,30,36,0.86)_100%)]" />
+        <div className="pp-hero-image-overlay absolute inset-0" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
           <div className="grid w-full gap-12 pb-20 pt-16 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pb-28">

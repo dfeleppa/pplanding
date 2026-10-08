@@ -1297,7 +1297,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
             preload
           />
         ) : null}
-        <div className={`absolute inset-0 ${page.heroCtas ? "bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" : "bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]"}`} />
+        <div className="pp-hero-image-overlay absolute inset-0" />
         <div className={`relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10${page.heroCtas ? "" : " min-h-[520px] pb-14"}`}>
           <SiteHeader />
 

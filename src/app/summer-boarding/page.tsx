@@ -108,7 +108,7 @@ export default function SummerBoardingPage() {
           style={{ objectPosition: "center 35%" }}
           preload
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.6)_0%,rgba(20,30,36,0.45)_40%,rgba(20,30,36,0.72)_100%)]" />
+        <div className="pp-hero-image-overlay absolute inset-0" />
 
         <div className="relative mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />

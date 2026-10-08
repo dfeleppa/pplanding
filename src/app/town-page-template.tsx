@@ -214,7 +214,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
           style={{ objectPosition: "62% center" }}
           preload
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
+        <div className="pp-hero-image-overlay absolute inset-0" />
         <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 

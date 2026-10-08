@@ -120,8 +120,8 @@ export default function HomePage() {
           style={{ objectPosition: "62% center" }}
           preload
         />
-        {/* Subtle even darkening so the image still reads while text remains legible on either side. */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
+        {/* Shared gradient keeps white hero copy readable over the photo. */}
+        <div className="pp-hero-image-overlay absolute inset-0" />
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader ctaHref="/new-client/" />
 
@@ -136,7 +136,7 @@ export default function HomePage() {
                   <span className="text-[var(--pp-mint)]">Long Island.</span>
                 </h1>
                 <p
-                  className="pp-home-hero-tagline pp-hero-description mt-5 max-w-md text-lg font-semibold leading-relaxed tracking-[0.01em] text-[var(--pp-mint)] sm:text-xl"
+                  className="pp-home-hero-tagline pp-hero-description"
                 >
                   Enriching the lives of pets since 2014.
                 </p>
