@@ -392,7 +392,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               })}
             </div>
             {section.note ? (
-              <div className="mt-8 rounded-2xl bg-lime-100 px-6 py-5 text-sm font-bold text-lime-900">
+              <div className={`mt-8 rounded-2xl px-6 py-5 text-sm font-bold ${page.slug === "events" ? "bg-[var(--pp-mint)] text-[var(--pp-ink)]" : "bg-lime-100 text-lime-900"}`}>
                 {section.note}
               </div>
             ) : null}

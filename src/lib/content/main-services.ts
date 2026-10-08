@@ -1377,6 +1377,22 @@ export const mainServicePages = {
         cta: { label: "Call to Reserve", href: "tel:+15169933603" },
         events: [
           {
+            title: "Bobbing for Apples",
+            dateLabel: "Tuesday, October 6, 2026",
+            description: "A fall themed daycare event for the pack.",
+            location: "Planet Pooch resort",
+            badge: "Theme day",
+            date: "2026-10-06",
+          },
+          {
+            title: "Costume Contest",
+            dateLabel: "Friday, October 30, 2026",
+            description: "A Halloween costume contest for the pack.",
+            location: "Planet Pooch resort",
+            badge: "Contest",
+            date: "2026-10-30",
+          },
+          {
             title: "Foam Party",
             dateLabel: "Wednesday, July 15, 2026",
             description:
