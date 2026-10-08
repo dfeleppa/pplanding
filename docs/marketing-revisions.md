@@ -13,8 +13,8 @@ Source: marketing team list provided October 8, 2026. This checklist applies to 
 
 ## Daycare Page
 
-- [ ] Improve contrast and readability, including more prominent titles.
-- [ ] Add the words “Most Popular” to the 10 Day Pack; the colored box alone is insufficient.
+- [x] Improve contrast and readability, including more prominent titles.
+- [x] Add the words “Most Popular” to the 10 Day Pack; the colored box alone is insufficient.
 
 ## Boarding Page
 

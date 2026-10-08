@@ -1283,7 +1283,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
   return (
     <main
       id="main"
-      className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
+      className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]${page.slug === "dog-daycare" ? " pp-daycare-page" : ""}`}
     >
       <section className={`relative overflow-hidden bg-[var(--pp-night)] text-white${page.heroCtas ? "" : " min-h-[520px]"}`}>
         {page.image ? (

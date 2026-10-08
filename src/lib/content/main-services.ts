@@ -382,6 +382,7 @@ export const mainServicePages = {
             cadence: "$43.35 per day",
             features: ["10 full days of daycare", "Expires 60 days after purchase"],
             featured: true,
+            badge: "Most Popular",
           },
           {
             name: "20-Day Pack",
