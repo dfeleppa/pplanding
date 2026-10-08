@@ -633,12 +633,12 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               {section.items.map((item) => (
                 <div
                   key={item.term}
-                  className="flex flex-col border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
+                  className={`flex flex-col border p-6 ${section.highContrast ? "border-[rgba(50,73,83,0.28)] bg-white shadow-[0_10px_28px_rgba(30,45,50,0.10)]" : "border-[rgba(50,73,83,0.12)] bg-white/65"}`}
                 >
-                  <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
+                  <dt className={`text-[11px] font-bold uppercase tracking-[0.18em] ${section.highContrast ? "text-[var(--pp-main)]" : "text-[var(--pp-main)]/80"}`}>
                     {item.term}
                   </dt>
-                  <dd className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.82)]">
+                  <dd className={`mt-3 text-sm leading-7 ${section.highContrast ? "text-[var(--pp-ink)]" : "text-[rgba(47,42,39,0.82)]"}`}>
                     {item.definition}
                   </dd>
                   {item.cta ? (

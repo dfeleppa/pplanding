@@ -128,6 +128,7 @@ export type ContentSection =
     }
   | {
       type: "definitions";
+      highContrast?: boolean;
       title?: string;
       eyebrow?: string;
       intro?: string;

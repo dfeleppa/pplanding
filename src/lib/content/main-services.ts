@@ -1274,6 +1274,7 @@ export const mainServicePages = {
         eyebrow: "Add-ons",
         title: "Enrichment activities",
         intro: "Each activity is 20 minutes and costs $25 per session — add to any daycare or boarding day.",
+        highContrast: true,
         items: [
           {
             term: "Treadmill Enrichment",
@@ -1306,6 +1307,9 @@ export const mainServicePages = {
         type: "timeline",
         eyebrow: "A day in the life",
         title: "What a one-on-one enrichment day looks like",
+        image: "/enrichment_home.jpg",
+        imageAlt: "Dog practicing agility with a Planet Pooch team member",
+        imagePosition: "left",
         items: [
           {
             time: "7:00 AM – 9:00 AM",
