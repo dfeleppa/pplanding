@@ -143,13 +143,13 @@ export default function HomePage() {
               </div>
 
               <div className="lg:border-l lg:border-white/20 lg:pl-10">
-                <div className="pp-hero-action-panel flex flex-col items-start gap-4 border border-[var(--pp-mint)] bg-[var(--pp-mint)] p-5 text-[var(--pp-night)] shadow-lg sm:p-6">
+                <div className="pp-hero-action-panel pp-home-hero-action-panel flex flex-col items-start gap-4">
                   <Link href="/book/" className="pp-cta">
                     Get Started
                     <span className="pp-cta-arrow" aria-hidden />
                   </Link>
-                  <div className="flex items-center gap-2 text-sm text-[var(--pp-night)]">
-                    <Star className="h-4 w-4 fill-[var(--pp-night)] text-[var(--pp-night)]" aria-hidden />
+                  <div className="flex items-center gap-2 text-sm text-white">
+                    <Star className="h-4 w-4 fill-[var(--pp-mint)] text-[var(--pp-mint)]" aria-hidden />
                     <span>
                       <strong className="font-semibold">{SITE.reviews.rating}</strong> from {SITE.reviews.countDisplay} Long Island pet parents
                     </span>
@@ -161,7 +161,7 @@ export default function HomePage() {
                     <Link
                       key={title}
                       href={href}
-                      className="group flex items-center gap-3 border border-white/15 bg-white/5 px-4 py-3 backdrop-blur-sm transition hover:border-[var(--pp-mint)]/60 hover:bg-white/10"
+                      className="group flex items-center gap-3 border border-[var(--pp-night)] bg-[var(--pp-night)] px-4 py-3 transition hover:border-[var(--pp-main)] hover:bg-[var(--pp-main)]"
                     >
                       <Icon className="h-4 w-4 shrink-0 text-[var(--pp-mint)]" aria-hidden />
                       <span className="text-sm font-semibold text-white">{title}</span>

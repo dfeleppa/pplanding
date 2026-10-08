@@ -175,6 +175,15 @@ a {
   background: var(--pp-main);
   border-color: var(--pp-main);
 }
+.pp-home-hero-action-panel .pp-cta {
+  background: var(--pp-mint);
+  border-color: var(--pp-mint);
+  color: var(--pp-night);
+}
+.pp-home-hero-action-panel .pp-cta:hover {
+  background: var(--pp-mint-deep);
+  border-color: var(--pp-mint-deep);
+}
 .pp-hero-action-panel .pp-cta-ghost {
   color: var(--pp-night);
   border-color: var(--pp-night);
