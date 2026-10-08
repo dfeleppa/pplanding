@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { X } from "lucide-react";
 import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../lib/booking";
 import { SITE } from "../lib/site";
@@ -75,9 +76,9 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                   >
                     Pet Resort
                   </h3>
-                  <a href="/new-client/" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  <Link href="/new-client/" className="pp-cta pp-cta-sm w-full justify-center text-center">
                     New Client
-                  </a>
+                  </Link>
                   <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" target="_blank" rel="noopener" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
                     Existing Client
                   </a>
