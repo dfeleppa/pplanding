@@ -161,7 +161,7 @@ export default function HomePage() {
                     <Link
                       key={title}
                       href={href}
-                      className="group flex items-center gap-3 border border-[var(--pp-dark-green)] bg-[var(--pp-dark-green)] px-4 py-3 transition hover:border-[var(--pp-dark-green-hover)] hover:bg-[var(--pp-dark-green-hover)]"
+                      className="group flex items-center gap-3 border border-[var(--pp-main-deep)] bg-[var(--pp-main-deep)] px-4 py-3 transition hover:border-[var(--pp-main)] hover:bg-[var(--pp-main)]"
                     >
                       <Icon className="h-4 w-4 shrink-0 text-[var(--pp-mint)]" aria-hidden />
                       <span className="text-sm font-semibold text-white">{title}</span>
