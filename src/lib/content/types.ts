@@ -96,7 +96,13 @@ export type ContentSection =
       bookingNotes: string[];
       schedule: Array<{
         day: string;
-        sessions: Array<{ time: string; className: string }>;
+        rotationStartDate?: string;
+        sessions: Array<{
+          time: string;
+          className: string;
+          classNumber?: number;
+          rotationDirection?: 1 | -1;
+        }>;
       }>;
       scheduleOverrides?: Array<{
         date: string;

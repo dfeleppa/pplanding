@@ -123,6 +123,24 @@ function formatDateKey(date: Date) {
   return `${year}-${month}-${day}`;
 }
 
+function rotatingClassName(
+  session: GroupTrainingSection["schedule"][number]["sessions"][number],
+  dateKey: string,
+  rotationStartDate?: string,
+) {
+  if (!rotationStartDate || !session.classNumber || dateKey < rotationStartDate) {
+    return session.className;
+  }
+
+  const weeks = Math.round(
+    (Date.parse(`${dateKey}T12:00:00Z`) - Date.parse(`${rotationStartDate}T12:00:00Z`)) /
+      (7 * 24 * 60 * 60 * 1000),
+  );
+  const classNumber =
+    ((session.classNumber - 1 + weeks * (session.rotationDirection ?? 1)) % 4 + 4) % 4 + 1;
+  return `${session.className} Class ${classNumber}`;
+}
+
 export function GroupTrainingSchedule({
   schedule,
   scheduleOverrides = [],
@@ -155,9 +173,13 @@ export function GroupTrainingSchedule({
     const dateKey = formatDateKey(date);
     const override = scheduleOverrides.find((item) => item.date === dateKey);
     const hasEnded = noClassesOnOrAfter ? dateKey >= noClassesOnOrAfter : false;
+    const scheduledDay = schedule.find((day) => day.day === dayName);
     const baseSessions = hasEnded
       ? []
-      : override?.sessions ?? schedule.find((day) => day.day === dayName)?.sessions ?? [];
+      : override?.sessions ?? scheduledDay?.sessions.map((session) => ({
+          ...session,
+          className: rotatingClassName(session, dateKey, scheduledDay.rotationStartDate),
+        })) ?? [];
     const addedSessions = hasEnded
       ? []
       : recurringScheduleAdditions
