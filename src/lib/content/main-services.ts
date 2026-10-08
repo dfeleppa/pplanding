@@ -1026,14 +1026,8 @@ export const mainServicePages = {
               { time: "12:30 PM", className: "Puppy Level 1 Class 3" },
             ],
           },
-          {
-            date: "2026-10-24",
-            sessions: [
-              { time: "8:00 AM", className: "Adult Class 4" },
-              { time: "11:30 AM", className: "Puppy Level 2 Class 1" },
-              { time: "12:30 PM", className: "Puppy Level 1 Class 4" },
-            ],
-          },
+          { date: "2026-10-24", sessions: [] },
+          { date: "2026-10-25", sessions: [] },
         ],
         recurringScheduleAdditions: [
           {
