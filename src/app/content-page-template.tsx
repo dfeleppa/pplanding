@@ -1317,7 +1317,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     >
                       {page.hero}
                     </p>
-                    <div className="mt-9 flex flex-col items-start gap-3">
+                    <div className={`mt-9 flex flex-col items-start gap-3 ${page.slug === "mobile-grooming" ? "pp-hero-action-panel border border-[var(--pp-mint)] bg-[var(--pp-mint)] p-5 shadow-lg sm:p-6" : ""}`}>
                       {page.slug === "mobile-grooming" ? (
                         <BookNowModal ctaHref={page.heroCtas.primary.href} className="pp-cta" variant="grooming" label={page.heroCtas.primary.label} />
                       ) : (

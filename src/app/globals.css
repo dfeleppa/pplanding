@@ -166,6 +166,23 @@ a {
   width: 22px;
 }
 
+.pp-hero-action-panel .pp-cta {
+  background: var(--pp-night);
+  border-color: var(--pp-night);
+  color: #fff;
+}
+.pp-hero-action-panel .pp-cta:hover {
+  background: var(--pp-main);
+  border-color: var(--pp-main);
+}
+.pp-hero-action-panel .pp-cta-ghost {
+  color: var(--pp-night);
+  border-color: var(--pp-night);
+}
+.pp-hero-action-panel .pp-cta-ghost:hover {
+  background: rgba(20, 30, 36, 0.08);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pp-cta,
   .pp-cta-ghost,
@@ -186,19 +203,19 @@ h3 {
 }
 
 main > section:first-child h1 {
-  font-size: 3rem;
+  font-size: 2.75rem;
   line-height: 1.08;
 }
 
 @media (min-width: 640px) {
   main > section:first-child h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   main > section:first-child h1 {
-    font-size: 5rem;
+    font-size: 4.25rem;
   }
 }
 

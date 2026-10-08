@@ -133,7 +133,7 @@ export default function HomePage() {
               <div>
                 <h1 className="pp-home-hero-title max-w-xl text-white">
                   Mobile grooming across Nassau County. Resort care for dogs across{" "}
-                  <span className="text-[var(--pp-mint)]/75">Long Island</span>.
+                  <span className="text-[var(--pp-mint)]">Long Island.</span>
                 </h1>
                 <p
                   className="pp-home-hero-tagline pp-hero-description mt-5 max-w-md text-lg leading-relaxed text-[var(--pp-mint)]/90 sm:text-xl"
@@ -143,15 +143,15 @@ export default function HomePage() {
               </div>
 
               <div className="lg:border-l lg:border-white/20 lg:pl-10">
-                <div className="flex flex-col items-start gap-4">
+                <div className="pp-hero-action-panel flex flex-col items-start gap-4 border border-[var(--pp-mint)] bg-[var(--pp-mint)] p-5 text-[var(--pp-night)] shadow-lg sm:p-6">
                   <Link href="/book/" className="pp-cta">
                     Get Started
                     <span className="pp-cta-arrow" aria-hidden />
                   </Link>
-                  <div className="flex items-center gap-2 text-sm text-white/85">
-                    <Star className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" aria-hidden />
+                  <div className="flex items-center gap-2 text-sm text-[var(--pp-night)]">
+                    <Star className="h-4 w-4 fill-[var(--pp-night)] text-[var(--pp-night)]" aria-hidden />
                     <span>
-                      <strong className="font-semibold text-white">{SITE.reviews.rating}</strong> from {SITE.reviews.countDisplay} Long Island pet parents
+                      <strong className="font-semibold">{SITE.reviews.rating}</strong> from {SITE.reviews.countDisplay} Long Island pet parents
                     </span>
                   </div>
                 </div>
