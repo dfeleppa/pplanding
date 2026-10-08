@@ -70,7 +70,7 @@ export default function TrainingGiveawayPage() {
             className="-z-20 object-cover object-center"
             placeholder="blur"
           />
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(32,46,52,0.94)_0%,rgba(32,46,52,0.78)_50%,rgba(32,46,52,0.45)_100%)]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
           <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/15 pb-5">
             <Link href="/" aria-label="Planet Pooch home">
               <Image src={planetPoochLogo} alt="Planet Pooch Pet Resort" sizes="(min-width: 640px) 220px, 180px" className="h-auto w-[180px] brightness-0 invert sm:w-[220px]" />
@@ -80,11 +80,13 @@ export default function TrainingGiveawayPage() {
             </a>
           </header>
 
-          <div className="mx-auto flex min-h-[650px] max-w-7xl items-center py-14">
-            <div className="max-w-3xl">
+          <div className="mx-auto grid min-h-[650px] max-w-7xl w-full gap-12 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--pp-mint)]">Instagram Giveaway</p>
               <h1 className="mt-5 max-w-3xl text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">Win $800 in Dog Training</h1>
-              <p className="pp-hero-description mt-6 max-w-2xl text-lg leading-8 text-white/84 sm:text-xl">
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
                 Enter for a chance to win a 4-class Planet Pooch dog training package.
               </p>
               <div className="mt-7 inline-flex items-center gap-3 border border-white/22 bg-black/15 px-5 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">

@@ -214,34 +214,30 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
           style={{ objectPosition: "62% center" }}
           preload
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
         <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 
-          <div className="flex flex-1 items-end pt-12">
-            <div className="max-w-3xl">
+          <div className="grid flex-1 w-full gap-12 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-16">
+            <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
                 {copy.eyebrow} • {page.town}{page.region ? `, ${page.region}` : ""}
               </p>
               <h1 className="mt-5 max-w-3xl text-white">{`${copy.primary} in ${page.town}${page.town.endsWith("County") || page.town === "North Shore" ? "" : ", NY"}`}</h1>
-              <p className="pp-hero-description mt-6 max-w-2xl text-lg leading-8 text-white/82">{copy.hero(page.town)}</p>
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">{copy.hero(page.town)}</p>
               {page.distanceFromResort ? (
                 <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--pp-mint)]/90">
                   {page.distanceFromResort}
                 </p>
               ) : null}
-              <div className="mt-9 flex flex-wrap gap-4">
-                <Link
-                  href="/book/"
-                  className="inline-flex items-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-                >
+              <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
+                <Link href="/book/" className="pp-cta">
                   Book Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <a
-                  href={SITE.phone.href}
-                  className="inline-flex items-center gap-2 border border-white/54 bg-black/10 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:bg-white/8"
-                >
+                <a href={SITE.phone.href} className="pp-cta-ghost">
                   <Phone className="h-4 w-4" />
                   {SITE.phone.display}
                 </a>

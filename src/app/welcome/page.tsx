@@ -155,17 +155,20 @@ export default function WelcomePage() {
 
           {/* Hero content */}
           <div className="pb-28 pt-14 lg:pb-36 lg:pt-20">
-            <div className="max-w-2xl">
-              <h1 className="text-white">
-                Long Island pet care you{" "}
-                <span className="text-[var(--pp-mint)]/80">can actually trust.</span>
-              </h1>
-              <p className="pp-hero-description mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
-                Mobile grooming, daycare, boarding, training &amp; enrichment from a
-                family-run team trusted by 6,800+ Long Island puppies.
-              </p>
+            <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <h1 className="text-white">
+                  Long Island pet care you{" "}
+                  <span className="text-[var(--pp-mint)]/80">can actually trust.</span>
+                </h1>
+              </div>
+              <div className="lg:border-l lg:border-white/20 lg:pl-10">
+                <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
+                  Mobile grooming, daycare, boarding, training &amp; enrichment from a
+                  family-run team trusted by 6,800+ Long Island puppies.
+                </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="pp-hero-actions mt-8 flex flex-wrap items-center gap-4">
                 <a
                   href="#request"
                   data-track="hero-request-availability"
@@ -196,6 +199,7 @@ export default function WelcomePage() {
                   <strong className="font-semibold text-white">{SITE.reviews.rating}</strong> from{" "}
                   {SITE.reviews.countDisplay} reviews on Google
                 </span>
+              </div>
               </div>
             </div>
           </div>

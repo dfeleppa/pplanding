@@ -83,17 +83,19 @@ export default function BookPage() {
           className="object-cover"
           preload
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(38,50,56,0.92)_0%,rgba(38,50,56,0.74)_42%,rgba(38,50,56,0.32)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,30,36,0.55)_0%,rgba(20,30,36,0.42)_45%,rgba(20,30,36,0.62)_100%)]" />
         <div className="relative z-10 mx-auto flex min-h-[420px] max-w-7xl flex-col px-5 pb-14 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 
-          <div className="flex flex-1 items-end pt-12">
-            <div className="max-w-2xl">
+          <div className="grid flex-1 w-full gap-12 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
                 Book Now
               </p>
               <h1 className="mt-5 text-white">Let&apos;s get your dog on the calendar.</h1>
-              <p className="pp-hero-description mt-6 max-w-xl text-lg leading-8 text-white/82">
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
                 Pick the path that fits — booking takes a couple of minutes. Not sure what your dog
                 needs? Send us a note below and we&apos;ll plan it together.
               </p>

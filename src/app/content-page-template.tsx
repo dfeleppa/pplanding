@@ -1317,7 +1317,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     >
                       {page.hero}
                     </p>
-                    <div className={`mt-9 flex flex-col items-start gap-3 ${page.slug === "mobile-grooming" ? "pp-hero-action-panel border border-[var(--pp-mint)] bg-[var(--pp-mint)] p-5 shadow-lg sm:p-6" : ""}`}>
+                    <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
                       {page.slug === "mobile-grooming" ? (
                         <BookNowModal ctaHref={page.heroCtas.primary.href} className="pp-cta" variant="grooming" label={page.heroCtas.primary.label} />
                       ) : (
@@ -1334,32 +1334,32 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                 </div>
               </div>
               <div className="mt-12 border-t border-white/15 pt-6 pb-16 lg:mt-14 lg:pb-20">
-                <div className={`flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72 ${page.heroCtas.tertiary ? "grid grid-cols-3" : "flex-wrap justify-between"}`}>
-                  <span className="flex items-center gap-3">
+                <div className={`flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/72 ${page.heroCtas.tertiary ? "justify-center lg:grid lg:grid-cols-3" : "flex-wrap justify-between"}`}>
+                  <span className={`items-center gap-3 ${page.heroCtas.tertiary ? "hidden lg:flex" : "flex"}`}>
                     <span aria-hidden className="h-px w-8 bg-white/40" />
                     Scroll to Explore
                   </span>
                   {page.heroCtas.tertiary ? (
                     <a
                       href={page.heroCtas.tertiary.href}
-                      className="justify-self-center inline-flex items-center gap-2 border-2 border-[var(--pp-mint)] bg-[var(--pp-mint)]/15 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[var(--pp-mint)] hover:text-[var(--pp-night)]"
+                      className="justify-self-center inline-flex items-center gap-2 border border-[var(--pp-dark-green)] bg-[var(--pp-dark-green)] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-[var(--pp-dark-green-hover)] hover:bg-[var(--pp-dark-green-hover)]"
                     >
                       {page.heroCtas.tertiary.label}
                       <ArrowRight className="h-3.5 w-3.5" />
                     </a>
                   ) : null}
-                  <span className={page.heroCtas.tertiary ? "justify-self-end" : ""}>Long Island, New York</span>
+                  <span className={page.heroCtas.tertiary ? "hidden justify-self-end lg:inline" : ""}>Long Island, New York</span>
                 </div>
               </div>
             </>
           ) : (
-            <div className="flex flex-1 items-end pt-12">
-              <div className="max-w-3xl">
-                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
-                  {page.eyebrow}
-                </p>
+            <div className="grid flex-1 w-full gap-12 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">{page.eyebrow}</p>
                 <h1 className="pp-service-hero-title mt-5 max-w-3xl text-white">{page.title}</h1>
-                <p className="pp-hero-description mt-6 max-w-2xl text-lg leading-8 text-white/82">{page.hero}</p>
+              </div>
+              <div className="lg:border-l lg:border-white/20 lg:pl-10">
+                <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">{page.hero}</p>
               </div>
             </div>
           )}

@@ -24,27 +24,27 @@ export default function GetStartedPage() {
   return (
     <main id="main" className="min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]">
       <AttributionCapture />
-      <div className="bg-[var(--pp-night)] px-5 pt-5 sm:px-8 lg:px-10">
+      <div className="bg-[var(--pp-night)] px-5 pt-5 pb-14 text-white sm:px-8 lg:px-10 lg:pb-20">
         <div className="mx-auto max-w-7xl">
           <SiteHeader ctaHref="#new-client-form" />
+          <div className="grid w-full gap-12 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pt-16">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">Welcome to Planet Pooch</p>
+              <h1 className="mt-4 text-[2.75rem] leading-[1.08] text-white sm:text-[3.5rem] lg:text-[4.25rem]">Your pup&apos;s next adventure starts here.</h1>
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
+                Looking for daycare, boarding, grooming, or training? Tell us a little about you and your dog, and our team will follow up with availability and the best next step.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       <section className="px-5 py-10 sm:px-8 lg:px-10 lg:py-16">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--pp-main)]">
-              Welcome to Planet Pooch
-            </p>
-            <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">
-              Your pup&apos;s next adventure starts here.
-            </h1>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.78)]">
-              Looking for daycare, boarding, grooming, or training? Tell us a little
-              about you and your dog, and our team will follow up with availability
-              and the best next step.
-            </p>
-            <div className="relative mt-7 aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/hero-dog.jpg"
                 alt="A dog at Planet Pooch"

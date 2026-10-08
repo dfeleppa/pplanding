@@ -125,7 +125,10 @@ export default function SummerBoardingPage() {
                     actually enjoy.
                   </span>
                 </h1>
-                <p className="pp-hero-description mt-5 max-w-lg text-lg leading-relaxed text-white/80 sm:text-xl">
+              </div>
+
+              <div className="lg:border-l lg:border-white/20 lg:pl-10">
+                <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
                   Climate-controlled suites, daily enrichment, and 1:1 care
                   available at our Franklin Square resort.
                 </p>
@@ -144,10 +147,7 @@ export default function SummerBoardingPage() {
                     {SITE.reviews.countDisplay} reviews on Google
                   </span>
                 </div>
-              </div>
-
-              <div className="lg:border-l lg:border-white/20 lg:pl-10">
-                <div className="flex flex-col items-start gap-4">
+                <div className="pp-hero-actions mt-8 flex flex-col items-start gap-4">
                   <BoardingFormModal className="pp-cta min-h-[52px] !px-7" />
                   <a
                     href={SITE.phone.href}

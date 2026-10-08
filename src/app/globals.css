@@ -6,6 +6,8 @@
   --pp-main: #4e6b75;
   --pp-main-deep: #324953;
   --pp-night: #2f3f47;
+  --pp-dark-green: #294a3d;
+  --pp-dark-green-hover: #35634f;
   --pp-cream: #fbfaf6;
   --pp-off-white: #fbfaf6;
   --pp-sand: #e9dccd;
@@ -78,7 +80,7 @@ a {
   min-height: 2.75rem;
   padding: 0.95rem 1.6rem;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   background: var(--pp-mint);
@@ -99,17 +101,17 @@ a {
   min-height: 2.75rem;
   padding: 0.95rem 1.6rem;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  background: transparent;
+  background: var(--pp-dark-green);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--pp-dark-green);
   transition: background 220ms ease, border-color 220ms ease;
 }
 .pp-cta-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.65);
+  background: var(--pp-dark-green-hover);
+  border-color: var(--pp-dark-green-hover);
 }
 
 .pp-cta-ghost-dark {
@@ -164,32 +166,6 @@ a {
 }
 .pp-cta:hover .pp-cta-arrow {
   width: 22px;
-}
-
-.pp-hero-action-panel .pp-cta {
-  background: var(--pp-night);
-  border-color: var(--pp-night);
-  color: #fff;
-}
-.pp-hero-action-panel .pp-cta:hover {
-  background: var(--pp-main);
-  border-color: var(--pp-main);
-}
-.pp-home-hero-action-panel .pp-cta {
-  background: var(--pp-mint);
-  border-color: var(--pp-mint);
-  color: var(--pp-night);
-}
-.pp-home-hero-action-panel .pp-cta:hover {
-  background: var(--pp-mint-deep);
-  border-color: var(--pp-mint-deep);
-}
-.pp-hero-action-panel .pp-cta-ghost {
-  color: var(--pp-night);
-  border-color: var(--pp-night);
-}
-.pp-hero-action-panel .pp-cta-ghost:hover {
-  background: rgba(20, 30, 36, 0.08);
 }
 
 @media (prefers-reduced-motion: reduce) {

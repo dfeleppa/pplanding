@@ -29,9 +29,19 @@ export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
       id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
-      <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
+      <section className="bg-[var(--pp-night)] px-5 pt-5 pb-14 text-white sm:px-8 lg:px-10 lg:pb-20">
         <div className="mx-auto max-w-7xl">
           <SiteHeader />
+          <div className="grid w-full gap-12 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pt-16">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">{page.eyebrow}</p>
+              <h1 className="mt-4 text-white">{page.title}</h1>
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              {page.intro ? <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">{page.intro}</p> : null}
+              {page.lastUpdated ? <p className="mt-5 text-xs uppercase tracking-[0.16em] text-white/70">Last updated: {page.lastUpdated}</p> : null}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -44,20 +54,7 @@ export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
             ]}
             className="mb-6"
           />
-          <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-main)]/75">
-            {page.eyebrow}
-          </p>
-          <h1 className="mt-3 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">{page.title}</h1>
-          {page.lastUpdated ? (
-            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-[rgba(47,42,39,0.6)]">
-              Last updated: {page.lastUpdated}
-            </p>
-          ) : null}
-          {page.intro ? (
-            <p className="mt-6 text-base leading-8 text-[rgba(47,42,39,0.82)]">{page.intro}</p>
-          ) : null}
-
-          <div className="mt-12 grid gap-10">
+          <div className="mt-8 grid gap-10">
             {page.sections.map((section) => (
               <article key={section.heading}>
                 <h2 className="text-2xl leading-tight text-[var(--pp-ink)] sm:text-3xl">

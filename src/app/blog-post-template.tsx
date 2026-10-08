@@ -104,9 +104,18 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
       id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
-      <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
+      <section className="bg-[var(--pp-night)] px-5 pt-5 pb-14 text-white sm:px-8 lg:px-10 lg:pb-20">
         <div className="mx-auto max-w-7xl">
           <SiteHeader />
+          <div className="grid w-full gap-12 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pt-16">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">Planet Pooch Blog</p>
+              <h1 className="mt-4 text-white">{post.title}</h1>
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              {post.intro ? <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">{post.intro}</p> : null}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -126,10 +135,6 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
           >
             ← Back to Blog
           </Link>
-          <h1 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-            {post.title}
-          </h1>
-
           {post.datePublished ? (
             <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--pp-main)]/65">
               {new Date(`${post.datePublished}T12:00:00`).toLocaleDateString("en-US", {
@@ -138,10 +143,6 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
                 year: "numeric",
               })}
             </p>
-          ) : null}
-
-          {post.intro ? (
-            <p className="mt-8 text-lg leading-9 text-[rgba(47,42,39,0.85)]">{post.intro}</p>
           ) : null}
 
           {post.hasFullContent && post.sections ? (

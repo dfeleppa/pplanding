@@ -43,24 +43,20 @@ export default function BlogIndexPage() {
       id="main"
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
-      <section className="bg-[var(--pp-night)] px-5 py-12 text-white sm:px-8 lg:px-10">
+      <section className="bg-[var(--pp-night)] px-5 pt-5 pb-14 text-white sm:px-8 lg:px-10 lg:pb-20">
         <div className="mx-auto max-w-7xl">
           <SiteHeader />
-        </div>
-      </section>
-
-      <section className="px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-main)]/75">
-            Blog
-          </p>
-          <h1 className="mt-3 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-            Notes on grooming, daycare, training, and life with dogs.
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[rgba(47,42,39,0.78)]">
-            Our team writes about what we see day to day — grooming questions we get asked again and
-            again, the science behind enrichment, seasonal pet care, and stories from the resort.
-          </p>
+          <div className="grid w-full gap-12 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pt-16">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">Blog</p>
+              <h1 className="mt-4 text-white">Notes on grooming, daycare, training, and life with dogs.</h1>
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
+                Our team writes about what we see day to day — grooming questions we get asked again and again, the science behind enrichment, seasonal pet care, and stories from the resort.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -110,18 +110,21 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
       <section className="bg-[var(--pp-night)] text-white">
         <div className="mx-auto max-w-7xl px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
-          <div className="pb-14 pt-10 lg:pb-18 lg:pt-14">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--pp-mint)]/85">
+          <div className="grid w-full gap-12 pb-14 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pb-18 lg:pt-14">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--pp-mint)]/85">
               {REGION_LABELS[page.subRegion]} · Nassau County
-            </p>
-            <h1 className="mt-5 max-w-2xl text-white">
+              </p>
+              <h1 className="mt-5 max-w-2xl text-white">
               Dog Services in{" "}
               <span className="italic text-[var(--pp-mint)]">{page.town}</span>, NY
-            </h1>
-            <p className="pp-hero-description mt-5 max-w-xl text-lg leading-relaxed text-white/80">
+              </h1>
+            </div>
+            <div className="lg:border-l lg:border-white/20 lg:pl-10">
+              <p className="pp-hero-description max-w-md text-lg leading-relaxed text-white/90 sm:text-xl">
               Mobile grooming, daycare, boarding &amp; training — serving {page.town} and surrounding Nassau County communities.
-            </p>
-            <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row">
+              </p>
+              <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
               <Link href="/book/" className="pp-cta">
                 Book Now
                 <span className="pp-cta-arrow" aria-hidden />
@@ -130,6 +133,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
                 <Phone className="mr-2 h-4 w-4" />
                 Call {SITE.phone.display}
               </a>
+              </div>
             </div>
           </div>
         </div>
