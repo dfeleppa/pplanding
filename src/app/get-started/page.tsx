@@ -63,15 +63,18 @@ export default function GetStartedPage() {
           </div>
 
           <div id="new-client-form" className="scroll-mt-6 overflow-hidden rounded-2xl border border-[rgba(50,73,83,0.15)] bg-white shadow-[0_14px_40px_rgba(50,73,83,0.08)]">
-            <iframe
-              src={FORM_URL}
-              width="100%"
-              height="800"
-              title="New Leads (M) — Planet Pooch new client form"
-              className="block h-[800px] w-full border-0"
-              allow="payment; geolocation; microphone; camera"
-              sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-downloads"
-            />
+            {/* Clip MoeGo's dark header on desktop; keep its taller, wrapping header on narrow screens. */}
+            <div className="h-[800px] overflow-hidden">
+              <iframe
+                src={FORM_URL}
+                width="100%"
+                height="963"
+                title="New Leads (M) — Planet Pooch new client form"
+                className="-mt-[163px] block h-[963px] w-full border-0 max-[500px]:-mt-[66px] max-[500px]:h-[866px]"
+                allow="payment; geolocation; microphone; camera"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-downloads"
+              />
+            </div>
             <p className="border-t border-[rgba(50,73,83,0.12)] px-5 py-4 text-sm leading-6">
               Trouble viewing the form?{" "}
               <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-4">
