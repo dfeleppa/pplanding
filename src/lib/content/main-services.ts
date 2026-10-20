@@ -1293,6 +1293,14 @@ export const mainServicePages = {
             date: "2026-10-30",
           },
           {
+            title: "Pumpkin Patch Event",
+            dateLabel: "Thursday, November 19, 2026",
+            description: "Pumpkin Patch Event",
+            location: "Planet Pooch resort",
+            badge: "Theme day",
+            date: "2026-11-19",
+          },
+          {
             title: "Santa Paws Photo Day",
             dateLabel: "Holiday Portraits with Santa",
             description: "Holiday Portraits with Santa",
