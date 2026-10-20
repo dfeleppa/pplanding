@@ -1293,6 +1293,22 @@ export const mainServicePages = {
             date: "2026-10-30",
           },
           {
+            title: "Santa Paws Photo Day",
+            dateLabel: "Holiday Portraits with Santa",
+            description: "Holiday Portraits with Santa",
+            location: "Planet Pooch resort",
+            badge: "Photo day",
+            date: "2026-12-22",
+          },
+          {
+            title: "New Year's Eve Pawty",
+            dateLabel: "Party, photos, ball-drap, & special treats!",
+            description: "Party, photos, ball-drap, & special treats!",
+            location: "Planet Pooch resort",
+            badge: "Party",
+            date: "2026-12-30",
+          },
+          {
             title: "Foam Party",
             dateLabel: "Wednesday, July 15, 2026",
             description:
