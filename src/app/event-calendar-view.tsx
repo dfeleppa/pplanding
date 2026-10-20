@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ContentSection } from "../lib/content/types";
 
 type EventCalendarSection = Extract<ContentSection, { type: "eventCalendar" }>;
@@ -105,8 +106,9 @@ function formatDayHeader(day: Date) {
 }
 
 export function EventCalendarView({ section }: { section: EventCalendarSection }) {
+  const [windowOffset, setWindowOffset] = useState(0);
   const today = new Date();
-  const visibleStart = startOfWeek(today);
+  const visibleStart = addDays(startOfWeek(today), windowOffset * 28);
   const days = Array.from({ length: 28 }, (_, index) => addDays(visibleStart, index));
   const visibleEnd = days[days.length - 1];
 
@@ -121,15 +123,36 @@ export function EventCalendarView({ section }: { section: EventCalendarSection }
             <h3 className="text-2xl leading-tight">{formatRange(visibleStart, visibleEnd)}</h3>
           </div>
         </div>
-        {section.cta ? (
-          <Link
-            href={section.cta.href}
-            className="inline-flex shrink-0 items-center justify-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
-          >
-            {section.cta.label}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        ) : null}
+        <div className="flex flex-wrap items-center gap-3">
+          <nav className="flex items-center gap-1" aria-label="Calendar navigation">
+            <button
+              type="button"
+              onClick={() => setWindowOffset((offset) => Math.max(0, offset - 1))}
+              disabled={windowOffset === 0}
+              aria-label="Previous four weeks"
+              className="flex h-11 w-11 items-center justify-center border border-white/30 text-white transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setWindowOffset((offset) => offset + 1)}
+              aria-label="Next four weeks"
+              className="flex h-11 w-11 items-center justify-center border border-white/30 text-white transition hover:bg-white/10"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </nav>
+          {section.cta ? (
+            <Link
+              href={section.cta.href}
+              className="inline-flex shrink-0 items-center justify-center gap-2 bg-[var(--pp-mint)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)]"
+            >
+              {section.cta.label}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          ) : null}
+        </div>
       </div>
 
       <div className="border-b border-[rgba(50,73,83,0.10)] bg-[var(--pp-cream)] px-4 py-3 sm:px-5">

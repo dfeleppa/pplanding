@@ -1285,9 +1285,9 @@ export const mainServicePages = {
             date: "2026-10-06",
           },
           {
-            title: "Costume Contest",
-            dateLabel: "Friday, October 30, 2026",
-            description: "A Halloween costume contest for the pack.",
+            title: "Halloween Event",
+            dateLabel: "Costume Contest & Haunted House",
+            description: "A Halloween costume contest and haunted house for the pack.",
             location: "Planet Pooch resort",
             badge: "Contest",
             date: "2026-10-30",
