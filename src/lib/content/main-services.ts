@@ -755,6 +755,7 @@ export const mainServicePages = {
           "Classes must be booked at least 24 hours in advance.",
           "Classes can be taken out of order.",
           "4-session packages expire 60 days after purchase.",
+          "Sessions start at the scheduled time. We allow a 15-minute grace period; if you're 15 minutes late or more, contact us or we can't accommodate you.",
         ],
         schedule: [
           {
