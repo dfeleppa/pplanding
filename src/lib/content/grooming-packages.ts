@@ -43,3 +43,25 @@ export const groomingPackages = {
           },
         ],
       } satisfies ContentSection;
+
+export const groomingAddons = {
+  type: "comparison",
+  title: "Add-ons",
+  columns: ["Service", "À la carte", "Basic", "Plus (+$19)", "Premium (+$29)"],
+  rows: [
+    { label: "Nail cut and grind", values: ["—", true, true, true] },
+    { label: "Ears cleaned (and plucked upon request)", values: ["—", true, true, true] },
+    { label: "Bath, shampoo, and conditioner", values: ["—", true, true, true] },
+    { label: "Anal glands expressed upon request", values: ["—", true, true, true] },
+    { label: "Hand blow dry", values: ["—", true, true, true] },
+    { label: "Fluffing and brushing", values: ["—", true, true, true] },
+    { label: "Haircut", values: ["—", true, true, true] },
+    { label: "Signature bow and bandana", values: ["—", true, true, true] },
+    { label: "3-Step Dental", values: ["$16", false, true, true] },
+    { label: "Hydrating Butter Balm", values: ["$6", false, true, true] },
+    { label: "Cucumber Melon Facial", values: ["$6", false, false, true] },
+    { label: "Aloe Vera Paw Cleanser", values: ["$6", false, false, true] },
+    { label: "Premium Shampoo", values: ["$10", false, false, true] },
+    { label: "Report Card with Photo", values: ["$5", false, false, true] },
+  ],
+} satisfies ContentSection;
