@@ -1,3 +1,4 @@
+import { groomingPackages } from "./grooming-packages";
 import type { ContentPage } from "./types";
 
 /**
@@ -241,6 +242,7 @@ export const mainServicePages = {
           },
         ],
       },
+      groomingPackages,
       {
         type: "callout",
         eyebrow: "Stay & save",

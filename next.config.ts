@@ -26,7 +26,6 @@ const nextConfig: NextConfig = {
       { source: "/grooming-pricing/", destination: "/mobile-grooming/", permanent: true },
       { source: "/services-pricing/", destination: "/mobile-grooming/", permanent: true },
       { source: "/mobile-grooming-packages/", destination: "/mobile-grooming/", permanent: true },
-      { source: "/grooming-packages/", destination: "/mobile-grooming/", permanent: true },
       { source: "/spa-services/", destination: "/mobile-grooming/", permanent: true },
       { source: "/spa-services-2/", destination: "/mobile-grooming/", permanent: true },
       { source: "/our-vans/", destination: "/mobile-grooming/", permanent: true },
