@@ -1,52 +1,41 @@
-# Accessibility remediation and verification plan
+# Public website accessibility plan
 
-Status: active; compliance is not yet established.
+Status: active. Full conformance and legal compliance are not established.
 
-## Current public-site execution record (supersedes historical portal notes)
+## Scope
 
-Source is dfeleppa/pplanding at C:/Users/DFele/work/pplanding. Scope is public pages and customer journeys only, including MoeGo/LeadConnector forms, maps, videos and linked documents. The employee portal is excluded. Most browser, assistive-technology and content-quality checks remain open; changes are local and not deployed. See ACCESSIBILITY-AUDIT.md for exact evidence and limitations.
+Public customer website only: https://www.planet-pooch.com/. Source: dfeleppa/pplanding. The employee portal is excluded. Include all public pages, complete inquiry/booking processes, third-party forms, media, maps, and linked documents. The business publishes a Franklin Square, New York address.
 
-New York applicability research: Executive Law section 296(2) addresses discrimination in public accommodations; the Division of Human Rights explains business obligations including reasonable modifications. Review these alongside ADA Title III. Do not assume NYC agency website standards or government Title II deadlines apply to this private Nassau County business. Legal applicability remains unconfirmed.
+Use WCAG 2.2 A/AA as the engineering target. Recorded legal research considers ADA Title III and New York public-accommodation requirements; it does not establish every applicable legal obligation. Government Title II deadlines must not be assumed to apply to this private business. Qualified jurisdiction-specific legal review remains a completion gate.
 
-Additional primary sources:
+Primary references reviewed during this project:
+- https://www.ada.gov/resources/web-guidance/
+- https://www.ada.gov/topics/title-iii/
 - https://www.nysenate.gov/legislation/laws/EXC/296
 - https://dhr.ny.gov/obligations-business-owners-public-accommodations
-- https://www.ada.gov/topics/title-iii/
-
-Public workflow acceptance gates: service discovery; contact and booking; new-client service selection and all dog profiles; required-field and server errors; busy and success states; third-party forms; media and documents; error recovery. Verify keyboard and screen-reader operation, contrast, zoom/reflow, text spacing, target size, reduced motion and forced colors. Production verification and legal applicability review remain required. A support page does not substitute for accessible complete workflows.
-
-## Confirmed scope correction
-
-The user confirmed this project covers only the public customer website, not the employee app. The public URL is https://www.planet-pooch.com/ (confirmed by this repository's website-attribution origins and the live business listing). Its published address is Franklin Square, New York. Portal-specific findings below are historical discovery, not remediation scope. The initial progress-bar change was reverted after this clarification. Locate the public website source and hosting before implementation. Audit public navigation, service pages, contact/booking journeys, media, policies, forms, and third-party customer integrations. Employee routes and roles are excluded from the execution sequence below.
-
-## Scope and legal applicability
-
-Audit the Planet Pooch repository and all deployed user journeys. Confirm whether the public customer website is a separate property and include it if in scope. Confirm operating jurisdictions, public-facing versus employment use, third-party booking/payment services, and any applicable contractual accessibility requirements before concluding legal applicability.
-
-DOJ guidance says ADA obligations extend to web services of covered businesses. It does not prescribe a single detailed Title III website technical standard. Government Title II rules must not be assumed to apply to a private business. Use WCAG 2.2 Level A and AA as the engineering acceptance target; technical conformance alone does not establish every legal obligation. Obtain qualified legal review of jurisdiction-specific applicability before claiming full legal compliance.
-
-Sources reviewed November 8, 2026:
-- https://www.ada.gov/resources/web-guidance/
 - https://www.w3.org/TR/WCAG22/
 
-## Execution sequence
+## Evidence and deliverables
 
-1. Inventory every route, role, reusable component, interaction state, document, video, integration, and complete process. Record test access and third-party ownership.
-2. Establish baseline automated browser scans and keyboard checks. Inspect existing accessibility tests for actual coverage. Create a criterion-by-criterion WCAG A/AA evidence matrix, recording applicability and failures.
-3. Repair shared navigation, landmarks, skip links, page titles, focus visibility/order, dialogs, tabs, form labels/errors/status announcements, table semantics, contrast, responsive reflow, motion, and target sizes.
-4. Audit and repair every route and complete workflow, including authentication, onboarding, uploads, scheduling, reporting, editing, drag/drop alternatives, and error/recovery states. Include accessible alternatives for images, documents, charts, and media.
-5. Verify with automated checks plus keyboard-only use, screen reader checks, 200% zoom, 320 CSS-pixel reflow, text spacing overrides, forced colors, and reduced motion. Test desktop and mobile; record browser, assistive technology, route, role, state, result, and date.
-6. Verify deployed changes and third-party journeys. Publish an accurate accessibility/help statement with a verified support channel. Establish regression checks, content authoring guidance, and a process for accessibility reports.
-7. Close only when all applicable criteria and complete processes have direct evidence, remaining external dependencies are resolved, and legal applicability is reviewed. Never use a clean automated scan as proof of full compliance.
+Remediation is on codex/public-site-accessibility, draft PR https://github.com/dfeleppa/pplanding/pull/126. It is not merged into production. ACCESSIBILITY-AUDIT.md records findings and narrowly scoped evidence; historical build notes do not prove current release behavior. ACCESSIBILITY-WCAG-MATRIX.md lists all 55 A/AA criteria, still unverified at whole-site scope.
 
-## Initial evidence
+Static structure and semantic checks cover 207 generated customer HTML pages. Measured contrast checks cover specific CSS pairs only. Browser checks cover selected dialogs, gallery keyboard operation, profile focus, skip navigation, native validation, and selected 320px layouts. None proves complete workflows or spoken screen-reader output.
 
-- Repository main was clean at 7c877df when the audit began.
-- This repository is an operations/people/reporting portal; public website scope is pending confirmation.
-- Root document declares English.
-- Existing tests cover shared label/error associations, static dialog semantics, and tab order markup. They do not demonstrate browser keyboard operation or site-wide conformance.
-- Global focus styling currently targets the app content region; navigation and authentication require separate inspection.
+## Remaining execution gates
 
-## Remaining gates
+1. Complete inventory of templates, pages, processes, documents, media, and integrations. Assess alternative-text quality and meaningful titles, not only attribute presence.
+2. Verify every on-site service branch, up to ten dog profiles, validation, pending submission, server/network failure, retry and success. Use isolated test delivery for synthetic inquiries; separately verify actual integration without creating unintended customer records.
+3. Resolve third-party barriers. MoeGo resort form has unnamed fields/comboboxes and an unlabeled consent checkbox. Inspect additional-pet and Submit keyboard operation, remaining MoeGo forms and LeadConnector. An alternative link alone does not establish an equivalent accessible complete process.
+4. Complete keyboard, desktop/mobile screen-reader, 200% zoom, 320px reflow, text spacing, forced colors, reduced motion, target size and rendered contrast checks across routes/states. Include error recovery pages and responsive comparison content.
+5. Verify captions, transcripts, audio-description needs and linked documents. Do not invent media alternatives.
+6. Attach direct evidence for each applicable criterion in the matrix, resolve failures, and rerun affected checks. Do not infer site-wide passes from a single route or static scan.
+7. Verify hosted preview, merge/deploy reviewed changes, and retest production journeys. Confirm support-channel operation and responsibility for accessibility reports and vendor follow-up.
+8. Complete legal applicability review and requirement-by-requirement completion audit before claiming full compliance.
 
-All seven execution steps remain open. No accessibility conformance or legal compliance claim is authorized by this initial plan.
+## Regression and maintenance
+
+CI runs lint, TypeScript, build, structure, measured form contrast and static axe semantics. Passing CI does not close manual or third-party gates. For new content, check meaningful alternatives, headings/links, accessible media/documents and contrast. For interaction changes, retest labels, keyboard order, focus visibility/restoration, errors/status messages and responsive behavior. Monitor accessibility reports and third-party changes as ongoing maintenance.
+
+## Completion rule
+
+Keep the goal active until all in-scope complete processes and applicable criteria have direct evidence, production contains the fixes, external barriers are resolved, and legal applicability is reviewed. A draft PR, help page or automated scan is insufficient.
