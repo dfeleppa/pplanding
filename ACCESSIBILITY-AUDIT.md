@@ -117,3 +117,11 @@ Reviewed the general MoeGo inquiry linked from /book/ and /welcome/ and the exis
 A read-only scan of generated HTML anchor hrefs and iframe/video/audio src attributes found 11 unique external URLs: three social profiles, three MoeGo intake forms, existing-client booking, a Google Maps link and embed, and two MoeGo policy links. No PDF/Word/Excel/PowerPoint link was found in those attributes. This is not a complete asset inventory: client-rendered controls, iframe srcdoc media, external-page documents and dynamically loaded media require separate inspection. Known YouTube tour and LeadConnector embed remain in scope. No whole-site criterion is marked passed by this inventory.
 
 GitHub Actions run 42552795690 passed for fae7f68. Run 42553108106 for 184e6d7 was observed in progress; no completion was inferred.
+
+## Calendar date context and range feedback
+
+The event calendar used visual weekday columns without complete date headings and changed its range heading without a live announcement. The range heading now has polite, atomic live-region semantics. Each of the 28 dates is an h4 with a machine-readable time and a complete weekday/month/day/year accessible text; the short visible date and mobile weekday remain visually unchanged and do not duplicate the accessible date.
+
+Validation: targeted ESLint and production build passed. An isolated React/jsdom interaction check verified 28 complete date headings, dateTime values, live-region attributes, Next changing the announced range while retaining Next focus, and Previous restoring the initial range and disabled boundary. This verifies DOM behavior, not actual spoken screen-reader announcements. No external requests were sent by the isolated check.
+
+Motion review: inspected Slideshow and ReviewCarousel source. Both initialize paused; slideshow transitions use motion-reduce:transition-none; review movement checks the reduced-motion media query, focus, hover and document visibility. The global reduced-motion rule disables smooth page scrolling. Hover transforms and external media require further review; no full motion criterion pass is claimed.
