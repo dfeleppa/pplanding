@@ -215,6 +215,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
             <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
               <table className="w-full text-sm">
+                <caption className="sr-only">{section.title ?? "Service pricing"}</caption>
                 <thead>
                   <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
                     {section.columns.map((col) => (
@@ -230,10 +231,10 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                       key={row.join("|")}
                       className={`${i % 2 === 0 ? "bg-white/30" : "bg-[var(--pp-cream)]"} text-[rgba(47,42,39,0.82)]`}
                     >
-                      {row.map((cell, j) => (
-                        <td key={j} className="px-5 py-4 leading-7">
-                          {cell}
-                        </td>
+                      {row.map((cell, j) => j === 0 ? (
+                        <th key={j} scope="row" className="px-5 py-4 text-left font-normal leading-7">{cell}</th>
+                      ) : (
+                        <td key={j} className="px-5 py-4 leading-7">{cell}</td>
                       ))}
                     </tr>
                   ))}
@@ -273,10 +274,11 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   ) : null}
                   <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
                     <table className="w-full text-sm">
+                      <caption className="sr-only">{table.title}</caption>
                       <thead>
                         <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
                           {table.columns.map((col) => (
-                            <th key={col} className="px-5 py-3 text-left">{col}</th>
+                            <th key={col} scope="col" className="px-5 py-3 text-left">{col}</th>
                           ))}
                         </tr>
                       </thead>
@@ -286,7 +288,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                             key={row.join("|")}
                             className={`${i % 2 === 0 ? "bg-white/30" : "bg-[var(--pp-cream)]"} text-[rgba(47,42,39,0.82)]`}
                           >
-                            {row.map((cell, j) => (
+                            {row.map((cell, j) => j === 0 ? (
+                              <th key={j} scope="row" className="px-5 py-4 text-left font-normal leading-7">{cell}</th>
+                            ) : (
                               <td key={j} className="px-5 py-4 leading-7">{cell}</td>
                             ))}
                           </tr>
@@ -566,10 +570,11 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             </div>
             <div className="hidden overflow-x-auto border border-[rgba(50,73,83,0.12)] bg-white/65 sm:block">
               <table className="w-full min-w-[520px] text-sm">
+                <caption className="sr-only">{section.title ?? "Service comparison"}</caption>
                 <thead>
                   <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
                     {section.columns.map((col) => (
-                      <th key={col} className="px-5 py-3 text-left">
+                      <th key={col} scope="col" className="px-5 py-3 text-left">
                         {col}
                       </th>
                     ))}
@@ -581,9 +586,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                       key={row.label}
                       className={`${i % 2 === 0 ? "bg-white/30" : "bg-[var(--pp-cream)]"} text-[rgba(47,42,39,0.82)]`}
                     >
-                      <td className="px-5 py-4 leading-7 font-medium text-[var(--pp-ink)]">
+                      <th scope="row" className="px-5 py-4 text-left leading-7 font-medium text-[var(--pp-ink)]">
                         {row.label}
-                      </td>
+                      </th>
                       {row.values.map((value, j) => (
                         <td key={j} className="px-5 py-4 leading-7">
                           {typeof value === "boolean" ? (
