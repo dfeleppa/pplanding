@@ -246,7 +246,7 @@ export default function WelcomePage() {
                   <div className="relative aspect-square w-full overflow-hidden">
                     <Image
                       src={svc.image}
-                      alt={svc.title}
+                      alt=""
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                       className="object-cover transition duration-500 group-hover:scale-105"

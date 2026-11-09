@@ -160,7 +160,7 @@ export default function HomePage() {
                   <div className="relative h-16 w-16 shrink-0 overflow-hidden sm:aspect-square sm:h-auto sm:w-full">
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt=""
                       fill
                       sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 96px) / 2), (max-width: 1279px) 33vw, 200px"
                       className="object-cover transition duration-500 group-hover:scale-105"
