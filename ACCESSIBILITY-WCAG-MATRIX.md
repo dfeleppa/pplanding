@@ -12,7 +12,7 @@ Every criterion starts UNVERIFIED. Local fixes or narrow structural checks do no
 | [1.2.3 Audio Description or Media Alternative (Prerecorded)](https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [1.2.4 Captions (Live)](https://www.w3.org/TR/WCAG22/#captions-live) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [1.2.5 Audio Description (Prerecorded)](https://www.w3.org/TR/WCAG22/#audio-description-prerecorded) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
-| [1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
+| [1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships) | A | OPEN FAILURE | Hosted MoeGo forms lack visible-label/control associations; see ACCESSIBILITY-VENDOR-FINDINGS.md. Full retest required. |
 | [1.3.2 Meaningful Sequence](https://www.w3.org/TR/WCAG22/#meaningful-sequence) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [1.3.3 Sensory Characteristics](https://www.w3.org/TR/WCAG22/#sensory-characteristics) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [1.3.4 Orientation](https://www.w3.org/TR/WCAG22/#orientation) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
@@ -59,7 +59,7 @@ Every criterion starts UNVERIFIED. Local fixes or narrow structural checks do no
 | [3.3.4 Error Prevention (Legal, Financial, Data)](https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [3.3.7 Redundant Entry](https://www.w3.org/TR/WCAG22/#redundant-entry) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [3.3.8 Accessible Authentication (Minimum)](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
-| [4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
+| [4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value) | A | OPEN FAILURE | Unnamed MoeGo comboboxes, contact fields, uploads and consent checkboxes; see ACCESSIBILITY-VENDOR-FINDINGS.md. |
 | [4.1.3 Status Messages](https://www.w3.org/TR/WCAG22/#status-messages) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
 
 ## Conformance gates
@@ -69,3 +69,4 @@ Every criterion starts UNVERIFIED. Local fixes or narrow structural checks do no
 - Accessibility-supported technologies and non-interference.
 - Published production behavior matches tested source.
 - Legal applicability and operational accessibility support reviewed.
+

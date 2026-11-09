@@ -4,6 +4,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const root = path.resolve(".next/server/app");
 const failures = [];
+const titles = new Map();
 let checked = 0;
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -16,6 +17,13 @@ function walk(directory) {
     const page = path.relative(root, filename);
     checked++;
     const check = (condition, message) => { if (!condition) failures.push({ page, message }); };
+    check(/<html\b[^>]*\blang="en"/.test(html), "Expected English document language");
+    const title = html.match(/<title>([^<]+)<\/title>/)?.[1]?.trim();
+    check(Boolean(title), "Missing descriptive page title");
+    if (title) {
+      check(!titles.has(title), `Duplicate title also used by ${titles.get(title)}`);
+      titles.set(title, page);
+    }
     check((html.match(/<main\b/g) || []).length === 1, "Expected one main landmark");
     check((html.match(/<h1\b/g) || []).length === 1, "Expected one page heading");
     check((html.match(/id="page-content"/g) || []).length === 1, "Expected one skip destination");

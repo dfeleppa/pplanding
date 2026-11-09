@@ -22,7 +22,7 @@ const bodySans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: { absolute: "Book Now | Planet Pooch Pet Resort" },
+  title: { absolute: "Contact Planet Pooch | Phone, Email & Location" },
   description: `Book mobile grooming, daycare, boarding, training, or enrichment with ${SITE.legalName} in ${SITE.address.locality}, ${SITE.address.region}. Call ${SITE.phone.display} or email ${SITE.email}.`,
   alternates: { canonical: "/contact/" },
 };
