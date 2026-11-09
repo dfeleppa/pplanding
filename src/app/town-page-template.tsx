@@ -273,11 +273,14 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
-              Why mobile?
+              Why Planet Pooch?
             </p>
             <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">
-              {copy.intro(page.town)}
+              {copy.primary} for {page.town} families.
             </h2>
+            <p className="mt-5 text-lg leading-8 text-[rgba(47,42,39,0.86)]">
+              {copy.intro(page.town)}
+            </p>
           </div>
 
           <div className="grid gap-3">
