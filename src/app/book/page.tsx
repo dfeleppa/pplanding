@@ -92,7 +92,7 @@ export default function BookPage() {
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
                 Book Now
               </p>
-              <h1 className="pp-hero-title text-white">Let&apos;s get your dog on the calendar.</h1>
+              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">Let&apos;s get your dog on the calendar.</h1>
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">

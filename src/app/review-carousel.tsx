@@ -97,7 +97,7 @@ export function ReviewCarousel({ reviews }: { reviews: readonly Review[] }) {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
+                <div className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" />
                   ))}

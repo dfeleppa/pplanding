@@ -117,7 +117,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
               <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--pp-mint)]/85">
               {REGION_LABELS[page.subRegion]} · Nassau County
               </p>
-              <h1 className="pp-hero-title text-white">
+              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">
               Dog Services in{" "}
               <span className="italic text-[var(--pp-mint)]">{page.town}</span>, NY
               </h1>

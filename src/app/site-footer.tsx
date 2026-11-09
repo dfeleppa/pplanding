@@ -21,6 +21,7 @@ const footerLinks = {
     { label: "Blog", href: "/blog/" },
   ],
   legal: [
+    { label: "Accessibility and help", href: "/accessibility/" },
     { label: "Pet Services Agreement", href: "/agreement/" },
     { label: "Requirements", href: "/requirements/" },
     { label: "Privacy Policy", href: "/privacy-policy/" },

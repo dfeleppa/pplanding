@@ -158,7 +158,7 @@ export default function WelcomePage() {
           <div className="pp-hero-content">
             <div className="pp-hero-stack">
               <div>
-                <h1 className="pp-hero-title text-white">
+                <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">
                   Long Island pet care you{" "}
                   <span className="text-[var(--pp-mint)]/80">can actually trust.</span>
                 </h1>
@@ -394,7 +394,7 @@ export default function WelcomePage() {
 
                 <div
                   className="flex items-center gap-0.5"
-                  aria-label="5 out of 5 stars"
+                  role="img" aria-label="5 out of 5 stars"
                 >
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star

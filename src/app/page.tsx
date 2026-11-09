@@ -105,7 +105,7 @@ export default function HomePage() {
           >
             <div>
               <div>
-                <h1 className="pp-hero-title max-w-xl text-white">
+                <h1 id="page-content" tabIndex={-1} className="pp-hero-title max-w-xl text-white">
                   Enriching the lives of pets{" "}
                   <span className="text-[var(--pp-mint)]">since 2014.</span>
                 </h1>

@@ -119,7 +119,7 @@ export default function SummerBoardingPage() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-mint)]/90">
                   Summer 2026 — Spots Are Limited
                 </p>
-                <h1 className="pp-hero-title text-white">
+                <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">
                   Summer boarding your dog will{" "}
                   <span className="text-[var(--pp-mint)]/80">
                     actually enjoy.
@@ -317,7 +317,7 @@ export default function SummerBoardingPage() {
 
                 <div
                   className="flex items-center gap-0.5"
-                  aria-label="5 out of 5 stars"
+                  role="img" aria-label="5 out of 5 stars"
                 >
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star

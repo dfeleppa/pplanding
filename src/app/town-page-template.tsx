@@ -223,7 +223,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">
                 {copy.eyebrow} • {page.town}{page.region ? `, ${page.region}` : ""}
               </p>
-              <h1 className="pp-hero-title text-white">{`${copy.primary} in ${page.town}${page.town.endsWith("County") || page.town === "North Shore" ? "" : ", NY"}`}</h1>
+              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">{`${copy.primary} in ${page.town}${page.town.endsWith("County") || page.town === "North Shore" ? "" : ", NY"}`}</h1>
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">{copy.hero(page.town)}</p>

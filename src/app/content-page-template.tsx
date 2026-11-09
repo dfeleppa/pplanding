@@ -218,7 +218,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 <thead>
                   <tr className="bg-[var(--pp-night)] text-[11px] font-bold uppercase tracking-[0.16em] text-white/85">
                     {section.columns.map((col) => (
-                      <th key={col} className="px-5 py-3 text-left">
+                      <th key={col} scope="col" className="px-5 py-3 text-left">
                         {col}
                       </th>
                     ))}
@@ -550,9 +550,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                         <dd className="mt-1 text-sm text-[rgba(47,42,39,0.82)]">
                           {typeof value === "boolean" ? (
                             value ? (
-                              <Check className="h-4 w-4 text-[var(--pp-main)]" />
+                              <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[var(--pp-main)]" aria-hidden="true" />Included</span>
                             ) : (
-                              <X className="h-4 w-4 text-[rgba(47,42,39,0.3)]" aria-label="Not included" />
+                              <span className="inline-flex items-center gap-2"><X className="h-4 w-4 text-[var(--pp-ink)]" aria-hidden="true" />Not included</span>
                             )
                           ) : (
                             value
@@ -588,9 +588,9 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                         <td key={j} className="px-5 py-4 leading-7">
                           {typeof value === "boolean" ? (
                             value ? (
-                              <Check className="h-4 w-4 text-[var(--pp-main)]" />
+                              <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[var(--pp-main)]" aria-hidden="true" />Included</span>
                             ) : (
-                              <X className="h-4 w-4 text-[rgba(47,42,39,0.3)]" aria-label="Not included" />
+                              <span className="inline-flex items-center gap-2"><X className="h-4 w-4 text-[var(--pp-ink)]" aria-hidden="true" />Not included</span>
                             )
                           ) : (
                             value
@@ -637,7 +637,6 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   </dt>
                   <dd className={`mt-3 text-sm leading-7 ${section.highContrast ? "text-[var(--pp-ink)]" : "text-[rgba(47,42,39,0.82)]"}`}>
                     {item.definition}
-                  </dd>
                   {item.cta ? (
                     <Link
                       href={item.cta.href}
@@ -647,6 +646,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   ) : null}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -1299,7 +1299,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--pp-mint)]/85">
                       {page.eyebrow}
                     </p>
-                    <h1 className="pp-hero-title text-white">{page.title}</h1>
+                    <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">{page.title}</h1>
                   </div>
                   <div className="pp-hero-copy">
                     <p
@@ -1331,7 +1331,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
             <div className="pp-hero-content pp-hero-stack">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">{page.eyebrow}</p>
-                <h1 className="pp-hero-title text-white">{page.title}</h1>
+                <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">{page.title}</h1>
               </div>
               <div className="pp-hero-copy">
                 <p className="pp-hero-tagline">{page.hero}</p>

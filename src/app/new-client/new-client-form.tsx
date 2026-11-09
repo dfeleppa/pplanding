@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, PawPrint, Plus, UserRound, X } from "lucide-react";
 import { CONSENT_TEXT, SERVICES } from "../../lib/new-client";
 import { SITE } from "../../lib/site";
@@ -11,6 +11,26 @@ const BREEDS = ["Mixed Breed", "Unknown", "Australian Shepherd", "Beagle", "Bern
 export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resort" | "grooming" }) {
   const [pets, setPets] = useState([0]);
   const nextPet = useRef(1);
+  const petFields = useRef(new Map<number, HTMLSelectElement>());
+  const pendingPetFocus = useRef<number | null>(null);
+  const [petAnnouncement, setPetAnnouncement] = useState("");
+  useEffect(() => {
+    if (pendingPetFocus.current !== null) {
+      petFields.current.get(pendingPetFocus.current)?.focus();
+      pendingPetFocus.current = null;
+    }
+  }, [pets]);
+  function addPet() {
+    const id = nextPet.current++;
+    pendingPetFocus.current = id;
+    setPets([...pets, id]);
+    setPetAnnouncement(`Dog ${pets.length + 1} added.`);
+  }
+  function removePet(id: number, index: number) {
+    pendingPetFocus.current = pets[index - 1] ?? pets[0];
+    setPets(pets.filter(pet => pet !== id));
+    setPetAnnouncement(`Dog ${index + 1} removed. ${pets.length - 1} dog profiles remain.`);
+  }
   const submissionId = useRef<string | null>(null);
   const submitting = useRef(false);
   const [busy, setBusy] = useState(false);
@@ -44,7 +64,7 @@ export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resor
           transaction_id: result.eventId,
         });
       } catch { /* non-blocking */ }
-      requestAnimationFrame(() => { success.current?.focus(); success.current?.scrollIntoView({ behavior: "smooth", block: "center" }); });
+      requestAnimationFrame(() => { success.current?.focus(); success.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "center" }); });
     } catch (error) { setError(error instanceof Error ? error.message : "Please try again or call us."); }
     finally { submitting.current = false; setBusy(false); }
   }
@@ -56,6 +76,7 @@ export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resor
   </div>;
 
   return <form onSubmit={submit} className={styles.form}>
+    <p className="sr-only" role="status">{petAnnouncement}</p>
     <p className={styles.required}>Fields marked <span>*</span> are required.</p>
     {serviceMode === "grooming" ? <input type="hidden" name="services" value="In-house grooming" /> : <fieldset disabled={busy} className={styles.section}>
       <div className={styles.grid}>
@@ -69,16 +90,16 @@ export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resor
     </fieldset>}
     <fieldset disabled={busy} className={styles.section}>
       <legend><PawPrint size={22} aria-hidden="true" /> Your dog&apos;s profile</legend>
-      {pets.map((id, index) => <div key={id} className={styles.pet}>
-        {pets.length > 1 && <div className={styles.petHeading}><h3>Dog {index + 1}</h3>{index > 0 && <button type="button" onClick={() => setPets(pets.filter(p => p !== id))} aria-label={`Remove dog ${index + 1}`}><X size={17} /> Remove</button>}</div>}
+      {pets.map((id, index) => <div key={id} className={styles.pet} role="group" aria-label={`Dog ${index + 1}`}>
+        {pets.length > 1 && <div className={styles.petHeading}><h3>Dog {index + 1}</h3>{index > 0 && <button type="button" onClick={() => removePet(id, index)} aria-label={`Remove dog ${index + 1}`}><X size={17} /> Remove</button>}</div>}
         <div className={styles.grid}>
-          <label>Dog type <span>*</span><select name={`pet-type-${id}`} required defaultValue="DOG"><option value="DOG">Dog</option></select></label>
+          <label>Dog type <span>*</span><select ref={element => { if (element) petFields.current.set(id, element); else petFields.current.delete(id); }} name={`pet-type-${id}`} required defaultValue="DOG"><option value="DOG">Dog</option></select></label>
           <label>Dog breed <span>*</span><input name={`pet-breed-${id}`} list={`dog-breeds-${serviceMode}`} placeholder="Search or enter breed" required maxLength={100} /></label>
           <label className={styles.full}>Dog name <span>*</span><input name={`pet-name-${id}`} placeholder="Your pup’s name" required maxLength={100} /></label>
         </div>
       </div>)}
       <datalist id={`dog-breeds-${serviceMode}`}>{BREEDS.map(breed => <option key={breed} value={breed} />)}</datalist>
-      {pets.length < 10 && <button type="button" className={styles.add} onClick={() => setPets([...pets, nextPet.current++])}><Plus size={18} /> Additional dog</button>}
+      {pets.length < 10 && <button type="button" className={styles.add} onClick={addPet}><Plus size={18} /> Additional dog</button>}
     </fieldset>
     <fieldset disabled={busy} className={styles.section}>
       <legend><UserRound size={22} aria-hidden="true" /> Your information</legend>

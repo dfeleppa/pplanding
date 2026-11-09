@@ -1,0 +1,61 @@
+# Public website audit
+
+Scope: https://www.planet-pooch.com/ only. Source baseline: bfb0ca0 in dfeleppa/pplanding. Status: incomplete; no conformance claim.
+
+## Confirmed source findings
+
+1. `src/app/slideshow.tsx`: changes images every four seconds indefinitely without a pause control. Address WCAG 2.2.2 by providing pause/resume and stopping rotation for keyboard interaction; respect reduced motion. Invisible slides remain exposed to assistive technology. Verify image alternatives and announce manual changes appropriately.
+2. `src/app/nav-dropdown.tsx`: uses ARIA menu/menuitem roles without corresponding menu keyboard behavior. Prefer a navigation disclosure with ordinary links, an associated controlled container, Escape focus restoration, and closure on focus leaving. Verify Tab/Shift+Tab, Escape, pointer dismissal, and route navigation in browser.
+3. `src/app/mobile-menu.tsx`: uses a custom modal with a keyboard loop; background inertness and nested booking-dialog interaction require browser and assistive-technology verification. Resize while open also needs checking because desktop CSS hides the panel while body scroll remains locked.
+
+## Existing foundations, not proof of conformance
+
+The root layout has an English language declaration, viewport zoom is not prohibited, and a skip link points to `#main`. Verify target presence and focus behavior on every page template. Page metadata supports descriptive titles, but individual route coverage is pending.
+
+## Verification backlog
+
+320x640 Chrome /new-client/ measurements: initial selector and expanded Pet Resort form had document width 305 CSS px (scrollbar excluded), no tested text/control bounding boxes extending beyond the 320px viewport. Empty Submit was blocked by native validation, focused services, and exposed “Please select an item in the list.” No valid inquiry sent. This is one route/state reflow and validation check, not all-page conformance or screen-reader speech validation.
+
+External content source fixes: /get-started MoeGo iframe was shifted up 163px inside a clipping container; removed negative offsets and fixed clipping so its full viewport remains reachable. Giveaway iframe no longer prohibits scrolling and now has a direct form link. YouTube placeholder document now declares English, names its action Play, and includes a visible keyboard-focus outline. Tour video 9vUKmx3k5AQ appears on home and welcome; caption accuracy and audio-description needs are still unverified. Direct links do not establish accessibility of third-party forms; inspect those flows separately.
+
+Chrome form check on /new-client/: selecting Pet Resort exposed labeled required fields; Add dog moved focus to Dog 2 type and updated status text; removing Dog 2 returned focus to Dog 1 type and updated status text. Activating Skip to content with Enter focused the page H1 after navigation. No inquiry was submitted. This confirms DOM/focus behavior, not spoken screen-reader output. Server session 4893 serves the last build (latest comparison-table changes still require rebuild).
+
+Service comparison content: boolean Included cells previously rendered only unnamed check icons; Not included used a faint X. Both desktop tables and mobile cards now show explicit Included/Not included text and decorative icons. Desktop column and row headers have explicit scopes. ESLint and TypeScript pass. Verify responsive layout with longer cell text before release. Added npm check:a11y:structure, check:a11y:semantics, and check:a11y:contrast commands; build first for the two HTML-based checks.
+
+Static semantic scan completed: initial failures on home, welcome and summer boarding (star-rating divs with prohibited aria-label) and daycare (CTA link outside definition description). Fixed ratings with role=img and moved the CTA into its dd. Rebuilt successfully, then reran all 207 pages: zero reported static semantic violations. Structural and form contrast checks also pass. Incomplete axe rules and jsdom canvas warnings remain documented in results/log; browser, visual and assistive-technology gates are still open.
+
+Added axe-core/jsdom static semantic checker at scripts/check-accessibility-semantics.cjs. Command session 82278 is scanning 207 built pages; poll that handle before restarting. Output will be accessibility-semantics-results.json with violations and incomplete rules. This runs unhydrated DOM without site scripts, visual rendering, external resources or color-contrast checks. jsdom canvas limitations produce warnings; inspect incomplete results and verify affected rules in a real browser. Latest CSS contrast changes are not in this build, but this scan is not a contrast check.
+
+Measured CSS contrast fixes: form placeholder #83918b on white was 3.29:1; now #657277 is 4.97:1. Form footer now #5d6b6e on actual #f4f5ef page background is 5.05:1. Form input boundaries now #7a897f on white are 3.68:1. `node scripts/check-form-contrast.cjs` reads these CSS values and passes. Gallery photo count changed from white/50 (4.06:1 on #2f3f47) to white/70 (6.30:1). These measurements cover only those solid-color pairs; image overlays, other text and runtime states still need contrast review.
+
+Created ACCESSIBILITY-WCAG-MATRIX.md directly from the current W3C WCAG 2.2 Recommendation: all 55 Level A/AA criteria are present. Each remains unverified at whole-site scope until route/state and assistive-technology evidence is recorded. Existing narrow successes below must not be promoted to site-wide passes. Next priorities: measured contrast/reflow, keyboard journeys through form and gallery, media alternatives, third-party booking, and deployed verification.
+
+Nested dialog retest passed against rebuilt production source in Chrome at 320x640: menu Close receives initial focus; booking Close receives focus; Escape closes booking only and returns focus to Book Now inside the still-open navigation. Default production build passes. Production preview session 45966 serves port 3100. This evidence does not cover full Tab cycling, touch/screen-reader combinations or production deployment.
+
+320x640 Chrome check: mobile menu opens with Close focused and background excluded; nested booking opens with its Close focused. Escape unexpectedly dismissed both dialogs due to React portal cancel/close events reaching the parent. Added stopPropagation for booking cancel/close handlers. This fix requires rebuild and repeat of the same browser test. Production server session 61452 currently serves the pre-fix build.
+
+Gallery viewer: source exposed a custom modal without background inertness or focus restoration. Converted to native modal, capture/restore thumbnail focus, keep the modal open across photo changes, prevent arrow keys scrolling the page, announce captions and disable thumbnail zoom with reduced motion. Targeted ESLint and TypeScript pass. Gallery keyboard, mobile reflow, caption contrast and screen-reader verification remain open.
+
+New-client form: adding a dog now focuses the new profile's first control; removing a dog focuses the preceding profile. Profiles have accessible group names, and additions/removals are announced through a persistent status region. Targeted lint and TypeScript pass. Validate browser focus after adding the tenth dog (which removes the Add button), removal, and screen-reader announcement; no test inquiry has been submitted to the live service.
+
+Latest build: stopped local dev server, preserved prior `.next` as ignored `.codex-build-before-clean`, and rebuilt cleanly with default Turbopack. Build now passes. `node scripts/check-accessibility-structure.cjs` passes for 207 customer-facing generated HTML pages (one main/H1, focusable unique skip destination, skip link, image alt attributes, iframe titles). Internal `_global-error.html` shell is excluded; custom global error needs runtime simulation. Presence of alt/title attributes does not verify their quality. Previous inventory JSON is historical baseline, not current conformance evidence.
+
+Skip-link correction: the previous `#main` target preceded the site header on most templates and therefore failed to bypass repeated navigation. The root skip link now targets `#page-content`, assigned to the page H1 with tabindex -1 across all templates. Webpack production build passes (215 generated pages/assets). Default Turbopack build currently fails on internal Google-font resolution; resolve before deployment. Browser skip-link testing remains required.
+
+Generated HTML scan completed: 207 HTML pages; missing main landmarks/skip targets were limited to framework error and not-found fallbacks. Added custom not-found and global-error pages with main landmarks, headings, titles, and recovery actions. The global-error home link intentionally performs full document navigation to recover from root-router failure. Runtime error simulation and not-found browser verification remain open.
+
+Production build passed with 214 generated pages/assets before the subsequent global focus and reduced-motion changes. Those subsequent changes pass targeted ESLint and TypeScript; final build and visual checks remain required. A generated-HTML inventory scan is running under command session 60165; poll it before restarting. Its output is `accessibility-page-inventory.json` and covers landmarks, skip targets, heading count, missing image alt attributes and unnamed iframes only, not complete conformance.
+
+Mobile navigation remediation: replaced the custom modal/focus loop with a native modal dialog, retained initial Close focus and opener restoration, and close on the desktop breakpoint to release scroll locking. TypeScript passes; targeted lint passes after capturing the opener for cleanup. Nested booking and responsive browser checks remain open.
+
+Browser evidence (local Chrome, homepage): opening header Book Now exposed only the booking dialog in the accessibility tree and focused Close; Escape dismissed it and restored focus to the original Book Now button. Reverse Tab observation did not report a focused element, so complete focus-wrap verification remains open. Local Next.js dev server session 69177 serves port 3100; revalidate its process before reuse.
+
+Booking modal source finding and local fix: the previous custom `role=dialog` did not move focus, contain keyboard focus, or make background content inert. Replaced with native `dialog.showModal()`, cleanup restoring focus and scroll, native Escape handling, and scrollable viewport sizing. ESLint and TypeScript pass. Desktop, mobile, nested mobile-navigation, and short-screen browser tests are still required.
+
+Local remediation: navigation now uses disclosure semantics with linked controls, focus-leave dismissal and Escape focus restoration. Slideshow starts paused, offers start/pause, stops when focus enters or pointer hovers, hides inactive images from assistive technology, and disables opacity transitions under reduced motion. Targeted ESLint and project TypeScript checks pass. Browser behavior, visual contrast, screen-reader output and production deployment remain unverified.
+
+- Inventory dynamic routes and all landing pages, forms, booking branches, third-party embeds, PDFs and videos.
+- Baseline automated browser scans at desktop/mobile dimensions, including interactive states.
+- Full keyboard journeys, screen-reader checks, contrast and text spacing, zoom/reflow, reduced motion and forced colors.
+- Remediate and retest each finding; record exact evidence rather than treating source inspection as a browser pass.
+- Confirm New York legal applicability and deployed production results before closing the goal.

@@ -32,7 +32,7 @@ export default function GetStartedPage() {
           <div className="pp-hero-content pp-hero-stack">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">Welcome to Planet Pooch</p>
-              <h1 className="pp-hero-title text-white">Your pup&apos;s next adventure starts here.</h1>
+              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">Your pup&apos;s next adventure starts here.</h1>
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">
@@ -65,14 +65,13 @@ export default function GetStartedPage() {
           </div>
 
           <div id="new-client-form" className="scroll-mt-6 overflow-hidden rounded-2xl border border-[rgba(50,73,83,0.15)] bg-white shadow-[0_14px_40px_rgba(50,73,83,0.08)]">
-            {/* Clip MoeGo's dark header on desktop; keep its taller, wrapping header on narrow screens. */}
-            <div className="h-[800px] overflow-hidden">
+            <div>
               <iframe
                 src={FORM_URL}
                 width="100%"
                 height="963"
                 title="New Leads (M) — Planet Pooch new client form"
-                className="-mt-[163px] block h-[963px] w-full border-0 max-[500px]:-mt-[66px] max-[500px]:h-[866px]"
+                className="block h-[963px] w-full border-0"
                 allow="payment; geolocation; microphone; camera"
                 sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-downloads"
               />
