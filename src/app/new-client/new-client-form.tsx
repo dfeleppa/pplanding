@@ -37,6 +37,10 @@ export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resor
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
   const success = useRef<HTMLDivElement>(null);
+  const errorSummary = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (error) errorSummary.current?.focus();
+  }, [error]);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -76,6 +80,7 @@ export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resor
   </div>;
 
   return <form onSubmit={submit} className={styles.form}>
+    <p className="sr-only" role="status">{busy ? "Submitting your inquiry. Please wait." : ""}</p>
     <p className="sr-only" role="status">{petAnnouncement}</p>
     <p className={styles.required}>Fields marked <span>*</span> are required.</p>
     {serviceMode === "grooming" ? <input type="hidden" name="services" value="In-house grooming" /> : <fieldset disabled={busy} className={styles.section}>
@@ -114,8 +119,8 @@ export function NewClientForm({ serviceMode = "resort" }: { serviceMode?: "resor
     <fieldset disabled={busy} className={styles.marketing}><legend>Marketing messages (optional)</legend>
     <label className={styles.consent}><input type="checkbox" name="marketingConsent" disabled={busy} /><span>{CONSENT_TEXT} View <a href="https://moego.pet/Html5/privacyPolicy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://moego.pet/Html5/termsAndConditions.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>.</span></label>
     </fieldset>
-    {error && <div className={styles.error} role="alert">{error} <a href={SITE.phone.href}>Call {SITE.phone.display}</a>.</div>}
-    <button type="submit" disabled={busy} className={"pp-cta " + styles.submit}>{busy ? "Submitting…" : "Submit"}<span className="pp-cta-arrow" aria-hidden="true" /></button>
+    {error && <div ref={errorSummary} tabIndex={-1} className={styles.error} role="alert">{error} <a href={SITE.phone.href}>Call {SITE.phone.display}</a>.</div>}
+    <button type="submit" aria-disabled={busy} className={"pp-cta " + styles.submit}>{busy ? "Submitting…" : "Submit"}<span className="pp-cta-arrow" aria-hidden="true" /></button>
     <p className={styles.help}>Prefer to talk? <a href={SITE.phone.href}>Call {SITE.phone.display}</a></p>
   </form>;
 }
