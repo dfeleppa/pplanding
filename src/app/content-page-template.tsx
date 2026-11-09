@@ -736,16 +736,16 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                 <details
                   key={item.question}
                   open={itemIndex === 0}
-                  className="group border border-[rgba(50,73,83,0.12)] bg-white/65"
+                  className="group min-w-0 border border-[rgba(50,73,83,0.12)] bg-white/65"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 [&::-webkit-details-marker]:hidden">
-                    <h3 className="text-xl font-semibold text-[var(--pp-ink)]">{item.question}</h3>
+                    <h3 className="min-w-0 break-words text-xl font-semibold text-[var(--pp-ink)]">{item.question}</h3>
                     <ChevronDown
                       className="h-5 w-5 shrink-0 text-[var(--pp-main)] transition-transform group-open:rotate-180"
                       aria-hidden
                     />
                   </summary>
-                  <p className="px-6 pb-6 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.answer}</p>
+                  <p className="break-words px-6 pb-6 text-sm leading-7 text-[rgba(47,42,39,0.78)]">{item.answer}</p>
                 </details>
               ))}
             </div>
