@@ -109,3 +109,11 @@ Overlay rebuild passes. Chrome homepage screenshot confirms photo remains visibl
 The homepage's six service links and welcome page's five service links each contained an image whose alternative repeated visible service text within the same link. Changed those eleven repeated alternatives to empty alt text; the adjacent visible service title and description continue to identify each link. This addresses redundant announcements, not missing descriptions for standalone informative images.
 
 Validation: targeted ESLint and production build passed. Inspected generated HTML with jsdom: all six homepage and five welcome cards have empty image alternatives, retain nonempty visible link text, and preserve their destinations. The 207-page structural check passed. This is markup evidence only; spoken screen-reader output and whole-site alternative-text quality remain unverified.
+
+## Additional vendor entry points and linked-content inventory
+
+Reviewed the general MoeGo inquiry linked from /book/ and /welcome/ and the existing-client booking entry in Chrome. Both have additional labeling barriers. The general inquiry's Additional pet action is skipped by Tab from Pet name to First name; Additional pet and Submit lack button semantics. Existing booking's Book now works with Enter, but the following phone field is unnamed and the agreement checkbox's accessible name omits the linked policies. Details and limits are in ACCESSIBILITY-VENDOR-FINDINGS.md. No personal details, agreement acceptance, submission, authentication or purchase occurred.
+
+A read-only scan of generated HTML anchor hrefs and iframe/video/audio src attributes found 11 unique external URLs: three social profiles, three MoeGo intake forms, existing-client booking, a Google Maps link and embed, and two MoeGo policy links. No PDF/Word/Excel/PowerPoint link was found in those attributes. This is not a complete asset inventory: client-rendered controls, iframe srcdoc media, external-page documents and dynamically loaded media require separate inspection. Known YouTube tour and LeadConnector embed remain in scope. No whole-site criterion is marked passed by this inventory.
+
+GitHub Actions run 42552795690 passed for fae7f68. Run 42553108106 for 184e6d7 was observed in progress; no completion was inferred.

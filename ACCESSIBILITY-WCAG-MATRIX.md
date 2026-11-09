@@ -26,7 +26,7 @@ Every criterion starts UNVERIFIED. Local fixes or narrow structural checks do no
 | [1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG22/#non-text-contrast) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [1.4.12 Text Spacing](https://www.w3.org/TR/WCAG22/#text-spacing) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [1.4.13 Content on Hover or Focus](https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus) | AA | UNVERIFIED | Applicability and full-scope test evidence pending |
-| [2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
+| [2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard) | A | UNVERIFIED | General MoeGo intake skips Additional pet when tabbing from Pet name to First name; action is a nonfocusable paragraph. Investigate full keyboard operation and alternative mechanisms; see ACCESSIBILITY-VENDOR-FINDINGS.md. |
 | [2.1.2 No Keyboard Trap](https://www.w3.org/TR/WCAG22/#no-keyboard-trap) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [2.1.4 Character Key Shortcuts](https://www.w3.org/TR/WCAG22/#character-key-shortcuts) | A | UNVERIFIED | Applicability and full-scope test evidence pending |
 | [2.2.1 Timing Adjustable](https://www.w3.org/TR/WCAG22/#timing-adjustable) | A | UNVERIFIED | Applicability and full-scope test evidence pending |

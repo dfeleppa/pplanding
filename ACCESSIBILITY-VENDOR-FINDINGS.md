@@ -14,7 +14,23 @@ URL: https://form.moego.pet/go/form?formId=fe79d3a9461655c8f5ba611fe50e6f29
 
 Pet type/breed, gender, coat type, spay/neuter, behavior and referral-source comboboxes are unnamed. Contact fields, birthday and address lack meaningful accessible names. Pet fields expose internal IDs rather than visible-label associations. Vaccine upload and pet-image upload appear as unnamed buttons. Both required service-agreement and optional marketing-consent checkboxes have empty associated labels. The visible text does not provide a programmatic association in inspected DOM.
 
-## Required correction and verification
+## MoeGo general new-customer inquiry
+
+URL: https://form.moego.pet/go/form?formId=aca2ebfc74184cc580cdf04413461d7f
+
+Linked from the Book and Welcome pages. Chrome exposes pet type, breed and referral-source comboboxes without names; pet name and first/last name expose implementation IDs; phone and email are unnamed. Read-only DOM inspection found no associated labels, aria-label or aria-labelledby on these controls. The marketing-consent input has an empty associated label.
+
+The Additional pet action is a paragraph with tabIndex -1 and no role. Pressing Tab from Pet name moves directly to First name, skipping it. Submit is a div with tabIndex -1 and no role. These are confirmed missing control semantics and a demonstrated keyboard-order barrier; full keyboard submission and any alternative keyboard mechanisms were not tested. No customer information or consent was entered and no submission occurred.
+
+## MoeGo existing-client booking entry
+
+Entry URL: https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort
+
+Enter on the named Book now button successfully navigated to https://booking.moego.pet/ol/book?name=PlanetPoochPetResort. At that step, the visible instruction is Start with your phone number, but the input has no associated label, aria-label or aria-labelledby; its placeholder is only an example number. Chrome exposes an unnamed text field. The agreement checkbox is named "I agree to our and ." because its associated labels omit the separately linked terms of use and privacy policy. The terms links themselves are exposed independently. Next is initially disabled.
+
+The landing page also exposes an unnamed button beneath Purchase Service Package Now. Its purchase flow was not opened. No phone number was entered, no agreement accepted, no authentication attempted and no reservation made. Authenticated steps, accessible authentication, payment and booking completion remain unverified.
+
+## Correction requests for all forms
 
 - Associate every visible field label with its control using native labels or appropriate aria-labelledby. Accessible names must include visible label text. Keep required state and instructions programmatically available.
 - Name upload controls by their purpose and expose constraints/error messages to assistive technology.
