@@ -185,7 +185,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-12 sm:py-18 text-white sm:px-8 lg:px-10 lg:py-24">
+      <section id="about" className="bg-[linear-gradient(180deg,#324953_0%,#2f3f47_100%)] px-5 py-12 sm:py-18 text-white sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
@@ -247,7 +247,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-12 sm:py-18 text-white sm:px-8 lg:px-10 lg:py-24">
+      <section id="testimonials" className="bg-[linear-gradient(180deg,#324953_0%,#2f3f47_100%)] px-5 py-12 sm:py-18 text-white sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">

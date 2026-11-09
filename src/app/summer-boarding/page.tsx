@@ -252,7 +252,7 @@ export default function SummerBoardingPage() {
       </section>
 
       {/* ── Section 2: Reviews ── */}
-      <section className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-14 text-white sm:px-8 lg:px-10 lg:py-20">
+      <section className="bg-[linear-gradient(180deg,#324953_0%,#2f3f47_100%)] px-5 py-14 text-white sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">

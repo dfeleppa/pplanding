@@ -285,7 +285,7 @@ export default function WelcomePage() {
       </section>
 
       {/* ── About / Trust ── */}
-      <section className="bg-[linear-gradient(180deg,#6f8793_0%,#617783_100%)] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-24">
+      <section className="bg-[linear-gradient(180deg,#324953_0%,#2f3f47_100%)] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
