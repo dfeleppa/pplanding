@@ -72,7 +72,7 @@ function SectionEyebrow({ eyebrow, title, intro }: { eyebrow?: string; title?: s
   return (
     <div className="mb-8 max-w-5xl">
       {eyebrow ? (
-        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
           {eyebrow}
         </p>
       ) : null}
@@ -121,7 +121,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           {section.cta ? (
             <div className="mt-10 flex justify-center">
               <Link href={section.cta.href}
-                className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)] transition hover:text-[var(--pp-main)]"
               >
                 {section.cta.label}
                 <ChevronDown className="h-4 w-4" />
@@ -350,7 +350,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     <header>
                       <p
                         className={`text-[11px] font-bold uppercase tracking-[0.18em] ${
-                          dark ? "text-[var(--pp-mint)]" : "text-[var(--pp-main)]/75"
+                          dark ? "text-[var(--pp-mint)]" : "text-[var(--pp-main-deep)]"
                         }`}
                       >
                         {tier.name}
@@ -398,7 +398,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               <article className="mt-8 flex flex-col gap-5 border border-[rgba(50,73,83,0.12)] bg-white p-7 lg:flex-row lg:items-center lg:justify-between">
                 <div className="max-w-2xl">
                   {section.secondaryCard.eyebrow ? (
-                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
                       {section.secondaryCard.eyebrow}
                     </p>
                   ) : null}
@@ -544,7 +544,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   <dl className="mt-3 grid grid-cols-2 gap-3">
                     {row.values.map((value, j) => (
                       <div key={j}>
-                        <dt className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--pp-main)]/75">
+                        <dt className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--pp-main-deep)]">
                           {section.columns[j + 1]}
                         </dt>
                         <dd className="mt-1 text-sm text-[rgba(47,42,39,0.82)]">
@@ -610,7 +610,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             {section.cta ? (
               <div className="mt-10 flex justify-center">
                 <Link href={section.cta.href}
-                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)] transition hover:text-[var(--pp-main)]"
                 >
                   {section.cta.label}
                   <ChevronDown className="h-4 w-4" />
@@ -632,7 +632,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   key={item.term}
                   className={`flex flex-col border p-6 ${section.highContrast ? "border-[rgba(50,73,83,0.28)] bg-white shadow-[0_10px_28px_rgba(30,45,50,0.10)]" : "border-[rgba(50,73,83,0.12)] bg-white/65"}`}
                 >
-                  <dt className={`text-[11px] font-bold uppercase tracking-[0.18em] ${section.highContrast ? "text-[var(--pp-main)]" : "text-[var(--pp-main)]/80"}`}>
+                  <dt className={`text-[11px] font-bold uppercase tracking-[0.18em] ${section.highContrast ? "text-[var(--pp-main)]" : "text-[var(--pp-main-deep)]"}`}>
                     {item.term}
                   </dt>
                   <dd className={`mt-3 text-sm leading-7 ${section.highContrast ? "text-[var(--pp-ink)]" : "text-[rgba(47,42,39,0.82)]"}`}>
@@ -665,7 +665,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
               className="flex flex-col border border-[rgba(50,73,83,0.12)] bg-white/65 p-6"
             >
               <div className="flex items-baseline gap-3">
-                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/80">
+                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main-deep)]">
                   {item.time}
                 </span>
               </div>
@@ -747,7 +747,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             {section.cta ? (
               <div className="mt-10 flex justify-center">
                 <Link href={section.cta.href}
-                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)] transition hover:text-[var(--pp-main)]"
                 >
                   {section.cta.label}
                   <ChevronDown className="h-4 w-4" />
@@ -800,7 +800,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             {section.cta ? (
               <div className="mt-10 flex justify-center">
                 <Link href={section.cta.href}
-                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)] transition hover:text-[var(--pp-main)]"
                 >
                   {section.cta.label}
                   <ChevronDown className="h-4 w-4" />
@@ -849,7 +849,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     {item.cta ? (
                       <Link
                         href={item.cta.href}
-                        className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/85 hover:text-[var(--pp-main)]"
+                        className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main-deep)] hover:text-[var(--pp-main)]"
                       >
                         {item.cta.label}
                         <ArrowRight className="h-3.5 w-3.5" />
@@ -862,7 +862,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             {section.cta ? (
               <div className="mt-10 flex justify-center">
                 <Link href={section.cta.href}
-                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)] transition hover:text-[var(--pp-main)]"
                 >
                   {section.cta.label}
                   <ChevronDown className="h-4 w-4" />
@@ -988,7 +988,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
             {section.cta ? (
               <div className="mt-10 flex justify-center">
                 <Link href={section.cta.href}
-                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/85 transition hover:text-[var(--pp-main)]"
+                  className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)] transition hover:text-[var(--pp-main)]"
                 >
                   {section.cta.label}
                   <ChevronDown className="h-4 w-4" />
@@ -1048,7 +1048,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 
             <div className="mx-auto max-w-3xl text-center">
               {section.eyebrow ? (
-                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
                   {section.eyebrow}
                 </p>
               ) : null}
@@ -1110,7 +1110,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             {section.eyebrow ? (
-              <p className="text-center text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+              <p className="text-center text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
                 {section.eyebrow}
               </p>
             ) : null}
@@ -1174,7 +1174,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             {section.eyebrow ? (
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
                 {section.eyebrow}
               </p>
             ) : null}
@@ -1196,7 +1196,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                     <span>
                       {t.town}
                       {t.region && t.town !== t.region ? (
-                        <span className="block text-[11px] font-normal uppercase tracking-[0.14em] text-[var(--pp-main)]/65">
+                        <span className="block text-[11px] font-normal uppercase tracking-[0.14em] text-[var(--pp-main-deep)]">
                           {t.region}
                         </span>
                       ) : null}

@@ -164,7 +164,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
       <section className="bg-white px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Our Services
             </p>
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl">
@@ -205,7 +205,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
       <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Why Planet Pooch
             </p>
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl">
@@ -258,7 +258,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
       {nearby.length > 0 && (
         <section className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Nearby Areas
             </p>
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl">

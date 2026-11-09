@@ -179,7 +179,7 @@ export default function SummerBoardingPage() {
               >
                 {stat.value}
               </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--pp-main)]/70">
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--pp-main-deep)]">
                 {stat.label}
               </p>
             </div>
@@ -192,7 +192,7 @@ export default function SummerBoardingPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
                 Why Planet Pooch
               </p>
               <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">

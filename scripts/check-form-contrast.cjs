@@ -22,3 +22,11 @@ function check(name, foreground, background, minimum) {
 check("Placeholder text", color(".grid input::placeholder", "color"), "#ffffff", 4.5);
 check("Footer text", color(".footer", "color"), color(".page", "background"), 4.5);
 check("Input boundary", color(".grid select", "border"), "#ffffff", 3);
+
+// Solid brand-color labels on the light page surface (not image overlays).
+const globalCss = fs.readFileSync("src/app/globals.css", "utf8");
+const token = name => globalCss.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`))?.[1];
+check("Brand labels on cream", token("pp-main"), token("pp-cream"), 4.5);
+for (const background of ["#ffffff", token("pp-cream"), token("pp-mint")]) {
+  check(`Dark brand labels on ${background}`, token("pp-main-deep"), background, 4.5);
+}

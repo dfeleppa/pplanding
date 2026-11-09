@@ -140,7 +140,7 @@ export default function BookPage() {
       <section id="get-started" className="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Not Sure Where to Start?
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">

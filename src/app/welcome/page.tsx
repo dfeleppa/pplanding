@@ -213,7 +213,7 @@ export default function WelcomePage() {
               <p className="text-3xl font-semibold text-[var(--pp-night)] sm:text-4xl" style={{ fontFamily: "var(--font-display), serif" }}>
                 {stat.value}
               </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--pp-main)]/70">
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--pp-main-deep)]">
                 {stat.label}
               </p>
             </div>
@@ -225,7 +225,7 @@ export default function WelcomePage() {
       <section className="bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Choose your service
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
@@ -259,7 +259,7 @@ export default function WelcomePage() {
                         aria-hidden
                       />
                     </div>
-                    <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main)]/75">
+                    <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
                       {svc.title}
                     </p>
                     <h3 className="mt-2 text-lg leading-snug text-[var(--pp-ink)] sm:text-xl">
@@ -332,7 +332,7 @@ export default function WelcomePage() {
       <section className="bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Real Reviews
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
@@ -374,7 +374,7 @@ export default function WelcomePage() {
                       {review.name}
                     </p>
                     <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main)]/75">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--pp-main-deep)]">
                         {review.service}
                       </p>
                       <span
@@ -420,7 +420,7 @@ export default function WelcomePage() {
       >
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Request availability
             </p>
             <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">

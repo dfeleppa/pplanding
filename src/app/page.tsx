@@ -140,7 +140,7 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="hidden sm:block text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="hidden sm:block text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Tailored care. Heartfelt experience.
             </p>
             <h2 className="text-2xl leading-tight sm:mt-4 sm:text-5xl">
@@ -233,7 +233,7 @@ export default function HomePage() {
           </div>
 
           <div className="lg:order-2">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
               Facility Tour
             </p>
             <h2 className="mt-4 text-3xl leading-tight text-[var(--pp-ink)] sm:text-5xl">

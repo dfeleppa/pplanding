@@ -35,7 +35,7 @@ function AreasWeServe() {
     <section id="areas" className="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]/70">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main)]">
             Areas We Serve
           </p>
           <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
