@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { PawPrint, X } from "lucide-react";
 import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../lib/booking";
@@ -9,6 +10,8 @@ import { SITE } from "../lib/site";
 
 export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now", icon = "arrow", track }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string; icon?: "arrow" | "paw" | "none"; track?: string }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isInHouseGrooming = pathname.replace(/\/$/, "") === "/in-house-grooming";
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -60,8 +63,8 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
 
             {variant === "full" ? (
               <div className="space-y-6">
-                <Link href="/new-client/" onClick={() => setOpen(false)} className="pp-cta pp-cta-sm w-full justify-center text-center">
-                  Get Started
+                <Link href={isInHouseGrooming ? "https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" : "/new-client/"} onClick={() => setOpen(false)} className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  {isInHouseGrooming ? "Book Now" : "Get Started"}
                 </Link>
                 <div className="border-t border-[var(--pp-sand)] pt-6 text-center">
                   <p className="text-sm text-[var(--pp-ink)]">For Immediate Assistance Call</p>
