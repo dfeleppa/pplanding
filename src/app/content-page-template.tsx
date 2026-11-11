@@ -1317,7 +1317,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                         <BookNowModal ctaHref={page.heroCtas.primary.href} className="pp-cta" variant="grooming" label={page.heroCtas.primary.label} />
                       ) : (
                         <Link href={page.heroCtas.primary.href} className="pp-cta">
-                          {page.heroCtas.primary.label}
+                          {page.slug === "mobile-grooming" ? "Get Started" : page.heroCtas.primary.label}
                           <span className="pp-cta-arrow" aria-hidden />
                         </Link>
                       )}
