@@ -66,6 +66,9 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                 <Link href={isInHouseGrooming ? "https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" : "/new-client/"} onClick={() => setOpen(false)} className="pp-cta pp-cta-sm w-full justify-center text-center">
                   {isInHouseGrooming ? "Book Now" : "Get Started"}
                 </Link>
+                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  Current Clients (Booking)
+                </a>
                 <div className="border-t border-[var(--pp-sand)] pt-6 text-center">
                   <p className="text-sm text-[var(--pp-ink)]">For Immediate Assistance Call</p>
                   <a href={SITE.phone.href} className="mt-1 inline-flex min-h-11 items-center text-xl font-bold text-[var(--pp-main-deep)] underline underline-offset-4">
@@ -77,6 +80,9 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
               <div className="flex flex-col items-center gap-3">
                 <a href={MOBILE_GROOMING_NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
+                </a>
+                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta pp-cta-sm w-full justify-center text-center">
+                  Current Clients (Booking)
                 </a>
                 <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
                   Call/Text (202) 318-6526
