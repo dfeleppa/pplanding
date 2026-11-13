@@ -259,3 +259,6 @@
 .promotion .countdownDigits span { font-size:10px; }
 .promotion .countdownLabel { font-size:12px; }
 .promotion .countdownDate { font-size:11px; }
+
+.promotion .hero { background:#080808; }
+.promotion .saleBackdrop { -webkit-text-stroke-color:rgba(190,190,190,.17); }
