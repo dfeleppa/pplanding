@@ -251,3 +251,11 @@
   .promotion .heroCopy { padding-right:340px; min-height:110px; }
   .promotion .countdown { position:absolute; top:245px; left:490px; margin-top:0; }
 }
+
+.promotion .actions { align-items:center; }
+.promotion .heroNote { text-align:center; margin-inline:auto; }
+.promotion .countdownDigits strong { font-size:38px; }
+.promotion .countdownDigits>div:not(:last-child)::after { font-size:33px; }
+.promotion .countdownDigits span { font-size:10px; }
+.promotion .countdownLabel { font-size:12px; }
+.promotion .countdownDate { font-size:11px; }
