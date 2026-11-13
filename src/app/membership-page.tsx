@@ -34,7 +34,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
-        <h1 id="page-content" tabIndex={-1}>{promotion ? <>Black Friday.<br /><em>Half-price daycare.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
+        <h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? "Get 50% off your dog’s first month of daycare membership. More play, familiar friends, and a little more joy in their everyday." : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
         <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /></div>
         {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
