@@ -40,8 +40,8 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
 
     </section>
 
-    <div className={styles.trustStrip}><span><Heart size={17} /> Small, hand-selected groups</span><span><Trees size={17} /> Indoor & outdoor play</span><span><PawPrint size={17} /> Supervised play & rest</span></div>
 
+    <div className={styles.contentTransition}>
     <section id="memberships" className={`${styles.section} ${styles.pricing}`}>
       <div className={styles.centerHeading}><p className={styles.eyebrow}>{promotion ? "FOUR DAYS TO START SOMETHING GOOD" : "DAYCARE, YOUR WAY"}</p><h2>{promotion ? <>Their first month.<br /><em>50% more reason to join.</em></> : <>Choose their <em>membership.</em></>}</h2><p>{promotion ? "Choose your plan November 27–30. Start by January 15, 2027." : "Full-day daycare. Member perks. No long-term commitment."}</p></div>
       <div className={styles.cards}>{plans.map(plan => <article key={plan.name} className={`${styles.card} ${plan.featured ? styles.featured : ""}`}>
@@ -65,6 +65,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
       [Scissors, "Unlimited", "Basic and premium event upgrades, 5% off in-house grooming, and a free birthday package after six months."],
     ].map(([Icon, title, copy]) => { const PerkIcon = Icon as typeof Heart; return <div key={String(title)}><PerkIcon size={30} strokeWidth={1.3} /><h3>{String(title)}</h3><p>{String(copy)}</p></div>; })}</div><p className={styles.perkNote}>Event upgrades apply on attendance days when offered. See membership terms for eligibility and exclusions.</p></div></section>}
 
+    </div>
     <section className={`${styles.section} ${styles.story}`}><div className={styles.storyPhoto}><Image src="/gallery/daycare-playroom.webp" alt="Dogs spending their daycare day together in Planet Pooch’s indoor playroom" fill sizes="(min-width: 900px) 50vw, 100vw" className={styles.cover} /></div><div><p className={styles.eyebrow}>CARE THROUGHOUT THEIR DAY</p><h2>A day at <em>Planet Pooch.</em></h2><ul className={styles.storyList}><li><Trees /><div><h3>Indoor & outdoor play</h3><p>A secure outdoor yard and indoor playrooms give dogs room to explore.</p></div></li><li><Heart /><div><h3>Small, matched groups</h3><p>Groups matched by size, temperament and play style, with staff supervision.</p></div></li><li><Sparkles /><div><h3>Daily rest periods</h3><p>Daily rest periods help dogs recharge between their adventures.</p></div></li></ul><Link href="/enrichment/" className={styles.textLink}>Prefer one-on-one care? Explore enrichment <ArrowRight size={16} /></Link></div></section>
 
     <section id="how-it-works" className={`${styles.section} ${styles.stepsSection}`}><div className={styles.centerHeading}><p className={styles.eyebrow}>GETTING STARTED</p><h2>Three simple <em>steps.</em></h2></div><div className={styles.steps}>{[

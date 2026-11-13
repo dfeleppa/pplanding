@@ -126,3 +126,6 @@
 @media print { .hero,.header,.mobileBar,.page footer { display:none; }.termGrid { display:block; }.terms details::details-content { content-visibility:visible; }.section { padding:20px; } }
 
 @media(max-width:760px) { .pricing { padding-bottom:20px; } .story { padding-top:20px; } }
+
+.contentTransition { position: relative; margin-top: -48px; overflow: hidden; border-radius: 48px 48px 0 0; background: var(--pp-cream); }
+@media(min-width:1024px) { .contentTransition { margin-top: -56px; border-radius: 64px 64px 0 0; } }
