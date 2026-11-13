@@ -137,7 +137,7 @@
 .stepsBand .steps article { border-color: rgba(50,73,83,.2); }
 .stepsBand .button { background: var(--pp-mint); color: var(--pp-night); }
 .stepsBand .button:hover { background: var(--pp-mint-deep); }
-.termsBand { background: var(--pp-sand); }
+.termsBand { background: white; }
 .termsBand .terms { padding-top: 60px; padding-bottom: 60px; }
 .termsBand .termGrid details { border-color: rgba(50,73,83,.23); }
 
