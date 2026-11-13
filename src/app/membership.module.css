@@ -42,7 +42,11 @@
 .price small { font-size: 12px; }
 .renewal { font-size: 11px; margin-top: 6px; }
 .visitAllowance { display: flex; align-items: center; gap: 9px; margin-top: 25px; padding-top: 22px; border-top: 1px solid #dde2d7; font-size: 12px; }
-.rate { font-size: 10px; margin: 8px 0 24px; }
+.rate { margin: 14px 0 24px; padding: 14px 16px; background: #edf3e8; border-radius: 8px; color: #253f3b; }
+.rate strong { display: block; font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -.035em; }
+.rate small { font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.rate span { display: block; font-size: 11px; margin-top: 5px; line-height: 1.5; }
+.featured .rate { background: #ffffff12; color: white; }
 .card ul { display: grid; gap: 13px; margin-bottom: 30px; }
 .card li { display: flex; gap: 9px; font-size: 12px; align-items: flex-start; }
 .card li svg { flex-shrink: 0; }
@@ -68,7 +72,7 @@
 .perkGrid p { font-size: 13px; color: #46594a; }
 .perkNote { text-align: center; font-size: 10px; margin-top: 35px; color: #46594a; }
 .story { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-.storyPhoto { position: relative; min-height: 540px; border-radius: 160px 160px 8px 8px; overflow: hidden; }
+.storyPhoto { position: relative; min-height: 540px; border-radius: 12px; overflow: hidden; }
 .cover { object-fit: cover; }
 .storyPhoto>span { position: absolute; bottom: 0; inset-inline: 0; background: #253f3bde; color: white; text-align: center; padding: 22px 10px; font-size: 9px; letter-spacing: .15em; }
 .story h2 { margin: 20px 0 30px; }
