@@ -227,3 +227,21 @@
 .promotion .hero .button { border-radius:6px; }
 .promotion .hero>a { color:var(--pp-mint); font-size:15px; font-weight:800; letter-spacing:.04em; padding:12px 22px; border:1px solid #bfe8c960; border-radius:6px; background:#bfe8c910; }
 .promotion .hero>a:hover { background:#bfe8c925; }
+
+/* Compact campaign hero: keep both actions above the fold. */
+.promotion .hero { min-height:0; }
+.promotion .heroContent { padding-top:28px; padding-bottom:130px; }
+.promotion .hero h1 { font-size:clamp(68px,8vw,112px); margin-top:14px; }
+.promotion .saleBlack { margin-bottom:5px; }
+.promotion .heroCopy { margin-top:18px; padding-top:16px; }
+.promotion .saleOffer { font-size:clamp(38px,4vw,52px); }
+.promotion .saleMemberships { font-size:clamp(22px,2.3vw,29px); }
+.promotion .countdown { margin-top:14px; }
+.promotion .countdownLabel { margin-bottom:5px; }
+.promotion .countdownDigits strong { font-size:30px; }
+.promotion .countdownDigits>div:not(:last-child)::after { font-size:27px; }
+.promotion .countdownDate { margin-top:5px; }
+.promotion .actions { margin-top:16px; }
+.promotion .heroNote { margin-top:14px; max-width:800px; }
+.promotion .hero>a { bottom:65px; padding:8px 18px; font-size:13px; gap:4px; }
+@media(max-width:760px) { .promotion .heroContent { padding-top:24px; padding-bottom:135px; }.promotion .hero h1 { font-size:clamp(62px,15vw,90px); }.promotion .heroNote { font-size:10px; line-height:1.5; }.promotion .hero>a { bottom:65px; } }
