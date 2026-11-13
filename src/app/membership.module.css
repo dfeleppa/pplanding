@@ -155,8 +155,8 @@
 .offerBadge strong { font-size: clamp(28px,4vw,46px); line-height: 1; letter-spacing: -.05em; }
 .offerBadge span { font-size: 13px; font-weight: 700; }
 .discountBadge { background: var(--pp-mint); color: var(--pp-night); padding: 8px 12px; border-radius: 100px; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
-.originalPrice { margin-top: 20px; font-size: 14px; color: var(--pp-main); }
-.originalPrice s { text-decoration-thickness: 2px; }
+.originalPrice { margin-top: 20px; font-size: 18px; font-weight: 600; color: var(--pp-main-deep); }
+.originalPrice s { text-decoration-thickness: 1px; }
 .promotion .price { margin-top: 5px; }
 .promotion .price>span { font-size: clamp(44px,4vw,60px); font-weight: 750; }
 .promotion .featured .price>span { color: var(--pp-mint); }
