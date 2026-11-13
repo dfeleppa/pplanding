@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Heart, PawPrint, Sparkles, Trees, CalendarDays, Scissors, Cookie } from "lucide-react";
+import { BookNowModal } from "./book-now-modal";
+import { HeroScrollLink } from "./hero-scroll-link";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import styles from "./membership.module.css";
@@ -34,12 +36,12 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
         <h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? "Get 50% off your dog’s first month of daycare membership. More play, familiar friends, and a little more joy in their everyday." : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
-        <div className={styles.actions}><a href="#memberships" className={styles.button}>{promotion ? "Explore the Black Friday offer" : "View memberships"}<ArrowRight size={18} /></a><a href="#how-it-works" className={styles.lightLink}>New here? Start with a free evaluation</a></div>
-        <p className={styles.heroNote}>{promotion ? "Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price" : "4 visits, 8 visits or unlimited · One membership per dog · Month-to-month"}</p>
+        <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /><a href="#how-it-works" className={styles.lightLink}>New here? Start with a free evaluation</a></div>
+        {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
       </div>
 
+      <HeroScrollLink href="#memberships" label="View Memberships" />
     </section>
-
 
     <div className={styles.contentTransition}>
     <section id="memberships" className={`${styles.section} ${styles.pricing}`}>

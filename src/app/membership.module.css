@@ -146,3 +146,6 @@
 .darkBand .storyList p, .darkBand .faq details p { color: rgba(255,255,255,.85); }
 .darkBand .faq details { border-color: rgba(255,255,255,.25); }
 .darkBand .story { padding-top: 48px; padding-bottom: 48px; }
+
+.heroContent { padding-bottom: 160px; }
+@media(max-width:760px) { .heroContent { padding-bottom: 155px; } }
