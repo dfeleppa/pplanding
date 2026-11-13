@@ -39,7 +39,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
         <h1 id="page-content" tabIndex={-1}>{promotion ? <><span className={styles.saleBlack}>BLACK</span><span className={styles.saleFriday}>FRIDAY</span></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? <><strong className={styles.saleOffer}>50% OFF</strong><span className={styles.saleMemberships}>Daycare Memberships</span></> : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
         {promotion && <BlackFridayCountdown />}
-        <div className={styles.actions}>{promotion ? <a href="#memberships" className={styles.button}>View Deals<ArrowDown size={18} /></a> : <BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" />}</div>
+        <div className={styles.actions}>{promotion ? <a href="#memberships" className={styles.button}>View Deals</a> : <BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" />}</div>
         {promotion && <p className={styles.heroNote}>50% off your first month · Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Renews monthly at regular price</p>}
       </div>
 

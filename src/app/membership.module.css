@@ -262,3 +262,9 @@
 
 .promotion .hero { background:#080808; }
 .promotion .saleBackdrop { -webkit-text-stroke-color:rgba(190,190,190,.17); }
+
+.promotion .actions { margin-top:30px; }
+.promotion .hero .actions .button { min-width:210px; min-height:56px; padding:17px 32px; background:#163b31; color:#fff; border:2px solid #bfe8c9; font-size:15px; font-weight:800; letter-spacing:.035em; box-shadow:0 0 12px #bfe8c94d,0 0 30px #8dcbb426,inset 0 0 12px #bfe8c912; }
+.promotion .hero .actions .button:hover { background:#225344; box-shadow:0 0 18px #bfe8c980,0 0 40px #8dcbb440; }
+.promotion .hero .actions .button:focus-visible { outline:2px solid white; outline-offset:5px; }
+.promotion .heroNote { margin-top:22px; }
