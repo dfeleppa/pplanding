@@ -50,7 +50,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
         {promotion && <div className={styles.cardTop}><span className={styles.discountBadge}>50% OFF FIRST MONTH</span></div>}
         <h3>{plan.name}</h3>{promotion && <p className={styles.originalPrice}><span>Regularly </span><s>${plan.price}/month</s></p>}
         <div className={styles.price}><span>${promotion ? plan.intro : plan.price}</span><small>/{promotion ? "first month" : "month"}</small></div>
-        <p className={styles.renewal}>{promotion ? `Then $${plan.price}/month, automatically` : "Per dog · automatically renews monthly"}</p>
+        <p className={styles.renewal}>{promotion ? `Renews at $${plan.price}/month after your first month` : "Per dog · automatically renews monthly"}</p>
         <div className={styles.visitAllowance}><Check size={18} /><strong>{plan.visits}</strong></div>
         <div className={styles.rate}>{plan.featured ? <><span>As low as</span><strong>$17.88<small> / visit</small></strong><span>Based on 24 visits per billing cycle at $429/month. Open Monday–Saturday; available days vary by month and holiday closures. Reservations required.</span></> : <><strong>${plan.name === "4-Visit" ? "46" : "41.13"}<small> / visit</small></strong><span>{promotion ? "At the regular monthly price; " : ""}when all {plan.name === "4-Visit" ? "4" : "8"} visits are used</span></>}</div>
         <ul>{plan.benefits.map(item => <li key={item}><Check size={16} /><span>{item}</span></li>)}</ul>
