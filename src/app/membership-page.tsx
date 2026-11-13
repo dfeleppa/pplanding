@@ -6,6 +6,7 @@ import { HeroScrollLink } from "./hero-scroll-link";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import styles from "./membership.module.css";
+import { BlackFridayCountdown } from "./black-friday-countdown";
 
 const plans = [
   { name: "4-Visit", price: 184, intro: "92", description: "A little play goes a long way.", visits: "4 full days per billing cycle", rate: "$46 per visit when all 4 are used", benefits: ["Additional daycare days for $40 each"], saving: "$28", hint: "A regular dose of happy", featured: false },
@@ -37,6 +38,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
         <h1 id="page-content" tabIndex={-1}>{promotion ? <><span className={styles.saleBlack}>BLACK</span><span className={styles.saleFriday}>FRIDAY</span></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? <><strong className={styles.saleOffer}>50% OFF</strong><span className={styles.saleMemberships}>Daycare Memberships</span><span className={styles.saleFirstMonth}>Your dog’s first month. More play, for less.</span></> : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
+        {promotion && <BlackFridayCountdown />}
         <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /></div>
         {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
       </div>

@@ -202,3 +202,13 @@
 .promotion .hero .button { background:linear-gradient(100deg,#335fdf,#a23b83); color:white; border:1px solid #d18dcc; border-radius:30px; min-width:170px; }
 .promotion .hero .button:hover { background:#723ca8; }
 @media(max-width:760px) { .promotion .hero { min-height:0; }.promotion .heroContent { padding-top:55px; }.saleBackdrop { top:180px; }.promotion .hero h1 { font-size:clamp(70px,17vw,120px); }.promotion .heroCopy { margin-top:25px; } }
+
+.countdown { margin-top:26px; color:white; }
+.countdownLabel { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#d0d0da; margin-bottom:10px; }
+.countdownDigits { display:flex; gap:24px; width:fit-content; }
+.countdownDigits>div { position:relative; text-align:center; min-width:48px; }
+.countdownDigits>div:not(:last-child)::after { content:':'; position:absolute; right:-16px; top:0; font-size:32px; color:#b8b8c6; }
+.countdownDigits strong { display:block; font-size:36px; font-weight:800; line-height:1.2; font-variant-numeric:tabular-nums; }
+.countdownDigits span { display:block; margin-top:5px; font-size:9px; text-transform:uppercase; letter-spacing:.08em; color:#c7c7ce; }
+.countdownDate { font-size:10px; color:#c7c7ce; margin-top:10px; }
+@media(min-width:900px) { .promotion .heroCopy { max-width:800px; padding-right:350px; min-height:180px; }.countdown { position:absolute; top:365px; left:490px; margin-top:0; } }
