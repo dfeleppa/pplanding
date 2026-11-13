@@ -36,7 +36,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
         <h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? "Get 50% off your dog’s first month of daycare membership. More play, familiar friends, and a little more joy in their everyday." : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
-        <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /><a href="#how-it-works" className={styles.lightLink}>New here? Start with a free evaluation</a></div>
+        <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /></div>
         {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
       </div>
 
@@ -52,7 +52,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
         <div className={styles.price}><span>${promotion ? plan.intro : plan.price}</span><small>/{promotion ? "first month" : "month"}</small></div>
         <p className={styles.renewal}>{promotion ? `Then $${plan.price}/month, automatically` : "Per dog · automatically renews monthly"}</p>
         <div className={styles.visitAllowance}><Check size={18} /><strong>{plan.visits}</strong></div>
-        <div className={styles.rate}>{plan.featured ? <><span>As low as</span><strong>$16.50<small> / visit</small></strong><span>Based on 26 visits per billing cycle at $429/month. Open Monday–Saturday; available days vary by month and holiday closures. Reservations required.</span></> : <><strong>${plan.name === "4-Visit" ? "46" : "41.13"}<small> / visit</small></strong><span>{promotion ? "At the regular monthly price; " : ""}when all {plan.name === "4-Visit" ? "4" : "8"} visits are used</span></>}</div>
+        <div className={styles.rate}>{plan.featured ? <><span>As low as</span><strong>$17.88<small> / visit</small></strong><span>Based on 24 visits per billing cycle at $429/month. Open Monday–Saturday; available days vary by month and holiday closures. Reservations required.</span></> : <><strong>${plan.name === "4-Visit" ? "46" : "41.13"}<small> / visit</small></strong><span>{promotion ? "At the regular monthly price; " : ""}when all {plan.name === "4-Visit" ? "4" : "8"} visits are used</span></>}</div>
         <ul>{plan.benefits.map(item => <li key={item}><Check size={16} /><span>{item}</span></li>)}</ul>
         <a className={styles.cardButton} href={`mailto:planetpoochpetservices@gmail.com?subject=${encodeURIComponent(`${promotion ? "Black Friday " : ""}${plan.name} membership inquiry`)}`} aria-label={`Get Started with ${plan.name}`}>Get Started<ArrowRight size={17} /></a>
         <p className={styles.cardFoot}>{promotion ? `Save $${plan.intro} on your first month` : plan.saving ? `Save ${plan.saving} vs. ${plan.name === "4-Visit" ? "4" : "8"} single-day visits` : "Reservations required; subject to availability."}</p>
