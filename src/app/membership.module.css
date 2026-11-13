@@ -269,3 +269,6 @@
 .promotion .hero .actions .button:focus-visible { outline:2px solid white; outline-offset:5px; }
 .promotion .heroNote { margin-top:22px; }
 @media(min-width:900px) { .promotion .countdown { top:257px; } }
+
+.promotion .saleOffer { font-size:clamp(52px,5.4vw,76px); }
+.promotion .actions { margin-top:46px; }
