@@ -29,13 +29,14 @@ const terms = [
 export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
   return <main className={`${styles.page} ${promotion ? styles.promotion : ""}`}>
     <section className={styles.hero}>
-      <Image src="/Daycare.png" alt="Dog daycare at Planet Pooch" fill sizes="100vw" preload className={styles.heroImage} />
+      {!promotion && <Image src="/Daycare.png" alt="Dog daycare at Planet Pooch" fill sizes="100vw" preload className={styles.heroImage} />}
+      {promotion && <div className={styles.saleBackdrop} aria-hidden="true">BLACK FRIDAY</div>}
       <div className={styles.heroShade} />
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
-        <h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
-        <p className={styles.heroCopy}>{promotion ? "Get 50% off your dog’s first month of daycare membership. More play, familiar friends, and a little more joy in their everyday." : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
+        <h1 id="page-content" tabIndex={-1}>{promotion ? <><span className={styles.saleBlack}>BLACK</span><span className={styles.saleFriday}>FRIDAY</span></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
+        <p className={styles.heroCopy}>{promotion ? <><strong className={styles.saleOffer}>50% OFF</strong><span className={styles.saleMemberships}>Daycare Memberships</span><span className={styles.saleFirstMonth}>Your dog’s first month. More play, for less.</span></> : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
         <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /></div>
         {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
       </div>
