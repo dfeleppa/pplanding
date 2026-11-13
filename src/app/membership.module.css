@@ -184,3 +184,4 @@
   .promotion .offerBadge strong { font-size:60px; white-space:nowrap; }
   .promotion .offerBadge span { max-width:none; }
 }
+.promotion .hero h1 { padding-right:0; max-width:950px; }

@@ -34,7 +34,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
-        {promotion && <div className={styles.offerBadge}><strong>50% OFF</strong><span>Your first month of daycare</span></div>}<h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
+        <h1 id="page-content" tabIndex={-1}>{promotion ? <>Black Friday.<br /><em>Half-price daycare.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? "Get 50% off your dog’s first month of daycare membership. More play, familiar friends, and a little more joy in their everyday." : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
         <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /></div>
         {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
@@ -61,11 +61,6 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
       <div className={styles.dayPass}><div><span className={styles.eyebrow}>JUST DROPPING IN?</span><h3>A day of play. No membership needed.</h3><p>Single full-day visits remain available. Daycare operates Monday–Saturday, 7am–7pm, with the lobby closed 12:30–1:30pm. Reservations and admission requirements apply.</p></div><div className={styles.dayPrice}>$53<small>/day</small></div></div>
     </section>
 
-    {promotion && <section className={styles.perks}><div className={styles.section}><div className={styles.centerHeading}><p className={styles.eyebrow}>A LITTLE EXTRA, EVERY MONTH</p><h2>More perks as <em>you move up.</em></h2></div><div className={styles.perkGrid}>{[
-      [CalendarDays, "4-Visit", "Add extra daycare days for $40 each while your membership is active."],
-      [Cookie, "8-Visit", "Add daycare days for $40 each, enjoy free basic event upgrades like pup cups and seasonal drinks, and save 5% on in-house grooming."],
-      [Scissors, "Unlimited", "Basic and premium event upgrades, 5% off in-house grooming, and a free birthday package after six months."],
-    ].map(([Icon, title, copy]) => { const PerkIcon = Icon as typeof Heart; return <div key={String(title)}><PerkIcon size={30} strokeWidth={1.3} /><h3>{String(title)}</h3><p>{String(copy)}</p></div>; })}</div><p className={styles.perkNote}>Event upgrades apply on attendance days when offered. See membership terms for eligibility and exclusions.</p></div></section>}
 
     </div>
     <div className={styles.darkBand}>
