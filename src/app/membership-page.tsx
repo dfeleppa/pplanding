@@ -29,12 +29,12 @@ const terms = [
 export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
   return <main className={`${styles.page} ${promotion ? styles.promotion : ""}`}>
     <section className={styles.hero}>
-      <Image src={promotion ? "/gallery/outdoor-dog-play.webp" : "/Daycare.png"} alt={promotion ? "Dogs enjoying the outdoor play yard at Planet Pooch" : "Dog daycare at Planet Pooch"} fill sizes="100vw" preload className={styles.heroImage} />
+      <Image src="/Daycare.png" alt="Dog daycare at Planet Pooch" fill sizes="100vw" preload className={styles.heroImage} />
       <div className={styles.heroShade} />
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>
         <p className={styles.eyebrow}>{promotion ? "BLACK FRIDAY · NOVEMBER 27–30, 2026" : "DAYCARE MEMBERSHIPS · FRANKLIN SQUARE, NY"}</p>
-        <h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
+        {promotion && <div className={styles.offerBadge}><strong>50% OFF</strong><span>Your first month of daycare</span></div>}<h1 id="page-content" tabIndex={-1}>{promotion ? <>Their happy place.<br /><em>Half the price.</em></> : <>Dog daycare.<br /><em>Made for their routine.</em></>}</h1>
         <p className={styles.heroCopy}>{promotion ? "Get 50% off your dog’s first month of daycare membership. More play, familiar friends, and a little more joy in their everyday." : "Supervised play, familiar friends and room to run. Choose 4 visits, 8 visits or unlimited daycare each month."}</p>
         <div className={styles.actions}><BookNowModal ctaHref="/new-client/" className={styles.button} label="Get Started" /></div>
         {promotion && <p className={styles.heroNote}>Enroll Nov. 27–30 · Activate by Jan. 15, 2027 · Monthly renewal at regular price</p>}
@@ -45,10 +45,10 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
 
     <div className={styles.contentTransition}>
     <section id="memberships" className={`${styles.section} ${styles.pricing}`}>
-      <div className={styles.centerHeading}><p className={styles.eyebrow}>{promotion ? "FOUR DAYS TO START SOMETHING GOOD" : "DAYCARE, YOUR WAY"}</p><h2>{promotion ? <>Their first month.<br /><em>50% more reason to join.</em></> : <>Choose their <em>membership.</em></>}</h2><p>{promotion ? "Choose your plan November 27–30. Start by January 15, 2027." : "Full-day daycare. Member perks. No long-term commitment."}</p></div>
+      <div className={styles.centerHeading}><p className={styles.eyebrow}>{promotion ? "FOUR DAYS TO START SOMETHING GOOD" : "DAYCARE, YOUR WAY"}</p><h2>{promotion ? <>More play.<br /><em>Half-price first month.</em></> : <>Choose their <em>membership.</em></>}</h2><p>{promotion ? "Choose your plan November 27–30. Start by January 15, 2027." : "Full-day daycare. Member perks. No long-term commitment."}</p></div>
       <div className={styles.cards}>{plans.map(plan => <article key={plan.name} className={`${styles.card} ${plan.featured ? styles.featured : ""}`}>
-        {promotion && <div className={styles.cardTop}><span>{plan.hint}</span>{plan.featured && <PawPrint size={22} />}</div>}
-        <h3>{plan.name}</h3>{promotion && <p className={styles.cardDescription}>{plan.description}</p>}
+        {promotion && <div className={styles.cardTop}><span className={styles.discountBadge}>50% OFF FIRST MONTH</span></div>}
+        <h3>{plan.name}</h3>{promotion && <p className={styles.originalPrice}><span>Regularly </span><s>${plan.price}/month</s></p>}
         <div className={styles.price}><span>${promotion ? plan.intro : plan.price}</span><small>/{promotion ? "first month" : "month"}</small></div>
         <p className={styles.renewal}>{promotion ? `Then $${plan.price}/month, automatically` : "Per dog · automatically renews monthly"}</p>
         <div className={styles.visitAllowance}><Check size={18} /><strong>{plan.visits}</strong></div>

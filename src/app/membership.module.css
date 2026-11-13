@@ -149,3 +149,19 @@
 
 .heroContent { padding-bottom: 160px; }
 @media(max-width:760px) { .heroContent { padding-bottom: 155px; } }
+
+/* Black Friday offer styling stays scoped to the promotional page. */
+.offerBadge { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; margin-top: 22px; padding: 14px 22px; border: 1px solid var(--pp-mint); border-radius: 10px; background: var(--pp-mint); color: var(--pp-night); box-shadow: 0 8px 32px #0003; }
+.offerBadge strong { font-size: clamp(28px,4vw,46px); line-height: 1; letter-spacing: -.05em; }
+.offerBadge span { font-size: 13px; font-weight: 700; }
+.discountBadge { background: var(--pp-mint); color: var(--pp-night); padding: 8px 12px; border-radius: 100px; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.originalPrice { margin-top: 20px; font-size: 14px; color: var(--pp-main); }
+.originalPrice s { text-decoration-thickness: 2px; }
+.promotion .price { margin-top: 5px; }
+.promotion .price>span { font-size: clamp(44px,4vw,60px); font-weight: 750; }
+.promotion .featured .price>span { color: var(--pp-mint); }
+.promotion .featured .originalPrice { color: #e2eae6; }
+.promotion .card { border: 2px solid var(--pp-mint); box-shadow: 0 12px 36px #2f3f470d; }
+.promotion .cardFoot { font-weight: 750; font-size: 12px; }
+.promotion .heroContent { padding-top: 65px; }
+@media(max-width:760px) { .promotion .heroContent { padding-top: 45px; } .offerBadge { padding: 14px 18px; } }
