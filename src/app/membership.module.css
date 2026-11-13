@@ -221,3 +221,9 @@
 .promotion .hero .button { background:var(--pp-mint); color:var(--pp-night); border-color:var(--pp-mint); }
 .promotion .hero .button:hover { background:var(--pp-mint-deep); }
 .promotion .hero .eyebrow,.countdownLabel { color:var(--pp-mint); }
+
+.promotion .heroCopy { padding-right:0; min-height:0; }
+.promotion .countdown { position:static; margin-top:24px; }
+.promotion .hero .button { border-radius:6px; }
+.promotion .hero>a { color:var(--pp-mint); font-size:15px; font-weight:800; letter-spacing:.04em; padding:12px 22px; border:1px solid #bfe8c960; border-radius:6px; background:#bfe8c910; }
+.promotion .hero>a:hover { background:#bfe8c925; }
