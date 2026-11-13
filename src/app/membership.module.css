@@ -130,13 +130,19 @@
 .contentTransition { position: relative; margin-top: -48px; overflow: hidden; border-radius: 48px 48px 0 0; background: var(--pp-cream); }
 @media(min-width:1024px) { .contentTransition { margin-top: -56px; border-radius: 64px 64px 0 0; } }
 
-.stepsBand { background: var(--pp-night); color: white; }
+.stepsBand { background: white; color: var(--pp-ink); }
 .stepsBand .stepsSection { padding-top: 65px; padding-bottom: 65px; }
-.stepsBand .eyebrow, .stepsBand em, .stepsBand .steps article>span { color: var(--pp-mint); }
-.stepsBand .steps p { color: rgba(255,255,255,.85); }
-.stepsBand .steps article { border-color: rgba(255,255,255,.25); }
+.stepsBand .eyebrow, .stepsBand em, .stepsBand .steps article>span { color: var(--pp-main-deep); }
+.stepsBand .steps p { color: var(--pp-main-deep); }
+.stepsBand .steps article { border-color: rgba(50,73,83,.2); }
 .stepsBand .button { background: var(--pp-mint); color: var(--pp-night); }
 .stepsBand .button:hover { background: var(--pp-mint-deep); }
 .termsBand { background: var(--pp-sand); }
 .termsBand .terms { padding-top: 60px; padding-bottom: 60px; }
 .termsBand .termGrid details { border-color: rgba(50,73,83,.23); }
+
+.darkBand { background: var(--pp-night); color: white; }
+.darkBand .eyebrow, .darkBand em, .darkBand .storyList svg { color: var(--pp-mint); }
+.darkBand .storyList p, .darkBand .faq details p { color: rgba(255,255,255,.85); }
+.darkBand .faq details { border-color: rgba(255,255,255,.25); }
+.darkBand .story { padding-top: 48px; padding-bottom: 48px; }
