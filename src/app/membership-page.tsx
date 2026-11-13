@@ -31,7 +31,7 @@ export function MembershipPage({ promotion = false }: { promotion?: boolean }) {
   return <main className={`${styles.page} ${promotion ? styles.promotion : ""}`}>
     <section className={styles.hero}>
       {!promotion && <Image src="/Daycare.png" alt="Dog daycare at Planet Pooch" fill sizes="100vw" preload className={styles.heroImage} />}
-      {promotion && <div className={styles.saleBackdrop} aria-hidden="true">BLACK FRIDAY</div>}
+      {promotion && <div className={styles.saleBackdrop} aria-hidden="true"><span>BLACK</span><span>FRIDAY</span></div>}
       <div className={styles.heroShade} />
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>

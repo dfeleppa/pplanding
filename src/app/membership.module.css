@@ -212,3 +212,12 @@
 .countdownDigits span { display:block; margin-top:5px; font-size:9px; text-transform:uppercase; letter-spacing:.08em; color:#c7c7ce; }
 .countdownDate { font-size:10px; color:#c7c7ce; margin-top:10px; }
 @media(min-width:900px) { .promotion .heroCopy { max-width:800px; padding-right:350px; min-height:180px; }.countdown { position:absolute; top:365px; left:490px; margin-top:0; } }
+
+.promotion .hero { background:linear-gradient(155deg,#2f3f47 0%,#17262c 48%,#101b20 100%); }
+.saleFriday { background-image:linear-gradient(100deg,#bfe8c9,#8dcbb4 65%,#7caeb5); }
+.saleBackdrop { display:flex; gap:.08em; top:140px; -webkit-text-stroke-color:#bfe8c92b; }
+.saleBackdrop>span:last-child { transform:translateY(.48em); }
+.promotion .heroCopy { border-top-color:#bfe8c94d; }
+.promotion .hero .button { background:var(--pp-mint); color:var(--pp-night); border-color:var(--pp-mint); }
+.promotion .hero .button:hover { background:var(--pp-mint-deep); }
+.promotion .hero .eyebrow,.countdownLabel { color:var(--pp-mint); }
