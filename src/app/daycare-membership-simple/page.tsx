@@ -9,7 +9,7 @@ import alternate from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "One Simple Daycare Membership | Planet Pooch",
-  description: "Four full daycare days for $179.95 per month. Add as many extra days as you need for $43 each. Find your dog's happy routine at Planet Pooch.",
+  description: "Four full daycare days for $179.95 per month. Add as many extra days as you need for $40 each. Find your dog's happy routine at Planet Pooch.",
   robots: { index: false, follow: true },
 };
 
@@ -31,7 +31,7 @@ export default function Page() {
         <p className={styles.heroCopy}>Four days of friends, play and care every month. More time together whenever they need it. One simple membership.</p>
         <p className={alternate.heroPrice}>$179.95 <span>/ month</span></p>
         <div className={styles.actions}><a href="#membership" className={styles.button}>Meet their membership <ArrowRight size={18} /></a></div>
-        <p className={styles.heroNote}>4 full daycare days included · Extra days $43 each · Per dog · Renews monthly</p>
+        <p className={styles.heroNote}>4 full daycare days included · Extra days $40 each · Per dog · Renews monthly</p>
       </div>
     </section>
 
@@ -44,7 +44,7 @@ export default function Page() {
             <div className={styles.price}><span>$179.95</span><small>/month</small></div>
             <p className={styles.renewal}>Per dog · automatically renews monthly</p>
             <div className={styles.visitAllowance}><Check size={20} /><strong>4 full daycare days every billing cycle</strong></div>
-            <div className={styles.rate}><strong>$43<small> / additional day</small></strong><span>Buy as many extra days as you need while your membership is active. Reservations subject to availability.</span></div>
+            <div className={styles.rate}><strong>$40<small> / additional day</small></strong><span>Buy as many extra days as you need while your membership is active. Reservations subject to availability.</span></div>
             <ul>{["Four days to build a familiar, happy routine", "Extra days one at a time, at your member rate", "Automatic renewal—no new pack to purchase", "Month-to-month, with no long-term commitment"].map(item => <li key={item}><Check size={17} /><span>{item}</span></li>)}</ul>
             <a className={styles.cardButton} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a>
             <p className={styles.cardFoot}>Save $24.05 vs. four $51 drop-in days when all four are used.</p>
@@ -52,7 +52,7 @@ export default function Page() {
           <div id="compare" className={alternate.comparison}>
             <p className={styles.eyebrow}>MEMBERSHIP VS. DAYCARE PACKS</p>
             <h3>Less upfront. <em>More flexibility.</em></h3>
-            <p className={alternate.compareIntro}>Start with four days, then add exactly what you need for $43 a day—without buying another pack.</p>
+            <p className={alternate.compareIntro}>Start with four days, then add exactly what you need for $40 a day—without buying another pack.</p>
       <div className={alternate.tableWrap} tabIndex={0} role="region" aria-label="Daycare membership and package comparison; scroll horizontally on small screens">
         <table><caption>Current daycare packs compared with the proposed monthly membership</caption><thead><tr><th scope="col">The details</th><th scope="col" className={alternate.highlight}>Membership<span>Our pick for a regular routine</span></th>{packs.map(p => <th scope="col" key={p.name}>{p.name}</th>)}</tr></thead>
           <tbody>
@@ -60,7 +60,7 @@ export default function Page() {
             <tr><th scope="row">Included days</th><td className={alternate.highlight}>4 each billing cycle</td><td>5</td><td>10</td><td>20</td></tr>
             <tr><th scope="row">Use-by window</th><td className={alternate.highlight}>Each monthly billing cycle</td>{packs.map(p => <td key={p.name}>{p.expiry}</td>)}</tr>
             <tr><th scope="row">Per included day*</th><td className={alternate.highlight}>$44.99</td>{packs.map(p => <td key={p.name}>{p.rate}</td>)}</tr>
-            <tr><th scope="row">When you need more</th><td className={alternate.highlight}><strong>$43 per extra day</strong><span>No additional pack needed</span></td><td colSpan={3}>Buy another pack or pay $51 per drop-in day</td></tr>
+            <tr><th scope="row">When you need more</th><td className={alternate.highlight}><strong>$40 per extra day</strong><span>No additional pack needed</span></td><td colSpan={3}>Buy another pack or pay $51 per drop-in day</td></tr>
             <tr><th scope="row">Upfront cost difference†</th><td className={alternate.highlight}><strong>Lowest upfront cost</strong><span>Start with $179.95</span></td>{packs.map(p => <td key={p.name}><strong>{p.difference} more upfront</strong><span>than membership</span></td>)}</tr>
           </tbody>
         </table>
@@ -71,30 +71,30 @@ export default function Page() {
             <div className={`${alternate.tableWrap} ${alternate.equalVisits}`} role="region" aria-label="Membership and pack totals for the same number of visits" tabIndex={0}>
               <table><caption>Price comparison for visits in one monthly membership billing cycle</caption><thead><tr><th scope="col">Days</th><th scope="col" className={alternate.highlight}>Membership</th><th scope="col">Daycare pack</th><th scope="col">Difference</th></tr></thead><tbody>
                 {[{ days: 5, packCents: 22695 }, { days: 10, packCents: 43350 }, { days: 20, packCents: 84660 }].map(({ days, packCents }) => {
-                  const membershipCents = 17995 + (days - 4) * 4300;
+                  const membershipCents = 17995 + (days - 4) * 4000;
                   const difference = membershipCents - packCents;
                   return <tr key={days}><th scope="row">{days} days</th><td className={alternate.highlight}><strong>${(membershipCents / 100).toFixed(2)}</strong></td><td>${(packCents / 100).toFixed(2)}</td><td>{difference < 0 ? "Membership saves" : "Pack saves"} <strong>${(Math.abs(difference) / 100).toFixed(2)}</strong></td></tr>;
                 })}
               </tbody></table>
             </div>
-            <p className={alternate.finePrint}>Membership totals assume all visits occur in one monthly billing cycle: $179.95 for four days plus $43 for each additional day. Packs retain their 30-, 60- and 90-day use windows. Visits spanning multiple membership cycles may have a different total.</p>
+            <p className={alternate.finePrint}>Membership totals assume all visits occur in one monthly billing cycle: $179.95 for four days plus $40 for each additional day. Packs retain their 30-, 60- and 90-day use windows. Visits spanning multiple membership cycles may have a different total.</p>
           </div>
         </div>
         <p className={styles.pricingNote}>Four days per monthly billing cycle, not one guaranteed day each week. Unused included days expire at the end of the cycle; no ordinary rollover. Reservations and evaluation approval required.</p>
         <section className={alternate.savings} aria-labelledby="savings-heading">
-          <div className={alternate.savingsHeading}><p className={styles.eyebrow}>MORE PLAY. MORE DOLLARS SAVED.</p><h2 id="savings-heading">Watch their <em>savings grow.</em></h2><p>Save $24.05 on your first four days. Every extra day saves another $8 compared with our $51 drop-in rate.</p></div>
+          <div className={alternate.savingsHeading}><p className={styles.eyebrow}>MORE PLAY. MORE DOLLARS SAVED.</p><h2 id="savings-heading">Watch their <em>savings grow.</em></h2><p>Save $24.05 on your first four days. Every extra day saves another $11 compared with our $51 drop-in rate.</p></div>
           <div className={alternate.savingsChart}>
             {[4, 8, 12, 16].map(visits => {
-              const memberTotal = 179.95 + (visits - 4) * 43;
+              const memberTotal = 179.95 + (visits - 4) * 40;
               const dropInTotal = visits * 51;
               const saving = dropInTotal - memberTotal;
               return <div key={visits} className={alternate.savingsColumn}>
-                <div className={alternate.barTrack}><div className={alternate.savingsBar} style={{ height: `${saving / 120.05 * 100}%` }}><strong>${saving.toFixed(2)}</strong><span>saved</span></div></div>
+                <div className={alternate.barTrack}><div className={alternate.savingsBar} style={{ height: `${saving / 156.05 * 100}%` }}><strong>${saving.toFixed(2)}</strong><span>saved</span></div></div>
                 <h3>{visits} days</h3><p><strong>${memberTotal.toFixed(2)}</strong> with membership</p><p>${dropInTotal.toFixed(2)} at drop-in</p>
               </div>;
             })}
           </div>
-          <p className={alternate.savingsNote}>Visits in one monthly billing cycle. Membership totals include $179.95 for four days plus $43 per extra day. Savings compare the same number of $51 drop-in days, not prepaid packs. All four included days must be used to realize the illustrated savings. Reservations subject to availability.</p>
+          <p className={alternate.savingsNote}>Visits in one monthly billing cycle. Membership totals include $179.95 for four days plus $40 per extra day. Savings compare the same number of $51 drop-in days, not prepaid packs. All four included days must be used to realize the illustrated savings. Reservations subject to availability.</p>
         </section>
       </section>
     </div>
@@ -111,19 +111,19 @@ export default function Page() {
     <div className={styles.stepsBand}><section className={`${styles.section} ${styles.stepsSection}`}><div className={styles.centerHeading}><p className={styles.eyebrow}>GETTING STARTED</p><h2>Their next favorite day <em>starts here.</em></h2></div><div className={styles.steps}>{[
       ["01", "Meet the pack", "New dogs begin with a complimentary evaluation. Dogs who pass enjoy their first daycare day at no charge."],
       ["02", "Start their membership", "Choose an activation date with our team. Your $179.95 membership renews monthly with four full daycare days."],
-      ["03", "Make time for play", "Reserve your four days. Add as many extra days as you need for $43 each, subject to availability."],
+      ["03", "Make time for play", "Reserve your four days. Add as many extra days as you need for $40 each, subject to availability."],
     ].map(([n, title, copy]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><BookNowModal ctaHref="/new-client/" className={styles.button} label="Book a free evaluation" /></section></div>
 
     <div className={styles.darkBand}><section className={`${styles.section} ${styles.faq}`}><div><p className={styles.eyebrow}>GOOD TO KNOW</p><h2>Simple membership.<br /><em>Clear details.</em></h2></div><div>{[
-      ["What does $179.95 include?", "Four full daycare days for one named dog in each monthly billing cycle. These are daycare visits, not training classes. Additional daycare days are $43 each while your membership is active, with no limit on how many you may purchase. Reservations and available operating days still apply."],
-      ["What if my usual weekday comes up five times?", "Membership includes four days per billing cycle, rather than one day every week. Add a fifth day for $43, bringing that cycle’s total to $222.95."],
+      ["What does $179.95 include?", "Four full daycare days for one named dog in each monthly billing cycle. These are daycare visits, not training classes. Additional daycare days are $40 each while your membership is active, with no limit on how many you may purchase. Reservations and available operating days still apply."],
+      ["What if my usual weekday comes up five times?", "Membership includes four days per billing cycle, rather than one day every week. Add a fifth day for $40, bringing that cycle’s total to $219.95."],
       ["Do unused days roll over?", "Unused included days expire at the end of the monthly billing cycle; no ordinary rollover applies. Pick dates that fit your schedule and reserve ahead."],
       ["Can I keep using my current pack?", "Yes. Existing packs retain their original terms and expiration dates. Our team can help you choose a membership start date after you use your pack."],
       ["Can I cancel or pause?", "Membership is month-to-month. Contact our team before your next scheduled charge to stop future renewals. Pauses have a 14-day minimum, with no cap on the number or total duration; billing and membership benefits stop while paused. Contact us to confirm pause and restart arrangements, or discuss a medical exception."],
       ["How do reservations work?", "Reservations are required and subject to availability. Each dog must pass evaluation and meet our health, vaccination and behavior requirements. Membership does not guarantee a spot on a particular date."],
     ].map(([q, a]) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div></section></div>
-    <div className={styles.termsBand}><section className={`${styles.section} ${alternate.closing}`}><p className={styles.eyebrow}>MORE THAN A DAY OF DAYCARE</p><h2>Give them a routine <em>they’ll love.</em></h2><p>$179.95/month · Four full days · Extra days $43 each</p><a className={styles.button} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a><p className={styles.pricingNote}>Per dog. Automatic monthly renewal. Applicable tax, if any, is additional. Enrollment requires agreement to the full membership and automatic renewal terms before payment. Contact our team for enrollment, cancellation or refund details.</p></section></div>
+    <div className={styles.termsBand}><section className={`${styles.section} ${alternate.closing}`}><p className={styles.eyebrow}>MORE THAN A DAY OF DAYCARE</p><h2>Give them a routine <em>they’ll love.</em></h2><p>$179.95/month · Four full days · Extra days $40 each</p><a className={styles.button} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a><p className={styles.pricingNote}>Per dog. Automatic monthly renewal. Applicable tax, if any, is additional. Enrollment requires agreement to the full membership and automatic renewal terms before payment. Contact our team for enrollment, cancellation or refund details.</p></section></div>
     <SiteFooter />
-    <div className={styles.mobileBar}><span>$179.95/month<small>4 daycare days + $43 extra days</small></span><a href="#membership">View membership <ArrowRight size={16} /></a></div>
+    <div className={styles.mobileBar}><span>$179.95/month<small>4 daycare days + $40 extra days</small></span><a href="#membership">View membership <ArrowRight size={16} /></a></div>
   </main>;
 }
