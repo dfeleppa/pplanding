@@ -27,7 +27,7 @@ export default function Page() {
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>
         <p className={styles.eyebrow}>DAYCARE MEMBERSHIP · FRANKLIN SQUARE, NY</p>
-        <h1 id="page-content" tabIndex={-1}>Great daycare pricing.<br /><em>Room to be flexible.</em></h1>
+        <h1 id="page-content" tabIndex={-1}>Their happy place.<br /><em>Your kind of flexible.</em></h1>
         <p className={styles.heroCopy}>Four days included. Need five, six, seven or more? Add any number of extra days for just $40 each. Enjoy member pricing without buying another pack.</p>
         <p className={alternate.heroPrice}>$179.95 <span>/ month</span></p>
         <div className={styles.actions}><a href="#membership" className={styles.button}>Meet their membership <ArrowRight size={18} /></a></div>
