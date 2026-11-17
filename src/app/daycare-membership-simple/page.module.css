@@ -50,3 +50,7 @@
 .dailyCosts .equalVisits thead th:nth-child(n+3) { text-align: center; }
 .dailyCosts .equalVisits td.packDailyRate,
 .dailyCosts .equalVisits thead th:nth-child(n+3) { border-left: 1px solid #32495330; }
+
+/* Stack the offer above the full-width pack comparison. */
+.page .membershipGrid { grid-template-columns: minmax(0,1fr); gap: 40px; }
+.page .memberCard { width: 100%; max-width: 520px; margin-inline: auto; }
