@@ -75,7 +75,7 @@ export default function Page() {
               <table><caption>Membership average daily cost compared with fully used pack rates</caption><thead><tr><th scope="col">Days per month</th><th scope="col" className={alternate.highlight}>Membership / day</th><th scope="col">5-pack / day</th><th scope="col">10-pack / day</th><th scope="col">20-pack / day</th></tr></thead><tbody>
                 {[4, 6, 12, 16].map(days => {
                   const totalCents = 17995 + (days - 4) * 4000;
-                  return <tr key={days}><th scope="row">{days} days</th><td className={alternate.highlight}><strong>${(totalCents / days / 100).toFixed(2)}</strong></td><td>$45.39</td><td>$43.35</td><td>$42.33</td></tr>;
+                  return <tr key={days}><th scope="row">{days} days</th><td className={alternate.highlight}><strong>${(totalCents / days / 100).toFixed(2)}</strong></td>{days === 4 && <><td rowSpan={4} className={alternate.packDailyRate}>$45.39</td><td rowSpan={4} className={alternate.packDailyRate}>$43.35</td><td rowSpan={4} className={alternate.packDailyRate}>$42.33</td></>}</tr>;
                 })}
               </tbody></table>
             </div>

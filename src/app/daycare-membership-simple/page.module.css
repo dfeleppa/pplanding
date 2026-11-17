@@ -45,3 +45,6 @@
 @media(max-width:760px) { .dailyCosts .equalVisits th,.dailyCosts .equalVisits td { padding: 16px 10px; } }
 
 .dailyCosts .equalVisits table { min-width: 580px; }
+
+.dailyCosts .equalVisits td.packDailyRate { text-align: center; vertical-align: middle; font-size: 16px; }
+.dailyCosts .equalVisits thead th:nth-child(n+3) { text-align: center; }
