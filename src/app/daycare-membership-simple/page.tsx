@@ -27,8 +27,8 @@ export default function Page() {
       <div className={styles.header}><SiteHeader /></div>
       <div className={styles.heroContent}>
         <p className={styles.eyebrow}>DAYCARE MEMBERSHIP · FRANKLIN SQUARE, NY</p>
-        <h1 id="page-content" tabIndex={-1}>Their favorite day.<br /><em>Now a happy routine.</em></h1>
-        <p className={styles.heroCopy}>Four days of friends, play and care every month. More time together whenever they need it. One simple membership.</p>
+        <h1 id="page-content" tabIndex={-1}>Great daycare pricing.<br /><em>Room to be flexible.</em></h1>
+        <p className={styles.heroCopy}>Four days included. Need five, six, seven or more? Add any number of extra days for just $40 each. Enjoy member pricing without buying another pack.</p>
         <p className={alternate.heroPrice}>$179.95 <span>/ month</span></p>
         <div className={styles.actions}><a href="#membership" className={styles.button}>Meet their membership <ArrowRight size={18} /></a></div>
         <p className={styles.heroNote}>4 full daycare days included · Extra days $40 each · Per dog · Renews monthly</p>
@@ -72,14 +72,14 @@ export default function Page() {
         <section className={alternate.dailyCosts} aria-label="Membership daily pricing">
             <h4 className={alternate.equalVisitsHeading}>Your membership cost per day</h4>
             <div className={alternate.tableWrap + " " + alternate.equalVisits} role="region" aria-label="Membership cost per day by monthly attendance" tabIndex={0}>
-              <table><caption>Membership total and average daily cost in one monthly billing cycle</caption><thead><tr><th scope="col">Days per month</th><th scope="col">Monthly total</th><th scope="col" className={alternate.highlight}>Cost per day</th></tr></thead><tbody>
+              <table><caption>Membership average daily cost compared with fully used pack rates</caption><thead><tr><th scope="col">Days per month</th><th scope="col" className={alternate.highlight}>Membership / day</th><th scope="col">5-pack / day</th><th scope="col">10-pack / day</th><th scope="col">20-pack / day</th></tr></thead><tbody>
                 {[4, 6, 12, 16].map(days => {
                   const totalCents = 17995 + (days - 4) * 4000;
-                  return <tr key={days}><th scope="row">{days} days</th><td>${(totalCents / 100).toFixed(2)}</td><td className={alternate.highlight}><strong>${(totalCents / days / 100).toFixed(2)}</strong></td></tr>;
+                  return <tr key={days}><th scope="row">{days} days</th><td className={alternate.highlight}><strong>${(totalCents / days / 100).toFixed(2)}</strong></td><td>$45.39</td><td>$43.35</td><td>$42.33</td></tr>;
                 })}
               </tbody></table>
             </div>
-            <p className={alternate.finePrint}>Based on visits used in one monthly billing cycle: $179.95 includes four days, then $40 per additional day. Cost per day is the monthly total divided by days attended, rounded to the nearest cent.</p>
+            <p className={alternate.finePrint}>Pack rates assume all visits are used before expiration. Membership rates reflect attendance within one monthly billing cycle: $179.95 includes four days, then $40 per additional day. Average daily costs are rounded to the nearest cent.</p>
         </section>
       </section>
     </div>
