@@ -1,0 +1,35 @@
+.page { overflow-wrap: break-word; }
+.heroPrice { color: var(--pp-mint); font-size: 38px; font-weight: 600; margin-top: 20px; letter-spacing: -.04em; }
+.heroPrice span { font-size: 17px; font-weight: 400; letter-spacing: 0; }
+.membershipGrid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: center; }
+.memberCard { padding: 38px; }
+.reasons h2 { margin: 16px 0 30px; }
+.reasons article { display: flex; gap: 18px; margin-top: 24px; }
+.reasons article>span { color: var(--pp-main); font-family: Georgia,serif; font-size: 24px; }
+.reasons h3 { font-size: 19px; font-weight: 600; }
+.reasons article p { font-size: 14px; color: var(--pp-main); margin-top: 8px; }
+.comparison { padding-top: 35px; }
+.tableWrap { overflow-x: auto; border: 1px solid #32495325; border-radius: 12px; background: white; }
+.tableWrap:focus-visible { outline: 3px solid var(--pp-main); outline-offset: 4px; }
+.tableWrap table { width: 100%; min-width: 800px; border-collapse: collapse; text-align: left; font-size: 13px; }
+.tableWrap caption { text-align: left; padding: 18px 22px; color: var(--pp-main); font-size: 12px; }
+.tableWrap th,.tableWrap td { padding: 22px 18px; border-bottom: 1px solid #32495320; vertical-align: top; }
+.tableWrap thead th { font-size: 16px; }
+.tableWrap tbody th { font-weight: 500; }
+.tableWrap span { display: block; font-size: 11px; font-weight: 400; margin-top: 8px; }
+.highlight { background: #e1f2e5; color: #17262c; }
+.tableWrap thead .highlight { background: var(--pp-night); color: var(--pp-mint); }
+.finePrint { color: var(--pp-main); font-size: 12px; margin-top: 18px; }
+.valueCallout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; padding: 32px; background: var(--pp-sand); border-radius: 12px; margin-top: 32px; }
+.valueCallout h3 { font-size: 27px; line-height: 1.5; margin-top: 12px; }
+.valueCallout>p { font-size: 15px; }
+.closing { text-align: center; }
+.closing h2 { margin: 18px auto; max-width: 850px; }
+.closing>a { margin-top: 26px; }
+@media(max-width: 800px) {
+  .membershipGrid { grid-template-columns: 1fr; gap: 40px; }
+  .memberCard { max-width: 500px; width: 100%; margin: auto; padding: 28px; }
+  .valueCallout { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+  .valueCallout h3 { font-size: 23px; }
+  .heroPrice { font-size: 32px; }
+}
