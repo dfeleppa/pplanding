@@ -31,34 +31,6 @@
   .memberCard { max-width: 500px; width: 100%; margin: auto; padding: 28px; }
   .heroPrice { font-size: 32px; }
 }
-.savings { margin-top: 64px; padding: 42px; border-radius: 16px; background: #e7efe9; }
-.savingsHeading { max-width: 710px; }
-.savingsHeading h2 { margin: 12px 0 16px; }
-.savingsHeading>p:last-child { font-size: 15px; color: var(--pp-main); }
-.savingsChart { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; margin-top: 40px; }
-.barTrack { height: 220px; display: flex; align-items: flex-end; border-bottom: 1px solid #32495340; }
-.savingsBar { width: 100%; min-height: 70px; background: var(--pp-night); color: var(--pp-mint); border-radius: 8px 8px 0 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 12px 6px; }
-.savingsBar strong { font-size: clamp(20px,2.4vw,30px); line-height: 1.1; }
-.savingsBar span { font-size: 11px; margin-top: 4px; color: white; }
-.savingsColumn h3 { font-size: 20px; margin: 17px 0 8px; }
-.savingsColumn p { font-size: 12px; color: var(--pp-main); }
-.savingsColumn p strong { color: var(--pp-night); }
-.savingsNote { margin-top: 28px; font-size: 11px; color: var(--pp-main); }
-@media(max-width:760px) {
-  .savings { padding: 28px 20px; margin-top: 40px; }
-  .savingsChart { gap: 10px; }
-  .barTrack { height: 180px; }
-  .savingsBar { min-height: 58px; padding: 10px 3px; }
-  .savingsBar strong { font-size: 17px; }
-  .savingsColumn h3 { font-size: 16px; }
-  .savingsColumn p { font-size: 10px; }
-  .savingsColumn p strong { display: block; }
-}
-.savingsBar { position: relative; min-height: 0; padding: 0; }
-.savingsBar strong { position: absolute; top: -43px; color: var(--pp-night); }
-.savingsBar span { position: absolute; top: -19px; margin: 0; color: var(--pp-main); }
-.savingsChart { margin-top: 64px; }
-@media(max-width:760px) { .savingsBar { min-height: 0; padding: 0; }.savingsBar strong { top: -36px; }.savingsBar span { top: -17px; } }
 /* Detailed comparison beside the restored membership card. */
 .tableWrap table { min-width: 640px; font-size: 12px; }
 .tableWrap th,.tableWrap td { padding: 16px 11px; }
@@ -66,3 +38,8 @@
 .tableWrap thead .highlight { background: var(--pp-night); color: var(--pp-mint); }
 .equalVisitsHeading { margin: 30px 0 14px; font-size: 20px; font-weight: 600; }
 .equalVisits table { min-width: 460px; }
+
+.dailyCosts { width: 100%; margin-top: 40px; }
+.dailyCosts .equalVisits table { width: 100%; min-width: 0; table-layout: fixed; }
+.dailyCosts .equalVisits th,.dailyCosts .equalVisits td { padding: 20px; }
+@media(max-width:760px) { .dailyCosts .equalVisits th,.dailyCosts .equalVisits td { padding: 16px 10px; } }

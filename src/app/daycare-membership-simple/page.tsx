@@ -66,6 +66,10 @@ export default function Page() {
         </table>
       </div>
             <p className={alternate.finePrint}>*Per-day rates assume all included days are used before expiration, rounded to the nearest cent. †Compares the initial payment only, not equal numbers of visits. Membership renews monthly; packs are prepaid. The 20-day pack has the lowest fully used per-day rate at $42.33. Extra member days are subject to availability.</p>
+          </div>
+        </div>
+        <p className={styles.pricingNote}>Four days per monthly billing cycle, not one guaranteed day each week. Unused included days expire at the end of the cycle; no ordinary rollover. Reservations and evaluation approval required.</p>
+        <section className={alternate.dailyCosts} aria-label="Membership daily pricing">
             <h4 className={alternate.equalVisitsHeading}>Your membership cost per day</h4>
             <div className={alternate.tableWrap + " " + alternate.equalVisits} role="region" aria-label="Membership cost per day by monthly attendance" tabIndex={0}>
               <table><caption>Membership total and average daily cost in one monthly billing cycle</caption><thead><tr><th scope="col">Days per month</th><th scope="col">Monthly total</th><th scope="col" className={alternate.highlight}>Cost per day</th></tr></thead><tbody>
@@ -76,24 +80,6 @@ export default function Page() {
               </tbody></table>
             </div>
             <p className={alternate.finePrint}>Based on visits used in one monthly billing cycle: $179.95 includes four days, then $40 per additional day. Cost per day is the monthly total divided by days attended, rounded to the nearest cent.</p>
-          </div>
-        </div>
-        <p className={styles.pricingNote}>Four days per monthly billing cycle, not one guaranteed day each week. Unused included days expire at the end of the cycle; no ordinary rollover. Reservations and evaluation approval required.</p>
-        <section className={alternate.savings} aria-labelledby="savings-heading">
-          <div className={alternate.savingsHeading}><p className={styles.eyebrow}>MORE PLAY. MORE DOLLARS SAVED.</p><h2 id="savings-heading">Watch their <em>savings grow.</em></h2><p>See what you save with membership compared with buying a 5-, 10- or 20-day pack.</p></div>
-          <div className={alternate.savingsChart}>
-            {[{ visits: 5, packCents: 22695 }, { visits: 10, packCents: 43350 }, { visits: 20, packCents: 84660 }].map(({ visits, packCents }) => {
-              const memberCents = 17995 + (visits - 4) * 4000;
-              const memberTotal = memberCents / 100;
-              const packTotal = packCents / 100;
-              const saving = (packCents - memberCents) / 100;
-              return <div key={visits} className={alternate.savingsColumn}>
-                <div className={alternate.barTrack}><div className={alternate.savingsBar} style={{ height: `${saving / 26.65 * 100}%` }}><strong>${saving.toFixed(2)}</strong><span>saved</span></div></div>
-                <h3>{visits} days</h3><p><strong>${memberTotal.toFixed(2)}</strong> with membership</p><p>${packTotal.toFixed(2)} for the {visits}-day pack</p>
-              </div>;
-            })}
-          </div>
-          <p className={alternate.savingsNote}>Compares equal numbers of visits used within one monthly membership billing cycle: $179.95 for four days plus $40 per extra day. Packs retain their 30-, 60- and 90-day use windows. Visits spanning multiple membership cycles may have a different total. Reservations subject to availability.</p>
         </section>
       </section>
     </div>
