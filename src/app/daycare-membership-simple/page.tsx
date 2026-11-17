@@ -43,35 +43,26 @@ export default function Page() {
             <a className={styles.cardButton} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a>
             <p className={styles.cardFoot}>Save $24.05 vs. four $51 drop-in days when all four are used.</p>
           </article>
-          <div className={alternate.reasons}>
-            <p className={styles.eyebrow}>WHY WE LOVE MEMBERSHIP</p><h2>All the play.<br /><em>Less to plan.</em></h2>
-            <article><span>01</span><div><h3>Start small. Make it a habit.</h3><p>Start with $179.95 for the month, instead of paying $226.95–$846.60 upfront for a pack. Four included days give your dog a routine to look forward to.</p></div></article>
-            <article><span>02</span><div><h3>An extra day? Easy.</h3><p>A busy week, an extra errand, or just more play: add a day for $43. That’s $8 less than a $51 drop-in, with no additional pack to buy.</p></div></article>
-            <article><span>03</span><div><h3>Keep the good days coming.</h3><p>Your four included days refresh each billing cycle. Reserve their visits and enjoy a familiar rhythm, without purchasing a new package each time.</p></div></article>
+          <div id="compare" className={alternate.comparison}>
+            <p className={styles.eyebrow}>MEMBERSHIP VS. DAYCARE PACKS</p>
+            <h3>Less upfront. <em>More flexibility.</em></h3>
+            <p className={alternate.compareIntro}>Start with four days, then add exactly what you need for $43 a day—without buying another pack.</p>
+            <div className={alternate.tableWrap} role="region" aria-label="Compare membership and daycare packs" tabIndex={0}>
+              <table><caption>Daycare options at a glance</caption><thead><tr><th scope="col">Option</th><th scope="col">Payment</th><th scope="col">Included days</th><th scope="col">Use within</th></tr></thead>
+              <tbody>
+                <tr className={alternate.memberRow}><th scope="row">Membership<span>Our pick for a regular routine</span></th><td><strong>$179.95</strong><span>per month</span></td><td>4</td><td>Monthly billing cycle</td></tr>
+                <tr><th scope="row">5-day pack</th><td>$226.95<span>upfront</span></td><td>5</td><td>30 days</td></tr>
+                <tr><th scope="row">10-day pack</th><td>$433.50<span>upfront</span></td><td>10</td><td>60 days</td></tr>
+                <tr><th scope="row">20-day pack</th><td>$846.60<span>upfront</span></td><td>20</td><td>90 days</td></tr>
+              </tbody></table>
+            </div>
+            <div className={alternate.advantages}><div><Check size={20} /><p><strong>$47 less to get started</strong><span>Compared with the smallest pack’s upfront payment.</span></p></div><div><Check size={20} /><p><strong>Extra days, without another pack</strong><span>Members add any number of days at $43 each. After a pack runs out, buy another pack or pay $51 per drop-in.</span></p></div></div>
+            <p className={alternate.finePrint}>Initial payments include different numbers of days; this is not an equal-visit savings comparison. Packs may have a lower per-visit rate when fully used. Membership renews monthly; extra days are subject to availability.</p>
           </div>
         </div>
         <p className={styles.pricingNote}>Four days per monthly billing cycle, not one guaranteed day each week. Unused included days expire at the end of the cycle; no ordinary rollover. Reservations and evaluation approval required.</p>
       </section>
     </div>
-
-    <section className={`${styles.section} ${alternate.comparison}`} id="compare">
-      <div className={styles.centerHeading}><p className={styles.eyebrow}>MEMBERSHIP VS. DAYCARE PACKS</p><h2>Less upfront.<br /><em>More flexibility.</em></h2><p>Start their routine with four days. Add more whenever you need them.</p></div>
-      <div className={alternate.compareGrid}>
-        <article className={alternate.membershipCompare}>
-          <p className={styles.eyebrow}>THE MEMBERSHIP ADVANTAGE</p>
-          <h3>Start with <strong>$179.95</strong><span>per month · 4 full daycare days</span></h3>
-          <div className={alternate.benefit}><Check size={24} /><div><h4>Less to pay upfront</h4><p>Get started for $47 less than the smallest daycare pack.</p></div></div>
-          <div className={alternate.benefit}><Check size={24} /><div><h4>Add a day. Not another pack.</h4><p>Buy any number of extra days for <strong>$43 each</strong> while your membership is active.</p></div></div>
-          <a className={styles.cardButton} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a>
-        </article>
-        <article className={alternate.packCompare}>
-          <p className={styles.eyebrow}>PREPAID DAYCARE PACKS</p><h3>Pay for a bundle upfront</h3>
-          <dl><div><dt>5 days <span>Use within 30 days</span></dt><dd>$226.95</dd></div><div><dt>10 days <span>Use within 60 days</span></dt><dd>$433.50</dd></div><div><dt>20 days <span>Use within 90 days</span></dt><dd>$846.60</dd></div></dl>
-          <p>When your pack runs out, purchase another pack or pay $51 for a drop-in day.</p>
-        </article>
-      </div>
-      <p className={alternate.finePrint}>Upfront comparison reflects different numbers of included days, not equal-visit savings. Membership renews monthly; unused included days expire each billing cycle. Extra days require reservations and availability. Packs may offer a lower per-visit rate when fully used.</p>
-    </section>
 
     <div className={styles.darkBand}><section className={`${styles.section} ${styles.story}`}>
       <div className={styles.storyPhoto}><Image src="/gallery/daycare-playroom.webp" alt="Dogs playing together in the Planet Pooch daycare playroom" fill sizes="(min-width: 900px) 50vw, 100vw" className={styles.cover} /></div>

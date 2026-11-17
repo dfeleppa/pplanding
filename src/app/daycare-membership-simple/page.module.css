@@ -1,41 +1,33 @@
 .page { overflow-wrap: break-word; }
 .heroPrice { color: var(--pp-mint); font-size: 38px; font-weight: 600; margin-top: 20px; letter-spacing: -.04em; }
 .heroPrice span { font-size: 17px; font-weight: 400; letter-spacing: 0; }
-.membershipGrid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: center; }
-.memberCard { padding: 38px; }
-.reasons h2 { margin: 16px 0 30px; }
-.reasons article { display: flex; gap: 18px; margin-top: 24px; }
-.reasons article>span { color: var(--pp-main); font-family: Georgia,serif; font-size: 24px; }
-.reasons h3 { font-size: 19px; font-weight: 600; }
-.reasons article p { font-size: 14px; color: var(--pp-main); margin-top: 8px; }
-.comparison { padding-top: 35px; }
-.compareGrid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: stretch; }
-.membershipCompare { padding: 38px; border-radius: 14px; background: var(--pp-night); color: white; }
-.membershipCompare>p { color: var(--pp-mint); }
-.membershipCompare h3 { margin: 22px 0 30px; font-size: 22px; font-weight: 500; }
-.membershipCompare h3 strong { display: block; font-size: clamp(42px,5vw,62px); line-height: 1.3; letter-spacing: -.04em; color: var(--pp-mint); }
-.membershipCompare h3 span { display: block; font-size: 14px; margin-top: 5px; }
-.benefit { display: flex; gap: 14px; border-top: 1px solid #ffffff30; padding-top: 22px; margin-top: 22px; }
-.benefit>svg { flex-shrink: 0; color: var(--pp-mint); margin-top: 3px; }
-.benefit h4 { font-size: 21px; font-weight: 600; }
-.benefit p { margin-top: 6px; font-size: 14px; color: #e5ebe4; }
-.membershipCompare>a { display: flex; margin-top: 30px; background: var(--pp-mint); color: var(--pp-night); }
-.membershipCompare>a:hover { background: var(--pp-mint-deep); }
-.packCompare { border: 1px solid #32495325; border-radius: 14px; padding: 38px; background: white; }
-.packCompare h3 { font-size: 25px; margin: 22px 0; }
-.packCompare dl>div { display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; border-bottom: 1px solid #32495320; }
-.packCompare dt { font-weight: 600; }
-.packCompare dt span { display: block; font-size: 12px; font-weight: 400; color: var(--pp-main); margin-top: 6px; }
-.packCompare dd { font-size: 22px; font-weight: 500; }
-.packCompare>p:last-child { font-size: 14px; color: var(--pp-main); margin-top: 24px; }
-.finePrint { color: var(--pp-main); font-size: 12px; margin-top: 20px; }
+.membershipGrid { display: grid; grid-template-columns: minmax(300px,.8fr) minmax(0,1.4fr); gap: 36px; align-items: start; }
+.memberCard { padding: 30px; }
+.comparison { min-width: 0; padding-top: 12px; }
+.comparison>h3 { font-size: clamp(26px,3vw,36px); line-height: 1.25; margin-top: 14px; }
+.compareIntro { color: var(--pp-main); font-size: 14px; margin: 16px 0 24px; }
+.tableWrap { overflow-x: auto; border: 1px solid #32495325; border-radius: 10px; background: white; }
+.tableWrap:focus-visible { outline: 3px solid var(--pp-main); outline-offset: 4px; }
+.tableWrap table { width: 100%; min-width: 480px; border-collapse: collapse; text-align: left; font-size: 13px; }
+.tableWrap caption { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.tableWrap th,.tableWrap td { padding: 18px 13px; border-bottom: 1px solid #32495320; vertical-align: top; }
+.tableWrap thead th { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; background: #f1f0eb; }
+.tableWrap tbody th { font-weight: 600; }
+.tableWrap span { display: block; font-size: 10px; font-weight: 400; margin-top: 5px; }
+.memberRow { background: #e1f2e5; color: #17262c; }
+.memberRow th { border-left: 3px solid #56816a; }
+.advantages { display: grid; gap: 18px; margin-top: 26px; }
+.advantages>div { display: flex; gap: 12px; }
+.advantages svg { flex-shrink: 0; margin-top: 4px; color: var(--pp-main); }
+.advantages strong { display: block; font-size: 17px; }
+.advantages span { display: block; font-size: 12px; color: var(--pp-main); margin-top: 3px; }
+.finePrint { color: var(--pp-main); font-size: 11px; margin-top: 22px; }
 .closing { text-align: center; }
 .closing h2 { margin: 18px auto; max-width: 850px; }
 .closing>a { margin-top: 26px; }
-@media(max-width: 800px) {
-  .membershipGrid { grid-template-columns: 1fr; gap: 40px; }
+@media(max-width: 1000px) { .membershipGrid { grid-template-columns: minmax(280px,.8fr) minmax(0,1.2fr); gap: 24px; }.memberCard { padding: 25px; } }
+@media(max-width: 760px) {
+  .membershipGrid { grid-template-columns: 1fr; gap: 36px; }
   .memberCard { max-width: 500px; width: 100%; margin: auto; padding: 28px; }
-  .compareGrid { grid-template-columns: 1fr; }
-  .membershipCompare,.packCompare { padding: 26px; }
   .heroPrice { font-size: 32px; }
 }
