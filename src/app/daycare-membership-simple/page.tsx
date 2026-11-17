@@ -45,7 +45,7 @@ export default function Page() {
             <p className={styles.renewal}>Per dog · automatically renews monthly</p>
             <div className={styles.visitAllowance}><Check size={20} /><strong>4 full daycare days every billing cycle</strong></div>
             <div className={styles.rate}><strong>$35<small> / additional day</small></strong><span>Buy as many extra days as you need while your membership is active. Reservations subject to availability.</span></div>
-            <ul>{["Four days to build a familiar, happy routine", "Extra days one at a time, at your member rate", "Automatic renewal—no new pack to purchase", "Month-to-month, with no long-term commitment"].map(item => <li key={item}><Check size={17} /><span>{item}</span></li>)}</ul>
+            <ul>{["Four days to build a familiar, happy routine", "5% off in-house grooming", "Extra days one at a time, at your member rate", "Automatic renewal—no new pack to purchase", "Month-to-month, with no long-term commitment"].map(item => <li key={item}><Check size={17} /><span>{item}</span></li>)}</ul>
             <a className={styles.cardButton} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a>
             <p className={styles.cardFoot}>Save $24.05 vs. four $51 drop-in days when all four are used.</p>
           </article>
@@ -89,7 +89,7 @@ export default function Page() {
     ].map(([n, title, copy]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><BookNowModal ctaHref="/new-client/" className={styles.button} label="Book a free evaluation" /></section></div>
 
     <div className={styles.darkBand}><section className={`${styles.section} ${styles.faq}`}><div><p className={styles.eyebrow}>GOOD TO KNOW</p><h2>Simple membership.<br /><em>Clear details.</em></h2></div><div>{[
-      ["What does $179.95 include?", "Four full daycare days for one named dog in each monthly billing cycle. These are daycare visits, not training classes. Additional daycare days are $35 each while your membership is active, with no limit on how many you may purchase. Reservations and available operating days still apply."],
+      ["What does $179.95 include?", "Four full daycare days for one named dog in each monthly billing cycle. Membership also includes 5% off in-house grooming for the enrolled dog while the membership is active. Additional daycare days are $35 each while your membership is active, with no limit on how many you may purchase. Reservations and available operating days still apply."],
       ["What if my usual weekday comes up five times?", "Membership includes four days per billing cycle, rather than one day every week. Add a fifth day for $35, bringing that cycle’s total to $214.95."],
       ["Do unused days roll over?", "Unused included days expire at the end of the monthly billing cycle; no ordinary rollover applies. Pick dates that fit your schedule and reserve ahead."],
       ["Can I keep using my current pack?", "Yes. Existing packs retain their original terms and expiration dates. Our team can help you choose a membership start date after you use your pack."],
