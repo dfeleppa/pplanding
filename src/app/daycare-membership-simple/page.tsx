@@ -13,12 +13,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const packs = [
-  { name: "5-day pack", price: "$226.95", rate: "$45.39", expiry: "30 days", difference: "$47.00" },
-  { name: "10-day pack", price: "$433.50", rate: "$43.35", expiry: "60 days", difference: "$253.55" },
-  { name: "20-day pack", price: "$846.60", rate: "$42.33", expiry: "90 days", difference: "$666.65" },
-];
-
 export default function Page() {
   return <main className={`${styles.page} ${alternate.page}`}>
     <section className={styles.hero}>
@@ -61,22 +55,22 @@ export default function Page() {
     </div>
 
     <section className={`${styles.section} ${alternate.comparison}`} id="compare">
-      <div className={styles.centerHeading}><p className={styles.eyebrow}>MEMBERSHIP VS. DAYCARE PACKS</p><h2>A smarter way to <em>stay in the routine.</em></h2><p>Lower upfront cost. Discounted extra days. A fresh allowance every month.</p></div>
-      <div className={alternate.tableWrap} tabIndex={0} role="region" aria-label="Daycare membership and package comparison; scroll horizontally on small screens">
-        <table><caption>Current daycare packs compared with the proposed monthly membership</caption><thead><tr><th scope="col">The details</th><th scope="col" className={alternate.highlight}>Membership<span>Our pick for a regular routine</span></th>{packs.map(p => <th scope="col" key={p.name}>{p.name}</th>)}</tr></thead>
-          <tbody>
-            <tr><th scope="row">Payment</th><td className={alternate.highlight}><strong>$179.95/month</strong></td>{packs.map(p => <td key={p.name}>{p.price} upfront</td>)}</tr>
-            <tr><th scope="row">Included days</th><td className={alternate.highlight}>4 each billing cycle</td><td>5</td><td>10</td><td>20</td></tr>
-            <tr><th scope="row">Use-by window</th><td className={alternate.highlight}>Each monthly billing cycle</td>{packs.map(p => <td key={p.name}>{p.expiry}</td>)}</tr>
-            <tr><th scope="row">Per included day*</th><td className={alternate.highlight}>$44.99</td>{packs.map(p => <td key={p.name}>{p.rate}</td>)}</tr>
-            <tr><th scope="row">When you need more</th><td className={alternate.highlight}><strong>$43 per extra day</strong><span>No additional pack needed</span></td><td colSpan={3}>Buy another pack or pay $51 per drop-in day</td></tr>
-            <tr><th scope="row">Less to pay at signup†</th><td className={alternate.highlight}>Start with $179.95</td>{packs.map(p => <td key={p.name}>{p.difference} less with membership</td>)}</tr>
-          </tbody>
-        </table>
+      <div className={styles.centerHeading}><p className={styles.eyebrow}>MEMBERSHIP VS. DAYCARE PACKS</p><h2>Less upfront.<br /><em>More flexibility.</em></h2><p>Start their routine with four days. Add more whenever you need them.</p></div>
+      <div className={alternate.compareGrid}>
+        <article className={alternate.membershipCompare}>
+          <p className={styles.eyebrow}>THE MEMBERSHIP ADVANTAGE</p>
+          <h3>Start with <strong>$179.95</strong><span>per month · 4 full daycare days</span></h3>
+          <div className={alternate.benefit}><Check size={24} /><div><h4>Less to pay upfront</h4><p>Get started for $47 less than the smallest daycare pack.</p></div></div>
+          <div className={alternate.benefit}><Check size={24} /><div><h4>Add a day. Not another pack.</h4><p>Buy any number of extra days for <strong>$43 each</strong> while your membership is active.</p></div></div>
+          <a className={styles.cardButton} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a>
+        </article>
+        <article className={alternate.packCompare}>
+          <p className={styles.eyebrow}>PREPAID DAYCARE PACKS</p><h3>Pay for a bundle upfront</h3>
+          <dl><div><dt>5 days <span>Use within 30 days</span></dt><dd>$226.95</dd></div><div><dt>10 days <span>Use within 60 days</span></dt><dd>$433.50</dd></div><div><dt>20 days <span>Use within 90 days</span></dt><dd>$846.60</dd></div></dl>
+          <p>When your pack runs out, purchase another pack or pay $51 for a drop-in day.</p>
+        </article>
       </div>
-      <p className={alternate.finePrint}>*Per-day rates assume every included visit is used before expiration; rounded to the nearest cent. †Compares the initial payment only, not equal numbers of visits. Membership renews monthly; packs are prepaid purchases with the windows shown above.</p>
-      <div className={alternate.valueCallout}><div><p className={styles.eyebrow}>FIVE DAYS THIS MONTH?</p><h3>$222.95 with membership.<br /><em>$226.95 with a 5-day pack.</em></h3></div><p>Use your four included days and add one for $43. You save <strong>$4</strong> over the 5-pack—and your next month’s routine is already set up.</p></div>
-      <p className={alternate.finePrint}>The 20-day pack has the lowest fully used per-day rate at $42.33. Membership offers a smaller initial payment and the flexibility to add individual $43 days. A 10-day pack is $433.50 versus $437.95 for 10 membership visits in one billing cycle; a 20-day pack is $846.60 versus $867.95 for 20 membership visits in one billing cycle. Choose membership for a manageable monthly routine; packs remain available if bulk visits suit you better.</p>
+      <p className={alternate.finePrint}>Upfront comparison reflects different numbers of included days, not equal-visit savings. Membership renews monthly; unused included days expire each billing cycle. Extra days require reservations and availability. Packs may offer a lower per-visit rate when fully used.</p>
     </section>
 
     <div className={styles.darkBand}><section className={`${styles.section} ${styles.story}`}>
