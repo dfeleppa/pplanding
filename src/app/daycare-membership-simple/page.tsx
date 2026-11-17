@@ -61,7 +61,7 @@ export default function Page() {
             <tr><th scope="row">Use-by window</th><td className={alternate.highlight}>Each monthly billing cycle</td>{packs.map(p => <td key={p.name}>{p.expiry}</td>)}</tr>
             <tr><th scope="row">Per included day*</th><td className={alternate.highlight}>$44.99</td>{packs.map(p => <td key={p.name}>{p.rate}</td>)}</tr>
             <tr><th scope="row">When you need more</th><td className={alternate.highlight}><strong>$43 per extra day</strong><span>No additional pack needed</span></td><td colSpan={3}>Buy another pack or pay $51 per drop-in day</td></tr>
-            <tr><th scope="row">Less to pay at signup†</th><td className={alternate.highlight}>Start with $179.95</td>{packs.map(p => <td key={p.name}>{p.difference} less with membership</td>)}</tr>
+            <tr><th scope="row">Upfront cost difference†</th><td className={alternate.highlight}><strong>Lowest upfront cost</strong><span>Start with $179.95</span></td>{packs.map(p => <td key={p.name}><strong>{p.difference} more upfront</strong><span>than membership</span></td>)}</tr>
           </tbody>
         </table>
       </div>
