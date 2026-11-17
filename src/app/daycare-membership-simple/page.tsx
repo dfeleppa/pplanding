@@ -59,7 +59,7 @@ export default function Page() {
             <tr><th scope="row">Payment</th><td className={alternate.highlight}><strong>$179.95/month</strong></td>{packs.map(p => <td key={p.name}>{p.price} upfront</td>)}</tr>
             <tr><th scope="row">Included days</th><td className={alternate.highlight}>4 each billing cycle</td><td>5</td><td>10</td><td>20</td></tr>
             <tr><th scope="row">Use-by window</th><td className={alternate.highlight}>Each monthly billing cycle</td>{packs.map(p => <td key={p.name}>{p.expiry}</td>)}</tr>
-            <tr><th scope="row">Per included day*</th><td className={alternate.highlight}>$44.99</td>{packs.map(p => <td key={p.name}>{p.rate}</td>)}</tr>
+            <tr><th scope="row">Average cost per day*</th><td className={alternate.highlight}><strong>$41.25–$44.99</strong><span>Based on 4–16 visits per monthly cycle</span></td>{packs.map(p => <td key={p.name}>{p.rate}</td>)}</tr>
             <tr><th scope="row">When you need more</th><td className={alternate.highlight}><strong>$40 per extra day</strong><span>No additional pack needed</span></td><td colSpan={3}>Buy another pack or pay $51 per drop-in day</td></tr>
             <tr><th scope="row">Upfront cost difference†</th><td className={alternate.highlight}><strong>Lowest upfront cost</strong><span>Start with $179.95</span></td>{packs.map(p => <td key={p.name}><strong>{p.difference} more upfront</strong><span>than membership</span></td>)}</tr>
           </tbody>
