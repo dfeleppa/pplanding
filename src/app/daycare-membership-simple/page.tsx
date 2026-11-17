@@ -67,6 +67,17 @@ export default function Page() {
       </div>
             <div className={alternate.advantages}><div><Check size={20} /><p><strong>Less money upfront, less per day than drop-in.</strong></p></div></div>
             <p className={alternate.finePrint}>*Per-day rates assume all included days are used before expiration, rounded to the nearest cent. †Compares the initial payment only, not equal numbers of visits. Membership renews monthly; packs are prepaid. The 20-day pack has the lowest fully used per-day rate at $42.33. Extra member days are subject to availability.</p>
+            <h4 className={alternate.equalVisitsHeading}>Same visits. Compare the total.</h4>
+            <div className={`${alternate.tableWrap} ${alternate.equalVisits}`} role="region" aria-label="Membership and pack totals for the same number of visits" tabIndex={0}>
+              <table><caption>Price comparison for visits in one monthly membership billing cycle</caption><thead><tr><th scope="col">Days</th><th scope="col" className={alternate.highlight}>Membership</th><th scope="col">Daycare pack</th><th scope="col">Difference</th></tr></thead><tbody>
+                {[{ days: 5, packCents: 22695 }, { days: 10, packCents: 43350 }, { days: 20, packCents: 84660 }].map(({ days, packCents }) => {
+                  const membershipCents = 17995 + (days - 4) * 4300;
+                  const difference = membershipCents - packCents;
+                  return <tr key={days}><th scope="row">{days} days</th><td className={alternate.highlight}><strong>${(membershipCents / 100).toFixed(2)}</strong></td><td>${(packCents / 100).toFixed(2)}</td><td>{difference < 0 ? "Membership saves" : "Pack saves"} <strong>${(Math.abs(difference) / 100).toFixed(2)}</strong></td></tr>;
+                })}
+              </tbody></table>
+            </div>
+            <p className={alternate.finePrint}>Membership totals assume all visits occur in one monthly billing cycle: $179.95 for four days plus $43 for each additional day. Packs retain their 30-, 60- and 90-day use windows. Visits spanning multiple membership cycles may have a different total.</p>
           </div>
         </div>
         <p className={styles.pricingNote}>Four days per monthly billing cycle, not one guaranteed day each week. Unused included days expire at the end of the cycle; no ordinary rollover. Reservations and evaluation approval required.</p>
