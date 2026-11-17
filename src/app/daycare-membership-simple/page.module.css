@@ -48,3 +48,5 @@
 
 .dailyCosts .equalVisits td.packDailyRate { text-align: center; vertical-align: middle; font-size: 16px; }
 .dailyCosts .equalVisits thead th:nth-child(n+3) { text-align: center; }
+.dailyCosts .equalVisits td.packDailyRate,
+.dailyCosts .equalVisits thead th:nth-child(n+3) { border-left: 1px solid #32495330; }
