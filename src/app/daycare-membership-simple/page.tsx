@@ -34,14 +34,13 @@ export default function Page() {
         <div className={styles.centerHeading}><p className={styles.eyebrow}>ONE MEMBERSHIP. MORE HAPPY DAYS.</p><h2>A little routine.<br /><em>A whole lot of tail wags.</em></h2><p>Our best fit for families making daycare part of everyday life.</p></div>
         <div className={alternate.membershipGrid}>
           <article className={`${styles.card} ${styles.featured} ${alternate.memberCard}`}>
-            <p className={styles.cardTop}>THEIR MONTHLY DOSE OF HAPPY</p><h3>Daycare Membership</h3>
+            <h3>Daycare Membership</h3>
             <div className={styles.price}><span>$179.95</span><small>/month</small></div>
             <p className={styles.renewal}>Per dog · automatically renews monthly</p>
-            <div className={styles.visitAllowance}><Check size={20} /><strong>4 full daycare days every billing cycle</strong></div>
-            <div className={styles.rate}><strong>$43<small> / additional day</small></strong><span>Buy as many extra days as you need while your membership is active. Reservations subject to availability.</span></div>
-            <ul>{["Four days to build a familiar, happy routine", "Extra days one at a time, at your member rate", "Automatic renewal—no new pack to purchase", "Month-to-month, with no long-term commitment"].map(item => <li key={item}><Check size={17} /><span>{item}</span></li>)}</ul>
+            <div className={styles.visitAllowance}><Check size={20} /><strong>4 full daycare days per month</strong></div>
+            <div className={styles.rate}><strong>$43<small> / extra day</small></strong><span>Add as many days as you need. No extra pack.</span></div>
             <a className={styles.cardButton} href="mailto:planetpoochpetservices@gmail.com?subject=Daycare%20membership%20inquiry">Get Started <ArrowRight size={18} /></a>
-            <p className={styles.cardFoot}>Save $24.05 vs. four $51 drop-in days when all four are used.</p>
+            <p className={styles.cardFoot}>Month-to-month · No long-term commitment</p>
           </article>
           <div id="compare" className={alternate.comparison}>
             <p className={styles.eyebrow}>MEMBERSHIP VS. DAYCARE PACKS</p>
