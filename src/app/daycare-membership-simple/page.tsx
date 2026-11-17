@@ -82,19 +82,20 @@ export default function Page() {
         </div>
         <p className={styles.pricingNote}>Four days per monthly billing cycle, not one guaranteed day each week. Unused included days expire at the end of the cycle; no ordinary rollover. Reservations and evaluation approval required.</p>
         <section className={alternate.savings} aria-labelledby="savings-heading">
-          <div className={alternate.savingsHeading}><p className={styles.eyebrow}>MORE PLAY. MORE DOLLARS SAVED.</p><h2 id="savings-heading">Watch their <em>savings grow.</em></h2><p>Save $24.05 on your first four days. Every extra day saves another $11 compared with our $51 drop-in rate.</p></div>
+          <div className={alternate.savingsHeading}><p className={styles.eyebrow}>MORE PLAY. MORE DOLLARS SAVED.</p><h2 id="savings-heading">Watch their <em>savings grow.</em></h2><p>See what you save with membership compared with buying a 5-, 10- or 20-day pack.</p></div>
           <div className={alternate.savingsChart}>
-            {[4, 8, 12, 16].map(visits => {
-              const memberTotal = 179.95 + (visits - 4) * 40;
-              const dropInTotal = visits * 51;
-              const saving = dropInTotal - memberTotal;
+            {[{ visits: 5, packCents: 22695 }, { visits: 10, packCents: 43350 }, { visits: 20, packCents: 84660 }].map(({ visits, packCents }) => {
+              const memberCents = 17995 + (visits - 4) * 4000;
+              const memberTotal = memberCents / 100;
+              const packTotal = packCents / 100;
+              const saving = (packCents - memberCents) / 100;
               return <div key={visits} className={alternate.savingsColumn}>
-                <div className={alternate.barTrack}><div className={alternate.savingsBar} style={{ height: `${saving / 156.05 * 100}%` }}><strong>${saving.toFixed(2)}</strong><span>saved</span></div></div>
-                <h3>{visits} days</h3><p><strong>${memberTotal.toFixed(2)}</strong> with membership</p><p>${dropInTotal.toFixed(2)} at drop-in</p>
+                <div className={alternate.barTrack}><div className={alternate.savingsBar} style={{ height: `${saving / 26.65 * 100}%` }}><strong>${saving.toFixed(2)}</strong><span>saved</span></div></div>
+                <h3>{visits} days</h3><p><strong>${memberTotal.toFixed(2)}</strong> with membership</p><p>${packTotal.toFixed(2)} for the {visits}-day pack</p>
               </div>;
             })}
           </div>
-          <p className={alternate.savingsNote}>Visits in one monthly billing cycle. Membership totals include $179.95 for four days plus $40 per extra day. Savings compare the same number of $51 drop-in days, not prepaid packs. All four included days must be used to realize the illustrated savings. Reservations subject to availability.</p>
+          <p className={alternate.savingsNote}>Compares equal numbers of visits used within one monthly membership billing cycle: $179.95 for four days plus $40 per extra day. Packs retain their 30-, 60- and 90-day use windows. Visits spanning multiple membership cycles may have a different total. Reservations subject to availability.</p>
         </section>
       </section>
     </div>
