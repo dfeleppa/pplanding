@@ -59,3 +59,8 @@
 .savingsBar span { position: absolute; top: -19px; margin: 0; color: var(--pp-main); }
 .savingsChart { margin-top: 64px; }
 @media(max-width:760px) { .savingsBar { min-height: 0; padding: 0; }.savingsBar strong { top: -36px; }.savingsBar span { top: -17px; } }
+/* Detailed comparison beside the restored membership card. */
+.tableWrap table { min-width: 640px; font-size: 12px; }
+.tableWrap th,.tableWrap td { padding: 16px 11px; }
+.highlight { background: #e1f2e5; color: #17262c; }
+.tableWrap thead .highlight { background: var(--pp-night); color: var(--pp-mint); }
