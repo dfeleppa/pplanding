@@ -65,7 +65,7 @@ export default function Page() {
           </tbody>
         </table>
       </div>
-            <div className={alternate.advantages}><div><Check size={20} /><p><strong>$47 less to get started</strong><span>Compared with the smallest pack’s upfront payment.</span></p></div><div><Check size={20} /><p><strong>Extra days, without another pack</strong><span>Members add any number of days at $43 each. After a pack runs out, buy another pack or pay $51 per drop-in.</span></p></div></div>
+            <div className={alternate.advantages}><div><Check size={20} /><p><strong>Less money upfront, less per day than drop-in.</strong></p></div></div>
             <p className={alternate.finePrint}>*Per-day rates assume all included days are used before expiration, rounded to the nearest cent. †Compares the initial payment only, not equal numbers of visits. Membership renews monthly; packs are prepaid. The 20-day pack has the lowest fully used per-day rate at $42.33. Extra member days are subject to availability.</p>
           </div>
         </div>
