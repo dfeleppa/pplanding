@@ -1,0 +1,80 @@
+.page { overflow-wrap: break-word; }
+.heroPrice { color: var(--pp-mint); font-size: 38px; font-weight: 600; margin-top: 20px; letter-spacing: -.04em; }
+.heroPrice span { font-size: 17px; font-weight: 400; letter-spacing: 0; }
+.membershipGrid { display: grid; grid-template-columns: minmax(300px,.8fr) minmax(0,1.4fr); gap: 36px; align-items: start; }
+.memberCard { padding: 30px; }
+.comparison { min-width: 0; padding-top: 12px; }
+.comparison>h3 { font-size: clamp(26px,3vw,36px); line-height: 1.25; margin-top: 14px; }
+.compareIntro { color: var(--pp-main); font-size: 14px; margin: 16px 0 24px; }
+.tableWrap { overflow-x: auto; border: 1px solid #32495325; border-radius: 10px; background: white; }
+.tableWrap:focus-visible { outline: 3px solid var(--pp-main); outline-offset: 4px; }
+.tableWrap table { width: 100%; min-width: 480px; border-collapse: collapse; text-align: left; font-size: 13px; }
+.tableWrap caption { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.tableWrap th,.tableWrap td { padding: 18px 13px; border-bottom: 1px solid #32495320; vertical-align: top; }
+.tableWrap thead th { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; background: #f1f0eb; }
+.tableWrap tbody th { font-weight: 600; }
+.tableWrap span { display: block; font-size: 10px; font-weight: 400; margin-top: 5px; }
+.memberRow { background: #e1f2e5; color: #17262c; }
+.memberRow th { border-left: 3px solid #56816a; }
+.advantages { display: grid; gap: 18px; margin-top: 26px; }
+.advantages>div { display: flex; gap: 12px; }
+.advantages svg { flex-shrink: 0; margin-top: 4px; color: var(--pp-main); }
+.advantages strong { display: block; font-size: 17px; }
+.advantages span { display: block; font-size: 12px; color: var(--pp-main); margin-top: 3px; }
+.finePrint { color: var(--pp-main); font-size: 11px; margin-top: 22px; }
+.closing { text-align: center; }
+.closing h2 { margin: 18px auto; max-width: 850px; }
+.closing>a { margin-top: 26px; }
+@media(max-width: 1000px) { .membershipGrid { grid-template-columns: minmax(280px,.8fr) minmax(0,1.2fr); gap: 24px; }.memberCard { padding: 25px; } }
+@media(max-width: 760px) {
+  .membershipGrid { grid-template-columns: 1fr; gap: 36px; }
+  .memberCard { max-width: 500px; width: 100%; margin: auto; padding: 28px; }
+  .heroPrice { font-size: 32px; }
+}
+/* Detailed comparison beside the restored membership card. */
+.tableWrap table { min-width: 640px; font-size: 12px; }
+.tableWrap th,.tableWrap td { padding: 16px 11px; }
+.highlight { background: #e1f2e5; color: #17262c; }
+.tableWrap thead .highlight { background: var(--pp-night); color: var(--pp-mint); }
+.equalVisitsHeading { margin: 30px 0 14px; font-size: 20px; font-weight: 600; }
+.equalVisits table { min-width: 460px; }
+
+.dailyCosts { width: 100%; margin-top: 40px; }
+.dailyCosts .equalVisits table { width: 100%; min-width: 0; table-layout: fixed; }
+.dailyCosts .equalVisits th,.dailyCosts .equalVisits td { padding: 20px; }
+@media(max-width:760px) { .dailyCosts .equalVisits th,.dailyCosts .equalVisits td { padding: 16px 10px; } }
+
+.dailyCosts .equalVisits table { min-width: 580px; }
+
+.dailyCosts .equalVisits td.packDailyRate { text-align: center; vertical-align: middle; font-size: 16px; }
+.dailyCosts .equalVisits thead th:nth-child(n+3) { text-align: center; }
+.dailyCosts .equalVisits td.packDailyRate,
+.dailyCosts .equalVisits thead th:nth-child(n+3) { border-left: 1px solid #32495330; }
+
+/* Stack the offer above the full-width pack comparison. */
+.page .membershipGrid { grid-template-columns: minmax(0,1fr); gap: 40px; }
+.page .memberCard { width: 100%; max-width: 520px; margin-inline: auto; }
+/* Wide membership offer above the comparison table. */
+.page .memberCard { max-width: none; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 48px; padding: 36px 40px; }
+.memberCard>p:first-child { grid-column: 1; grid-row: 1; }
+.memberCard>h3 { grid-column: 1; grid-row: 2; margin-top: 8px; }
+.memberCard>div:nth-of-type(1) { grid-column: 1; grid-row: 3; margin-top: 18px; }
+.memberCard>p:nth-of-type(2) { grid-column: 1; grid-row: 4; }
+.memberCard>div:nth-of-type(2) { grid-column: 1; grid-row: 5; margin-top: 20px; }
+.memberCard>div:nth-of-type(3) { grid-column: 1; grid-row: 6; margin-bottom: 0; }
+.memberCard>ul { grid-column: 2; grid-row: 2 / 5; align-self: center; margin: 0; }
+.memberCard>a {
+  grid-column: 2;
+  grid-row: 5;
+  place-self: end center;
+  margin-top: 20px;
+  min-height: 44px;
+  padding: 10px 18px;
+  gap: 10px;
+}
+.memberCard>p:last-child { grid-column: 2; grid-row: 6; align-self: start; }
+@media(max-width:760px) {
+  .page .memberCard { display: flex; padding: 28px; }
+  .memberCard>ul { margin: 24px 0 0; }
+  .memberCard>a { align-self: center; }
+}
