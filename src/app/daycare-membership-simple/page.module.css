@@ -63,10 +63,18 @@
 .memberCard>div:nth-of-type(2) { grid-column: 1; grid-row: 5; margin-top: 20px; }
 .memberCard>div:nth-of-type(3) { grid-column: 1; grid-row: 6; margin-bottom: 0; }
 .memberCard>ul { grid-column: 2; grid-row: 2 / 5; align-self: center; margin: 0; }
-.memberCard>a { grid-column: 2; grid-row: 5; margin-top: 20px; align-self: end; }
+.memberCard>a {
+  grid-column: 2;
+  grid-row: 5;
+  place-self: end center;
+  margin-top: 20px;
+  min-height: 44px;
+  padding: 10px 18px;
+  gap: 10px;
+}
 .memberCard>p:last-child { grid-column: 2; grid-row: 6; align-self: start; }
 @media(max-width:760px) {
   .page .memberCard { display: flex; padding: 28px; }
   .memberCard>ul { margin: 24px 0 0; }
-  .memberCard>a { align-self: stretch; }
+  .memberCard>a { align-self: center; }
 }
