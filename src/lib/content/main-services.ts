@@ -273,38 +273,41 @@ export const mainServicePages = {
     serviceType: "Dog Daycare",
     heroCtas: {
       primary: { label: "Get Started", href: "/new-client/" },
+      tertiary: { label: "View pricing", href: "#pricing" },
     },
     sections: [
       {
         type: "featureGrid",
+        compact: true,
         eyebrow: "Why daycare?",
-        title: "More than a drop-off point.",
+        title: "Play, exercise, and company.",
         intro:
-          "Regularly attending an interactive doggy daycare can benefit your dog's health and wellbeing — better social skills, healthy weight, less separation anxiety, and a confidence boost, all just from playing with friends. Our goal is to create a space where your dog feels as relaxed and at home as they do with you.",
+          "Supervised play helps your dog stay active, build confidence, and practice social skills.",
         items: [
           {
             icon: "Trees",
             title: "Outdoor Play Yard",
             description:
-              "Fresh air, sunshine, and room to run — our outdoor yard gives dogs the open space they crave between rest periods.",
+              "Dogs can stretch their legs in our secure yard between rest periods.",
           },
           {
             icon: "Users",
             title: "Small, Hand-Selected Groups",
             description:
-              "We match dogs by size, temperament, and play style — never an unstructured free-for-all, so every dog feels safe and comfortable.",
+              "We match dogs by size, temperament, and play style.",
           },
           {
             icon: "Sparkles",
             title: "Enrichment Services",
             description:
-              "Treadmill, scent work, agility, and nutrition puzzles for dogs who thrive on one-on-one mental stimulation.",
+              "One-on-one activities include scent work, agility, and food puzzles.",
             cta: { label: "Learn more", href: "/enrichment/" },
           },
         ],
       },
       {
         type: "slideshow",
+        compact: true,
         eyebrow: "Inside our daycare",
         title: "Room to run, play, and make friends.",
         intro:
@@ -327,39 +330,27 @@ export const mainServicePages = {
       {
         type: "timeline",
         eyebrow: "How It Works",
-        title: "From first visit to regular client",
+        title: "Your dog’s first visit",
         items: [
           {
             time: "Step 1",
             label: "Free evaluation + first daycare day",
             body:
-              "We start with a complimentary evaluation. Staff observe your dog's behavior in our evaluation room as they acclimate to the space, then bring in another dog from a distance and progressively close the gap as comfort increases. Dogs who pass continue into their first day of daycare at no charge.",
+              "We give your dog time to settle in, then introduce another dog at their pace. Dogs who pass enjoy their first daycare day free.",
             cta: { label: "Get Started", href: "/new-client/" },
           },
-        ],
-      },
-      {
-        type: "definitions",
-        eyebrow: "Step 2 — Care begins",
-        title: "Group Play or Enrichment",
-        intro:
-          "Based on our evaluation your dog will either be eligible to join Group Play or will have the option to do Enrichment Play.",
-        items: [
           {
-            term: "Group Play (if your dog thrives socially)",
-            definition:
-              "Supervised social play with size-and-temperament-matched groups. Separate play areas organized by dog size, with adjustments based on individual play style and energy level.",
-          },
-          {
-            term: "Enrichment Play (if your dog prefers quieter time)",
-            definition:
-              "One-on-one activities for dogs who don't thrive in group settings. Sensory play, gentle problem-solving, scent work, and treadmill or agility activities tailored to your dog.",
-            cta: { label: "Learn more about Enrichment", href: "/enrichment/" },
+            time: "Step 2",
+            label: "Group play or one-on-one enrichment",
+            body:
+              "After the evaluation, social dogs join a supervised group matched to their size and play style. Dogs who prefer individual attention can try scent work, puzzles, or agility with a staff member.",
+            cta: { label: "Explore enrichment", href: "/enrichment/" },
           },
         ],
       },
       {
         type: "tieredPricing",
+        id: "pricing",
         eyebrow: "Pricing",
         title: "Full Day Daycare",
         intro: "Drop off any time during operating hours and stay until 7pm.",

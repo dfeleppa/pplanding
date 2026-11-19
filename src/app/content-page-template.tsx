@@ -65,7 +65,6 @@ type ContentPageTemplateProps = {
   page: ContentPage;
 };
 
-const sectionPadding = "px-5 py-14 sm:px-8 lg:px-10 lg:py-20";
 
 function SectionEyebrow({ eyebrow, title, intro }: { eyebrow?: string; title?: string; intro?: string }) {
   if (!eyebrow && !title && !intro) return null;
@@ -88,6 +87,10 @@ function SectionEyebrow({ eyebrow, title, intro }: { eyebrow?: string; title?: s
 
 function SectionRenderer({ section, index }: { section: ContentSection; index: number }) {
   const tone = index % 2 === 0 ? "bg-[var(--pp-cream)]" : "bg-white/55";
+
+  const sectionPadding = "compact" in section && section.compact
+    ? "px-5 py-8 sm:px-8 lg:px-10 lg:py-10"
+    : "px-5 py-14 sm:px-8 lg:px-10 lg:py-20";
 
   switch (section.type) {
     case "prose": {

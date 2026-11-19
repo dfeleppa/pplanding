@@ -212,6 +212,7 @@ export type ContentSection =
     }
   | {
       type: "featureGrid";
+      compact?: boolean;
       id?: string;
       title?: string;
       eyebrow?: string;
@@ -229,6 +230,7 @@ export type ContentSection =
     }
   | {
       type: "slideshow";
+      compact?: boolean;
       id?: string;
       title?: string;
       eyebrow?: string;
