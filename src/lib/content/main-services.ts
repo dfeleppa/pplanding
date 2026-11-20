@@ -48,8 +48,8 @@ export const mainServicePages = {
         title: "Built for hygiene, climate, and safety.",
         intro:
           "We partner with Wag N Tails and Hanvey Engineering to outfit our grooming vehicles.",
-        image: "/van1.jpg",
-        imageAlt: "Inside a mobile grooming van, with a grooming table, bathing tub, and storage cabinets",
+        image: "/dolly-and-daisy-in-grooming-van.webp",
+        imageAlt: "Dolly and Daisy standing together on the grooming table inside the Planet Pooch van",
         items: [
           "Cleaned between every appointment",
           "Built-in equipment, fresh water, and power — you don't need to provide anything.",
