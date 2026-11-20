@@ -1,3 +1,4 @@
+import { staysOnGroomingSite } from "../lib/resort-routes";
 import { HeroBackdrop } from "./hero-backdrop";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import Link from "next/link";
@@ -27,55 +28,15 @@ const bodySans = Manrope({
   variable: "--font-body",
 });
 
-const SERVICE_KEYWORDS: Array<{
-  match: RegExp;
-  label: string;
-  href: string;
-  description: string;
-}> = [
-  {
-    match: /\b(daycare|group play|socializ|play group)\b/i,
-    label: "Dog Daycare",
-    href: "/dog-daycare/",
-    description: "Supervised group play and enrichment at our Franklin Square resort.",
-  },
-  {
-    match: /\b(board|stay|overnight|suite|hotel)\b/i,
-    label: "Dog Boarding",
-    href: "/dog-boarding/",
-    description: "Cozy overnight suites with hand-on care — Express through Luxury.",
-  },
-  {
-    match: /\b(train|obedience|puppy class|leash|recall)\b/i,
-    label: "Dog Training",
-    href: "/dog-training/",
-    description: "AKC Evaluator-led 6-week programs for every stage.",
-  },
-  {
-    match: /\b(enrich|sensory|scent|snuffle|kong)\b/i,
-    label: "Enrichment",
-    href: "/enrichment/",
-    description: "One-on-one enrichment sessions for dogs who prefer individual time.",
-  },
-  {
-    match: /\b(groom|bath|mat|coat|nail|spa|shed)\b/i,
-    label: "Mobile Grooming",
-    href: "/mobile-grooming/",
-    description: "Luxury mobile grooming brought to your driveway across Nassau County and the Hamptons.",
-  },
-];
-
-function pickRelatedService(post: BlogPost) {
-  const haystack = `${post.title} ${post.slug}`;
-  for (const entry of SERVICE_KEYWORDS) {
-    if (entry.match.test(haystack)) return entry;
-  }
-  return SERVICE_KEYWORDS[SERVICE_KEYWORDS.length - 1];
-}
+const relatedService = {
+  label: "Mobile Grooming",
+  href: "/mobile-grooming/",
+  description: "One-on-one grooming at your door across Nassau County and the Hamptons.",
+};
 
 function pickRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
   return Object.values(blogPosts)
-    .filter((p) => p.slug !== currentSlug && p.hasFullContent)
+    .filter((p) => staysOnGroomingSite(p.slug) && p.slug !== currentSlug && p.hasFullContent)
     .sort((a, b) => {
       const ad = a.datePublished ?? "";
       const bd = b.datePublished ?? "";
@@ -97,7 +58,6 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
     authorName: post.author,
     image: post.image,
   });
-  const relatedService = pickRelatedService(post);
   const relatedPosts = pickRelatedPosts(post.slug);
 
   return (

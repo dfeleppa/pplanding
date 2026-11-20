@@ -2,17 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ChevronDown, ArrowUpRight, Phone, PawPrint, Scissors } from "lucide-react";
+import { Menu, X, ArrowUpRight, Phone, PawPrint, Scissors } from "lucide-react";
 import { desktopNavItems } from "../lib/nav";
 import { SITE } from "../lib/site";
 import { BookNowModal } from "./book-now-modal";
 
 export function MobileMenu({ ctaHref }: { ctaHref: string }) {
   const [open, setOpen] = useState(false);
-  const [resortOpen, setResortOpen] = useState(false);
   const panel = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
-  const resort = desktopNavItems.find(item => item.label === "Pet Resort");
   const explore = desktopNavItems.find(item => item.label === "Explore");
 
   useEffect(() => {
@@ -55,19 +53,6 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
                 <span className="flex-1"><span className="block font-display text-xl">Mobile Grooming</span></span>
                 <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden />
               </Link>
-              <Link href="/in-house-grooming/" onClick={() => setOpen(false)} className="mt-3 flex min-h-16 items-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-4 py-3 text-white">
-                <Scissors className="h-6 w-6 shrink-0 text-[var(--pp-mint)]" aria-hidden />
-                <span className="flex-1 text-xl">In-House Grooming</span>
-                <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden />
-              </Link>
-              <div className="mt-3 overflow-hidden rounded-2xl border border-white/20 bg-white/5">
-                <button type="button" onClick={() => setResortOpen(!resortOpen)} aria-expanded={resortOpen} aria-controls="mobile-resort-links" className="flex min-h-16 w-full items-center gap-3 px-4 py-3 text-left">
-                  <PawPrint className="h-6 w-6 shrink-0 text-[var(--pp-mint)]" aria-hidden />
-                  <span className="flex-1"><span className="block font-display text-xl">Pet Resort</span></span>
-                  <ChevronDown className={`h-5 w-5 shrink-0 transition-transform ${resortOpen ? "rotate-180" : ""}`} aria-hidden />
-                </button>
-                {resortOpen && <div id="mobile-resort-links" className="border-t border-white/10 px-5 py-2">{resort && "items" in resort && resort.items.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center justify-between gap-3 text-sm text-white/85 hover:text-[var(--pp-mint)]">{item.label}<ArrowUpRight className="h-4 w-4 text-white/40" aria-hidden /></Link>)}</div>}
-              </div>
               <p className="mb-2 mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Explore Planet Pooch</p>
               <div className="flex flex-col">{explore && "items" in explore && explore.items.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center border-b border-white/10 text-sm text-white/85">{item.label}</Link>)}</div>
             </nav>

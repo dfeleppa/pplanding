@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
 import { SITE } from "../../lib/site";
-import { ServiceSelector } from "./service-selector";
+import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../../lib/booking";
 import styles from "./new-client.module.css";
 
-const title = "Get Started with Planet Pooch | Grooming, Daycare, Boarding & Training";
-const description = "Tell us about you and your dog. Get started with Planet Pooch’s grooming, daycare, boarding, training, and enrichment services on Long Island.";
+const title = "Get Started with Planet Pooch | Mobile Grooming";
+const description = "Tell us about you and your dog. Get started with Planet Pooch’s mobile grooming services on Long Island.";
 
 export const metadata: Metadata = {
   title: { absolute: title }, description,
@@ -41,7 +41,8 @@ export default function NewClientPage() {
     </div>
     <main id="main" className={styles.page}>
     <div className={styles.card}>
-      <ServiceSelector />
+      <iframe src={MOBILE_GROOMING_NEW_CLIENT_FORM_URL} title="Mobile grooming new client form" className="block h-[1000px] w-full border-0" />
+      <p className="p-6"><a href={MOBILE_GROOMING_NEW_CLIENT_FORM_URL} className="underline">Open the mobile grooming form directly</a></p>
     </div>
     </main>
     <SiteFooter />

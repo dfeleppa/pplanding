@@ -5,9 +5,9 @@ export const SITE = {
   url: "https://www.planet-pooch.com",
   email: "planetpoochpetservices@gmail.com",
   phone: {
-    display: "(516) 993-3603",
-    e164: "+15169933603",
-    href: "tel:+15169933603",
+    display: "(202) 318-6526",
+    e164: "+12023186526",
+    href: "tel:+12023186526",
   },
   address: {
     street: "1114 Hempstead Turnpike",
@@ -41,8 +41,8 @@ export const SITE = {
   defaults: {
     homeTitle: "Mobile Pet Grooming Nassau County | Mobile Dog Groomer",
     homeDescription:
-      "Planet Pooch provides mobile pet grooming across Nassau County and daycare, boarding, training, and enrichment for dogs across Long Island.",
-    titleTemplate: "%s | Planet Pooch Pet Resort",
+      "Planet Pooch provides mobile pet grooming across Nassau County and the Hamptons.",
+    titleTemplate: "%s | Planet Pooch Mobile Grooming",
   },
 } as const;
 

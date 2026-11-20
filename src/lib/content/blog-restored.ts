@@ -159,12 +159,6 @@ export const restoredPosts: Record<string, BlogPost> = {
         ],
       },
       {
-        heading: "Sun-friendly daycare",
-        paragraphs: [
-          "On warm days at our Franklin Square resort, we rotate between shaded outdoor play and climate-controlled indoor spaces. Pups get pool time, frozen enrichment, and plenty of cool-down breaks so they enjoy the season without overdoing it.",
-        ],
-      },
-      {
         heading: "Don't forget the coat",
         paragraphs: [
           "A clean, well-maintained coat actually helps dogs regulate heat. Our mobile grooming vans come to your door across Long Island and the Hamptons, so summer baths, deshedding, and trims happen without you ever stepping into traffic.",
@@ -1094,9 +1088,9 @@ export const restoredPosts: Record<string, BlogPost> = {
         ],
       },
       {
-        heading: "Mobile or in-house, your call",
+        heading: "Mobile deshedding visits",
         paragraphs: [
-          "Spring deshedding treatments are available at our Franklin Square resort and through our mobile grooming vans across Nassau County and the Hamptons. Book early — spring slots fill fast.",
+          "Spring deshedding treatments are available through our mobile grooming vans across Nassau County and the Hamptons. Book early — spring slots fill fast.",
         ],
       },
     ],
@@ -1138,9 +1132,9 @@ export const restoredPosts: Record<string, BlogPost> = {
         ],
       },
       {
-        heading: "Mobile or at the resort",
+        heading: "Book a mobile groom",
         paragraphs: [
-          "Book at our Franklin Square resort or have one of our mobile vans come to you anywhere across Long Island and the Hamptons. Either way, your dog gets one-on-one attention and a clean, calm experience.",
+          "Our mobile vans visit homes across Nassau County and the Hamptons. At each appointment, your dog gets one-on-one attention and a clean, calm experience.",
         ],
       },
     ],

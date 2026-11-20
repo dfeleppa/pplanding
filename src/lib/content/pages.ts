@@ -20,7 +20,7 @@ export const contentPages = {
     metaTitle: "Mobile Pet Grooming Hamptons | Planet Pooch",
     metaDescription:
       "Mobile dog and cat grooming throughout the Hamptons. Planet Pooch brings a luxury pet spa to your door — call to set up your pet's next appointment.",
-    image: "/tour-space.jpg",
+    image: "/van1.jpg",
     sections: [
       {
         type: "prose",
@@ -75,7 +75,7 @@ export const contentPages = {
         type: "callout",
         title: "Book your Hamptons appointment",
         body: "Call us to confirm coverage for your specific Hamptons address and schedule.",
-        cta: { label: "Call (516) 993-3603", href: "tel:+15169933603" },
+        cta: { label: "Call (202) 318-6526", href: "tel:+12023186526" },
       },
     ],
   },
@@ -231,7 +231,7 @@ export const contentPages = {
         title: "How to apply",
         items: [
           "Email planetpoochpetservices@gmail.com with your resume and the role you're interested in",
-          "Or call (516) 993-3603 — ask for the manager on duty",
+          "Or call (202) 318-6526 — ask for the manager on duty",
           "Or stop by 1114 Hempstead Turnpike, Franklin Square, NY 11010",
         ],
       },
@@ -283,7 +283,7 @@ export const contentPages = {
     title: "Thank you!",
     eyebrow: "Confirmation",
     hero: "We'll be in touch shortly.",
-    metaTitle: "Thank You | Planet Pooch Pet Resort",
+    metaTitle: "Thank You | Planet Pooch Mobile Grooming",
     metaDescription:
       "We've received your inquiry. Our team will reach out to confirm scheduling and next steps.",
     image: "/testimonial-dog.jpg",
@@ -297,7 +297,7 @@ export const contentPages = {
       {
         type: "callout",
         title: "Need us sooner?",
-        body: "Call us directly at (516) 993-3603 or email planetpoochpetservices@gmail.com.",
+        body: "Call us directly at (202) 318-6526 or email planetpoochpetservices@gmail.com.",
         cta: { label: "Back to home", href: "/" },
       },
     ],

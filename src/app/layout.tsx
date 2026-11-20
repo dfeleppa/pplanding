@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: SITE.legalName,
+    siteName: SITE.name,
     locale: "en_US",
     url: SITE.url,
     title: SITE.defaults.homeTitle,
@@ -66,13 +66,11 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const businessDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": `${SITE.url}/#business`,
-  name: SITE.legalName,
+  name: "Planet Pooch Mobile Grooming",
   alternateName: SITE.name,
   description: SITE.defaults.homeDescription,
   url: SITE.url,
@@ -89,36 +87,6 @@ const localBusinessSchema = {
     name: "Andy Gonzaga",
     url: `${SITE.url}/andy/`,
   },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.locality,
-    addressRegion: SITE.address.region,
-    postalCode: SITE.address.postalCode,
-    addressCountry: SITE.address.country,
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: SITE.geo.latitude,
-    longitude: SITE.geo.longitude,
-  },
-  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    `${SITE.legalName}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`
-  )}`,
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: businessDays,
-      opens: "07:00",
-      closes: "12:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: businessDays,
-      opens: "13:30",
-      closes: "19:00",
-    },
-  ],
   areaServed: [
     ...SITE.serviceArea.counties.map((county) => ({
       "@type": "AdministrativeArea",
@@ -132,11 +100,6 @@ const localBusinessSchema = {
     SITE.social.facebook,
     SITE.social.youtube,
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: SITE.reviews.rating,
-    reviewCount: SITE.reviews.count,
-  },
 };
 
 export default function RootLayout({

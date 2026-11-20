@@ -259,14 +259,10 @@ export const towns = {
     town: "Franklin Square",
     metaTitle: "Mobile Pet Spa Services Franklin Square NY | Planet Pooch",
     metaDescription:
-      "Mobile pet spa services in Franklin Square, NY — our hometown. Luxury grooming and Plus / Premium spa upgrades at your driveway, just minutes from our resort.",
+      "Book mobile pet grooming in Franklin Square, NY. Our groomers bring baths, haircuts, and spa upgrades to your driveway.",
     localIntro:
-      "Franklin Square is our home — our resort is right here, and our mobile vans start every day from this hamlet on the South Shore-central Nassau border. For Franklin Square families, the choice is the easiest one we offer: mobile spa at your driveway, or a short drive to drop in for in-house grooming with daycare.",
-    localFeatures: [
-      "Our resort is right here in Franklin Square — short drive or mobile",
-      "Frequent route stops mean flexible appointment windows",
-      "Easy coordination with daycare, boarding, or training add-ons",
-    ],
+      "Franklin Square is where our grooming vans start their routes. For families here, an appointment starts right outside the front door.",
+    localFeatures: ["Plus and Premium spa upgrades at your door", "Frequent stops on our Franklin Square route"],
     distanceFromResort: "This is our hometown",
   },
 
@@ -277,14 +273,10 @@ export const towns = {
     town: "Franklin Square",
     metaTitle: "Dog Grooming Franklin Square NY | Planet Pooch",
     metaDescription:
-      "Dog grooming in Franklin Square, NY — our hometown. Mobile grooming at your home, plus in-house grooming for daycare and boarding clients at our resort.",
+      "Book mobile pet grooming in Franklin Square, NY. Our groomers bring baths, haircuts, and spa upgrades to your driveway.",
     localIntro:
-      "Franklin Square is the South Shore-central Nassau hamlet we call home — our resort and grooming operation are based right here. For neighbors, that means two equally easy options: a mobile van at your driveway or a short drive to drop your dog in for in-house grooming alongside daycare or boarding.",
-    localFeatures: [
-      "Choose mobile at your door or in-house at the resort",
-      "Easy bundling with daycare, boarding, or training services",
-      "We're your literal neighbors — questions are always welcome",
-    ],
+      "Franklin Square is where our grooming vans start their routes. For families here, an appointment starts right outside the front door.",
+    localFeatures: ["Bath and haircut options for your dog", "Individual attention in our mobile grooming van"],
     distanceFromResort: "This is our hometown",
   },
 

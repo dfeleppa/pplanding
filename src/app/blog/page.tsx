@@ -1,3 +1,4 @@
+import { staysOnGroomingSite } from "../../lib/resort-routes";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
@@ -21,9 +22,9 @@ const bodySans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: { absolute: "Planet Pooch Blog | Mobile Grooming, Daycare, Training" },
+  title: { absolute: "Planet Pooch Blog | Mobile Grooming & Pet Care" },
   description:
-    "Stories and how-tos from the Planet Pooch team — grooming tips, daycare advice, seasonal pet care, and behind-the-scenes from our Franklin Square resort.",
+    "Stories and how-tos from the Planet Pooch team — grooming tips and seasonal pet care.",
   alternates: { canonical: "/blog/" },
 };
 
@@ -35,7 +36,7 @@ const formatDate = (iso: string) =>
   });
 
 export default function BlogIndexPage() {
-  const posts = Object.values(blogPosts).sort((a, b) =>
+  const posts = Object.values(blogPosts).filter(post => staysOnGroomingSite(post.slug)).sort((a, b) =>
     b.datePublished.localeCompare(a.datePublished),
   );
   const featured = posts.filter((p) => p.hasFullContent);
@@ -53,11 +54,11 @@ export default function BlogIndexPage() {
           <div className="pp-hero-content pp-hero-stack">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--pp-mint)]">Blog</p>
-              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">Notes on grooming, daycare, training, and life with dogs.</h1>
+              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">Notes on grooming and life with dogs.</h1>
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">
-                Our team writes about what we see day to day — grooming questions we get asked again and again, the science behind enrichment, seasonal pet care, and stories from the resort.
+                Our team writes about what we see day to day — grooming questions we get asked again and again, seasonal coat care, and stories from the road.
               </p>
             </div>
           </div>

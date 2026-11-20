@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { PawPrint, X } from "lucide-react";
 import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../lib/booking";
@@ -10,8 +8,6 @@ import { SITE } from "../lib/site";
 
 export function BookNowModal({ ctaHref, className = "", variant = "full", label = "Book Now", icon = "arrow", track }: { ctaHref: string; className?: string; variant?: "full" | "grooming"; label?: string; icon?: "arrow" | "paw" | "none"; track?: string }) {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const isInHouseGrooming = pathname.replace(/\/$/, "") === "/in-house-grooming";
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -61,22 +57,6 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
               Book Now
             </h2>
 
-            {variant === "full" ? (
-              <div className="space-y-6">
-                <Link href={isInHouseGrooming ? "https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" : "/new-client/"} onClick={() => setOpen(false)} className="pp-cta pp-cta-sm w-full justify-center text-center">
-                  {isInHouseGrooming ? "Book Now" : "Get Started"}
-                </Link>
-                <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta pp-cta-sm w-full justify-center text-center">
-                  Current Clients (Booking)
-                </a>
-                <div className="border-t border-[var(--pp-sand)] pt-6 text-center">
-                  <p className="text-sm text-[var(--pp-ink)]">For Immediate Assistance Call</p>
-                  <a href={SITE.phone.href} className="mt-1 inline-flex min-h-11 items-center text-xl font-bold text-[var(--pp-main-deep)] underline underline-offset-4">
-                    Call {SITE.phone.display}
-                  </a>
-                </div>
-              </div>
-            ) : (
               <div className="flex flex-col items-center gap-3">
                 <a href={MOBILE_GROOMING_NEW_CLIENT_FORM_URL} target="_blank" rel="noopener" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   New Client
@@ -84,11 +64,10 @@ export function BookNowModal({ ctaHref, className = "", variant = "full", label 
                 <a href="https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort" className="pp-cta pp-cta-sm w-full justify-center text-center">
                   Current Clients (Booking)
                 </a>
-                <a href="tel:+12023186526" className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
-                  Call/Text (202) 318-6526
+                <a href={SITE.phone.href} className="pp-cta-sm w-full text-center bg-slate-700 text-white border border-slate-700 hover:bg-slate-800 transition">
+                  Call/Text {SITE.phone.display}
                 </a>
               </div>
-            )}
 
             {variant === "grooming" && (
               <div className="mt-8 border-t border-[var(--pp-sand)] pt-6 text-center">

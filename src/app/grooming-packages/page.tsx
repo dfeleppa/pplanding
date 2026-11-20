@@ -6,10 +6,10 @@ import { ContentPageTemplate } from "../content-page-template";
 const page: ContentPage = {
   slug: "grooming-packages",
   title: "Grooming Packages",
-  eyebrow: "In-House & Mobile Grooming",
-  hero: "The same spa-day upgrades, at our resort or at your door.",
-  metaTitle: "Grooming Packages | In-House & Mobile | Planet Pooch",
-  metaDescription: "Explore Basic, Plus (+$19), and Premium (+$29) grooming packages for Planet Pooch in-house and mobile grooming.",
+  eyebrow: "Mobile Grooming",
+  hero: "Spa-day upgrades at your door.",
+  metaTitle: "Grooming Packages | Mobile | Planet Pooch",
+  metaDescription: "Explore Basic, Plus (+$19), and Premium (+$29) grooming packages for Planet Pooch mobile grooming.",
   image: "/Grooming.png",
   sections: [groomingPackages, groomingAddons],
 };

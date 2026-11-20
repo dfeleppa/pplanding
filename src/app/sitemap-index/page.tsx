@@ -1,3 +1,4 @@
+import { staysOnGroomingSite } from "../../lib/resort-routes";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -29,7 +30,7 @@ const bodySans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: { absolute: "Site Map | Planet Pooch Pet Resort" },
+  title: { absolute: "Site Map | Planet Pooch Mobile Grooming" },
   description:
     "Browse every page on Planet Pooch — services, town pages across Nassau County, blog, and policies.",
   alternates: { canonical: "/sitemap-index/" },
@@ -53,6 +54,7 @@ function Section({
 }
 
 function PageLink({ href, label }: { href: string; label: string }) {
+  if (!staysOnGroomingSite(href.replace(/^\/|\/$/g, ""))) return null;
   return (
     <Link
       href={href}

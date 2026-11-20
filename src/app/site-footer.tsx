@@ -1,29 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import planetPoochLogo from "../../public/planet-pooch-logo.png";
-import { ADDRESS_LINES, SITE } from "../lib/site";
+import { SITE } from "../lib/site";
 
 const footerLinks = {
   services: [
     { label: "Mobile Grooming", href: "/mobile-grooming/" },
     { label: "Pet Grooming Hamptons", href: "/pet-grooming-hamptons/" },
-    { label: "Daycare", href: "/dog-daycare/" },
-    { label: "Boarding", href: "/dog-boarding/" },
-    { label: "Training", href: "/dog-training/" },
-    { label: "Enrichment", href: "/enrichment/" },
-    { label: "Events", href: "/events/" },
   ],
   about: [
-    { label: "Gallery", href: "/gallery/" },
-    { label: "We're Hiring", href: "/were-hiring/" },
-    { label: "Partners", href: "/partners/" },
     { label: "Blog", href: "/blog/" },
   ],
   legal: [
     { label: "Accessibility and help", href: "/accessibility/" },
-    { label: "Pet Services Agreement", href: "/agreement/" },
-    { label: "Requirements", href: "/requirements/" },
     { label: "Privacy Policy", href: "/privacy-policy/" },
     { label: "Terms", href: "/terms/" },
     { label: "Site Map", href: "/sitemap-index/" },
@@ -41,7 +31,7 @@ export function SiteFooter() {
         <div>
           <Image
             src={planetPoochLogo}
-            alt="Planet Pooch Pet Resort"
+            alt="Planet Pooch"
             sizes="190px"
             className="h-auto w-[190px] brightness-0 invert"
           />
@@ -49,7 +39,7 @@ export function SiteFooter() {
             className="mt-6 max-w-xs text-sm italic leading-relaxed text-white/72"
             style={{ fontFamily: "var(--font-display), serif" }}
           >
-            Mobile grooming across Nassau County and a luxury dog resort serving Long Island —
+            Mobile grooming across Nassau County and the Hamptons,
             devoted to enriching the lives of pets since 2014.
           </p>
         </div>
@@ -121,28 +111,14 @@ export function SiteFooter() {
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white/55" />
               <span className="min-w-0 break-all">{SITE.email}</span>
             </a>
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/55" />
-              <span>
-                {ADDRESS_LINES[0]}
-                <br />
-                {ADDRESS_LINES[1]}
-              </span>
-            </div>
           </div>
         </div>
-      </div>
-
-      <div className="mx-auto mt-14 max-w-7xl border-t border-white/10 pt-6">
-        <p className="text-center text-xs leading-6 text-white/55 sm:text-left">
-          Mobile grooming across Nassau County • Resort services for dogs across Long Island
-        </p>
       </div>
 
       <div className="mx-auto mt-6 max-w-7xl">
         <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/55">
           <p>
-            &copy; {new Date().getFullYear()} {SITE.legalName}
+            &copy; {new Date().getFullYear()} {SITE.name}
           </p>
           <div className="flex flex-wrap items-center gap-3 sm:gap-6">
             <a href={SITE.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="inline-flex min-h-11 items-center transition hover:text-white lg:min-h-0">

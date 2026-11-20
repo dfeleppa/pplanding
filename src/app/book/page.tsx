@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
-import { Building2, Truck } from "lucide-react";
+import { Truck } from "lucide-react";
 import { SITE } from "../../lib/site";
 import { MOBILE_GROOMING_NEW_CLIENT_FORM_URL } from "../../lib/booking";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
 import { StickyMobileCta } from "../sticky-mobile-cta";
-import { LeadForm } from "../lead-form";
 
 const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
@@ -23,7 +22,7 @@ const bodySans = Manrope({
 
 export const metadata: Metadata = {
   title: "Book Now",
-  description: `Book mobile grooming, daycare, boarding, training, or enrichment with ${SITE.legalName}. New clients welcome — start online or call ${SITE.phone.display}.`,
+  description: `Book mobile grooming with ${SITE.name}. New clients welcome — start online or call ${SITE.phone.display}.`,
   alternates: { canonical: "/book/" },
 };
 
@@ -47,25 +46,7 @@ const bookingPaths = [
       },
     ],
   },
-  {
-    icon: Building2,
-    title: "Pet Resort (Includes In-House Grooming)",
-    body: "Daycare, boarding, training, enrichment, and in-house grooming at our Franklin Square resort.",
-    actions: [
-      {
-        label: "New Client",
-        href: "/new-client/",
-        primary: true,
-        external: false,
-      },
-      {
-        label: "Existing Client",
-        href: "https://booking.moego.pet/ol/landing?name=PlanetPoochPetResort",
-        primary: false,
-        external: true,
-      },
-    ],
-  },
+
 ] as const;
 
 export default function BookPage() {
@@ -76,8 +57,8 @@ export default function BookPage() {
     >
       <section className="pp-page-hero relative  overflow-hidden bg-[var(--pp-night)] text-white">
         <Image
-          src="/our-resort-exterior.jpeg"
-          alt="Planet Pooch Pet Resort exterior"
+          src="/van1.jpg"
+          alt="Planet Pooch grooming van"
           fill
           sizes="100vw"
           className="object-cover"
@@ -96,8 +77,7 @@ export default function BookPage() {
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">
-                Pick the path that fits — booking takes a couple of minutes. Not sure what your dog
-                needs? Send us a note below and we&apos;ll plan it together.
+                Request your first grooming visit online or call our team for help with scheduling.
               </p>
             </div>
           </div>
@@ -105,7 +85,7 @@ export default function BookPage() {
       </section>
 
       <section className="relative -mt-12 rounded-t-[3rem] bg-[var(--pp-cream)] px-5 py-16 sm:px-8 lg:-mt-14 lg:rounded-t-[4rem] lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-2xl gap-8">
           {bookingPaths.map(({ icon: PathIcon, title, body, actions }) => (
             <article
               key={title}
@@ -137,35 +117,9 @@ export default function BookPage() {
         </div>
       </section>
 
-      <section id="get-started" className="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--pp-main-deep)]">
-              Not Sure Where to Start?
-            </p>
-            <h2 className="mt-4 text-4xl leading-tight text-[var(--pp-ink)] sm:text-5xl">
-              Tell us about your dog.
-            </h2>
-            <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-              Share your dog&apos;s coat, temperament, and what you&apos;re looking for — we&apos;ll
-              get back to you with availability and a recommendation. Prefer to talk it through?
-            </p>
-            <a
-              href={SITE.phone.href}
-              className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-[var(--pp-main-deep)] transition hover:text-[var(--pp-night)]"
-            >
-              Call {SITE.phone.display}
-            </a>
-          </div>
-          <div className="border border-[rgba(50,73,83,0.12)] bg-white shadow-[0_14px_40px_rgba(50,73,83,0.08)]">
-            <LeadForm />
-          </div>
-        </div>
-      </section>
-
       <SiteFooter />
 
-      <StickyMobileCta ctaHref="#get-started" ctaLabel="Get Started" />
+      <StickyMobileCta ctaHref="/new-client/" ctaLabel="Get Started" />
     </main>
   );
 }

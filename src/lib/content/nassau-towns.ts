@@ -17,48 +17,8 @@ export const REGION_LABELS: Record<NassauSubRegion, string> = {
   "south-shore": "South Shore",
 };
 
-// ── Meta description templates (rotated via introVariant) ──────────
-const metaTemplates: Array<(town: string, distance?: string) => string> = [
-  (t, d) =>
-    `Planet Pooch offers mobile grooming, daycare, boarding & training for dogs in ${t}, NY.${d ? ` Just ${d} from our Franklin Square resort.` : ""} Book today!`,
-  (t, d) =>
-    `Professional dog grooming, daycare, boarding and training serving ${t}, NY.${d ? ` Only ${d} from Planet Pooch Pet Resort.` : ""} Schedule now.`,
-  (t, d) =>
-    `Looking for dog services in ${t}? Planet Pooch provides mobile grooming, daycare, boarding & training across Nassau County.${d ? ` ${d} from our resort.` : ""}`,
-  (t, d) =>
-    `${t}, NY dog owners trust Planet Pooch for mobile grooming, daycare, overnight boarding and training.${d ? ` We're just ${d} away.` : ""} Call or book online.`,
-  (t, d) =>
-    `From mobile grooming to overnight boarding, Planet Pooch serves ${t} dogs with love.${d ? ` Our Franklin Square resort is ${d} from ${t}.` : ""} Get started today.`,
-  (t, d) =>
-    `Dog grooming, daycare, boarding & training in ${t}, NY — trusted by Nassau County families since 2014.${d ? ` ${d} from our resort.` : ""} Book now.`,
-];
-
-// ── Intro paragraph templates (rotated via introVariant) ────────────
-export const introTemplates: Array<(town: string, distance?: string) => string> = [
-  (t, d) =>
-    `Planet Pooch is proud to serve dog owners in ${t}, NY with a full range of professional pet services. Whether your pup needs a spa-quality grooming session at your door, a fun-filled day of supervised play, overnight boarding, or compassionate training, we've got you covered.${d ? ` Our Franklin Square resort is just ${d} from ${t}.` : ""}`,
-  (t, d) =>
-    `Convenience meets quality for ${t} pet parents. Our mobile grooming van comes straight to your driveway, and our Franklin Square resort${d ? ` — just ${d} away —` : ""} offers daycare, boarding, and training in a safe, enriching environment. Every dog gets the attentive, personalized care they deserve.`,
-  (t, d) =>
-    `${t} families choose Planet Pooch because we treat every dog like family. From luxury mobile grooming to structured daycare, comfortable overnight boarding, and results-driven training, our services are designed for dogs who deserve the best.${d ? ` We're only ${d} from ${t}.` : ""}`,
-  (t, d) =>
-    `Your dog deserves exceptional care, and ${t} is well within our service area. Planet Pooch brings award-winning mobile grooming to your home and offers daycare, boarding, and training at our modern Franklin Square facility.${d ? ` Just a quick ${d} drive from ${t}.` : ""}`,
-  (t, d) =>
-    `Since 2014, Planet Pooch has been a trusted name for dog services across Nassau County — and ${t} is no exception. Our team of dedicated professionals provides mobile grooming, group daycare, cozy overnight boarding, and one-on-one training.${d ? ` Our resort is ${d} from ${t}.` : ""}`,
-  (t, d) =>
-    `Looking for reliable, high-quality dog care near ${t}? Planet Pooch offers everything from doorstep mobile grooming to full-day daycare, overnight boarding, and professional training.${d ? ` Our Franklin Square resort is just ${d} from your neighborhood.` : ""}`,
-];
-
 function slug(town: string): string {
   return `dog-services-${town.toLowerCase().replace(/\s+/g, "-")}-ny`;
-}
-
-function meta(town: string, variant: number, distance?: string): string {
-  return metaTemplates[variant % metaTemplates.length](town, distance);
-}
-
-function metaTitle(town: string): string {
-  return `Dog Services in ${town}, NY | Grooming, Daycare, Boarding & Training | Planet Pooch`;
 }
 
 // ── Town data ────────────────────────────────────────────────────────
@@ -159,8 +119,8 @@ function buildNassauTowns(): Record<string, NassauTownPage> {
       slug: s,
       town,
       subRegion,
-      metaTitle: metaTitle(town),
-      metaDescription: meta(town, introVariant, distance),
+      metaTitle: `Mobile Dog Grooming in ${town}, NY | Planet Pooch`,
+      metaDescription: `Book mobile dog grooming at your home in ${town}, NY. Explore full grooms, baths, and spa upgrades for your pet.`,
       introVariant,
       nearbyTowns: nearbyNames.map(slug),
       distanceFromResort: distance,

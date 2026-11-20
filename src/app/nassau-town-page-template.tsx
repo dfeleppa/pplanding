@@ -3,10 +3,7 @@ import { Libre_Baskerville, Manrope } from "next/font/google";
 import Link from "./booking-link";
 import {
   ArrowRight,
-  GraduationCap,
   HeartHandshake,
-  Home,
-  MapPin,
   PawPrint,
   Phone,
   Scissors,
@@ -14,7 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import type { NassauTownPage } from "../lib/content/nassau-towns";
-import { nassauTowns, introTemplates, REGION_LABELS } from "../lib/content/nassau-towns";
+import { nassauTowns, REGION_LABELS } from "../lib/content/nassau-towns";
 import { SITE } from "../lib/site";
 import { breadcrumbSchema, jsonLdAttrs, serviceSchema } from "../lib/schema";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -42,41 +39,18 @@ const SERVICES = [
     description:
       "Luxury one-on-one grooming brought to your driveway. Our fully equipped van means a calm, cage-free experience for your pup — no stressful salon trips.",
   },
-  {
-    title: "Daycare",
-    icon: PawPrint,
-    href: "/dog-daycare/",
-    description:
-      "Supervised group play and enrichment in a safe, nurturing environment. Your dog comes home happy, tired, and well-socialized.",
-  },
-  {
-    title: "Boarding",
-    icon: Home,
-    href: "/dog-boarding/",
-    description:
-      "Cozy overnight suites, personalized care, and daily enrichment. Comfort and care for your dog while you're away.",
-  },
-  {
-    title: "Training",
-    icon: GraduationCap,
-    href: "/dog-training/",
-    description:
-      "Compassionate, results-driven training led by our AKC Evaluator Trainer. Private sessions and group classes available.",
-  },
+
 ] as const;
 
 const HIGHLIGHTS = [
   { icon: HeartHandshake, label: "Loving, experienced staff" },
   { icon: ShieldCheck, label: "Safe, supervised environment" },
-  { icon: Sparkles, label: "Daily enrichment & activities" },
+  { icon: Sparkles, label: "Bath and coat care" },
   { icon: PawPrint, label: "Trusted since 2014" },
 ] as const;
 
 export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
-  const intro = introTemplates[page.introVariant % introTemplates.length](
-    page.town,
-    page.distanceFromResort,
-  );
+  const intro = page.metaDescription;
 
   const nearby = page.nearbyTowns
     .map((s) => nassauTowns[s])
@@ -84,7 +58,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
 
   const breadcrumbs = [
     { name: "Home", item: `${SITE.url}/` },
-    { name: `Dog Services in ${page.town}, NY`, item: `${SITE.url}/${page.slug}/` },
+    { name: `Mobile Dog Grooming in ${page.town}, NY`, item: `${SITE.url}/${page.slug}/` },
   ];
 
   const serviceSchemas = SERVICES.map((svc) =>
@@ -118,13 +92,13 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
               {REGION_LABELS[page.subRegion]} · Nassau County
               </p>
               <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">
-              Dog Services in{" "}
+              Mobile Dog Grooming in{" "}
               <span className="italic text-[var(--pp-mint)]">{page.town}</span>, NY
               </h1>
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">
-              Mobile grooming, daycare, boarding &amp; training — serving {page.town} and surrounding Nassau County communities.
+              Doorstep grooming for pets in {page.town} and surrounding Nassau County communities.
               </p>
               <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
               <Link href="/book/" className="pp-cta">
@@ -147,7 +121,7 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
           <Breadcrumbs
             items={[
               { name: "Home", href: "/" },
-              { name: `Dog Services in ${page.town}, NY` },
+              { name: `Mobile Dog Grooming in ${page.town}, NY` },
             ]}
             className="mb-8 justify-center sm:justify-start"
           />
@@ -168,11 +142,11 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
               Our Services
             </p>
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl">
-              Everything your dog needs — all in one place
+              One-on-one care at your door
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 max-w-xl">
             {SERVICES.map((svc) => {
               const Icon = svc.icon;
               return (
@@ -233,26 +207,6 @@ export function NassauTownPageTemplate({ page }: { page: NassauTownPage }) {
           </div>
         </div>
       </section>
-
-      {/* ── Resort Proximity ──────────────────────── */}
-      {page.distanceFromResort && (
-        <section className="bg-[var(--pp-night)] px-5 py-14 text-white sm:px-8 lg:px-10 lg:py-16">
-          <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--pp-mint)] text-[var(--pp-main-deep)]">
-              <MapPin className="h-7 w-7 stroke-[1.6]" />
-            </div>
-            <div>
-              <h2 className="text-2xl leading-tight sm:text-3xl">
-                {page.town} is just {page.distanceFromResort} from our Franklin Square resort
-              </h2>
-              <p className="mt-3 text-base leading-7 text-white/75">
-                {SITE.address.street}, {SITE.address.locality}, {SITE.address.region}{" "}
-                {SITE.address.postalCode}
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ── Nearby Areas ──────────────────────────── */}
       {nearby.length > 0 && (

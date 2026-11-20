@@ -1,3 +1,4 @@
+import { staysOnGroomingSite } from "../lib/resort-routes";
 import type { MetadataRoute } from "next";
 import { SITE } from "../lib/site";
 import { mainServicePages } from "../lib/content/main-services";
@@ -47,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage
   entries.push(
     make("/", ROOT_PRIORITY, "weekly", {
-      images: ["/hero-dog.jpg", "/our-resort-exterior.jpeg"],
+      images: ["/hero-dog.jpg", "/van1.jpg"],
     }),
   );
 
@@ -102,5 +103,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
   }
 
-  return entries;
+  return entries.filter(({ url }) => staysOnGroomingSite(new URL(url).pathname.slice(1, -1)));
 }

@@ -3,7 +3,7 @@ import { SITE } from "../lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: SITE.legalName,
+    name: "Planet Pooch Mobile Grooming",
     short_name: SITE.name,
     description: SITE.defaults.homeDescription,
     start_url: "/",

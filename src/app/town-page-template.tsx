@@ -227,11 +227,6 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">{copy.hero(page.town)}</p>
-              {page.distanceFromResort ? (
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--pp-mint)]/90">
-                  {page.distanceFromResort}
-                </p>
-              ) : null}
               <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
                 <Link href="/book/" className="pp-cta">
                   Book Now

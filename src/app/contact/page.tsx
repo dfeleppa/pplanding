@@ -3,7 +3,7 @@ import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import { ADDRESS_LINES, SITE } from "../../lib/site";
+import { SITE } from "../../lib/site";
 import { getTownsByRegion, REGION_LABELS } from "../../lib/content/nassau-towns";
 import { SiteHeader } from "../site-header";
 import { SiteFooter } from "../site-footer";
@@ -23,7 +23,7 @@ const bodySans = Manrope({
 
 export const metadata: Metadata = {
   title: { absolute: "Contact Planet Pooch | Phone, Email & Location" },
-  description: `Book mobile grooming, daycare, boarding, training, or enrichment with ${SITE.legalName} in ${SITE.address.locality}, ${SITE.address.region}. Call ${SITE.phone.display} or email ${SITE.email}.`,
+  description: `Book mobile grooming with ${SITE.name} in ${SITE.address.locality}, ${SITE.address.region}. Call ${SITE.phone.display} or email ${SITE.email}.`,
   alternates: { canonical: "/contact/" },
 };
 
@@ -42,7 +42,7 @@ function AreasWeServe() {
             Serving every corner of Nassau County
           </h2>
           <p className="mt-5 text-base leading-8 text-[rgba(47,42,39,0.72)]">
-            From mobile grooming at your door to daycare, boarding, and training at our Franklin Square resort — we proudly serve dogs across Nassau County.
+            Our mobile grooming vans visit homes across Nassau County.
           </p>
         </div>
 
@@ -80,8 +80,8 @@ export default function ContactPage() {
     >
       <section className="pp-page-hero relative  overflow-hidden bg-[var(--pp-night)] text-white">
         <Image
-          src="/our-resort-exterior.jpeg"
-          alt="Planet Pooch Pet Resort exterior"
+          src="/van1.jpg"
+          alt="Planet Pooch grooming van"
           fill
           sizes="100vw"
           className="object-cover"
@@ -100,7 +100,7 @@ export default function ContactPage() {
             </div>
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">
-                Reach us by phone, email, or stop by the resort. We&apos;ll get back to you to set up your dog&apos;s
+                Call or email our mobile grooming team. We&apos;ll get back to you to set up your dog&apos;s
                 first visit.
               </p>
             </div>
@@ -143,12 +143,7 @@ export default function ContactPage() {
 
           <article className="border border-[rgba(50,73,83,0.12)] bg-white/55 p-7 shadow-[0_14px_40px_rgba(50,73,83,0.08)]">
             <MapPin className="h-5 w-5 text-[var(--pp-main)]" />
-            <h2 className="mt-5 text-2xl leading-tight">Visit the resort</h2>
-            <p className="mt-3 text-sm leading-7 text-[rgba(47,42,39,0.78)]">
-              {ADDRESS_LINES[0]}
-              <br />
-              {ADDRESS_LINES[1]}
-            </p>
+            <h2 className="mt-5 text-2xl leading-tight">Mobile service area</h2>
             <p className="mt-4 text-sm leading-7 text-[rgba(47,42,39,0.78)]">
               Mobile grooming services available across {SITE.serviceArea.primary}, including {SITE.serviceArea.notable.join(", ")}.
             </p>
