@@ -32,44 +32,37 @@ export default function HomePage() {
     >
       <LegacyResortAnchor />
       <section id="home-hero" className="pp-page-hero relative overflow-hidden bg-[var(--pp-night)] text-white">
-        <Image
-          src="/mobile-grooming-van-hero.webp"
-          alt="A man sitting on the roof of a Planet Pooch mobile grooming van"
-          fill
-          sizes="100vw"
-          className="object-cover object-[40%_top] sm:object-top"
-          preload
-        />
-        {/* Shared gradient keeps white hero copy readable over the photo. */}
-        <div className="pp-hero-image-overlay absolute inset-0" />
-        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader ctaHref="/new-client/" />
-
-          <div
-            id="top"
-            className="pp-hero-content pt-12 pb-40 sm:pt-16 lg:pt-24 lg:pb-40"
-          >
-            <div>
-              <div>
-                <h1 id="page-content" tabIndex={-1} className="pp-hero-title max-w-xl text-white">
-                  Mobile pet grooming{" "}
-                  <span className="text-[var(--pp-mint)]">at your door.</span>
-                </h1>
-                <p
-                  className="pp-hero-tagline"
-                >
-                  One-on-one grooming for dogs and cats across Nassau County and the Hamptons.
-                </p>
+        </div>
+        <div className="grid lg:isolate lg:items-center">
+          <figure className="relative aspect-[3/2] sm:aspect-[2/1] lg:col-start-1 lg:row-start-1 lg:h-full">
+            <Image
+              src="/grooming-van-estate.webp"
+              alt="The mint and teal Planet Pooch grooming van parked on a tree-lined residential street."
+              fill
+              sizes="100vw"
+              className="object-cover object-[82%_center] lg:object-center"
+              preload
+            />
+            <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(15,25,29,0.96),rgba(15,25,29,0.84)_24%,rgba(15,25,29,0.25)_39%,transparent_54%)] lg:block" />
+          </figure>
+          <div id="top" className="relative mx-auto w-full max-w-7xl px-5 pt-7 pb-24 sm:px-8 lg:col-start-1 lg:row-start-1 lg:px-10 lg:py-12">
+            <div className="lg:w-[32vw] lg:max-w-md">
+              <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">
+                Mobile pet grooming{" "}
+                <span className="text-[var(--pp-mint)]">at your door.</span>
+              </h1>
+              <p className="pp-hero-tagline">
+                One-on-one grooming for dogs and cats across Nassau County and the Hamptons.
+              </p>
+              <div className="pp-home-hero-action-panel mt-7">
+                <BookNowModal ctaHref="/new-client/" className="pp-cta" label="Get Started" icon="paw" />
               </div>
-
-              <div className="mt-8">
-                <div className="pp-hero-action-panel pp-home-hero-action-panel flex flex-col items-start gap-4">
-                  <BookNowModal ctaHref="/new-client/" className="pp-cta" label="Get Started" icon="paw" />
-                </div>
-
+              <div className="relative mt-5 flex [&>a]:static [&>a]:translate-x-0">
+                <HeroScrollLink href="#services" label="Why mobile grooming?" />
               </div>
             </div>
-            <HeroScrollLink href="#services" label="Why mobile grooming?" />
           </div>
         </div>
       </section>
