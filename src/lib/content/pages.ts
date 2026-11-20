@@ -32,6 +32,7 @@ export const contentPages = {
       },
       {
         type: "pricing",
+        id: "pricing",
         title: "Hamptons Full Groom with Haircut",
         columns: ["Weight", "Price"],
         rows: [

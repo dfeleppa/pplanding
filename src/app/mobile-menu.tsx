@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowUpRight, Phone, PawPrint, Scissors } from "lucide-react";
-import { desktopNavItems } from "../lib/nav";
+import { Menu, X, ArrowUpRight, ChevronDown, Phone, PawPrint, Scissors } from "lucide-react";
+import { desktopNavItems, pricingMenu } from "../lib/nav";
 import { SITE } from "../lib/site";
 import { BookNowModal } from "./book-now-modal";
 
@@ -53,6 +53,19 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
                 <span className="flex-1"><span className="block font-display text-xl">Mobile Grooming</span></span>
                 <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden />
               </Link>
+              <details className="group mt-3 rounded-2xl border border-white/20">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between px-4 font-display text-xl">
+                  {pricingMenu.label}
+                  <ChevronDown aria-hidden className="h-4 w-4 group-open:rotate-180" />
+                </summary>
+                <div className="border-t border-white/10 px-4 py-2">
+                  {pricingMenu.items.map(item => (
+                    <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center text-sm text-white/85">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </details>
               <p className="mb-2 mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Explore Planet Pooch</p>
               <div className="flex flex-col">{explore && "items" in explore && explore.items.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center border-b border-white/10 text-sm text-white/85">{item.label}</Link>)}</div>
             </nav>

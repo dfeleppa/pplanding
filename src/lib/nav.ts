@@ -4,13 +4,22 @@ export type NavItem =
   | { label: string; href: string }
   | { label: string; items: ReadonlyArray<{ label: string; href: string }> };
 
+export const pricingMenu = {
+  label: "Pricing",
+  items: [
+    { label: "Nassau Pricing", href: "/nassau-pricing/" },
+    { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/#pricing" },
+    { label: "Packages", href: "/grooming-packages/" },
+  ],
+} as const;
+
 export const desktopNavItems: ReadonlyArray<NavItem> = [
   { label: "Mobile Grooming", href: "/mobile-grooming/" },
+  pricingMenu,
   {
     label: "Explore",
     items: [
       { label: "About Us", href: "/#about" },
-      { label: "Grooming Packages", href: "/grooming-packages/" },
       { label: "Blog", href: "/blog/" },
     ],
   },
