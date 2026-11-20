@@ -60,7 +60,7 @@ export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
         )}
       </nav>
       <div className="hidden shrink-0 items-center gap-2 whitespace-nowrap lg:flex">
-        <BookNowModal ctaHref={ctaHref} className="pp-cta pp-cta-sm" />
+        <BookNowModal ctaHref={ctaHref} className="pp-book-header" icon="paw" />
       </div>
       <MobileMenu ctaHref={ctaHref} />
     </header>

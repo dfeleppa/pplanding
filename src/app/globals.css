@@ -207,6 +207,33 @@ a {
   width: 22px;
 }
 
+.pp-book-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  min-height: 2.875rem;
+  padding: 0.4rem 0.55rem 0.4rem 1.2rem;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 999px;
+  background: var(--pp-mint);
+  color: var(--pp-night);
+  font-size: 0.9375rem;
+  font-weight: 750;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 18%);
+  cursor: pointer;
+}
+.pp-book-header > svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0.32rem;
+  border-radius: 50%;
+  background: var(--pp-night);
+  color: white;
+}
+.pp-book-header:hover { background: #eefbf3; }
+.pp-book-header:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
   .pp-cta,
