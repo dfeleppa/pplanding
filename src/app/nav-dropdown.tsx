@@ -56,14 +56,14 @@ export function NavDropdown({ label, items }: NavDropdownProps) {
         <div
           id={panelId}
           hidden={!open}
-          className="absolute left-0 top-full z-50 mt-2 min-w-[220px] border border-white/15 bg-[var(--pp-night)] py-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+          className="absolute left-0 top-full z-50 mt-2 min-w-[220px] bg-transparent py-2"
         >
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78 transition hover:bg-white/5 hover:text-white"
+              className="block px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white text-shadow-[0_1px_3px_rgba(0,0,0,0.9)] underline-offset-4 hover:underline focus-visible:underline"
             >
               {item.label}
             </Link>
