@@ -1,5 +1,5 @@
 import { SITE } from "../site";
-import { groomingAddons, groomingPackages } from "./grooming-packages";
+import { fullGroomFeatures, groomingAddons, groomingPackages } from "./grooming-packages";
 import type { ContentPage } from "./types";
 
 /**
@@ -164,6 +164,11 @@ export const contentPages = {
         eyebrow: "Pricing",
         title: "Full Groom Pricing",
         intro: "Shihtsu, Yorkie, Doodle, Poodle, and similar breeds. The Hamptons uses a separate rate card.",
+        inclusions: {
+          title: "Included with every full groom",
+          items: fullGroomFeatures,
+          note: "The bath includes two shampoos. Sanitary care is available upon request.",
+        },
         columns: ["Weight", "Price"],
         rows: [
           ["Up to 15 lbs", "$150–$165"],

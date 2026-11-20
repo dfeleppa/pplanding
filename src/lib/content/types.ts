@@ -27,6 +27,7 @@ export type ContentSection =
     }
   | {
       type: "pricing";
+      inclusions?: { title: string; items: string[]; note?: string };
       id?: string;
       title?: string;
       eyebrow?: string;

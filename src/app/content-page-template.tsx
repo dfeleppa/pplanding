@@ -217,6 +217,20 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
             <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
+            {section.inclusions && (
+              <div className="mb-8 border-l-4 border-[var(--pp-mint-deep)] pl-5">
+                <h3 className="text-xl text-[var(--pp-ink)]">{section.inclusions.title}</h3>
+                <ul className="mt-3 grid max-w-4xl gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
+                  {section.inclusions.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <Check className="mt-0.5 size-4 shrink-0 text-[var(--pp-main-deep)]" aria-hidden />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                {section.inclusions.note && <p className="mt-3 text-sm">{section.inclusions.note}</p>}
+              </div>
+            )}
             <div className="overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
               <table className="w-full text-sm">
                 <caption className="sr-only">{section.title ?? "Service pricing"}</caption>

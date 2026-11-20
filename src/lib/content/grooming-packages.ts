@@ -1,5 +1,16 @@
 import type { ContentSection } from "./types";
 
+export const fullGroomFeatures = [
+  "Nail cut and grind",
+  "Ears cleaned (and plucked upon request)",
+  "Bath, shampoo, and conditioner",
+  "Anal glands expressed upon request",
+  "Hand blow dry",
+  "Fluffing and brushing",
+  "Haircut",
+  "Signature bow and bandana",
+];
+
 export const groomingPackages = {
         type: "tieredPricing",
         id: "spa-upgrades",
@@ -11,16 +22,7 @@ export const groomingPackages = {
           {
             name: "Basic",
             price: "Full Groom",
-            features: [
-              "Nail cut and grind",
-              "Ears cleaned (and plucked upon request)",
-              "Bath, shampoo, and conditioner",
-              "Anal glands expressed upon request",
-              "Hand blow dry",
-              "Fluffing and brushing",
-              "Haircut",
-              "Signature bow and bandana",
-            ],
+            features: fullGroomFeatures,
           },
           {
             name: "Premium",
