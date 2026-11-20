@@ -39,8 +39,8 @@ const bookingPaths = [
         external: true,
       },
       {
-        label: "Call/Text (202) 318-6526",
-        href: "tel:+12023186526",
+        label: `Call/Text ${SITE.phone.display}`,
+        href: SITE.phone.href,
         primary: false,
         external: false,
       },

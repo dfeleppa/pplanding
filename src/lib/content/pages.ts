@@ -1,3 +1,4 @@
+import { SITE } from "../site";
 import { groomingAddons, groomingPackages } from "./grooming-packages";
 import type { ContentPage } from "./types";
 
@@ -76,7 +77,7 @@ export const contentPages = {
         type: "callout",
         title: "Book your Hamptons appointment",
         body: "Call us to confirm coverage for your specific Hamptons address and schedule.",
-        cta: { label: "Call (202) 318-6526", href: "tel:+12023186526" },
+        cta: { label: `Call ${SITE.phone.display}`, href: SITE.phone.href },
       },
     ],
   },
@@ -298,7 +299,7 @@ export const contentPages = {
       {
         type: "callout",
         title: "Need us sooner?",
-        body: "Call us directly at (202) 318-6526 or email planetpoochpetservices@gmail.com.",
+        body: `Call us directly at ${SITE.phone.display} or email ${SITE.email}.`,
         cta: { label: "Back to home", href: "/" },
       },
     ],
