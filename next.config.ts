@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [{ source: "/", destination: "/choose.html" }];
+  },
   async redirects() {
     return [
       ...Object.entries(resortRoutes).map(([slug, path]) => ({
@@ -38,7 +41,7 @@ const nextConfig: NextConfig = {
       // ===== About Us consolidated to home page =====
       // The about content (origin story + team callout) now lives on the
       // home page; the standalone /about-us/ page was removed.
-      { source: "/about-us/", destination: "/", permanent: true },
+      { source: "/about-us/", destination: "/grooming/#about", permanent: true },
 
       // ===== FAQs page removed =====
       { source: "/faqs/", destination: "/", permanent: true },

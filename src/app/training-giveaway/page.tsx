@@ -72,7 +72,7 @@ export default function TrainingGiveawayPage() {
           />
           <div className="pp-hero-image-overlay absolute inset-0 -z-10" />
           <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/15 pb-5">
-            <Link href="/" aria-label="Planet Pooch home">
+            <Link href="/grooming/" aria-label="Planet Pooch home">
               <Image src={planetPoochLogo} alt="Planet Pooch Pet Resort" sizes="(min-width: 640px) 220px, 180px" className="h-auto w-[180px] brightness-0 invert sm:w-[220px]" />
             </Link>
             <a className="hidden min-h-11 items-center text-xs font-semibold uppercase tracking-[0.18em] text-white/80 underline-offset-4 hover:text-white hover:underline sm:flex" href="#official-rules">

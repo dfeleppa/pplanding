@@ -10,7 +10,7 @@ export default function GlobalError() {
         <h1 id="page-content" tabIndex={-1}>We couldn’t load this page</h1>
         <p>Please try loading the page again, or return to our home page.</p>
         <button type="button" onClick={() => window.location.reload()} style={{ minHeight: 44, padding: "0.5rem 1rem", font: "inherit", cursor: "pointer" }}>Try again</button>
-        <p><a href="/" style={{ color: "#324953", display: "inline-block", paddingBlock: "0.5rem" }}>Return to Planet Pooch home</a></p>
+        <p><a href="/grooming/" style={{ color: "#324953", display: "inline-block", paddingBlock: "0.5rem" }}>Return to Planet Pooch home</a></p>
       </main>
     </body>
   </html>;

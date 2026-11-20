@@ -23,7 +23,7 @@ export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
   return (
     <header className="flex items-center justify-between border-b border-white/15 pb-5 lg:pb-6">
       <div className="mr-2 flex min-w-0 items-center gap-2 sm:mr-4 sm:gap-4">
-        <Link className="min-w-0" href="/" aria-label="Planet Pooch — Home">
+        <Link className="min-w-0" href="/grooming/" aria-label="Planet Pooch — Home">
           <Image
             src={planetPoochLogo}
             alt="Planet Pooch"

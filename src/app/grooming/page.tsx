@@ -1,18 +1,18 @@
-import { HeroBookingButton } from "./hero-booking-button";
-import { HeroBackdrop } from "./hero-backdrop";
-import { LegacyResortAnchor } from "./legacy-resort-anchor";
-import { ReviewCarousel } from "./review-carousel";
-import { googleReviews } from "../lib/google-reviews";
-import { SITE } from "../lib/site";
-import { HeroScrollLink } from "./hero-scroll-link";
+import { HeroBookingButton } from "../hero-booking-button";
+import { HeroBackdrop } from "../hero-backdrop";
+import { LegacyResortAnchor } from "../legacy-resort-anchor";
+import { ReviewCarousel } from "../review-carousel";
+import { googleReviews } from "../../lib/google-reviews";
+import { SITE } from "../../lib/site";
+import { HeroScrollLink } from "../hero-scroll-link";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
-import { BenefitSplit } from "./benefit-split";
-import { mobileGroomingBenefits } from "../lib/content/mobile-grooming-benefits";
+import { BenefitSplit } from "../benefit-split";
+import { mobileGroomingBenefits } from "../../lib/content/mobile-grooming-benefits";
 import { ArrowUpRight, Star } from "lucide-react";
-import { SiteHeader } from "./site-header";
-import { SiteFooter } from "./site-footer";
-import { StickyMobileCta } from "./sticky-mobile-cta";
+import { SiteHeader } from "../site-header";
+import { SiteFooter } from "../site-footer";
+import { StickyMobileCta } from "../sticky-mobile-cta";
 const displaySerif = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-display",
@@ -24,6 +24,8 @@ const bodySans = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
+
+export const metadata = { alternates: { canonical: '/grooming/' } };
 
 export default function HomePage() {
   return (

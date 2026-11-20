@@ -16,7 +16,7 @@ export const pricingMenu = {
 export const groomingLink = { label: "Why Mobile Grooming?", href: "/mobile-grooming/" };
 
 export const aboutAndBlogLinks = [
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/grooming/#about" },
   { label: "Blog", href: "/blog/" },
 ] as const;
 

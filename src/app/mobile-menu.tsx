@@ -44,7 +44,7 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
         <dialog ref={panel} onCancel={() => setOpen(false)} onClose={() => setOpen(false)} className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto border-0 bg-[var(--pp-night)] p-0 text-white lg:hidden" aria-label="Navigation menu">
           <div className="mx-auto flex min-h-full max-w-xl flex-col px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
             <div className="flex items-center justify-between border-b border-white/15 py-5">
-              <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-lg font-semibold"><PawPrint className="h-6 w-6 text-[var(--pp-mint)]" aria-hidden />Planet Pooch</Link>
+              <Link href="/grooming/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-lg font-semibold"><PawPrint className="h-6 w-6 text-[var(--pp-mint)]" aria-hidden />Planet Pooch</Link>
               <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 hover:bg-white/10"><X className="h-5 w-5" /></button>
             </div>
             <nav aria-label="Mobile navigation" className="grid gap-2 py-5">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AccessibilityPage() {
   return <>
     <main id="main" tabIndex={-1} className="mx-auto w-full max-w-3xl px-6 py-12 text-[var(--pp-ink)]">
-      <Link href="/" className="inline-flex min-h-11 items-center underline!">Planet Pooch home</Link>
+      <Link href="/grooming/" className="inline-flex min-h-11 items-center underline!">Planet Pooch home</Link>
       <h1 id="page-content" tabIndex={-1} className="mt-8 text-4xl">Accessibility and help</h1>
       <p className="mt-6 text-lg leading-8">We are working to make our public website easier for people with disabilities to use. Our accessibility review and improvements are ongoing. We have not yet verified full conformance with the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA.</p>
       <h2 className="mt-10 text-2xl">Get help or report a barrier</h2>

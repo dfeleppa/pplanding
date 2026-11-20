@@ -29,12 +29,14 @@ export function SiteFooter() {
     <footer id="contact" className="bg-[var(--pp-night)] px-5 pb-8 pt-14 text-white sm:px-8 lg:px-10 lg:pb-10 lg:pt-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.1fr]">
         <div>
+          <Link href="/grooming/" aria-label="Planet Pooch grooming home" className="inline-block">
           <Image
             src={planetPoochLogo}
             alt="Planet Pooch"
             sizes="190px"
             className="h-auto w-[190px] brightness-0 invert"
           />
+          </Link>
           <p
             className="mt-6 max-w-xs text-sm italic leading-relaxed text-white/72"
             style={{ fontFamily: "var(--font-display), serif" }}

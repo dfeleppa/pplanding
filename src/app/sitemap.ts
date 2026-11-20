@@ -52,6 +52,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  entries.push(make('/grooming', ROOT_PRIORITY, 'weekly'));
+
   // Contact + booking
   entries.push(make("/contact", SERVICE_PRIORITY, "monthly"));
   entries.push(make("/accessibility", SUPPORT_PRIORITY, "monthly"));
