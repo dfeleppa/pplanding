@@ -35,20 +35,20 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader ctaHref="/new-client/" />
         </div>
-        <div className="grid lg:isolate lg:items-center">
-          <figure className="relative aspect-[3/2] sm:aspect-[2/1] lg:col-start-1 lg:row-start-1 lg:h-full">
+        <div className="grid grid-cols-1 xl:isolate xl:items-center">
+          <figure className="relative aspect-[3/2] sm:aspect-[2/1] xl:col-start-1 xl:row-start-1 w-full">
             <Image
               src="/grooming-van-estate.webp"
               alt="The mint and teal Planet Pooch grooming van parked on a tree-lined residential street."
               fill
               sizes="100vw"
-              className="object-cover object-[82%_center] lg:object-center"
+              className="object-cover object-[82%_center] xl:object-center"
               preload
             />
-            <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(15,25,29,0.96),rgba(15,25,29,0.84)_24%,rgba(15,25,29,0.25)_39%,transparent_54%)] lg:block" />
+            <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(15,25,29,0.96),rgba(15,25,29,0.84)_24%,rgba(15,25,29,0.25)_39%,transparent_54%)] xl:block" />
           </figure>
-          <div id="top" className="relative mx-auto w-full max-w-7xl px-5 pt-7 pb-24 sm:px-8 lg:col-start-1 lg:row-start-1 lg:px-10 lg:py-12">
-            <div className="lg:w-[32vw] lg:max-w-md">
+          <div id="top" className="relative mx-auto w-full max-w-7xl px-5 pt-7 pb-24 sm:px-8 xl:col-start-1 xl:row-start-1 xl:px-10 xl:py-12">
+            <div className="xl:w-[32vw] xl:max-w-md">
               <h1 id="page-content" tabIndex={-1} className="pp-hero-title text-white">
                 Mobile pet grooming{" "}
                 <span className="text-[var(--pp-mint)]">at your door.</span>
