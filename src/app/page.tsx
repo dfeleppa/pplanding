@@ -33,7 +33,7 @@ export default function HomePage() {
       <LegacyResortAnchor />
       <section id="home-hero" className="pp-page-hero relative overflow-hidden bg-[var(--pp-night)] text-white">
         <Image
-          src="/grooming-van-estate.webp"
+          src="/grooming-van-colonial.webp"
           alt="The mint and teal Planet Pooch grooming van parked on a tree-lined residential street."
           fill
           sizes="100vw"
@@ -64,7 +64,7 @@ export default function HomePage() {
 
               <div className="mt-8">
                 <div className="pp-hero-action-panel pp-home-hero-action-panel flex flex-col items-start gap-4">
-                  <BookNowModal ctaHref="/new-client/" className="pp-cta" label="Get Started" icon="paw" />
+                  <BookNowModal ctaHref="/new-client/" className="pp-book-header pp-home-book" label="Get Started" icon="paw" />
                 </div>
 
               </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" aria-labelledby="reviews-heading" className="bg-[#21363b] text-white px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
+      <section id="testimonials" aria-labelledby="reviews-heading" className="bg-black text-white px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>

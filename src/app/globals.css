@@ -237,6 +237,12 @@ a {
   color: white;
 }
 .pp-book-header:hover { background: #eefbf3; }
+.pp-home-book {
+  min-height: 3.25rem;
+  padding-inline: 1.5rem 0.65rem;
+  gap: 1.25rem;
+  font-size: 1rem;
+}
 .pp-book-header:focus-visible { outline: 2px solid white; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
