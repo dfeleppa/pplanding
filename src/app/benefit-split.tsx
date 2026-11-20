@@ -38,7 +38,7 @@ export function BenefitSplit({ section, className }: BenefitSplitProps) {
                   alt={section.imageAlt ?? "Planet Pooch mobile grooming"}
                   fill
                   sizes="(min-width: 1024px) 38vw, 100vw"
-                  className="object-cover"
+                  className="object-cover object-[center_15%]"
                 />
               </div>
             ) : null}

@@ -33,7 +33,7 @@ export const mainServicePages = {
       ],
     },
     sections: [
-      mobileGroomingBenefits,
+      { ...mobileGroomingBenefits, image: "/about-dog-bath.webp", imageAlt: "A dog with shampoo bubbles on its head during a bath" },
       {
         type: "serviceInclusions",
         id: "full-groom",

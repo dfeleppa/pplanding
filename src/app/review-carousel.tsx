@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Pause, Play, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import type { googleReviews } from "../lib/google-reviews";
 
 type Review = (typeof googleReviews)[number];
@@ -60,7 +60,7 @@ export function ReviewCarousel({ reviews }: { reviews: readonly Review[] }) {
   }
 
   return (
-    <div className="mt-10" role="region" aria-roledescription="carousel" aria-label="Five-star Google reviews">
+    <div className="mt-10" role="region" aria-roledescription="carousel" aria-label="Grooming reviews on Google">
       <div className="review-layout">
         <button type="button" onClick={() => move(-1)} aria-label="Scroll reviews left" className="review-control review-side"><ChevronLeft aria-hidden size={26} /></button>
       <div ref={viewport} onScroll={wrap} onMouseEnter={() => { hovered.current = true; }} onMouseLeave={() => { hovered.current = false; }} onFocusCapture={() => { focused.current = true; }} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) focused.current = false; }} onPointerDown={() => pause(true)} onWheel={() => pause(true)} onKeyDown={event => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); move(event.key === "ArrowLeft" ? -1 : 1); } }} tabIndex={0} aria-label="Reviews. Use the arrow keys or swipe to scroll." className="review-viewport flex overflow-x-auto focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
@@ -69,7 +69,7 @@ export function ReviewCarousel({ reviews }: { reviews: readonly Review[] }) {
             {reviews.map(review => (
               <article
                 key={review.name}
-                className="review-card flex shrink-0 flex-col gap-4 bg-white/10 p-6 sm:p-7"
+                className="review-card flex shrink-0 flex-col gap-4 rounded-2xl border border-white/15 bg-[#304950] p-6 sm:p-7"
               >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -98,13 +98,9 @@ export function ReviewCarousel({ reviews }: { reviews: readonly Review[] }) {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]" />
-                  ))}
-                </div>
 
-                <p className="text-sm leading-7 text-white/78">{review.body}</p>
+
+                <p className="text-xl leading-relaxed text-white" style={{fontFamily: "var(--font-display), serif"}}>“{review.body}”</p>
               </article>
             ))}
           </div>
