@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowUpRight, ChevronDown, Phone, PawPrint, Scissors } from "lucide-react";
-import { aboutAndBlogLinks, groomingLink, pricingMenu } from "../lib/nav";
+import { Menu, X, ChevronRight, ChevronDown, Phone, PawPrint } from "lucide-react";
+import { desktopNavItems } from "../lib/nav";
 import { SITE } from "../lib/site";
 import { BookNowModal } from "./book-now-modal";
+
+const menuRow = "flex min-h-12 w-full items-center justify-between gap-3 rounded-xl border border-white/30 px-4 py-2 text-left text-base font-semibold text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
 export function MobileMenu({ ctaHref }: { ctaHref: string }) {
   const [open, setOpen] = useState(false);
@@ -45,40 +47,37 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
               <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-lg font-semibold"><PawPrint className="h-6 w-6 text-[var(--pp-mint)]" aria-hidden />Planet Pooch</Link>
               <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 hover:bg-white/10"><X className="h-5 w-5" /></button>
             </div>
-            <nav aria-label="Mobile navigation" className="py-7">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Find your care</p>
-              <Link href={groomingLink.href} onClick={() => setOpen(false)} className="flex min-h-16 items-center gap-3 rounded-2xl bg-[var(--pp-mint)] px-4 py-3 text-[var(--pp-night)]">
-                <Scissors className="h-6 w-6 shrink-0" aria-hidden />
-                <span className="flex-1"><span className="block font-display text-xl">{groomingLink.label}</span></span>
-                <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden />
-              </Link>
-              <details className="group mt-3 rounded-2xl border border-white/20">
-                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between px-4 font-display text-xl">
-                  {pricingMenu.label}
-                  <ChevronDown aria-hidden className="h-4 w-4 group-open:rotate-180" />
-                </summary>
-                <div className="border-t border-white/10 px-4 py-2">
-                  {pricingMenu.items.map(item => (
-                    <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center text-sm text-white/85">
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </details>
-              <div className="mt-4 flex flex-col">
-                {aboutAndBlogLinks.map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center border-b border-white/10 text-sm text-white/85">
+            <nav aria-label="Mobile navigation" className="grid gap-2 py-5">
+              {desktopNavItems.map(item => (
+                "href" in item ? (
+                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={menuRow}>
                     {item.label}
+                    <ChevronRight className="size-4" aria-hidden />
                   </Link>
-                ))}
-              </div>
+                ) : (
+                  <details key={item.label} className="group">
+                    <summary className={`${menuRow} cursor-pointer list-none [&::-webkit-details-marker]:hidden`}>
+                      {item.label}
+                      <ChevronDown className="size-4 group-open:rotate-180" aria-hidden />
+                    </summary>
+                    <div className="mt-2 grid gap-2 border-l border-white/20 pl-3">
+                      {item.items.map(link => (
+                        <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className={menuRow}>
+                          {link.label}
+                          <ChevronRight className="size-4" aria-hidden />
+                        </Link>
+                      ))}
+                    </div>
+                  </details>
+                )
+              ))}
             </nav>
-            <div className="mt-auto border-t border-white/15 pt-5">
-              <div className="grid grid-cols-2 gap-3">
-                <Link href="/contact/" onClick={() => setOpen(false)} className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 text-sm font-semibold">Contact us</Link>
-                <BookNowModal ctaHref={ctaHref} className="pp-cta min-h-12 justify-center rounded-full px-3! gap-2! tracking-normal! whitespace-nowrap" icon="paw" />
-              </div>
-              <a href={SITE.phone.href} data-track="phone-click" className="mt-3 flex min-h-11 items-center justify-center gap-2 text-sm text-white/75"><Phone className="h-4 w-4" aria-hidden />{SITE.phone.display}</a>
+            <div className="mt-auto grid gap-2 border-t border-white/15 pt-4">
+              <BookNowModal ctaHref={ctaHref} className={menuRow} icon="paw" />
+              <a href={SITE.phone.href} data-track="phone-click" className={menuRow}>
+                {SITE.phone.display}
+                <Phone className="size-4" aria-hidden />
+              </a>
             </div>
           </div>
         </dialog>
