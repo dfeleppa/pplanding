@@ -32,12 +32,11 @@ export default function HomePage() {
       <LegacyResortAnchor />
       <section id="home-hero" className="pp-page-hero relative overflow-hidden bg-[var(--pp-night)] text-white">
         <Image
-          src="/hero-dog.jpg"
-          alt="A curly-coated dog resting its chin on a sofa beside a window"
+          src="/mobile-grooming-van-hero.webp"
+          alt="A man sitting on the roof of a Planet Pooch mobile grooming van"
           fill
           sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: "62% center" }}
+          className="object-cover object-[40%_top] sm:object-top"
           preload
         />
         {/* Shared gradient keeps white hero copy readable over the photo. */}
