@@ -37,7 +37,7 @@ export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
       </div>
       <nav
         aria-label="Primary"
-        className="ml-auto mr-8 hidden items-center gap-x-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78 lg:flex"
+        className="ml-auto mr-4 hidden items-center gap-x-4 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.18em] text-white/78 lg:flex xl:mr-8 xl:gap-x-8"
       >
         {desktopNavItems.map((item) =>
           "items" in item ? (

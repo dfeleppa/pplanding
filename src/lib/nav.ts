@@ -13,15 +13,16 @@ export const pricingMenu = {
   ],
 } as const;
 
+export const groomingLink = { label: "Why Mobile Grooming?", href: "/mobile-grooming/" };
+
+export const aboutAndBlogLinks = [
+  { label: "About Us", href: "/#about" },
+  { label: "Blog", href: "/blog/" },
+] as const;
+
 export const desktopNavItems: ReadonlyArray<NavItem> = [
-  { label: "Mobile Grooming", href: "/mobile-grooming/" },
+  groomingLink,
   pricingMenu,
-  {
-    label: "Explore",
-    items: [
-      { label: "About Us", href: "/#about" },
-      { label: "Blog", href: "/blog/" },
-    ],
-  },
+  ...aboutAndBlogLinks,
   { label: "Contact", href: "/contact/" },
 ];

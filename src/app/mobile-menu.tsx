@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight, ChevronDown, Phone, PawPrint, Scissors } from "lucide-react";
-import { desktopNavItems, pricingMenu } from "../lib/nav";
+import { aboutAndBlogLinks, groomingLink, pricingMenu } from "../lib/nav";
 import { SITE } from "../lib/site";
 import { BookNowModal } from "./book-now-modal";
 
@@ -11,7 +11,6 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
   const [open, setOpen] = useState(false);
   const panel = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
-  const explore = desktopNavItems.find(item => item.label === "Explore");
 
   useEffect(() => {
     if (!open) return;
@@ -48,9 +47,9 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
             </div>
             <nav aria-label="Mobile navigation" className="py-7">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Find your care</p>
-              <Link href="/mobile-grooming/" onClick={() => setOpen(false)} className="flex min-h-16 items-center gap-3 rounded-2xl bg-[var(--pp-mint)] px-4 py-3 text-[var(--pp-night)]">
+              <Link href={groomingLink.href} onClick={() => setOpen(false)} className="flex min-h-16 items-center gap-3 rounded-2xl bg-[var(--pp-mint)] px-4 py-3 text-[var(--pp-night)]">
                 <Scissors className="h-6 w-6 shrink-0" aria-hidden />
-                <span className="flex-1"><span className="block font-display text-xl">Mobile Grooming</span></span>
+                <span className="flex-1"><span className="block font-display text-xl">{groomingLink.label}</span></span>
                 <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden />
               </Link>
               <details className="group mt-3 rounded-2xl border border-white/20">
@@ -66,8 +65,13 @@ export function MobileMenu({ ctaHref }: { ctaHref: string }) {
                   ))}
                 </div>
               </details>
-              <p className="mb-2 mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Explore Planet Pooch</p>
-              <div className="flex flex-col">{explore && "items" in explore && explore.items.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center border-b border-white/10 text-sm text-white/85">{item.label}</Link>)}</div>
+              <div className="mt-4 flex flex-col">
+                {aboutAndBlogLinks.map(item => (
+                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center border-b border-white/10 text-sm text-white/85">
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </nav>
             <div className="mt-auto border-t border-white/15 pt-5">
               <div className="grid grid-cols-2 gap-3">
