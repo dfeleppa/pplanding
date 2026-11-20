@@ -1,3 +1,4 @@
+import { HeroBackdrop } from "./hero-backdrop";
 import { LegacyResortAnchor } from "./legacy-resort-anchor";
 import { ReviewCarousel } from "./review-carousel";
 import { googleReviews } from "../lib/google-reviews";
@@ -32,16 +33,7 @@ export default function HomePage() {
     >
       <LegacyResortAnchor />
       <section id="home-hero" className="pp-page-hero relative overflow-hidden bg-[var(--pp-night)] text-white">
-        <Image
-          src="/grooming-van-colonial.webp"
-          alt="The mint and teal Planet Pooch grooming van parked on a tree-lined residential street."
-          fill
-          sizes="100vw"
-          className="object-cover object-[40%_top] sm:object-top"
-          preload
-        />
-        {/* Shared gradient keeps white hero copy readable over the photo. */}
-        <div className="pp-hero-image-overlay absolute inset-0" />
+        <HeroBackdrop />
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader ctaHref="/new-client/" />
 

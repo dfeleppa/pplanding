@@ -1,5 +1,5 @@
+import { HeroBackdrop } from "./hero-backdrop";
 import { Libre_Baskerville, Manrope } from "next/font/google";
-import Image from "next/image";
 import Link from "./booking-link";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import { towns, type TownPage } from "../lib/content/towns";
@@ -164,13 +164,6 @@ const SERVICE_COPY: Record<TownPage["service"], {
   },
 };
 
-const HERO_IMAGE: Record<TownPage["service"], string> = {
-  "mobile-grooming": "/tour-space.jpg",
-  "spa-services": "/tour-space.jpg",
-  "in-house-grooming": "/our-resort-exterior.jpeg",
-  "daycare-boarding": "/hero-dog.jpg",
-};
-
 const PARENT_SERVICE: Record<TownPage["service"], { name: string; slug: string }> = {
   "mobile-grooming": { name: "Mobile Grooming", slug: "mobile-grooming" },
   "spa-services": { name: "Mobile Grooming", slug: "mobile-grooming" },
@@ -186,7 +179,6 @@ function pickNearbyTowns(page: TownPage, limit = 6): TownPage[] {
 
 export function TownPageTemplate({ page }: { page: TownPage }) {
   const copy = SERVICE_COPY[page.service];
-  const image = HERO_IMAGE[page.service];
   const parent = PARENT_SERVICE[page.service];
   const crumbs = breadcrumbSchema(
     nestedBreadcrumbs([parent], `${copy.primary} in ${page.town}`, page.slug)
@@ -205,16 +197,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="pp-page-hero relative  overflow-hidden bg-[var(--pp-night)] text-white">
-        <Image
-          src={image}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: "62% center" }}
-          preload
-        />
-        <div className="pp-hero-image-overlay absolute inset-0" />
+        <HeroBackdrop />
         <div className="relative z-10 mx-auto flex  max-w-7xl flex-col px-5  pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 

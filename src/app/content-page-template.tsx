@@ -1,3 +1,4 @@
+import { HeroBackdrop } from "./hero-backdrop";
 import { BenefitSplit } from "./benefit-split";
 import { HeroScrollLink } from "./hero-scroll-link";
 import { Libre_Baskerville, Manrope } from "next/font/google";
@@ -1150,16 +1151,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]${page.slug === "dog-daycare" ? " pp-daycare-page" : ""}`}
     >
       <section className="pp-page-hero relative overflow-hidden bg-[var(--pp-night)] text-white">
-        <Image
-            src={page.image ?? "/hero-dog.jpg"}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: "62% center" }}
-            preload
-          />
-        <div className="pp-hero-image-overlay absolute inset-0" />
+        <HeroBackdrop />
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-5 pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 

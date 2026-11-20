@@ -1,6 +1,6 @@
+import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { SITE } from "../../lib/site";
@@ -79,15 +79,7 @@ export default function ContactPage() {
       className={`${displaySerif.variable} ${bodySans.variable} min-h-screen bg-[var(--pp-cream)] text-[var(--pp-ink)]`}
     >
       <section className="pp-page-hero relative  overflow-hidden bg-[var(--pp-night)] text-white">
-        <Image
-          src="/van1.jpg"
-          alt="Planet Pooch grooming van"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          preload
-        />
-        <div className="pp-hero-image-overlay absolute inset-0" />
+        <HeroBackdrop />
         <div className="relative z-10 mx-auto flex  max-w-7xl flex-col px-5  pt-5 sm:px-8 lg:px-10">
           <SiteHeader />
 

@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-/** Homepage backdrop for pages without their own service photography. */
+/** Shared hero photograph for the Mobile Grooming site. */
 export function HeroBackdrop() {
   return <>
-    <Image src="/hero-dog.jpg" alt="" fill sizes="100vw" className="object-cover" style={{ objectPosition: "62% center" }} preload />
+    <Image src="/grooming-van-colonial.webp" alt="" fill sizes="100vw" className="object-cover object-[40%_top] sm:object-top" preload />
     <div className="pp-hero-image-overlay absolute inset-0" aria-hidden="true" />
   </>;
 }
