@@ -98,10 +98,10 @@ export default function HomePage() {
 
             <div className="relative aspect-[3/2] overflow-hidden border border-white/15 shadow-[0_24px_70px_rgba(20,30,36,0.32)] lg:aspect-auto">
               <Image
-                src="/mobile-grooming-van-hero.webp"
+                src="/founder-on-grooming-van.webp"
                 alt="A man sitting on the roof of a Planet Pooch mobile grooming van"
                 fill
-                sizes="(min-width: 1360px) 42rem, (min-width: 1024px) 52vw, 100vw"
+                unoptimized
                 className="object-cover object-top"
               />
             </div>
