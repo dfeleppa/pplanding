@@ -165,7 +165,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
                   <SectionEyebrow eyebrow={section.eyebrow} title={section.title} intro={section.intro} />
                   {list}
                 </div>
-                <div className="relative aspect-[3/4] overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65">
+                <div className="relative aspect-[3/4] overflow-hidden border border-[rgba(50,73,83,0.12)] bg-white/65 lg:aspect-auto lg:self-stretch">
                   <Image
                     src={image}
                     alt={imageAlt ?? section.title ?? "Planet Pooch"}
