@@ -97,11 +97,11 @@ export default function HomePage() {
 
             <div className="relative aspect-[3/2] overflow-hidden border border-white/15 shadow-[0_24px_70px_rgba(20,30,36,0.32)] lg:aspect-auto">
               <Image
-                src="/van1.jpg"
-                alt="Bathing tub and grooming table inside a Planet Pooch van"
+                src="/about-dog-bath.webp"
+                alt="A dog in the grooming tub with shampoo bubbles on its head"
                 fill
                 sizes="(min-width: 1360px) 42rem, (min-width: 1024px) 52vw, 100vw"
-                className="object-cover object-[center_60%]"
+                className="object-cover object-[center_14%]"
               />
             </div>
           </div>
