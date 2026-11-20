@@ -31,14 +31,11 @@ export function SiteHeader({ ctaHref = "/book/" }: SiteHeaderProps = {}) {
             className="h-auto w-[180px] brightness-0 invert sm:w-[220px]"
           />
         </Link>
-        <span aria-hidden="true" className="h-8 w-px shrink-0 bg-white" />
         <a
           href="https://planetpoochresorts.com/resort/"
-          aria-label="Visit our sister site, Planet Pooch Resorts"
-          className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-white bg-transparent px-2 text-center sm:px-3 text-xs leading-tight font-semibold text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="resort-link inline-flex min-h-11 max-w-[13ch] shrink-0 items-center text-balance text-sm leading-tight font-semibold text-white xl:max-w-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          <Image src="/planet-pooch-paw.png" width={28} height={26} alt="" className="h-auto w-7 brightness-0 invert" />
-          <span>Planet Pooch<br />Resorts</span>
+          Looking for the Pet Resort?
         </a>
       </div>
       <nav
