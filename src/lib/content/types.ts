@@ -265,13 +265,6 @@ export type ContentSection =
         title: string;
         description: string;
       }>;
-      calloutCard?: {
-        id?: string;
-        eyebrow?: string;
-        title: string;
-        body: string;
-        ctas?: Array<{ label: string; href: string }>;
-      };
     }
   | {
       type: "groupedServices";
@@ -310,6 +303,7 @@ export type ContentPage = {
   heroCtas?: {
     primary: { label: string; href: string };
     tertiary?: { label: string; href: string };
+    pricingOptions?: ReadonlyArray<{ label: string; href: string }>;
   };
   sections: ContentSection[];
   /** When set, emits Service JSON-LD on the page. Used for the main service offerings. */

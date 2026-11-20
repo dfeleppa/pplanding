@@ -121,6 +121,7 @@ export const contentPages = {
       },
       {
         type: "pricing",
+        id: "pricing",
         eyebrow: "Pricing",
         title: "Cat Grooming Services",
         columns: ["Service", "Price"],

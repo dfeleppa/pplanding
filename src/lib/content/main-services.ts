@@ -24,8 +24,12 @@ export const mainServicePages = {
     image: "/Grooming.png",
     serviceType: "Mobile Pet Grooming",
     heroCtas: {
-      primary: { label: "Book Now", href: "/book/" },
-      tertiary: { label: "View Pricing", href: "#pricing" },
+      primary: { label: "Get Started", href: "/new-client/" },
+      pricingOptions: [
+        { label: "Nassau pricing", href: "/nassau-pricing/" },
+        { label: "Hamptons pricing", href: "/pet-grooming-hamptons/#pricing" },
+        { label: "Cat pricing", href: "/cat-experience/#pricing" },
+      ],
     },
     sections: [
       {
@@ -41,17 +45,6 @@ export const mainServicePages = {
           { icon: "Wind", title: "Hand-dried only", description: "Never cage-dried. Never rushed." },
           { icon: "Truck", title: "Fully equipped van", description: "No hookups needed. Most appointments take about 90 minutes." },
         ],
-        calloutCard: {
-          id: "pricing",
-          eyebrow: "Pricing",
-          title: "See Pricing For Your Area.",
-          body: "",
-          ctas: [
-            { label: "Nassau Pricing", href: "/nassau-pricing" },
-            { label: "Hamptons Pricing", href: "/pet-grooming-hamptons/" },
-            { label: "Cat Pricing", href: "/cat-experience/" },
-          ],
-        },
       },
       {
         type: "groupedServices",

@@ -16,6 +16,7 @@ import {
   jsonLdAttrs,
   serviceSchema,
 } from "../lib/schema";
+import { NavDropdown } from "./nav-dropdown";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
@@ -1012,48 +1013,6 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
           <div className="mx-auto max-w-7xl">
-            {section.calloutCard ? (
-              <article id={section.calloutCard.id} className="relative mx-auto mb-12 flex max-w-6xl flex-col items-center gap-8 overflow-hidden rounded-[22px] border border-[rgba(191,232,201,0.38)] bg-[var(--pp-night)] p-7 text-center text-white shadow-[0_28px_80px_rgba(31,39,43,0.28)] ring-1 ring-white/10 before:absolute before:inset-x-7 before:top-0 before:h-1 before:rounded-b-full before:bg-[var(--pp-mint)] before:content-[''] sm:p-9 lg:mb-16">
-                <div className="relative z-10 w-full">
-                  {section.calloutCard.eyebrow ? (
-                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-mint)]">
-                      {section.calloutCard.eyebrow}
-                    </p>
-                  ) : null}
-                  <h3 className="mt-3 text-[2.25rem] leading-[0.98] sm:text-[2.85rem] lg:text-[3.25rem]">
-                    {section.calloutCard.title === "See Pricing For Your Area." ? (
-                      <>
-                        See <span className="text-[var(--pp-mint)]">Pricing</span> For Your Area.
-                      </>
-                    ) : (
-                      section.calloutCard.title
-                    )}
-                  </h3>
-                  {section.calloutCard.body ? (
-                    <p className="mt-4 text-[15px] leading-7 text-white/[0.82]">{section.calloutCard.body}</p>
-                  ) : null}
-                </div>
-                {section.calloutCard.ctas?.length ? (
-                  <div className="relative z-10 flex w-full flex-wrap justify-center gap-3">
-                    {section.calloutCard.ctas.map((cta) => {
-                      const isExternal = cta.href.startsWith("http");
-                      const Tag = isExternal ? "a" : Link;
-                      return (
-                        <Tag
-                          key={cta.href}
-                          href={cta.href}
-                          className="inline-flex min-h-12 min-w-[178px] items-center justify-center gap-2 rounded-full border border-white/20 bg-[var(--pp-mint)] px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] shadow-[0_10px_24px_rgba(159,217,173,0.2)] transition hover:bg-[var(--pp-mint-deep)] hover:shadow-[0_12px_28px_rgba(159,217,173,0.28)]"
-                        >
-                          {cta.label}
-                          <ArrowRight className="h-4 w-4" />
-                        </Tag>
-                      );
-                    })}
-                  </div>
-                ) : null}
-              </article>
-            ) : null}
-
             <div className="mx-auto max-w-3xl text-center">
               {section.eyebrow ? (
                 <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
@@ -1315,22 +1274,25 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     >
                       {page.hero}
                     </p>
-                    <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
-                      {page.slug === "mobile-grooming" && page.heroCtas.primary.label.toLowerCase() !== "book now" ? (
-                        <BookNowModal ctaHref={page.heroCtas.primary.href} className="pp-cta" variant="grooming" label={page.heroCtas.primary.label} />
-                      ) : (
+                    {page.heroCtas.pricingOptions ? (
+                      <div className="mt-8 grid max-w-80 grid-cols-2 items-start gap-2 sm:gap-3">
+                        <BookNowModal ctaHref={page.heroCtas.primary.href} label={page.heroCtas.primary.label} icon="paw" className="pp-book-header" />
+                        <NavDropdown label="View pricing" items={page.heroCtas.pricingOptions} variant="hero" />
+                      </div>
+                    ) : (
+                      <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
                         <Link href={page.heroCtas.primary.href} className="pp-cta">
-                          {page.slug === "mobile-grooming" ? "Get Started" : page.heroCtas.primary.label}
+                          {page.heroCtas.primary.label}
                           <span className="pp-cta-arrow" aria-hidden />
                         </Link>
-                      )}
-                      {page.heroCtas.tertiary ? (
-                        <a href={page.heroCtas.tertiary.href} className="inline-flex min-h-11 items-center gap-2 border border-[var(--pp-main)] bg-[var(--pp-main)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-[var(--pp-main-deep)] hover:bg-[var(--pp-main-deep)]">
-                          {page.heroCtas.tertiary.label}
-                          <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                        </a>
-                      ) : null}
-                    </div>
+                        {page.heroCtas.tertiary ? (
+                          <a href={page.heroCtas.tertiary.href} className="inline-flex min-h-11 items-center gap-2 border border-[var(--pp-main)] bg-[var(--pp-main)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-[var(--pp-main-deep)] hover:bg-[var(--pp-main-deep)]">
+                            {page.heroCtas.tertiary.label}
+                            <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                          </a>
+                        ) : null}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
