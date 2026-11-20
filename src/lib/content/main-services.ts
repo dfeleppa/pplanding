@@ -1,4 +1,4 @@
-import { groomingAddons, groomingPackages } from "./grooming-packages";
+import { fullGroomFeatures, groomingAddons, groomingPackages } from "./grooming-packages";
 import type { ContentPage } from "./types";
 
 /**
@@ -47,14 +47,11 @@ export const mainServicePages = {
         ],
       },
       {
-        type: "groupedServices",
-        eyebrow: "What's included",
-        title: "Everything your dog needs to look, feel, and smell amazing.",
-        cards: [
-          { icon: "Bath", title: "Bath & Clean", description: "Two shampoos, conditioner, ear cleaning, and sanitary care upon request." },
-          { icon: "Scissors", title: "Coat & Cut", description: "Breed-appropriate haircut, brushing, fluffing, and hand blow dry." },
-          { icon: "Sparkles", title: "Finishing Touches", description: "Nail trim and grind, bow or bandana, and a polished send-home look." },
-        ],
+        type: "serviceInclusions",
+        id: "full-groom",
+        title: "What’s included in a full groom",
+        items: fullGroomFeatures,
+        addOns: { label: "Explore grooming add-ons", href: "/grooming-packages/#add-ons" },
         cta: { label: "Book Mobile Grooming", href: "/book/" },
       },
       {

@@ -268,17 +268,12 @@ export type ContentSection =
       }>;
     }
   | {
-      type: "groupedServices";
-      id?: string;
-      eyebrow?: string;
-      title?: string;
-      intro?: string;
-      cards: Array<{
-        icon: string;
-        title: string;
-        description: string;
-      }>;
-      cta?: { label: string; href: string };
+      type: "serviceInclusions";
+      id: string;
+      title: string;
+      items: string[];
+      addOns: { label: string; href: string };
+      cta: { label: string; href: string };
     }
   | {
       type: "townLinks";

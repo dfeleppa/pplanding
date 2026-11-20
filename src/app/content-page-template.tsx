@@ -1086,56 +1086,34 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
       );
     }
 
-    case "groupedServices": {
+    case "serviceInclusions":
       return (
         <section id={section.id} className={`${tone} ${sectionPadding}`}>
-          <div className="mx-auto max-w-7xl">
-            {section.eyebrow ? (
-              <p className="text-center text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--pp-main-deep)]">
-                {section.eyebrow}
-              </p>
-            ) : null}
-            {section.title ? (
-              <h2 className="mx-auto mt-3 max-w-2xl text-center text-3xl leading-tight text-[var(--pp-ink)] sm:text-4xl">
-                {section.title}
-              </h2>
-            ) : null}
-            {section.intro ? (
-              <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-8 text-[rgba(47,42,39,0.78)]">
-                {section.intro}
-              </p>
-            ) : null}
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {section.cards.map((card) => {
-                const Icon = iconMap[card.icon];
-                return (
-                  <article
-                    key={card.title}
-                    className="flex flex-col border border-[rgba(50,73,83,0.10)] bg-white/70 p-7"
-                  >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--pp-mint)]/25">
-                      {Icon ? <Icon className="h-7 w-7 stroke-[1.5] text-[var(--pp-main)]" /> : null}
-                    </div>
-                    <h3 className="mt-5 text-xl font-semibold text-[var(--pp-ink)]">{card.title}</h3>
-                    <p className="mt-3 text-[15px] leading-7 text-[rgba(47,42,39,0.78)]">{card.description}</p>
-                  </article>
-                );
-              })}
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-center text-3xl leading-tight sm:text-4xl">{section.title}</h2>
+            <ul className="mt-8 grid gap-x-10 sm:grid-cols-2">
+              {section.items.map((item) => (
+                <li key={item} className="flex items-baseline gap-3 border-b border-[var(--pp-sand)] py-3.5">
+                  <Check aria-hidden className="size-4 shrink-0 self-start mt-1 text-[var(--pp-main-deep)]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-center">
+              Optional add-ons are available.{" "}
+              <Link href={section.addOns.href} className="font-semibold text-[var(--pp-main-deep)] underline underline-offset-4">
+                {section.addOns.label}
+              </Link>
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Link href={section.cta.href} className="pp-cta">
+                {section.cta.label}
+                <span className="pp-cta-arrow" aria-hidden />
+              </Link>
             </div>
-            {section.cta ? (
-              <div className="mt-10 flex justify-center">
-                <Link href={section.cta.href}
-                  className="inline-flex w-full items-center justify-center gap-2 border border-[var(--pp-mint-deep)] bg-[var(--pp-mint)] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--pp-night)] transition hover:bg-[var(--pp-mint-deep)] sm:w-auto"
-                >
-                  {section.cta.label}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            ) : null}
           </div>
         </section>
       );
-    }
 
     case "townLinks": {
       const serviceSet = new Set<string>(section.services);

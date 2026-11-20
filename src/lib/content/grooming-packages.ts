@@ -48,6 +48,7 @@ export const groomingPackages = {
 
 export const groomingAddons = {
   type: "comparison",
+  id: "add-ons",
   title: "Add-ons",
   columns: ["Service", "À la carte", "Basic", "Plus (+$19)", "Premium (+$29)"],
   rows: [
