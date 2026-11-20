@@ -107,7 +107,7 @@ export default function HomePage() {
               Tailored care. Heartfelt experience.
             </p>
             <h2 className="text-2xl leading-tight sm:mt-4 sm:text-5xl">
-              Choose your grooming service.
+              Mobile grooming services and pricing
             </h2>
           </div>
 
