@@ -1,10 +1,11 @@
 import { LegacyResortAnchor } from "./legacy-resort-anchor";
 import { googleReviews } from "../lib/google-reviews";
+import { SITE } from "../lib/site";
 import { HeroScrollLink } from "./hero-scroll-link";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import Image from "next/image";
 import Link from "./booking-link";
-import { Scissors, PawPrint, Sparkles } from "lucide-react";
+import { ArrowUpRight, Scissors, PawPrint, Sparkles, Star } from "lucide-react";
 import { SiteHeader } from "./site-header";
 import { BookNowModal } from "./book-now-modal";
 import { SiteFooter } from "./site-footer";
@@ -150,7 +151,7 @@ export default function HomePage() {
 
       <section id="about" className="bg-[linear-gradient(180deg,#324953_0%,#2f3f47_100%)] px-5 py-12 sm:py-18 text-white sm:px-8 lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/72">
                 About Us
@@ -166,29 +167,46 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div>
-              <div className="overflow-hidden border border-white/15 bg-[var(--pp-night)] shadow-[0_24px_70px_rgba(20,30,36,0.32)]">
-                <Image
-                  src="/van1.jpg"
-                  alt="Planet Pooch mobile grooming van"
-                  width={1080}
-                  height={540}
-                  sizes="(min-width: 1024px) 56rem, 100vw"
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+            <div className="relative aspect-[3/2] overflow-hidden border border-white/15 shadow-[0_24px_70px_rgba(20,30,36,0.32)] lg:aspect-auto">
+              <Image
+                src="/van1.jpg"
+                alt="Bathing tub and grooming table inside a Planet Pooch van"
+                fill
+                sizes="(min-width: 1360px) 42rem, (min-width: 1024px) 52vw, 100vw"
+                className="object-cover object-[center_60%]"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="testimonials" aria-label="Mobile grooming client review" className="bg-[var(--pp-cream)] px-6 py-14 text-center sm:py-20">
-        {googleReviews.filter(review => review.context === "Mobile grooming").map(review => (
-          <figure key={review.name} className="mx-auto max-w-2xl">
-            <blockquote className="font-display text-2xl sm:text-3xl">“{review.body}”</blockquote>
-            <figcaption className="mt-5 text-sm">{review.name} · Mobile grooming client</figcaption>
-          </figure>
-        ))}
+      <section id="testimonials" aria-labelledby="reviews-heading" className="bg-[var(--pp-cream)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <h2 id="reviews-heading" className="text-3xl leading-tight sm:text-5xl">What grooming clients say</h2>
+              <p className="mt-4 flex flex-wrap items-center gap-x-2 text-sm text-[var(--pp-main-deep)]">
+                <Star aria-hidden className="size-5 fill-[var(--pp-gold)] text-[var(--pp-main-deep)]" />
+                <strong>{SITE.reviews.rating} out of 5</strong>
+                <span>from {SITE.reviews.countDisplay} Google reviews for Planet Pooch</span>
+              </p>
+            </div>
+            <a href={SITE.reviews.profileUrl} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-[var(--pp-main-deep)] underline underline-offset-4">
+              Read reviews on Google <ArrowUpRight aria-hidden className="size-4" />
+            </a>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {googleReviews.filter(review => review.context === "Mobile grooming" || review.context === "Grooming").map(review => (
+              <figure key={review.name} className="flex flex-col justify-between gap-6 rounded-2xl border border-[var(--pp-sand)] bg-white p-6 sm:p-7">
+                <blockquote className="text-lg leading-relaxed text-[var(--pp-ink)]">“{review.body}”</blockquote>
+                <figcaption className="flex items-center gap-3 border-t border-[var(--pp-sand)] pt-4 text-sm font-semibold">
+                  <span aria-hidden className={`grid size-9 shrink-0 place-items-center rounded-full text-xs text-white ${review.avatarBg}`}>{review.initials}</span>
+                  {review.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
       </section>
 
       <SiteFooter />

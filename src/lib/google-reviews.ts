@@ -11,6 +11,21 @@ export const googleReviews = [
       "They are professional, gentle, and always right on time. My pet always finishes happy and looks amazing.",
   },
   {
+    // Source for the next two excerpts: https://mobilepethub.com/mobile-grooming/ny/franklin-square/planet-pooch
+    name: "Emily Burton",
+    initials: "EB",
+    avatarBg: "bg-[var(--pp-night)]",
+    context: "Mobile grooming",
+    body: "You can’t beat the convenience of them coming to your house.",
+  },
+  {
+    name: "Katherine Quinn",
+    initials: "KQ",
+    avatarBg: "bg-[var(--pp-main-deep)]",
+    context: "Grooming",
+    body: "I could tell Kris took her time and genuinely cared for Winnie.",
+  },
+  {
     name: "Daniella Vlakancic",
     initials: "DV",
     avatarBg: "bg-[var(--pp-gold-deep)]",
