@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "./hero-booking-button";
 import { HeroBackdrop } from "./hero-backdrop";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import { ArrowRight } from "lucide-react";
@@ -41,6 +42,7 @@ export function ProsePageTemplate({ page }: ProsePageTemplateProps) {
             </div>
             <div className="pp-hero-copy">
               {page.intro ? <p className="pp-hero-tagline">{page.intro}</p> : null}
+              <div className="mt-8"><HeroBookingButton /></div>
               {page.lastUpdated ? <p className="mt-5 text-xs uppercase tracking-[0.16em] text-white/70">Last updated: {page.lastUpdated}</p> : null}
             </div>
           </div>

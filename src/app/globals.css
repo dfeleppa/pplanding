@@ -407,3 +407,10 @@ main > section:first-child h1 {
 @media (orientation: landscape) and (max-height: 500px) and (max-width: 1023px) {
   .pp-hero-content { padding-top: 2rem; padding-bottom: 5rem; }
 }
+
+#testimonials .review-control {
+  border-color: var(--pp-main);
+  color: var(--pp-main-deep);
+}
+#testimonials .review-control:hover { background: var(--pp-mint); }
+#testimonials :is(.review-control, .review-viewport):focus-visible { outline-color: var(--pp-night); }

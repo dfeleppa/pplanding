@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "./hero-booking-button";
 import { staysOnGroomingSite } from "../lib/resort-routes";
 import { HeroBackdrop } from "./hero-backdrop";
 import { Libre_Baskerville, Manrope } from "next/font/google";
@@ -76,6 +77,7 @@ export function BlogPostTemplate({ post }: { post: BlogPost }) {
             </div>
             <div className="pp-hero-copy">
               {post.intro ? <p className="pp-hero-tagline">{post.intro}</p> : null}
+              <div className="mt-8"><HeroBookingButton /></div>
             </div>
           </div>
         </div>

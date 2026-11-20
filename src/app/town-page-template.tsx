@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "./hero-booking-button";
 import { HeroBackdrop } from "./hero-backdrop";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import Link from "./booking-link";
@@ -211,10 +212,7 @@ export function TownPageTemplate({ page }: { page: TownPage }) {
             <div className="pp-hero-copy">
               <p className="pp-hero-tagline">{copy.hero(page.town)}</p>
               <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
-                <Link href="/book/" className="pp-cta">
-                  Book Now
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <HeroBookingButton />
                 <a href={SITE.phone.href} className="pp-cta-ghost">
                   <Phone className="h-4 w-4" />
                   {SITE.phone.display}

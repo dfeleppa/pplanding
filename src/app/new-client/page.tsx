@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "../hero-booking-button";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import { SiteHeader } from "../site-header";
@@ -35,6 +36,7 @@ export default function NewClientPage() {
             <p className="pp-hero-tagline">
               Tell us about your pup, and we&apos;ll help you find the right services.
             </p>
+              <div className="mt-8"><HeroBookingButton /></div>
           </div>
         </div>
       </div>

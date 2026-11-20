@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "./hero-booking-button";
 import { HeroBackdrop } from "./hero-backdrop";
 import { BenefitSplit } from "./benefit-split";
 import { HeroScrollLink } from "./hero-scroll-link";
@@ -19,7 +20,6 @@ import { NavDropdown } from "./nav-dropdown";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Slideshow } from "./slideshow";
-import { BookNowModal } from "./book-now-modal";
 import { StickyMobileCta } from "./sticky-mobile-cta";
 import { EventCalendarView } from "./event-calendar-view";
 import { GroupTrainingSchedule } from "./group-training-schedule";
@@ -1173,15 +1173,12 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
                     </p>
                     {page.heroCtas.pricingOptions ? (
                       <div className="mt-8 grid max-w-80 grid-cols-2 items-start gap-2 sm:gap-3">
-                        <BookNowModal ctaHref={page.heroCtas.primary.href} label={page.heroCtas.primary.label} icon="paw" className="pp-book-header" />
+                        <HeroBookingButton />
                         <NavDropdown label="View pricing" items={page.heroCtas.pricingOptions} variant="hero" />
                       </div>
                     ) : (
                       <div className="pp-hero-actions mt-9 flex flex-col items-start gap-3">
-                        <Link href={page.heroCtas.primary.href} className="pp-cta">
-                          {page.heroCtas.primary.label}
-                          <span className="pp-cta-arrow" aria-hidden />
-                        </Link>
+                        <HeroBookingButton />
                         {page.heroCtas.tertiary ? (
                           <a href={page.heroCtas.tertiary.href} className="inline-flex min-h-11 items-center gap-2 border border-[var(--pp-main)] bg-[var(--pp-main)] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-[var(--pp-main-deep)] hover:bg-[var(--pp-main-deep)]">
                             {page.heroCtas.tertiary.label}
@@ -1202,6 +1199,7 @@ export function ContentPageTemplate({ page }: ContentPageTemplateProps) {
               </div>
               <div className="pp-hero-copy">
                 <p className="pp-hero-tagline">{page.hero}</p>
+                <div className="mt-8"><HeroBookingButton /></div>
               </div>
             </div>
           )}

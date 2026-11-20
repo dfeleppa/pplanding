@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "../hero-booking-button";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
@@ -95,6 +96,7 @@ export default function ContactPage() {
                 Call or email our mobile grooming team. We&apos;ll get back to you to set up your dog&apos;s
                 first visit.
               </p>
+              <div className="mt-8"><HeroBookingButton /></div>
             </div>
           </div>
         </div>

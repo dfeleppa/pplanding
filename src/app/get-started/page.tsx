@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "../hero-booking-button";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -39,6 +40,7 @@ export default function GetStartedPage() {
               <p className="pp-hero-tagline">
                 Looking for daycare, boarding, grooming, or training? Tell us a little about you and your dog, and our team will follow up with availability and the best next step.
               </p>
+              <div className="mt-8"><HeroBookingButton /></div>
             </div>
           </div>
         </div>

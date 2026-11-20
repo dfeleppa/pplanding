@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "../hero-booking-button";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
@@ -71,6 +72,7 @@ export default function BookPage() {
               <p className="pp-hero-tagline">
                 Request your first grooming visit online or call our team for help with scheduling.
               </p>
+              <div className="mt-8"><HeroBookingButton /></div>
             </div>
           </div>
         </div>

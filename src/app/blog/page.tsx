@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "../hero-booking-button";
 import { staysOnGroomingSite } from "../../lib/resort-routes";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
@@ -60,6 +61,7 @@ export default function BlogIndexPage() {
               <p className="pp-hero-tagline">
                 Our team writes about what we see day to day — grooming questions we get asked again and again, seasonal coat care, and stories from the road.
               </p>
+              <div className="mt-8"><HeroBookingButton /></div>
             </div>
           </div>
         </div>

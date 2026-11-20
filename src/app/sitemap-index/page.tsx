@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "../hero-booking-button";
 import { staysOnGroomingSite } from "../../lib/resort-routes";
 import { HeroBackdrop } from "../hero-backdrop";
 import type { Metadata } from "next";
@@ -103,6 +104,7 @@ export default function SiteMapPage() {
               <p className="pp-hero-tagline">
                 Every page on planet-pooch.com — services, town pages across Nassau County, the blog, and policies.
               </p>
+              <div className="mt-8"><HeroBookingButton /></div>
             </div>
           </div>
         </div>

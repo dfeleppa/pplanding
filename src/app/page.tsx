@@ -1,3 +1,4 @@
+import { HeroBookingButton } from "./hero-booking-button";
 import { HeroBackdrop } from "./hero-backdrop";
 import { LegacyResortAnchor } from "./legacy-resort-anchor";
 import { ReviewCarousel } from "./review-carousel";
@@ -10,7 +11,6 @@ import { BenefitSplit } from "./benefit-split";
 import { mobileGroomingBenefits } from "../lib/content/mobile-grooming-benefits";
 import { ArrowUpRight, Star } from "lucide-react";
 import { SiteHeader } from "./site-header";
-import { BookNowModal } from "./book-now-modal";
 import { SiteFooter } from "./site-footer";
 import { StickyMobileCta } from "./sticky-mobile-cta";
 const displaySerif = Libre_Baskerville({
@@ -56,7 +56,7 @@ export default function HomePage() {
 
               <div className="mt-8">
                 <div className="pp-hero-action-panel pp-home-hero-action-panel flex flex-col items-start gap-4">
-                  <BookNowModal ctaHref="/new-client/" className="pp-book-header pp-home-book" label="Get Started" icon="paw" />
+                  <HeroBookingButton />
                 </div>
 
               </div>
@@ -101,18 +101,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" aria-labelledby="reviews-heading" className="bg-black text-white px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
+      <section id="testimonials" aria-labelledby="reviews-heading" className="bg-[var(--pp-cream)] text-[var(--pp-ink)] px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
               <h2 id="reviews-heading" className="text-3xl leading-tight sm:text-5xl">What grooming clients say</h2>
-              <p className="mt-4 flex flex-wrap items-center gap-x-2 text-sm text-white/85">
+              <p className="mt-4 flex flex-wrap items-center gap-x-2 text-sm text-[var(--pp-main-deep)]">
                 <span aria-hidden className="inline-flex gap-0.5">{[1, 2, 3, 4, 5].map(n => <Star key={n} className="size-4 fill-[var(--pp-gold)] stroke-none" />)}</span>
                 <strong>{SITE.reviews.rating} out of 5</strong>
                 <span>from {SITE.reviews.countDisplay} Google reviews for Planet Pooch</span>
               </p>
             </div>
-            <a href={SITE.reviews.profileUrl} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-[var(--pp-mint)] underline underline-offset-4">
+            <a href={SITE.reviews.profileUrl} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-[var(--pp-main-deep)] underline underline-offset-4">
               Read reviews on Google <ArrowUpRight aria-hidden className="size-4" />
             </a>
           </div>
